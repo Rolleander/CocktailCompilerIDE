@@ -1,0 +1,39 @@
+grammar org.xtext.cocktail.Scanner with org.eclipse.xtext.common.Terminals
+
+generate scanner "http://www.xtext.org/cocktail/Scanner"
+
+Model:
+	scanner+=Title scanner+=Export scanner+=Global scanner+=Local scanner+=Default
+	scanner +=Eof scanner+=Define scanner+=StartStates scanner+=Rule;
+
+Title:
+	'SCANNER' name=ID;
+
+Export:
+	'EXPORT {' content=ID '}';
+
+Global:
+	'GLOBAL {' content=ID '}';
+
+Local:
+	'LOCAL {' content=ID '}';
+	
+Default:
+	'DEFAULT {' content=ID '}';
+	
+Eof:
+	'EOF {' content=ID '}';
+	
+Define:
+	'DEFINE' (defines+=DefineRule)* ;	
+
+DefineRule:
+	defineName=ID '=' defineRule=ID;
+
+StartStates: 'START' 
+	(states+=ID)*;
+
+Rule:
+	'RULE' content=ID;
+
+
