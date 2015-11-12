@@ -560,7 +560,7 @@ ruleDefine returns [EObject current=null]
 	    }
 
 )
-)*)
+)+)
 ;
 
 
@@ -642,11 +642,15 @@ ruleStartStates returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+(	otherlv_0='START' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getStartStatesAccess().getSTARTKeyword_0());
+    }
 (
 (
-		lv_states_0_0=RULE_ID
+		lv_states_1_0=RULE_ID
 		{
-			newLeafNode(lv_states_0_0, grammarAccess.getStartStatesAccess().getStatesIDTerminalRuleCall_0()); 
+			newLeafNode(lv_states_1_0, grammarAccess.getStartStatesAccess().getStatesIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -655,12 +659,20 @@ ruleStartStates returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"states",
-        		lv_states_0_0, 
+        		lv_states_1_0, 
         		"ID");
 	    }
 
 )
-)*
+)(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getStartStatesAccess().getCommaKeyword_2_0());
+    }
+this_ID_3=RULE_ID
+    { 
+    newLeafNode(this_ID_3, grammarAccess.getStartStatesAccess().getIDTerminalRuleCall_2_1()); 
+    }
+)*)
 ;
 
 

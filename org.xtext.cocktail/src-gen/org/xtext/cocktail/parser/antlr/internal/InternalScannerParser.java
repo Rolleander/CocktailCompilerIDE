@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalScannerParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SCANNER'", "'EXPORT {'", "'}'", "'GLOBAL {'", "'LOCAL {'", "'DEFAULT {'", "'EOF {'", "'DEFINE'", "'='", "'RULE'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'SCANNER'", "'EXPORT {'", "'}'", "'GLOBAL {'", "'LOCAL {'", "'DEFAULT {'", "'EOF {'", "'DEFINE'", "'='", "'START'", "','", "'RULE'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -39,8 +39,10 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -1128,7 +1130,7 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefine"
-    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:537:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )* ) ;
+    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:537:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )+ ) ;
     public final EObject ruleDefine() throws RecognitionException {
         EObject current = null;
 
@@ -1139,30 +1141,25 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:540:28: ( (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )* ) )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:1: (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )* )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:540:28: ( (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )+ ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:1: (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )+ )
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:1: (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )* )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:3: otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )*
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:1: (otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )+ )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:541:3: otherlv_0= 'DEFINE' ( (lv_defines_1_0= ruleDefineRule ) )+
             {
             otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDefine1072); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDEFINEKeyword_0());
                 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:545:1: ( (lv_defines_1_0= ruleDefineRule ) )*
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:545:1: ( (lv_defines_1_0= ruleDefineRule ) )+
+            int cnt1=0;
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
                 if ( (LA1_0==RULE_ID) ) {
-                    int LA1_1 = input.LA(2);
-
-                    if ( (LA1_1==19) ) {
-                        alt1=1;
-                    }
-
-
+                    alt1=1;
                 }
 
 
@@ -1200,8 +1197,12 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop1;
+            	    if ( cnt1 >= 1 ) break loop1;
+                        EarlyExitException eee =
+                            new EarlyExitException(1, input);
+                        throw eee;
                 }
+                cnt1++;
             } while (true);
 
 
@@ -1391,53 +1392,77 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartStates"
-    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:641:1: ruleStartStates returns [EObject current=null] : ( (lv_states_0_0= RULE_ID ) )* ;
+    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:641:1: ruleStartStates returns [EObject current=null] : (otherlv_0= 'START' ( (lv_states_1_0= RULE_ID ) ) (otherlv_2= ',' this_ID_3= RULE_ID )* ) ;
     public final EObject ruleStartStates() throws RecognitionException {
         EObject current = null;
 
-        Token lv_states_0_0=null;
+        Token otherlv_0=null;
+        Token lv_states_1_0=null;
+        Token otherlv_2=null;
+        Token this_ID_3=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:644:28: ( ( (lv_states_0_0= RULE_ID ) )* )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:645:1: ( (lv_states_0_0= RULE_ID ) )*
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:644:28: ( (otherlv_0= 'START' ( (lv_states_1_0= RULE_ID ) ) (otherlv_2= ',' this_ID_3= RULE_ID )* ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:645:1: (otherlv_0= 'START' ( (lv_states_1_0= RULE_ID ) ) (otherlv_2= ',' this_ID_3= RULE_ID )* )
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:645:1: ( (lv_states_0_0= RULE_ID ) )*
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:645:1: (otherlv_0= 'START' ( (lv_states_1_0= RULE_ID ) ) (otherlv_2= ',' this_ID_3= RULE_ID )* )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:645:3: otherlv_0= 'START' ( (lv_states_1_0= RULE_ID ) ) (otherlv_2= ',' this_ID_3= RULE_ID )*
+            {
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleStartStates1304); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getStartStatesAccess().getSTARTKeyword_0());
+                
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:649:1: ( (lv_states_1_0= RULE_ID ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:650:1: (lv_states_1_0= RULE_ID )
+            {
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:650:1: (lv_states_1_0= RULE_ID )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:651:3: lv_states_1_0= RULE_ID
+            {
+            lv_states_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStartStates1321); 
+
+            			newLeafNode(lv_states_1_0, grammarAccess.getStartStatesAccess().getStatesIDTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getStartStatesRule());
+            	        }
+                   		addWithLastConsumed(
+                   			current, 
+                   			"states",
+                    		lv_states_1_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:667:2: (otherlv_2= ',' this_ID_3= RULE_ID )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==RULE_ID) ) {
+                if ( (LA2_0==21) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:646:1: (lv_states_0_0= RULE_ID )
+            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:667:4: otherlv_2= ',' this_ID_3= RULE_ID
             	    {
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:646:1: (lv_states_0_0= RULE_ID )
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:647:3: lv_states_0_0= RULE_ID
-            	    {
-            	    lv_states_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStartStates1308); 
+            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleStartStates1339); 
 
-            	    			newLeafNode(lv_states_0_0, grammarAccess.getStartStatesAccess().getStatesIDTerminalRuleCall_0()); 
-            	    		
-
-            	    	        if (current==null) {
-            	    	            current = createModelElement(grammarAccess.getStartStatesRule());
-            	    	        }
-            	           		addWithLastConsumed(
-            	           			current, 
-            	           			"states",
-            	            		lv_states_0_0, 
-            	            		"ID");
-            	    	    
-
-            	    }
-
+            	        	newLeafNode(otherlv_2, grammarAccess.getStartStatesAccess().getCommaKeyword_2_0());
+            	        
+            	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleStartStates1350); 
+            	     
+            	        newLeafNode(this_ID_3, grammarAccess.getStartStatesAccess().getIDTerminalRuleCall_2_1()); 
+            	        
 
             	    }
             	    break;
@@ -1446,6 +1471,9 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
             	    break loop2;
                 }
             } while (true);
+
+
+            }
 
 
             }
@@ -1465,7 +1493,7 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:671:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
+    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:683:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
     public final EObject entryRuleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1473,17 +1501,17 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:672:2: (iv_ruleRule= ruleRule EOF )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:673:2: iv_ruleRule= ruleRule EOF
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:684:2: (iv_ruleRule= ruleRule EOF )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:685:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
-            pushFollow(FOLLOW_ruleRule_in_entryRuleRule1349);
+            pushFollow(FOLLOW_ruleRule_in_entryRuleRule1387);
             iv_ruleRule=ruleRule();
 
             state._fsp--;
 
              current =iv_ruleRule; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRule1359); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRule1397); 
 
             }
 
@@ -1501,7 +1529,7 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:680:1: ruleRule returns [EObject current=null] : (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) ) ;
+    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:692:1: ruleRule returns [EObject current=null] : (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1511,23 +1539,23 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:683:28: ( (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) ) )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:684:1: (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:695:28: ( (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:696:1: (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) )
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:684:1: (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:684:3: otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:696:1: (otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:696:3: otherlv_0= 'RULE' ( (lv_content_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleRule1396); 
+            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleRule1434); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getRULEKeyword_0());
                 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:688:1: ( (lv_content_1_0= RULE_ID ) )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:689:1: (lv_content_1_0= RULE_ID )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:700:1: ( (lv_content_1_0= RULE_ID ) )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:701:1: (lv_content_1_0= RULE_ID )
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:689:1: (lv_content_1_0= RULE_ID )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:690:3: lv_content_1_0= RULE_ID
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:701:1: (lv_content_1_0= RULE_ID )
+            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:702:3: lv_content_1_0= RULE_ID
             {
-            lv_content_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRule1413); 
+            lv_content_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRule1451); 
 
             			newLeafNode(lv_content_1_0, grammarAccess.getRuleAccess().getContentIDTerminalRuleCall_1_0()); 
             		
@@ -1579,8 +1607,8 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleLocal_in_ruleModel194 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_ruleDefault_in_ruleModel215 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_ruleEof_in_ruleModel236 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_ruleDefine_in_ruleModel257 = new BitSet(new long[]{0x0000000000100010L});
-    public static final BitSet FOLLOW_ruleStartStates_in_ruleModel278 = new BitSet(new long[]{0x0000000000100010L});
+    public static final BitSet FOLLOW_ruleDefine_in_ruleModel257 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_ruleStartStates_in_ruleModel278 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_ruleRule_in_ruleModel299 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTitle_in_entryRuleTitle335 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTitle345 = new BitSet(new long[]{0x0000000000000002L});
@@ -1613,7 +1641,7 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13_in_ruleEof989 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDefine_in_entryRuleDefine1025 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDefine1035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleDefine1072 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_18_in_ruleDefine1072 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleDefineRule_in_ruleDefine1093 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_ruleDefineRule_in_entryRuleDefineRule1130 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDefineRule1140 = new BitSet(new long[]{0x0000000000000002L});
@@ -1622,10 +1650,13 @@ public class InternalScannerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleDefineRule1216 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStartStates_in_entryRuleStartStates1257 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStartStates1267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleStartStates1308 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule1349 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRule1359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleRule1396 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRule1413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleStartStates1304 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStartStates1321 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_ruleStartStates1339 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleStartStates1350 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_ruleRule_in_entryRuleRule1387 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRule1397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleRule1434 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRule1451 = new BitSet(new long[]{0x0000000000000002L});
 
 }

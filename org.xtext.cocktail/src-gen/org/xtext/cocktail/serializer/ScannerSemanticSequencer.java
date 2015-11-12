@@ -113,7 +113,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     defines+=DefineRule*
+	 *     defines+=DefineRule+
 	 */
 	protected void sequence_Define(EObject context, Define semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -221,7 +221,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     states+=ID*
+	 *     states+=ID
 	 */
 	protected void sequence_StartStates(EObject context, StartStates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

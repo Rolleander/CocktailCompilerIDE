@@ -25,13 +25,14 @@ Eof:
 	'EOF {' content=ID '}';
 	
 Define:
-	'DEFINE' (defines+=DefineRule)* ;	
+	'DEFINE'  (defines+=DefineRule)+   ;	
 
 DefineRule:
 	defineName=ID '=' defineRule=ID;
 
-StartStates: 'START' 
-	(states+=ID)*;
+StartStates: 
+'START' states+= ID (',' ID)*
+;
 
 Rule:
 	'RULE' content=ID;
