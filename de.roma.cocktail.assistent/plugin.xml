@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="$PluginID$"
+            name="Compilerbau">
+      </category>
+      <wizard
+            category="$PluginID$"
+            class="packagename.ComponentWizard"
+            icon="icons/newprj_wiz.gif" 
+            id="packagename.ComponentWizard"
+            name="Compiler-Projekt">
+      </wizard>
+      <!-- Icons muss noch ins manifest -->
+   </extension>
+
+</plugin>
