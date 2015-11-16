@@ -4,17 +4,16 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <category
-            id="$PluginID$"
-            name="Compilerbau">
+            name="Compiler"
+            id="Compiler Wizards">
       </category>
       <wizard
-            category="$PluginID$"
-            class="packagename.ComponentWizard"
+            category="Compiler Wizards"
+            class="de.roma.cocktail.assistent.wizards.NewWizard"
             icon="icons/newprj_wiz.gif" 
-            id="packagename.ComponentWizard"
+            id="de.roma.cocktail.assistent.wizards.NewWizard"
             name="Compiler-Projekt">
       </wizard>
-      <!-- Icons muss noch ins manifest -->
    </extension>
 
 </plugin>
