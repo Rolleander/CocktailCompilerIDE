@@ -27,7 +27,9 @@ import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.ScannerFactory;
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SequenceExpression;
+import org.xtext.cocktail.scanner.SingleRule;
 import org.xtext.cocktail.scanner.StarExpression;
+import org.xtext.cocktail.scanner.StartState;
 import org.xtext.cocktail.scanner.StartStates;
 import org.xtext.cocktail.scanner.Title;
 
@@ -114,7 +116,21 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass startStateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -440,9 +456,29 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStartStates_States()
+  public EReference getStartStates_States()
   {
-    return (EAttribute)startStatesEClass.getEStructuralFeatures().get(0);
+    return (EReference)startStatesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStartState()
+  {
+    return startStateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStartState_Name()
+  {
+    return (EAttribute)startStateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -460,9 +496,39 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRule_Content()
+  public EReference getRule_Content()
   {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingleRule()
+  {
+    return singleRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleRule_State()
+  {
+    return (EReference)singleRuleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSingleRule_Regex()
+  {
+    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -654,10 +720,17 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEAttribute(defineRuleEClass, DEFINE_RULE__DEFINE_RULE);
 
     startStatesEClass = createEClass(START_STATES);
-    createEAttribute(startStatesEClass, START_STATES__STATES);
+    createEReference(startStatesEClass, START_STATES__STATES);
+
+    startStateEClass = createEClass(START_STATE);
+    createEAttribute(startStateEClass, START_STATE__NAME);
 
     ruleEClass = createEClass(RULE);
-    createEAttribute(ruleEClass, RULE__CONTENT);
+    createEReference(ruleEClass, RULE__CONTENT);
+
+    singleRuleEClass = createEClass(SINGLE_RULE);
+    createEReference(singleRuleEClass, SINGLE_RULE__STATE);
+    createEAttribute(singleRuleEClass, SINGLE_RULE__REGEX);
 
     regularExpressionEClass = createEClass(REGULAR_EXPRESSION);
 
@@ -748,10 +821,17 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEAttribute(getDefineRule_DefineRule(), ecorePackage.getEString(), "defineRule", null, 0, 1, DefineRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(startStatesEClass, StartStates.class, "StartStates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStartStates_States(), ecorePackage.getEString(), "states", null, 0, -1, StartStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStartStates_States(), this.getStartState(), null, "states", null, 0, -1, StartStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(startStateEClass, StartState.class, "StartState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStartState_Name(), ecorePackage.getEString(), "name", null, 0, 1, StartState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Content(), this.getSingleRule(), null, "content", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSingleRule_State(), this.getStartState(), null, "state", null, 0, -1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSingleRule_Regex(), ecorePackage.getEString(), "regex", null, 0, -1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(regularExpressionEClass, RegularExpression.class, "RegularExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

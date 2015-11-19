@@ -3,14 +3,17 @@
 package org.xtext.cocktail.scanner.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.ScannerPackage;
+import org.xtext.cocktail.scanner.SingleRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,24 +31,14 @@ import org.xtext.cocktail.scanner.ScannerPackage;
 public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
 {
   /**
-   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContent()
    * @generated
    * @ordered
    */
-  protected static final String CONTENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected String content = CONTENT_EDEFAULT;
+  protected SingleRule content;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,7 +66,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getContent()
+  public SingleRule getContent()
   {
     return content;
   }
@@ -83,12 +76,53 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(String newContent)
+  public NotificationChain basicSetContent(SingleRule newContent, NotificationChain msgs)
   {
-    String oldContent = content;
+    SingleRule oldContent = content;
     content = newContent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.RULE__CONTENT, oldContent, content));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.RULE__CONTENT, oldContent, newContent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContent(SingleRule newContent)
+  {
+    if (newContent != content)
+    {
+      NotificationChain msgs = null;
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.RULE__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.RULE__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.RULE__CONTENT, newContent, newContent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ScannerPackage.RULE__CONTENT:
+        return basicSetContent(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -118,7 +152,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     switch (featureID)
     {
       case ScannerPackage.RULE__CONTENT:
-        setContent((String)newValue);
+        setContent((SingleRule)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,7 +169,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     switch (featureID)
     {
       case ScannerPackage.RULE__CONTENT:
-        setContent(CONTENT_EDEFAULT);
+        setContent((SingleRule)null);
         return;
     }
     super.eUnset(featureID);
@@ -152,26 +186,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     switch (featureID)
     {
       case ScannerPackage.RULE__CONTENT:
-        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+        return content != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (content: ");
-    result.append(content);
-    result.append(')');
-    return result.toString();
   }
 
 } //RuleImpl

@@ -125,9 +125,19 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createStartStatesAdapter();
       }
       @Override
+      public Adapter caseStartState(StartState object)
+      {
+        return createStartStateAdapter();
+      }
+      @Override
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
+      }
+      @Override
+      public Adapter caseSingleRule(SingleRule object)
+      {
+        return createSingleRuleAdapter();
       }
       @Override
       public Adapter caseRegularExpression(RegularExpression object)
@@ -342,6 +352,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.StartState <em>Start State</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.StartState
+   * @generated
+   */
+  public Adapter createStartStateAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -352,6 +377,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.SingleRule <em>Single Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.SingleRule
+   * @generated
+   */
+  public Adapter createSingleRuleAdapter()
   {
     return null;
   }

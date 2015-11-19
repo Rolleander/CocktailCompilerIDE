@@ -74,7 +74,9 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.DEFINE: return createDefine();
       case ScannerPackage.DEFINE_RULE: return createDefineRule();
       case ScannerPackage.START_STATES: return createStartStates();
+      case ScannerPackage.START_STATE: return createStartState();
       case ScannerPackage.RULE: return createRule();
+      case ScannerPackage.SINGLE_RULE: return createSingleRule();
       case ScannerPackage.REGULAR_EXPRESSION: return createRegularExpression();
       case ScannerPackage.OR_EXPRESSION: return createOrExpression();
       case ScannerPackage.SEQUENCE_EXPRESSION: return createSequenceExpression();
@@ -203,10 +205,32 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public StartState createStartState()
+  {
+    StartStateImpl startState = new StartStateImpl();
+    return startState;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Rule createRule()
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SingleRule createSingleRule()
+  {
+    SingleRuleImpl singleRule = new SingleRuleImpl();
+    return singleRule;
   }
 
   /**

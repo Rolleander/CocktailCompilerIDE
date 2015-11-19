@@ -30,7 +30,9 @@ import org.xtext.cocktail.scanner.OrExpression;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SequenceExpression;
+import org.xtext.cocktail.scanner.SingleRule;
 import org.xtext.cocktail.scanner.StarExpression;
+import org.xtext.cocktail.scanner.StartState;
 import org.xtext.cocktail.scanner.StartStates;
 import org.xtext.cocktail.scanner.Title;
 import org.xtext.cocktail.services.ScannerGrammarAccess;
@@ -83,8 +85,14 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ScannerPackage.SEQUENCE_EXPRESSION:
 				sequence_SequenceExpression(context, (SequenceExpression) semanticObject); 
 				return; 
+			case ScannerPackage.SINGLE_RULE:
+				sequence_SingleRule(context, (SingleRule) semanticObject); 
+				return; 
 			case ScannerPackage.STAR_EXPRESSION:
 				sequence_HighBindExpression(context, (StarExpression) semanticObject); 
+				return; 
+			case ScannerPackage.START_STATE:
+				sequence_StartState(context, (StartState) semanticObject); 
 				return; 
 			case ScannerPackage.START_STATES:
 				sequence_StartStates(context, (StartStates) semanticObject); 
@@ -299,7 +307,32 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     states+=ID
+	 *     (state+=[StartState|ID]? regex+=ANY_OTHER+)
+	 */
+	protected void sequence_SingleRule(EObject context, SingleRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_StartState(EObject context, StartState semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.START_STATE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.START_STATE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStartStateAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (states+=StartState states+=StartState*)
 	 */
 	protected void sequence_StartStates(EObject context, StartStates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

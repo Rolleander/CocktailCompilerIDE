@@ -12,21 +12,22 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalScannerLexer extends Lexer {
-    public static final int RULE_STRING=5;
+    public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=11;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int RULE_CHAR=6;
+    public static final int RULE_CHAR=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=4;
-    public static final int RULE_WS=7;
-    public static final int RULE_ANY_OTHER=8;
+    public static final int T__30=30;
+    public static final int RULE_ID=5;
+    public static final int RULE_WS=8;
+    public static final int RULE_ANY_OTHER=6;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -58,10 +59,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:11:7: ( 'SCANNER' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:11:9: 'SCANNER'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:11:7: ( 'STD' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:11:9: 'STD'
             {
-            match("SCANNER"); 
+            match("STD"); 
 
 
             }
@@ -79,10 +80,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:12:7: ( 'EXPORT {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:12:9: 'EXPORT {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:12:7: ( 'SCANNER' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:12:9: 'SCANNER'
             {
-            match("EXPORT {"); 
+            match("SCANNER"); 
 
 
             }
@@ -100,10 +101,11 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:13:7: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:13:9: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:13:7: ( 'EXPORT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:13:9: 'EXPORT {'
             {
-            match('}'); 
+            match("EXPORT {"); 
+
 
             }
 
@@ -120,11 +122,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:14:7: ( 'GLOBAL {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:14:9: 'GLOBAL {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:14:7: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:14:9: '}'
             {
-            match("GLOBAL {"); 
-
+            match('}'); 
 
             }
 
@@ -141,10 +142,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:15:7: ( 'LOCAL {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:15:9: 'LOCAL {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:15:7: ( 'GLOBAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:15:9: 'GLOBAL {'
             {
-            match("LOCAL {"); 
+            match("GLOBAL {"); 
 
 
             }
@@ -162,10 +163,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:16:7: ( 'DEFAULT {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:16:9: 'DEFAULT {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:16:7: ( 'LOCAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:16:9: 'LOCAL {'
             {
-            match("DEFAULT {"); 
+            match("LOCAL {"); 
 
 
             }
@@ -183,10 +184,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:17:7: ( 'EOF {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:17:9: 'EOF {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:17:7: ( 'DEFAULT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:17:9: 'DEFAULT {'
             {
-            match("EOF {"); 
+            match("DEFAULT {"); 
 
 
             }
@@ -204,10 +205,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:18:7: ( 'DEFINE' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:18:9: 'DEFINE'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:18:7: ( 'EOF {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:18:9: 'EOF {'
             {
-            match("DEFINE"); 
+            match("EOF {"); 
 
 
             }
@@ -225,10 +226,11 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:19:7: ( '=' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:19:9: '='
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:19:7: ( 'DEFINE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:19:9: 'DEFINE'
             {
-            match('='); 
+            match("DEFINE"); 
+
 
             }
 
@@ -245,11 +247,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:20:7: ( 'START' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:20:9: 'START'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:20:7: ( '=' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:20:9: '='
             {
-            match("START"); 
-
+            match('='); 
 
             }
 
@@ -266,10 +267,11 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:21:7: ( ',' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:21:9: ','
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:21:7: ( 'START' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:21:9: 'START'
             {
-            match(','); 
+            match("START"); 
+
 
             }
 
@@ -286,11 +288,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:22:7: ( 'RULE' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:22:9: 'RULE'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:22:7: ( ',' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:22:9: ','
             {
-            match("RULE"); 
-
+            match(','); 
 
             }
 
@@ -307,10 +308,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:23:7: ( '#STD#' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:23:9: '#STD#'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:23:7: ( 'RULE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:23:9: 'RULE'
             {
-            match("#STD#"); 
+            match("RULE"); 
 
 
             }
@@ -328,11 +329,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:24:7: ( ': {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:24:9: ': {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:24:7: ( '#' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:24:9: '#'
             {
-            match(": {"); 
-
+            match('#'); 
 
             }
 
@@ -349,10 +349,11 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:25:7: ( '+' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:25:9: '+'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:25:7: ( ': {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:25:9: ': {'
             {
-            match('+'); 
+            match(": {"); 
+
 
             }
 
@@ -369,10 +370,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:26:7: ( '*' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:26:9: '*'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:26:7: ( '+' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:26:9: '+'
             {
-            match('*'); 
+            match('+'); 
 
             }
 
@@ -389,10 +390,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:27:7: ( '(' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:27:9: '('
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:27:7: ( '*' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:27:9: '*'
             {
-            match('('); 
+            match('*'); 
 
             }
 
@@ -409,10 +410,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:28:7: ( ')' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:28:9: ')'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:28:7: ( '(' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:28:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -424,13 +425,33 @@ public class InternalScannerLexer extends Lexer {
     }
     // $ANTLR end "T__29"
 
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:29:7: ( ')' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:29:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
     // $ANTLR start "RULE_CHAR"
     public final void mRULE_CHAR() throws RecognitionException {
         try {
             int _type = RULE_CHAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2879:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2879:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3066:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3066:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -457,10 +478,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2881:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2881:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3068:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3068:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2881:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3068:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt1=0;
             loop1:
             do {
@@ -514,8 +535,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2883:16: ( . )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2883:18: .
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3070:16: ( . )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3070:18: .
             {
             matchAny(); 
 
@@ -534,10 +555,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3072:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3072:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:11: ( '^' )?
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3072:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -546,7 +567,7 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:11: '^'
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3072:11: '^'
                     {
                     match('^'); 
 
@@ -564,7 +585,7 @@ public class InternalScannerLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3072:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -613,10 +634,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2887:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2887:12: ( '0' .. '9' )+
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3074:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3074:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2887:12: ( '0' .. '9' )+
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3074:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -630,7 +651,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2887:13: '0' .. '9'
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3074:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -662,10 +683,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -683,10 +704,10 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -702,7 +723,7 @@ public class InternalScannerLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:21: '\\\\' .
+                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -710,7 +731,7 @@ public class InternalScannerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -735,10 +756,10 @@ public class InternalScannerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -754,7 +775,7 @@ public class InternalScannerLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:54: '\\\\' .
+                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -762,7 +783,7 @@ public class InternalScannerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2889:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3076:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -805,12 +826,12 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2891:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2891:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3078:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3078:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2891:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3078:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -835,7 +856,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2891:52: .
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3078:52: .
             	    {
             	    matchAny(); 
 
@@ -865,12 +886,12 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -883,7 +904,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -903,7 +924,7 @@ public class InternalScannerLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -912,9 +933,9 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:41: ( '\\r' )?
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -923,7 +944,7 @@ public class InternalScannerLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2893:41: '\\r'
+                            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3080:41: '\\r'
                             {
                             match('\r'); 
 
@@ -951,8 +972,8 @@ public class InternalScannerLexer extends Lexer {
     // $ANTLR end "RULE_SL_COMMENT"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_CHAR | RULE_WS | RULE_ANY_OTHER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT )
-        int alt12=26;
+        // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_CHAR | RULE_WS | RULE_ANY_OTHER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT )
+        int alt12=27;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1082,56 +1103,63 @@ public class InternalScannerLexer extends Lexer {
                 }
                 break;
             case 19 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:118: RULE_CHAR
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:118: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 20 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:124: RULE_CHAR
                 {
                 mRULE_CHAR(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:128: RULE_WS
+            case 21 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:134: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:136: RULE_ANY_OTHER
+            case 22 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:142: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:151: RULE_ID
+            case 23 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:157: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:159: RULE_INT
+            case 24 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:165: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:168: RULE_STRING
+            case 25 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:174: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:180: RULE_ML_COMMENT
+            case 26 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:186: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:196: RULE_SL_COMMENT
+            case 27 :
+                // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1:202: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
@@ -1145,126 +1173,129 @@ public class InternalScannerLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\33\1\uffff\3\33\2\uffff\1\33\2\30\4\uffff\1\33\1\uffff"+
-        "\2\30\1\33\3\30\1\uffff\2\34\2\uffff\2\34\1\uffff\3\34\2\uffff\1"+
-        "\34\13\uffff\13\34\1\uffff\4\34\1\111\1\34\1\113\5\34\1\uffff\1"+
-        "\34\1\uffff\2\34\1\uffff\1\34\1\125\1\126\2\uffff\1\34\3\uffff";
+        "\1\uffff\2\34\1\uffff\3\34\2\uffff\1\34\1\uffff\1\30\4\uffff\1"+
+        "\34\1\uffff\2\30\1\34\3\30\1\uffff\2\33\2\uffff\2\33\1\uffff\3\33"+
+        "\2\uffff\1\33\13\uffff\1\72\10\33\1\uffff\3\33\1\uffff\4\33\1\113"+
+        "\1\114\6\33\2\uffff\3\33\1\uffff\1\33\1\127\1\130\2\uffff\1\33\3"+
+        "\uffff";
     static final String DFA12_eofS =
-        "\130\uffff";
+        "\132\uffff";
     static final String DFA12_minS =
-        "\1\0\2\60\1\uffff\3\60\2\uffff\1\60\1\123\1\40\4\uffff\1\60\1\uffff"+
-        "\1\101\2\60\2\0\1\52\1\uffff\2\101\2\uffff\1\120\1\106\1\uffff\1"+
-        "\117\1\103\1\106\2\uffff\1\114\13\uffff\1\116\1\122\1\117\1\40\1"+
-        "\102\2\101\1\105\1\116\1\124\1\122\1\uffff\1\101\1\114\1\125\1\116"+
-        "\1\60\1\105\1\60\1\124\1\114\1\40\1\114\1\105\1\uffff\1\122\1\uffff"+
-        "\2\40\1\uffff\1\124\2\60\2\uffff\1\40\3\uffff";
+        "\1\0\2\60\1\uffff\3\60\2\uffff\1\60\1\uffff\1\40\4\uffff\1\60\1"+
+        "\uffff\1\101\2\60\2\0\1\52\1\uffff\2\101\2\uffff\1\120\1\106\1\uffff"+
+        "\1\117\1\103\1\106\2\uffff\1\114\13\uffff\1\60\1\122\1\116\1\117"+
+        "\1\40\1\102\2\101\1\105\1\uffff\1\124\1\116\1\122\1\uffff\1\101"+
+        "\1\114\1\125\1\116\2\60\1\105\1\124\1\114\1\40\1\114\1\105\2\uffff"+
+        "\1\122\2\40\1\uffff\1\124\2\60\2\uffff\1\40\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\2\172\1\uffff\3\172\2\uffff\1\172\1\123\1\40\4\uffff\1"+
-        "\172\1\uffff\2\172\1\71\2\uffff\1\57\1\uffff\2\101\2\uffff\1\120"+
-        "\1\106\1\uffff\1\117\1\103\1\106\2\uffff\1\114\13\uffff\1\116\1"+
-        "\122\1\117\1\40\1\102\1\101\1\111\1\105\1\116\1\124\1\122\1\uffff"+
-        "\1\101\1\114\1\125\1\116\1\172\1\105\1\172\1\124\1\114\1\40\1\114"+
-        "\1\105\1\uffff\1\122\1\uffff\2\40\1\uffff\1\124\2\172\2\uffff\1"+
-        "\40\3\uffff";
+        "\1\uffff\2\172\1\uffff\3\172\2\uffff\1\172\1\uffff\1\40\4\uffff"+
+        "\1\172\1\uffff\2\172\1\71\2\uffff\1\57\1\uffff\1\104\1\101\2\uffff"+
+        "\1\120\1\106\1\uffff\1\117\1\103\1\106\2\uffff\1\114\13\uffff\1"+
+        "\172\1\122\1\116\1\117\1\40\1\102\1\101\1\111\1\105\1\uffff\1\124"+
+        "\1\116\1\122\1\uffff\1\101\1\114\1\125\1\116\2\172\1\105\1\124\1"+
+        "\114\1\40\1\114\1\105\2\uffff\1\122\2\40\1\uffff\1\124\2\172\2\uffff"+
+        "\1\40\3\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\3\3\uffff\1\11\1\13\3\uffff\1\17\1\20\1\21\1\22\1\uffff"+
-        "\1\24\6\uffff\1\25\2\uffff\1\23\1\26\2\uffff\1\3\3\uffff\1\11\1"+
-        "\13\1\uffff\1\15\1\16\1\17\1\20\1\21\1\22\1\24\1\27\1\30\1\31\1"+
-        "\32\13\uffff\1\7\14\uffff\1\14\1\uffff\1\12\2\uffff\1\5\3\uffff"+
-        "\1\2\1\4\1\uffff\1\10\1\1\1\6";
+        "\3\uffff\1\4\3\uffff\1\12\1\14\1\uffff\1\16\1\uffff\1\20\1\21\1"+
+        "\22\1\23\1\uffff\1\25\6\uffff\1\26\2\uffff\1\27\1\24\2\uffff\1\4"+
+        "\3\uffff\1\12\1\14\1\uffff\1\16\1\17\1\20\1\21\1\22\1\23\1\25\1"+
+        "\30\1\31\1\32\1\33\11\uffff\1\1\3\uffff\1\10\14\uffff\1\15\1\13"+
+        "\3\uffff\1\6\3\uffff\1\3\1\5\1\uffff\1\11\1\2\1\7";
     static final String DFA12_specialS =
-        "\1\2\24\uffff\1\0\1\1\101\uffff}>";
+        "\1\1\24\uffff\1\2\1\0\103\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\30\2\21\2\30\1\21\22\30\1\21\1\30\1\25\1\12\3\30\1\26\1"+
             "\16\1\17\1\15\1\14\1\10\2\30\1\27\12\24\1\13\2\30\1\7\3\30\3"+
             "\20\1\6\1\2\1\20\1\4\4\20\1\5\5\20\1\11\1\1\7\20\3\30\1\22\1"+
             "\23\1\30\32\20\2\30\1\3\uff82\30",
-            "\12\34\7\uffff\2\34\1\31\20\34\1\32\6\34\4\uffff\1\34\1\uffff"+
-            "\32\34",
-            "\12\34\7\uffff\16\34\1\36\10\34\1\35\2\34\4\uffff\1\34\1\uffff"+
-            "\32\34",
+            "\12\33\7\uffff\2\33\1\32\20\33\1\31\6\33\4\uffff\1\33\1\uffff"+
+            "\32\33",
+            "\12\33\7\uffff\16\33\1\36\10\33\1\35\2\33\4\uffff\1\33\1\uffff"+
+            "\32\33",
             "",
-            "\12\34\7\uffff\13\34\1\40\16\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\16\34\1\41\13\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\4\34\1\42\25\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\33\7\uffff\13\33\1\40\16\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\16\33\1\41\13\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\4\33\1\42\25\33\4\uffff\1\33\1\uffff\32\33",
             "",
             "",
-            "\12\34\7\uffff\24\34\1\45\5\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\46",
+            "\12\33\7\uffff\24\33\1\45\5\33\4\uffff\1\33\1\uffff\32\33",
+            "",
             "\1\47",
             "",
             "",
             "",
             "",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
-            "\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\12\55",
             "\0\56",
             "\0\56",
             "\1\57\4\uffff\1\60",
             "",
-            "\1\61",
-            "\1\62",
-            "",
-            "",
+            "\1\62\2\uffff\1\61",
             "\1\63",
-            "\1\64",
             "",
+            "",
+            "\1\64",
             "\1\65",
+            "",
             "\1\66",
             "\1\67",
-            "",
-            "",
             "\1\70",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\71",
-            "\1\72",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\73",
             "\1\74",
             "\1\75",
             "\1\76",
-            "\1\77\7\uffff\1\100",
-            "\1\101",
-            "\1\102",
+            "\1\77",
+            "\1\100",
+            "\1\101\7\uffff\1\102",
             "\1\103",
-            "\1\104",
             "",
+            "\1\104",
             "\1\105",
             "\1\106",
+            "",
             "\1\107",
             "\1\110",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\111",
             "\1\112",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\1\114",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
-            "",
             "\1\121",
-            "",
             "\1\122",
+            "",
+            "",
             "\1\123",
-            "",
             "\1\124",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
-            "\12\34\7\uffff\32\34\4\uffff\1\34\1\uffff\32\34",
+            "\1\125",
+            "",
+            "\1\126",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
             "",
             "",
-            "\1\127",
+            "\1\131",
             "",
             "",
             ""
@@ -1300,23 +1331,13 @@ public class InternalScannerLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_CHAR | RULE_WS | RULE_ANY_OTHER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_CHAR | RULE_WS | RULE_ANY_OTHER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_21 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 46;}
-
-                        else s = 24;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_22 = input.LA(1);
 
                         s = -1;
@@ -1326,7 +1347,7 @@ public class InternalScannerLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1377,6 +1398,16 @@ public class InternalScannerLexer extends Lexer {
                         else if ( (LA12_0=='/') ) {s = 23;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='$' && LA12_0<='&')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=';' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='|')||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 24;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_21 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 46;}
+
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;

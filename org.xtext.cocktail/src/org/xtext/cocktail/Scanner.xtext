@@ -33,58 +33,23 @@ DefineRule:
 	defineName=ID '=' defineRule=ID;
 
 StartStates: 
-'START' states+= ID (',' ID)*
+'START' states+= StartState (',' states+=StartState)*
+;
+
+StartState:
+	name= ID
 ;
 
 Rule:
 	'RULE' content=SingleRule*;
 
-
+//Rule: #Statename# oder #STD# regex :  { rule-content }
 SingleRule:
-	'#STD#' STRING ': {' STRING '}'  
+	'#' (state+=[StartState] | 'STD') '#' regex+='#TODO' ': {' STRING '}'  
 ;
 
 
-
-// Fremdcode importiert
-
-//# von https://www.eclipse.org/forums/index.php/t/600708/
-RegularExpression:
-	OrExpression
-;
-
-OrExpression:
-	SequenceExpression ({OrExpression.left = current} '+' right=SequenceExpression)*
-;
-
-SequenceExpression:
-	HighBindExpression({SequenceExpression.left = current} right = HighBindExpression)*
-        // note the abscence of a syntactic separating symbol -> juxtaposition!
-;
-
-HighBindExpression:
-        AtomicExpression ('*'{StarExpression.innerExpression=current} '*'* )?
-;
-
-AtomicExpression:
-	BracedExpression | Atom
-;
-
-BracedExpression:
-	'(' innerExpression = RegularExpression ')'
-;
-
-Atom:
-	value = CHAR
-;
-
-terminal CHAR returns ecore::EChar:
-	('a'..'z'|'A'..'Z'|'0'..'9')
-;
-
-terminal WS			: (' '|'\t'|'\r'|'\n')+;
-
-terminal ANY_OTHER: .;
-
-
-
+terminal ID : 
+      ('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*; 
+      
+      

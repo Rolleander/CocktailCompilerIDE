@@ -36,10 +36,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/defineRule"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//StartStates">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//StartStates/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StartStates/states"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//StartState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//StartState/name"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//Rule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Rule/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//SingleRule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//SingleRule/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/regex"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//RegularExpression"/>
     <genClasses ecoreClass="Scanner.ecore#//OrExpression">

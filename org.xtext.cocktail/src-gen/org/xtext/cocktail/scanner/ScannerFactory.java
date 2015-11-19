@@ -113,6 +113,15 @@ public interface ScannerFactory extends EFactory
   StartStates createStartStates();
 
   /**
+   * Returns a new object of class '<em>Start State</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Start State</em>'.
+   * @generated
+   */
+  StartState createStartState();
+
+  /**
    * Returns a new object of class '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +129,15 @@ public interface ScannerFactory extends EFactory
    * @generated
    */
   Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>Single Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Rule</em>'.
+   * @generated
+   */
+  SingleRule createSingleRule();
 
   /**
    * Returns a new object of class '<em>Regular Expression</em>'.

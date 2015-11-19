@@ -2,55 +2,57 @@
  */
 package org.xtext.cocktail.scanner.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.StartState;
-import org.xtext.cocktail.scanner.StartStates;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Start States</b></em>'.
+ * An implementation of the model object '<em><b>Start State</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getStates <em>States</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.StartStateImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StartStatesImpl extends MinimalEObjectImpl.Container implements StartStates
+public class StartStateImpl extends MinimalEObjectImpl.Container implements StartState
 {
   /**
-   * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStates()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<StartState> states;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StartStatesImpl()
+  protected StartStateImpl()
   {
     super();
   }
@@ -63,7 +65,7 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   @Override
   protected EClass eStaticClass()
   {
-    return ScannerPackage.Literals.START_STATES;
+    return ScannerPackage.Literals.START_STATE;
   }
 
   /**
@@ -71,13 +73,9 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StartState> getStates()
+  public String getName()
   {
-    if (states == null)
-    {
-      states = new EObjectContainmentEList<StartState>(StartState.class, this, ScannerPackage.START_STATES__STATES);
-    }
-    return states;
+    return name;
   }
 
   /**
@@ -85,15 +83,12 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setName(String newName)
   {
-    switch (featureID)
-    {
-      case ScannerPackage.START_STATES__STATES:
-        return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.START_STATE__NAME, oldName, name));
   }
 
   /**
@@ -106,8 +101,8 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        return getStates();
+      case ScannerPackage.START_STATE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,15 +112,13 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        getStates().clear();
-        getStates().addAll((Collection<? extends StartState>)newValue);
+      case ScannerPackage.START_STATE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +134,8 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        getStates().clear();
+      case ScannerPackage.START_STATE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +151,27 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        return states != null && !states.isEmpty();
+      case ScannerPackage.START_STATE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
 
-} //StartStatesImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
+
+} //StartStateImpl

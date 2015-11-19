@@ -37,6 +37,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getSingleRuleAccess().getAlternatives_1(), "rule__SingleRule__Alternatives_1");
 					put(grammarAccess.getAtomicExpressionAccess().getAlternatives(), "rule__AtomicExpression__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
@@ -77,7 +78,11 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefineRuleAccess().getDefineNameAssignment_0(), "rule__DefineRule__DefineNameAssignment_0");
 					put(grammarAccess.getDefineRuleAccess().getDefineRuleAssignment_2(), "rule__DefineRule__DefineRuleAssignment_2");
 					put(grammarAccess.getStartStatesAccess().getStatesAssignment_1(), "rule__StartStates__StatesAssignment_1");
+					put(grammarAccess.getStartStatesAccess().getStatesAssignment_2_1(), "rule__StartStates__StatesAssignment_2_1");
+					put(grammarAccess.getStartStateAccess().getNameAssignment(), "rule__StartState__NameAssignment");
 					put(grammarAccess.getRuleAccess().getContentAssignment_1(), "rule__Rule__ContentAssignment_1");
+					put(grammarAccess.getSingleRuleAccess().getStateAssignment_1_0(), "rule__SingleRule__StateAssignment_1_0");
+					put(grammarAccess.getSingleRuleAccess().getRegexAssignment_3(), "rule__SingleRule__RegexAssignment_3");
 					put(grammarAccess.getOrExpressionAccess().getRightAssignment_1_2(), "rule__OrExpression__RightAssignment_1_2");
 					put(grammarAccess.getSequenceExpressionAccess().getRightAssignment_1_1(), "rule__SequenceExpression__RightAssignment_1_1");
 					put(grammarAccess.getBracedExpressionAccess().getInnerExpressionAssignment_1(), "rule__BracedExpression__InnerExpressionAssignment_1");

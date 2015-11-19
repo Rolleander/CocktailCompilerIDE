@@ -328,7 +328,7 @@ public interface ScannerPackage extends EPackage
   int START_STATES = 9;
 
   /**
-   * The feature id for the '<em><b>States</b></em>' attribute list.
+   * The feature id for the '<em><b>States</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -346,6 +346,34 @@ public interface ScannerPackage extends EPackage
   int START_STATES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.StartStateImpl <em>Start State</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.StartStateImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartState()
+   * @generated
+   */
+  int START_STATE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int START_STATE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Start State</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int START_STATE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RuleImpl <em>Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -353,10 +381,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRule()
    * @generated
    */
-  int RULE = 10;
+  int RULE = 11;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -374,6 +402,43 @@ public interface ScannerPackage extends EPackage
   int RULE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl <em>Single Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.SingleRuleImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSingleRule()
+   * @generated
+   */
+  int SINGLE_RULE = 12;
+
+  /**
+   * The feature id for the '<em><b>State</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_RULE__STATE = 0;
+
+  /**
+   * The feature id for the '<em><b>Regex</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_RULE__REGEX = 1;
+
+  /**
+   * The number of structural features of the '<em>Single Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_RULE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RegularExpressionImpl <em>Regular Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -381,7 +446,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRegularExpression()
    * @generated
    */
-  int REGULAR_EXPRESSION = 11;
+  int REGULAR_EXPRESSION = 13;
 
   /**
    * The number of structural features of the '<em>Regular Expression</em>' class.
@@ -400,7 +465,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getOrExpression()
    * @generated
    */
-  int OR_EXPRESSION = 12;
+  int OR_EXPRESSION = 14;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -437,7 +502,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSequenceExpression()
    * @generated
    */
-  int SEQUENCE_EXPRESSION = 13;
+  int SEQUENCE_EXPRESSION = 15;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -474,7 +539,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getHighBindExpression()
    * @generated
    */
-  int HIGH_BIND_EXPRESSION = 14;
+  int HIGH_BIND_EXPRESSION = 16;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -511,7 +576,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtomicExpression()
    * @generated
    */
-  int ATOMIC_EXPRESSION = 15;
+  int ATOMIC_EXPRESSION = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -548,7 +613,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBracedExpression()
    * @generated
    */
-  int BRACED_EXPRESSION = 16;
+  int BRACED_EXPRESSION = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -594,7 +659,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtom()
    * @generated
    */
-  int ATOM = 17;
+  int ATOM = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -640,7 +705,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStarExpression()
    * @generated
    */
-  int STAR_EXPRESSION = 18;
+  int STAR_EXPRESSION = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -890,15 +955,36 @@ public interface ScannerPackage extends EPackage
   EClass getStartStates();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.StartStates#getStates <em>States</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.StartStates#getStates <em>States</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>States</em>'.
+   * @return the meta object for the containment reference list '<em>States</em>'.
    * @see org.xtext.cocktail.scanner.StartStates#getStates()
    * @see #getStartStates()
    * @generated
    */
-  EAttribute getStartStates_States();
+  EReference getStartStates_States();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.StartState <em>Start State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Start State</em>'.
+   * @see org.xtext.cocktail.scanner.StartState
+   * @generated
+   */
+  EClass getStartState();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.StartState#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.cocktail.scanner.StartState#getName()
+   * @see #getStartState()
+   * @generated
+   */
+  EAttribute getStartState_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Rule <em>Rule</em>}'.
@@ -911,15 +997,47 @@ public interface ScannerPackage extends EPackage
   EClass getRule();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Rule#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Rule#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Rule#getContent()
    * @see #getRule()
    * @generated
    */
-  EAttribute getRule_Content();
+  EReference getRule_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.SingleRule <em>Single Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Rule</em>'.
+   * @see org.xtext.cocktail.scanner.SingleRule
+   * @generated
+   */
+  EClass getSingleRule();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.SingleRule#getState <em>State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>State</em>'.
+   * @see org.xtext.cocktail.scanner.SingleRule#getState()
+   * @see #getSingleRule()
+   * @generated
+   */
+  EReference getSingleRule_State();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getRegex <em>Regex</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Regex</em>'.
+   * @see org.xtext.cocktail.scanner.SingleRule#getRegex()
+   * @see #getSingleRule()
+   * @generated
+   */
+  EAttribute getSingleRule_Regex();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RegularExpression <em>Regular Expression</em>}'.
@@ -1260,12 +1378,30 @@ public interface ScannerPackage extends EPackage
     EClass START_STATES = eINSTANCE.getStartStates();
 
     /**
-     * The meta object literal for the '<em><b>States</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute START_STATES__STATES = eINSTANCE.getStartStates_States();
+    EReference START_STATES__STATES = eINSTANCE.getStartStates_States();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.StartStateImpl <em>Start State</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.StartStateImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartState()
+     * @generated
+     */
+    EClass START_STATE = eINSTANCE.getStartState();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute START_STATE__NAME = eINSTANCE.getStartState_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RuleImpl <em>Rule</em>}' class.
@@ -1278,12 +1414,38 @@ public interface ScannerPackage extends EPackage
     EClass RULE = eINSTANCE.getRule();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RULE__CONTENT = eINSTANCE.getRule_Content();
+    EReference RULE__CONTENT = eINSTANCE.getRule_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl <em>Single Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.SingleRuleImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSingleRule()
+     * @generated
+     */
+    EClass SINGLE_RULE = eINSTANCE.getSingleRule();
+
+    /**
+     * The meta object literal for the '<em><b>State</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SINGLE_RULE__STATE = eINSTANCE.getSingleRule_State();
+
+    /**
+     * The meta object literal for the '<em><b>Regex</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_RULE__REGEX = eINSTANCE.getSingleRule_Regex();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RegularExpressionImpl <em>Regular Expression</em>}' class.
