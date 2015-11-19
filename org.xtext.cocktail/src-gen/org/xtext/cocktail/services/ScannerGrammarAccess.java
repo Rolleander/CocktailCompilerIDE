@@ -365,23 +365,234 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRULEKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cContentAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cContentIDTerminalRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
+		private final RuleCall cContentSingleRuleParserRuleCall_1_0 = (RuleCall)cContentAssignment_1.eContents().get(0);
 		
 		//Rule:
-		//	"RULE" content=ID;
+		//	"RULE" content=SingleRule*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"RULE" content=ID
+		//"RULE" content=SingleRule*
 		public Group getGroup() { return cGroup; }
 
 		//"RULE"
 		public Keyword getRULEKeyword_0() { return cRULEKeyword_0; }
 
-		//content=ID
+		//content=SingleRule*
 		public Assignment getContentAssignment_1() { return cContentAssignment_1; }
 
-		//ID
-		public RuleCall getContentIDTerminalRuleCall_1_0() { return cContentIDTerminalRuleCall_1_0; }
+		//SingleRule
+		public RuleCall getContentSingleRuleParserRuleCall_1_0() { return cContentSingleRuleParserRuleCall_1_0; }
+	}
+
+	public class SingleRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SingleRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSTDKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cColonSpaceLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//SingleRule:
+		//	"#STD#" STRING ": {" STRING "}";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"#STD#" STRING ": {" STRING "}"
+		public Group getGroup() { return cGroup; }
+
+		//"#STD#"
+		public Keyword getSTDKeyword_0() { return cSTDKeyword_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+
+		//": {"
+		public Keyword getColonSpaceLeftCurlyBracketKeyword_2() { return cColonSpaceLeftCurlyBracketKeyword_2; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+
+	public class RegularExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RegularExpression");
+		private final RuleCall cOrExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//// Fremdcode importiert
+		////# von https://www.eclipse.org/forums/index.php/t/600708/
+		//RegularExpression:
+		//	OrExpression;
+		@Override public ParserRule getRule() { return rule; }
+
+		//OrExpression
+		public RuleCall getOrExpressionParserRuleCall() { return cOrExpressionParserRuleCall; }
+	}
+
+	public class OrExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OrExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cSequenceExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cOrExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cPlusSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightSequenceExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//OrExpression:
+		//	SequenceExpression ({OrExpression.left=current} "+" right=SequenceExpression)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//SequenceExpression ({OrExpression.left=current} "+" right=SequenceExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//SequenceExpression
+		public RuleCall getSequenceExpressionParserRuleCall_0() { return cSequenceExpressionParserRuleCall_0; }
+
+		//({OrExpression.left=current} "+" right=SequenceExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{OrExpression.left=current}
+		public Action getOrExpressionLeftAction_1_0() { return cOrExpressionLeftAction_1_0; }
+
+		//"+"
+		public Keyword getPlusSignKeyword_1_1() { return cPlusSignKeyword_1_1; }
+
+		//right=SequenceExpression
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+
+		//SequenceExpression
+		public RuleCall getRightSequenceExpressionParserRuleCall_1_2_0() { return cRightSequenceExpressionParserRuleCall_1_2_0; }
+	}
+
+	public class SequenceExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SequenceExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cHighBindExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cSequenceExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightHighBindExpressionParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//// note the abscence of a syntactic separating symbol -> juxtaposition!
+		//SequenceExpression:
+		//	HighBindExpression ({SequenceExpression.left=current} right=HighBindExpression)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//HighBindExpression ({SequenceExpression.left=current} right=HighBindExpression)*
+		public Group getGroup() { return cGroup; }
+
+		//HighBindExpression
+		public RuleCall getHighBindExpressionParserRuleCall_0() { return cHighBindExpressionParserRuleCall_0; }
+
+		//({SequenceExpression.left=current} right=HighBindExpression)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{SequenceExpression.left=current}
+		public Action getSequenceExpressionLeftAction_1_0() { return cSequenceExpressionLeftAction_1_0; }
+
+		//right=HighBindExpression
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+
+		//HighBindExpression
+		public RuleCall getRightHighBindExpressionParserRuleCall_1_1_0() { return cRightHighBindExpressionParserRuleCall_1_1_0; }
+	}
+
+	public class HighBindExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HighBindExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAtomicExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cAsteriskKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Action cStarExpressionInnerExpressionAction_1_1 = (Action)cGroup_1.eContents().get(1);
+		private final Keyword cAsteriskKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//HighBindExpression:
+		//	AtomicExpression ("*" {StarExpression.innerExpression=current} "*"*)?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//AtomicExpression ("*" {StarExpression.innerExpression=current} "*"*)?
+		public Group getGroup() { return cGroup; }
+
+		//AtomicExpression
+		public RuleCall getAtomicExpressionParserRuleCall_0() { return cAtomicExpressionParserRuleCall_0; }
+
+		//("*" {StarExpression.innerExpression=current} "*"*)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"*"
+		public Keyword getAsteriskKeyword_1_0() { return cAsteriskKeyword_1_0; }
+
+		//{StarExpression.innerExpression=current}
+		public Action getStarExpressionInnerExpressionAction_1_1() { return cStarExpressionInnerExpressionAction_1_1; }
+
+		//"*"*
+		public Keyword getAsteriskKeyword_1_2() { return cAsteriskKeyword_1_2; }
+	}
+
+	public class AtomicExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AtomicExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cBracedExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAtomParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AtomicExpression:
+		//	BracedExpression | Atom;
+		@Override public ParserRule getRule() { return rule; }
+
+		//BracedExpression | Atom
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//BracedExpression
+		public RuleCall getBracedExpressionParserRuleCall_0() { return cBracedExpressionParserRuleCall_0; }
+
+		//Atom
+		public RuleCall getAtomParserRuleCall_1() { return cAtomParserRuleCall_1; }
+	}
+
+	public class BracedExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BracedExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cInnerExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInnerExpressionRegularExpressionParserRuleCall_1_0 = (RuleCall)cInnerExpressionAssignment_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//BracedExpression:
+		//	"(" innerExpression=RegularExpression ")";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"(" innerExpression=RegularExpression ")"
+		public Group getGroup() { return cGroup; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+
+		//innerExpression=RegularExpression
+		public Assignment getInnerExpressionAssignment_1() { return cInnerExpressionAssignment_1; }
+
+		//RegularExpression
+		public RuleCall getInnerExpressionRegularExpressionParserRuleCall_1_0() { return cInnerExpressionRegularExpressionParserRuleCall_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+	}
+
+	public class AtomElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Atom");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueCHARTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//Atom:
+		//	value=CHAR;
+		@Override public ParserRule getRule() { return rule; }
+
+		//value=CHAR
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//CHAR
+		public RuleCall getValueCHARTerminalRuleCall_0() { return cValueCHARTerminalRuleCall_0; }
 	}
 	
 	
@@ -396,6 +607,17 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	private final DefineRuleElements pDefineRule;
 	private final StartStatesElements pStartStates;
 	private final RuleElements pRule;
+	private final SingleRuleElements pSingleRule;
+	private final RegularExpressionElements pRegularExpression;
+	private final OrExpressionElements pOrExpression;
+	private final SequenceExpressionElements pSequenceExpression;
+	private final HighBindExpressionElements pHighBindExpression;
+	private final AtomicExpressionElements pAtomicExpression;
+	private final BracedExpressionElements pBracedExpression;
+	private final AtomElements pAtom;
+	private final TerminalRule tCHAR;
+	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
 
@@ -417,6 +639,17 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDefineRule = new DefineRuleElements();
 		this.pStartStates = new StartStatesElements();
 		this.pRule = new RuleElements();
+		this.pSingleRule = new SingleRuleElements();
+		this.pRegularExpression = new RegularExpressionElements();
+		this.pOrExpression = new OrExpressionElements();
+		this.pSequenceExpression = new SequenceExpressionElements();
+		this.pHighBindExpression = new HighBindExpressionElements();
+		this.pAtomicExpression = new AtomicExpressionElements();
+		this.pBracedExpression = new BracedExpressionElements();
+		this.pAtom = new AtomElements();
+		this.tCHAR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CHAR");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -548,7 +781,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Rule:
-	//	"RULE" content=ID;
+	//	"RULE" content=SingleRule*;
 	public RuleElements getRuleAccess() {
 		return pRule;
 	}
@@ -556,6 +789,107 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getRuleRule() {
 		return getRuleAccess().getRule();
 	}
+
+	//SingleRule:
+	//	"#STD#" STRING ": {" STRING "}";
+	public SingleRuleElements getSingleRuleAccess() {
+		return pSingleRule;
+	}
+	
+	public ParserRule getSingleRuleRule() {
+		return getSingleRuleAccess().getRule();
+	}
+
+	//// Fremdcode importiert
+	////# von https://www.eclipse.org/forums/index.php/t/600708/
+	//RegularExpression:
+	//	OrExpression;
+	public RegularExpressionElements getRegularExpressionAccess() {
+		return pRegularExpression;
+	}
+	
+	public ParserRule getRegularExpressionRule() {
+		return getRegularExpressionAccess().getRule();
+	}
+
+	//OrExpression:
+	//	SequenceExpression ({OrExpression.left=current} "+" right=SequenceExpression)*;
+	public OrExpressionElements getOrExpressionAccess() {
+		return pOrExpression;
+	}
+	
+	public ParserRule getOrExpressionRule() {
+		return getOrExpressionAccess().getRule();
+	}
+
+	//// note the abscence of a syntactic separating symbol -> juxtaposition!
+	//SequenceExpression:
+	//	HighBindExpression ({SequenceExpression.left=current} right=HighBindExpression)*;
+	public SequenceExpressionElements getSequenceExpressionAccess() {
+		return pSequenceExpression;
+	}
+	
+	public ParserRule getSequenceExpressionRule() {
+		return getSequenceExpressionAccess().getRule();
+	}
+
+	//HighBindExpression:
+	//	AtomicExpression ("*" {StarExpression.innerExpression=current} "*"*)?;
+	public HighBindExpressionElements getHighBindExpressionAccess() {
+		return pHighBindExpression;
+	}
+	
+	public ParserRule getHighBindExpressionRule() {
+		return getHighBindExpressionAccess().getRule();
+	}
+
+	//AtomicExpression:
+	//	BracedExpression | Atom;
+	public AtomicExpressionElements getAtomicExpressionAccess() {
+		return pAtomicExpression;
+	}
+	
+	public ParserRule getAtomicExpressionRule() {
+		return getAtomicExpressionAccess().getRule();
+	}
+
+	//BracedExpression:
+	//	"(" innerExpression=RegularExpression ")";
+	public BracedExpressionElements getBracedExpressionAccess() {
+		return pBracedExpression;
+	}
+	
+	public ParserRule getBracedExpressionRule() {
+		return getBracedExpressionAccess().getRule();
+	}
+
+	//Atom:
+	//	value=CHAR;
+	public AtomElements getAtomAccess() {
+		return pAtom;
+	}
+	
+	public ParserRule getAtomRule() {
+		return getAtomAccess().getRule();
+	}
+
+	//terminal CHAR returns ecore::EChar:
+	//	"a".."z" | "A".."Z" | "0".."9";
+	public TerminalRule getCHARRule() {
+		return tCHAR;
+	} 
+
+	//terminal WS:
+	//	(" " | "\t" | "\r" | "\n")+;
+	public TerminalRule getWSRule() {
+		return tWS;
+	} 
+
+	//terminal ANY_OTHER:
+	//	.;
+	public TerminalRule getANY_OTHERRule() {
+		return tANY_OTHER;
+	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
@@ -586,17 +920,5 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
-	} 
-
-	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
-	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
-	} 
-
-	//terminal ANY_OTHER:
-	//	.;
-	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
 	} 
 }

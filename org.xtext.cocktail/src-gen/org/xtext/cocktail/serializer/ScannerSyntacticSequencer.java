@@ -21,11 +21,13 @@ import org.xtext.cocktail.services.ScannerGrammarAccess;
 public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ScannerGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_HighBindExpression_AsteriskKeyword_1_2_a;
 	protected AbstractElementAlias match_StartStates___CommaKeyword_2_0_IDTerminalRuleCall_2_1__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ScannerGrammarAccess) access;
+		match_HighBindExpression_AsteriskKeyword_1_2_a = new TokenAlias(true, true, grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_2());
 		match_StartStates___CommaKeyword_2_0_IDTerminalRuleCall_2_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getStartStatesAccess().getCommaKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getStartStatesAccess().getIDTerminalRuleCall_2_1()));
 	}
 	
@@ -51,12 +53,25 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_StartStates___CommaKeyword_2_0_IDTerminalRuleCall_2_1__a.equals(syntax))
+			if(match_HighBindExpression_AsteriskKeyword_1_2_a.equals(syntax))
+				emit_HighBindExpression_AsteriskKeyword_1_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_StartStates___CommaKeyword_2_0_IDTerminalRuleCall_2_1__a.equals(syntax))
 				emit_StartStates___CommaKeyword_2_0_IDTerminalRuleCall_2_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     '*'*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     {StarExpression.innerExpression=} (ambiguity) (rule end)
+	 */
+	protected void emit_HighBindExpression_AsteriskKeyword_1_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     (',' ID)*

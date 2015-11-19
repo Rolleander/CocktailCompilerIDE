@@ -38,4 +38,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RegularExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//RegularExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//OrExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SequenceExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceExpression" eSuperTypes="#//OrExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HighBindExpression" eSuperTypes="#//SequenceExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicExpression" eSuperTypes="#//HighBindExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BracedExpression" eSuperTypes="#//AtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerExpression" eType="#//RegularExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//AtomicExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StarExpression" eSuperTypes="#//HighBindExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerExpression" eType="#//AtomicExpression"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -16,6 +16,8 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.cocktail.scanner.Atom;
+import org.xtext.cocktail.scanner.BracedExpression;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -24,8 +26,11 @@ import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.Global;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
+import org.xtext.cocktail.scanner.OrExpression;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.ScannerPackage;
+import org.xtext.cocktail.scanner.SequenceExpression;
+import org.xtext.cocktail.scanner.StarExpression;
 import org.xtext.cocktail.scanner.StartStates;
 import org.xtext.cocktail.scanner.Title;
 import org.xtext.cocktail.services.ScannerGrammarAccess;
@@ -39,6 +44,12 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ScannerPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ScannerPackage.ATOM:
+				sequence_Atom(context, (Atom) semanticObject); 
+				return; 
+			case ScannerPackage.BRACED_EXPRESSION:
+				sequence_BracedExpression(context, (BracedExpression) semanticObject); 
+				return; 
 			case ScannerPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
 				return; 
@@ -63,8 +74,17 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ScannerPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case ScannerPackage.OR_EXPRESSION:
+				sequence_OrExpression(context, (OrExpression) semanticObject); 
+				return; 
 			case ScannerPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
+			case ScannerPackage.SEQUENCE_EXPRESSION:
+				sequence_SequenceExpression(context, (SequenceExpression) semanticObject); 
+				return; 
+			case ScannerPackage.STAR_EXPRESSION:
+				sequence_HighBindExpression(context, (StarExpression) semanticObject); 
 				return; 
 			case ScannerPackage.START_STATES:
 				sequence_StartStates(context, (StartStates) semanticObject); 
@@ -75,6 +95,24 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     value=CHAR
+	 */
+	protected void sequence_Atom(EObject context, Atom semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     innerExpression=RegularExpression
+	 */
+	protected void sequence_BracedExpression(EObject context, BracedExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -170,6 +208,15 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     innerExpression=HighBindExpression_StarExpression_1_1
+	 */
+	protected void sequence_HighBindExpression(EObject context, StarExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     content=ID
 	 */
 	protected void sequence_Local(EObject context, Local semanticObject) {
@@ -205,16 +252,47 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     content=ID
+	 *     (left=OrExpression_OrExpression_1_0 right=SequenceExpression)
 	 */
-	protected void sequence_Rule(EObject context, Rule semanticObject) {
+	protected void sequence_OrExpression(EObject context, OrExpression semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.RULE__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.RULE__CONTENT));
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__RIGHT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRuleAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOrExpressionAccess().getRightSequenceExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     content=SingleRule*
+	 */
+	protected void sequence_Rule(EObject context, Rule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=SequenceExpression_SequenceExpression_1_0 right=HighBindExpression)
+	 */
+	protected void sequence_SequenceExpression(EObject context, SequenceExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.OR_EXPRESSION__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSequenceExpressionAccess().getSequenceExpressionLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getSequenceExpressionAccess().getRightHighBindExpressionParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	

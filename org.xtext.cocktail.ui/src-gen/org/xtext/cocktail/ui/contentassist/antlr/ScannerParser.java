@@ -37,6 +37,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getAtomicExpressionAccess().getAlternatives(), "rule__AtomicExpression__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
 					put(grammarAccess.getExportAccess().getGroup(), "rule__Export__Group__0");
@@ -49,6 +50,14 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartStatesAccess().getGroup(), "rule__StartStates__Group__0");
 					put(grammarAccess.getStartStatesAccess().getGroup_2(), "rule__StartStates__Group_2__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
+					put(grammarAccess.getSingleRuleAccess().getGroup(), "rule__SingleRule__Group__0");
+					put(grammarAccess.getOrExpressionAccess().getGroup(), "rule__OrExpression__Group__0");
+					put(grammarAccess.getOrExpressionAccess().getGroup_1(), "rule__OrExpression__Group_1__0");
+					put(grammarAccess.getSequenceExpressionAccess().getGroup(), "rule__SequenceExpression__Group__0");
+					put(grammarAccess.getSequenceExpressionAccess().getGroup_1(), "rule__SequenceExpression__Group_1__0");
+					put(grammarAccess.getHighBindExpressionAccess().getGroup(), "rule__HighBindExpression__Group__0");
+					put(grammarAccess.getHighBindExpressionAccess().getGroup_1(), "rule__HighBindExpression__Group_1__0");
+					put(grammarAccess.getBracedExpressionAccess().getGroup(), "rule__BracedExpression__Group__0");
 					put(grammarAccess.getModelAccess().getScannerAssignment_0(), "rule__Model__ScannerAssignment_0");
 					put(grammarAccess.getModelAccess().getScannerAssignment_1(), "rule__Model__ScannerAssignment_1");
 					put(grammarAccess.getModelAccess().getScannerAssignment_2(), "rule__Model__ScannerAssignment_2");
@@ -69,6 +78,10 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefineRuleAccess().getDefineRuleAssignment_2(), "rule__DefineRule__DefineRuleAssignment_2");
 					put(grammarAccess.getStartStatesAccess().getStatesAssignment_1(), "rule__StartStates__StatesAssignment_1");
 					put(grammarAccess.getRuleAccess().getContentAssignment_1(), "rule__Rule__ContentAssignment_1");
+					put(grammarAccess.getOrExpressionAccess().getRightAssignment_1_2(), "rule__OrExpression__RightAssignment_1_2");
+					put(grammarAccess.getSequenceExpressionAccess().getRightAssignment_1_1(), "rule__SequenceExpression__RightAssignment_1_1");
+					put(grammarAccess.getBracedExpressionAccess().getInnerExpressionAssignment_1(), "rule__BracedExpression__InnerExpressionAssignment_1");
+					put(grammarAccess.getAtomAccess().getValueAssignment(), "rule__Atom__ValueAssignment");
 				}
 			};
 		}

@@ -41,5 +41,22 @@
     <genClasses ecoreClass="Scanner.ecore#//Rule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Rule/content"/>
     </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//RegularExpression"/>
+    <genClasses ecoreClass="Scanner.ecore#//OrExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//OrExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//OrExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//SequenceExpression"/>
+    <genClasses ecoreClass="Scanner.ecore#//HighBindExpression"/>
+    <genClasses ecoreClass="Scanner.ecore#//AtomicExpression"/>
+    <genClasses ecoreClass="Scanner.ecore#//BracedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//BracedExpression/innerExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//Atom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Atom/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//StarExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StarExpression/innerExpression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

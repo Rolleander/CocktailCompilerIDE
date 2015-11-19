@@ -122,6 +122,78 @@ public interface ScannerFactory extends EFactory
   Rule createRule();
 
   /**
+   * Returns a new object of class '<em>Regular Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Regular Expression</em>'.
+   * @generated
+   */
+  RegularExpression createRegularExpression();
+
+  /**
+   * Returns a new object of class '<em>Or Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or Expression</em>'.
+   * @generated
+   */
+  OrExpression createOrExpression();
+
+  /**
+   * Returns a new object of class '<em>Sequence Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sequence Expression</em>'.
+   * @generated
+   */
+  SequenceExpression createSequenceExpression();
+
+  /**
+   * Returns a new object of class '<em>High Bind Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>High Bind Expression</em>'.
+   * @generated
+   */
+  HighBindExpression createHighBindExpression();
+
+  /**
+   * Returns a new object of class '<em>Atomic Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic Expression</em>'.
+   * @generated
+   */
+  AtomicExpression createAtomicExpression();
+
+  /**
+   * Returns a new object of class '<em>Braced Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Braced Expression</em>'.
+   * @generated
+   */
+  BracedExpression createBracedExpression();
+
+  /**
+   * Returns a new object of class '<em>Atom</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atom</em>'.
+   * @generated
+   */
+  Atom createAtom();
+
+  /**
+   * Returns a new object of class '<em>Star Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Star Expression</em>'.
+   * @generated
+   */
+  StarExpression createStarExpression();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

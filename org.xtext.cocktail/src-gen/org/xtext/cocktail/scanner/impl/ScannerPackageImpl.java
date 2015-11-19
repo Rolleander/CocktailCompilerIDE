@@ -9,17 +9,25 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.cocktail.scanner.Atom;
+import org.xtext.cocktail.scanner.AtomicExpression;
+import org.xtext.cocktail.scanner.BracedExpression;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
 import org.xtext.cocktail.scanner.Eof;
 import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.Global;
+import org.xtext.cocktail.scanner.HighBindExpression;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
+import org.xtext.cocktail.scanner.OrExpression;
+import org.xtext.cocktail.scanner.RegularExpression;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.ScannerFactory;
 import org.xtext.cocktail.scanner.ScannerPackage;
+import org.xtext.cocktail.scanner.SequenceExpression;
+import org.xtext.cocktail.scanner.StarExpression;
 import org.xtext.cocktail.scanner.StartStates;
 import org.xtext.cocktail.scanner.Title;
 
@@ -107,6 +115,62 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass regularExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sequenceExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass highBindExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atomicExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bracedExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atomEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass starExpressionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -406,6 +470,136 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRegularExpression()
+  {
+    return regularExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOrExpression()
+  {
+    return orExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOrExpression_Left()
+  {
+    return (EReference)orExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOrExpression_Right()
+  {
+    return (EReference)orExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSequenceExpression()
+  {
+    return sequenceExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHighBindExpression()
+  {
+    return highBindExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtomicExpression()
+  {
+    return atomicExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBracedExpression()
+  {
+    return bracedExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBracedExpression_InnerExpression()
+  {
+    return (EReference)bracedExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtom()
+  {
+    return atomEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtom_Value()
+  {
+    return (EAttribute)atomEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStarExpression()
+  {
+    return starExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStarExpression_InnerExpression()
+  {
+    return (EReference)starExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ScannerFactory getScannerFactory()
   {
     return (ScannerFactory)getEFactoryInstance();
@@ -464,6 +658,27 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     ruleEClass = createEClass(RULE);
     createEAttribute(ruleEClass, RULE__CONTENT);
+
+    regularExpressionEClass = createEClass(REGULAR_EXPRESSION);
+
+    orExpressionEClass = createEClass(OR_EXPRESSION);
+    createEReference(orExpressionEClass, OR_EXPRESSION__LEFT);
+    createEReference(orExpressionEClass, OR_EXPRESSION__RIGHT);
+
+    sequenceExpressionEClass = createEClass(SEQUENCE_EXPRESSION);
+
+    highBindExpressionEClass = createEClass(HIGH_BIND_EXPRESSION);
+
+    atomicExpressionEClass = createEClass(ATOMIC_EXPRESSION);
+
+    bracedExpressionEClass = createEClass(BRACED_EXPRESSION);
+    createEReference(bracedExpressionEClass, BRACED_EXPRESSION__INNER_EXPRESSION);
+
+    atomEClass = createEClass(ATOM);
+    createEAttribute(atomEClass, ATOM__VALUE);
+
+    starExpressionEClass = createEClass(STAR_EXPRESSION);
+    createEReference(starExpressionEClass, STAR_EXPRESSION__INNER_EXPRESSION);
   }
 
   /**
@@ -495,6 +710,13 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    orExpressionEClass.getESuperTypes().add(this.getRegularExpression());
+    sequenceExpressionEClass.getESuperTypes().add(this.getOrExpression());
+    highBindExpressionEClass.getESuperTypes().add(this.getSequenceExpression());
+    atomicExpressionEClass.getESuperTypes().add(this.getHighBindExpression());
+    bracedExpressionEClass.getESuperTypes().add(this.getAtomicExpression());
+    atomEClass.getESuperTypes().add(this.getAtomicExpression());
+    starExpressionEClass.getESuperTypes().add(this.getHighBindExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -530,6 +752,27 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(regularExpressionEClass, RegularExpression.class, "RegularExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(orExpressionEClass, OrExpression.class, "OrExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrExpression_Left(), this.getOrExpression(), null, "left", null, 0, 1, OrExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOrExpression_Right(), this.getSequenceExpression(), null, "right", null, 0, 1, OrExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sequenceExpressionEClass, SequenceExpression.class, "SequenceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(highBindExpressionEClass, HighBindExpression.class, "HighBindExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(atomicExpressionEClass, AtomicExpression.class, "AtomicExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(bracedExpressionEClass, BracedExpression.class, "BracedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBracedExpression_InnerExpression(), this.getRegularExpression(), null, "innerExpression", null, 0, 1, BracedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtom_Value(), ecorePackage.getEChar(), "value", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(starExpressionEClass, StarExpression.class, "StarExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStarExpression_InnerExpression(), this.getAtomicExpression(), null, "innerExpression", null, 0, 1, StarExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
