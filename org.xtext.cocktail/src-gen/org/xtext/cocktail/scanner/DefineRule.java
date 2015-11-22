@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.DefineRule#getDefineName <em>Define Name</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.DefineRule#getDefineRule <em>Define Rule</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.DefineRule#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.DefineRule#getRule <em>Rule</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,55 +24,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface DefineRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Define Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Define Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Define Name</em>' attribute.
-   * @see #setDefineName(String)
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getDefineRule_DefineName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getDefineRule_Name()
    * @model
    * @generated
    */
-  String getDefineName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.cocktail.scanner.DefineRule#getDefineName <em>Define Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.DefineRule#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Define Name</em>' attribute.
-   * @see #getDefineName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setDefineName(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Define Rule</b></em>' attribute.
+   * Returns the value of the '<em><b>Rule</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Define Rule</em>' attribute isn't clear,
+   * If the meaning of the '<em>Rule</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Define Rule</em>' attribute.
-   * @see #setDefineRule(String)
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getDefineRule_DefineRule()
+   * @return the value of the '<em>Rule</em>' attribute.
+   * @see #setRule(String)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getDefineRule_Rule()
    * @model
    * @generated
    */
-  String getDefineRule();
+  String getRule();
 
   /**
-   * Sets the value of the '{@link org.xtext.cocktail.scanner.DefineRule#getDefineRule <em>Define Rule</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.DefineRule#getRule <em>Rule</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Define Rule</em>' attribute.
-   * @see #getDefineRule()
+   * @param value the new value of the '<em>Rule</em>' attribute.
+   * @see #getRule()
    * @generated
    */
-  void setDefineRule(String value);
+  void setRule(String value);
 
 } // DefineRule

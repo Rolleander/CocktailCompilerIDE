@@ -291,22 +291,22 @@ public interface ScannerPackage extends EPackage
   int DEFINE_RULE = 8;
 
   /**
-   * The feature id for the '<em><b>Define Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINE_RULE__DEFINE_NAME = 0;
+  int DEFINE_RULE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Define Rule</b></em>' attribute.
+   * The feature id for the '<em><b>Rule</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINE_RULE__DEFINE_RULE = 1;
+  int DEFINE_RULE__RULE = 1;
 
   /**
    * The number of structural features of the '<em>Define Rule</em>' class.
@@ -412,22 +412,22 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE = 12;
 
   /**
-   * The feature id for the '<em><b>State</b></em>' reference list.
+   * The feature id for the '<em><b>Rule</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SINGLE_RULE__STATE = 0;
+  int SINGLE_RULE__RULE = 0;
 
   /**
-   * The feature id for the '<em><b>Regex</b></em>' attribute list.
+   * The feature id for the '<em><b>Content</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SINGLE_RULE__REGEX = 1;
+  int SINGLE_RULE__CONTENT = 1;
 
   /**
    * The number of structural features of the '<em>Single Rule</em>' class.
@@ -439,309 +439,50 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RegularExpressionImpl <em>Regular Expression</em>}' class.
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RuleStartImpl <em>Rule Start</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.RegularExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRegularExpression()
+   * @see org.xtext.cocktail.scanner.impl.RuleStartImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleStart()
    * @generated
    */
-  int REGULAR_EXPRESSION = 13;
+  int RULE_START = 13;
 
   /**
-   * The number of structural features of the '<em>Regular Expression</em>' class.
+   * The feature id for the '<em><b>Rule</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REGULAR_EXPRESSION_FEATURE_COUNT = 0;
+  int RULE_START__RULE = SINGLE_RULE__RULE;
 
   /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.OrExpressionImpl <em>Or Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.OrExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getOrExpression()
-   * @generated
-   */
-  int OR_EXPRESSION = 14;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * The feature id for the '<em><b>Content</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OR_EXPRESSION__LEFT = REGULAR_EXPRESSION_FEATURE_COUNT + 0;
+  int RULE_START__CONTENT = SINGLE_RULE__CONTENT;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The feature id for the '<em><b>State</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OR_EXPRESSION__RIGHT = REGULAR_EXPRESSION_FEATURE_COUNT + 1;
+  int RULE_START__STATE = SINGLE_RULE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Or Expression</em>' class.
+   * The number of structural features of the '<em>Rule Start</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OR_EXPRESSION_FEATURE_COUNT = REGULAR_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.SequenceExpressionImpl <em>Sequence Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.SequenceExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSequenceExpression()
-   * @generated
-   */
-  int SEQUENCE_EXPRESSION = 15;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEQUENCE_EXPRESSION__LEFT = OR_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEQUENCE_EXPRESSION__RIGHT = OR_EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Sequence Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SEQUENCE_EXPRESSION_FEATURE_COUNT = OR_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.HighBindExpressionImpl <em>High Bind Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.HighBindExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getHighBindExpression()
-   * @generated
-   */
-  int HIGH_BIND_EXPRESSION = 16;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HIGH_BIND_EXPRESSION__LEFT = SEQUENCE_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HIGH_BIND_EXPRESSION__RIGHT = SEQUENCE_EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>High Bind Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HIGH_BIND_EXPRESSION_FEATURE_COUNT = SEQUENCE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.AtomicExpressionImpl <em>Atomic Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.AtomicExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtomicExpression()
-   * @generated
-   */
-  int ATOMIC_EXPRESSION = 17;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_EXPRESSION__LEFT = HIGH_BIND_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_EXPRESSION__RIGHT = HIGH_BIND_EXPRESSION__RIGHT;
-
-  /**
-   * The number of structural features of the '<em>Atomic Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOMIC_EXPRESSION_FEATURE_COUNT = HIGH_BIND_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.BracedExpressionImpl <em>Braced Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.BracedExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBracedExpression()
-   * @generated
-   */
-  int BRACED_EXPRESSION = 18;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRACED_EXPRESSION__LEFT = ATOMIC_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRACED_EXPRESSION__RIGHT = ATOMIC_EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Inner Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRACED_EXPRESSION__INNER_EXPRESSION = ATOMIC_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Braced Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRACED_EXPRESSION_FEATURE_COUNT = ATOMIC_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.AtomImpl <em>Atom</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.AtomImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtom()
-   * @generated
-   */
-  int ATOM = 19;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__LEFT = ATOMIC_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__RIGHT = ATOMIC_EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM__VALUE = ATOMIC_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Atom</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATOM_FEATURE_COUNT = ATOMIC_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.StarExpressionImpl <em>Star Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.StarExpressionImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStarExpression()
-   * @generated
-   */
-  int STAR_EXPRESSION = 20;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STAR_EXPRESSION__LEFT = HIGH_BIND_EXPRESSION__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STAR_EXPRESSION__RIGHT = HIGH_BIND_EXPRESSION__RIGHT;
-
-  /**
-   * The feature id for the '<em><b>Inner Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STAR_EXPRESSION__INNER_EXPRESSION = HIGH_BIND_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Star Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STAR_EXPRESSION_FEATURE_COUNT = HIGH_BIND_EXPRESSION_FEATURE_COUNT + 1;
+  int RULE_START_FEATURE_COUNT = SINGLE_RULE_FEATURE_COUNT + 1;
 
 
   /**
@@ -923,26 +664,26 @@ public interface ScannerPackage extends EPackage
   EClass getDefineRule();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.DefineRule#getDefineName <em>Define Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.DefineRule#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Define Name</em>'.
-   * @see org.xtext.cocktail.scanner.DefineRule#getDefineName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.cocktail.scanner.DefineRule#getName()
    * @see #getDefineRule()
    * @generated
    */
-  EAttribute getDefineRule_DefineName();
+  EAttribute getDefineRule_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.DefineRule#getDefineRule <em>Define Rule</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.DefineRule#getRule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Define Rule</em>'.
-   * @see org.xtext.cocktail.scanner.DefineRule#getDefineRule()
+   * @return the meta object for the attribute '<em>Rule</em>'.
+   * @see org.xtext.cocktail.scanner.DefineRule#getRule()
    * @see #getDefineRule()
    * @generated
    */
-  EAttribute getDefineRule_DefineRule();
+  EAttribute getDefineRule_Rule();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.StartStates <em>Start States</em>}'.
@@ -1018,161 +759,47 @@ public interface ScannerPackage extends EPackage
   EClass getSingleRule();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.SingleRule#getState <em>State</em>}'.
+   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Rule</em>'.
+   * @see org.xtext.cocktail.scanner.SingleRule#getRule()
+   * @see #getSingleRule()
+   * @generated
+   */
+  EAttribute getSingleRule_Rule();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Content</em>'.
+   * @see org.xtext.cocktail.scanner.SingleRule#getContent()
+   * @see #getSingleRule()
+   * @generated
+   */
+  EAttribute getSingleRule_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RuleStart <em>Rule Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Start</em>'.
+   * @see org.xtext.cocktail.scanner.RuleStart
+   * @generated
+   */
+  EClass getRuleStart();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.RuleStart#getState <em>State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>State</em>'.
-   * @see org.xtext.cocktail.scanner.SingleRule#getState()
-   * @see #getSingleRule()
+   * @see org.xtext.cocktail.scanner.RuleStart#getState()
+   * @see #getRuleStart()
    * @generated
    */
-  EReference getSingleRule_State();
-
-  /**
-   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getRegex <em>Regex</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Regex</em>'.
-   * @see org.xtext.cocktail.scanner.SingleRule#getRegex()
-   * @see #getSingleRule()
-   * @generated
-   */
-  EAttribute getSingleRule_Regex();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RegularExpression <em>Regular Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Regular Expression</em>'.
-   * @see org.xtext.cocktail.scanner.RegularExpression
-   * @generated
-   */
-  EClass getRegularExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.OrExpression <em>Or Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Or Expression</em>'.
-   * @see org.xtext.cocktail.scanner.OrExpression
-   * @generated
-   */
-  EClass getOrExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.OrExpression#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.cocktail.scanner.OrExpression#getLeft()
-   * @see #getOrExpression()
-   * @generated
-   */
-  EReference getOrExpression_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.OrExpression#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.cocktail.scanner.OrExpression#getRight()
-   * @see #getOrExpression()
-   * @generated
-   */
-  EReference getOrExpression_Right();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.SequenceExpression <em>Sequence Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sequence Expression</em>'.
-   * @see org.xtext.cocktail.scanner.SequenceExpression
-   * @generated
-   */
-  EClass getSequenceExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.HighBindExpression <em>High Bind Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>High Bind Expression</em>'.
-   * @see org.xtext.cocktail.scanner.HighBindExpression
-   * @generated
-   */
-  EClass getHighBindExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.AtomicExpression <em>Atomic Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Atomic Expression</em>'.
-   * @see org.xtext.cocktail.scanner.AtomicExpression
-   * @generated
-   */
-  EClass getAtomicExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.BracedExpression <em>Braced Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Braced Expression</em>'.
-   * @see org.xtext.cocktail.scanner.BracedExpression
-   * @generated
-   */
-  EClass getBracedExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.BracedExpression#getInnerExpression <em>Inner Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Inner Expression</em>'.
-   * @see org.xtext.cocktail.scanner.BracedExpression#getInnerExpression()
-   * @see #getBracedExpression()
-   * @generated
-   */
-  EReference getBracedExpression_InnerExpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Atom <em>Atom</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Atom</em>'.
-   * @see org.xtext.cocktail.scanner.Atom
-   * @generated
-   */
-  EClass getAtom();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Atom#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.cocktail.scanner.Atom#getValue()
-   * @see #getAtom()
-   * @generated
-   */
-  EAttribute getAtom_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.StarExpression <em>Star Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Star Expression</em>'.
-   * @see org.xtext.cocktail.scanner.StarExpression
-   * @generated
-   */
-  EClass getStarExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.StarExpression#getInnerExpression <em>Inner Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Inner Expression</em>'.
-   * @see org.xtext.cocktail.scanner.StarExpression#getInnerExpression()
-   * @see #getStarExpression()
-   * @generated
-   */
-  EReference getStarExpression_InnerExpression();
+  EReference getRuleStart_State();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1352,20 +979,20 @@ public interface ScannerPackage extends EPackage
     EClass DEFINE_RULE = eINSTANCE.getDefineRule();
 
     /**
-     * The meta object literal for the '<em><b>Define Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFINE_RULE__DEFINE_NAME = eINSTANCE.getDefineRule_DefineName();
+    EAttribute DEFINE_RULE__NAME = eINSTANCE.getDefineRule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Define Rule</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Rule</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFINE_RULE__DEFINE_RULE = eINSTANCE.getDefineRule_DefineRule();
+    EAttribute DEFINE_RULE__RULE = eINSTANCE.getDefineRule_Rule();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.StartStatesImpl <em>Start States</em>}' class.
@@ -1432,140 +1059,38 @@ public interface ScannerPackage extends EPackage
     EClass SINGLE_RULE = eINSTANCE.getSingleRule();
 
     /**
+     * The meta object literal for the '<em><b>Rule</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RuleStartImpl <em>Rule Start</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.RuleStartImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleStart()
+     * @generated
+     */
+    EClass RULE_START = eINSTANCE.getRuleStart();
+
+    /**
      * The meta object literal for the '<em><b>State</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SINGLE_RULE__STATE = eINSTANCE.getSingleRule_State();
-
-    /**
-     * The meta object literal for the '<em><b>Regex</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SINGLE_RULE__REGEX = eINSTANCE.getSingleRule_Regex();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RegularExpressionImpl <em>Regular Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.RegularExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRegularExpression()
-     * @generated
-     */
-    EClass REGULAR_EXPRESSION = eINSTANCE.getRegularExpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.OrExpressionImpl <em>Or Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.OrExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getOrExpression()
-     * @generated
-     */
-    EClass OR_EXPRESSION = eINSTANCE.getOrExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OR_EXPRESSION__LEFT = eINSTANCE.getOrExpression_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OR_EXPRESSION__RIGHT = eINSTANCE.getOrExpression_Right();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.SequenceExpressionImpl <em>Sequence Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.SequenceExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSequenceExpression()
-     * @generated
-     */
-    EClass SEQUENCE_EXPRESSION = eINSTANCE.getSequenceExpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.HighBindExpressionImpl <em>High Bind Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.HighBindExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getHighBindExpression()
-     * @generated
-     */
-    EClass HIGH_BIND_EXPRESSION = eINSTANCE.getHighBindExpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.AtomicExpressionImpl <em>Atomic Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.AtomicExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtomicExpression()
-     * @generated
-     */
-    EClass ATOMIC_EXPRESSION = eINSTANCE.getAtomicExpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.BracedExpressionImpl <em>Braced Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.BracedExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBracedExpression()
-     * @generated
-     */
-    EClass BRACED_EXPRESSION = eINSTANCE.getBracedExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Inner Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BRACED_EXPRESSION__INNER_EXPRESSION = eINSTANCE.getBracedExpression_InnerExpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.AtomImpl <em>Atom</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.AtomImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getAtom()
-     * @generated
-     */
-    EClass ATOM = eINSTANCE.getAtom();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ATOM__VALUE = eINSTANCE.getAtom_Value();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.StarExpressionImpl <em>Star Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.StarExpressionImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStarExpression()
-     * @generated
-     */
-    EClass STAR_EXPRESSION = eINSTANCE.getStarExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Inner Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STAR_EXPRESSION__INNER_EXPRESSION = eINSTANCE.getStarExpression_InnerExpression();
+    EReference RULE_START__STATE = eINSTANCE.getRuleStart_State();
 
   }
 

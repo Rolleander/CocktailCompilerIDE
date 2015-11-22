@@ -77,14 +77,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.START_STATE: return createStartState();
       case ScannerPackage.RULE: return createRule();
       case ScannerPackage.SINGLE_RULE: return createSingleRule();
-      case ScannerPackage.REGULAR_EXPRESSION: return createRegularExpression();
-      case ScannerPackage.OR_EXPRESSION: return createOrExpression();
-      case ScannerPackage.SEQUENCE_EXPRESSION: return createSequenceExpression();
-      case ScannerPackage.HIGH_BIND_EXPRESSION: return createHighBindExpression();
-      case ScannerPackage.ATOMIC_EXPRESSION: return createAtomicExpression();
-      case ScannerPackage.BRACED_EXPRESSION: return createBracedExpression();
-      case ScannerPackage.ATOM: return createAtom();
-      case ScannerPackage.STAR_EXPRESSION: return createStarExpression();
+      case ScannerPackage.RULE_START: return createRuleStart();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -238,87 +231,10 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RegularExpression createRegularExpression()
+  public RuleStart createRuleStart()
   {
-    RegularExpressionImpl regularExpression = new RegularExpressionImpl();
-    return regularExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OrExpression createOrExpression()
-  {
-    OrExpressionImpl orExpression = new OrExpressionImpl();
-    return orExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SequenceExpression createSequenceExpression()
-  {
-    SequenceExpressionImpl sequenceExpression = new SequenceExpressionImpl();
-    return sequenceExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HighBindExpression createHighBindExpression()
-  {
-    HighBindExpressionImpl highBindExpression = new HighBindExpressionImpl();
-    return highBindExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AtomicExpression createAtomicExpression()
-  {
-    AtomicExpressionImpl atomicExpression = new AtomicExpressionImpl();
-    return atomicExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BracedExpression createBracedExpression()
-  {
-    BracedExpressionImpl bracedExpression = new BracedExpressionImpl();
-    return bracedExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Atom createAtom()
-  {
-    AtomImpl atom = new AtomImpl();
-    return atom;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StarExpression createStarExpression()
-  {
-    StarExpressionImpl starExpression = new StarExpressionImpl();
-    return starExpression;
+    RuleStartImpl ruleStart = new RuleStartImpl();
+    return ruleStart;
   }
 
   /**

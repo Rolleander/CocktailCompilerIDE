@@ -32,8 +32,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Define/defines"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//DefineRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/defineName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/defineRule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/rule"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//StartStates">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StartStates/states"/>
@@ -45,25 +45,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/content"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//SingleRule">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//SingleRule/state"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/regex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/content"/>
     </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//RegularExpression"/>
-    <genClasses ecoreClass="Scanner.ecore#//OrExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//OrExpression/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//OrExpression/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//SequenceExpression"/>
-    <genClasses ecoreClass="Scanner.ecore#//HighBindExpression"/>
-    <genClasses ecoreClass="Scanner.ecore#//AtomicExpression"/>
-    <genClasses ecoreClass="Scanner.ecore#//BracedExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//BracedExpression/innerExpression"/>
-    </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//Atom">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Atom/value"/>
-    </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//StarExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StarExpression/innerExpression"/>
+    <genClasses ecoreClass="Scanner.ecore#//RuleStart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleStart/state"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

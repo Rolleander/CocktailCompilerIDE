@@ -5,8 +5,8 @@ generate scanner "http://www.xtext.org/cocktail/Scanner"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model:
-	scanner+=Title scanner+=Export scanner+=Global scanner+=Local scanner+=Default
-	scanner +=Eof scanner+=Define scanner+=StartStates scanner+=Rule;
+	scanner+=Title scanner+=Export scanner+=Global scanner+=Local? scanner+=Default
+	scanner +=Eof? scanner+=Define scanner+=StartStates? scanner+=Rule;
 
 Title:
 	'SCANNER' name=ID;
@@ -30,7 +30,7 @@ Define:
 	'DEFINE'  (defines+=DefineRule)+   ;	
 
 DefineRule:
-	defineName=ID '=' defineRule=ID;
+	name=ID '=' rule=ID '.';
 
 StartStates: 
 'START' states+= StartState (',' states+=StartState)*
@@ -43,13 +43,13 @@ StartState:
 Rule:
 	'RULE' content=SingleRule*;
 
-//Rule: #Statename# oder #STD# regex :  { rule-content }
+
 SingleRule:
-	'#' (state+=[StartState] | 'STD') '#' regex+='#TODO' ': {' STRING '}'  
+	 RuleStart? rule+=STRING  (':-'|':') '{' content+=ID '}' 
 ;
 
+//#STD# oder #STARTSTATE#
+RuleStart:
+	 '#' (state+=[StartState] | 'STD') '#' 
+;
 
-terminal ID : 
-      ('^')?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*; 
-      
-      

@@ -11,11 +11,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SingleRule;
-import org.xtext.cocktail.scanner.StartState;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +22,8 @@ import org.xtext.cocktail.scanner.StartState;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getState <em>State</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getRegex <em>Regex</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getRule <em>Rule</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +32,24 @@ import org.xtext.cocktail.scanner.StartState;
 public class SingleRuleImpl extends MinimalEObjectImpl.Container implements SingleRule
 {
   /**
-   * The cached value of the '{@link #getState() <em>State</em>}' reference list.
+   * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
+   * @see #getRule()
    * @generated
    * @ordered
    */
-  protected EList<StartState> state;
+  protected EList<String> rule;
 
   /**
-   * The cached value of the '{@link #getRegex() <em>Regex</em>}' attribute list.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRegex()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected EList<String> regex;
+  protected EList<String> content;
 
   /**
    * <!-- begin-user-doc -->
@@ -79,13 +77,13 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StartState> getState()
+  public EList<String> getRule()
   {
-    if (state == null)
+    if (rule == null)
     {
-      state = new EObjectResolvingEList<StartState>(StartState.class, this, ScannerPackage.SINGLE_RULE__STATE);
+      rule = new EDataTypeEList<String>(String.class, this, ScannerPackage.SINGLE_RULE__RULE);
     }
-    return state;
+    return rule;
   }
 
   /**
@@ -93,13 +91,13 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getRegex()
+  public EList<String> getContent()
   {
-    if (regex == null)
+    if (content == null)
     {
-      regex = new EDataTypeEList<String>(String.class, this, ScannerPackage.SINGLE_RULE__REGEX);
+      content = new EDataTypeEList<String>(String.class, this, ScannerPackage.SINGLE_RULE__CONTENT);
     }
-    return regex;
+    return content;
   }
 
   /**
@@ -112,10 +110,10 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
-      case ScannerPackage.SINGLE_RULE__STATE:
-        return getState();
-      case ScannerPackage.SINGLE_RULE__REGEX:
-        return getRegex();
+      case ScannerPackage.SINGLE_RULE__RULE:
+        return getRule();
+      case ScannerPackage.SINGLE_RULE__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -131,13 +129,13 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
-      case ScannerPackage.SINGLE_RULE__STATE:
-        getState().clear();
-        getState().addAll((Collection<? extends StartState>)newValue);
+      case ScannerPackage.SINGLE_RULE__RULE:
+        getRule().clear();
+        getRule().addAll((Collection<? extends String>)newValue);
         return;
-      case ScannerPackage.SINGLE_RULE__REGEX:
-        getRegex().clear();
-        getRegex().addAll((Collection<? extends String>)newValue);
+      case ScannerPackage.SINGLE_RULE__CONTENT:
+        getContent().clear();
+        getContent().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -153,11 +151,11 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
-      case ScannerPackage.SINGLE_RULE__STATE:
-        getState().clear();
+      case ScannerPackage.SINGLE_RULE__RULE:
+        getRule().clear();
         return;
-      case ScannerPackage.SINGLE_RULE__REGEX:
-        getRegex().clear();
+      case ScannerPackage.SINGLE_RULE__CONTENT:
+        getContent().clear();
         return;
     }
     super.eUnset(featureID);
@@ -173,10 +171,10 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
-      case ScannerPackage.SINGLE_RULE__STATE:
-        return state != null && !state.isEmpty();
-      case ScannerPackage.SINGLE_RULE__REGEX:
-        return regex != null && !regex.isEmpty();
+      case ScannerPackage.SINGLE_RULE__RULE:
+        return rule != null && !rule.isEmpty();
+      case ScannerPackage.SINGLE_RULE__CONTENT:
+        return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -192,8 +190,10 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (regex: ");
-    result.append(regex);
+    result.append(" (rule: ");
+    result.append(rule);
+    result.append(", content: ");
+    result.append(content);
     result.append(')');
     return result.toString();
   }

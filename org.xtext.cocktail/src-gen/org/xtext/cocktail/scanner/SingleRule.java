@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getState <em>State</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getRegex <em>Regex</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,35 +26,35 @@ import org.eclipse.emf.ecore.EObject;
 public interface SingleRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>State</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.cocktail.scanner.StartState}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>State</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>State</em>' reference list.
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_State()
-   * @model
-   * @generated
-   */
-  EList<StartState> getState();
-
-  /**
-   * Returns the value of the '<em><b>Regex</b></em>' attribute list.
+   * Returns the value of the '<em><b>Rule</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Regex</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Rule</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Regex</em>' attribute list.
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Regex()
+   * @return the value of the '<em>Rule</em>' attribute list.
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Rule()
    * @model unique="false"
    * @generated
    */
-  EList<String> getRegex();
+  EList<String> getRule();
+
+  /**
+   * Returns the value of the '<em><b>Content</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Content</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Content</em>' attribute list.
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Content()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getContent();
 
 } // SingleRule

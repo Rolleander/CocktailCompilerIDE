@@ -163,83 +163,11 @@ public class ScannerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ScannerPackage.REGULAR_EXPRESSION:
+      case ScannerPackage.RULE_START:
       {
-        RegularExpression regularExpression = (RegularExpression)theEObject;
-        T result = caseRegularExpression(regularExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.OR_EXPRESSION:
-      {
-        OrExpression orExpression = (OrExpression)theEObject;
-        T result = caseOrExpression(orExpression);
-        if (result == null) result = caseRegularExpression(orExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.SEQUENCE_EXPRESSION:
-      {
-        SequenceExpression sequenceExpression = (SequenceExpression)theEObject;
-        T result = caseSequenceExpression(sequenceExpression);
-        if (result == null) result = caseOrExpression(sequenceExpression);
-        if (result == null) result = caseRegularExpression(sequenceExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.HIGH_BIND_EXPRESSION:
-      {
-        HighBindExpression highBindExpression = (HighBindExpression)theEObject;
-        T result = caseHighBindExpression(highBindExpression);
-        if (result == null) result = caseSequenceExpression(highBindExpression);
-        if (result == null) result = caseOrExpression(highBindExpression);
-        if (result == null) result = caseRegularExpression(highBindExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.ATOMIC_EXPRESSION:
-      {
-        AtomicExpression atomicExpression = (AtomicExpression)theEObject;
-        T result = caseAtomicExpression(atomicExpression);
-        if (result == null) result = caseHighBindExpression(atomicExpression);
-        if (result == null) result = caseSequenceExpression(atomicExpression);
-        if (result == null) result = caseOrExpression(atomicExpression);
-        if (result == null) result = caseRegularExpression(atomicExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.BRACED_EXPRESSION:
-      {
-        BracedExpression bracedExpression = (BracedExpression)theEObject;
-        T result = caseBracedExpression(bracedExpression);
-        if (result == null) result = caseAtomicExpression(bracedExpression);
-        if (result == null) result = caseHighBindExpression(bracedExpression);
-        if (result == null) result = caseSequenceExpression(bracedExpression);
-        if (result == null) result = caseOrExpression(bracedExpression);
-        if (result == null) result = caseRegularExpression(bracedExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.ATOM:
-      {
-        Atom atom = (Atom)theEObject;
-        T result = caseAtom(atom);
-        if (result == null) result = caseAtomicExpression(atom);
-        if (result == null) result = caseHighBindExpression(atom);
-        if (result == null) result = caseSequenceExpression(atom);
-        if (result == null) result = caseOrExpression(atom);
-        if (result == null) result = caseRegularExpression(atom);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ScannerPackage.STAR_EXPRESSION:
-      {
-        StarExpression starExpression = (StarExpression)theEObject;
-        T result = caseStarExpression(starExpression);
-        if (result == null) result = caseHighBindExpression(starExpression);
-        if (result == null) result = caseSequenceExpression(starExpression);
-        if (result == null) result = caseOrExpression(starExpression);
-        if (result == null) result = caseRegularExpression(starExpression);
+        RuleStart ruleStart = (RuleStart)theEObject;
+        T result = caseRuleStart(ruleStart);
+        if (result == null) result = caseSingleRule(ruleStart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -456,129 +384,17 @@ public class ScannerSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Regular Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rule Start</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Regular Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rule Start</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRegularExpression(RegularExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Or Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Or Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOrExpression(OrExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sequence Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sequence Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSequenceExpression(SequenceExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>High Bind Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>High Bind Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHighBindExpression(HighBindExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Atomic Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atomic Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtomicExpression(AtomicExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Braced Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Braced Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBracedExpression(BracedExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Atom</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atom</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtom(Atom object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Star Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Star Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStarExpression(StarExpression object)
+  public T caseRuleStart(RuleStart object)
   {
     return null;
   }

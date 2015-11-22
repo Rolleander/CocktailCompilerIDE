@@ -22,32 +22,31 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalScannerParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_ANY_OTHER", "RULE_CHAR", "RULE_WS", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "'STD'", "'SCANNER'", "'EXPORT {'", "'}'", "'GLOBAL {'", "'LOCAL {'", "'DEFAULT {'", "'EOF {'", "'DEFINE'", "'='", "'START'", "','", "'RULE'", "'#'", "': {'", "'+'", "'*'", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_TEXT", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "':-'", "':'", "'STD'", "'SCANNER'", "'EXPORT {'", "'}'", "'GLOBAL {'", "'LOCAL {'", "'DEFAULT {'", "'EOF {'", "'DEFINE'", "'='", "'.'", "'START'", "','", "'RULE'", "'{'", "'#'"
     };
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=11;
+    public static final int RULE_STRING=7;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int RULE_CHAR=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int RULE_ID=5;
-    public static final int RULE_WS=8;
-    public static final int RULE_ANY_OTHER=6;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=9;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
+    public static final int RULE_TEXT=5;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
@@ -1091,21 +1090,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleSingleRule"
 
 
-    // $ANTLR start "entryRuleRegularExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:424:1: entryRuleRegularExpression : ruleRegularExpression EOF ;
-    public final void entryRuleRegularExpression() throws RecognitionException {
+    // $ANTLR start "entryRuleRuleStart"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:424:1: entryRuleRuleStart : ruleRuleStart EOF ;
+    public final void entryRuleRuleStart() throws RecognitionException {
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:425:1: ( ruleRegularExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:426:1: ruleRegularExpression EOF
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:425:1: ( ruleRuleStart EOF )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:426:1: ruleRuleStart EOF
             {
-             before(grammarAccess.getRegularExpressionRule()); 
-            pushFollow(FOLLOW_ruleRegularExpression_in_entryRuleRegularExpression841);
-            ruleRegularExpression();
+             before(grammarAccess.getRuleStartRule()); 
+            pushFollow(FOLLOW_ruleRuleStart_in_entryRuleRuleStart841);
+            ruleRuleStart();
 
             state._fsp--;
 
-             after(grammarAccess.getRegularExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRegularExpression848); 
+             after(grammarAccess.getRuleStartRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRuleStart848); 
 
             }
 
@@ -1118,29 +1117,35 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRegularExpression"
+    // $ANTLR end "entryRuleRuleStart"
 
 
-    // $ANTLR start "ruleRegularExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:433:1: ruleRegularExpression : ( ruleOrExpression ) ;
-    public final void ruleRegularExpression() throws RecognitionException {
+    // $ANTLR start "ruleRuleStart"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:433:1: ruleRuleStart : ( ( rule__RuleStart__Group__0 ) ) ;
+    public final void ruleRuleStart() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:437:2: ( ( ruleOrExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:438:1: ( ruleOrExpression )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:437:2: ( ( ( rule__RuleStart__Group__0 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:438:1: ( ( rule__RuleStart__Group__0 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:438:1: ( ruleOrExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:439:1: ruleOrExpression
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:438:1: ( ( rule__RuleStart__Group__0 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:439:1: ( rule__RuleStart__Group__0 )
             {
-             before(grammarAccess.getRegularExpressionAccess().getOrExpressionParserRuleCall()); 
-            pushFollow(FOLLOW_ruleOrExpression_in_ruleRegularExpression874);
-            ruleOrExpression();
+             before(grammarAccess.getRuleStartAccess().getGroup()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:440:1: ( rule__RuleStart__Group__0 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:440:2: rule__RuleStart__Group__0
+            {
+            pushFollow(FOLLOW_rule__RuleStart__Group__0_in_ruleRuleStart874);
+            rule__RuleStart__Group__0();
 
             state._fsp--;
 
-             after(grammarAccess.getRegularExpressionAccess().getOrExpressionParserRuleCall()); 
+
+            }
+
+             after(grammarAccess.getRuleStartAccess().getGroup()); 
 
             }
 
@@ -1159,486 +1164,24 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleRegularExpression"
+    // $ANTLR end "ruleRuleStart"
 
 
-    // $ANTLR start "entryRuleOrExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:452:1: entryRuleOrExpression : ruleOrExpression EOF ;
-    public final void entryRuleOrExpression() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:453:1: ( ruleOrExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:454:1: ruleOrExpression EOF
-            {
-             before(grammarAccess.getOrExpressionRule()); 
-            pushFollow(FOLLOW_ruleOrExpression_in_entryRuleOrExpression900);
-            ruleOrExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getOrExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOrExpression907); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleOrExpression"
-
-
-    // $ANTLR start "ruleOrExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:461:1: ruleOrExpression : ( ( rule__OrExpression__Group__0 ) ) ;
-    public final void ruleOrExpression() throws RecognitionException {
+    // $ANTLR start "rule__SingleRule__Alternatives_2"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:452:1: rule__SingleRule__Alternatives_2 : ( ( ':-' ) | ( ':' ) );
+    public final void rule__SingleRule__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:465:2: ( ( ( rule__OrExpression__Group__0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:466:1: ( ( rule__OrExpression__Group__0 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:466:1: ( ( rule__OrExpression__Group__0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:467:1: ( rule__OrExpression__Group__0 )
-            {
-             before(grammarAccess.getOrExpressionAccess().getGroup()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:468:1: ( rule__OrExpression__Group__0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:468:2: rule__OrExpression__Group__0
-            {
-            pushFollow(FOLLOW_rule__OrExpression__Group__0_in_ruleOrExpression933);
-            rule__OrExpression__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getOrExpressionAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleOrExpression"
-
-
-    // $ANTLR start "entryRuleSequenceExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:480:1: entryRuleSequenceExpression : ruleSequenceExpression EOF ;
-    public final void entryRuleSequenceExpression() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:481:1: ( ruleSequenceExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:482:1: ruleSequenceExpression EOF
-            {
-             before(grammarAccess.getSequenceExpressionRule()); 
-            pushFollow(FOLLOW_ruleSequenceExpression_in_entryRuleSequenceExpression960);
-            ruleSequenceExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getSequenceExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSequenceExpression967); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleSequenceExpression"
-
-
-    // $ANTLR start "ruleSequenceExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:489:1: ruleSequenceExpression : ( ( rule__SequenceExpression__Group__0 ) ) ;
-    public final void ruleSequenceExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:493:2: ( ( ( rule__SequenceExpression__Group__0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:494:1: ( ( rule__SequenceExpression__Group__0 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:494:1: ( ( rule__SequenceExpression__Group__0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:495:1: ( rule__SequenceExpression__Group__0 )
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getGroup()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:496:1: ( rule__SequenceExpression__Group__0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:496:2: rule__SequenceExpression__Group__0
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__Group__0_in_ruleSequenceExpression993);
-            rule__SequenceExpression__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSequenceExpressionAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleSequenceExpression"
-
-
-    // $ANTLR start "entryRuleHighBindExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:508:1: entryRuleHighBindExpression : ruleHighBindExpression EOF ;
-    public final void entryRuleHighBindExpression() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:509:1: ( ruleHighBindExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:510:1: ruleHighBindExpression EOF
-            {
-             before(grammarAccess.getHighBindExpressionRule()); 
-            pushFollow(FOLLOW_ruleHighBindExpression_in_entryRuleHighBindExpression1020);
-            ruleHighBindExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getHighBindExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHighBindExpression1027); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleHighBindExpression"
-
-
-    // $ANTLR start "ruleHighBindExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:517:1: ruleHighBindExpression : ( ( rule__HighBindExpression__Group__0 ) ) ;
-    public final void ruleHighBindExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:521:2: ( ( ( rule__HighBindExpression__Group__0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:522:1: ( ( rule__HighBindExpression__Group__0 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:522:1: ( ( rule__HighBindExpression__Group__0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:523:1: ( rule__HighBindExpression__Group__0 )
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getGroup()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:524:1: ( rule__HighBindExpression__Group__0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:524:2: rule__HighBindExpression__Group__0
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group__0_in_ruleHighBindExpression1053);
-            rule__HighBindExpression__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getHighBindExpressionAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleHighBindExpression"
-
-
-    // $ANTLR start "entryRuleAtomicExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:536:1: entryRuleAtomicExpression : ruleAtomicExpression EOF ;
-    public final void entryRuleAtomicExpression() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:537:1: ( ruleAtomicExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:538:1: ruleAtomicExpression EOF
-            {
-             before(grammarAccess.getAtomicExpressionRule()); 
-            pushFollow(FOLLOW_ruleAtomicExpression_in_entryRuleAtomicExpression1080);
-            ruleAtomicExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getAtomicExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicExpression1087); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleAtomicExpression"
-
-
-    // $ANTLR start "ruleAtomicExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:545:1: ruleAtomicExpression : ( ( rule__AtomicExpression__Alternatives ) ) ;
-    public final void ruleAtomicExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:549:2: ( ( ( rule__AtomicExpression__Alternatives ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:550:1: ( ( rule__AtomicExpression__Alternatives ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:550:1: ( ( rule__AtomicExpression__Alternatives ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:551:1: ( rule__AtomicExpression__Alternatives )
-            {
-             before(grammarAccess.getAtomicExpressionAccess().getAlternatives()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:552:1: ( rule__AtomicExpression__Alternatives )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:552:2: rule__AtomicExpression__Alternatives
-            {
-            pushFollow(FOLLOW_rule__AtomicExpression__Alternatives_in_ruleAtomicExpression1113);
-            rule__AtomicExpression__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAtomicExpressionAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleAtomicExpression"
-
-
-    // $ANTLR start "entryRuleBracedExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:564:1: entryRuleBracedExpression : ruleBracedExpression EOF ;
-    public final void entryRuleBracedExpression() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:565:1: ( ruleBracedExpression EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:566:1: ruleBracedExpression EOF
-            {
-             before(grammarAccess.getBracedExpressionRule()); 
-            pushFollow(FOLLOW_ruleBracedExpression_in_entryRuleBracedExpression1140);
-            ruleBracedExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getBracedExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBracedExpression1147); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleBracedExpression"
-
-
-    // $ANTLR start "ruleBracedExpression"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:573:1: ruleBracedExpression : ( ( rule__BracedExpression__Group__0 ) ) ;
-    public final void ruleBracedExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:577:2: ( ( ( rule__BracedExpression__Group__0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:578:1: ( ( rule__BracedExpression__Group__0 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:578:1: ( ( rule__BracedExpression__Group__0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:579:1: ( rule__BracedExpression__Group__0 )
-            {
-             before(grammarAccess.getBracedExpressionAccess().getGroup()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:580:1: ( rule__BracedExpression__Group__0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:580:2: rule__BracedExpression__Group__0
-            {
-            pushFollow(FOLLOW_rule__BracedExpression__Group__0_in_ruleBracedExpression1173);
-            rule__BracedExpression__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getBracedExpressionAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleBracedExpression"
-
-
-    // $ANTLR start "entryRuleAtom"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:592:1: entryRuleAtom : ruleAtom EOF ;
-    public final void entryRuleAtom() throws RecognitionException {
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:593:1: ( ruleAtom EOF )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:594:1: ruleAtom EOF
-            {
-             before(grammarAccess.getAtomRule()); 
-            pushFollow(FOLLOW_ruleAtom_in_entryRuleAtom1200);
-            ruleAtom();
-
-            state._fsp--;
-
-             after(grammarAccess.getAtomRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtom1207); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleAtom"
-
-
-    // $ANTLR start "ruleAtom"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:601:1: ruleAtom : ( ( rule__Atom__ValueAssignment ) ) ;
-    public final void ruleAtom() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:605:2: ( ( ( rule__Atom__ValueAssignment ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:606:1: ( ( rule__Atom__ValueAssignment ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:606:1: ( ( rule__Atom__ValueAssignment ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:607:1: ( rule__Atom__ValueAssignment )
-            {
-             before(grammarAccess.getAtomAccess().getValueAssignment()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:608:1: ( rule__Atom__ValueAssignment )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:608:2: rule__Atom__ValueAssignment
-            {
-            pushFollow(FOLLOW_rule__Atom__ValueAssignment_in_ruleAtom1233);
-            rule__Atom__ValueAssignment();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAtomAccess().getValueAssignment()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleAtom"
-
-
-    // $ANTLR start "rule__SingleRule__Alternatives_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:620:1: rule__SingleRule__Alternatives_1 : ( ( ( rule__SingleRule__StateAssignment_1_0 ) ) | ( 'STD' ) );
-    public final void rule__SingleRule__Alternatives_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:624:1: ( ( ( rule__SingleRule__StateAssignment_1_0 ) ) | ( 'STD' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:456:1: ( ( ':-' ) | ( ':' ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==RULE_ID) ) {
+            if ( (LA1_0==12) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==12) ) {
+            else if ( (LA1_0==13) ) {
                 alt1=2;
             }
             else {
@@ -1649,24 +1192,14 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:625:1: ( ( rule__SingleRule__StateAssignment_1_0 ) )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:457:1: ( ':-' )
                     {
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:625:1: ( ( rule__SingleRule__StateAssignment_1_0 ) )
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:626:1: ( rule__SingleRule__StateAssignment_1_0 )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:457:1: ( ':-' )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:458:1: ':-'
                     {
-                     before(grammarAccess.getSingleRuleAccess().getStateAssignment_1_0()); 
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:627:1: ( rule__SingleRule__StateAssignment_1_0 )
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:627:2: rule__SingleRule__StateAssignment_1_0
-                    {
-                    pushFollow(FOLLOW_rule__SingleRule__StateAssignment_1_0_in_rule__SingleRule__Alternatives_11269);
-                    rule__SingleRule__StateAssignment_1_0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getSingleRuleAccess().getStateAssignment_1_0()); 
+                     before(grammarAccess.getSingleRuleAccess().getColonHyphenMinusKeyword_2_0()); 
+                    match(input,12,FOLLOW_12_in_rule__SingleRule__Alternatives_2911); 
+                     after(grammarAccess.getSingleRuleAccess().getColonHyphenMinusKeyword_2_0()); 
 
                     }
 
@@ -1674,14 +1207,14 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:631:6: ( 'STD' )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:465:6: ( ':' )
                     {
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:631:6: ( 'STD' )
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:632:1: 'STD'
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:465:6: ( ':' )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:466:1: ':'
                     {
-                     before(grammarAccess.getSingleRuleAccess().getSTDKeyword_1_1()); 
-                    match(input,12,FOLLOW_12_in_rule__SingleRule__Alternatives_11288); 
-                     after(grammarAccess.getSingleRuleAccess().getSTDKeyword_1_1()); 
+                     before(grammarAccess.getSingleRuleAccess().getColonKeyword_2_1()); 
+                    match(input,13,FOLLOW_13_in_rule__SingleRule__Alternatives_2931); 
+                     after(grammarAccess.getSingleRuleAccess().getColonKeyword_2_1()); 
 
                     }
 
@@ -1702,24 +1235,24 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SingleRule__Alternatives_1"
+    // $ANTLR end "rule__SingleRule__Alternatives_2"
 
 
-    // $ANTLR start "rule__AtomicExpression__Alternatives"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:644:1: rule__AtomicExpression__Alternatives : ( ( ruleBracedExpression ) | ( ruleAtom ) );
-    public final void rule__AtomicExpression__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Alternatives_1"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:478:1: rule__RuleStart__Alternatives_1 : ( ( ( rule__RuleStart__StateAssignment_1_0 ) ) | ( 'STD' ) );
+    public final void rule__RuleStart__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:648:1: ( ( ruleBracedExpression ) | ( ruleAtom ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:482:1: ( ( ( rule__RuleStart__StateAssignment_1_0 ) ) | ( 'STD' ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==29) ) {
+            if ( (LA2_0==RULE_ID) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==RULE_CHAR) ) {
+            else if ( (LA2_0==14) ) {
                 alt2=2;
             }
             else {
@@ -1730,18 +1263,24 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:649:1: ( ruleBracedExpression )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:483:1: ( ( rule__RuleStart__StateAssignment_1_0 ) )
                     {
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:649:1: ( ruleBracedExpression )
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:650:1: ruleBracedExpression
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:483:1: ( ( rule__RuleStart__StateAssignment_1_0 ) )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:484:1: ( rule__RuleStart__StateAssignment_1_0 )
                     {
-                     before(grammarAccess.getAtomicExpressionAccess().getBracedExpressionParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleBracedExpression_in_rule__AtomicExpression__Alternatives1322);
-                    ruleBracedExpression();
+                     before(grammarAccess.getRuleStartAccess().getStateAssignment_1_0()); 
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:485:1: ( rule__RuleStart__StateAssignment_1_0 )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:485:2: rule__RuleStart__StateAssignment_1_0
+                    {
+                    pushFollow(FOLLOW_rule__RuleStart__StateAssignment_1_0_in_rule__RuleStart__Alternatives_1965);
+                    rule__RuleStart__StateAssignment_1_0();
 
                     state._fsp--;
 
-                     after(grammarAccess.getAtomicExpressionAccess().getBracedExpressionParserRuleCall_0()); 
+
+                    }
+
+                     after(grammarAccess.getRuleStartAccess().getStateAssignment_1_0()); 
 
                     }
 
@@ -1749,18 +1288,14 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:655:6: ( ruleAtom )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:489:6: ( 'STD' )
                     {
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:655:6: ( ruleAtom )
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:656:1: ruleAtom
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:489:6: ( 'STD' )
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:490:1: 'STD'
                     {
-                     before(grammarAccess.getAtomicExpressionAccess().getAtomParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleAtom_in_rule__AtomicExpression__Alternatives1339);
-                    ruleAtom();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getAtomicExpressionAccess().getAtomParserRuleCall_1()); 
+                     before(grammarAccess.getRuleStartAccess().getSTDKeyword_1_1()); 
+                    match(input,14,FOLLOW_14_in_rule__RuleStart__Alternatives_1984); 
+                     after(grammarAccess.getRuleStartAccess().getSTDKeyword_1_1()); 
 
                     }
 
@@ -1781,25 +1316,25 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtomicExpression__Alternatives"
+    // $ANTLR end "rule__RuleStart__Alternatives_1"
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:668:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:504:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:672:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:673:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:508:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:509:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
-            pushFollow(FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01369);
+            pushFollow(FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01016);
             rule__Model__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01372);
+            pushFollow(FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01019);
             rule__Model__Group__1();
 
             state._fsp--;
@@ -1823,23 +1358,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:680:1: rule__Model__Group__0__Impl : ( ( rule__Model__ScannerAssignment_0 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:516:1: rule__Model__Group__0__Impl : ( ( rule__Model__ScannerAssignment_0 ) ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:684:1: ( ( ( rule__Model__ScannerAssignment_0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:685:1: ( ( rule__Model__ScannerAssignment_0 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:520:1: ( ( ( rule__Model__ScannerAssignment_0 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:521:1: ( ( rule__Model__ScannerAssignment_0 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:685:1: ( ( rule__Model__ScannerAssignment_0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:686:1: ( rule__Model__ScannerAssignment_0 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:521:1: ( ( rule__Model__ScannerAssignment_0 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:522:1: ( rule__Model__ScannerAssignment_0 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_0()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:687:1: ( rule__Model__ScannerAssignment_0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:687:2: rule__Model__ScannerAssignment_0
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:523:1: ( rule__Model__ScannerAssignment_0 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:523:2: rule__Model__ScannerAssignment_0
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_0_in_rule__Model__Group__0__Impl1399);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_0_in_rule__Model__Group__0__Impl1046);
             rule__Model__ScannerAssignment_0();
 
             state._fsp--;
@@ -1870,21 +1405,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:697:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:533:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:701:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:702:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:537:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:538:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
-            pushFollow(FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11429);
+            pushFollow(FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11076);
             rule__Model__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11432);
+            pushFollow(FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11079);
             rule__Model__Group__2();
 
             state._fsp--;
@@ -1908,23 +1443,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:709:1: rule__Model__Group__1__Impl : ( ( rule__Model__ScannerAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:545:1: rule__Model__Group__1__Impl : ( ( rule__Model__ScannerAssignment_1 ) ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:713:1: ( ( ( rule__Model__ScannerAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:714:1: ( ( rule__Model__ScannerAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:549:1: ( ( ( rule__Model__ScannerAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:550:1: ( ( rule__Model__ScannerAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:714:1: ( ( rule__Model__ScannerAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:715:1: ( rule__Model__ScannerAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:550:1: ( ( rule__Model__ScannerAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:551:1: ( rule__Model__ScannerAssignment_1 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:716:1: ( rule__Model__ScannerAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:716:2: rule__Model__ScannerAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:552:1: ( rule__Model__ScannerAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:552:2: rule__Model__ScannerAssignment_1
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_1_in_rule__Model__Group__1__Impl1459);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_1_in_rule__Model__Group__1__Impl1106);
             rule__Model__ScannerAssignment_1();
 
             state._fsp--;
@@ -1955,21 +1490,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:726:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:562:1: rule__Model__Group__2 : rule__Model__Group__2__Impl rule__Model__Group__3 ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:730:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:731:2: rule__Model__Group__2__Impl rule__Model__Group__3
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:566:1: ( rule__Model__Group__2__Impl rule__Model__Group__3 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:567:2: rule__Model__Group__2__Impl rule__Model__Group__3
             {
-            pushFollow(FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21489);
+            pushFollow(FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21136);
             rule__Model__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21492);
+            pushFollow(FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21139);
             rule__Model__Group__3();
 
             state._fsp--;
@@ -1993,23 +1528,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:738:1: rule__Model__Group__2__Impl : ( ( rule__Model__ScannerAssignment_2 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:574:1: rule__Model__Group__2__Impl : ( ( rule__Model__ScannerAssignment_2 ) ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:742:1: ( ( ( rule__Model__ScannerAssignment_2 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:743:1: ( ( rule__Model__ScannerAssignment_2 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:578:1: ( ( ( rule__Model__ScannerAssignment_2 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:579:1: ( ( rule__Model__ScannerAssignment_2 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:743:1: ( ( rule__Model__ScannerAssignment_2 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:744:1: ( rule__Model__ScannerAssignment_2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:579:1: ( ( rule__Model__ScannerAssignment_2 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:580:1: ( rule__Model__ScannerAssignment_2 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_2()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:745:1: ( rule__Model__ScannerAssignment_2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:745:2: rule__Model__ScannerAssignment_2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:581:1: ( rule__Model__ScannerAssignment_2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:581:2: rule__Model__ScannerAssignment_2
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_2_in_rule__Model__Group__2__Impl1519);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_2_in_rule__Model__Group__2__Impl1166);
             rule__Model__ScannerAssignment_2();
 
             state._fsp--;
@@ -2040,21 +1575,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__3"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:755:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:591:1: rule__Model__Group__3 : rule__Model__Group__3__Impl rule__Model__Group__4 ;
     public final void rule__Model__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:759:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:760:2: rule__Model__Group__3__Impl rule__Model__Group__4
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:595:1: ( rule__Model__Group__3__Impl rule__Model__Group__4 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:596:2: rule__Model__Group__3__Impl rule__Model__Group__4
             {
-            pushFollow(FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31549);
+            pushFollow(FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31196);
             rule__Model__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31552);
+            pushFollow(FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31199);
             rule__Model__Group__4();
 
             state._fsp--;
@@ -2078,27 +1613,38 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__3__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:767:1: rule__Model__Group__3__Impl : ( ( rule__Model__ScannerAssignment_3 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:603:1: rule__Model__Group__3__Impl : ( ( rule__Model__ScannerAssignment_3 )? ) ;
     public final void rule__Model__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:771:1: ( ( ( rule__Model__ScannerAssignment_3 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:772:1: ( ( rule__Model__ScannerAssignment_3 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:607:1: ( ( ( rule__Model__ScannerAssignment_3 )? ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:608:1: ( ( rule__Model__ScannerAssignment_3 )? )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:772:1: ( ( rule__Model__ScannerAssignment_3 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:773:1: ( rule__Model__ScannerAssignment_3 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:608:1: ( ( rule__Model__ScannerAssignment_3 )? )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:609:1: ( rule__Model__ScannerAssignment_3 )?
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_3()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:774:1: ( rule__Model__ScannerAssignment_3 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:774:2: rule__Model__ScannerAssignment_3
-            {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_3_in_rule__Model__Group__3__Impl1579);
-            rule__Model__ScannerAssignment_3();
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:610:1: ( rule__Model__ScannerAssignment_3 )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA3_0==19) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:610:2: rule__Model__ScannerAssignment_3
+                    {
+                    pushFollow(FOLLOW_rule__Model__ScannerAssignment_3_in_rule__Model__Group__3__Impl1226);
+                    rule__Model__ScannerAssignment_3();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -2125,21 +1671,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__4"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:784:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:620:1: rule__Model__Group__4 : rule__Model__Group__4__Impl rule__Model__Group__5 ;
     public final void rule__Model__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:788:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:789:2: rule__Model__Group__4__Impl rule__Model__Group__5
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:624:1: ( rule__Model__Group__4__Impl rule__Model__Group__5 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:625:2: rule__Model__Group__4__Impl rule__Model__Group__5
             {
-            pushFollow(FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41609);
+            pushFollow(FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41257);
             rule__Model__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41612);
+            pushFollow(FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41260);
             rule__Model__Group__5();
 
             state._fsp--;
@@ -2163,23 +1709,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__4__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:796:1: rule__Model__Group__4__Impl : ( ( rule__Model__ScannerAssignment_4 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:632:1: rule__Model__Group__4__Impl : ( ( rule__Model__ScannerAssignment_4 ) ) ;
     public final void rule__Model__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:800:1: ( ( ( rule__Model__ScannerAssignment_4 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:801:1: ( ( rule__Model__ScannerAssignment_4 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:636:1: ( ( ( rule__Model__ScannerAssignment_4 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:637:1: ( ( rule__Model__ScannerAssignment_4 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:801:1: ( ( rule__Model__ScannerAssignment_4 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:802:1: ( rule__Model__ScannerAssignment_4 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:637:1: ( ( rule__Model__ScannerAssignment_4 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:638:1: ( rule__Model__ScannerAssignment_4 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_4()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:803:1: ( rule__Model__ScannerAssignment_4 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:803:2: rule__Model__ScannerAssignment_4
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:639:1: ( rule__Model__ScannerAssignment_4 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:639:2: rule__Model__ScannerAssignment_4
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_4_in_rule__Model__Group__4__Impl1639);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_4_in_rule__Model__Group__4__Impl1287);
             rule__Model__ScannerAssignment_4();
 
             state._fsp--;
@@ -2210,21 +1756,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__5"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:813:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:649:1: rule__Model__Group__5 : rule__Model__Group__5__Impl rule__Model__Group__6 ;
     public final void rule__Model__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:817:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:818:2: rule__Model__Group__5__Impl rule__Model__Group__6
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:653:1: ( rule__Model__Group__5__Impl rule__Model__Group__6 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:654:2: rule__Model__Group__5__Impl rule__Model__Group__6
             {
-            pushFollow(FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51669);
+            pushFollow(FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51317);
             rule__Model__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51672);
+            pushFollow(FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51320);
             rule__Model__Group__6();
 
             state._fsp--;
@@ -2248,27 +1794,38 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__5__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:825:1: rule__Model__Group__5__Impl : ( ( rule__Model__ScannerAssignment_5 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:661:1: rule__Model__Group__5__Impl : ( ( rule__Model__ScannerAssignment_5 )? ) ;
     public final void rule__Model__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:829:1: ( ( ( rule__Model__ScannerAssignment_5 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:830:1: ( ( rule__Model__ScannerAssignment_5 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:665:1: ( ( ( rule__Model__ScannerAssignment_5 )? ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:666:1: ( ( rule__Model__ScannerAssignment_5 )? )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:830:1: ( ( rule__Model__ScannerAssignment_5 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:831:1: ( rule__Model__ScannerAssignment_5 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:666:1: ( ( rule__Model__ScannerAssignment_5 )? )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:667:1: ( rule__Model__ScannerAssignment_5 )?
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_5()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:832:1: ( rule__Model__ScannerAssignment_5 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:832:2: rule__Model__ScannerAssignment_5
-            {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_5_in_rule__Model__Group__5__Impl1699);
-            rule__Model__ScannerAssignment_5();
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:668:1: ( rule__Model__ScannerAssignment_5 )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA4_0==21) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:668:2: rule__Model__ScannerAssignment_5
+                    {
+                    pushFollow(FOLLOW_rule__Model__ScannerAssignment_5_in_rule__Model__Group__5__Impl1347);
+                    rule__Model__ScannerAssignment_5();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -2295,21 +1852,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__6"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:842:1: rule__Model__Group__6 : rule__Model__Group__6__Impl rule__Model__Group__7 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:678:1: rule__Model__Group__6 : rule__Model__Group__6__Impl rule__Model__Group__7 ;
     public final void rule__Model__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:846:1: ( rule__Model__Group__6__Impl rule__Model__Group__7 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:847:2: rule__Model__Group__6__Impl rule__Model__Group__7
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:682:1: ( rule__Model__Group__6__Impl rule__Model__Group__7 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:683:2: rule__Model__Group__6__Impl rule__Model__Group__7
             {
-            pushFollow(FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61729);
+            pushFollow(FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61378);
             rule__Model__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61732);
+            pushFollow(FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61381);
             rule__Model__Group__7();
 
             state._fsp--;
@@ -2333,23 +1890,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__6__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:854:1: rule__Model__Group__6__Impl : ( ( rule__Model__ScannerAssignment_6 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:690:1: rule__Model__Group__6__Impl : ( ( rule__Model__ScannerAssignment_6 ) ) ;
     public final void rule__Model__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:858:1: ( ( ( rule__Model__ScannerAssignment_6 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:859:1: ( ( rule__Model__ScannerAssignment_6 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:694:1: ( ( ( rule__Model__ScannerAssignment_6 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:695:1: ( ( rule__Model__ScannerAssignment_6 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:859:1: ( ( rule__Model__ScannerAssignment_6 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:860:1: ( rule__Model__ScannerAssignment_6 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:695:1: ( ( rule__Model__ScannerAssignment_6 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:696:1: ( rule__Model__ScannerAssignment_6 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_6()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:861:1: ( rule__Model__ScannerAssignment_6 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:861:2: rule__Model__ScannerAssignment_6
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:697:1: ( rule__Model__ScannerAssignment_6 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:697:2: rule__Model__ScannerAssignment_6
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_6_in_rule__Model__Group__6__Impl1759);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_6_in_rule__Model__Group__6__Impl1408);
             rule__Model__ScannerAssignment_6();
 
             state._fsp--;
@@ -2380,21 +1937,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__7"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:871:1: rule__Model__Group__7 : rule__Model__Group__7__Impl rule__Model__Group__8 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:707:1: rule__Model__Group__7 : rule__Model__Group__7__Impl rule__Model__Group__8 ;
     public final void rule__Model__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:875:1: ( rule__Model__Group__7__Impl rule__Model__Group__8 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:876:2: rule__Model__Group__7__Impl rule__Model__Group__8
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:711:1: ( rule__Model__Group__7__Impl rule__Model__Group__8 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:712:2: rule__Model__Group__7__Impl rule__Model__Group__8
             {
-            pushFollow(FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71789);
+            pushFollow(FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71438);
             rule__Model__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Model__Group__8_in_rule__Model__Group__71792);
+            pushFollow(FOLLOW_rule__Model__Group__8_in_rule__Model__Group__71441);
             rule__Model__Group__8();
 
             state._fsp--;
@@ -2418,27 +1975,38 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__7__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:883:1: rule__Model__Group__7__Impl : ( ( rule__Model__ScannerAssignment_7 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:719:1: rule__Model__Group__7__Impl : ( ( rule__Model__ScannerAssignment_7 )? ) ;
     public final void rule__Model__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:887:1: ( ( ( rule__Model__ScannerAssignment_7 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:888:1: ( ( rule__Model__ScannerAssignment_7 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:723:1: ( ( ( rule__Model__ScannerAssignment_7 )? ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:724:1: ( ( rule__Model__ScannerAssignment_7 )? )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:888:1: ( ( rule__Model__ScannerAssignment_7 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:889:1: ( rule__Model__ScannerAssignment_7 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:724:1: ( ( rule__Model__ScannerAssignment_7 )? )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:725:1: ( rule__Model__ScannerAssignment_7 )?
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_7()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:890:1: ( rule__Model__ScannerAssignment_7 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:890:2: rule__Model__ScannerAssignment_7
-            {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_7_in_rule__Model__Group__7__Impl1819);
-            rule__Model__ScannerAssignment_7();
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:726:1: ( rule__Model__ScannerAssignment_7 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA5_0==25) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:726:2: rule__Model__ScannerAssignment_7
+                    {
+                    pushFollow(FOLLOW_rule__Model__ScannerAssignment_7_in_rule__Model__Group__7__Impl1468);
+                    rule__Model__ScannerAssignment_7();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -2465,16 +2033,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__8"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:900:1: rule__Model__Group__8 : rule__Model__Group__8__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:736:1: rule__Model__Group__8 : rule__Model__Group__8__Impl ;
     public final void rule__Model__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:904:1: ( rule__Model__Group__8__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:905:2: rule__Model__Group__8__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:740:1: ( rule__Model__Group__8__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:741:2: rule__Model__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__81849);
+            pushFollow(FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__81499);
             rule__Model__Group__8__Impl();
 
             state._fsp--;
@@ -2498,23 +2066,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__8__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:911:1: rule__Model__Group__8__Impl : ( ( rule__Model__ScannerAssignment_8 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:747:1: rule__Model__Group__8__Impl : ( ( rule__Model__ScannerAssignment_8 ) ) ;
     public final void rule__Model__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:915:1: ( ( ( rule__Model__ScannerAssignment_8 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:916:1: ( ( rule__Model__ScannerAssignment_8 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:751:1: ( ( ( rule__Model__ScannerAssignment_8 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:752:1: ( ( rule__Model__ScannerAssignment_8 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:916:1: ( ( rule__Model__ScannerAssignment_8 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:917:1: ( rule__Model__ScannerAssignment_8 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:752:1: ( ( rule__Model__ScannerAssignment_8 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:753:1: ( rule__Model__ScannerAssignment_8 )
             {
              before(grammarAccess.getModelAccess().getScannerAssignment_8()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:918:1: ( rule__Model__ScannerAssignment_8 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:918:2: rule__Model__ScannerAssignment_8
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:754:1: ( rule__Model__ScannerAssignment_8 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:754:2: rule__Model__ScannerAssignment_8
             {
-            pushFollow(FOLLOW_rule__Model__ScannerAssignment_8_in_rule__Model__Group__8__Impl1876);
+            pushFollow(FOLLOW_rule__Model__ScannerAssignment_8_in_rule__Model__Group__8__Impl1526);
             rule__Model__ScannerAssignment_8();
 
             state._fsp--;
@@ -2545,21 +2113,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Title__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:946:1: rule__Title__Group__0 : rule__Title__Group__0__Impl rule__Title__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:782:1: rule__Title__Group__0 : rule__Title__Group__0__Impl rule__Title__Group__1 ;
     public final void rule__Title__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:950:1: ( rule__Title__Group__0__Impl rule__Title__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:951:2: rule__Title__Group__0__Impl rule__Title__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:786:1: ( rule__Title__Group__0__Impl rule__Title__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:787:2: rule__Title__Group__0__Impl rule__Title__Group__1
             {
-            pushFollow(FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__01924);
+            pushFollow(FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__01574);
             rule__Title__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Title__Group__1_in_rule__Title__Group__01927);
+            pushFollow(FOLLOW_rule__Title__Group__1_in_rule__Title__Group__01577);
             rule__Title__Group__1();
 
             state._fsp--;
@@ -2583,20 +2151,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Title__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:958:1: rule__Title__Group__0__Impl : ( 'SCANNER' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:794:1: rule__Title__Group__0__Impl : ( 'SCANNER' ) ;
     public final void rule__Title__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:962:1: ( ( 'SCANNER' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:963:1: ( 'SCANNER' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:798:1: ( ( 'SCANNER' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:799:1: ( 'SCANNER' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:963:1: ( 'SCANNER' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:964:1: 'SCANNER'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:799:1: ( 'SCANNER' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:800:1: 'SCANNER'
             {
              before(grammarAccess.getTitleAccess().getSCANNERKeyword_0()); 
-            match(input,13,FOLLOW_13_in_rule__Title__Group__0__Impl1955); 
+            match(input,15,FOLLOW_15_in_rule__Title__Group__0__Impl1605); 
              after(grammarAccess.getTitleAccess().getSCANNERKeyword_0()); 
 
             }
@@ -2620,16 +2188,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Title__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:977:1: rule__Title__Group__1 : rule__Title__Group__1__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:813:1: rule__Title__Group__1 : rule__Title__Group__1__Impl ;
     public final void rule__Title__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:981:1: ( rule__Title__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:982:2: rule__Title__Group__1__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:817:1: ( rule__Title__Group__1__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:818:2: rule__Title__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__11986);
+            pushFollow(FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__11636);
             rule__Title__Group__1__Impl();
 
             state._fsp--;
@@ -2653,23 +2221,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Title__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:988:1: rule__Title__Group__1__Impl : ( ( rule__Title__NameAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:824:1: rule__Title__Group__1__Impl : ( ( rule__Title__NameAssignment_1 ) ) ;
     public final void rule__Title__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:992:1: ( ( ( rule__Title__NameAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:993:1: ( ( rule__Title__NameAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:828:1: ( ( ( rule__Title__NameAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:829:1: ( ( rule__Title__NameAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:993:1: ( ( rule__Title__NameAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:994:1: ( rule__Title__NameAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:829:1: ( ( rule__Title__NameAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:830:1: ( rule__Title__NameAssignment_1 )
             {
              before(grammarAccess.getTitleAccess().getNameAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:995:1: ( rule__Title__NameAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:995:2: rule__Title__NameAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:831:1: ( rule__Title__NameAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:831:2: rule__Title__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Title__NameAssignment_1_in_rule__Title__Group__1__Impl2013);
+            pushFollow(FOLLOW_rule__Title__NameAssignment_1_in_rule__Title__Group__1__Impl1663);
             rule__Title__NameAssignment_1();
 
             state._fsp--;
@@ -2700,21 +2268,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1009:1: rule__Export__Group__0 : rule__Export__Group__0__Impl rule__Export__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:845:1: rule__Export__Group__0 : rule__Export__Group__0__Impl rule__Export__Group__1 ;
     public final void rule__Export__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1013:1: ( rule__Export__Group__0__Impl rule__Export__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1014:2: rule__Export__Group__0__Impl rule__Export__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:849:1: ( rule__Export__Group__0__Impl rule__Export__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:850:2: rule__Export__Group__0__Impl rule__Export__Group__1
             {
-            pushFollow(FOLLOW_rule__Export__Group__0__Impl_in_rule__Export__Group__02047);
+            pushFollow(FOLLOW_rule__Export__Group__0__Impl_in_rule__Export__Group__01697);
             rule__Export__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Export__Group__1_in_rule__Export__Group__02050);
+            pushFollow(FOLLOW_rule__Export__Group__1_in_rule__Export__Group__01700);
             rule__Export__Group__1();
 
             state._fsp--;
@@ -2738,20 +2306,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1021:1: rule__Export__Group__0__Impl : ( 'EXPORT {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:857:1: rule__Export__Group__0__Impl : ( 'EXPORT {' ) ;
     public final void rule__Export__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1025:1: ( ( 'EXPORT {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1026:1: ( 'EXPORT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:861:1: ( ( 'EXPORT {' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:862:1: ( 'EXPORT {' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1026:1: ( 'EXPORT {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1027:1: 'EXPORT {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:862:1: ( 'EXPORT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:863:1: 'EXPORT {'
             {
              before(grammarAccess.getExportAccess().getEXPORTKeyword_0()); 
-            match(input,14,FOLLOW_14_in_rule__Export__Group__0__Impl2078); 
+            match(input,16,FOLLOW_16_in_rule__Export__Group__0__Impl1728); 
              after(grammarAccess.getExportAccess().getEXPORTKeyword_0()); 
 
             }
@@ -2775,21 +2343,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1040:1: rule__Export__Group__1 : rule__Export__Group__1__Impl rule__Export__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:876:1: rule__Export__Group__1 : rule__Export__Group__1__Impl rule__Export__Group__2 ;
     public final void rule__Export__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1044:1: ( rule__Export__Group__1__Impl rule__Export__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1045:2: rule__Export__Group__1__Impl rule__Export__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:880:1: ( rule__Export__Group__1__Impl rule__Export__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:881:2: rule__Export__Group__1__Impl rule__Export__Group__2
             {
-            pushFollow(FOLLOW_rule__Export__Group__1__Impl_in_rule__Export__Group__12109);
+            pushFollow(FOLLOW_rule__Export__Group__1__Impl_in_rule__Export__Group__11759);
             rule__Export__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Export__Group__2_in_rule__Export__Group__12112);
+            pushFollow(FOLLOW_rule__Export__Group__2_in_rule__Export__Group__11762);
             rule__Export__Group__2();
 
             state._fsp--;
@@ -2813,23 +2381,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1052:1: rule__Export__Group__1__Impl : ( ( rule__Export__ContentAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:888:1: rule__Export__Group__1__Impl : ( ( rule__Export__ContentAssignment_1 ) ) ;
     public final void rule__Export__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1056:1: ( ( ( rule__Export__ContentAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1057:1: ( ( rule__Export__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:892:1: ( ( ( rule__Export__ContentAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:893:1: ( ( rule__Export__ContentAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1057:1: ( ( rule__Export__ContentAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1058:1: ( rule__Export__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:893:1: ( ( rule__Export__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:894:1: ( rule__Export__ContentAssignment_1 )
             {
              before(grammarAccess.getExportAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1059:1: ( rule__Export__ContentAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1059:2: rule__Export__ContentAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:895:1: ( rule__Export__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:895:2: rule__Export__ContentAssignment_1
             {
-            pushFollow(FOLLOW_rule__Export__ContentAssignment_1_in_rule__Export__Group__1__Impl2139);
+            pushFollow(FOLLOW_rule__Export__ContentAssignment_1_in_rule__Export__Group__1__Impl1789);
             rule__Export__ContentAssignment_1();
 
             state._fsp--;
@@ -2860,16 +2428,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1069:1: rule__Export__Group__2 : rule__Export__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:905:1: rule__Export__Group__2 : rule__Export__Group__2__Impl ;
     public final void rule__Export__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1073:1: ( rule__Export__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1074:2: rule__Export__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:909:1: ( rule__Export__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:910:2: rule__Export__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Export__Group__2__Impl_in_rule__Export__Group__22169);
+            pushFollow(FOLLOW_rule__Export__Group__2__Impl_in_rule__Export__Group__21819);
             rule__Export__Group__2__Impl();
 
             state._fsp--;
@@ -2893,20 +2461,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1080:1: rule__Export__Group__2__Impl : ( '}' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:916:1: rule__Export__Group__2__Impl : ( '}' ) ;
     public final void rule__Export__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1084:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1085:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:920:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:921:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1085:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1086:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:921:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:922:1: '}'
             {
              before(grammarAccess.getExportAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Export__Group__2__Impl2197); 
+            match(input,17,FOLLOW_17_in_rule__Export__Group__2__Impl1847); 
              after(grammarAccess.getExportAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -2930,21 +2498,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1105:1: rule__Global__Group__0 : rule__Global__Group__0__Impl rule__Global__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:941:1: rule__Global__Group__0 : rule__Global__Group__0__Impl rule__Global__Group__1 ;
     public final void rule__Global__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1109:1: ( rule__Global__Group__0__Impl rule__Global__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1110:2: rule__Global__Group__0__Impl rule__Global__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:945:1: ( rule__Global__Group__0__Impl rule__Global__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:946:2: rule__Global__Group__0__Impl rule__Global__Group__1
             {
-            pushFollow(FOLLOW_rule__Global__Group__0__Impl_in_rule__Global__Group__02234);
+            pushFollow(FOLLOW_rule__Global__Group__0__Impl_in_rule__Global__Group__01884);
             rule__Global__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Global__Group__1_in_rule__Global__Group__02237);
+            pushFollow(FOLLOW_rule__Global__Group__1_in_rule__Global__Group__01887);
             rule__Global__Group__1();
 
             state._fsp--;
@@ -2968,20 +2536,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1117:1: rule__Global__Group__0__Impl : ( 'GLOBAL {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:953:1: rule__Global__Group__0__Impl : ( 'GLOBAL {' ) ;
     public final void rule__Global__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1121:1: ( ( 'GLOBAL {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1122:1: ( 'GLOBAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:957:1: ( ( 'GLOBAL {' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:958:1: ( 'GLOBAL {' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1122:1: ( 'GLOBAL {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1123:1: 'GLOBAL {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:958:1: ( 'GLOBAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:959:1: 'GLOBAL {'
             {
              before(grammarAccess.getGlobalAccess().getGLOBALKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__Global__Group__0__Impl2265); 
+            match(input,18,FOLLOW_18_in_rule__Global__Group__0__Impl1915); 
              after(grammarAccess.getGlobalAccess().getGLOBALKeyword_0()); 
 
             }
@@ -3005,21 +2573,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1136:1: rule__Global__Group__1 : rule__Global__Group__1__Impl rule__Global__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:972:1: rule__Global__Group__1 : rule__Global__Group__1__Impl rule__Global__Group__2 ;
     public final void rule__Global__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1140:1: ( rule__Global__Group__1__Impl rule__Global__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1141:2: rule__Global__Group__1__Impl rule__Global__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:976:1: ( rule__Global__Group__1__Impl rule__Global__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:977:2: rule__Global__Group__1__Impl rule__Global__Group__2
             {
-            pushFollow(FOLLOW_rule__Global__Group__1__Impl_in_rule__Global__Group__12296);
+            pushFollow(FOLLOW_rule__Global__Group__1__Impl_in_rule__Global__Group__11946);
             rule__Global__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Global__Group__2_in_rule__Global__Group__12299);
+            pushFollow(FOLLOW_rule__Global__Group__2_in_rule__Global__Group__11949);
             rule__Global__Group__2();
 
             state._fsp--;
@@ -3043,23 +2611,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1148:1: rule__Global__Group__1__Impl : ( ( rule__Global__ContentAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:984:1: rule__Global__Group__1__Impl : ( ( rule__Global__ContentAssignment_1 ) ) ;
     public final void rule__Global__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1152:1: ( ( ( rule__Global__ContentAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1153:1: ( ( rule__Global__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:988:1: ( ( ( rule__Global__ContentAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:989:1: ( ( rule__Global__ContentAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1153:1: ( ( rule__Global__ContentAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1154:1: ( rule__Global__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:989:1: ( ( rule__Global__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:990:1: ( rule__Global__ContentAssignment_1 )
             {
              before(grammarAccess.getGlobalAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1155:1: ( rule__Global__ContentAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1155:2: rule__Global__ContentAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:991:1: ( rule__Global__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:991:2: rule__Global__ContentAssignment_1
             {
-            pushFollow(FOLLOW_rule__Global__ContentAssignment_1_in_rule__Global__Group__1__Impl2326);
+            pushFollow(FOLLOW_rule__Global__ContentAssignment_1_in_rule__Global__Group__1__Impl1976);
             rule__Global__ContentAssignment_1();
 
             state._fsp--;
@@ -3090,16 +2658,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1165:1: rule__Global__Group__2 : rule__Global__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1001:1: rule__Global__Group__2 : rule__Global__Group__2__Impl ;
     public final void rule__Global__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1169:1: ( rule__Global__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1170:2: rule__Global__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1005:1: ( rule__Global__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1006:2: rule__Global__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Global__Group__2__Impl_in_rule__Global__Group__22356);
+            pushFollow(FOLLOW_rule__Global__Group__2__Impl_in_rule__Global__Group__22006);
             rule__Global__Group__2__Impl();
 
             state._fsp--;
@@ -3123,20 +2691,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1176:1: rule__Global__Group__2__Impl : ( '}' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1012:1: rule__Global__Group__2__Impl : ( '}' ) ;
     public final void rule__Global__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1180:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1181:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1016:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1017:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1181:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1182:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1017:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1018:1: '}'
             {
              before(grammarAccess.getGlobalAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Global__Group__2__Impl2384); 
+            match(input,17,FOLLOW_17_in_rule__Global__Group__2__Impl2034); 
              after(grammarAccess.getGlobalAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -3160,21 +2728,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1201:1: rule__Local__Group__0 : rule__Local__Group__0__Impl rule__Local__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1037:1: rule__Local__Group__0 : rule__Local__Group__0__Impl rule__Local__Group__1 ;
     public final void rule__Local__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1205:1: ( rule__Local__Group__0__Impl rule__Local__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1206:2: rule__Local__Group__0__Impl rule__Local__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1041:1: ( rule__Local__Group__0__Impl rule__Local__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1042:2: rule__Local__Group__0__Impl rule__Local__Group__1
             {
-            pushFollow(FOLLOW_rule__Local__Group__0__Impl_in_rule__Local__Group__02421);
+            pushFollow(FOLLOW_rule__Local__Group__0__Impl_in_rule__Local__Group__02071);
             rule__Local__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Local__Group__1_in_rule__Local__Group__02424);
+            pushFollow(FOLLOW_rule__Local__Group__1_in_rule__Local__Group__02074);
             rule__Local__Group__1();
 
             state._fsp--;
@@ -3198,20 +2766,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1213:1: rule__Local__Group__0__Impl : ( 'LOCAL {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1049:1: rule__Local__Group__0__Impl : ( 'LOCAL {' ) ;
     public final void rule__Local__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1217:1: ( ( 'LOCAL {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1218:1: ( 'LOCAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1053:1: ( ( 'LOCAL {' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1054:1: ( 'LOCAL {' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1218:1: ( 'LOCAL {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1219:1: 'LOCAL {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1054:1: ( 'LOCAL {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1055:1: 'LOCAL {'
             {
              before(grammarAccess.getLocalAccess().getLOCALKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__Local__Group__0__Impl2452); 
+            match(input,19,FOLLOW_19_in_rule__Local__Group__0__Impl2102); 
              after(grammarAccess.getLocalAccess().getLOCALKeyword_0()); 
 
             }
@@ -3235,21 +2803,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1232:1: rule__Local__Group__1 : rule__Local__Group__1__Impl rule__Local__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1068:1: rule__Local__Group__1 : rule__Local__Group__1__Impl rule__Local__Group__2 ;
     public final void rule__Local__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1236:1: ( rule__Local__Group__1__Impl rule__Local__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1237:2: rule__Local__Group__1__Impl rule__Local__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1072:1: ( rule__Local__Group__1__Impl rule__Local__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1073:2: rule__Local__Group__1__Impl rule__Local__Group__2
             {
-            pushFollow(FOLLOW_rule__Local__Group__1__Impl_in_rule__Local__Group__12483);
+            pushFollow(FOLLOW_rule__Local__Group__1__Impl_in_rule__Local__Group__12133);
             rule__Local__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Local__Group__2_in_rule__Local__Group__12486);
+            pushFollow(FOLLOW_rule__Local__Group__2_in_rule__Local__Group__12136);
             rule__Local__Group__2();
 
             state._fsp--;
@@ -3273,23 +2841,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1244:1: rule__Local__Group__1__Impl : ( ( rule__Local__ContentAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1080:1: rule__Local__Group__1__Impl : ( ( rule__Local__ContentAssignment_1 ) ) ;
     public final void rule__Local__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1248:1: ( ( ( rule__Local__ContentAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1249:1: ( ( rule__Local__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1084:1: ( ( ( rule__Local__ContentAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1085:1: ( ( rule__Local__ContentAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1249:1: ( ( rule__Local__ContentAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1250:1: ( rule__Local__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1085:1: ( ( rule__Local__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1086:1: ( rule__Local__ContentAssignment_1 )
             {
              before(grammarAccess.getLocalAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1251:1: ( rule__Local__ContentAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1251:2: rule__Local__ContentAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1087:1: ( rule__Local__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1087:2: rule__Local__ContentAssignment_1
             {
-            pushFollow(FOLLOW_rule__Local__ContentAssignment_1_in_rule__Local__Group__1__Impl2513);
+            pushFollow(FOLLOW_rule__Local__ContentAssignment_1_in_rule__Local__Group__1__Impl2163);
             rule__Local__ContentAssignment_1();
 
             state._fsp--;
@@ -3320,16 +2888,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1261:1: rule__Local__Group__2 : rule__Local__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1097:1: rule__Local__Group__2 : rule__Local__Group__2__Impl ;
     public final void rule__Local__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1265:1: ( rule__Local__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1266:2: rule__Local__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1101:1: ( rule__Local__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1102:2: rule__Local__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Local__Group__2__Impl_in_rule__Local__Group__22543);
+            pushFollow(FOLLOW_rule__Local__Group__2__Impl_in_rule__Local__Group__22193);
             rule__Local__Group__2__Impl();
 
             state._fsp--;
@@ -3353,20 +2921,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1272:1: rule__Local__Group__2__Impl : ( '}' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1108:1: rule__Local__Group__2__Impl : ( '}' ) ;
     public final void rule__Local__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1276:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1277:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1112:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1113:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1277:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1278:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1113:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1114:1: '}'
             {
              before(grammarAccess.getLocalAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Local__Group__2__Impl2571); 
+            match(input,17,FOLLOW_17_in_rule__Local__Group__2__Impl2221); 
              after(grammarAccess.getLocalAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -3390,21 +2958,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1297:1: rule__Default__Group__0 : rule__Default__Group__0__Impl rule__Default__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1133:1: rule__Default__Group__0 : rule__Default__Group__0__Impl rule__Default__Group__1 ;
     public final void rule__Default__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1301:1: ( rule__Default__Group__0__Impl rule__Default__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1302:2: rule__Default__Group__0__Impl rule__Default__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1137:1: ( rule__Default__Group__0__Impl rule__Default__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1138:2: rule__Default__Group__0__Impl rule__Default__Group__1
             {
-            pushFollow(FOLLOW_rule__Default__Group__0__Impl_in_rule__Default__Group__02608);
+            pushFollow(FOLLOW_rule__Default__Group__0__Impl_in_rule__Default__Group__02258);
             rule__Default__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Default__Group__1_in_rule__Default__Group__02611);
+            pushFollow(FOLLOW_rule__Default__Group__1_in_rule__Default__Group__02261);
             rule__Default__Group__1();
 
             state._fsp--;
@@ -3428,20 +2996,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1309:1: rule__Default__Group__0__Impl : ( 'DEFAULT {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1145:1: rule__Default__Group__0__Impl : ( 'DEFAULT {' ) ;
     public final void rule__Default__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1313:1: ( ( 'DEFAULT {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1314:1: ( 'DEFAULT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1149:1: ( ( 'DEFAULT {' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1150:1: ( 'DEFAULT {' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1314:1: ( 'DEFAULT {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1315:1: 'DEFAULT {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1150:1: ( 'DEFAULT {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1151:1: 'DEFAULT {'
             {
              before(grammarAccess.getDefaultAccess().getDEFAULTKeyword_0()); 
-            match(input,18,FOLLOW_18_in_rule__Default__Group__0__Impl2639); 
+            match(input,20,FOLLOW_20_in_rule__Default__Group__0__Impl2289); 
              after(grammarAccess.getDefaultAccess().getDEFAULTKeyword_0()); 
 
             }
@@ -3465,21 +3033,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1328:1: rule__Default__Group__1 : rule__Default__Group__1__Impl rule__Default__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1164:1: rule__Default__Group__1 : rule__Default__Group__1__Impl rule__Default__Group__2 ;
     public final void rule__Default__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1332:1: ( rule__Default__Group__1__Impl rule__Default__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1333:2: rule__Default__Group__1__Impl rule__Default__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1168:1: ( rule__Default__Group__1__Impl rule__Default__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1169:2: rule__Default__Group__1__Impl rule__Default__Group__2
             {
-            pushFollow(FOLLOW_rule__Default__Group__1__Impl_in_rule__Default__Group__12670);
+            pushFollow(FOLLOW_rule__Default__Group__1__Impl_in_rule__Default__Group__12320);
             rule__Default__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Default__Group__2_in_rule__Default__Group__12673);
+            pushFollow(FOLLOW_rule__Default__Group__2_in_rule__Default__Group__12323);
             rule__Default__Group__2();
 
             state._fsp--;
@@ -3503,23 +3071,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1340:1: rule__Default__Group__1__Impl : ( ( rule__Default__ContentAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1176:1: rule__Default__Group__1__Impl : ( ( rule__Default__ContentAssignment_1 ) ) ;
     public final void rule__Default__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1344:1: ( ( ( rule__Default__ContentAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1345:1: ( ( rule__Default__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1180:1: ( ( ( rule__Default__ContentAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1181:1: ( ( rule__Default__ContentAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1345:1: ( ( rule__Default__ContentAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1346:1: ( rule__Default__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1181:1: ( ( rule__Default__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1182:1: ( rule__Default__ContentAssignment_1 )
             {
              before(grammarAccess.getDefaultAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1347:1: ( rule__Default__ContentAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1347:2: rule__Default__ContentAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1183:1: ( rule__Default__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1183:2: rule__Default__ContentAssignment_1
             {
-            pushFollow(FOLLOW_rule__Default__ContentAssignment_1_in_rule__Default__Group__1__Impl2700);
+            pushFollow(FOLLOW_rule__Default__ContentAssignment_1_in_rule__Default__Group__1__Impl2350);
             rule__Default__ContentAssignment_1();
 
             state._fsp--;
@@ -3550,16 +3118,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1357:1: rule__Default__Group__2 : rule__Default__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1193:1: rule__Default__Group__2 : rule__Default__Group__2__Impl ;
     public final void rule__Default__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1361:1: ( rule__Default__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1362:2: rule__Default__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1197:1: ( rule__Default__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1198:2: rule__Default__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Default__Group__2__Impl_in_rule__Default__Group__22730);
+            pushFollow(FOLLOW_rule__Default__Group__2__Impl_in_rule__Default__Group__22380);
             rule__Default__Group__2__Impl();
 
             state._fsp--;
@@ -3583,20 +3151,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1368:1: rule__Default__Group__2__Impl : ( '}' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1204:1: rule__Default__Group__2__Impl : ( '}' ) ;
     public final void rule__Default__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1372:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1373:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1208:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1209:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1373:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1374:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1209:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1210:1: '}'
             {
              before(grammarAccess.getDefaultAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Default__Group__2__Impl2758); 
+            match(input,17,FOLLOW_17_in_rule__Default__Group__2__Impl2408); 
              after(grammarAccess.getDefaultAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -3620,21 +3188,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1393:1: rule__Eof__Group__0 : rule__Eof__Group__0__Impl rule__Eof__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1229:1: rule__Eof__Group__0 : rule__Eof__Group__0__Impl rule__Eof__Group__1 ;
     public final void rule__Eof__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1397:1: ( rule__Eof__Group__0__Impl rule__Eof__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1398:2: rule__Eof__Group__0__Impl rule__Eof__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1233:1: ( rule__Eof__Group__0__Impl rule__Eof__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1234:2: rule__Eof__Group__0__Impl rule__Eof__Group__1
             {
-            pushFollow(FOLLOW_rule__Eof__Group__0__Impl_in_rule__Eof__Group__02795);
+            pushFollow(FOLLOW_rule__Eof__Group__0__Impl_in_rule__Eof__Group__02445);
             rule__Eof__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Eof__Group__1_in_rule__Eof__Group__02798);
+            pushFollow(FOLLOW_rule__Eof__Group__1_in_rule__Eof__Group__02448);
             rule__Eof__Group__1();
 
             state._fsp--;
@@ -3658,20 +3226,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1405:1: rule__Eof__Group__0__Impl : ( 'EOF {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1241:1: rule__Eof__Group__0__Impl : ( 'EOF {' ) ;
     public final void rule__Eof__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1409:1: ( ( 'EOF {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1410:1: ( 'EOF {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1245:1: ( ( 'EOF {' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1246:1: ( 'EOF {' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1410:1: ( 'EOF {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1411:1: 'EOF {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1246:1: ( 'EOF {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1247:1: 'EOF {'
             {
              before(grammarAccess.getEofAccess().getEOFKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__Eof__Group__0__Impl2826); 
+            match(input,21,FOLLOW_21_in_rule__Eof__Group__0__Impl2476); 
              after(grammarAccess.getEofAccess().getEOFKeyword_0()); 
 
             }
@@ -3695,21 +3263,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1424:1: rule__Eof__Group__1 : rule__Eof__Group__1__Impl rule__Eof__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1260:1: rule__Eof__Group__1 : rule__Eof__Group__1__Impl rule__Eof__Group__2 ;
     public final void rule__Eof__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1428:1: ( rule__Eof__Group__1__Impl rule__Eof__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1429:2: rule__Eof__Group__1__Impl rule__Eof__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1264:1: ( rule__Eof__Group__1__Impl rule__Eof__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1265:2: rule__Eof__Group__1__Impl rule__Eof__Group__2
             {
-            pushFollow(FOLLOW_rule__Eof__Group__1__Impl_in_rule__Eof__Group__12857);
+            pushFollow(FOLLOW_rule__Eof__Group__1__Impl_in_rule__Eof__Group__12507);
             rule__Eof__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Eof__Group__2_in_rule__Eof__Group__12860);
+            pushFollow(FOLLOW_rule__Eof__Group__2_in_rule__Eof__Group__12510);
             rule__Eof__Group__2();
 
             state._fsp--;
@@ -3733,23 +3301,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1436:1: rule__Eof__Group__1__Impl : ( ( rule__Eof__ContentAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1272:1: rule__Eof__Group__1__Impl : ( ( rule__Eof__ContentAssignment_1 ) ) ;
     public final void rule__Eof__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1440:1: ( ( ( rule__Eof__ContentAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1441:1: ( ( rule__Eof__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1276:1: ( ( ( rule__Eof__ContentAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1277:1: ( ( rule__Eof__ContentAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1441:1: ( ( rule__Eof__ContentAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1442:1: ( rule__Eof__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1277:1: ( ( rule__Eof__ContentAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1278:1: ( rule__Eof__ContentAssignment_1 )
             {
              before(grammarAccess.getEofAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1443:1: ( rule__Eof__ContentAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1443:2: rule__Eof__ContentAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1279:1: ( rule__Eof__ContentAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1279:2: rule__Eof__ContentAssignment_1
             {
-            pushFollow(FOLLOW_rule__Eof__ContentAssignment_1_in_rule__Eof__Group__1__Impl2887);
+            pushFollow(FOLLOW_rule__Eof__ContentAssignment_1_in_rule__Eof__Group__1__Impl2537);
             rule__Eof__ContentAssignment_1();
 
             state._fsp--;
@@ -3780,16 +3348,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1453:1: rule__Eof__Group__2 : rule__Eof__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1289:1: rule__Eof__Group__2 : rule__Eof__Group__2__Impl ;
     public final void rule__Eof__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1457:1: ( rule__Eof__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1458:2: rule__Eof__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1293:1: ( rule__Eof__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1294:2: rule__Eof__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Eof__Group__2__Impl_in_rule__Eof__Group__22917);
+            pushFollow(FOLLOW_rule__Eof__Group__2__Impl_in_rule__Eof__Group__22567);
             rule__Eof__Group__2__Impl();
 
             state._fsp--;
@@ -3813,20 +3381,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1464:1: rule__Eof__Group__2__Impl : ( '}' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1300:1: rule__Eof__Group__2__Impl : ( '}' ) ;
     public final void rule__Eof__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1468:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1469:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1304:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1305:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1469:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1470:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1305:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1306:1: '}'
             {
              before(grammarAccess.getEofAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Eof__Group__2__Impl2945); 
+            match(input,17,FOLLOW_17_in_rule__Eof__Group__2__Impl2595); 
              after(grammarAccess.getEofAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -3850,21 +3418,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1489:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1325:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
     public final void rule__Define__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1493:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1494:2: rule__Define__Group__0__Impl rule__Define__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1329:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1330:2: rule__Define__Group__0__Impl rule__Define__Group__1
             {
-            pushFollow(FOLLOW_rule__Define__Group__0__Impl_in_rule__Define__Group__02982);
+            pushFollow(FOLLOW_rule__Define__Group__0__Impl_in_rule__Define__Group__02632);
             rule__Define__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Define__Group__1_in_rule__Define__Group__02985);
+            pushFollow(FOLLOW_rule__Define__Group__1_in_rule__Define__Group__02635);
             rule__Define__Group__1();
 
             state._fsp--;
@@ -3888,20 +3456,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1501:1: rule__Define__Group__0__Impl : ( 'DEFINE' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1337:1: rule__Define__Group__0__Impl : ( 'DEFINE' ) ;
     public final void rule__Define__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1505:1: ( ( 'DEFINE' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1506:1: ( 'DEFINE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1341:1: ( ( 'DEFINE' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1342:1: ( 'DEFINE' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1506:1: ( 'DEFINE' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1507:1: 'DEFINE'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1342:1: ( 'DEFINE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1343:1: 'DEFINE'
             {
              before(grammarAccess.getDefineAccess().getDEFINEKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__Define__Group__0__Impl3013); 
+            match(input,22,FOLLOW_22_in_rule__Define__Group__0__Impl2663); 
              after(grammarAccess.getDefineAccess().getDEFINEKeyword_0()); 
 
             }
@@ -3925,16 +3493,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1520:1: rule__Define__Group__1 : rule__Define__Group__1__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1356:1: rule__Define__Group__1 : rule__Define__Group__1__Impl ;
     public final void rule__Define__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1524:1: ( rule__Define__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1525:2: rule__Define__Group__1__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1360:1: ( rule__Define__Group__1__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1361:2: rule__Define__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Define__Group__1__Impl_in_rule__Define__Group__13044);
+            pushFollow(FOLLOW_rule__Define__Group__1__Impl_in_rule__Define__Group__12694);
             rule__Define__Group__1__Impl();
 
             state._fsp--;
@@ -3958,26 +3526,26 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1531:1: rule__Define__Group__1__Impl : ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1367:1: rule__Define__Group__1__Impl : ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) ) ;
     public final void rule__Define__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1535:1: ( ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1536:1: ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1371:1: ( ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1372:1: ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1536:1: ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1537:1: ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1372:1: ( ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1373:1: ( ( rule__Define__DefinesAssignment_1 ) ) ( ( rule__Define__DefinesAssignment_1 )* )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1537:1: ( ( rule__Define__DefinesAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1538:1: ( rule__Define__DefinesAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1373:1: ( ( rule__Define__DefinesAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1374:1: ( rule__Define__DefinesAssignment_1 )
             {
              before(grammarAccess.getDefineAccess().getDefinesAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1539:1: ( rule__Define__DefinesAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1539:2: rule__Define__DefinesAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1375:1: ( rule__Define__DefinesAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1375:2: rule__Define__DefinesAssignment_1
             {
-            pushFollow(FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl3073);
+            pushFollow(FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl2723);
             rule__Define__DefinesAssignment_1();
 
             state._fsp--;
@@ -3989,26 +3557,26 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1542:1: ( ( rule__Define__DefinesAssignment_1 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1543:1: ( rule__Define__DefinesAssignment_1 )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1378:1: ( ( rule__Define__DefinesAssignment_1 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1379:1: ( rule__Define__DefinesAssignment_1 )*
             {
              before(grammarAccess.getDefineAccess().getDefinesAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1544:1: ( rule__Define__DefinesAssignment_1 )*
-            loop3:
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1380:1: ( rule__Define__DefinesAssignment_1 )*
+            loop6:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA3_0==RULE_ID) ) {
-                    alt3=1;
+                if ( (LA6_0==RULE_ID) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt6) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1544:2: rule__Define__DefinesAssignment_1
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1380:2: rule__Define__DefinesAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl3085);
+            	    pushFollow(FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl2735);
             	    rule__Define__DefinesAssignment_1();
 
             	    state._fsp--;
@@ -4018,7 +3586,7 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop6;
                 }
             } while (true);
 
@@ -4048,21 +3616,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1559:1: rule__DefineRule__Group__0 : rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1395:1: rule__DefineRule__Group__0 : rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1 ;
     public final void rule__DefineRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1563:1: ( rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1564:2: rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1399:1: ( rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1400:2: rule__DefineRule__Group__0__Impl rule__DefineRule__Group__1
             {
-            pushFollow(FOLLOW_rule__DefineRule__Group__0__Impl_in_rule__DefineRule__Group__03122);
+            pushFollow(FOLLOW_rule__DefineRule__Group__0__Impl_in_rule__DefineRule__Group__02772);
             rule__DefineRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__DefineRule__Group__1_in_rule__DefineRule__Group__03125);
+            pushFollow(FOLLOW_rule__DefineRule__Group__1_in_rule__DefineRule__Group__02775);
             rule__DefineRule__Group__1();
 
             state._fsp--;
@@ -4086,31 +3654,31 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1571:1: rule__DefineRule__Group__0__Impl : ( ( rule__DefineRule__DefineNameAssignment_0 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1407:1: rule__DefineRule__Group__0__Impl : ( ( rule__DefineRule__NameAssignment_0 ) ) ;
     public final void rule__DefineRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1575:1: ( ( ( rule__DefineRule__DefineNameAssignment_0 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1576:1: ( ( rule__DefineRule__DefineNameAssignment_0 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1411:1: ( ( ( rule__DefineRule__NameAssignment_0 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1412:1: ( ( rule__DefineRule__NameAssignment_0 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1576:1: ( ( rule__DefineRule__DefineNameAssignment_0 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1577:1: ( rule__DefineRule__DefineNameAssignment_0 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1412:1: ( ( rule__DefineRule__NameAssignment_0 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1413:1: ( rule__DefineRule__NameAssignment_0 )
             {
-             before(grammarAccess.getDefineRuleAccess().getDefineNameAssignment_0()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1578:1: ( rule__DefineRule__DefineNameAssignment_0 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1578:2: rule__DefineRule__DefineNameAssignment_0
+             before(grammarAccess.getDefineRuleAccess().getNameAssignment_0()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1414:1: ( rule__DefineRule__NameAssignment_0 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1414:2: rule__DefineRule__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__DefineRule__DefineNameAssignment_0_in_rule__DefineRule__Group__0__Impl3152);
-            rule__DefineRule__DefineNameAssignment_0();
+            pushFollow(FOLLOW_rule__DefineRule__NameAssignment_0_in_rule__DefineRule__Group__0__Impl2802);
+            rule__DefineRule__NameAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDefineRuleAccess().getDefineNameAssignment_0()); 
+             after(grammarAccess.getDefineRuleAccess().getNameAssignment_0()); 
 
             }
 
@@ -4133,21 +3701,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1588:1: rule__DefineRule__Group__1 : rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1424:1: rule__DefineRule__Group__1 : rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2 ;
     public final void rule__DefineRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1592:1: ( rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1593:2: rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1428:1: ( rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1429:2: rule__DefineRule__Group__1__Impl rule__DefineRule__Group__2
             {
-            pushFollow(FOLLOW_rule__DefineRule__Group__1__Impl_in_rule__DefineRule__Group__13182);
+            pushFollow(FOLLOW_rule__DefineRule__Group__1__Impl_in_rule__DefineRule__Group__12832);
             rule__DefineRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__DefineRule__Group__2_in_rule__DefineRule__Group__13185);
+            pushFollow(FOLLOW_rule__DefineRule__Group__2_in_rule__DefineRule__Group__12835);
             rule__DefineRule__Group__2();
 
             state._fsp--;
@@ -4171,20 +3739,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1600:1: rule__DefineRule__Group__1__Impl : ( '=' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1436:1: rule__DefineRule__Group__1__Impl : ( '=' ) ;
     public final void rule__DefineRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1604:1: ( ( '=' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1605:1: ( '=' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1440:1: ( ( '=' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1441:1: ( '=' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1605:1: ( '=' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1606:1: '='
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1441:1: ( '=' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1442:1: '='
             {
              before(grammarAccess.getDefineRuleAccess().getEqualsSignKeyword_1()); 
-            match(input,21,FOLLOW_21_in_rule__DefineRule__Group__1__Impl3213); 
+            match(input,23,FOLLOW_23_in_rule__DefineRule__Group__1__Impl2863); 
              after(grammarAccess.getDefineRuleAccess().getEqualsSignKeyword_1()); 
 
             }
@@ -4208,17 +3776,22 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1619:1: rule__DefineRule__Group__2 : rule__DefineRule__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1455:1: rule__DefineRule__Group__2 : rule__DefineRule__Group__2__Impl rule__DefineRule__Group__3 ;
     public final void rule__DefineRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1623:1: ( rule__DefineRule__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1624:2: rule__DefineRule__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1459:1: ( rule__DefineRule__Group__2__Impl rule__DefineRule__Group__3 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1460:2: rule__DefineRule__Group__2__Impl rule__DefineRule__Group__3
             {
-            pushFollow(FOLLOW_rule__DefineRule__Group__2__Impl_in_rule__DefineRule__Group__23244);
+            pushFollow(FOLLOW_rule__DefineRule__Group__2__Impl_in_rule__DefineRule__Group__22894);
             rule__DefineRule__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__DefineRule__Group__3_in_rule__DefineRule__Group__22897);
+            rule__DefineRule__Group__3();
 
             state._fsp--;
 
@@ -4241,31 +3814,31 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefineRule__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1630:1: rule__DefineRule__Group__2__Impl : ( ( rule__DefineRule__DefineRuleAssignment_2 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1467:1: rule__DefineRule__Group__2__Impl : ( ( rule__DefineRule__RuleAssignment_2 ) ) ;
     public final void rule__DefineRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1634:1: ( ( ( rule__DefineRule__DefineRuleAssignment_2 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1635:1: ( ( rule__DefineRule__DefineRuleAssignment_2 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1471:1: ( ( ( rule__DefineRule__RuleAssignment_2 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1472:1: ( ( rule__DefineRule__RuleAssignment_2 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1635:1: ( ( rule__DefineRule__DefineRuleAssignment_2 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1636:1: ( rule__DefineRule__DefineRuleAssignment_2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1472:1: ( ( rule__DefineRule__RuleAssignment_2 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1473:1: ( rule__DefineRule__RuleAssignment_2 )
             {
-             before(grammarAccess.getDefineRuleAccess().getDefineRuleAssignment_2()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1637:1: ( rule__DefineRule__DefineRuleAssignment_2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1637:2: rule__DefineRule__DefineRuleAssignment_2
+             before(grammarAccess.getDefineRuleAccess().getRuleAssignment_2()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1474:1: ( rule__DefineRule__RuleAssignment_2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1474:2: rule__DefineRule__RuleAssignment_2
             {
-            pushFollow(FOLLOW_rule__DefineRule__DefineRuleAssignment_2_in_rule__DefineRule__Group__2__Impl3271);
-            rule__DefineRule__DefineRuleAssignment_2();
+            pushFollow(FOLLOW_rule__DefineRule__RuleAssignment_2_in_rule__DefineRule__Group__2__Impl2924);
+            rule__DefineRule__RuleAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDefineRuleAccess().getDefineRuleAssignment_2()); 
+             after(grammarAccess.getDefineRuleAccess().getRuleAssignment_2()); 
 
             }
 
@@ -4287,22 +3860,92 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DefineRule__Group__2__Impl"
 
 
+    // $ANTLR start "rule__DefineRule__Group__3"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1484:1: rule__DefineRule__Group__3 : rule__DefineRule__Group__3__Impl ;
+    public final void rule__DefineRule__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1488:1: ( rule__DefineRule__Group__3__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1489:2: rule__DefineRule__Group__3__Impl
+            {
+            pushFollow(FOLLOW_rule__DefineRule__Group__3__Impl_in_rule__DefineRule__Group__32954);
+            rule__DefineRule__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DefineRule__Group__3"
+
+
+    // $ANTLR start "rule__DefineRule__Group__3__Impl"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1495:1: rule__DefineRule__Group__3__Impl : ( '.' ) ;
+    public final void rule__DefineRule__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1499:1: ( ( '.' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1500:1: ( '.' )
+            {
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1500:1: ( '.' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1501:1: '.'
+            {
+             before(grammarAccess.getDefineRuleAccess().getFullStopKeyword_3()); 
+            match(input,24,FOLLOW_24_in_rule__DefineRule__Group__3__Impl2982); 
+             after(grammarAccess.getDefineRuleAccess().getFullStopKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DefineRule__Group__3__Impl"
+
+
     // $ANTLR start "rule__StartStates__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1653:1: rule__StartStates__Group__0 : rule__StartStates__Group__0__Impl rule__StartStates__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1522:1: rule__StartStates__Group__0 : rule__StartStates__Group__0__Impl rule__StartStates__Group__1 ;
     public final void rule__StartStates__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1657:1: ( rule__StartStates__Group__0__Impl rule__StartStates__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1658:2: rule__StartStates__Group__0__Impl rule__StartStates__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1526:1: ( rule__StartStates__Group__0__Impl rule__StartStates__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1527:2: rule__StartStates__Group__0__Impl rule__StartStates__Group__1
             {
-            pushFollow(FOLLOW_rule__StartStates__Group__0__Impl_in_rule__StartStates__Group__03307);
+            pushFollow(FOLLOW_rule__StartStates__Group__0__Impl_in_rule__StartStates__Group__03021);
             rule__StartStates__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StartStates__Group__1_in_rule__StartStates__Group__03310);
+            pushFollow(FOLLOW_rule__StartStates__Group__1_in_rule__StartStates__Group__03024);
             rule__StartStates__Group__1();
 
             state._fsp--;
@@ -4326,20 +3969,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1665:1: rule__StartStates__Group__0__Impl : ( 'START' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1534:1: rule__StartStates__Group__0__Impl : ( 'START' ) ;
     public final void rule__StartStates__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1669:1: ( ( 'START' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1670:1: ( 'START' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1538:1: ( ( 'START' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1539:1: ( 'START' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1670:1: ( 'START' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1671:1: 'START'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1539:1: ( 'START' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1540:1: 'START'
             {
              before(grammarAccess.getStartStatesAccess().getSTARTKeyword_0()); 
-            match(input,22,FOLLOW_22_in_rule__StartStates__Group__0__Impl3338); 
+            match(input,25,FOLLOW_25_in_rule__StartStates__Group__0__Impl3052); 
              after(grammarAccess.getStartStatesAccess().getSTARTKeyword_0()); 
 
             }
@@ -4363,21 +4006,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1684:1: rule__StartStates__Group__1 : rule__StartStates__Group__1__Impl rule__StartStates__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1553:1: rule__StartStates__Group__1 : rule__StartStates__Group__1__Impl rule__StartStates__Group__2 ;
     public final void rule__StartStates__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1688:1: ( rule__StartStates__Group__1__Impl rule__StartStates__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1689:2: rule__StartStates__Group__1__Impl rule__StartStates__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1557:1: ( rule__StartStates__Group__1__Impl rule__StartStates__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1558:2: rule__StartStates__Group__1__Impl rule__StartStates__Group__2
             {
-            pushFollow(FOLLOW_rule__StartStates__Group__1__Impl_in_rule__StartStates__Group__13369);
+            pushFollow(FOLLOW_rule__StartStates__Group__1__Impl_in_rule__StartStates__Group__13083);
             rule__StartStates__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StartStates__Group__2_in_rule__StartStates__Group__13372);
+            pushFollow(FOLLOW_rule__StartStates__Group__2_in_rule__StartStates__Group__13086);
             rule__StartStates__Group__2();
 
             state._fsp--;
@@ -4401,23 +4044,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1696:1: rule__StartStates__Group__1__Impl : ( ( rule__StartStates__StatesAssignment_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1565:1: rule__StartStates__Group__1__Impl : ( ( rule__StartStates__StatesAssignment_1 ) ) ;
     public final void rule__StartStates__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1700:1: ( ( ( rule__StartStates__StatesAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1701:1: ( ( rule__StartStates__StatesAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1569:1: ( ( ( rule__StartStates__StatesAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1570:1: ( ( rule__StartStates__StatesAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1701:1: ( ( rule__StartStates__StatesAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1702:1: ( rule__StartStates__StatesAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1570:1: ( ( rule__StartStates__StatesAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1571:1: ( rule__StartStates__StatesAssignment_1 )
             {
              before(grammarAccess.getStartStatesAccess().getStatesAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1703:1: ( rule__StartStates__StatesAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1703:2: rule__StartStates__StatesAssignment_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1572:1: ( rule__StartStates__StatesAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1572:2: rule__StartStates__StatesAssignment_1
             {
-            pushFollow(FOLLOW_rule__StartStates__StatesAssignment_1_in_rule__StartStates__Group__1__Impl3399);
+            pushFollow(FOLLOW_rule__StartStates__StatesAssignment_1_in_rule__StartStates__Group__1__Impl3113);
             rule__StartStates__StatesAssignment_1();
 
             state._fsp--;
@@ -4448,16 +4091,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1713:1: rule__StartStates__Group__2 : rule__StartStates__Group__2__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1582:1: rule__StartStates__Group__2 : rule__StartStates__Group__2__Impl ;
     public final void rule__StartStates__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1717:1: ( rule__StartStates__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1718:2: rule__StartStates__Group__2__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1586:1: ( rule__StartStates__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1587:2: rule__StartStates__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__StartStates__Group__2__Impl_in_rule__StartStates__Group__23429);
+            pushFollow(FOLLOW_rule__StartStates__Group__2__Impl_in_rule__StartStates__Group__23143);
             rule__StartStates__Group__2__Impl();
 
             state._fsp--;
@@ -4481,35 +4124,35 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1724:1: rule__StartStates__Group__2__Impl : ( ( rule__StartStates__Group_2__0 )* ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1593:1: rule__StartStates__Group__2__Impl : ( ( rule__StartStates__Group_2__0 )* ) ;
     public final void rule__StartStates__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1728:1: ( ( ( rule__StartStates__Group_2__0 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1729:1: ( ( rule__StartStates__Group_2__0 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1597:1: ( ( ( rule__StartStates__Group_2__0 )* ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1598:1: ( ( rule__StartStates__Group_2__0 )* )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1729:1: ( ( rule__StartStates__Group_2__0 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1730:1: ( rule__StartStates__Group_2__0 )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1598:1: ( ( rule__StartStates__Group_2__0 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1599:1: ( rule__StartStates__Group_2__0 )*
             {
              before(grammarAccess.getStartStatesAccess().getGroup_2()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1731:1: ( rule__StartStates__Group_2__0 )*
-            loop4:
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1600:1: ( rule__StartStates__Group_2__0 )*
+            loop7:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA4_0==23) ) {
-                    alt4=1;
+                if ( (LA7_0==26) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1731:2: rule__StartStates__Group_2__0
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1600:2: rule__StartStates__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__StartStates__Group_2__0_in_rule__StartStates__Group__2__Impl3456);
+            	    pushFollow(FOLLOW_rule__StartStates__Group_2__0_in_rule__StartStates__Group__2__Impl3170);
             	    rule__StartStates__Group_2__0();
 
             	    state._fsp--;
@@ -4519,7 +4162,7 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop7;
                 }
             } while (true);
 
@@ -4546,21 +4189,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group_2__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1747:1: rule__StartStates__Group_2__0 : rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1616:1: rule__StartStates__Group_2__0 : rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1 ;
     public final void rule__StartStates__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1751:1: ( rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1752:2: rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1620:1: ( rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1621:2: rule__StartStates__Group_2__0__Impl rule__StartStates__Group_2__1
             {
-            pushFollow(FOLLOW_rule__StartStates__Group_2__0__Impl_in_rule__StartStates__Group_2__03493);
+            pushFollow(FOLLOW_rule__StartStates__Group_2__0__Impl_in_rule__StartStates__Group_2__03207);
             rule__StartStates__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StartStates__Group_2__1_in_rule__StartStates__Group_2__03496);
+            pushFollow(FOLLOW_rule__StartStates__Group_2__1_in_rule__StartStates__Group_2__03210);
             rule__StartStates__Group_2__1();
 
             state._fsp--;
@@ -4584,20 +4227,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group_2__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1759:1: rule__StartStates__Group_2__0__Impl : ( ',' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1628:1: rule__StartStates__Group_2__0__Impl : ( ',' ) ;
     public final void rule__StartStates__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1763:1: ( ( ',' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1764:1: ( ',' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1632:1: ( ( ',' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1633:1: ( ',' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1764:1: ( ',' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1765:1: ','
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1633:1: ( ',' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1634:1: ','
             {
              before(grammarAccess.getStartStatesAccess().getCommaKeyword_2_0()); 
-            match(input,23,FOLLOW_23_in_rule__StartStates__Group_2__0__Impl3524); 
+            match(input,26,FOLLOW_26_in_rule__StartStates__Group_2__0__Impl3238); 
              after(grammarAccess.getStartStatesAccess().getCommaKeyword_2_0()); 
 
             }
@@ -4621,16 +4264,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group_2__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1778:1: rule__StartStates__Group_2__1 : rule__StartStates__Group_2__1__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1647:1: rule__StartStates__Group_2__1 : rule__StartStates__Group_2__1__Impl ;
     public final void rule__StartStates__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1782:1: ( rule__StartStates__Group_2__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1783:2: rule__StartStates__Group_2__1__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1651:1: ( rule__StartStates__Group_2__1__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1652:2: rule__StartStates__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__StartStates__Group_2__1__Impl_in_rule__StartStates__Group_2__13555);
+            pushFollow(FOLLOW_rule__StartStates__Group_2__1__Impl_in_rule__StartStates__Group_2__13269);
             rule__StartStates__Group_2__1__Impl();
 
             state._fsp--;
@@ -4654,23 +4297,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__Group_2__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1789:1: rule__StartStates__Group_2__1__Impl : ( ( rule__StartStates__StatesAssignment_2_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1658:1: rule__StartStates__Group_2__1__Impl : ( ( rule__StartStates__StatesAssignment_2_1 ) ) ;
     public final void rule__StartStates__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1793:1: ( ( ( rule__StartStates__StatesAssignment_2_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1794:1: ( ( rule__StartStates__StatesAssignment_2_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1662:1: ( ( ( rule__StartStates__StatesAssignment_2_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1663:1: ( ( rule__StartStates__StatesAssignment_2_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1794:1: ( ( rule__StartStates__StatesAssignment_2_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1795:1: ( rule__StartStates__StatesAssignment_2_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1663:1: ( ( rule__StartStates__StatesAssignment_2_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1664:1: ( rule__StartStates__StatesAssignment_2_1 )
             {
              before(grammarAccess.getStartStatesAccess().getStatesAssignment_2_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1796:1: ( rule__StartStates__StatesAssignment_2_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1796:2: rule__StartStates__StatesAssignment_2_1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1665:1: ( rule__StartStates__StatesAssignment_2_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1665:2: rule__StartStates__StatesAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__StartStates__StatesAssignment_2_1_in_rule__StartStates__Group_2__1__Impl3582);
+            pushFollow(FOLLOW_rule__StartStates__StatesAssignment_2_1_in_rule__StartStates__Group_2__1__Impl3296);
             rule__StartStates__StatesAssignment_2_1();
 
             state._fsp--;
@@ -4701,21 +4344,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1810:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1679:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1814:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1815:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1683:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1684:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
-            pushFollow(FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03616);
+            pushFollow(FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03330);
             rule__Rule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03619);
+            pushFollow(FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03333);
             rule__Rule__Group__1();
 
             state._fsp--;
@@ -4739,20 +4382,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1822:1: rule__Rule__Group__0__Impl : ( 'RULE' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1691:1: rule__Rule__Group__0__Impl : ( 'RULE' ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1826:1: ( ( 'RULE' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1827:1: ( 'RULE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1695:1: ( ( 'RULE' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1696:1: ( 'RULE' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1827:1: ( 'RULE' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1828:1: 'RULE'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1696:1: ( 'RULE' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1697:1: 'RULE'
             {
              before(grammarAccess.getRuleAccess().getRULEKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__Rule__Group__0__Impl3647); 
+            match(input,27,FOLLOW_27_in_rule__Rule__Group__0__Impl3361); 
              after(grammarAccess.getRuleAccess().getRULEKeyword_0()); 
 
             }
@@ -4776,16 +4419,16 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1841:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1710:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1845:1: ( rule__Rule__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1846:2: rule__Rule__Group__1__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1714:1: ( rule__Rule__Group__1__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1715:2: rule__Rule__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13678);
+            pushFollow(FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13392);
             rule__Rule__Group__1__Impl();
 
             state._fsp--;
@@ -4809,35 +4452,35 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1852:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__ContentAssignment_1 )* ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1721:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__ContentAssignment_1 )* ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1856:1: ( ( ( rule__Rule__ContentAssignment_1 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1857:1: ( ( rule__Rule__ContentAssignment_1 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1725:1: ( ( ( rule__Rule__ContentAssignment_1 )* ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1726:1: ( ( rule__Rule__ContentAssignment_1 )* )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1857:1: ( ( rule__Rule__ContentAssignment_1 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1858:1: ( rule__Rule__ContentAssignment_1 )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1726:1: ( ( rule__Rule__ContentAssignment_1 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1727:1: ( rule__Rule__ContentAssignment_1 )*
             {
              before(grammarAccess.getRuleAccess().getContentAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1859:1: ( rule__Rule__ContentAssignment_1 )*
-            loop5:
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1728:1: ( rule__Rule__ContentAssignment_1 )*
+            loop8:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA5_0==25) ) {
-                    alt5=1;
+                if ( (LA8_0==RULE_TEXT||LA8_0==29) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1859:2: rule__Rule__ContentAssignment_1
+            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1728:2: rule__Rule__ContentAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Rule__ContentAssignment_1_in_rule__Rule__Group__1__Impl3705);
+            	    pushFollow(FOLLOW_rule__Rule__ContentAssignment_1_in_rule__Rule__Group__1__Impl3419);
             	    rule__Rule__ContentAssignment_1();
 
             	    state._fsp--;
@@ -4847,7 +4490,7 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop8;
                 }
             } while (true);
 
@@ -4874,21 +4517,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1873:1: rule__SingleRule__Group__0 : rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1742:1: rule__SingleRule__Group__0 : rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1 ;
     public final void rule__SingleRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1877:1: ( rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1878:2: rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1746:1: ( rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1747:2: rule__SingleRule__Group__0__Impl rule__SingleRule__Group__1
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__0__Impl_in_rule__SingleRule__Group__03740);
+            pushFollow(FOLLOW_rule__SingleRule__Group__0__Impl_in_rule__SingleRule__Group__03454);
             rule__SingleRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleRule__Group__1_in_rule__SingleRule__Group__03743);
+            pushFollow(FOLLOW_rule__SingleRule__Group__1_in_rule__SingleRule__Group__03457);
             rule__SingleRule__Group__1();
 
             state._fsp--;
@@ -4912,21 +4555,42 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1885:1: rule__SingleRule__Group__0__Impl : ( '#' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1754:1: rule__SingleRule__Group__0__Impl : ( ( ruleRuleStart )? ) ;
     public final void rule__SingleRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1889:1: ( ( '#' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1890:1: ( '#' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1758:1: ( ( ( ruleRuleStart )? ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1759:1: ( ( ruleRuleStart )? )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1890:1: ( '#' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1891:1: '#'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1759:1: ( ( ruleRuleStart )? )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1760:1: ( ruleRuleStart )?
             {
-             before(grammarAccess.getSingleRuleAccess().getNumberSignKeyword_0()); 
-            match(input,25,FOLLOW_25_in_rule__SingleRule__Group__0__Impl3771); 
-             after(grammarAccess.getSingleRuleAccess().getNumberSignKeyword_0()); 
+             before(grammarAccess.getSingleRuleAccess().getRuleStartParserRuleCall_0()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1761:1: ( ruleRuleStart )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==29) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1761:3: ruleRuleStart
+                    {
+                    pushFollow(FOLLOW_ruleRuleStart_in_rule__SingleRule__Group__0__Impl3485);
+                    ruleRuleStart();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSingleRuleAccess().getRuleStartParserRuleCall_0()); 
 
             }
 
@@ -4949,21 +4613,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1904:1: rule__SingleRule__Group__1 : rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1771:1: rule__SingleRule__Group__1 : rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2 ;
     public final void rule__SingleRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1908:1: ( rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1909:2: rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1775:1: ( rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1776:2: rule__SingleRule__Group__1__Impl rule__SingleRule__Group__2
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__1__Impl_in_rule__SingleRule__Group__13802);
+            pushFollow(FOLLOW_rule__SingleRule__Group__1__Impl_in_rule__SingleRule__Group__13516);
             rule__SingleRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleRule__Group__2_in_rule__SingleRule__Group__13805);
+            pushFollow(FOLLOW_rule__SingleRule__Group__2_in_rule__SingleRule__Group__13519);
             rule__SingleRule__Group__2();
 
             state._fsp--;
@@ -4987,31 +4651,31 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1916:1: rule__SingleRule__Group__1__Impl : ( ( rule__SingleRule__Alternatives_1 ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1783:1: rule__SingleRule__Group__1__Impl : ( ( rule__SingleRule__RuleAssignment_1 ) ) ;
     public final void rule__SingleRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1920:1: ( ( ( rule__SingleRule__Alternatives_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1921:1: ( ( rule__SingleRule__Alternatives_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1787:1: ( ( ( rule__SingleRule__RuleAssignment_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1788:1: ( ( rule__SingleRule__RuleAssignment_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1921:1: ( ( rule__SingleRule__Alternatives_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1922:1: ( rule__SingleRule__Alternatives_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1788:1: ( ( rule__SingleRule__RuleAssignment_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1789:1: ( rule__SingleRule__RuleAssignment_1 )
             {
-             before(grammarAccess.getSingleRuleAccess().getAlternatives_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1923:1: ( rule__SingleRule__Alternatives_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1923:2: rule__SingleRule__Alternatives_1
+             before(grammarAccess.getSingleRuleAccess().getRuleAssignment_1()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1790:1: ( rule__SingleRule__RuleAssignment_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1790:2: rule__SingleRule__RuleAssignment_1
             {
-            pushFollow(FOLLOW_rule__SingleRule__Alternatives_1_in_rule__SingleRule__Group__1__Impl3832);
-            rule__SingleRule__Alternatives_1();
+            pushFollow(FOLLOW_rule__SingleRule__RuleAssignment_1_in_rule__SingleRule__Group__1__Impl3546);
+            rule__SingleRule__RuleAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSingleRuleAccess().getAlternatives_1()); 
+             after(grammarAccess.getSingleRuleAccess().getRuleAssignment_1()); 
 
             }
 
@@ -5034,21 +4698,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1933:1: rule__SingleRule__Group__2 : rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1800:1: rule__SingleRule__Group__2 : rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3 ;
     public final void rule__SingleRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1937:1: ( rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1938:2: rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1804:1: ( rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1805:2: rule__SingleRule__Group__2__Impl rule__SingleRule__Group__3
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__2__Impl_in_rule__SingleRule__Group__23862);
+            pushFollow(FOLLOW_rule__SingleRule__Group__2__Impl_in_rule__SingleRule__Group__23576);
             rule__SingleRule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleRule__Group__3_in_rule__SingleRule__Group__23865);
+            pushFollow(FOLLOW_rule__SingleRule__Group__3_in_rule__SingleRule__Group__23579);
             rule__SingleRule__Group__3();
 
             state._fsp--;
@@ -5072,21 +4736,31 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1945:1: rule__SingleRule__Group__2__Impl : ( '#' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1812:1: rule__SingleRule__Group__2__Impl : ( ( rule__SingleRule__Alternatives_2 ) ) ;
     public final void rule__SingleRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1949:1: ( ( '#' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1950:1: ( '#' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1816:1: ( ( ( rule__SingleRule__Alternatives_2 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1817:1: ( ( rule__SingleRule__Alternatives_2 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1950:1: ( '#' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1951:1: '#'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1817:1: ( ( rule__SingleRule__Alternatives_2 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1818:1: ( rule__SingleRule__Alternatives_2 )
             {
-             before(grammarAccess.getSingleRuleAccess().getNumberSignKeyword_2()); 
-            match(input,25,FOLLOW_25_in_rule__SingleRule__Group__2__Impl3893); 
-             after(grammarAccess.getSingleRuleAccess().getNumberSignKeyword_2()); 
+             before(grammarAccess.getSingleRuleAccess().getAlternatives_2()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1819:1: ( rule__SingleRule__Alternatives_2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1819:2: rule__SingleRule__Alternatives_2
+            {
+            pushFollow(FOLLOW_rule__SingleRule__Alternatives_2_in_rule__SingleRule__Group__2__Impl3606);
+            rule__SingleRule__Alternatives_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSingleRuleAccess().getAlternatives_2()); 
 
             }
 
@@ -5109,21 +4783,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__3"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1964:1: rule__SingleRule__Group__3 : rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1829:1: rule__SingleRule__Group__3 : rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4 ;
     public final void rule__SingleRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1968:1: ( rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1969:2: rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1833:1: ( rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1834:2: rule__SingleRule__Group__3__Impl rule__SingleRule__Group__4
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__3__Impl_in_rule__SingleRule__Group__33924);
+            pushFollow(FOLLOW_rule__SingleRule__Group__3__Impl_in_rule__SingleRule__Group__33636);
             rule__SingleRule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleRule__Group__4_in_rule__SingleRule__Group__33927);
+            pushFollow(FOLLOW_rule__SingleRule__Group__4_in_rule__SingleRule__Group__33639);
             rule__SingleRule__Group__4();
 
             state._fsp--;
@@ -5147,74 +4821,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__3__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1976:1: rule__SingleRule__Group__3__Impl : ( ( ( rule__SingleRule__RegexAssignment_3 ) ) ( ( rule__SingleRule__RegexAssignment_3 )* ) ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1841:1: rule__SingleRule__Group__3__Impl : ( '{' ) ;
     public final void rule__SingleRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1980:1: ( ( ( ( rule__SingleRule__RegexAssignment_3 ) ) ( ( rule__SingleRule__RegexAssignment_3 )* ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1981:1: ( ( ( rule__SingleRule__RegexAssignment_3 ) ) ( ( rule__SingleRule__RegexAssignment_3 )* ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1845:1: ( ( '{' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1846:1: ( '{' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1981:1: ( ( ( rule__SingleRule__RegexAssignment_3 ) ) ( ( rule__SingleRule__RegexAssignment_3 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1982:1: ( ( rule__SingleRule__RegexAssignment_3 ) ) ( ( rule__SingleRule__RegexAssignment_3 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1846:1: ( '{' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1847:1: '{'
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1982:1: ( ( rule__SingleRule__RegexAssignment_3 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1983:1: ( rule__SingleRule__RegexAssignment_3 )
-            {
-             before(grammarAccess.getSingleRuleAccess().getRegexAssignment_3()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1984:1: ( rule__SingleRule__RegexAssignment_3 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1984:2: rule__SingleRule__RegexAssignment_3
-            {
-            pushFollow(FOLLOW_rule__SingleRule__RegexAssignment_3_in_rule__SingleRule__Group__3__Impl3956);
-            rule__SingleRule__RegexAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSingleRuleAccess().getRegexAssignment_3()); 
-
-            }
-
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1987:1: ( ( rule__SingleRule__RegexAssignment_3 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1988:1: ( rule__SingleRule__RegexAssignment_3 )*
-            {
-             before(grammarAccess.getSingleRuleAccess().getRegexAssignment_3()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1989:1: ( rule__SingleRule__RegexAssignment_3 )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==RULE_ANY_OTHER) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1989:2: rule__SingleRule__RegexAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_rule__SingleRule__RegexAssignment_3_in_rule__SingleRule__Group__3__Impl3968);
-            	    rule__SingleRule__RegexAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop6;
-                }
-            } while (true);
-
-             after(grammarAccess.getSingleRuleAccess().getRegexAssignment_3()); 
-
-            }
-
+             before(grammarAccess.getSingleRuleAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,28,FOLLOW_28_in_rule__SingleRule__Group__3__Impl3667); 
+             after(grammarAccess.getSingleRuleAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -5237,21 +4858,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__4"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2000:1: rule__SingleRule__Group__4 : rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1860:1: rule__SingleRule__Group__4 : rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5 ;
     public final void rule__SingleRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2004:1: ( rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2005:2: rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1864:1: ( rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1865:2: rule__SingleRule__Group__4__Impl rule__SingleRule__Group__5
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__4__Impl_in_rule__SingleRule__Group__44001);
+            pushFollow(FOLLOW_rule__SingleRule__Group__4__Impl_in_rule__SingleRule__Group__43698);
             rule__SingleRule__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__SingleRule__Group__5_in_rule__SingleRule__Group__44004);
+            pushFollow(FOLLOW_rule__SingleRule__Group__5_in_rule__SingleRule__Group__43701);
             rule__SingleRule__Group__5();
 
             state._fsp--;
@@ -5275,21 +4896,31 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__4__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2012:1: rule__SingleRule__Group__4__Impl : ( ': {' ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1872:1: rule__SingleRule__Group__4__Impl : ( ( rule__SingleRule__ContentAssignment_4 ) ) ;
     public final void rule__SingleRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2016:1: ( ( ': {' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2017:1: ( ': {' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1876:1: ( ( ( rule__SingleRule__ContentAssignment_4 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1877:1: ( ( rule__SingleRule__ContentAssignment_4 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2017:1: ( ': {' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2018:1: ': {'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1877:1: ( ( rule__SingleRule__ContentAssignment_4 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1878:1: ( rule__SingleRule__ContentAssignment_4 )
             {
-             before(grammarAccess.getSingleRuleAccess().getColonSpaceLeftCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__SingleRule__Group__4__Impl4032); 
-             after(grammarAccess.getSingleRuleAccess().getColonSpaceLeftCurlyBracketKeyword_4()); 
+             before(grammarAccess.getSingleRuleAccess().getContentAssignment_4()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1879:1: ( rule__SingleRule__ContentAssignment_4 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1879:2: rule__SingleRule__ContentAssignment_4
+            {
+            pushFollow(FOLLOW_rule__SingleRule__ContentAssignment_4_in_rule__SingleRule__Group__4__Impl3728);
+            rule__SingleRule__ContentAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSingleRuleAccess().getContentAssignment_4()); 
 
             }
 
@@ -5312,22 +4943,17 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__5"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2031:1: rule__SingleRule__Group__5 : rule__SingleRule__Group__5__Impl rule__SingleRule__Group__6 ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1889:1: rule__SingleRule__Group__5 : rule__SingleRule__Group__5__Impl ;
     public final void rule__SingleRule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2035:1: ( rule__SingleRule__Group__5__Impl rule__SingleRule__Group__6 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2036:2: rule__SingleRule__Group__5__Impl rule__SingleRule__Group__6
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1893:1: ( rule__SingleRule__Group__5__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1894:2: rule__SingleRule__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__5__Impl_in_rule__SingleRule__Group__54063);
+            pushFollow(FOLLOW_rule__SingleRule__Group__5__Impl_in_rule__SingleRule__Group__53758);
             rule__SingleRule__Group__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__SingleRule__Group__6_in_rule__SingleRule__Group__54066);
-            rule__SingleRule__Group__6();
 
             state._fsp--;
 
@@ -5350,21 +4976,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SingleRule__Group__5__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2043:1: rule__SingleRule__Group__5__Impl : ( RULE_STRING ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1900:1: rule__SingleRule__Group__5__Impl : ( '}' ) ;
     public final void rule__SingleRule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2047:1: ( ( RULE_STRING ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2048:1: ( RULE_STRING )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1904:1: ( ( '}' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1905:1: ( '}' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2048:1: ( RULE_STRING )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2049:1: RULE_STRING
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1905:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1906:1: '}'
             {
-             before(grammarAccess.getSingleRuleAccess().getSTRINGTerminalRuleCall_5()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__SingleRule__Group__5__Impl4093); 
-             after(grammarAccess.getSingleRuleAccess().getSTRINGTerminalRuleCall_5()); 
+             before(grammarAccess.getSingleRuleAccess().getRightCurlyBracketKeyword_5()); 
+            match(input,17,FOLLOW_17_in_rule__SingleRule__Group__5__Impl3786); 
+             after(grammarAccess.getSingleRuleAccess().getRightCurlyBracketKeyword_5()); 
 
             }
 
@@ -5386,18 +5012,23 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SingleRule__Group__5__Impl"
 
 
-    // $ANTLR start "rule__SingleRule__Group__6"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2060:1: rule__SingleRule__Group__6 : rule__SingleRule__Group__6__Impl ;
-    public final void rule__SingleRule__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__0"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1931:1: rule__RuleStart__Group__0 : rule__RuleStart__Group__0__Impl rule__RuleStart__Group__1 ;
+    public final void rule__RuleStart__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2064:1: ( rule__SingleRule__Group__6__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2065:2: rule__SingleRule__Group__6__Impl
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1935:1: ( rule__RuleStart__Group__0__Impl rule__RuleStart__Group__1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1936:2: rule__RuleStart__Group__0__Impl rule__RuleStart__Group__1
             {
-            pushFollow(FOLLOW_rule__SingleRule__Group__6__Impl_in_rule__SingleRule__Group__64122);
-            rule__SingleRule__Group__6__Impl();
+            pushFollow(FOLLOW_rule__RuleStart__Group__0__Impl_in_rule__RuleStart__Group__03829);
+            rule__RuleStart__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RuleStart__Group__1_in_rule__RuleStart__Group__03832);
+            rule__RuleStart__Group__1();
 
             state._fsp--;
 
@@ -5416,25 +5047,25 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SingleRule__Group__6"
+    // $ANTLR end "rule__RuleStart__Group__0"
 
 
-    // $ANTLR start "rule__SingleRule__Group__6__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2071:1: rule__SingleRule__Group__6__Impl : ( '}' ) ;
-    public final void rule__SingleRule__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__0__Impl"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1943:1: rule__RuleStart__Group__0__Impl : ( '#' ) ;
+    public final void rule__RuleStart__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2075:1: ( ( '}' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2076:1: ( '}' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1947:1: ( ( '#' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1948:1: ( '#' )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2076:1: ( '}' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2077:1: '}'
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1948:1: ( '#' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1949:1: '#'
             {
-             before(grammarAccess.getSingleRuleAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,15,FOLLOW_15_in_rule__SingleRule__Group__6__Impl4150); 
-             after(grammarAccess.getSingleRuleAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getRuleStartAccess().getNumberSignKeyword_0()); 
+            match(input,29,FOLLOW_29_in_rule__RuleStart__Group__0__Impl3860); 
+             after(grammarAccess.getRuleStartAccess().getNumberSignKeyword_0()); 
 
             }
 
@@ -5453,100 +5084,26 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SingleRule__Group__6__Impl"
+    // $ANTLR end "rule__RuleStart__Group__0__Impl"
 
 
-    // $ANTLR start "rule__OrExpression__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2104:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
-    public final void rule__OrExpression__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2108:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2109:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
-            {
-            pushFollow(FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__04195);
-            rule__OrExpression__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__04198);
-            rule__OrExpression__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group__0"
-
-
-    // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2116:1: rule__OrExpression__Group__0__Impl : ( ruleSequenceExpression ) ;
-    public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__1"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1962:1: rule__RuleStart__Group__1 : rule__RuleStart__Group__1__Impl rule__RuleStart__Group__2 ;
+    public final void rule__RuleStart__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2120:1: ( ( ruleSequenceExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2121:1: ( ruleSequenceExpression )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1966:1: ( rule__RuleStart__Group__1__Impl rule__RuleStart__Group__2 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1967:2: rule__RuleStart__Group__1__Impl rule__RuleStart__Group__2
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2121:1: ( ruleSequenceExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2122:1: ruleSequenceExpression
-            {
-             before(grammarAccess.getOrExpressionAccess().getSequenceExpressionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSequenceExpression_in_rule__OrExpression__Group__0__Impl4225);
-            ruleSequenceExpression();
+            pushFollow(FOLLOW_rule__RuleStart__Group__1__Impl_in_rule__RuleStart__Group__13891);
+            rule__RuleStart__Group__1__Impl();
 
             state._fsp--;
 
-             after(grammarAccess.getOrExpressionAccess().getSequenceExpressionParserRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group__0__Impl"
-
-
-    // $ANTLR start "rule__OrExpression__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2133:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
-    public final void rule__OrExpression__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2137:1: ( rule__OrExpression__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2138:2: rule__OrExpression__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__14254);
-            rule__OrExpression__Group__1__Impl();
+            pushFollow(FOLLOW_rule__RuleStart__Group__2_in_rule__RuleStart__Group__13894);
+            rule__RuleStart__Group__2();
 
             state._fsp--;
 
@@ -5565,53 +5122,35 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__OrExpression__Group__1"
+    // $ANTLR end "rule__RuleStart__Group__1"
 
 
-    // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2144:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
-    public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__1__Impl"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1974:1: rule__RuleStart__Group__1__Impl : ( ( rule__RuleStart__Alternatives_1 ) ) ;
+    public final void rule__RuleStart__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2148:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2149:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1978:1: ( ( ( rule__RuleStart__Alternatives_1 ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1979:1: ( ( rule__RuleStart__Alternatives_1 ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2149:1: ( ( rule__OrExpression__Group_1__0 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2150:1: ( rule__OrExpression__Group_1__0 )*
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1979:1: ( ( rule__RuleStart__Alternatives_1 ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1980:1: ( rule__RuleStart__Alternatives_1 )
             {
-             before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2151:1: ( rule__OrExpression__Group_1__0 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+             before(grammarAccess.getRuleStartAccess().getAlternatives_1()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1981:1: ( rule__RuleStart__Alternatives_1 )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1981:2: rule__RuleStart__Alternatives_1
+            {
+            pushFollow(FOLLOW_rule__RuleStart__Alternatives_1_in_rule__RuleStart__Group__1__Impl3921);
+            rule__RuleStart__Alternatives_1();
 
-                if ( (LA7_0==27) ) {
-                    alt7=1;
-                }
+            state._fsp--;
 
 
-                switch (alt7) {
-            	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2151:2: rule__OrExpression__Group_1__0
-            	    {
-            	    pushFollow(FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl4281);
-            	    rule__OrExpression__Group_1__0();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-             after(grammarAccess.getOrExpressionAccess().getGroup_1()); 
+             after(grammarAccess.getRuleStartAccess().getAlternatives_1()); 
 
             }
 
@@ -5630,26 +5169,21 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__OrExpression__Group__1__Impl"
+    // $ANTLR end "rule__RuleStart__Group__1__Impl"
 
 
-    // $ANTLR start "rule__OrExpression__Group_1__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2165:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
-    public final void rule__OrExpression__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__2"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1991:1: rule__RuleStart__Group__2 : rule__RuleStart__Group__2__Impl ;
+    public final void rule__RuleStart__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2169:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2170:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1995:1: ( rule__RuleStart__Group__2__Impl )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:1996:2: rule__RuleStart__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__04316);
-            rule__OrExpression__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__04319);
-            rule__OrExpression__Group_1__1();
+            pushFollow(FOLLOW_rule__RuleStart__Group__2__Impl_in_rule__RuleStart__Group__23951);
+            rule__RuleStart__Group__2__Impl();
 
             state._fsp--;
 
@@ -5668,100 +5202,25 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__OrExpression__Group_1__0"
+    // $ANTLR end "rule__RuleStart__Group__2"
 
 
-    // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2177:1: rule__OrExpression__Group_1__0__Impl : ( () ) ;
-    public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2181:1: ( ( () ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2182:1: ( () )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2182:1: ( () )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2183:1: ()
-            {
-             before(grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2184:1: ()
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2186:1: 
-            {
-            }
-
-             after(grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__OrExpression__Group_1__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2196:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 ;
-    public final void rule__OrExpression__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__Group__2__Impl"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2002:1: rule__RuleStart__Group__2__Impl : ( '#' ) ;
+    public final void rule__RuleStart__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2200:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2201:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2006:1: ( ( '#' ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2007:1: ( '#' )
             {
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__14377);
-            rule__OrExpression__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__2_in_rule__OrExpression__Group_1__14380);
-            rule__OrExpression__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group_1__1"
-
-
-    // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2208:1: rule__OrExpression__Group_1__1__Impl : ( '+' ) ;
-    public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2212:1: ( ( '+' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2213:1: ( '+' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2007:1: ( '#' )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2008:1: '#'
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2213:1: ( '+' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2214:1: '+'
-            {
-             before(grammarAccess.getOrExpressionAccess().getPlusSignKeyword_1_1()); 
-            match(input,27,FOLLOW_27_in_rule__OrExpression__Group_1__1__Impl4408); 
-             after(grammarAccess.getOrExpressionAccess().getPlusSignKeyword_1_1()); 
+             before(grammarAccess.getRuleStartAccess().getNumberSignKeyword_2()); 
+            match(input,29,FOLLOW_29_in_rule__RuleStart__Group__2__Impl3979); 
+             after(grammarAccess.getRuleStartAccess().getNumberSignKeyword_2()); 
 
             }
 
@@ -5780,1080 +5239,24 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__OrExpression__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__OrExpression__Group_1__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2227:1: rule__OrExpression__Group_1__2 : rule__OrExpression__Group_1__2__Impl ;
-    public final void rule__OrExpression__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2231:1: ( rule__OrExpression__Group_1__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2232:2: rule__OrExpression__Group_1__2__Impl
-            {
-            pushFollow(FOLLOW_rule__OrExpression__Group_1__2__Impl_in_rule__OrExpression__Group_1__24439);
-            rule__OrExpression__Group_1__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group_1__2"
-
-
-    // $ANTLR start "rule__OrExpression__Group_1__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2238:1: rule__OrExpression__Group_1__2__Impl : ( ( rule__OrExpression__RightAssignment_1_2 ) ) ;
-    public final void rule__OrExpression__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2242:1: ( ( ( rule__OrExpression__RightAssignment_1_2 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2243:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2243:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2244:1: ( rule__OrExpression__RightAssignment_1_2 )
-            {
-             before(grammarAccess.getOrExpressionAccess().getRightAssignment_1_2()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2245:1: ( rule__OrExpression__RightAssignment_1_2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2245:2: rule__OrExpression__RightAssignment_1_2
-            {
-            pushFollow(FOLLOW_rule__OrExpression__RightAssignment_1_2_in_rule__OrExpression__Group_1__2__Impl4466);
-            rule__OrExpression__RightAssignment_1_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getOrExpressionAccess().getRightAssignment_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__OrExpression__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2261:1: rule__SequenceExpression__Group__0 : rule__SequenceExpression__Group__0__Impl rule__SequenceExpression__Group__1 ;
-    public final void rule__SequenceExpression__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2265:1: ( rule__SequenceExpression__Group__0__Impl rule__SequenceExpression__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2266:2: rule__SequenceExpression__Group__0__Impl rule__SequenceExpression__Group__1
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__Group__0__Impl_in_rule__SequenceExpression__Group__04502);
-            rule__SequenceExpression__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__SequenceExpression__Group__1_in_rule__SequenceExpression__Group__04505);
-            rule__SequenceExpression__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group__0"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2273:1: rule__SequenceExpression__Group__0__Impl : ( ruleHighBindExpression ) ;
-    public final void rule__SequenceExpression__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2277:1: ( ( ruleHighBindExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2278:1: ( ruleHighBindExpression )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2278:1: ( ruleHighBindExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2279:1: ruleHighBindExpression
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getHighBindExpressionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleHighBindExpression_in_rule__SequenceExpression__Group__0__Impl4532);
-            ruleHighBindExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getSequenceExpressionAccess().getHighBindExpressionParserRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group__0__Impl"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2290:1: rule__SequenceExpression__Group__1 : rule__SequenceExpression__Group__1__Impl ;
-    public final void rule__SequenceExpression__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2294:1: ( rule__SequenceExpression__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2295:2: rule__SequenceExpression__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__Group__1__Impl_in_rule__SequenceExpression__Group__14561);
-            rule__SequenceExpression__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group__1"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2301:1: rule__SequenceExpression__Group__1__Impl : ( ( rule__SequenceExpression__Group_1__0 )* ) ;
-    public final void rule__SequenceExpression__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2305:1: ( ( ( rule__SequenceExpression__Group_1__0 )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2306:1: ( ( rule__SequenceExpression__Group_1__0 )* )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2306:1: ( ( rule__SequenceExpression__Group_1__0 )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2307:1: ( rule__SequenceExpression__Group_1__0 )*
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getGroup_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2308:1: ( rule__SequenceExpression__Group_1__0 )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
-
-                if ( (LA8_0==RULE_CHAR||LA8_0==29) ) {
-                    alt8=1;
-                }
-
-
-                switch (alt8) {
-            	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2308:2: rule__SequenceExpression__Group_1__0
-            	    {
-            	    pushFollow(FOLLOW_rule__SequenceExpression__Group_1__0_in_rule__SequenceExpression__Group__1__Impl4588);
-            	    rule__SequenceExpression__Group_1__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-             after(grammarAccess.getSequenceExpressionAccess().getGroup_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group__1__Impl"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group_1__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2322:1: rule__SequenceExpression__Group_1__0 : rule__SequenceExpression__Group_1__0__Impl rule__SequenceExpression__Group_1__1 ;
-    public final void rule__SequenceExpression__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2326:1: ( rule__SequenceExpression__Group_1__0__Impl rule__SequenceExpression__Group_1__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2327:2: rule__SequenceExpression__Group_1__0__Impl rule__SequenceExpression__Group_1__1
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__Group_1__0__Impl_in_rule__SequenceExpression__Group_1__04623);
-            rule__SequenceExpression__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__SequenceExpression__Group_1__1_in_rule__SequenceExpression__Group_1__04626);
-            rule__SequenceExpression__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group_1__0"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group_1__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2334:1: rule__SequenceExpression__Group_1__0__Impl : ( () ) ;
-    public final void rule__SequenceExpression__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2338:1: ( ( () ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2339:1: ( () )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2339:1: ( () )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2340:1: ()
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getSequenceExpressionLeftAction_1_0()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2341:1: ()
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2343:1: 
-            {
-            }
-
-             after(grammarAccess.getSequenceExpressionAccess().getSequenceExpressionLeftAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group_1__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2353:1: rule__SequenceExpression__Group_1__1 : rule__SequenceExpression__Group_1__1__Impl ;
-    public final void rule__SequenceExpression__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2357:1: ( rule__SequenceExpression__Group_1__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2358:2: rule__SequenceExpression__Group_1__1__Impl
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__Group_1__1__Impl_in_rule__SequenceExpression__Group_1__14684);
-            rule__SequenceExpression__Group_1__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group_1__1"
-
-
-    // $ANTLR start "rule__SequenceExpression__Group_1__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2364:1: rule__SequenceExpression__Group_1__1__Impl : ( ( rule__SequenceExpression__RightAssignment_1_1 ) ) ;
-    public final void rule__SequenceExpression__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2368:1: ( ( ( rule__SequenceExpression__RightAssignment_1_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2369:1: ( ( rule__SequenceExpression__RightAssignment_1_1 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2369:1: ( ( rule__SequenceExpression__RightAssignment_1_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2370:1: ( rule__SequenceExpression__RightAssignment_1_1 )
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getRightAssignment_1_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2371:1: ( rule__SequenceExpression__RightAssignment_1_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2371:2: rule__SequenceExpression__RightAssignment_1_1
-            {
-            pushFollow(FOLLOW_rule__SequenceExpression__RightAssignment_1_1_in_rule__SequenceExpression__Group_1__1__Impl4711);
-            rule__SequenceExpression__RightAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSequenceExpressionAccess().getRightAssignment_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2385:1: rule__HighBindExpression__Group__0 : rule__HighBindExpression__Group__0__Impl rule__HighBindExpression__Group__1 ;
-    public final void rule__HighBindExpression__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2389:1: ( rule__HighBindExpression__Group__0__Impl rule__HighBindExpression__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2390:2: rule__HighBindExpression__Group__0__Impl rule__HighBindExpression__Group__1
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group__0__Impl_in_rule__HighBindExpression__Group__04745);
-            rule__HighBindExpression__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__HighBindExpression__Group__1_in_rule__HighBindExpression__Group__04748);
-            rule__HighBindExpression__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group__0"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2397:1: rule__HighBindExpression__Group__0__Impl : ( ruleAtomicExpression ) ;
-    public final void rule__HighBindExpression__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2401:1: ( ( ruleAtomicExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2402:1: ( ruleAtomicExpression )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2402:1: ( ruleAtomicExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2403:1: ruleAtomicExpression
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getAtomicExpressionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAtomicExpression_in_rule__HighBindExpression__Group__0__Impl4775);
-            ruleAtomicExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getHighBindExpressionAccess().getAtomicExpressionParserRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group__0__Impl"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2414:1: rule__HighBindExpression__Group__1 : rule__HighBindExpression__Group__1__Impl ;
-    public final void rule__HighBindExpression__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2418:1: ( rule__HighBindExpression__Group__1__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2419:2: rule__HighBindExpression__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group__1__Impl_in_rule__HighBindExpression__Group__14804);
-            rule__HighBindExpression__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group__1"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2425:1: rule__HighBindExpression__Group__1__Impl : ( ( rule__HighBindExpression__Group_1__0 )? ) ;
-    public final void rule__HighBindExpression__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2429:1: ( ( ( rule__HighBindExpression__Group_1__0 )? ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2430:1: ( ( rule__HighBindExpression__Group_1__0 )? )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2430:1: ( ( rule__HighBindExpression__Group_1__0 )? )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2431:1: ( rule__HighBindExpression__Group_1__0 )?
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getGroup_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2432:1: ( rule__HighBindExpression__Group_1__0 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==28) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2432:2: rule__HighBindExpression__Group_1__0
-                    {
-                    pushFollow(FOLLOW_rule__HighBindExpression__Group_1__0_in_rule__HighBindExpression__Group__1__Impl4831);
-                    rule__HighBindExpression__Group_1__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getHighBindExpressionAccess().getGroup_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group__1__Impl"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2446:1: rule__HighBindExpression__Group_1__0 : rule__HighBindExpression__Group_1__0__Impl rule__HighBindExpression__Group_1__1 ;
-    public final void rule__HighBindExpression__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2450:1: ( rule__HighBindExpression__Group_1__0__Impl rule__HighBindExpression__Group_1__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2451:2: rule__HighBindExpression__Group_1__0__Impl rule__HighBindExpression__Group_1__1
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group_1__0__Impl_in_rule__HighBindExpression__Group_1__04866);
-            rule__HighBindExpression__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__HighBindExpression__Group_1__1_in_rule__HighBindExpression__Group_1__04869);
-            rule__HighBindExpression__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__0"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2458:1: rule__HighBindExpression__Group_1__0__Impl : ( '*' ) ;
-    public final void rule__HighBindExpression__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2462:1: ( ( '*' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2463:1: ( '*' )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2463:1: ( '*' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2464:1: '*'
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_0()); 
-            match(input,28,FOLLOW_28_in_rule__HighBindExpression__Group_1__0__Impl4897); 
-             after(grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2477:1: rule__HighBindExpression__Group_1__1 : rule__HighBindExpression__Group_1__1__Impl rule__HighBindExpression__Group_1__2 ;
-    public final void rule__HighBindExpression__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2481:1: ( rule__HighBindExpression__Group_1__1__Impl rule__HighBindExpression__Group_1__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2482:2: rule__HighBindExpression__Group_1__1__Impl rule__HighBindExpression__Group_1__2
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group_1__1__Impl_in_rule__HighBindExpression__Group_1__14928);
-            rule__HighBindExpression__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__HighBindExpression__Group_1__2_in_rule__HighBindExpression__Group_1__14931);
-            rule__HighBindExpression__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__1"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2489:1: rule__HighBindExpression__Group_1__1__Impl : ( () ) ;
-    public final void rule__HighBindExpression__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2493:1: ( ( () ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2494:1: ( () )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2494:1: ( () )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2495:1: ()
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getStarExpressionInnerExpressionAction_1_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2496:1: ()
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2498:1: 
-            {
-            }
-
-             after(grammarAccess.getHighBindExpressionAccess().getStarExpressionInnerExpressionAction_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2508:1: rule__HighBindExpression__Group_1__2 : rule__HighBindExpression__Group_1__2__Impl ;
-    public final void rule__HighBindExpression__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2512:1: ( rule__HighBindExpression__Group_1__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2513:2: rule__HighBindExpression__Group_1__2__Impl
-            {
-            pushFollow(FOLLOW_rule__HighBindExpression__Group_1__2__Impl_in_rule__HighBindExpression__Group_1__24989);
-            rule__HighBindExpression__Group_1__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__2"
-
-
-    // $ANTLR start "rule__HighBindExpression__Group_1__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2519:1: rule__HighBindExpression__Group_1__2__Impl : ( ( '*' )* ) ;
-    public final void rule__HighBindExpression__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2523:1: ( ( ( '*' )* ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2524:1: ( ( '*' )* )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2524:1: ( ( '*' )* )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2525:1: ( '*' )*
-            {
-             before(grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_2()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2526:1: ( '*' )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
-
-                if ( (LA10_0==28) ) {
-                    alt10=1;
-                }
-
-
-                switch (alt10) {
-            	case 1 :
-            	    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2527:2: '*'
-            	    {
-            	    match(input,28,FOLLOW_28_in_rule__HighBindExpression__Group_1__2__Impl5018); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop10;
-                }
-            } while (true);
-
-             after(grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__HighBindExpression__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2544:1: rule__BracedExpression__Group__0 : rule__BracedExpression__Group__0__Impl rule__BracedExpression__Group__1 ;
-    public final void rule__BracedExpression__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2548:1: ( rule__BracedExpression__Group__0__Impl rule__BracedExpression__Group__1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2549:2: rule__BracedExpression__Group__0__Impl rule__BracedExpression__Group__1
-            {
-            pushFollow(FOLLOW_rule__BracedExpression__Group__0__Impl_in_rule__BracedExpression__Group__05057);
-            rule__BracedExpression__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__BracedExpression__Group__1_in_rule__BracedExpression__Group__05060);
-            rule__BracedExpression__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__0"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__0__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2556:1: rule__BracedExpression__Group__0__Impl : ( '(' ) ;
-    public final void rule__BracedExpression__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2560:1: ( ( '(' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2561:1: ( '(' )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2561:1: ( '(' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2562:1: '('
-            {
-             before(grammarAccess.getBracedExpressionAccess().getLeftParenthesisKeyword_0()); 
-            match(input,29,FOLLOW_29_in_rule__BracedExpression__Group__0__Impl5088); 
-             after(grammarAccess.getBracedExpressionAccess().getLeftParenthesisKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__0__Impl"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2575:1: rule__BracedExpression__Group__1 : rule__BracedExpression__Group__1__Impl rule__BracedExpression__Group__2 ;
-    public final void rule__BracedExpression__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2579:1: ( rule__BracedExpression__Group__1__Impl rule__BracedExpression__Group__2 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2580:2: rule__BracedExpression__Group__1__Impl rule__BracedExpression__Group__2
-            {
-            pushFollow(FOLLOW_rule__BracedExpression__Group__1__Impl_in_rule__BracedExpression__Group__15119);
-            rule__BracedExpression__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__BracedExpression__Group__2_in_rule__BracedExpression__Group__15122);
-            rule__BracedExpression__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__1"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__1__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2587:1: rule__BracedExpression__Group__1__Impl : ( ( rule__BracedExpression__InnerExpressionAssignment_1 ) ) ;
-    public final void rule__BracedExpression__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2591:1: ( ( ( rule__BracedExpression__InnerExpressionAssignment_1 ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2592:1: ( ( rule__BracedExpression__InnerExpressionAssignment_1 ) )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2592:1: ( ( rule__BracedExpression__InnerExpressionAssignment_1 ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2593:1: ( rule__BracedExpression__InnerExpressionAssignment_1 )
-            {
-             before(grammarAccess.getBracedExpressionAccess().getInnerExpressionAssignment_1()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2594:1: ( rule__BracedExpression__InnerExpressionAssignment_1 )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2594:2: rule__BracedExpression__InnerExpressionAssignment_1
-            {
-            pushFollow(FOLLOW_rule__BracedExpression__InnerExpressionAssignment_1_in_rule__BracedExpression__Group__1__Impl5149);
-            rule__BracedExpression__InnerExpressionAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getBracedExpressionAccess().getInnerExpressionAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__1__Impl"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2604:1: rule__BracedExpression__Group__2 : rule__BracedExpression__Group__2__Impl ;
-    public final void rule__BracedExpression__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2608:1: ( rule__BracedExpression__Group__2__Impl )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2609:2: rule__BracedExpression__Group__2__Impl
-            {
-            pushFollow(FOLLOW_rule__BracedExpression__Group__2__Impl_in_rule__BracedExpression__Group__25179);
-            rule__BracedExpression__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__2"
-
-
-    // $ANTLR start "rule__BracedExpression__Group__2__Impl"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2615:1: rule__BracedExpression__Group__2__Impl : ( ')' ) ;
-    public final void rule__BracedExpression__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2619:1: ( ( ')' ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2620:1: ( ')' )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2620:1: ( ')' )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2621:1: ')'
-            {
-             before(grammarAccess.getBracedExpressionAccess().getRightParenthesisKeyword_2()); 
-            match(input,30,FOLLOW_30_in_rule__BracedExpression__Group__2__Impl5207); 
-             after(grammarAccess.getBracedExpressionAccess().getRightParenthesisKeyword_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__Group__2__Impl"
+    // $ANTLR end "rule__RuleStart__Group__2__Impl"
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2641:1: rule__Model__ScannerAssignment_0 : ( ruleTitle ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2028:1: rule__Model__ScannerAssignment_0 : ( ruleTitle ) ;
     public final void rule__Model__ScannerAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2645:1: ( ( ruleTitle ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2646:1: ( ruleTitle )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2032:1: ( ( ruleTitle ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2033:1: ( ruleTitle )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2646:1: ( ruleTitle )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2647:1: ruleTitle
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2033:1: ( ruleTitle )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2034:1: ruleTitle
             {
              before(grammarAccess.getModelAccess().getScannerTitleParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleTitle_in_rule__Model__ScannerAssignment_05249);
+            pushFollow(FOLLOW_ruleTitle_in_rule__Model__ScannerAssignment_04021);
             ruleTitle();
 
             state._fsp--;
@@ -6881,20 +5284,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2656:1: rule__Model__ScannerAssignment_1 : ( ruleExport ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2043:1: rule__Model__ScannerAssignment_1 : ( ruleExport ) ;
     public final void rule__Model__ScannerAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2660:1: ( ( ruleExport ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2661:1: ( ruleExport )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2047:1: ( ( ruleExport ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2048:1: ( ruleExport )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2661:1: ( ruleExport )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2662:1: ruleExport
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2048:1: ( ruleExport )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2049:1: ruleExport
             {
              before(grammarAccess.getModelAccess().getScannerExportParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleExport_in_rule__Model__ScannerAssignment_15280);
+            pushFollow(FOLLOW_ruleExport_in_rule__Model__ScannerAssignment_14052);
             ruleExport();
 
             state._fsp--;
@@ -6922,20 +5325,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2671:1: rule__Model__ScannerAssignment_2 : ( ruleGlobal ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2058:1: rule__Model__ScannerAssignment_2 : ( ruleGlobal ) ;
     public final void rule__Model__ScannerAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2675:1: ( ( ruleGlobal ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2676:1: ( ruleGlobal )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2062:1: ( ( ruleGlobal ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2063:1: ( ruleGlobal )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2676:1: ( ruleGlobal )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2677:1: ruleGlobal
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2063:1: ( ruleGlobal )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2064:1: ruleGlobal
             {
              before(grammarAccess.getModelAccess().getScannerGlobalParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleGlobal_in_rule__Model__ScannerAssignment_25311);
+            pushFollow(FOLLOW_ruleGlobal_in_rule__Model__ScannerAssignment_24083);
             ruleGlobal();
 
             state._fsp--;
@@ -6963,20 +5366,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_3"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2686:1: rule__Model__ScannerAssignment_3 : ( ruleLocal ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2073:1: rule__Model__ScannerAssignment_3 : ( ruleLocal ) ;
     public final void rule__Model__ScannerAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2690:1: ( ( ruleLocal ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2691:1: ( ruleLocal )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2077:1: ( ( ruleLocal ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2078:1: ( ruleLocal )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2691:1: ( ruleLocal )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2692:1: ruleLocal
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2078:1: ( ruleLocal )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2079:1: ruleLocal
             {
              before(grammarAccess.getModelAccess().getScannerLocalParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleLocal_in_rule__Model__ScannerAssignment_35342);
+            pushFollow(FOLLOW_ruleLocal_in_rule__Model__ScannerAssignment_34114);
             ruleLocal();
 
             state._fsp--;
@@ -7004,20 +5407,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_4"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2701:1: rule__Model__ScannerAssignment_4 : ( ruleDefault ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2088:1: rule__Model__ScannerAssignment_4 : ( ruleDefault ) ;
     public final void rule__Model__ScannerAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2705:1: ( ( ruleDefault ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2706:1: ( ruleDefault )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2092:1: ( ( ruleDefault ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2093:1: ( ruleDefault )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2706:1: ( ruleDefault )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2707:1: ruleDefault
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2093:1: ( ruleDefault )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2094:1: ruleDefault
             {
              before(grammarAccess.getModelAccess().getScannerDefaultParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleDefault_in_rule__Model__ScannerAssignment_45373);
+            pushFollow(FOLLOW_ruleDefault_in_rule__Model__ScannerAssignment_44145);
             ruleDefault();
 
             state._fsp--;
@@ -7045,20 +5448,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_5"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2716:1: rule__Model__ScannerAssignment_5 : ( ruleEof ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2103:1: rule__Model__ScannerAssignment_5 : ( ruleEof ) ;
     public final void rule__Model__ScannerAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2720:1: ( ( ruleEof ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2721:1: ( ruleEof )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2107:1: ( ( ruleEof ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2108:1: ( ruleEof )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2721:1: ( ruleEof )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2722:1: ruleEof
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2108:1: ( ruleEof )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2109:1: ruleEof
             {
              before(grammarAccess.getModelAccess().getScannerEofParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleEof_in_rule__Model__ScannerAssignment_55404);
+            pushFollow(FOLLOW_ruleEof_in_rule__Model__ScannerAssignment_54176);
             ruleEof();
 
             state._fsp--;
@@ -7086,20 +5489,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_6"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2731:1: rule__Model__ScannerAssignment_6 : ( ruleDefine ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2118:1: rule__Model__ScannerAssignment_6 : ( ruleDefine ) ;
     public final void rule__Model__ScannerAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2735:1: ( ( ruleDefine ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2736:1: ( ruleDefine )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2122:1: ( ( ruleDefine ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2123:1: ( ruleDefine )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2736:1: ( ruleDefine )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2737:1: ruleDefine
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2123:1: ( ruleDefine )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2124:1: ruleDefine
             {
              before(grammarAccess.getModelAccess().getScannerDefineParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleDefine_in_rule__Model__ScannerAssignment_65435);
+            pushFollow(FOLLOW_ruleDefine_in_rule__Model__ScannerAssignment_64207);
             ruleDefine();
 
             state._fsp--;
@@ -7127,20 +5530,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_7"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2746:1: rule__Model__ScannerAssignment_7 : ( ruleStartStates ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2133:1: rule__Model__ScannerAssignment_7 : ( ruleStartStates ) ;
     public final void rule__Model__ScannerAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2750:1: ( ( ruleStartStates ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2751:1: ( ruleStartStates )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2137:1: ( ( ruleStartStates ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2138:1: ( ruleStartStates )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2751:1: ( ruleStartStates )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2752:1: ruleStartStates
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2138:1: ( ruleStartStates )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2139:1: ruleStartStates
             {
              before(grammarAccess.getModelAccess().getScannerStartStatesParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleStartStates_in_rule__Model__ScannerAssignment_75466);
+            pushFollow(FOLLOW_ruleStartStates_in_rule__Model__ScannerAssignment_74238);
             ruleStartStates();
 
             state._fsp--;
@@ -7168,20 +5571,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ScannerAssignment_8"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2761:1: rule__Model__ScannerAssignment_8 : ( ruleRule ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2148:1: rule__Model__ScannerAssignment_8 : ( ruleRule ) ;
     public final void rule__Model__ScannerAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2765:1: ( ( ruleRule ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2766:1: ( ruleRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2152:1: ( ( ruleRule ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2153:1: ( ruleRule )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2766:1: ( ruleRule )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2767:1: ruleRule
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2153:1: ( ruleRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2154:1: ruleRule
             {
              before(grammarAccess.getModelAccess().getScannerRuleParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleRule_in_rule__Model__ScannerAssignment_85497);
+            pushFollow(FOLLOW_ruleRule_in_rule__Model__ScannerAssignment_84269);
             ruleRule();
 
             state._fsp--;
@@ -7209,20 +5612,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Title__NameAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2776:1: rule__Title__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2163:1: rule__Title__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Title__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2780:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2781:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2167:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2168:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2781:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2782:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2168:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2169:1: RULE_ID
             {
              before(grammarAccess.getTitleAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Title__NameAssignment_15528); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Title__NameAssignment_14300); 
              after(grammarAccess.getTitleAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -7246,20 +5649,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Export__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2791:1: rule__Export__ContentAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2178:1: rule__Export__ContentAssignment_1 : ( RULE_ID ) ;
     public final void rule__Export__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2795:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2796:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2182:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2183:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2796:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2797:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2183:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2184:1: RULE_ID
             {
              before(grammarAccess.getExportAccess().getContentIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Export__ContentAssignment_15559); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Export__ContentAssignment_14331); 
              after(grammarAccess.getExportAccess().getContentIDTerminalRuleCall_1_0()); 
 
             }
@@ -7283,20 +5686,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Global__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2806:1: rule__Global__ContentAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2193:1: rule__Global__ContentAssignment_1 : ( RULE_ID ) ;
     public final void rule__Global__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2810:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2811:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2197:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2198:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2811:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2812:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2198:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2199:1: RULE_ID
             {
              before(grammarAccess.getGlobalAccess().getContentIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Global__ContentAssignment_15590); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Global__ContentAssignment_14362); 
              after(grammarAccess.getGlobalAccess().getContentIDTerminalRuleCall_1_0()); 
 
             }
@@ -7320,20 +5723,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Local__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2821:1: rule__Local__ContentAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2208:1: rule__Local__ContentAssignment_1 : ( RULE_ID ) ;
     public final void rule__Local__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2825:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2826:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2212:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2213:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2826:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2827:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2213:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2214:1: RULE_ID
             {
              before(grammarAccess.getLocalAccess().getContentIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Local__ContentAssignment_15621); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Local__ContentAssignment_14393); 
              after(grammarAccess.getLocalAccess().getContentIDTerminalRuleCall_1_0()); 
 
             }
@@ -7357,20 +5760,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Default__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2836:1: rule__Default__ContentAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2223:1: rule__Default__ContentAssignment_1 : ( RULE_ID ) ;
     public final void rule__Default__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2840:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2841:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2227:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2228:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2841:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2842:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2228:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2229:1: RULE_ID
             {
              before(grammarAccess.getDefaultAccess().getContentIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Default__ContentAssignment_15652); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Default__ContentAssignment_14424); 
              after(grammarAccess.getDefaultAccess().getContentIDTerminalRuleCall_1_0()); 
 
             }
@@ -7394,20 +5797,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Eof__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2851:1: rule__Eof__ContentAssignment_1 : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2238:1: rule__Eof__ContentAssignment_1 : ( RULE_ID ) ;
     public final void rule__Eof__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2855:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2856:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2242:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2243:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2856:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2857:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2243:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2244:1: RULE_ID
             {
              before(grammarAccess.getEofAccess().getContentIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Eof__ContentAssignment_15683); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Eof__ContentAssignment_14455); 
              after(grammarAccess.getEofAccess().getContentIDTerminalRuleCall_1_0()); 
 
             }
@@ -7431,20 +5834,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__DefinesAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2866:1: rule__Define__DefinesAssignment_1 : ( ruleDefineRule ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2253:1: rule__Define__DefinesAssignment_1 : ( ruleDefineRule ) ;
     public final void rule__Define__DefinesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2870:1: ( ( ruleDefineRule ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2871:1: ( ruleDefineRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2257:1: ( ( ruleDefineRule ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2258:1: ( ruleDefineRule )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2871:1: ( ruleDefineRule )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2872:1: ruleDefineRule
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2258:1: ( ruleDefineRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2259:1: ruleDefineRule
             {
              before(grammarAccess.getDefineAccess().getDefinesDefineRuleParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleDefineRule_in_rule__Define__DefinesAssignment_15714);
+            pushFollow(FOLLOW_ruleDefineRule_in_rule__Define__DefinesAssignment_14486);
             ruleDefineRule();
 
             state._fsp--;
@@ -7471,22 +5874,22 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Define__DefinesAssignment_1"
 
 
-    // $ANTLR start "rule__DefineRule__DefineNameAssignment_0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2881:1: rule__DefineRule__DefineNameAssignment_0 : ( RULE_ID ) ;
-    public final void rule__DefineRule__DefineNameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__DefineRule__NameAssignment_0"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2268:1: rule__DefineRule__NameAssignment_0 : ( RULE_ID ) ;
+    public final void rule__DefineRule__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2885:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2886:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2272:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2273:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2886:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2887:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2273:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2274:1: RULE_ID
             {
-             before(grammarAccess.getDefineRuleAccess().getDefineNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DefineRule__DefineNameAssignment_05745); 
-             after(grammarAccess.getDefineRuleAccess().getDefineNameIDTerminalRuleCall_0_0()); 
+             before(grammarAccess.getDefineRuleAccess().getNameIDTerminalRuleCall_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DefineRule__NameAssignment_04517); 
+             after(grammarAccess.getDefineRuleAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
 
@@ -7505,25 +5908,25 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DefineRule__DefineNameAssignment_0"
+    // $ANTLR end "rule__DefineRule__NameAssignment_0"
 
 
-    // $ANTLR start "rule__DefineRule__DefineRuleAssignment_2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2896:1: rule__DefineRule__DefineRuleAssignment_2 : ( RULE_ID ) ;
-    public final void rule__DefineRule__DefineRuleAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__DefineRule__RuleAssignment_2"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2283:1: rule__DefineRule__RuleAssignment_2 : ( RULE_ID ) ;
+    public final void rule__DefineRule__RuleAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2900:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2901:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2287:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2288:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2901:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2902:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2288:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2289:1: RULE_ID
             {
-             before(grammarAccess.getDefineRuleAccess().getDefineRuleIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DefineRule__DefineRuleAssignment_25776); 
-             after(grammarAccess.getDefineRuleAccess().getDefineRuleIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getDefineRuleAccess().getRuleIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__DefineRule__RuleAssignment_24548); 
+             after(grammarAccess.getDefineRuleAccess().getRuleIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -7542,24 +5945,24 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DefineRule__DefineRuleAssignment_2"
+    // $ANTLR end "rule__DefineRule__RuleAssignment_2"
 
 
     // $ANTLR start "rule__StartStates__StatesAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2911:1: rule__StartStates__StatesAssignment_1 : ( ruleStartState ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2298:1: rule__StartStates__StatesAssignment_1 : ( ruleStartState ) ;
     public final void rule__StartStates__StatesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2915:1: ( ( ruleStartState ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2916:1: ( ruleStartState )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2302:1: ( ( ruleStartState ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2303:1: ( ruleStartState )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2916:1: ( ruleStartState )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2917:1: ruleStartState
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2303:1: ( ruleStartState )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2304:1: ruleStartState
             {
              before(grammarAccess.getStartStatesAccess().getStatesStartStateParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_15807);
+            pushFollow(FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_14579);
             ruleStartState();
 
             state._fsp--;
@@ -7587,20 +5990,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartStates__StatesAssignment_2_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2926:1: rule__StartStates__StatesAssignment_2_1 : ( ruleStartState ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2313:1: rule__StartStates__StatesAssignment_2_1 : ( ruleStartState ) ;
     public final void rule__StartStates__StatesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2930:1: ( ( ruleStartState ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2931:1: ( ruleStartState )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2317:1: ( ( ruleStartState ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2318:1: ( ruleStartState )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2931:1: ( ruleStartState )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2932:1: ruleStartState
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2318:1: ( ruleStartState )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2319:1: ruleStartState
             {
              before(grammarAccess.getStartStatesAccess().getStatesStartStateParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_2_15838);
+            pushFollow(FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_2_14610);
             ruleStartState();
 
             state._fsp--;
@@ -7628,20 +6031,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StartState__NameAssignment"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2941:1: rule__StartState__NameAssignment : ( RULE_ID ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2328:1: rule__StartState__NameAssignment : ( RULE_ID ) ;
     public final void rule__StartState__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2945:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2946:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2332:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2333:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2946:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2947:1: RULE_ID
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2333:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2334:1: RULE_ID
             {
              before(grammarAccess.getStartStateAccess().getNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartState__NameAssignment5869); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StartState__NameAssignment4641); 
              after(grammarAccess.getStartStateAccess().getNameIDTerminalRuleCall_0()); 
 
             }
@@ -7665,20 +6068,20 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__ContentAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2956:1: rule__Rule__ContentAssignment_1 : ( ruleSingleRule ) ;
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2343:1: rule__Rule__ContentAssignment_1 : ( ruleSingleRule ) ;
     public final void rule__Rule__ContentAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2960:1: ( ( ruleSingleRule ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2961:1: ( ruleSingleRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2347:1: ( ( ruleSingleRule ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2348:1: ( ruleSingleRule )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2961:1: ( ruleSingleRule )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2962:1: ruleSingleRule
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2348:1: ( ruleSingleRule )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2349:1: ruleSingleRule
             {
              before(grammarAccess.getRuleAccess().getContentSingleRuleParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleSingleRule_in_rule__Rule__ContentAssignment_15900);
+            pushFollow(FOLLOW_ruleSingleRule_in_rule__Rule__ContentAssignment_14672);
             ruleSingleRule();
 
             state._fsp--;
@@ -7705,30 +6108,22 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Rule__ContentAssignment_1"
 
 
-    // $ANTLR start "rule__SingleRule__StateAssignment_1_0"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2971:1: rule__SingleRule__StateAssignment_1_0 : ( ( RULE_ID ) ) ;
-    public final void rule__SingleRule__StateAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__SingleRule__RuleAssignment_1"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2358:1: rule__SingleRule__RuleAssignment_1 : ( RULE_TEXT ) ;
+    public final void rule__SingleRule__RuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2975:1: ( ( ( RULE_ID ) ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2976:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2362:1: ( ( RULE_TEXT ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2363:1: ( RULE_TEXT )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2976:1: ( ( RULE_ID ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2977:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2363:1: ( RULE_TEXT )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2364:1: RULE_TEXT
             {
-             before(grammarAccess.getSingleRuleAccess().getStateStartStateCrossReference_1_0_0()); 
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2978:1: ( RULE_ID )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2979:1: RULE_ID
-            {
-             before(grammarAccess.getSingleRuleAccess().getStateStartStateIDTerminalRuleCall_1_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleRule__StateAssignment_1_05935); 
-             after(grammarAccess.getSingleRuleAccess().getStateStartStateIDTerminalRuleCall_1_0_0_1()); 
-
-            }
-
-             after(grammarAccess.getSingleRuleAccess().getStateStartStateCrossReference_1_0_0()); 
+             before(grammarAccess.getSingleRuleAccess().getRuleTEXTTerminalRuleCall_1_0()); 
+            match(input,RULE_TEXT,FOLLOW_RULE_TEXT_in_rule__SingleRule__RuleAssignment_14703); 
+             after(grammarAccess.getSingleRuleAccess().getRuleTEXTTerminalRuleCall_1_0()); 
 
             }
 
@@ -7747,25 +6142,25 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SingleRule__StateAssignment_1_0"
+    // $ANTLR end "rule__SingleRule__RuleAssignment_1"
 
 
-    // $ANTLR start "rule__SingleRule__RegexAssignment_3"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2990:1: rule__SingleRule__RegexAssignment_3 : ( RULE_ANY_OTHER ) ;
-    public final void rule__SingleRule__RegexAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SingleRule__ContentAssignment_4"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2373:1: rule__SingleRule__ContentAssignment_4 : ( RULE_ID ) ;
+    public final void rule__SingleRule__ContentAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2994:1: ( ( RULE_ANY_OTHER ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2995:1: ( RULE_ANY_OTHER )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2377:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2378:1: ( RULE_ID )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2995:1: ( RULE_ANY_OTHER )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2996:1: RULE_ANY_OTHER
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2378:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2379:1: RULE_ID
             {
-             before(grammarAccess.getSingleRuleAccess().getRegexANY_OTHERTerminalRuleCall_3_0()); 
-            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__SingleRule__RegexAssignment_35970); 
-             after(grammarAccess.getSingleRuleAccess().getRegexANY_OTHERTerminalRuleCall_3_0()); 
+             before(grammarAccess.getSingleRuleAccess().getContentIDTerminalRuleCall_4_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SingleRule__ContentAssignment_44734); 
+             after(grammarAccess.getSingleRuleAccess().getContentIDTerminalRuleCall_4_0()); 
 
             }
 
@@ -7784,29 +6179,33 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SingleRule__RegexAssignment_3"
+    // $ANTLR end "rule__SingleRule__ContentAssignment_4"
 
 
-    // $ANTLR start "rule__OrExpression__RightAssignment_1_2"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3005:1: rule__OrExpression__RightAssignment_1_2 : ( ruleSequenceExpression ) ;
-    public final void rule__OrExpression__RightAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__RuleStart__StateAssignment_1_0"
+    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2388:1: rule__RuleStart__StateAssignment_1_0 : ( ( RULE_ID ) ) ;
+    public final void rule__RuleStart__StateAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3009:1: ( ( ruleSequenceExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3010:1: ( ruleSequenceExpression )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2392:1: ( ( ( RULE_ID ) ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2393:1: ( ( RULE_ID ) )
             {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3010:1: ( ruleSequenceExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3011:1: ruleSequenceExpression
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2393:1: ( ( RULE_ID ) )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2394:1: ( RULE_ID )
             {
-             before(grammarAccess.getOrExpressionAccess().getRightSequenceExpressionParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleSequenceExpression_in_rule__OrExpression__RightAssignment_1_26001);
-            ruleSequenceExpression();
+             before(grammarAccess.getRuleStartAccess().getStateStartStateCrossReference_1_0_0()); 
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2395:1: ( RULE_ID )
+            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:2396:1: RULE_ID
+            {
+             before(grammarAccess.getRuleStartAccess().getStateStartStateIDTerminalRuleCall_1_0_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RuleStart__StateAssignment_1_04769); 
+             after(grammarAccess.getRuleStartAccess().getStateStartStateIDTerminalRuleCall_1_0_0_1()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getOrExpressionAccess().getRightSequenceExpressionParserRuleCall_1_2_0()); 
+             after(grammarAccess.getRuleStartAccess().getStateStartStateCrossReference_1_0_0()); 
 
             }
 
@@ -7825,126 +6224,7 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__OrExpression__RightAssignment_1_2"
-
-
-    // $ANTLR start "rule__SequenceExpression__RightAssignment_1_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3020:1: rule__SequenceExpression__RightAssignment_1_1 : ( ruleHighBindExpression ) ;
-    public final void rule__SequenceExpression__RightAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3024:1: ( ( ruleHighBindExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3025:1: ( ruleHighBindExpression )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3025:1: ( ruleHighBindExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3026:1: ruleHighBindExpression
-            {
-             before(grammarAccess.getSequenceExpressionAccess().getRightHighBindExpressionParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleHighBindExpression_in_rule__SequenceExpression__RightAssignment_1_16032);
-            ruleHighBindExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getSequenceExpressionAccess().getRightHighBindExpressionParserRuleCall_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SequenceExpression__RightAssignment_1_1"
-
-
-    // $ANTLR start "rule__BracedExpression__InnerExpressionAssignment_1"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3035:1: rule__BracedExpression__InnerExpressionAssignment_1 : ( ruleRegularExpression ) ;
-    public final void rule__BracedExpression__InnerExpressionAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3039:1: ( ( ruleRegularExpression ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3040:1: ( ruleRegularExpression )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3040:1: ( ruleRegularExpression )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3041:1: ruleRegularExpression
-            {
-             before(grammarAccess.getBracedExpressionAccess().getInnerExpressionRegularExpressionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRegularExpression_in_rule__BracedExpression__InnerExpressionAssignment_16063);
-            ruleRegularExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getBracedExpressionAccess().getInnerExpressionRegularExpressionParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BracedExpression__InnerExpressionAssignment_1"
-
-
-    // $ANTLR start "rule__Atom__ValueAssignment"
-    // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3050:1: rule__Atom__ValueAssignment : ( RULE_CHAR ) ;
-    public final void rule__Atom__ValueAssignment() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3054:1: ( ( RULE_CHAR ) )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3055:1: ( RULE_CHAR )
-            {
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3055:1: ( RULE_CHAR )
-            // ../org.xtext.cocktail.ui/src-gen/org/xtext/cocktail/ui/contentassist/antlr/internal/InternalScanner.g:3056:1: RULE_CHAR
-            {
-             before(grammarAccess.getAtomAccess().getValueCHARTerminalRuleCall_0()); 
-            match(input,RULE_CHAR,FOLLOW_RULE_CHAR_in_rule__Atom__ValueAssignment6094); 
-             after(grammarAccess.getAtomAccess().getValueCHARTerminalRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Atom__ValueAssignment"
+    // $ANTLR end "rule__RuleStart__StateAssignment_1_0"
 
     // Delegated rules
 
@@ -7990,223 +6270,168 @@ public class InternalScannerParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleSingleRule_in_entryRuleSingleRule781 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSingleRule788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SingleRule__Group__0_in_ruleSingleRule814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRegularExpression_in_entryRuleRegularExpression841 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRegularExpression848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_ruleRegularExpression874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpression_in_entryRuleOrExpression900 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOrExpression907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__0_in_ruleOrExpression933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequenceExpression_in_entryRuleSequenceExpression960 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSequenceExpression967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group__0_in_ruleSequenceExpression993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHighBindExpression_in_entryRuleHighBindExpression1020 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHighBindExpression1027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group__0_in_ruleHighBindExpression1053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicExpression_in_entryRuleAtomicExpression1080 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicExpression1087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicExpression__Alternatives_in_ruleAtomicExpression1113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBracedExpression_in_entryRuleBracedExpression1140 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBracedExpression1147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__0_in_ruleBracedExpression1173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtom_in_entryRuleAtom1200 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtom1207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atom__ValueAssignment_in_ruleAtom1233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__StateAssignment_1_0_in_rule__SingleRule__Alternatives_11269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__SingleRule__Alternatives_11288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBracedExpression_in_rule__AtomicExpression__Alternatives1322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtom_in_rule__AtomicExpression__Alternatives1339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01369 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_0_in_rule__Model__Group__0__Impl1399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11429 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_1_in_rule__Model__Group__1__Impl1459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21489 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_2_in_rule__Model__Group__2__Impl1519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31549 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_3_in_rule__Model__Group__3__Impl1579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41609 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_4_in_rule__Model__Group__4__Impl1639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51669 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_5_in_rule__Model__Group__5__Impl1699 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61729 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_6_in_rule__Model__Group__6__Impl1759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71789 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Model__Group__8_in_rule__Model__Group__71792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_7_in_rule__Model__Group__7__Impl1819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__81849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_8_in_rule__Model__Group__8__Impl1876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__01924 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Title__Group__1_in_rule__Title__Group__01927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Title__Group__0__Impl1955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__11986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Title__NameAssignment_1_in_rule__Title__Group__1__Impl2013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Export__Group__0__Impl_in_rule__Export__Group__02047 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Export__Group__1_in_rule__Export__Group__02050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Export__Group__0__Impl2078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Export__Group__1__Impl_in_rule__Export__Group__12109 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Export__Group__2_in_rule__Export__Group__12112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Export__ContentAssignment_1_in_rule__Export__Group__1__Impl2139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Export__Group__2__Impl_in_rule__Export__Group__22169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Export__Group__2__Impl2197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Global__Group__0__Impl_in_rule__Global__Group__02234 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Global__Group__1_in_rule__Global__Group__02237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Global__Group__0__Impl2265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Global__Group__1__Impl_in_rule__Global__Group__12296 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Global__Group__2_in_rule__Global__Group__12299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Global__ContentAssignment_1_in_rule__Global__Group__1__Impl2326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Global__Group__2__Impl_in_rule__Global__Group__22356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Global__Group__2__Impl2384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Local__Group__0__Impl_in_rule__Local__Group__02421 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Local__Group__1_in_rule__Local__Group__02424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Local__Group__0__Impl2452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Local__Group__1__Impl_in_rule__Local__Group__12483 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Local__Group__2_in_rule__Local__Group__12486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Local__ContentAssignment_1_in_rule__Local__Group__1__Impl2513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Local__Group__2__Impl_in_rule__Local__Group__22543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Local__Group__2__Impl2571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Default__Group__0__Impl_in_rule__Default__Group__02608 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Default__Group__1_in_rule__Default__Group__02611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Default__Group__0__Impl2639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Default__Group__1__Impl_in_rule__Default__Group__12670 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Default__Group__2_in_rule__Default__Group__12673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Default__ContentAssignment_1_in_rule__Default__Group__1__Impl2700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Default__Group__2__Impl_in_rule__Default__Group__22730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Default__Group__2__Impl2758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Eof__Group__0__Impl_in_rule__Eof__Group__02795 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Eof__Group__1_in_rule__Eof__Group__02798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Eof__Group__0__Impl2826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Eof__Group__1__Impl_in_rule__Eof__Group__12857 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Eof__Group__2_in_rule__Eof__Group__12860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Eof__ContentAssignment_1_in_rule__Eof__Group__1__Impl2887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Eof__Group__2__Impl_in_rule__Eof__Group__22917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Eof__Group__2__Impl2945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Define__Group__0__Impl_in_rule__Define__Group__02982 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Define__Group__1_in_rule__Define__Group__02985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Define__Group__0__Impl3013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Define__Group__1__Impl_in_rule__Define__Group__13044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl3073 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl3085 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__DefineRule__Group__0__Impl_in_rule__DefineRule__Group__03122 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__DefineRule__Group__1_in_rule__DefineRule__Group__03125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefineRule__DefineNameAssignment_0_in_rule__DefineRule__Group__0__Impl3152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefineRule__Group__1__Impl_in_rule__DefineRule__Group__13182 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__DefineRule__Group__2_in_rule__DefineRule__Group__13185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__DefineRule__Group__1__Impl3213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefineRule__Group__2__Impl_in_rule__DefineRule__Group__23244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__DefineRule__DefineRuleAssignment_2_in_rule__DefineRule__Group__2__Impl3271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group__0__Impl_in_rule__StartStates__Group__03307 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__StartStates__Group__1_in_rule__StartStates__Group__03310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__StartStates__Group__0__Impl3338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group__1__Impl_in_rule__StartStates__Group__13369 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__StartStates__Group__2_in_rule__StartStates__Group__13372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__StatesAssignment_1_in_rule__StartStates__Group__1__Impl3399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group__2__Impl_in_rule__StartStates__Group__23429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group_2__0_in_rule__StartStates__Group__2__Impl3456 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group_2__0__Impl_in_rule__StartStates__Group_2__03493 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__StartStates__Group_2__1_in_rule__StartStates__Group_2__03496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__StartStates__Group_2__0__Impl3524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__Group_2__1__Impl_in_rule__StartStates__Group_2__13555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StartStates__StatesAssignment_2_1_in_rule__StartStates__Group_2__1__Impl3582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03616 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Rule__Group__0__Impl3647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Rule__ContentAssignment_1_in_rule__Rule__Group__1__Impl3705 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__0__Impl_in_rule__SingleRule__Group__03740 = new BitSet(new long[]{0x0000000000001020L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__1_in_rule__SingleRule__Group__03743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__SingleRule__Group__0__Impl3771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__1__Impl_in_rule__SingleRule__Group__13802 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__2_in_rule__SingleRule__Group__13805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Alternatives_1_in_rule__SingleRule__Group__1__Impl3832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__2__Impl_in_rule__SingleRule__Group__23862 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__3_in_rule__SingleRule__Group__23865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__SingleRule__Group__2__Impl3893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__3__Impl_in_rule__SingleRule__Group__33924 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__4_in_rule__SingleRule__Group__33927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__RegexAssignment_3_in_rule__SingleRule__Group__3__Impl3956 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_rule__SingleRule__RegexAssignment_3_in_rule__SingleRule__Group__3__Impl3968 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__4__Impl_in_rule__SingleRule__Group__44001 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__5_in_rule__SingleRule__Group__44004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__SingleRule__Group__4__Impl4032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__5__Impl_in_rule__SingleRule__Group__54063 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__6_in_rule__SingleRule__Group__54066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__SingleRule__Group__5__Impl4093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SingleRule__Group__6__Impl_in_rule__SingleRule__Group__64122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__SingleRule__Group__6__Impl4150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__0__Impl_in_rule__OrExpression__Group__04195 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__1_in_rule__OrExpression__Group__04198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequenceExpression_in_rule__OrExpression__Group__0__Impl4225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group__1__Impl_in_rule__OrExpression__Group__14254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0_in_rule__OrExpression__Group__1__Impl4281 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__0__Impl_in_rule__OrExpression__Group_1__04316 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1_in_rule__OrExpression__Group_1__04319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__1__Impl_in_rule__OrExpression__Group_1__14377 = new BitSet(new long[]{0x0000000020000080L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__2_in_rule__OrExpression__Group_1__14380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__OrExpression__Group_1__1__Impl4408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__Group_1__2__Impl_in_rule__OrExpression__Group_1__24439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpression__RightAssignment_1_2_in_rule__OrExpression__Group_1__2__Impl4466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group__0__Impl_in_rule__SequenceExpression__Group__04502 = new BitSet(new long[]{0x0000000020000080L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group__1_in_rule__SequenceExpression__Group__04505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHighBindExpression_in_rule__SequenceExpression__Group__0__Impl4532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group__1__Impl_in_rule__SequenceExpression__Group__14561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group_1__0_in_rule__SequenceExpression__Group__1__Impl4588 = new BitSet(new long[]{0x0000000020000082L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group_1__0__Impl_in_rule__SequenceExpression__Group_1__04623 = new BitSet(new long[]{0x0000000020000080L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group_1__1_in_rule__SequenceExpression__Group_1__04626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__Group_1__1__Impl_in_rule__SequenceExpression__Group_1__14684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SequenceExpression__RightAssignment_1_1_in_rule__SequenceExpression__Group_1__1__Impl4711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group__0__Impl_in_rule__HighBindExpression__Group__04745 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group__1_in_rule__HighBindExpression__Group__04748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicExpression_in_rule__HighBindExpression__Group__0__Impl4775 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group__1__Impl_in_rule__HighBindExpression__Group__14804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__0_in_rule__HighBindExpression__Group__1__Impl4831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__0__Impl_in_rule__HighBindExpression__Group_1__04866 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__1_in_rule__HighBindExpression__Group_1__04869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__HighBindExpression__Group_1__0__Impl4897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__1__Impl_in_rule__HighBindExpression__Group_1__14928 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__2_in_rule__HighBindExpression__Group_1__14931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__HighBindExpression__Group_1__2__Impl_in_rule__HighBindExpression__Group_1__24989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__HighBindExpression__Group_1__2__Impl5018 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__0__Impl_in_rule__BracedExpression__Group__05057 = new BitSet(new long[]{0x0000000020000080L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__1_in_rule__BracedExpression__Group__05060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__BracedExpression__Group__0__Impl5088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__1__Impl_in_rule__BracedExpression__Group__15119 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__2_in_rule__BracedExpression__Group__15122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BracedExpression__InnerExpressionAssignment_1_in_rule__BracedExpression__Group__1__Impl5149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BracedExpression__Group__2__Impl_in_rule__BracedExpression__Group__25179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__BracedExpression__Group__2__Impl5207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTitle_in_rule__Model__ScannerAssignment_05249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExport_in_rule__Model__ScannerAssignment_15280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGlobal_in_rule__Model__ScannerAssignment_25311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLocal_in_rule__Model__ScannerAssignment_35342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefault_in_rule__Model__ScannerAssignment_45373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEof_in_rule__Model__ScannerAssignment_55404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefine_in_rule__Model__ScannerAssignment_65435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStartStates_in_rule__Model__ScannerAssignment_75466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRule_in_rule__Model__ScannerAssignment_85497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Title__NameAssignment_15528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Export__ContentAssignment_15559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Global__ContentAssignment_15590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Local__ContentAssignment_15621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Default__ContentAssignment_15652 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Eof__ContentAssignment_15683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDefineRule_in_rule__Define__DefinesAssignment_15714 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__DefineRule__DefineNameAssignment_05745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__DefineRule__DefineRuleAssignment_25776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_15807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_2_15838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StartState__NameAssignment5869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSingleRule_in_rule__Rule__ContentAssignment_15900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleRule__StateAssignment_1_05935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__SingleRule__RegexAssignment_35970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSequenceExpression_in_rule__OrExpression__RightAssignment_1_26001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHighBindExpression_in_rule__SequenceExpression__RightAssignment_1_16032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRegularExpression_in_rule__BracedExpression__InnerExpressionAssignment_16063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CHAR_in_rule__Atom__ValueAssignment6094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleStart_in_entryRuleRuleStart841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRuleStart848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__0_in_ruleRuleStart874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__SingleRule__Alternatives_2911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__SingleRule__Alternatives_2931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__StateAssignment_1_0_in_rule__RuleStart__Alternatives_1965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__RuleStart__Alternatives_1984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__0__Impl_in_rule__Model__Group__01016 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Model__Group__1_in_rule__Model__Group__01019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_0_in_rule__Model__Group__0__Impl1046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__1__Impl_in_rule__Model__Group__11076 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__Model__Group__2_in_rule__Model__Group__11079 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_1_in_rule__Model__Group__1__Impl1106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__2__Impl_in_rule__Model__Group__21136 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_rule__Model__Group__3_in_rule__Model__Group__21139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_2_in_rule__Model__Group__2__Impl1166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__3__Impl_in_rule__Model__Group__31196 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_rule__Model__Group__4_in_rule__Model__Group__31199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_3_in_rule__Model__Group__3__Impl1226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__4__Impl_in_rule__Model__Group__41257 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_rule__Model__Group__5_in_rule__Model__Group__41260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_4_in_rule__Model__Group__4__Impl1287 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__5__Impl_in_rule__Model__Group__51317 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_rule__Model__Group__6_in_rule__Model__Group__51320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_5_in_rule__Model__Group__5__Impl1347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__6__Impl_in_rule__Model__Group__61378 = new BitSet(new long[]{0x000000000A000000L});
+    public static final BitSet FOLLOW_rule__Model__Group__7_in_rule__Model__Group__61381 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_6_in_rule__Model__Group__6__Impl1408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__7__Impl_in_rule__Model__Group__71438 = new BitSet(new long[]{0x000000000A000000L});
+    public static final BitSet FOLLOW_rule__Model__Group__8_in_rule__Model__Group__71441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_7_in_rule__Model__Group__7__Impl1468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__Group__8__Impl_in_rule__Model__Group__81499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Model__ScannerAssignment_8_in_rule__Model__Group__8__Impl1526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__Group__0__Impl_in_rule__Title__Group__01574 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Title__Group__1_in_rule__Title__Group__01577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Title__Group__0__Impl1605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__Group__1__Impl_in_rule__Title__Group__11636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Title__NameAssignment_1_in_rule__Title__Group__1__Impl1663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Export__Group__0__Impl_in_rule__Export__Group__01697 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Export__Group__1_in_rule__Export__Group__01700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Export__Group__0__Impl1728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Export__Group__1__Impl_in_rule__Export__Group__11759 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Export__Group__2_in_rule__Export__Group__11762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Export__ContentAssignment_1_in_rule__Export__Group__1__Impl1789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Export__Group__2__Impl_in_rule__Export__Group__21819 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Export__Group__2__Impl1847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Global__Group__0__Impl_in_rule__Global__Group__01884 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Global__Group__1_in_rule__Global__Group__01887 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Global__Group__0__Impl1915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Global__Group__1__Impl_in_rule__Global__Group__11946 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Global__Group__2_in_rule__Global__Group__11949 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Global__ContentAssignment_1_in_rule__Global__Group__1__Impl1976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Global__Group__2__Impl_in_rule__Global__Group__22006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Global__Group__2__Impl2034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Local__Group__0__Impl_in_rule__Local__Group__02071 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Local__Group__1_in_rule__Local__Group__02074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Local__Group__0__Impl2102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Local__Group__1__Impl_in_rule__Local__Group__12133 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Local__Group__2_in_rule__Local__Group__12136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Local__ContentAssignment_1_in_rule__Local__Group__1__Impl2163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Local__Group__2__Impl_in_rule__Local__Group__22193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Local__Group__2__Impl2221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Default__Group__0__Impl_in_rule__Default__Group__02258 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Default__Group__1_in_rule__Default__Group__02261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Default__Group__0__Impl2289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Default__Group__1__Impl_in_rule__Default__Group__12320 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Default__Group__2_in_rule__Default__Group__12323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Default__ContentAssignment_1_in_rule__Default__Group__1__Impl2350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Default__Group__2__Impl_in_rule__Default__Group__22380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Default__Group__2__Impl2408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Eof__Group__0__Impl_in_rule__Eof__Group__02445 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Eof__Group__1_in_rule__Eof__Group__02448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Eof__Group__0__Impl2476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Eof__Group__1__Impl_in_rule__Eof__Group__12507 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Eof__Group__2_in_rule__Eof__Group__12510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Eof__ContentAssignment_1_in_rule__Eof__Group__1__Impl2537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Eof__Group__2__Impl_in_rule__Eof__Group__22567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Eof__Group__2__Impl2595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Define__Group__0__Impl_in_rule__Define__Group__02632 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Define__Group__1_in_rule__Define__Group__02635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Define__Group__0__Impl2663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Define__Group__1__Impl_in_rule__Define__Group__12694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl2723 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__Define__DefinesAssignment_1_in_rule__Define__Group__1__Impl2735 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__0__Impl_in_rule__DefineRule__Group__02772 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__1_in_rule__DefineRule__Group__02775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DefineRule__NameAssignment_0_in_rule__DefineRule__Group__0__Impl2802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__1__Impl_in_rule__DefineRule__Group__12832 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__2_in_rule__DefineRule__Group__12835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__DefineRule__Group__1__Impl2863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__2__Impl_in_rule__DefineRule__Group__22894 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__3_in_rule__DefineRule__Group__22897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DefineRule__RuleAssignment_2_in_rule__DefineRule__Group__2__Impl2924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__DefineRule__Group__3__Impl_in_rule__DefineRule__Group__32954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__DefineRule__Group__3__Impl2982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group__0__Impl_in_rule__StartStates__Group__03021 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__StartStates__Group__1_in_rule__StartStates__Group__03024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__StartStates__Group__0__Impl3052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group__1__Impl_in_rule__StartStates__Group__13083 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__StartStates__Group__2_in_rule__StartStates__Group__13086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__StatesAssignment_1_in_rule__StartStates__Group__1__Impl3113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group__2__Impl_in_rule__StartStates__Group__23143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group_2__0_in_rule__StartStates__Group__2__Impl3170 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group_2__0__Impl_in_rule__StartStates__Group_2__03207 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__StartStates__Group_2__1_in_rule__StartStates__Group_2__03210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__StartStates__Group_2__0__Impl3238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__Group_2__1__Impl_in_rule__StartStates__Group_2__13269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StartStates__StatesAssignment_2_1_in_rule__StartStates__Group_2__1__Impl3296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03330 = new BitSet(new long[]{0x0000000020000020L});
+    public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Rule__Group__0__Impl3361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Rule__ContentAssignment_1_in_rule__Rule__Group__1__Impl3419 = new BitSet(new long[]{0x0000000020000022L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__0__Impl_in_rule__SingleRule__Group__03454 = new BitSet(new long[]{0x0000000020000020L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__1_in_rule__SingleRule__Group__03457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleStart_in_rule__SingleRule__Group__0__Impl3485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__1__Impl_in_rule__SingleRule__Group__13516 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__2_in_rule__SingleRule__Group__13519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__RuleAssignment_1_in_rule__SingleRule__Group__1__Impl3546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__2__Impl_in_rule__SingleRule__Group__23576 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__3_in_rule__SingleRule__Group__23579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Alternatives_2_in_rule__SingleRule__Group__2__Impl3606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__3__Impl_in_rule__SingleRule__Group__33636 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__4_in_rule__SingleRule__Group__33639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__SingleRule__Group__3__Impl3667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__4__Impl_in_rule__SingleRule__Group__43698 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__5_in_rule__SingleRule__Group__43701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__ContentAssignment_4_in_rule__SingleRule__Group__4__Impl3728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SingleRule__Group__5__Impl_in_rule__SingleRule__Group__53758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__SingleRule__Group__5__Impl3786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__0__Impl_in_rule__RuleStart__Group__03829 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__1_in_rule__RuleStart__Group__03832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__RuleStart__Group__0__Impl3860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__1__Impl_in_rule__RuleStart__Group__13891 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__2_in_rule__RuleStart__Group__13894 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__Alternatives_1_in_rule__RuleStart__Group__1__Impl3921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleStart__Group__2__Impl_in_rule__RuleStart__Group__23951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__RuleStart__Group__2__Impl3979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTitle_in_rule__Model__ScannerAssignment_04021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExport_in_rule__Model__ScannerAssignment_14052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGlobal_in_rule__Model__ScannerAssignment_24083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLocal_in_rule__Model__ScannerAssignment_34114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefault_in_rule__Model__ScannerAssignment_44145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEof_in_rule__Model__ScannerAssignment_54176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefine_in_rule__Model__ScannerAssignment_64207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStartStates_in_rule__Model__ScannerAssignment_74238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRule_in_rule__Model__ScannerAssignment_84269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Title__NameAssignment_14300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Export__ContentAssignment_14331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Global__ContentAssignment_14362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Local__ContentAssignment_14393 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Default__ContentAssignment_14424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Eof__ContentAssignment_14455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDefineRule_in_rule__Define__DefinesAssignment_14486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__DefineRule__NameAssignment_04517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__DefineRule__RuleAssignment_24548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_14579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStartState_in_rule__StartStates__StatesAssignment_2_14610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StartState__NameAssignment4641 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSingleRule_in_rule__Rule__ContentAssignment_14672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TEXT_in_rule__SingleRule__RuleAssignment_14703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SingleRule__ContentAssignment_44734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RuleStart__StateAssignment_1_04769 = new BitSet(new long[]{0x0000000000000002L});
 
 }

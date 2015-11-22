@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -20,32 +21,19 @@ import org.xtext.cocktail.services.ScannerGrammarAccess;
 public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ScannerGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_HighBindExpression_AsteriskKeyword_1_2_a;
+	protected AbstractElementAlias match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ScannerGrammarAccess) access;
-		match_HighBindExpression_AsteriskKeyword_1_2_a = new TokenAlias(true, true, grammarAccess.getHighBindExpressionAccess().getAsteriskKeyword_1_2());
+		match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSingleRuleAccess().getColonHyphenMinusKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getSingleRuleAccess().getColonKeyword_2_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
-			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal STRING	: 
-	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
-	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
-	 * 		;
-	 */
-	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "\"\"";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -53,20 +41,20 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_HighBindExpression_AsteriskKeyword_1_2_a.equals(syntax))
-				emit_HighBindExpression_AsteriskKeyword_1_2_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1.equals(syntax))
+				emit_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     '*'*
+	 *     ':-' | ':'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     {StarExpression.innerExpression=} (ambiguity) (rule end)
+	 *     rule+=TEXT (ambiguity) '{' content+=ID
 	 */
-	protected void emit_HighBindExpression_AsteriskKeyword_1_2_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -28,8 +28,8 @@
         eType="#//DefineRule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DefineRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defineName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defineRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartStates">
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
@@ -43,30 +43,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleStart" eSuperTypes="#//SingleRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" unique="false" upperBound="-1"
         eType="#//StartState"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RegularExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//RegularExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//OrExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SequenceExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SequenceExpression" eSuperTypes="#//OrExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HighBindExpression" eSuperTypes="#//SequenceExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicExpression" eSuperTypes="#//HighBindExpression"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BracedExpression" eSuperTypes="#//AtomicExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="innerExpression" eType="#//RegularExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//AtomicExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StarExpression" eSuperTypes="#//HighBindExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="innerExpression" eType="#//AtomicExpression"
-        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

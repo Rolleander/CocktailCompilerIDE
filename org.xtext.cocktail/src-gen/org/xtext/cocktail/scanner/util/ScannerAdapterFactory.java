@@ -140,44 +140,9 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createSingleRuleAdapter();
       }
       @Override
-      public Adapter caseRegularExpression(RegularExpression object)
+      public Adapter caseRuleStart(RuleStart object)
       {
-        return createRegularExpressionAdapter();
-      }
-      @Override
-      public Adapter caseOrExpression(OrExpression object)
-      {
-        return createOrExpressionAdapter();
-      }
-      @Override
-      public Adapter caseSequenceExpression(SequenceExpression object)
-      {
-        return createSequenceExpressionAdapter();
-      }
-      @Override
-      public Adapter caseHighBindExpression(HighBindExpression object)
-      {
-        return createHighBindExpressionAdapter();
-      }
-      @Override
-      public Adapter caseAtomicExpression(AtomicExpression object)
-      {
-        return createAtomicExpressionAdapter();
-      }
-      @Override
-      public Adapter caseBracedExpression(BracedExpression object)
-      {
-        return createBracedExpressionAdapter();
-      }
-      @Override
-      public Adapter caseAtom(Atom object)
-      {
-        return createAtomAdapter();
-      }
-      @Override
-      public Adapter caseStarExpression(StarExpression object)
-      {
-        return createStarExpressionAdapter();
+        return createRuleStartAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -397,121 +362,16 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.RegularExpression <em>Regular Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.RuleStart <em>Rule Start</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.RegularExpression
+   * @see org.xtext.cocktail.scanner.RuleStart
    * @generated
    */
-  public Adapter createRegularExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.OrExpression <em>Or Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.OrExpression
-   * @generated
-   */
-  public Adapter createOrExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.SequenceExpression <em>Sequence Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.SequenceExpression
-   * @generated
-   */
-  public Adapter createSequenceExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.HighBindExpression <em>High Bind Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.HighBindExpression
-   * @generated
-   */
-  public Adapter createHighBindExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.AtomicExpression <em>Atomic Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.AtomicExpression
-   * @generated
-   */
-  public Adapter createAtomicExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.BracedExpression <em>Braced Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.BracedExpression
-   * @generated
-   */
-  public Adapter createBracedExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Atom <em>Atom</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.Atom
-   * @generated
-   */
-  public Adapter createAtomAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.StarExpression <em>Star Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.StarExpression
-   * @generated
-   */
-  public Adapter createStarExpressionAdapter()
+  public Adapter createRuleStartAdapter()
   {
     return null;
   }
