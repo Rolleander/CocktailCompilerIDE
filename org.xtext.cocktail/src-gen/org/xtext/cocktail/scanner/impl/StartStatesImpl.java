@@ -26,24 +26,35 @@ import org.xtext.cocktail.scanner.StartStates;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getStates <em>States</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getIncstates <em>Incstates</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getExstates <em>Exstates</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class StartStatesImpl extends MinimalEObjectImpl.Container implements StartStates
 {
   /**
-   * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+   * The cached value of the '{@link #getIncstates() <em>Incstates</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStates()
+   * @see #getIncstates()
    * @generated
    * @ordered
    */
-  protected EList<StartState> states;
+  protected EList<StartState> incstates;
+
+  /**
+   * The cached value of the '{@link #getExstates() <em>Exstates</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExstates()
+   * @generated
+   * @ordered
+   */
+  protected EList<StartState> exstates;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +82,27 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StartState> getStates()
+  public EList<StartState> getIncstates()
   {
-    if (states == null)
+    if (incstates == null)
     {
-      states = new EObjectContainmentEList<StartState>(StartState.class, this, ScannerPackage.START_STATES__STATES);
+      incstates = new EObjectContainmentEList<StartState>(StartState.class, this, ScannerPackage.START_STATES__INCSTATES);
     }
-    return states;
+    return incstates;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<StartState> getExstates()
+  {
+    if (exstates == null)
+    {
+      exstates = new EObjectContainmentEList<StartState>(StartState.class, this, ScannerPackage.START_STATES__EXSTATES);
+    }
+    return exstates;
   }
 
   /**
@@ -90,8 +115,10 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
+      case ScannerPackage.START_STATES__INCSTATES:
+        return ((InternalEList<?>)getIncstates()).basicRemove(otherEnd, msgs);
+      case ScannerPackage.START_STATES__EXSTATES:
+        return ((InternalEList<?>)getExstates()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +133,10 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        return getStates();
+      case ScannerPackage.START_STATES__INCSTATES:
+        return getIncstates();
+      case ScannerPackage.START_STATES__EXSTATES:
+        return getExstates();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +152,13 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        getStates().clear();
-        getStates().addAll((Collection<? extends StartState>)newValue);
+      case ScannerPackage.START_STATES__INCSTATES:
+        getIncstates().clear();
+        getIncstates().addAll((Collection<? extends StartState>)newValue);
+        return;
+      case ScannerPackage.START_STATES__EXSTATES:
+        getExstates().clear();
+        getExstates().addAll((Collection<? extends StartState>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +174,11 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        getStates().clear();
+      case ScannerPackage.START_STATES__INCSTATES:
+        getIncstates().clear();
+        return;
+      case ScannerPackage.START_STATES__EXSTATES:
+        getExstates().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +194,10 @@ public class StartStatesImpl extends MinimalEObjectImpl.Container implements Sta
   {
     switch (featureID)
     {
-      case ScannerPackage.START_STATES__STATES:
-        return states != null && !states.isEmpty();
+      case ScannerPackage.START_STATES__INCSTATES:
+        return incstates != null && !incstates.isEmpty();
+      case ScannerPackage.START_STATES__EXSTATES:
+        return exstates != null && !exstates.isEmpty();
     }
     return super.eIsSet(featureID);
   }

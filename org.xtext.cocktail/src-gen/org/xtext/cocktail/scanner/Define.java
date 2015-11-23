@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.Define#getDefines <em>Defines</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getDefine()
  * @model

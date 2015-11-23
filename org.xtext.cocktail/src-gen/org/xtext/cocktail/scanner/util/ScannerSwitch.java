@@ -50,7 +50,7 @@ public class ScannerSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @parameter ePackage the package in question.
+   * @param ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */
@@ -79,10 +79,10 @@ public class ScannerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ScannerPackage.TITLE:
+      case ScannerPackage.SCANNER:
       {
-        Title title = (Title)theEObject;
-        T result = caseTitle(title);
+        Scanner scanner = (Scanner)theEObject;
+        T result = caseScanner(scanner);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -171,6 +171,13 @@ public class ScannerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ScannerPackage.ACTION_STATEMENT:
+      {
+        ActionStatement actionStatement = (ActionStatement)theEObject;
+        T result = caseActionStatement(actionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -192,17 +199,17 @@ public class ScannerSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Title</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Scanner</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Title</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Scanner</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTitle(Title object)
+  public T caseScanner(Scanner object)
   {
     return null;
   }
@@ -395,6 +402,22 @@ public class ScannerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRuleStart(RuleStart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionStatement(ActionStatement object)
   {
     return null;
   }

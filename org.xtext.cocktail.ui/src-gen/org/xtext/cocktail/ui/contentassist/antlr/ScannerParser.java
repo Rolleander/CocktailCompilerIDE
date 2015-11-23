@@ -37,10 +37,13 @@ public class ScannerParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getRuleAccess().getAlternatives_0(), "rule__Rule__Alternatives_0");
 					put(grammarAccess.getSingleRuleAccess().getAlternatives_2(), "rule__SingleRule__Alternatives_2");
-					put(grammarAccess.getRuleStartAccess().getAlternatives_1(), "rule__RuleStart__Alternatives_1");
+					put(grammarAccess.getRuleStartAccess().getAlternatives_0(), "rule__RuleStart__Alternatives_0");
+					put(grammarAccess.getRuleStartAccess().getAlternatives_2(), "rule__RuleStart__Alternatives_2");
+					put(grammarAccess.getActionStatementAccess().getAlternatives(), "rule__ActionStatement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
-					put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
+					put(grammarAccess.getScannerAccess().getGroup(), "rule__Scanner__Group__0");
 					put(grammarAccess.getExportAccess().getGroup(), "rule__Export__Group__0");
 					put(grammarAccess.getGlobalAccess().getGroup(), "rule__Global__Group__0");
 					put(grammarAccess.getLocalAccess().getGroup(), "rule__Local__Group__0");
@@ -50,9 +53,17 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefineRuleAccess().getGroup(), "rule__DefineRule__Group__0");
 					put(grammarAccess.getStartStatesAccess().getGroup(), "rule__StartStates__Group__0");
 					put(grammarAccess.getStartStatesAccess().getGroup_2(), "rule__StartStates__Group_2__0");
+					put(grammarAccess.getStartStatesAccess().getGroup_3(), "rule__StartStates__Group_3__0");
+					put(grammarAccess.getStartStatesAccess().getGroup_3_2(), "rule__StartStates__Group_3_2__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 					put(grammarAccess.getSingleRuleAccess().getGroup(), "rule__SingleRule__Group__0");
 					put(grammarAccess.getRuleStartAccess().getGroup(), "rule__RuleStart__Group__0");
+					put(grammarAccess.getRuleStartAccess().getGroup_2_0(), "rule__RuleStart__Group_2_0__0");
+					put(grammarAccess.getRuleStartAccess().getGroup_2_0_1(), "rule__RuleStart__Group_2_0_1__0");
+					put(grammarAccess.getActionStatementAccess().getGroup_0(), "rule__ActionStatement__Group_0__0");
+					put(grammarAccess.getActionStatementAccess().getGroup_1(), "rule__ActionStatement__Group_1__0");
+					put(grammarAccess.getActionStatementAccess().getGroup_2(), "rule__ActionStatement__Group_2__0");
+					put(grammarAccess.getActionStatementAccess().getGroup_4(), "rule__ActionStatement__Group_4__0");
 					put(grammarAccess.getModelAccess().getScannerAssignment_0(), "rule__Model__ScannerAssignment_0");
 					put(grammarAccess.getModelAccess().getScannerAssignment_1(), "rule__Model__ScannerAssignment_1");
 					put(grammarAccess.getModelAccess().getScannerAssignment_2(), "rule__Model__ScannerAssignment_2");
@@ -62,7 +73,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getScannerAssignment_6(), "rule__Model__ScannerAssignment_6");
 					put(grammarAccess.getModelAccess().getScannerAssignment_7(), "rule__Model__ScannerAssignment_7");
 					put(grammarAccess.getModelAccess().getScannerAssignment_8(), "rule__Model__ScannerAssignment_8");
-					put(grammarAccess.getTitleAccess().getNameAssignment_1(), "rule__Title__NameAssignment_1");
+					put(grammarAccess.getScannerAccess().getNameAssignment_1(), "rule__Scanner__NameAssignment_1");
 					put(grammarAccess.getExportAccess().getContentAssignment_1(), "rule__Export__ContentAssignment_1");
 					put(grammarAccess.getGlobalAccess().getContentAssignment_1(), "rule__Global__ContentAssignment_1");
 					put(grammarAccess.getLocalAccess().getContentAssignment_1(), "rule__Local__ContentAssignment_1");
@@ -71,13 +82,19 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefineAccess().getDefinesAssignment_1(), "rule__Define__DefinesAssignment_1");
 					put(grammarAccess.getDefineRuleAccess().getNameAssignment_0(), "rule__DefineRule__NameAssignment_0");
 					put(grammarAccess.getDefineRuleAccess().getRuleAssignment_2(), "rule__DefineRule__RuleAssignment_2");
-					put(grammarAccess.getStartStatesAccess().getStatesAssignment_1(), "rule__StartStates__StatesAssignment_1");
-					put(grammarAccess.getStartStatesAccess().getStatesAssignment_2_1(), "rule__StartStates__StatesAssignment_2_1");
+					put(grammarAccess.getStartStatesAccess().getIncstatesAssignment_1(), "rule__StartStates__IncstatesAssignment_1");
+					put(grammarAccess.getStartStatesAccess().getIncstatesAssignment_2_1(), "rule__StartStates__IncstatesAssignment_2_1");
+					put(grammarAccess.getStartStatesAccess().getExstatesAssignment_3_1(), "rule__StartStates__ExstatesAssignment_3_1");
+					put(grammarAccess.getStartStatesAccess().getExstatesAssignment_3_2_1(), "rule__StartStates__ExstatesAssignment_3_2_1");
 					put(grammarAccess.getStartStateAccess().getNameAssignment(), "rule__StartState__NameAssignment");
 					put(grammarAccess.getRuleAccess().getContentAssignment_1(), "rule__Rule__ContentAssignment_1");
 					put(grammarAccess.getSingleRuleAccess().getRuleAssignment_1(), "rule__SingleRule__RuleAssignment_1");
 					put(grammarAccess.getSingleRuleAccess().getContentAssignment_4(), "rule__SingleRule__ContentAssignment_4");
-					put(grammarAccess.getRuleStartAccess().getStateAssignment_1_0(), "rule__RuleStart__StateAssignment_1_0");
+					put(grammarAccess.getRuleStartAccess().getStateAssignment_2_0_0(), "rule__RuleStart__StateAssignment_2_0_0");
+					put(grammarAccess.getRuleStartAccess().getStateAssignment_2_0_1_1(), "rule__RuleStart__StateAssignment_2_0_1_1");
+					put(grammarAccess.getActionStatementAccess().getStAssignment_0_0(), "rule__ActionStatement__StAssignment_0_0");
+					put(grammarAccess.getActionStatementAccess().getStAssignment_1_0(), "rule__ActionStatement__StAssignment_1_0");
+					put(grammarAccess.getActionStatementAccess().getStAssignment_2_0(), "rule__ActionStatement__StAssignment_2_0");
 				}
 			};
 		}

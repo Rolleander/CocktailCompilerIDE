@@ -8,43 +8,45 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import org.xtext.cocktail.scanner.RuleStart;
+import org.xtext.cocktail.scanner.ActionStatement;
+import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerPackage;
-import org.xtext.cocktail.scanner.StartState;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rule Start</b></em>'.
+ * An implementation of the model object '<em><b>Action Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.RuleStartImpl#getState <em>State</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.ActionStatementImpl#getSt <em>St</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RuleStartImpl extends SingleRuleImpl implements RuleStart
+public class ActionStatementImpl extends MinimalEObjectImpl.Container implements ActionStatement
 {
   /**
-   * The cached value of the '{@link #getState() <em>State</em>}' reference list.
+   * The cached value of the '{@link #getSt() <em>St</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getState()
+   * @see #getSt()
    * @generated
    * @ordered
    */
-  protected EList<StartState> state;
+  protected EList<Scanner> st;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RuleStartImpl()
+  protected ActionStatementImpl()
   {
     super();
   }
@@ -57,7 +59,7 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
   @Override
   protected EClass eStaticClass()
   {
-    return ScannerPackage.Literals.RULE_START;
+    return ScannerPackage.Literals.ACTION_STATEMENT;
   }
 
   /**
@@ -65,13 +67,13 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StartState> getState()
+  public EList<Scanner> getSt()
   {
-    if (state == null)
+    if (st == null)
     {
-      state = new EObjectResolvingEList<StartState>(StartState.class, this, ScannerPackage.RULE_START__STATE);
+      st = new EObjectResolvingEList<Scanner>(Scanner.class, this, ScannerPackage.ACTION_STATEMENT__ST);
     }
-    return state;
+    return st;
   }
 
   /**
@@ -84,8 +86,8 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_START__STATE:
-        return getState();
+      case ScannerPackage.ACTION_STATEMENT__ST:
+        return getSt();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -101,9 +103,9 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_START__STATE:
-        getState().clear();
-        getState().addAll((Collection<? extends StartState>)newValue);
+      case ScannerPackage.ACTION_STATEMENT__ST:
+        getSt().clear();
+        getSt().addAll((Collection<? extends Scanner>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -119,8 +121,8 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_START__STATE:
-        getState().clear();
+      case ScannerPackage.ACTION_STATEMENT__ST:
+        getSt().clear();
         return;
     }
     super.eUnset(featureID);
@@ -136,10 +138,10 @@ public class RuleStartImpl extends SingleRuleImpl implements RuleStart
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_START__STATE:
-        return state != null && !state.isEmpty();
+      case ScannerPackage.ACTION_STATEMENT__ST:
+        return st != null && !st.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //RuleStartImpl
+} //ActionStatementImpl

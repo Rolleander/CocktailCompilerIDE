@@ -13,10 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.StartStates#getStates <em>States</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.xtext.cocktail.scanner.StartStates#getIncstates <em>Incstates</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.StartStates#getExstates <em>Exstates</em>}</li>
+ * </ul>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getStartStates()
  * @model
@@ -25,19 +26,35 @@ import org.eclipse.emf.ecore.EObject;
 public interface StartStates extends EObject
 {
   /**
-   * Returns the value of the '<em><b>States</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Incstates</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.cocktail.scanner.StartState}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>States</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Incstates</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>States</em>' containment reference list.
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getStartStates_States()
+   * @return the value of the '<em>Incstates</em>' containment reference list.
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getStartStates_Incstates()
    * @model containment="true"
    * @generated
    */
-  EList<StartState> getStates();
+  EList<StartState> getIncstates();
+
+  /**
+   * Returns the value of the '<em><b>Exstates</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.cocktail.scanner.StartState}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Exstates</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Exstates</em>' containment reference list.
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getStartStates_Exstates()
+   * @model containment="true"
+   * @generated
+   */
+  EList<StartState> getExstates();
 
 } // StartStates

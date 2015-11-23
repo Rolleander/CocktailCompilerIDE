@@ -85,14 +85,14 @@ public interface ScannerPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.TitleImpl <em>Title</em>}' class.
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.TitleImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getTitle()
+   * @see org.xtext.cocktail.scanner.impl.ScannerImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getScanner()
    * @generated
    */
-  int TITLE = 1;
+  int SCANNER = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -101,16 +101,16 @@ public interface ScannerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TITLE__NAME = 0;
+  int SCANNER__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Title</em>' class.
+   * The number of structural features of the '<em>Scanner</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TITLE_FEATURE_COUNT = 1;
+  int SCANNER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ExportImpl <em>Export</em>}' class.
@@ -328,13 +328,22 @@ public interface ScannerPackage extends EPackage
   int START_STATES = 9;
 
   /**
-   * The feature id for the '<em><b>States</b></em>' containment reference list.
+   * The feature id for the '<em><b>Incstates</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int START_STATES__STATES = 0;
+  int START_STATES__INCSTATES = 0;
+
+  /**
+   * The feature id for the '<em><b>Exstates</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int START_STATES__EXSTATES = 1;
 
   /**
    * The number of structural features of the '<em>Start States</em>' class.
@@ -343,7 +352,7 @@ public interface ScannerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int START_STATES_FEATURE_COUNT = 1;
+  int START_STATES_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.StartStateImpl <em>Start State</em>}' class.
@@ -484,6 +493,34 @@ public interface ScannerPackage extends EPackage
    */
   int RULE_START_FEATURE_COUNT = SINGLE_RULE_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ActionStatementImpl <em>Action Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.ActionStatementImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getActionStatement()
+   * @generated
+   */
+  int ACTION_STATEMENT = 14;
+
+  /**
+   * The feature id for the '<em><b>St</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_STATEMENT__ST = 0;
+
+  /**
+   * The number of structural features of the '<em>Action Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_STATEMENT_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Model <em>Model</em>}'.
@@ -507,25 +544,25 @@ public interface ScannerPackage extends EPackage
   EReference getModel_Scanner();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Title <em>Title</em>}'.
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Scanner <em>Scanner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Title</em>'.
-   * @see org.xtext.cocktail.scanner.Title
+   * @return the meta object for class '<em>Scanner</em>'.
+   * @see org.xtext.cocktail.scanner.Scanner
    * @generated
    */
-  EClass getTitle();
+  EClass getScanner();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Title#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Scanner#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.cocktail.scanner.Title#getName()
-   * @see #getTitle()
+   * @see org.xtext.cocktail.scanner.Scanner#getName()
+   * @see #getScanner()
    * @generated
    */
-  EAttribute getTitle_Name();
+  EAttribute getScanner_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Export <em>Export</em>}'.
@@ -696,15 +733,26 @@ public interface ScannerPackage extends EPackage
   EClass getStartStates();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.StartStates#getStates <em>States</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.StartStates#getIncstates <em>Incstates</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>States</em>'.
-   * @see org.xtext.cocktail.scanner.StartStates#getStates()
+   * @return the meta object for the containment reference list '<em>Incstates</em>'.
+   * @see org.xtext.cocktail.scanner.StartStates#getIncstates()
    * @see #getStartStates()
    * @generated
    */
-  EReference getStartStates_States();
+  EReference getStartStates_Incstates();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.StartStates#getExstates <em>Exstates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Exstates</em>'.
+   * @see org.xtext.cocktail.scanner.StartStates#getExstates()
+   * @see #getStartStates()
+   * @generated
+   */
+  EReference getStartStates_Exstates();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.StartState <em>Start State</em>}'.
@@ -802,6 +850,27 @@ public interface ScannerPackage extends EPackage
   EReference getRuleStart_State();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.ActionStatement <em>Action Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action Statement</em>'.
+   * @see org.xtext.cocktail.scanner.ActionStatement
+   * @generated
+   */
+  EClass getActionStatement();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.ActionStatement#getSt <em>St</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>St</em>'.
+   * @see org.xtext.cocktail.scanner.ActionStatement#getSt()
+   * @see #getActionStatement()
+   * @generated
+   */
+  EReference getActionStatement_St();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -843,14 +912,14 @@ public interface ScannerPackage extends EPackage
     EReference MODEL__SCANNER = eINSTANCE.getModel_Scanner();
 
     /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.TitleImpl <em>Title</em>}' class.
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.TitleImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getTitle()
+     * @see org.xtext.cocktail.scanner.impl.ScannerImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getScanner()
      * @generated
      */
-    EClass TITLE = eINSTANCE.getTitle();
+    EClass SCANNER = eINSTANCE.getScanner();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -858,7 +927,7 @@ public interface ScannerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TITLE__NAME = eINSTANCE.getTitle_Name();
+    EAttribute SCANNER__NAME = eINSTANCE.getScanner_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ExportImpl <em>Export</em>}' class.
@@ -1005,12 +1074,20 @@ public interface ScannerPackage extends EPackage
     EClass START_STATES = eINSTANCE.getStartStates();
 
     /**
-     * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Incstates</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference START_STATES__STATES = eINSTANCE.getStartStates_States();
+    EReference START_STATES__INCSTATES = eINSTANCE.getStartStates_Incstates();
+
+    /**
+     * The meta object literal for the '<em><b>Exstates</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference START_STATES__EXSTATES = eINSTANCE.getStartStates_Exstates();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.StartStateImpl <em>Start State</em>}' class.
@@ -1091,6 +1168,24 @@ public interface ScannerPackage extends EPackage
      * @generated
      */
     EReference RULE_START__STATE = eINSTANCE.getRuleStart_State();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ActionStatementImpl <em>Action Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.ActionStatementImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getActionStatement()
+     * @generated
+     */
+    EClass ACTION_STATEMENT = eINSTANCE.getActionStatement();
+
+    /**
+     * The meta object literal for the '<em><b>St</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION_STATEMENT__ST = eINSTANCE.getActionStatement_St();
 
   }
 

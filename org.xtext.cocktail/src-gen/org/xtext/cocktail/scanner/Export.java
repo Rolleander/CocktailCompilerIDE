@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.Export#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getExport()
  * @model
