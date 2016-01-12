@@ -80,9 +80,9 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseTitle(Title object)
+      public Adapter caseScanner(Scanner object)
       {
-        return createTitleAdapter();
+        return createScannerAdapter();
       }
       @Override
       public Adapter caseExport(Export object)
@@ -145,6 +145,11 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createRuleStartAdapter();
       }
       @Override
+      public Adapter caseActionStatement(ActionStatement object)
+      {
+        return createActionStatementAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -182,16 +187,16 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Title <em>Title</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Scanner <em>Scanner</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.Title
+   * @see org.xtext.cocktail.scanner.Scanner
    * @generated
    */
-  public Adapter createTitleAdapter()
+  public Adapter createScannerAdapter()
   {
     return null;
   }
@@ -372,6 +377,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleStartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.ActionStatement <em>Action Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.ActionStatement
+   * @generated
+   */
+  public Adapter createActionStatementAdapter()
   {
     return null;
   }

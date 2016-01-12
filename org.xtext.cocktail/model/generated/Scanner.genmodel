@@ -4,14 +4,14 @@
     editorDirectory="/org.xtext.cocktail.editor/src" modelPluginID="org.xtext.cocktail"
     forceOverwrite="true" modelName="Scanner" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.cocktail.edit"
-    editorPluginID="org.xtext.cocktail.editor" runtimeVersion="2.10">
+    editorPluginID="org.xtext.cocktail.editor" runtimeVersion="2.11">
   <genPackages prefix="Scanner" basePackage="org.xtext.cocktail" disposableProviderFactory="true"
       fileExtensions="rex" ecorePackage="Scanner.ecore#/">
     <genClasses ecoreClass="Scanner.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/scanner"/>
     </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//Title">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Title/name"/>
+    <genClasses ecoreClass="Scanner.ecore#//Scanner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Scanner/name"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//Export">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Export/content"/>
@@ -36,7 +36,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//DefineRule/rule"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//StartStates">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StartStates/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StartStates/incstates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//StartStates/exstates"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//StartState">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//StartState/name"/>
@@ -50,6 +51,9 @@
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//RuleStart">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleStart/state"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//ActionStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//ActionStatement/st"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -108,9 +108,8 @@ public class NewWizard extends Wizard implements INewWizard
         IFile file1 = folder.getFile("parser.pars");
         IFile file2 = folder.getFile("syntax.ast");
         //at this point, no resources have been created
-        
         if (!project.exists()) project.create(null);
-        if (!project.isOpen()) project.open(null);
+        if (!project.isOpen()) project.open(null);        
         if (!folder.exists()) 
             folder.create(IResource.NONE, true, null);
         if (!file.exists()) {

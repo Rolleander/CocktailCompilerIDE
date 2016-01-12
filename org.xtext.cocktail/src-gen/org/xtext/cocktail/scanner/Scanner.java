@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Title</b></em>'.
+ * A representation of the model object '<em><b>Scanner</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.Title#getName <em>Name</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.xtext.cocktail.scanner.Scanner#getName <em>Name</em>}</li>
+ * </ul>
  *
- * @see org.xtext.cocktail.scanner.ScannerPackage#getTitle()
+ * @see org.xtext.cocktail.scanner.ScannerPackage#getScanner()
  * @model
  * @generated
  */
-public interface Title extends EObject
+public interface Scanner extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Title extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getTitle_Name()
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getScanner_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.cocktail.scanner.Title#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Scanner#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface Title extends EObject
    */
   void setName(String value);
 
-} // Title
+} // Scanner

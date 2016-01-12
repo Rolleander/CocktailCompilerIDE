@@ -15,5 +15,13 @@
             name="Compiler-Projekt">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/icon_date.png"
+            id="de.roma.cocktail.assistent.projectfolder"
+            natureId="de.roma.cocktail.assistent.projectfolder">
+      </image>
+   </extension>
 
 </plugin>

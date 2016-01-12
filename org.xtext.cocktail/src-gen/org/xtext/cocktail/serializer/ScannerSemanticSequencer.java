@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.cocktail.scanner.ActionStatement;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -26,11 +27,11 @@ import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.RuleStart;
+import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SingleRule;
 import org.xtext.cocktail.scanner.StartState;
 import org.xtext.cocktail.scanner.StartStates;
-import org.xtext.cocktail.scanner.Title;
 import org.xtext.cocktail.services.ScannerGrammarAccess;
 
 @SuppressWarnings("all")
@@ -42,6 +43,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ScannerPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ScannerPackage.ACTION_STATEMENT:
+				sequence_ActionStatement(context, (ActionStatement) semanticObject); 
+				return; 
 			case ScannerPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
 				return; 
@@ -79,6 +83,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case ScannerPackage.SCANNER:
+				sequence_Scanner(context, (Scanner) semanticObject); 
+				return; 
 			case ScannerPackage.SINGLE_RULE:
 				sequence_SingleRule(context, (SingleRule) semanticObject); 
 				return; 
@@ -88,12 +95,18 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ScannerPackage.START_STATES:
 				sequence_StartStates(context, (StartStates) semanticObject); 
 				return; 
-			case ScannerPackage.TITLE:
-				sequence_Title(context, (Title) semanticObject); 
-				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (st+=[Scanner|ID] | st+=[Scanner|ID] | st+=[Scanner|ID])?
+	 */
+	protected void sequence_ActionStatement(EObject context, ActionStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -206,11 +219,11 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         scanner+=Title 
-	 *         scanner+=Export 
-	 *         scanner+=Global 
+	 *         scanner+=Scanner? 
+	 *         scanner+=Export? 
+	 *         scanner+=Global? 
 	 *         scanner+=Local? 
-	 *         scanner+=Default 
+	 *         scanner+=Default? 
 	 *         scanner+=Eof? 
 	 *         scanner+=Define 
 	 *         scanner+=StartStates? 
@@ -224,7 +237,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     state+=[StartState|ID]?
+	 *     (state+=[StartState|ID] state+=[StartState|ID]*)?
 	 */
 	protected void sequence_RuleStart(EObject context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -233,7 +246,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (state+=[StartState|ID] rule+=TEXT content+=ID)
+	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule+=STRING content+=ID)
 	 */
 	protected void sequence_RuleStart_SingleRule(EObject context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -251,7 +264,23 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (rule+=TEXT content+=ID)
+	 *     name=ID
+	 */
+	protected void sequence_Scanner(EObject context, Scanner semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SCANNER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SCANNER__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getScannerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (rule+=STRING content+=ID)
 	 */
 	protected void sequence_SingleRule(EObject context, SingleRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -276,25 +305,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (states+=StartState states+=StartState*)
+	 *     (incstates+=StartState incstates+=StartState* (exstates+=StartState exstates+=StartState*)?)
 	 */
 	protected void sequence_StartStates(EObject context, StartStates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Title(EObject context, Title semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.TITLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.TITLE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTitleAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
 	}
 }

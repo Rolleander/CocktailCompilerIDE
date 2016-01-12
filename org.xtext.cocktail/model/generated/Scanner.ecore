@@ -5,7 +5,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="scanner" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Title">
+  <eClassifiers xsi:type="ecore:EClass" name="Scanner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Export">
@@ -32,7 +32,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartStates">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incstates" upperBound="-1"
+        eType="#//StartState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exstates" upperBound="-1"
         eType="#//StartState" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartState">
@@ -51,5 +53,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuleStart" eSuperTypes="#//SingleRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" unique="false" upperBound="-1"
         eType="#//StartState"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="st" unique="false" upperBound="-1"
+        eType="#//Scanner"/>
   </eClassifiers>
 </ecore:EPackage>

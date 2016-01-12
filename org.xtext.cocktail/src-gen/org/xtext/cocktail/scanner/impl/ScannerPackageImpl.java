@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.cocktail.scanner.ActionStatement;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -19,12 +20,12 @@ import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.RuleStart;
+import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerFactory;
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SingleRule;
 import org.xtext.cocktail.scanner.StartState;
 import org.xtext.cocktail.scanner.StartStates;
-import org.xtext.cocktail.scanner.Title;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +47,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass titleEClass = null;
+  private EClass scannerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +132,13 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass ruleStartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionStatementEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -220,9 +228,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTitle()
+  public EClass getScanner()
   {
-    return titleEClass;
+    return scannerEClass;
   }
 
   /**
@@ -230,9 +238,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTitle_Name()
+  public EAttribute getScanner_Name()
   {
-    return (EAttribute)titleEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)scannerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -400,9 +408,19 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStartStates_States()
+  public EReference getStartStates_Incstates()
   {
     return (EReference)startStatesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStartStates_Exstates()
+  {
+    return (EReference)startStatesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -500,6 +518,26 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getActionStatement()
+  {
+    return actionStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionStatement_St()
+  {
+    return (EReference)actionStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ScannerFactory getScannerFactory()
   {
     return (ScannerFactory)getEFactoryInstance();
@@ -528,8 +566,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__SCANNER);
 
-    titleEClass = createEClass(TITLE);
-    createEAttribute(titleEClass, TITLE__NAME);
+    scannerEClass = createEClass(SCANNER);
+    createEAttribute(scannerEClass, SCANNER__NAME);
 
     exportEClass = createEClass(EXPORT);
     createEAttribute(exportEClass, EXPORT__CONTENT);
@@ -554,7 +592,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEAttribute(defineRuleEClass, DEFINE_RULE__RULE);
 
     startStatesEClass = createEClass(START_STATES);
-    createEReference(startStatesEClass, START_STATES__STATES);
+    createEReference(startStatesEClass, START_STATES__INCSTATES);
+    createEReference(startStatesEClass, START_STATES__EXSTATES);
 
     startStateEClass = createEClass(START_STATE);
     createEAttribute(startStateEClass, START_STATE__NAME);
@@ -568,6 +607,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     ruleStartEClass = createEClass(RULE_START);
     createEReference(ruleStartEClass, RULE_START__STATE);
+
+    actionStatementEClass = createEClass(ACTION_STATEMENT);
+    createEReference(actionStatementEClass, ACTION_STATEMENT__ST);
   }
 
   /**
@@ -605,8 +647,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Scanner(), ecorePackage.getEObject(), null, "scanner", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(titleEClass, Title.class, "Title", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTitle_Name(), ecorePackage.getEString(), "name", null, 0, 1, Title.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scannerEClass, Scanner.class, "Scanner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScanner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scanner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -631,7 +673,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEAttribute(getDefineRule_Rule(), ecorePackage.getEString(), "rule", null, 0, 1, DefineRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(startStatesEClass, StartStates.class, "StartStates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStartStates_States(), this.getStartState(), null, "states", null, 0, -1, StartStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStartStates_Incstates(), this.getStartState(), null, "incstates", null, 0, -1, StartStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStartStates_Exstates(), this.getStartState(), null, "exstates", null, 0, -1, StartStates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(startStateEClass, StartState.class, "StartState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStartState_Name(), ecorePackage.getEString(), "name", null, 0, 1, StartState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -645,6 +688,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     initEClass(ruleStartEClass, RuleStart.class, "RuleStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleStart_State(), this.getStartState(), null, "state", null, 0, -1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionStatementEClass, ActionStatement.class, "ActionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActionStatement_St(), this.getScanner(), null, "st", null, 0, -1, ActionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

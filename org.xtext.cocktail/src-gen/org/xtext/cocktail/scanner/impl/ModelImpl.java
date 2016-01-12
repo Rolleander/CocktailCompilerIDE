@@ -26,10 +26,10 @@ import org.xtext.cocktail.scanner.ScannerPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getScanner <em>Scanner</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

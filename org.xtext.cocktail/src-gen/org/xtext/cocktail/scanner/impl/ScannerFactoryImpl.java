@@ -65,7 +65,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
     switch (eClass.getClassifierID())
     {
       case ScannerPackage.MODEL: return createModel();
-      case ScannerPackage.TITLE: return createTitle();
+      case ScannerPackage.SCANNER: return createScanner();
       case ScannerPackage.EXPORT: return createExport();
       case ScannerPackage.GLOBAL: return createGlobal();
       case ScannerPackage.LOCAL: return createLocal();
@@ -78,6 +78,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.RULE: return createRule();
       case ScannerPackage.SINGLE_RULE: return createSingleRule();
       case ScannerPackage.RULE_START: return createRuleStart();
+      case ScannerPackage.ACTION_STATEMENT: return createActionStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -99,10 +100,10 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Title createTitle()
+  public Scanner createScanner()
   {
-    TitleImpl title = new TitleImpl();
-    return title;
+    ScannerImpl scanner = new ScannerImpl();
+    return scanner;
   }
 
   /**
@@ -235,6 +236,17 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
   {
     RuleStartImpl ruleStart = new RuleStartImpl();
     return ruleStart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionStatement createActionStatement()
+  {
+    ActionStatementImpl actionStatement = new ActionStatementImpl();
+    return actionStatement;
   }
 
   /**

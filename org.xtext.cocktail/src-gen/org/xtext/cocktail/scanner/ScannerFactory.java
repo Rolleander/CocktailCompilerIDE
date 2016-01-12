@@ -32,13 +32,13 @@ public interface ScannerFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Title</em>'.
+   * Returns a new object of class '<em>Scanner</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Title</em>'.
+   * @return a new object of class '<em>Scanner</em>'.
    * @generated
    */
-  Title createTitle();
+  Scanner createScanner();
 
   /**
    * Returns a new object of class '<em>Export</em>'.
@@ -147,6 +147,15 @@ public interface ScannerFactory extends EFactory
    * @generated
    */
   RuleStart createRuleStart();
+
+  /**
+   * Returns a new object of class '<em>Action Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Statement</em>'.
+   * @generated
+   */
+  ActionStatement createActionStatement();
 
   /**
    * Returns the package supported by this factory.
