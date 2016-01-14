@@ -458,9 +458,19 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRule_Content()
+  public EAttribute getRule_Info()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Rules()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -599,7 +609,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEAttribute(startStateEClass, START_STATE__NAME);
 
     ruleEClass = createEClass(RULE);
-    createEReference(ruleEClass, RULE__CONTENT);
+    createEAttribute(ruleEClass, RULE__INFO);
+    createEReference(ruleEClass, RULE__RULES);
 
     singleRuleEClass = createEClass(SINGLE_RULE);
     createEAttribute(singleRuleEClass, SINGLE_RULE__RULE);
@@ -680,7 +691,8 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEAttribute(getStartState_Name(), ecorePackage.getEString(), "name", null, 0, 1, StartState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRule_Content(), this.getSingleRule(), null, "content", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Info(), ecorePackage.getEString(), "info", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Rules(), this.getSingleRule(), null, "rules", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSingleRule_Rule(), ecorePackage.getEString(), "rule", null, 0, -1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

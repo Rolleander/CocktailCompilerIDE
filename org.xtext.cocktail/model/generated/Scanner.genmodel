@@ -4,7 +4,7 @@
     editorDirectory="/org.xtext.cocktail.editor/src" modelPluginID="org.xtext.cocktail"
     forceOverwrite="true" modelName="Scanner" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="org.xtext.cocktail.edit"
-    editorPluginID="org.xtext.cocktail.editor" runtimeVersion="2.11">
+    editorPluginID="org.xtext.cocktail.editor" runtimeVersion="2.10">
   <genPackages prefix="Scanner" basePackage="org.xtext.cocktail" disposableProviderFactory="true"
       fileExtensions="rex" ecorePackage="Scanner.ecore#/">
     <genClasses ecoreClass="Scanner.ecore#//Model">
@@ -43,7 +43,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//StartState/name"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//Rule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Rule/info"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/rules"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//SingleRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/rule"/>

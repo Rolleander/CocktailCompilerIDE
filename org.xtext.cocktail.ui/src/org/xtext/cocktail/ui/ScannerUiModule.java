@@ -4,6 +4,10 @@
 package org.xtext.cocktail.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
+import org.xtext.cocktail.ui.syntaxcoloring.ScannerTokenMapper;
+
+import com.google.inject.Binder;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +15,12 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class ScannerUiModule extends org.xtext.cocktail.ui.AbstractScannerUiModule {
 	public ScannerUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+		
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		binder.bind(AbstractAntlrTokenToAttributeIdMapper.class).to(ScannerTokenMapper.class);
 	}
 }

@@ -18,11 +18,11 @@ import org.xtext.cocktail.scanner.ScannerPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.DefineRuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.DefineRuleImpl#getRule <em>Rule</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -90,7 +90,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_0_0, 
-        		"Scanner");
+        		"org.xtext.cocktail.Scanner.Scanner");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -108,7 +108,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_1_0, 
-        		"Export");
+        		"org.xtext.cocktail.Scanner.Export");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -126,7 +126,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_2_0, 
-        		"Global");
+        		"org.xtext.cocktail.Scanner.Global");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -144,7 +144,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_3_0, 
-        		"Local");
+        		"org.xtext.cocktail.Scanner.Local");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -162,7 +162,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_4_0, 
-        		"Default");
+        		"org.xtext.cocktail.Scanner.Default");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -180,7 +180,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_5_0, 
-        		"Eof");
+        		"org.xtext.cocktail.Scanner.Eof");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -198,7 +198,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_6_0, 
-        		"Define");
+        		"org.xtext.cocktail.Scanner.Define");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -216,7 +216,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_7_0, 
-        		"StartStates");
+        		"org.xtext.cocktail.Scanner.StartStates");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -234,7 +234,7 @@ ruleModel returns [EObject current=null]
        			$current, 
        			"scanner",
         		lv_scanner_8_0, 
-        		"Rule");
+        		"org.xtext.cocktail.Scanner.Rule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -278,7 +278,7 @@ ruleScanner returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -321,7 +321,7 @@ ruleExport returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -368,7 +368,7 @@ ruleGlobal returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -415,7 +415,7 @@ ruleLocal returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -462,7 +462,7 @@ ruleDefault returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -509,7 +509,7 @@ ruleEof returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_1_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -555,7 +555,7 @@ ruleDefine returns [EObject current=null]
        			$current, 
        			"defines",
         		lv_defines_1_0, 
-        		"DefineRule");
+        		"org.xtext.cocktail.Scanner.DefineRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -595,7 +595,7 @@ ruleDefineRule returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -617,7 +617,7 @@ ruleDefineRule returns [EObject current=null]
        			$current, 
        			"rule",
         		lv_rule_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -663,7 +663,7 @@ ruleStartStates returns [EObject current=null]
        			$current, 
        			"incstates",
         		lv_incstates_1_0, 
-        		"StartState");
+        		"org.xtext.cocktail.Scanner.StartState");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -685,7 +685,7 @@ ruleStartStates returns [EObject current=null]
        			$current, 
        			"incstates",
         		lv_incstates_3_0, 
-        		"StartState");
+        		"org.xtext.cocktail.Scanner.StartState");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -707,7 +707,7 @@ ruleStartStates returns [EObject current=null]
        			$current, 
        			"exstates",
         		lv_exstates_5_0, 
-        		"StartState");
+        		"org.xtext.cocktail.Scanner.StartState");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -729,7 +729,7 @@ ruleStartStates returns [EObject current=null]
        			$current, 
        			"exstates",
         		lv_exstates_7_0, 
-        		"StartState");
+        		"org.xtext.cocktail.Scanner.StartState");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -769,7 +769,7 @@ ruleStartState returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_0_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -794,29 +794,50 @@ ruleRule returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((	otherlv_0='RULE' 
+((
+(
+(
+		lv_info_0_1=	'RULE' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getRuleAccess().getRULEKeyword_0_0());
+        newLeafNode(lv_info_0_1, grammarAccess.getRuleAccess().getInfoRULEKeyword_0_0_0());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRuleRule());
+	        }
+       		setWithLastConsumed($current, "info", lv_info_0_1, null);
+	    }
 
-    |	otherlv_1='RULES' 
+    |		lv_info_0_2=	'RULES' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getRULESKeyword_0_1());
+        newLeafNode(lv_info_0_2, grammarAccess.getRuleAccess().getInfoRULESKeyword_0_0_1());
     }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRuleRule());
+	        }
+       		setWithLastConsumed($current, "info", lv_info_0_2, null);
+	    }
+
+)
+
+)
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRuleAccess().getContentSingleRuleParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getRuleAccess().getRulesSingleRuleParserRuleCall_1_0()); 
 	    }
-		lv_content_2_0=ruleSingleRule		{
+		lv_rules_1_0=ruleSingleRule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRuleRule());
 	        }
-       		set(
+       		add(
        			$current, 
-       			"content",
-        		lv_content_2_0, 
-        		"SingleRule");
+       			"rules",
+        		lv_rules_1_0, 
+        		"org.xtext.cocktail.Scanner.SingleRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -865,7 +886,7 @@ ruleSingleRule returns [EObject current=null]
        			$current, 
        			"rule",
         		lv_rule_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -896,7 +917,7 @@ ruleSingleRule returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_5_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
