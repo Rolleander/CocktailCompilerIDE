@@ -1,0 +1,70 @@
+grammar org.xtext.cocktail.Scanner with org.eclipse.xtext.common.Terminals
+
+generate scanner "http://www.xtext.org/cocktail/Scanner"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	scanner+=Scanner? scanner+=Export? scanner+=Global? scanner+=Local? scanner+=Default?
+	scanner +=Eof? scanner+=Define scanner+=StartStates? scanner+=Rule;
+
+
+Scanner:
+	'SCANNER' name=ID;
+
+Export:
+	'EXPORT {' content=INLINE_CODE '}';
+
+Global:
+	'GLOBAL {' content=ID '}';
+
+Local:
+	'LOCAL {' content=ID '}';
+	
+Default:
+	'DEFAULT {' content=ID '}';
+	
+Eof:
+	'EOF {' content=ID '}';
+	
+Define:
+	'DEFINE'  (defines+=DefineRule)+   ;	
+
+DefineRule:
+	name=ID '=' rule=ID '.';
+
+StartStates: 
+'START' incstates+= StartState (',' incstates+=StartState)* 
+('-' exstates+= StartState (',' exstates+=StartState)*)?
+;
+
+StartState:
+	name= ID
+;
+
+
+
+Rule:
+	info= ('RULE'|'RULES') (rules+=SingleRule)*;
+
+
+SingleRule:
+	 RuleStart? rule+=STRING  (':-'|':') '{' content+=ID '}' 
+;
+
+//#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
+RuleStart:
+	 ('NOT'|'-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#' 
+;
+
+ActionStatement:
+	st+=[Scanner]'_GetWord(v);' |
+	st+=[Scanner]'_GetLower(v);' |
+	st+=[Scanner]'_GetUpper(v);' |
+	'yyEcho;'| 'yyLess(' INT ');'
+;
+
+terminal INLINE_CODE:
+	'{' -> '}'
+;
+

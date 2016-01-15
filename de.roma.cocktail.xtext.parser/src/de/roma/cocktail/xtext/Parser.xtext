@@ -1,0 +1,9 @@
+grammar de.roma.cocktail.xtext.Parser with org.eclipse.xtext.common.Terminals
+
+generate parser "http://www.roma.de/cocktail/xtext/Parser"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
