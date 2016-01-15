@@ -393,13 +393,22 @@ public interface ScannerPackage extends EPackage
   int RULE = 11;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * The feature id for the '<em><b>Info</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__CONTENT = 0;
+  int RULE__INFO = 0;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__RULES = 1;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -408,7 +417,7 @@ public interface ScannerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 1;
+  int RULE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl <em>Single Rule</em>}' class.
@@ -786,15 +795,26 @@ public interface ScannerPackage extends EPackage
   EClass getRule();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Rule#getContent <em>Content</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Rule#getInfo <em>Info</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.xtext.cocktail.scanner.Rule#getContent()
+   * @return the meta object for the attribute '<em>Info</em>'.
+   * @see org.xtext.cocktail.scanner.Rule#getInfo()
    * @see #getRule()
    * @generated
    */
-  EReference getRule_Content();
+  EAttribute getRule_Info();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.Rule#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see org.xtext.cocktail.scanner.Rule#getRules()
+   * @see #getRule()
+   * @generated
+   */
+  EReference getRule_Rules();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.SingleRule <em>Single Rule</em>}'.
@@ -1118,12 +1138,20 @@ public interface ScannerPackage extends EPackage
     EClass RULE = eINSTANCE.getRule();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Info</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RULE__CONTENT = eINSTANCE.getRule_Content();
+    EAttribute RULE__INFO = eINSTANCE.getRule_Info();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE__RULES = eINSTANCE.getRule_Rules();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl <em>Single Rule</em>}' class.

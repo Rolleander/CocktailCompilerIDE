@@ -26,11 +26,11 @@ import org.xtext.cocktail.scanner.StartStates;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getIncstates <em>Incstates</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.StartStatesImpl#getExstates <em>Exstates</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

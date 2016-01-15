@@ -21,5 +21,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.xtext.cocktail.ui.quickfix,
  org.xtext.cocktail.ui.contentassist,
  org.xtext.cocktail.ui.internal,
- org.xtext.cocktail.ui.contentassist.antlr
+ org.xtext.cocktail.ui.contentassist.antlr,
+ org.xtext.cocktail.ui.contentassist.antlr.internal
 Bundle-Activator: org.xtext.cocktail.ui.internal.ScannerActivator

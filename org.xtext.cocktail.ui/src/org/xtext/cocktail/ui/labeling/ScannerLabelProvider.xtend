@@ -4,26 +4,62 @@
 package org.xtext.cocktail.ui.labeling
 
 import com.google.inject.Inject
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import org.xtext.cocktail.scanner.Rule
+import org.xtext.cocktail.scanner.Scanner
+import org.xtext.cocktail.scanner.Model
+import org.xtext.cocktail.scanner.Define
+import org.xtext.cocktail.scanner.DefineRule
 
 /**
  * Provides labels for EObjects.
  * 
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#label-provider
  */
-class ScannerLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider {
+class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 
 	@Inject
-	new(org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
+	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
 
 	// Labels and icons can be computed like this:
 	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def text(Model ele) {
+		'Scanner'
+	}
+
+	def image(Model ele) {
+		'barcode.png'
+	}
+	
+	
+	def text(Rule ele) {
+		'Rules'
+	}
+
+	def image(Rule ele) {
+		'rules.png'
+	}
+	
+	def text(Scanner ele) {
+		ele.getName()
+	}
+
+	def image(Scanner ele) {
+		'key.png'
+	}
+	
+	def text(Define ele) {
+		'Defined Keywords'
+	}
+
+	def image(Define ele) {
+		'three_tags.png'
+	}
+	
+	def text(DefineRule ele) {
+		ele.getName()+" = "+ele.getRule()
+	}
 }

@@ -18,10 +18,10 @@ import org.xtext.cocktail.scanner.StartState;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.StartStateImpl#getName <em>Name</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

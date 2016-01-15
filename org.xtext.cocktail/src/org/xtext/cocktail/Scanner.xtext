@@ -8,6 +8,7 @@ Model:
 	scanner+=Scanner? scanner+=Export? scanner+=Global? scanner+=Local? scanner+=Default?
 	scanner +=Eof? scanner+=Define scanner+=StartStates? scanner+=Rule;
 
+
 Scanner:
 	'SCANNER' name=ID;
 
@@ -44,7 +45,7 @@ StartState:
 
 
 Rule:
-	('RULE'|'RULES') content=SingleRule*;
+	info= ('RULE'|'RULES') (rules+=SingleRule)*;
 
 
 SingleRule:

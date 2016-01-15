@@ -3,7 +3,13 @@
  */
 package org.xtext.cocktail.validation
 
-//import org.eclipse.xtext.validation.Check
+import org.eclipse.xtext.validation.Check
+import org.xtext.cocktail.scanner.Scanner
+import org.xtext.cocktail.scanner.ScannerPackage
+import org.xtext.cocktail.scanner.StartState
+import org.xtext.cocktail.scanner.Rule
+import org.eclipse.emf.common.util.EList
+import org.xtext.cocktail.scanner.SingleRule
 
 /**
  * This class contains custom validation rules. 
@@ -12,14 +18,29 @@ package org.xtext.cocktail.validation
  */
 class ScannerValidator extends AbstractScannerValidator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+  public static val INVALID_NAME = 'invalidName'
+	
+
+;
+	
+	@Check
+	def checkGreetingStartsWithCapital(Scanner scanner) {
+		if (!Character.isUpperCase(scanner.name.charAt(0))) {
+			warning('Scanner name should start with a capital!', 
+					ScannerPackage.Literals.SCANNER__NAME,
+					INVALID_NAME)
+		}
+	
+	}
+	
+	@Check
+	def check(Rule rule) {
+	
+		val rules=rule.getRules();
+		val count=rules.size();
+		if(count <1)
+		{
+			warning('No rules defined for scanner!',ScannerPackage.Literals.RULE__INFO,INVALID_NAME)			
+		}
+	}
 }

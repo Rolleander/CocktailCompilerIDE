@@ -27,8 +27,8 @@ public class InternalScannerLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
     public static final int RULE_STRING=5;
@@ -54,15 +54,15 @@ public class InternalScannerLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g"; }
+    public String getGrammarFileName() { return "InternalScanner.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:11:7: ( 'SCANNER' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:11:9: 'SCANNER'
+            // InternalScanner.g:11:7: ( 'SCANNER' )
+            // InternalScanner.g:11:9: 'SCANNER'
             {
             match("SCANNER"); 
 
@@ -82,8 +82,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:12:7: ( 'EXPORT {' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:12:9: 'EXPORT {'
+            // InternalScanner.g:12:7: ( 'EXPORT {' )
+            // InternalScanner.g:12:9: 'EXPORT {'
             {
             match("EXPORT {"); 
 
@@ -103,8 +103,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:13:7: ( '}' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:13:9: '}'
+            // InternalScanner.g:13:7: ( '}' )
+            // InternalScanner.g:13:9: '}'
             {
             match('}'); 
 
@@ -123,8 +123,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:14:7: ( 'GLOBAL {' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:14:9: 'GLOBAL {'
+            // InternalScanner.g:14:7: ( 'GLOBAL {' )
+            // InternalScanner.g:14:9: 'GLOBAL {'
             {
             match("GLOBAL {"); 
 
@@ -144,8 +144,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:15:7: ( 'LOCAL {' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:15:9: 'LOCAL {'
+            // InternalScanner.g:15:7: ( 'LOCAL {' )
+            // InternalScanner.g:15:9: 'LOCAL {'
             {
             match("LOCAL {"); 
 
@@ -165,8 +165,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:16:7: ( 'DEFAULT {' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:16:9: 'DEFAULT {'
+            // InternalScanner.g:16:7: ( 'DEFAULT {' )
+            // InternalScanner.g:16:9: 'DEFAULT {'
             {
             match("DEFAULT {"); 
 
@@ -186,8 +186,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:17:7: ( 'EOF {' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:17:9: 'EOF {'
+            // InternalScanner.g:17:7: ( 'EOF {' )
+            // InternalScanner.g:17:9: 'EOF {'
             {
             match("EOF {"); 
 
@@ -207,8 +207,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:18:7: ( 'DEFINE' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:18:9: 'DEFINE'
+            // InternalScanner.g:18:7: ( 'DEFINE' )
+            // InternalScanner.g:18:9: 'DEFINE'
             {
             match("DEFINE"); 
 
@@ -228,8 +228,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:19:7: ( '=' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:19:9: '='
+            // InternalScanner.g:19:7: ( '=' )
+            // InternalScanner.g:19:9: '='
             {
             match('='); 
 
@@ -248,8 +248,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:20:7: ( '.' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:20:9: '.'
+            // InternalScanner.g:20:7: ( '.' )
+            // InternalScanner.g:20:9: '.'
             {
             match('.'); 
 
@@ -268,8 +268,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:21:7: ( 'START' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:21:9: 'START'
+            // InternalScanner.g:21:7: ( 'START' )
+            // InternalScanner.g:21:9: 'START'
             {
             match("START"); 
 
@@ -289,8 +289,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:22:7: ( ',' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:22:9: ','
+            // InternalScanner.g:22:7: ( ',' )
+            // InternalScanner.g:22:9: ','
             {
             match(','); 
 
@@ -309,8 +309,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:23:7: ( '-' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:23:9: '-'
+            // InternalScanner.g:23:7: ( '-' )
+            // InternalScanner.g:23:9: '-'
             {
             match('-'); 
 
@@ -329,8 +329,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:24:7: ( 'RULE' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:24:9: 'RULE'
+            // InternalScanner.g:24:7: ( 'RULE' )
+            // InternalScanner.g:24:9: 'RULE'
             {
             match("RULE"); 
 
@@ -350,8 +350,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:25:7: ( 'RULES' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:25:9: 'RULES'
+            // InternalScanner.g:25:7: ( 'RULES' )
+            // InternalScanner.g:25:9: 'RULES'
             {
             match("RULES"); 
 
@@ -371,8 +371,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:26:7: ( ':-' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:26:9: ':-'
+            // InternalScanner.g:26:7: ( ':-' )
+            // InternalScanner.g:26:9: ':-'
             {
             match(":-"); 
 
@@ -392,8 +392,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:27:7: ( ':' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:27:9: ':'
+            // InternalScanner.g:27:7: ( ':' )
+            // InternalScanner.g:27:9: ':'
             {
             match(':'); 
 
@@ -412,8 +412,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:28:7: ( '{' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:28:9: '{'
+            // InternalScanner.g:28:7: ( '{' )
+            // InternalScanner.g:28:9: '{'
             {
             match('{'); 
 
@@ -432,8 +432,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:29:7: ( 'NOT' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:29:9: 'NOT'
+            // InternalScanner.g:29:7: ( 'NOT' )
+            // InternalScanner.g:29:9: 'NOT'
             {
             match("NOT"); 
 
@@ -453,8 +453,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:30:7: ( '#' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:30:9: '#'
+            // InternalScanner.g:30:7: ( '#' )
+            // InternalScanner.g:30:9: '#'
             {
             match('#'); 
 
@@ -473,8 +473,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:31:7: ( 'STD' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:31:9: 'STD'
+            // InternalScanner.g:31:7: ( 'STD' )
+            // InternalScanner.g:31:9: 'STD'
             {
             match("STD"); 
 
@@ -494,8 +494,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:32:7: ( '*' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:32:9: '*'
+            // InternalScanner.g:32:7: ( '*' )
+            // InternalScanner.g:32:9: '*'
             {
             match('*'); 
 
@@ -514,10 +514,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:994:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:994:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalScanner.g:1015:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalScanner.g:1015:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:994:11: ( '^' )?
+            // InternalScanner.g:1015:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -526,7 +526,7 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:994:11: '^'
+                    // InternalScanner.g:1015:11: '^'
                     {
                     match('^'); 
 
@@ -544,7 +544,7 @@ public class InternalScannerLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:994:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalScanner.g:1015:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -557,7 +557,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:
+            	    // InternalScanner.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -593,10 +593,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:996:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:996:12: ( '0' .. '9' )+
+            // InternalScanner.g:1017:10: ( ( '0' .. '9' )+ )
+            // InternalScanner.g:1017:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:996:12: ( '0' .. '9' )+
+            // InternalScanner.g:1017:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -610,7 +610,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:996:13: '0' .. '9'
+            	    // InternalScanner.g:1017:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -642,10 +642,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalScanner.g:1019:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalScanner.g:1019:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalScanner.g:1019:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -663,10 +663,10 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalScanner.g:1019:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalScanner.g:1019:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -682,7 +682,7 @@ public class InternalScannerLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:21: '\\\\' .
+                    	    // InternalScanner.g:1019:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -690,7 +690,7 @@ public class InternalScannerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalScanner.g:1019:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -715,10 +715,10 @@ public class InternalScannerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalScanner.g:1019:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalScanner.g:1019:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -734,7 +734,7 @@ public class InternalScannerLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:54: '\\\\' .
+                    	    // InternalScanner.g:1019:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -742,7 +742,7 @@ public class InternalScannerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:998:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalScanner.g:1019:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -785,12 +785,12 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1000:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1000:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalScanner.g:1021:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalScanner.g:1021:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1000:24: ( options {greedy=false; } : . )*
+            // InternalScanner.g:1021:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -815,7 +815,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1000:52: .
+            	    // InternalScanner.g:1021:52: .
             	    {
             	    matchAny(); 
 
@@ -845,12 +845,12 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalScanner.g:1023:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalScanner.g:1023:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalScanner.g:1023:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -863,7 +863,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalScanner.g:1023:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -883,7 +883,7 @@ public class InternalScannerLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:40: ( ( '\\r' )? '\\n' )?
+            // InternalScanner.g:1023:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -892,9 +892,9 @@ public class InternalScannerLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:41: ( '\\r' )? '\\n'
+                    // InternalScanner.g:1023:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:41: ( '\\r' )?
+                    // InternalScanner.g:1023:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -903,7 +903,7 @@ public class InternalScannerLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1002:41: '\\r'
+                            // InternalScanner.g:1023:41: '\\r'
                             {
                             match('\r'); 
 
@@ -935,10 +935,10 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1004:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1004:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalScanner.g:1025:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalScanner.g:1025:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1004:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalScanner.g:1025:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -952,7 +952,7 @@ public class InternalScannerLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:
+            	    // InternalScanner.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -992,8 +992,8 @@ public class InternalScannerLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1006:16: ( . )
-            // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1006:18: .
+            // InternalScanner.g:1027:16: ( . )
+            // InternalScanner.g:1027:18: .
             {
             matchAny(); 
 
@@ -1008,208 +1008,208 @@ public class InternalScannerLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalScanner.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=29;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:10: T__11
+                // InternalScanner.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:16: T__12
+                // InternalScanner.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:22: T__13
+                // InternalScanner.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:28: T__14
+                // InternalScanner.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:34: T__15
+                // InternalScanner.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:40: T__16
+                // InternalScanner.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:46: T__17
+                // InternalScanner.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:52: T__18
+                // InternalScanner.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:58: T__19
+                // InternalScanner.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:64: T__20
+                // InternalScanner.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:70: T__21
+                // InternalScanner.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:76: T__22
+                // InternalScanner.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:82: T__23
+                // InternalScanner.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:88: T__24
+                // InternalScanner.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:94: T__25
+                // InternalScanner.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:100: T__26
+                // InternalScanner.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:106: T__27
+                // InternalScanner.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:112: T__28
+                // InternalScanner.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:118: T__29
+                // InternalScanner.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:124: T__30
+                // InternalScanner.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:130: T__31
+                // InternalScanner.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:136: T__32
+                // InternalScanner.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 23 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:142: RULE_ID
+                // InternalScanner.g:1:142: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 24 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:150: RULE_INT
+                // InternalScanner.g:1:150: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 25 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:159: RULE_STRING
+                // InternalScanner.g:1:159: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 26 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:171: RULE_ML_COMMENT
+                // InternalScanner.g:1:171: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 27 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:187: RULE_SL_COMMENT
+                // InternalScanner.g:1:187: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 28 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:203: RULE_WS
+                // InternalScanner.g:1:203: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 29 :
-                // ../org.xtext.cocktail/src-gen/org/xtext/cocktail/parser/antlr/internal/InternalScanner.g:1:211: RULE_ANY_OTHER
+                // InternalScanner.g:1:211: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1223,44 +1223,19 @@ public class InternalScannerLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\33\1\uffff\3\33\4\uffff\1\33\1\50\1\uffff\1\33\2\uffff"+
-        "\1\30\2\uffff\3\30\2\uffff\2\33\1\uffff\2\33\1\uffff\3\33\4\uffff"+
-        "\1\33\3\uffff\1\33\7\uffff\2\33\1\76\6\33\1\106\2\33\1\uffff\1\33"+
-        "\1\uffff\4\33\1\117\1\uffff\1\33\1\121\5\33\1\127\1\uffff\1\33\1"+
-        "\uffff\2\33\1\uffff\1\33\1\134\1\uffff\1\135\2\uffff\1\33\3\uffff";
+        "\1\uffff\2\33\1\uffff\3\33\4\uffff\1\33\1\50\1\uffff\1\33\2\uffff\1\30\2\uffff\3\30\2\uffff\2\33\1\uffff\2\33\1\uffff\3\33\4\uffff\1\33\3\uffff\1\33\7\uffff\2\33\1\76\6\33\1\106\2\33\1\uffff\1\33\1\uffff\4\33\1\117\1\uffff\1\33\1\121\5\33\1\127\1\uffff\1\33\1\uffff\2\33\1\uffff\1\33\1\134\1\uffff\1\135\2\uffff\1\33\3\uffff";
     static final String DFA12_eofS =
         "\137\uffff";
     static final String DFA12_minS =
-        "\1\0\1\103\1\117\1\uffff\1\114\1\117\1\105\4\uffff\1\125\1\55\1"+
-        "\uffff\1\117\2\uffff\1\101\2\uffff\2\0\1\52\2\uffff\2\101\1\uffff"+
-        "\1\120\1\106\1\uffff\1\117\1\103\1\106\4\uffff\1\114\3\uffff\1\124"+
-        "\7\uffff\1\116\1\122\1\60\1\117\1\40\1\102\2\101\1\105\1\60\1\116"+
-        "\1\124\1\uffff\1\122\1\uffff\1\101\1\114\1\125\1\116\1\60\1\uffff"+
-        "\1\105\1\60\1\124\1\114\1\40\1\114\1\105\1\60\1\uffff\1\122\1\uffff"+
-        "\2\40\1\uffff\1\124\1\60\1\uffff\1\60\2\uffff\1\40\3\uffff";
+        "\1\0\1\103\1\117\1\uffff\1\114\1\117\1\105\4\uffff\1\125\1\55\1\uffff\1\117\2\uffff\1\101\2\uffff\2\0\1\52\2\uffff\2\101\1\uffff\1\120\1\106\1\uffff\1\117\1\103\1\106\4\uffff\1\114\3\uffff\1\124\7\uffff\1\116\1\122\1\60\1\117\1\40\1\102\2\101\1\105\1\60\1\116\1\124\1\uffff\1\122\1\uffff\1\101\1\114\1\125\1\116\1\60\1\uffff\1\105\1\60\1\124\1\114\1\40\1\114\1\105\1\60\1\uffff\1\122\1\uffff\2\40\1\uffff\1\124\1\60\1\uffff\1\60\2\uffff\1\40\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\124\1\130\1\uffff\1\114\1\117\1\105\4\uffff\1\125\1"+
-        "\55\1\uffff\1\117\2\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\101"+
-        "\1\104\1\uffff\1\120\1\106\1\uffff\1\117\1\103\1\106\4\uffff\1\114"+
-        "\3\uffff\1\124\7\uffff\1\116\1\122\1\172\1\117\1\40\1\102\1\101"+
-        "\1\111\1\105\1\172\1\116\1\124\1\uffff\1\122\1\uffff\1\101\1\114"+
-        "\1\125\1\116\1\172\1\uffff\1\105\1\172\1\124\1\114\1\40\1\114\1"+
-        "\105\1\172\1\uffff\1\122\1\uffff\2\40\1\uffff\1\124\1\172\1\uffff"+
-        "\1\172\2\uffff\1\40\3\uffff";
+        "\1\uffff\1\124\1\130\1\uffff\1\114\1\117\1\105\4\uffff\1\125\1\55\1\uffff\1\117\2\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\101\1\104\1\uffff\1\120\1\106\1\uffff\1\117\1\103\1\106\4\uffff\1\114\3\uffff\1\124\7\uffff\1\116\1\122\1\172\1\117\1\40\1\102\1\101\1\111\1\105\1\172\1\116\1\124\1\uffff\1\122\1\uffff\1\101\1\114\1\125\1\116\1\172\1\uffff\1\105\1\172\1\124\1\114\1\40\1\114\1\105\1\172\1\uffff\1\122\1\uffff\2\40\1\uffff\1\124\1\172\1\uffff\1\172\2\uffff\1\40\3\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\3\3\uffff\1\11\1\12\1\14\1\15\2\uffff\1\22\1\uffff\1"+
-        "\24\1\26\1\uffff\1\27\1\30\3\uffff\1\34\1\35\2\uffff\1\27\2\uffff"+
-        "\1\3\3\uffff\1\11\1\12\1\14\1\15\1\uffff\1\20\1\21\1\22\1\uffff"+
-        "\1\24\1\26\1\30\1\31\1\32\1\33\1\34\14\uffff\1\25\1\uffff\1\7\5"+
-        "\uffff\1\23\10\uffff\1\16\1\uffff\1\13\2\uffff\1\5\2\uffff\1\17"+
-        "\1\uffff\1\2\1\4\1\uffff\1\10\1\1\1\6";
+        "\3\uffff\1\3\3\uffff\1\11\1\12\1\14\1\15\2\uffff\1\22\1\uffff\1\24\1\26\1\uffff\1\27\1\30\3\uffff\1\34\1\35\2\uffff\1\27\2\uffff\1\3\3\uffff\1\11\1\12\1\14\1\15\1\uffff\1\20\1\21\1\22\1\uffff\1\24\1\26\1\30\1\31\1\32\1\33\1\34\14\uffff\1\25\1\uffff\1\7\5\uffff\1\23\10\uffff\1\16\1\uffff\1\13\2\uffff\1\5\2\uffff\1\17\1\uffff\1\2\1\4\1\uffff\1\10\1\1\1\6";
     static final String DFA12_specialS =
         "\1\1\23\uffff\1\0\1\2\111\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\1\17\3\30\1\25\2"+
-            "\30\1\20\1\30\1\11\1\12\1\10\1\26\12\23\1\14\2\30\1\7\3\30\3"+
-            "\22\1\6\1\2\1\22\1\4\4\22\1\5\1\22\1\16\3\22\1\13\1\1\7\22\3"+
-            "\30\1\21\1\22\1\30\32\22\1\15\1\30\1\3\uff82\30",
+            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\1\17\3\30\1\25\2\30\1\20\1\30\1\11\1\12\1\10\1\26\12\23\1\14\2\30\1\7\3\30\3\22\1\6\1\2\1\22\1\4\4\22\1\5\1\22\1\16\3\22\1\13\1\1\7\22\3\30\1\21\1\22\1\30\32\22\1\15\1\30\1\3\uff82\30",
             "\1\31\20\uffff\1\32",
             "\1\35\10\uffff\1\34",
             "",

@@ -4,17 +4,15 @@
 package org.xtext.cocktail.serializer;
 
 import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.cocktail.scanner.ActionStatement;
 import org.xtext.cocktail.scanner.Default;
@@ -41,8 +39,13 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	private ScannerGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == ScannerPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == ScannerPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case ScannerPackage.ACTION_STATEMENT:
 				sequence_ActionStatement(context, (ActionStatement) semanticObject); 
 				return; 
@@ -74,11 +77,11 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_Rule(context, (Rule) semanticObject); 
 				return; 
 			case ScannerPackage.RULE_START:
-				if(context == grammarAccess.getRuleStartRule()) {
+				if (rule == grammarAccess.getRuleStartRule()) {
 					sequence_RuleStart(context, (RuleStart) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getSingleRuleRule()) {
+				else if (rule == grammarAccess.getSingleRuleRule()) {
 					sequence_RuleStart_SingleRule(context, (RuleStart) semanticObject); 
 					return; 
 				}
@@ -96,47 +99,55 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_StartStates(context, (StartStates) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     ActionStatement returns ActionStatement
+	 *
 	 * Constraint:
-	 *     (st+=[Scanner|ID] | st+=[Scanner|ID] | st+=[Scanner|ID])?
+	 *     (st+=[Scanner|ID] | st+=[Scanner|ID] | st+=[Scanner|ID])
 	 */
-	protected void sequence_ActionStatement(EObject context, ActionStatement semanticObject) {
+	protected void sequence_ActionStatement(ISerializationContext context, ActionStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Default returns Default
+	 *
 	 * Constraint:
 	 *     content=ID
 	 */
-	protected void sequence_Default(EObject context, Default semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFAULT__CONTENT) == ValueTransient.YES)
+	protected void sequence_Default(ISerializationContext context, Default semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFAULT__CONTENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.DEFAULT__CONTENT));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDefaultAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     DefineRule returns DefineRule
+	 *
 	 * Constraint:
 	 *     (name=ID rule=ID)
 	 */
-	protected void sequence_DefineRule(EObject context, DefineRule semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFINE_RULE__NAME) == ValueTransient.YES)
+	protected void sequence_DefineRule(ISerializationContext context, DefineRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFINE_RULE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.DEFINE_RULE__NAME));
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFINE_RULE__RULE) == ValueTransient.YES)
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.DEFINE_RULE__RULE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.DEFINE_RULE__RULE));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDefineRuleAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getDefineRuleAccess().getRuleIDTerminalRuleCall_2_0(), semanticObject.getRule());
 		feeder.finish();
@@ -144,79 +155,93 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	
 	/**
+	 * Contexts:
+	 *     Define returns Define
+	 *
 	 * Constraint:
 	 *     defines+=DefineRule+
 	 */
-	protected void sequence_Define(EObject context, Define semanticObject) {
+	protected void sequence_Define(ISerializationContext context, Define semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Eof returns Eof
+	 *
 	 * Constraint:
 	 *     content=ID
 	 */
-	protected void sequence_Eof(EObject context, Eof semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.EOF__CONTENT) == ValueTransient.YES)
+	protected void sequence_Eof(ISerializationContext context, Eof semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.EOF__CONTENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EOF__CONTENT));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEofAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Export returns Export
+	 *
 	 * Constraint:
 	 *     content=ID
 	 */
-	protected void sequence_Export(EObject context, Export semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.EXPORT__CONTENT) == ValueTransient.YES)
+	protected void sequence_Export(ISerializationContext context, Export semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.EXPORT__CONTENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EXPORT__CONTENT));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExportAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Global returns Global
+	 *
 	 * Constraint:
 	 *     content=ID
 	 */
-	protected void sequence_Global(EObject context, Global semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.GLOBAL__CONTENT) == ValueTransient.YES)
+	protected void sequence_Global(ISerializationContext context, Global semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.GLOBAL__CONTENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.GLOBAL__CONTENT));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGlobalAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Local returns Local
+	 *
 	 * Constraint:
 	 *     content=ID
 	 */
-	protected void sequence_Local(EObject context, Local semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.LOCAL__CONTENT) == ValueTransient.YES)
+	protected void sequence_Local(ISerializationContext context, Local semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.LOCAL__CONTENT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.LOCAL__CONTENT));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLocalAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Model returns Model
+	 *
 	 * Constraint:
 	 *     (
 	 *         scanner+=Scanner? 
@@ -230,84 +255,105 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         scanner+=Rule
 	 *     )
 	 */
-	protected void sequence_Model(EObject context, Model semanticObject) {
+	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     RuleStart returns RuleStart
+	 *
 	 * Constraint:
-	 *     (state+=[StartState|ID] state+=[StartState|ID]*)?
+	 *     (state+=[StartState|ID] state+=[StartState|ID]*)
 	 */
-	protected void sequence_RuleStart(EObject context, RuleStart semanticObject) {
+	protected void sequence_RuleStart(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     SingleRule returns RuleStart
+	 *
 	 * Constraint:
 	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule+=STRING content+=ID)
 	 */
-	protected void sequence_RuleStart_SingleRule(EObject context, RuleStart semanticObject) {
+	protected void sequence_RuleStart_SingleRule(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Rule returns Rule
+	 *
 	 * Constraint:
-	 *     content=SingleRule*
+	 *     ((info='RULE' | info='RULES') rules+=SingleRule*)
 	 */
-	protected void sequence_Rule(EObject context, Rule semanticObject) {
+	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Scanner returns Scanner
+	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_Scanner(EObject context, Scanner semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SCANNER__NAME) == ValueTransient.YES)
+	protected void sequence_Scanner(ISerializationContext context, Scanner semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SCANNER__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SCANNER__NAME));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getScannerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     SingleRule returns SingleRule
+	 *
 	 * Constraint:
 	 *     (rule+=STRING content+=ID)
 	 */
-	protected void sequence_SingleRule(EObject context, SingleRule semanticObject) {
+	protected void sequence_SingleRule(ISerializationContext context, SingleRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     StartState returns StartState
+	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_StartState(EObject context, StartState semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.START_STATE__NAME) == ValueTransient.YES)
+	protected void sequence_StartState(ISerializationContext context, StartState semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.START_STATE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.START_STATE__NAME));
 		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStartStateAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     StartStates returns StartStates
+	 *
 	 * Constraint:
 	 *     (incstates+=StartState incstates+=StartState* (exstates+=StartState exstates+=StartState*)?)
 	 */
-	protected void sequence_StartStates(EObject context, StartStates semanticObject) {
+	protected void sequence_StartStates(ISerializationContext context, StartStates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

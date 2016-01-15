@@ -3,9 +3,13 @@
  */
 package org.xtext.cocktail;
 
+import com.google.inject.Binder;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class ScannerRuntimeModule extends org.xtext.cocktail.AbstractScannerRuntimeModule {
+
+	
 
 }
