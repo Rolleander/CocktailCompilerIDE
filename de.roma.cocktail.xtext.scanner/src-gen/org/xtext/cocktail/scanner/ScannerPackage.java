@@ -440,7 +440,7 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE__RULE = 0;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute list.
+   * The feature id for the '<em><b>Content</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -477,7 +477,7 @@ public interface ScannerPackage extends EPackage
   int RULE_START__RULE = SINGLE_RULE__RULE;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute list.
+   * The feature id for the '<em><b>Content</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -839,10 +839,10 @@ public interface ScannerPackage extends EPackage
   EAttribute getSingleRule_Rule();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Content</em>'.
+   * @return the meta object for the attribute '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.SingleRule#getContent()
    * @see #getSingleRule()
    * @generated
@@ -1173,7 +1173,7 @@ public interface ScannerPackage extends EPackage
     EAttribute SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

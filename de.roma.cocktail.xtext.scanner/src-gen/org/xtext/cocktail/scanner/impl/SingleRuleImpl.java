@@ -5,10 +5,13 @@ package org.xtext.cocktail.scanner.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
@@ -43,14 +46,24 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   protected EList<String> rule;
 
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute list.
+   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContent()
    * @generated
    * @ordered
    */
-  protected EList<String> content;
+  protected static final String CONTENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContent()
+   * @generated
+   * @ordered
+   */
+  protected String content = CONTENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -92,13 +105,22 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getContent()
+  public String getContent()
   {
-    if (content == null)
-    {
-      content = new EDataTypeEList<String>(String.class, this, ScannerPackage.SINGLE_RULE__CONTENT);
-    }
     return content;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContent(String newContent)
+  {
+    String oldContent = content;
+    content = newContent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__CONTENT, oldContent, content));
   }
 
   /**
@@ -135,8 +157,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
         getRule().addAll((Collection<? extends String>)newValue);
         return;
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends String>)newValue);
+        setContent((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -156,7 +177,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
         getRule().clear();
         return;
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        getContent().clear();
+        setContent(CONTENT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -175,7 +196,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
       case ScannerPackage.SINGLE_RULE__RULE:
         return rule != null && !rule.isEmpty();
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        return content != null && !content.isEmpty();
+        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
     }
     return super.eIsSet(featureID);
   }

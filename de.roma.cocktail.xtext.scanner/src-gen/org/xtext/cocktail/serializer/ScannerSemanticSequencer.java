@@ -120,7 +120,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Default returns Default
 	 *
 	 * Constraint:
-	 *     content=ID
+	 *     content=CodeBlock
 	 */
 	protected void sequence_Default(ISerializationContext context, Default semanticObject) {
 		if (errorAcceptor != null) {
@@ -128,7 +128,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.DEFAULT__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDefaultAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getDefaultAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -171,7 +171,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Eof returns Eof
 	 *
 	 * Constraint:
-	 *     content=ID
+	 *     content=CodeBlock
 	 */
 	protected void sequence_Eof(ISerializationContext context, Eof semanticObject) {
 		if (errorAcceptor != null) {
@@ -179,7 +179,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EOF__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEofAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getEofAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -189,7 +189,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Export returns Export
 	 *
 	 * Constraint:
-	 *     content=INLINE_CODE
+	 *     content=CodeBlock
 	 */
 	protected void sequence_Export(ISerializationContext context, Export semanticObject) {
 		if (errorAcceptor != null) {
@@ -197,7 +197,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EXPORT__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExportAccess().getContentINLINE_CODETerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getExportAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -207,7 +207,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Global returns Global
 	 *
 	 * Constraint:
-	 *     content=ID
+	 *     content=CodeBlock
 	 */
 	protected void sequence_Global(ISerializationContext context, Global semanticObject) {
 		if (errorAcceptor != null) {
@@ -215,7 +215,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.GLOBAL__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGlobalAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getGlobalAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -225,7 +225,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Local returns Local
 	 *
 	 * Constraint:
-	 *     content=ID
+	 *     content=CodeBlock
 	 */
 	protected void sequence_Local(ISerializationContext context, Local semanticObject) {
 		if (errorAcceptor != null) {
@@ -233,7 +233,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.LOCAL__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLocalAccess().getContentIDTerminalRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getLocalAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -244,15 +244,17 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         scanner+=Scanner? 
-	 *         scanner+=Export? 
-	 *         scanner+=Global? 
-	 *         scanner+=Local? 
-	 *         scanner+=Default? 
-	 *         scanner+=Eof? 
-	 *         scanner+=Define 
-	 *         scanner+=StartStates? 
-	 *         scanner+=Rule
+	 *         scanner+=Scanner 
+	 *         (
+	 *             scanner+=Export | 
+	 *             scanner+=Global | 
+	 *             scanner+=Local | 
+	 *             scanner+=Default | 
+	 *             scanner+=Eof | 
+	 *             scanner+=Define | 
+	 *             scanner+=StartStates | 
+	 *             scanner+=Rule
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -277,7 +279,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SingleRule returns RuleStart
 	 *
 	 * Constraint:
-	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule+=STRING content+=ID)
+	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule+=RuleDefinition content=CodeBlock)
 	 */
 	protected void sequence_RuleStart_SingleRule(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -319,7 +321,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SingleRule returns SingleRule
 	 *
 	 * Constraint:
-	 *     (rule+=STRING content+=ID)
+	 *     (rule+=RuleDefinition content=CodeBlock)
 	 */
 	protected void sequence_SingleRule(ISerializationContext context, SingleRule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

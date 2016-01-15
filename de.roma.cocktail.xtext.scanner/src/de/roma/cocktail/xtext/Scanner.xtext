@@ -4,28 +4,39 @@ generate scanner "http://www.xtext.org/cocktail/Scanner"
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Model:
-	scanner+=Scanner? scanner+=Export? scanner+=Global? scanner+=Local? scanner+=Default?
-	scanner +=Eof? scanner+=Define scanner+=StartStates? scanner+=Rule;
 
+
+
+Model:
+	scanner+=Scanner (scanner+=Export? & scanner+=Global? & scanner+=Local? & scanner+=Default? &
+	scanner +=Eof? & scanner+=Define? & scanner+=StartStates? & scanner+=Rule);
+
+terminal INLINE_CODE:
+	'{' -> '}'
+;
+
+
+CodeBlock:
+	INLINE_CODE
+;
 
 Scanner:
 	'SCANNER' name=ID;
 
 Export:
-	'EXPORT {' content=INLINE_CODE '}';
+	'EXPORT'  content=CodeBlock ;
 
 Global:
-	'GLOBAL {' content=ID '}';
+	'GLOBAL' content=CodeBlock;
 
 Local:
-	'LOCAL {' content=ID '}';
+	'LOCAL' content=CodeBlock;
 	
 Default:
-	'DEFAULT {' content=ID '}';
+	'DEFAULT' content=CodeBlock;
 	
 Eof:
-	'EOF {' content=ID '}';
+	'EOF' content=CodeBlock;
 	
 Define:
 	'DEFINE'  (defines+=DefineRule)+   ;	
@@ -49,8 +60,13 @@ Rule:
 
 
 SingleRule:
-	 RuleStart? rule+=STRING  (':-'|':') '{' content+=ID '}' 
+	 RuleStart? rule+=RuleDefinition  ('-')? content=CodeBlock
 ;
+
+RuleDefinition:
+	(ID|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#')* ':'
+;
+
 
 //#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 RuleStart:
@@ -64,7 +80,5 @@ ActionStatement:
 	'yyEcho;'| 'yyLess(' INT ');'
 ;
 
-terminal INLINE_CODE:
-	'{' -> '}'
-;
+
 

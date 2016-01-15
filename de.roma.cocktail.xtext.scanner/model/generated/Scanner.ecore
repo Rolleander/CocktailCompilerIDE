@@ -48,8 +48,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SingleRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuleStart" eSuperTypes="#//SingleRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="state" unique="false" upperBound="-1"

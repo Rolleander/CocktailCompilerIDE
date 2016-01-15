@@ -35,11 +35,10 @@ public class ScannerTokenMapper extends AbstractAntlrTokenToAttributeIdMapper {
 		if("RULE_ML_COMMENT".equals(tokenName) || "RULE_SL_COMMENT".equals(tokenName)) {
 			return HighlightingStyles.COMMENT_ID;
 		}
-		if("Scanner".equals(tokenName)) {
+		if("RULE_INLINE_CODE".equals(tokenName)) {
 			return HighlightingStyles.TASK_ID;
-					}
-		
-		
+		}
+				
 		return HighlightingStyles.DEFAULT_ID;
 	}
 	

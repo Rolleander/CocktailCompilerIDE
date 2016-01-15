@@ -43,19 +43,29 @@ public interface SingleRule extends EObject
   EList<String> getRule();
 
   /**
-   * Returns the value of the '<em><b>Content</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Content</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Content</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' attribute list.
+   * @return the value of the '<em>Content</em>' attribute.
+   * @see #setContent(String)
    * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Content()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getContent();
+  String getContent();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Content</em>' attribute.
+   * @see #getContent()
+   * @generated
+   */
+  void setContent(String value);
 
 } // SingleRule

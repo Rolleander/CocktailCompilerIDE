@@ -25,7 +25,7 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ActionStatement_YyEchoKeyword_3_or___YyLessKeyword_4_0_INTTerminalRuleCall_4_1_RightParenthesisSemicolonKeyword_4_2__;
 	protected AbstractElementAlias match_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1;
 	protected AbstractElementAlias match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q;
-	protected AbstractElementAlias match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1;
+	protected AbstractElementAlias match_SingleRule_HyphenMinusKeyword_2_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -33,7 +33,7 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ActionStatement_YyEchoKeyword_3_or___YyLessKeyword_4_0_INTTerminalRuleCall_4_1_RightParenthesisSemicolonKeyword_4_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionStatementAccess().getYyLessKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getActionStatementAccess().getINTTerminalRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getActionStatementAccess().getRightParenthesisSemicolonKeyword_4_2())), new TokenAlias(false, false, grammarAccess.getActionStatementAccess().getYyEchoKeyword_3()));
 		match_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getAsteriskKeyword_2_2()), new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getSTDKeyword_2_1()));
 		match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getHyphenMinusKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getNOTKeyword_0_0()));
-		match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSingleRuleAccess().getColonHyphenMinusKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getSingleRuleAccess().getColonKeyword_2_1()));
+		match_SingleRule_HyphenMinusKeyword_2_q = new TokenAlias(false, true, grammarAccess.getSingleRuleAccess().getHyphenMinusKeyword_2());
 	}
 	
 	@Override
@@ -64,8 +64,8 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q.equals(syntax))
 				emit_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1.equals(syntax))
-				emit_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SingleRule_HyphenMinusKeyword_2_q.equals(syntax))
+				emit_SingleRule_HyphenMinusKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -106,12 +106,12 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     ':-' | ':'
+	 *     '-'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     rule+=STRING (ambiguity) '{' content+=ID
+	 *     rule+=RuleDefinition (ambiguity) content=CodeBlock
 	 */
-	protected void emit_SingleRule_ColonHyphenMinusKeyword_2_0_or_ColonKeyword_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SingleRule_HyphenMinusKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
