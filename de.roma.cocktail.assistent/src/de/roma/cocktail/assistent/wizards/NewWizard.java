@@ -105,6 +105,8 @@ public class NewWizard extends Wizard implements INewWizard
         IProject project  = root.getProject(projectName);
         IFolder folder = project.getFolder("src");
         IFile file = folder.getFile("scanner.rex");
+        IFile file1 = folder.getFile("parser.pars");
+        IFile file2 = folder.getFile("syntax.ast");
         //at this point, no resources have been created
         if (!project.exists()) project.create(null);
         if (!project.isOpen()) project.open(null);        
@@ -114,6 +116,16 @@ public class NewWizard extends Wizard implements INewWizard
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
             file.create(source, IResource.NONE, null);
+        }
+        if (!file1.exists()) {
+            byte[] bytes = "".getBytes();
+            InputStream source = new ByteArrayInputStream(bytes);
+            file1.create(source, IResource.NONE, null);
+        }
+        if (!file2.exists()) {
+            byte[] bytes = "".getBytes();
+            InputStream source = new ByteArrayInputStream(bytes);
+            file2.create(source, IResource.NONE, null);
         }
     }
 

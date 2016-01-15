@@ -23,5 +23,9 @@
             natureId="de.roma.cocktail.assistent.projectfolder">
       </image>
    </extension>
-
+   <extension point="org.eclipse.ui.preferencePages">
+	 <page name="Cocktail Compiler Tools"
+		class="de.roma.cocktail.preference.CCTPreferencePage"
+		id="de.roma.cocktail.preference.CCTPreferencePage"/>
+   </extension>
 </plugin>
