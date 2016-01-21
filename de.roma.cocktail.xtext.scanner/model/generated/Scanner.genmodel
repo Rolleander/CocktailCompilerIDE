@@ -27,6 +27,12 @@
     <genClasses ecoreClass="Scanner.ecore#//Eof">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Eof/content"/>
     </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//Begin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Begin/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//Close">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Close/content"/>
+    </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//Define">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Define/defines"/>
     </genClasses>

@@ -122,6 +122,20 @@ public class ScannerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ScannerPackage.BEGIN:
+      {
+        Begin begin = (Begin)theEObject;
+        T result = caseBegin(begin);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ScannerPackage.CLOSE:
+      {
+        Close close = (Close)theEObject;
+        T result = caseClose(close);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ScannerPackage.DEFINE:
       {
         Define define = (Define)theEObject;
@@ -291,6 +305,38 @@ public class ScannerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEof(Eof object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Begin</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Begin</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBegin(Begin object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Close</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Close</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClose(Close object)
   {
     return null;
   }

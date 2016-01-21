@@ -6,6 +6,17 @@ package de.roma.cocktail.xtext.ui.labeling
 import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import de.roma.cocktail.xtext.parser.ParserModel
+import de.roma.cocktail.xtext.parser.Import
+import de.roma.cocktail.xtext.parser.Export
+import de.roma.cocktail.xtext.parser.Global
+import de.roma.cocktail.xtext.parser.Local
+import de.roma.cocktail.xtext.parser.Begin
+import de.roma.cocktail.xtext.parser.Close
+import de.roma.cocktail.xtext.parser.Tokens
+import de.roma.cocktail.xtext.parser.DefinedToken
+import de.roma.cocktail.xtext.parser.Precedence
+import de.roma.cocktail.xtext.parser.PrecedenceRow
 
 /**
  * Provides labels for EObjects.
@@ -20,12 +31,120 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	// Labels and icons can be computed like this:
+	def image(ParserModel p) {
+		'parser.png'
+	}
+
+	def text(ParserModel p) {
+		'Parser'
+	}
+
+	def image(Import o) {
+		'cog.png'
+	}
+
+	def text(Import o) {
+		'Import'
+	}
+
+	def image(Export o) {
+		'cog.png'
+	}
+
+	def text(Export o) {
+		'Export'
+	}
+
+	def image(Global o) {
+		'cog.png'
+	}
+
+	def text(Global o) {
+		'Global'
+	}
+
+	def image(Local o) {
+		'cog.png'
+	}
+
+	def text(Local o) {
+		'Local'
+	}
+
+	def image(Begin o) {
+		'cog.png'
+	}
+
+	def text(Begin o) {
+		'Begin'
+	}
+
+	def image(Close o) {
+		'cog.png'
+	}
+
+	def text(Close o) {
+		'Close'
+	}
 	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+		def image(Tokens o)
+	{
+		'tokens.png'
+	}
+	
+	def text(Tokens o)
+	{
+		'Tokens'
+	}
+	
+	def image(DefinedToken o)
+	{
+		'token.png'
+	}
+	
+	def text(DefinedToken o)
+	{
+	 o.getName()+': '+o.getNumber()	
+	}
+	
+	def image(Precedence o)
+	{
+		'star.png'
+	}
+	
+	def text(Precedence o)
+	{
+		'Precedences'
+	}
+	
+	
+	 def image(PrecedenceRow o)
+	{
+		switch(o.type)
+		{
+			case LEFT: 'arrow_left.png'
+			case NONE: 'stop.png'
+			case RIGHT: 'arrow_right.png'
+		}
+	}
+	
+	def text(PrecedenceRow o)
+	{
+		'###'
+	} 
+	
+	/*	 	 
+	 def image( o)
+	{
+		'.png'
+	}
+	
+	def text( o)
+	{
+		''
+	} 
+ 
+	 */
+
+
 }

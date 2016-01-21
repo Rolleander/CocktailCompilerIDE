@@ -14,6 +14,8 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.cocktail.scanner.Begin;
+import org.xtext.cocktail.scanner.Close;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -46,6 +48,12 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ScannerPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case ScannerPackage.BEGIN:
+				sequence_Begin(context, (Begin) semanticObject); 
+				return; 
+			case ScannerPackage.CLOSE:
+				sequence_Close(context, (Close) semanticObject); 
+				return; 
 			case ScannerPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
 				return; 
@@ -102,6 +110,42 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Begin returns Begin
+	 *
+	 * Constraint:
+	 *     content=CodeBlock
+	 */
+	protected void sequence_Begin(ISerializationContext context, Begin semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.BEGIN__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.BEGIN__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBeginAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Close returns Close
+	 *
+	 * Constraint:
+	 *     content=CodeBlock
+	 */
+	protected void sequence_Close(ISerializationContext context, Close semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.CLOSE__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.CLOSE__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCloseAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -241,7 +285,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             scanner+=Eof | 
 	 *             scanner+=Define | 
 	 *             scanner+=StartStates | 
-	 *             scanner+=Rule
+	 *             scanner+=Rule | 
+	 *             scanner+=Begin | 
+	 *             scanner+=Close
 	 *         )*
 	 *     )
 	 */

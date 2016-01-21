@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.cocktail.scanner.Begin;
+import org.xtext.cocktail.scanner.Close;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -84,6 +86,20 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass eofEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass beginEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass closeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -349,6 +365,46 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBegin()
+  {
+    return beginEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBegin_Content()
+  {
+    return (EAttribute)beginEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClose()
+  {
+    return closeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClose_Content()
+  {
+    return (EAttribute)closeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDefine()
   {
     return defineEClass;
@@ -605,6 +661,12 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     eofEClass = createEClass(EOF);
     createEAttribute(eofEClass, EOF__CONTENT);
 
+    beginEClass = createEClass(BEGIN);
+    createEAttribute(beginEClass, BEGIN__CONTENT);
+
+    closeEClass = createEClass(CLOSE);
+    createEAttribute(closeEClass, CLOSE__CONTENT);
+
     defineEClass = createEClass(DEFINE);
     createEReference(defineEClass, DEFINE__DEFINES);
 
@@ -687,6 +749,12 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     initEClass(eofEClass, Eof.class, "Eof", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEof_Content(), ecorePackage.getEString(), "content", null, 0, 1, Eof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBegin_Content(), ecorePackage.getEString(), "content", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(closeEClass, Close.class, "Close", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClose_Content(), ecorePackage.getEString(), "content", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDefine_Defines(), this.getDefineRule(), null, "defines", null, 0, -1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

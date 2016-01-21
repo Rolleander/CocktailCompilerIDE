@@ -87,6 +87,24 @@ public interface ScannerFactory extends EFactory
   Eof createEof();
 
   /**
+   * Returns a new object of class '<em>Begin</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Begin</em>'.
+   * @generated
+   */
+  Begin createBegin();
+
+  /**
+   * Returns a new object of class '<em>Close</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Close</em>'.
+   * @generated
+   */
+  Close createClose();
+
+  /**
    * Returns a new object of class '<em>Define</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

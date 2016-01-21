@@ -72,6 +72,8 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.LOCAL: return createLocal();
       case ScannerPackage.DEFAULT: return createDefault();
       case ScannerPackage.EOF: return createEof();
+      case ScannerPackage.BEGIN: return createBegin();
+      case ScannerPackage.CLOSE: return createClose();
       case ScannerPackage.DEFINE: return createDefine();
       case ScannerPackage.DEFINE_RULE: return createDefineRule();
       case ScannerPackage.START_STATES: return createStartStates();
@@ -160,6 +162,28 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
   {
     EofImpl eof = new EofImpl();
     return eof;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Begin createBegin()
+  {
+    BeginImpl begin = new BeginImpl();
+    return begin;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Close createClose()
+  {
+    CloseImpl close = new CloseImpl();
+    return close;
   }
 
   /**

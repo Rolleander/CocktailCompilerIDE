@@ -254,6 +254,62 @@ public interface ScannerPackage extends EPackage
   int EOF_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.BeginImpl <em>Begin</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.BeginImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBegin()
+   * @generated
+   */
+  int BEGIN = 7;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEGIN__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Begin</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEGIN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.CloseImpl <em>Close</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.CloseImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getClose()
+   * @generated
+   */
+  int CLOSE = 8;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLOSE__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Close</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLOSE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.DefineImpl <em>Define</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -261,7 +317,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getDefine()
    * @generated
    */
-  int DEFINE = 7;
+  int DEFINE = 9;
 
   /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
@@ -289,7 +345,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getDefineRule()
    * @generated
    */
-  int DEFINE_RULE = 8;
+  int DEFINE_RULE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -326,7 +382,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartStates()
    * @generated
    */
-  int START_STATES = 9;
+  int START_STATES = 11;
 
   /**
    * The feature id for the '<em><b>Incstates</b></em>' containment reference list.
@@ -363,7 +419,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartState()
    * @generated
    */
-  int START_STATE = 10;
+  int START_STATE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -391,7 +447,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRule()
    * @generated
    */
-  int RULE = 11;
+  int RULE = 13;
 
   /**
    * The feature id for the '<em><b>Info</b></em>' attribute.
@@ -428,7 +484,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSingleRule()
    * @generated
    */
-  int SINGLE_RULE = 12;
+  int SINGLE_RULE = 14;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -465,7 +521,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleDefinition()
    * @generated
    */
-  int RULE_DEFINITION = 13;
+  int RULE_DEFINITION = 15;
 
   /**
    * The feature id for the '<em><b>Reg</b></em>' attribute list.
@@ -502,7 +558,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleStart()
    * @generated
    */
-  int RULE_START = 14;
+  int RULE_START = 16;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -687,6 +743,48 @@ public interface ScannerPackage extends EPackage
    * @generated
    */
   EAttribute getEof_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Begin <em>Begin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Begin</em>'.
+   * @see org.xtext.cocktail.scanner.Begin
+   * @generated
+   */
+  EClass getBegin();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Begin#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content</em>'.
+   * @see org.xtext.cocktail.scanner.Begin#getContent()
+   * @see #getBegin()
+   * @generated
+   */
+  EAttribute getBegin_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Close <em>Close</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Close</em>'.
+   * @see org.xtext.cocktail.scanner.Close
+   * @generated
+   */
+  EClass getClose();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Close#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content</em>'.
+   * @see org.xtext.cocktail.scanner.Close#getContent()
+   * @see #getClose()
+   * @generated
+   */
+  EAttribute getClose_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Define <em>Define</em>}'.
@@ -1059,6 +1157,42 @@ public interface ScannerPackage extends EPackage
      * @generated
      */
     EAttribute EOF__CONTENT = eINSTANCE.getEof_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.BeginImpl <em>Begin</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.BeginImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBegin()
+     * @generated
+     */
+    EClass BEGIN = eINSTANCE.getBegin();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BEGIN__CONTENT = eINSTANCE.getBegin_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.CloseImpl <em>Close</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.CloseImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getClose()
+     * @generated
+     */
+    EClass CLOSE = eINSTANCE.getClose();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLOSE__CONTENT = eINSTANCE.getClose_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.DefineImpl <em>Define</em>}' class.

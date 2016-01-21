@@ -111,6 +111,16 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createEofAdapter();
       }
       @Override
+      public Adapter caseBegin(Begin object)
+      {
+        return createBeginAdapter();
+      }
+      @Override
+      public Adapter caseClose(Close object)
+      {
+        return createCloseAdapter();
+      }
+      @Override
       public Adapter caseDefine(Define object)
       {
         return createDefineAdapter();
@@ -273,6 +283,36 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEofAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Begin <em>Begin</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.Begin
+   * @generated
+   */
+  public Adapter createBeginAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Close <em>Close</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.Close
+   * @generated
+   */
+  public Adapter createCloseAdapter()
   {
     return null;
   }

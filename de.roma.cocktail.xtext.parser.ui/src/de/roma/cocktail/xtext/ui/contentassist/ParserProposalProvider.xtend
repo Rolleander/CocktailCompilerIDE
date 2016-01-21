@@ -25,11 +25,6 @@ class ParserProposalProvider extends AbstractParserProposalProvider {
 		acceptor.accept(createCompletionProposal(proposal, context));
 	}
 	
-	override createProposals(ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		val  proposal="[Scanner]'_GetWord(v);";
-		acceptor.accept(createCompletionProposal(proposal, context));
-	}
-	
 	
 	
 	

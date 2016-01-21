@@ -4,6 +4,18 @@
 package de.roma.cocktail.xtext.ui.labeling;
 
 import com.google.inject.Inject;
+import de.roma.cocktail.xtext.parser.Begin;
+import de.roma.cocktail.xtext.parser.Close;
+import de.roma.cocktail.xtext.parser.DefinedToken;
+import de.roma.cocktail.xtext.parser.Export;
+import de.roma.cocktail.xtext.parser.Global;
+import de.roma.cocktail.xtext.parser.Import;
+import de.roma.cocktail.xtext.parser.Local;
+import de.roma.cocktail.xtext.parser.ParserModel;
+import de.roma.cocktail.xtext.parser.Precedence;
+import de.roma.cocktail.xtext.parser.PrecedenceRow;
+import de.roma.cocktail.xtext.parser.PrecedenceType;
+import de.roma.cocktail.xtext.parser.Tokens;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
@@ -17,5 +29,113 @@ public class ParserLabelProvider extends DefaultEObjectLabelProvider {
   @Inject
   public ParserLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
+  }
+  
+  public String image(final ParserModel p) {
+    return "parser.png";
+  }
+  
+  public String text(final ParserModel p) {
+    return "Parser";
+  }
+  
+  public String image(final Import o) {
+    return "cog.png";
+  }
+  
+  public String text(final Import o) {
+    return "Import";
+  }
+  
+  public String image(final Export o) {
+    return "cog.png";
+  }
+  
+  public String text(final Export o) {
+    return "Export";
+  }
+  
+  public String image(final Global o) {
+    return "cog.png";
+  }
+  
+  public String text(final Global o) {
+    return "Global";
+  }
+  
+  public String image(final Local o) {
+    return "cog.png";
+  }
+  
+  public String text(final Local o) {
+    return "Local";
+  }
+  
+  public String image(final Begin o) {
+    return "cog.png";
+  }
+  
+  public String text(final Begin o) {
+    return "Begin";
+  }
+  
+  public String image(final Close o) {
+    return "cog.png";
+  }
+  
+  public String text(final Close o) {
+    return "Close";
+  }
+  
+  public String image(final Tokens o) {
+    return "tokens.png";
+  }
+  
+  public String text(final Tokens o) {
+    return "Tokens";
+  }
+  
+  public String image(final DefinedToken o) {
+    return "token.png";
+  }
+  
+  public String text(final DefinedToken o) {
+    String _name = o.getName();
+    String _plus = (_name + ": ");
+    int _number = o.getNumber();
+    return (_plus + Integer.valueOf(_number));
+  }
+  
+  public String image(final Precedence o) {
+    return "star.png";
+  }
+  
+  public String text(final Precedence o) {
+    return "Precedences";
+  }
+  
+  public String image(final PrecedenceRow o) {
+    String _switchResult = null;
+    PrecedenceType _type = o.getType();
+    if (_type != null) {
+      switch (_type) {
+        case LEFT:
+          _switchResult = "arrow_left.png";
+          break;
+        case NONE:
+          _switchResult = "stop.png";
+          break;
+        case RIGHT:
+          _switchResult = "arrow_right.png";
+          break;
+        default:
+          break;
+      }
+    }
+    return _switchResult;
+  }
+  
+  public String text(final PrecedenceRow o) {
+    return "###";
   }
 }

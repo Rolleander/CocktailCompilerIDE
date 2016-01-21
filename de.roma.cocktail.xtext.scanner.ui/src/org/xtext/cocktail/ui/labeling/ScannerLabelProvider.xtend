@@ -18,6 +18,8 @@ import org.xtext.cocktail.scanner.Eof
 import org.xtext.cocktail.scanner.Global
 import org.xtext.cocktail.scanner.StartStates
 import org.xtext.cocktail.scanner.SingleRule
+import org.xtext.cocktail.scanner.Begin
+import org.xtext.cocktail.scanner.Close
 
 /**
  * Provides labels for EObjects.
@@ -31,23 +33,36 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
-	def text(SingleRule rule)
-	{
+	def text(SingleRule rule) {
 		rule.getRule()
 	}
-	
-	def image(SingleRule rule)
-	{
+
+	def image(SingleRule rule) {
 		'page.png'
 	}
 
-	def text(StartStates s)
-	{
+	def text(StartStates s) {
 		'Start States'
 	}
-	
-	def image(StartStates s){
+
+	def image(StartStates s) {
 		'control_play.png'
+	}
+
+	def text(Begin begin) {
+		'Begin'
+	}
+
+	def image(Begin begin) {
+		'cog.png'
+	}
+
+	def text(Close close) {
+		'Close'
+	}
+
+	def image(Close close) {
+		'cog.png'
 	}
 
 	def text(Default deff) {

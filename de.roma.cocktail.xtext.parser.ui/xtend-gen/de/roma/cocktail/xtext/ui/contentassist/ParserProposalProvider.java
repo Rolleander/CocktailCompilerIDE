@@ -29,11 +29,4 @@ public class ParserProposalProvider extends AbstractParserProposalProvider {
     ICompletionProposal _createCompletionProposal = this.createCompletionProposal(proposal, context);
     acceptor.accept(_createCompletionProposal);
   }
-  
-  @Override
-  public void createProposals(final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
-    final String proposal = "[Scanner]\'_GetWord(v);";
-    ICompletionProposal _createCompletionProposal = this.createCompletionProposal(proposal, context);
-    acceptor.accept(_createCompletionProposal);
-  }
 }
