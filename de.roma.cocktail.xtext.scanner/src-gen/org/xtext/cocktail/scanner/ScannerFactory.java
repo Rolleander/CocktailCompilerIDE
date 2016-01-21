@@ -141,6 +141,15 @@ public interface ScannerFactory extends EFactory
   SingleRule createSingleRule();
 
   /**
+   * Returns a new object of class '<em>Rule Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Definition</em>'.
+   * @generated
+   */
+  RuleDefinition createRuleDefinition();
+
+  /**
    * Returns a new object of class '<em>Rule Start</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,15 +157,6 @@ public interface ScannerFactory extends EFactory
    * @generated
    */
   RuleStart createRuleStart();
-
-  /**
-   * Returns a new object of class '<em>Action Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Statement</em>'.
-   * @generated
-   */
-  ActionStatement createActionStatement();
 
   /**
    * Returns the package supported by this factory.

@@ -3,8 +3,6 @@
  */
 package org.xtext.cocktail.scanner;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,20 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface SingleRule extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Rule</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rule</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Rule</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rule</em>' attribute list.
+   * @return the value of the '<em>Rule</em>' containment reference.
+   * @see #setRule(RuleDefinition)
    * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Rule()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getRule();
+  RuleDefinition getRule();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rule</em>' containment reference.
+   * @see #getRule()
+   * @generated
+   */
+  void setRule(RuleDefinition value);
 
   /**
    * Returns the value of the '<em><b>Content</b></em>' attribute.

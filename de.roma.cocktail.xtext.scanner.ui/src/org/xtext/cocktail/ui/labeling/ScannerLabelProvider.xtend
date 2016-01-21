@@ -11,6 +11,13 @@ import org.xtext.cocktail.scanner.DefineRule
 import org.xtext.cocktail.scanner.Model
 import org.xtext.cocktail.scanner.Rule
 import org.xtext.cocktail.scanner.Scanner
+import org.xtext.cocktail.scanner.Local
+import org.xtext.cocktail.scanner.Export
+import org.xtext.cocktail.scanner.Default
+import org.xtext.cocktail.scanner.Eof
+import org.xtext.cocktail.scanner.Global
+import org.xtext.cocktail.scanner.StartStates
+import org.xtext.cocktail.scanner.SingleRule
 
 /**
  * Provides labels for EObjects.
@@ -24,8 +31,65 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
+	def text(SingleRule rule)
+	{
+		rule.getRule()
+	}
 	
+	def image(SingleRule rule)
+	{
+		'page.png'
+	}
+
+	def text(StartStates s)
+	{
+		'Start States'
+	}
+	
+	def image(StartStates s){
+		'control_play.png'
+	}
+
+	def text(Default deff) {
+		'Default'
+	}
+
+	def image(Default deff) {
+		'cog.png'
+	}
+
+	def text(Eof eof) {
+		'End of File'
+	}
+
+	def image(Eof eof) {
+		'cog.png'
+	}
+
+	def text(Export export) {
+		'Export'
+	}
+
+	def image(Export export) {
+		'cog.png'
+	}
+
+	def text(Local local) {
+		'Local'
+	}
+
+	def image(Local local) {
+		'cog.png'
+	}
+
+	def text(Global global) {
+		'Global'
+	}
+
+	def image(Global global) {
+		'cog.png'
+	}
+
 	def text(Model ele) {
 		'Scanner'
 	}
@@ -33,8 +97,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	def image(Model ele) {
 		'barcode.png'
 	}
-	
-	
+
 	def text(Rule ele) {
 		'Rules'
 	}
@@ -42,7 +105,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	def image(Rule ele) {
 		'rules.png'
 	}
-	
+
 	def text(Scanner ele) {
 		ele.getName()
 	}
@@ -50,7 +113,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	def image(Scanner ele) {
 		'key.png'
 	}
-	
+
 	def text(Define ele) {
 		'Defined Keywords'
 	}
@@ -58,8 +121,9 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	def image(Define ele) {
 		'three_tags.png'
 	}
-	
+
 	def text(DefineRule ele) {
-		ele.getName()+" = "+ele.getRule()
+		ele.getName() + " = " + ele.getRule()
 	}
+
 }

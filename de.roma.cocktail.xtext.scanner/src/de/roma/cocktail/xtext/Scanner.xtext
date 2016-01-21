@@ -11,38 +11,42 @@ Model:
 	scanner+=Scanner (scanner+=Export? & scanner+=Global? & scanner+=Local? & scanner+=Default? &
 	scanner +=Eof? & scanner+=Define? & scanner+=StartStates? & scanner+=Rule);
 
-terminal INLINE_CODE:
-	'{' -> '}'
-;
-
-
 CodeBlock:
-	INLINE_CODE
+	(CodeWall|'{' CodeBlock '}' )*
 ;
 
+
+CodeWall:
+	//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'!'|'='|','
+;
 Scanner:
 	'SCANNER' name=ID;
 
 Export:
-	'EXPORT'  content=CodeBlock ;
+	'EXPORT' '{' content=CodeBlock '}' ;
 
 Global:
-	'GLOBAL' content=CodeBlock;
+	'GLOBAL''{' content=CodeBlock '}';
 
 Local:
-	'LOCAL' content=CodeBlock;
+	'LOCAL' '{' content=CodeBlock '}';
 	
 Default:
-	'DEFAULT' content=CodeBlock;
+	'DEFAULT' '{' content=CodeBlock '}';
 	
 Eof:
-	'EOF' content=CodeBlock;
+	'EOF' '{' content=CodeBlock '}';
 	
 Define:
 	'DEFINE'  (defines+=DefineRule)+   ;	
 
 DefineRule:
-	name=ID '=' rule=ID '.';
+	name=ID '=' rule=DefineRegex '.';
+	
+DefineRegex:
+	Regex*
+;	
 
 StartStates: 
 'START' incstates+= StartState (',' incstates+=StartState)* 
@@ -60,24 +64,22 @@ Rule:
 
 
 SingleRule:
-	 RuleStart? rule+=RuleDefinition  ('-')? content=CodeBlock
+	 RuleStart? rule=RuleDefinition ':' ('-')? '{'content=CodeBlock'}'
 ;
 
-RuleDefinition:
-	(ID|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#')* ':'
+Regex returns ecore::EString:
+	ID|INT|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'{'|'}'|'"'|'\''|'#'
+;
+
+
+RuleDefinition: 
+	(=>reg+=Regex | def+=[DefineRule])*
 ;
 
 
 //#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 RuleStart:
 	 ('NOT'|'-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#' 
-;
-
-ActionStatement:
-	st+=[Scanner]'_GetWord(v);' |
-	st+=[Scanner]'_GetLower(v);' |
-	st+=[Scanner]'_GetUpper(v);' |
-	'yyEcho;'| 'yyLess(' INT ');'
 ;
 
 

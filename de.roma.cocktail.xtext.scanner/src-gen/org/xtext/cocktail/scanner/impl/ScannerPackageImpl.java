@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.cocktail.scanner.ActionStatement;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -20,6 +19,7 @@ import org.xtext.cocktail.scanner.Global;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
+import org.xtext.cocktail.scanner.RuleDefinition;
 import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerFactory;
@@ -132,14 +132,14 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ruleStartEClass = null;
+  private EClass ruleDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionStatementEClass = null;
+  private EClass ruleStartEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -489,9 +489,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSingleRule_Rule()
+  public EReference getSingleRule_Rule()
   {
-    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(0);
+    return (EReference)singleRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -502,6 +502,36 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
   public EAttribute getSingleRule_Content()
   {
     return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRuleDefinition()
+  {
+    return ruleDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRuleDefinition_Reg()
+  {
+    return (EAttribute)ruleDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleDefinition_Def()
+  {
+    return (EReference)ruleDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -522,26 +552,6 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
   public EReference getRuleStart_State()
   {
     return (EReference)ruleStartEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getActionStatement()
-  {
-    return actionStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getActionStatement_St()
-  {
-    return (EReference)actionStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -614,14 +624,15 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEReference(ruleEClass, RULE__RULES);
 
     singleRuleEClass = createEClass(SINGLE_RULE);
-    createEAttribute(singleRuleEClass, SINGLE_RULE__RULE);
+    createEReference(singleRuleEClass, SINGLE_RULE__RULE);
     createEAttribute(singleRuleEClass, SINGLE_RULE__CONTENT);
+
+    ruleDefinitionEClass = createEClass(RULE_DEFINITION);
+    createEAttribute(ruleDefinitionEClass, RULE_DEFINITION__REG);
+    createEReference(ruleDefinitionEClass, RULE_DEFINITION__DEF);
 
     ruleStartEClass = createEClass(RULE_START);
     createEReference(ruleStartEClass, RULE_START__STATE);
-
-    actionStatementEClass = createEClass(ACTION_STATEMENT);
-    createEReference(actionStatementEClass, ACTION_STATEMENT__ST);
   }
 
   /**
@@ -696,14 +707,15 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEReference(getRule_Rules(), this.getSingleRule(), null, "rules", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSingleRule_Rule(), ecorePackage.getEString(), "rule", null, 0, -1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleRule_Rule(), this.getRuleDefinition(), null, "rule", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSingleRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleDefinitionEClass, RuleDefinition.class, "RuleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRuleDefinition_Reg(), ecorePackage.getEString(), "reg", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleDefinition_Def(), this.getDefineRule(), null, "def", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleStartEClass, RuleStart.class, "RuleStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleStart_State(), this.getStartState(), null, "state", null, 0, -1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(actionStatementEClass, ActionStatement.class, "ActionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActionStatement_St(), this.getScanner(), null, "st", null, 0, -1, ActionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

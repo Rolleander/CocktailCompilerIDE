@@ -431,7 +431,7 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE = 12;
 
   /**
-   * The feature id for the '<em><b>Rule</b></em>' attribute list.
+   * The feature id for the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -458,6 +458,43 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl <em>Rule Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.RuleDefinitionImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleDefinition()
+   * @generated
+   */
+  int RULE_DEFINITION = 13;
+
+  /**
+   * The feature id for the '<em><b>Reg</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_DEFINITION__REG = 0;
+
+  /**
+   * The feature id for the '<em><b>Def</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_DEFINITION__DEF = 1;
+
+  /**
+   * The number of structural features of the '<em>Rule Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.RuleStartImpl <em>Rule Start</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -465,10 +502,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleStart()
    * @generated
    */
-  int RULE_START = 13;
+  int RULE_START = 14;
 
   /**
-   * The feature id for the '<em><b>Rule</b></em>' attribute list.
+   * The feature id for the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -502,34 +539,6 @@ public interface ScannerPackage extends EPackage
    * @ordered
    */
   int RULE_START_FEATURE_COUNT = SINGLE_RULE_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ActionStatementImpl <em>Action Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.cocktail.scanner.impl.ActionStatementImpl
-   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getActionStatement()
-   * @generated
-   */
-  int ACTION_STATEMENT = 14;
-
-  /**
-   * The feature id for the '<em><b>St</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_STATEMENT__ST = 0;
-
-  /**
-   * The number of structural features of the '<em>Action Statement</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_STATEMENT_FEATURE_COUNT = 1;
 
 
   /**
@@ -828,15 +837,15 @@ public interface ScannerPackage extends EPackage
   EClass getSingleRule();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Rule</em>'.
+   * @return the meta object for the containment reference '<em>Rule</em>'.
    * @see org.xtext.cocktail.scanner.SingleRule#getRule()
    * @see #getSingleRule()
    * @generated
    */
-  EAttribute getSingleRule_Rule();
+  EReference getSingleRule_Rule();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
@@ -848,6 +857,38 @@ public interface ScannerPackage extends EPackage
    * @generated
    */
   EAttribute getSingleRule_Content();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RuleDefinition <em>Rule Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Definition</em>'.
+   * @see org.xtext.cocktail.scanner.RuleDefinition
+   * @generated
+   */
+  EClass getRuleDefinition();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.RuleDefinition#getReg <em>Reg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Reg</em>'.
+   * @see org.xtext.cocktail.scanner.RuleDefinition#getReg()
+   * @see #getRuleDefinition()
+   * @generated
+   */
+  EAttribute getRuleDefinition_Reg();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.RuleDefinition#getDef <em>Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Def</em>'.
+   * @see org.xtext.cocktail.scanner.RuleDefinition#getDef()
+   * @see #getRuleDefinition()
+   * @generated
+   */
+  EReference getRuleDefinition_Def();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RuleStart <em>Rule Start</em>}'.
@@ -869,27 +910,6 @@ public interface ScannerPackage extends EPackage
    * @generated
    */
   EReference getRuleStart_State();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.ActionStatement <em>Action Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Statement</em>'.
-   * @see org.xtext.cocktail.scanner.ActionStatement
-   * @generated
-   */
-  EClass getActionStatement();
-
-  /**
-   * Returns the meta object for the reference list '{@link org.xtext.cocktail.scanner.ActionStatement#getSt <em>St</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>St</em>'.
-   * @see org.xtext.cocktail.scanner.ActionStatement#getSt()
-   * @see #getActionStatement()
-   * @generated
-   */
-  EReference getActionStatement_St();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1165,12 +1185,12 @@ public interface ScannerPackage extends EPackage
     EClass SINGLE_RULE = eINSTANCE.getSingleRule();
 
     /**
-     * The meta object literal for the '<em><b>Rule</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
+    EReference SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
@@ -1179,6 +1199,32 @@ public interface ScannerPackage extends EPackage
      * @generated
      */
     EAttribute SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl <em>Rule Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.RuleDefinitionImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleDefinition()
+     * @generated
+     */
+    EClass RULE_DEFINITION = eINSTANCE.getRuleDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Reg</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_DEFINITION__REG = eINSTANCE.getRuleDefinition_Reg();
+
+    /**
+     * The meta object literal for the '<em><b>Def</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_DEFINITION__DEF = eINSTANCE.getRuleDefinition_Def();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RuleStartImpl <em>Rule Start</em>}' class.
@@ -1197,24 +1243,6 @@ public interface ScannerPackage extends EPackage
      * @generated
      */
     EReference RULE_START__STATE = eINSTANCE.getRuleStart_State();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ActionStatementImpl <em>Action Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.cocktail.scanner.impl.ActionStatementImpl
-     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getActionStatement()
-     * @generated
-     */
-    EClass ACTION_STATEMENT = eINSTANCE.getActionStatement();
-
-    /**
-     * The meta object literal for the '<em><b>St</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_STATEMENT__ST = eINSTANCE.getActionStatement_St();
 
   }
 

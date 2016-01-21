@@ -28,8 +28,7 @@ class ScannerValidator extends AbstractScannerValidator {
 	}
 	
 	@Check
-	def check(Rule rule) {
-	
+	def check(Rule rule) {	
 		val rules=rule.getRules();
 		val count=rules.size();
 		if(count <1)

@@ -12,4 +12,6 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
  */
 class ScannerOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
+	
+	
 }

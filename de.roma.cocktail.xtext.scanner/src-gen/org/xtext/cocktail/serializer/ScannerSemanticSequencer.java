@@ -14,7 +14,6 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.cocktail.scanner.ActionStatement;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -24,6 +23,7 @@ import org.xtext.cocktail.scanner.Global;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
+import org.xtext.cocktail.scanner.RuleDefinition;
 import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerPackage;
@@ -46,9 +46,6 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ScannerPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case ScannerPackage.ACTION_STATEMENT:
-				sequence_ActionStatement(context, (ActionStatement) semanticObject); 
-				return; 
 			case ScannerPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
 				return; 
@@ -75,6 +72,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ScannerPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
+			case ScannerPackage.RULE_DEFINITION:
+				sequence_RuleDefinition(context, (RuleDefinition) semanticObject); 
 				return; 
 			case ScannerPackage.RULE_START:
 				if (rule == grammarAccess.getRuleStartRule()) {
@@ -105,18 +105,6 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     ActionStatement returns ActionStatement
-	 *
-	 * Constraint:
-	 *     (st+=[Scanner|ID] | st+=[Scanner|ID] | st+=[Scanner|ID])
-	 */
-	protected void sequence_ActionStatement(ISerializationContext context, ActionStatement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Default returns Default
 	 *
 	 * Constraint:
@@ -128,7 +116,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.DEFAULT__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDefaultAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getDefaultAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -138,7 +126,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     DefineRule returns DefineRule
 	 *
 	 * Constraint:
-	 *     (name=ID rule=ID)
+	 *     (name=ID rule=DefineRegex)
 	 */
 	protected void sequence_DefineRule(ISerializationContext context, DefineRule semanticObject) {
 		if (errorAcceptor != null) {
@@ -149,7 +137,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDefineRuleAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDefineRuleAccess().getRuleIDTerminalRuleCall_2_0(), semanticObject.getRule());
+		feeder.accept(grammarAccess.getDefineRuleAccess().getRuleDefineRegexParserRuleCall_2_0(), semanticObject.getRule());
 		feeder.finish();
 	}
 	
@@ -179,7 +167,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EOF__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEofAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getEofAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -197,7 +185,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.EXPORT__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExportAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getExportAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -215,7 +203,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.GLOBAL__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGlobalAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getGlobalAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -233,7 +221,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.LOCAL__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLocalAccess().getContentCodeBlockParserRuleCall_1_0(), semanticObject.getContent());
+		feeder.accept(grammarAccess.getLocalAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -264,6 +252,18 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     RuleDefinition returns RuleDefinition
+	 *
+	 * Constraint:
+	 *     (reg+=Regex | def+=[DefineRule|ID])+
+	 */
+	protected void sequence_RuleDefinition(ISerializationContext context, RuleDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     RuleStart returns RuleStart
 	 *
 	 * Constraint:
@@ -279,7 +279,7 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SingleRule returns RuleStart
 	 *
 	 * Constraint:
-	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule+=RuleDefinition content=CodeBlock)
+	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule=RuleDefinition content=CodeBlock)
 	 */
 	protected void sequence_RuleStart_SingleRule(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -321,10 +321,19 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SingleRule returns SingleRule
 	 *
 	 * Constraint:
-	 *     (rule+=RuleDefinition content=CodeBlock)
+	 *     (rule=RuleDefinition content=CodeBlock)
 	 */
 	protected void sequence_SingleRule(ISerializationContext context, SingleRule semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SINGLE_RULE__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SINGLE_RULE__RULE));
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SINGLE_RULE__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SINGLE_RULE__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSingleRuleAccess().getRuleRuleDefinitionParserRuleCall_1_0(), semanticObject.getRule());
+		feeder.accept(grammarAccess.getSingleRuleAccess().getContentCodeBlockParserRuleCall_5_0(), semanticObject.getContent());
+		feeder.finish();
 	}
 	
 	

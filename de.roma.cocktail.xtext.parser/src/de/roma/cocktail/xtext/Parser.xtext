@@ -2,8 +2,117 @@ grammar de.roma.cocktail.xtext.Parser with org.eclipse.xtext.common.Terminals
 
 generate parser "http://www.roma.de/cocktail/xtext/Parser"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+ParserModel:
+	(scanner=ScannerName parser=ParserName)
+	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
+	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?	
+	& tokens=Tokens? 
+	& precedenc=Precedence? 
+	& start=StartSymbols?
+	& rules=GrammerRules?
+;
+
+
+ScannerName:
+	'SCANNER' name=ID
+;
+
+ParserName:
+	'PARSER' name=ID
+;
+
+Import:
+	'IMPORT' '{' content=CodeBlock '}'
+;
+
+Export:
+	'EXPORT' '{' content=CodeBlock '}'
+;
+
+Global:
+	'GLOBAL' '{' content=CodeBlock '}'
+;
+
+Local:
+	'LOCAL' '{' content=CodeBlock '}'
+;
+
+Begin:
+	'BEGIN' '{' content=CodeBlock '}'
+;
+
+Close:
+	'CLOSE' '{' content=CodeBlock '}'
+;
+
+Tokens:
+	'TOKEN' tokens+=DefinedToken*
+;
+
+DefinedToken: 
+	name=(ID|STRING) ('=' number=INT (','  extra=TokenExtra)?  )|(extra=TokenExtra)|(WS)
+;
+
+TokenExtra:
+	cost=INT "," presentation=STRING
+;
+
+CodeBlock:
+	(CodeWall|'{' CodeBlock '}' )*
+;
+
+
+CodeWall:
+	//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'!'|'='|','
+;
+
+Precedence:
+	'PREC' rows+=PrecedenceRow*
+;
+
+PrecedenceRow:
+	type=PrecedenceType (tokens+=[DefinedToken])*
+;
+
+enum PrecedenceType:
+	NONE | LEFT | RIGHT
+;
+
+StartSymbols:
+	'START' (states+=StartState)*
+;
+
+StartState:
+	name=ID
+;
+
+GrammerRules:
+	('RULE'|'RULES') rules+=GrammarRule*
+;
+
+GrammerReference:
+	GrammarRule | DefinedToken
+;
+
+GrammarRule:
+	name=ID ':' body+=RuleBody ('|' body+=RuleBody)* '.'
+;
+
+RuleBody:
+	part=RulePart (code=RuleCode)? 
+;
+
+RuleCode:
+	('{' CodeBlock '}')|('[' CodeBlock ']')	
+;
+
+RulePart:
+	(regex+=STRING | rules+=[GrammerReference])*
+;
+
+//terminal Identifier:
+//	('\\')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* 
+//;
+
+

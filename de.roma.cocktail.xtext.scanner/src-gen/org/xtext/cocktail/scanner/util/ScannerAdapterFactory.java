@@ -141,14 +141,14 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createSingleRuleAdapter();
       }
       @Override
+      public Adapter caseRuleDefinition(RuleDefinition object)
+      {
+        return createRuleDefinitionAdapter();
+      }
+      @Override
       public Adapter caseRuleStart(RuleStart object)
       {
         return createRuleStartAdapter();
-      }
-      @Override
-      public Adapter caseActionStatement(ActionStatement object)
-      {
-        return createActionStatementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -368,6 +368,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.RuleDefinition <em>Rule Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.RuleDefinition
+   * @generated
+   */
+  public Adapter createRuleDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.RuleStart <em>Rule Start</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -378,21 +393,6 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleStartAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.ActionStatement <em>Action Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.cocktail.scanner.ActionStatement
-   * @generated
-   */
-  public Adapter createActionStatementAdapter()
   {
     return null;
   }

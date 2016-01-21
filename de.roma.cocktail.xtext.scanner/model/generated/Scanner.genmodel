@@ -46,14 +46,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/rules"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//SingleRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//SingleRule/rule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//RuleDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//RuleDefinition/reg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleDefinition/def"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//RuleStart">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleStart/state"/>
-    </genClasses>
-    <genClasses ecoreClass="Scanner.ecore#//ActionStatement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//ActionStatement/st"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
