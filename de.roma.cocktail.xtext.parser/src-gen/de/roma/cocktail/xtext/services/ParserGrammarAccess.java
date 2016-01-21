@@ -153,16 +153,16 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//ScannerName:
-		//	'SCANNER' name=ID;
+		//	'SCANNER' name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SCANNER' name=ID
+		//'SCANNER' name=ID?
 		public Group getGroup() { return cGroup; }
 		
 		//'SCANNER'
 		public Keyword getSCANNERKeyword_0() { return cSCANNERKeyword_0; }
 		
-		//name=ID
+		//name=ID?
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
@@ -176,16 +176,16 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//ParserName:
-		//	'PARSER' name=ID;
+		//	'PARSER' name=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PARSER' name=ID
+		//'PARSER' name=ID?
 		public Group getGroup() { return cGroup; }
 		
 		//'PARSER'
 		public Keyword getPARSERKeyword_0() { return cPARSERKeyword_0; }
 		
-		//name=ID
+		//name=ID?
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
@@ -563,15 +563,16 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
 		private final Keyword cExclamationMarkKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
 		private final Keyword cEqualsSignKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cCommaKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
 		
 		//CodeWall:
 		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-		//	';' | ':' | '!' | '=';
+		//	';' | ':' | '!' | '=' | ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
 		//ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
-		//| ':' | '!' | '='
+		//| ':' | '!' | '=' | ','
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
@@ -643,6 +644,9 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'='
 		public Keyword getEqualsSignKeyword_22() { return cEqualsSignKeyword_22; }
+		
+		//','
+		public Keyword getCommaKeyword_23() { return cCommaKeyword_23; }
 	}
 	public class PrecedenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.Precedence");
@@ -846,10 +850,10 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCodeRuleCodeParserRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
 		
 		//RuleBody:
-		//	part=RulePart code=RuleCode?;
+		//	part=RulePart code=RuleCode;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//part=RulePart code=RuleCode?
+		//part=RulePart code=RuleCode
 		public Group getGroup() { return cGroup; }
 		
 		//part=RulePart
@@ -858,7 +862,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//RulePart
 		public RuleCall getPartRulePartParserRuleCall_0_0() { return cPartRulePartParserRuleCall_0_0; }
 		
-		//code=RuleCode?
+		//code=RuleCode
 		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
 		
 		//RuleCode
@@ -866,24 +870,24 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class RuleCodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.RuleCode");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final UnorderedGroup cUnorderedGroup = (UnorderedGroup)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cUnorderedGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final RuleCall cCodeBlockParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Group cGroup_1 = (Group)cUnorderedGroup.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cCodeBlockParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//RuleCode:
-		//	'{' CodeBlock '}' | '[' CodeBlock ']';
+		//	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' CodeBlock '}' | '[' CodeBlock ']'
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//('{' CodeBlock '}')? & ('[' CodeBlock ']')?
+		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
-		//'{' CodeBlock '}'
+		//('{' CodeBlock '}')?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'{'
@@ -895,7 +899,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_0_2() { return cRightCurlyBracketKeyword_0_2; }
 		
-		//'[' CodeBlock ']'
+		//('[' CodeBlock ']')?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'['
@@ -1080,7 +1084,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ScannerName:
-	//	'SCANNER' name=ID;
+	//	'SCANNER' name=ID?;
 	public ScannerNameElements getScannerNameAccess() {
 		return pScannerName;
 	}
@@ -1090,7 +1094,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ParserName:
-	//	'PARSER' name=ID;
+	//	'PARSER' name=ID?;
 	public ParserNameElements getParserNameAccess() {
 		return pParserName;
 	}
@@ -1201,7 +1205,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CodeWall:
 	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-	//	';' | ':' | '!' | '=';
+	//	';' | ':' | '!' | '=' | ',';
 	public CodeWallElements getCodeWallAccess() {
 		return pCodeWall;
 	}
@@ -1291,7 +1295,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RuleBody:
-	//	part=RulePart code=RuleCode?;
+	//	part=RulePart code=RuleCode;
 	public RuleBodyElements getRuleBodyAccess() {
 		return pRuleBody;
 	}
@@ -1301,7 +1305,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RuleCode:
-	//	'{' CodeBlock '}' | '[' CodeBlock ']';
+	//	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
 	public RuleCodeElements getRuleCodeAccess() {
 		return pRuleCode;
 	}

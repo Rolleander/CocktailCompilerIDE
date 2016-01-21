@@ -333,10 +333,19 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     RuleBody returns RuleBody
 	 *
 	 * Constraint:
-	 *     (part=RulePart code=RuleCode?)
+	 *     (part=RulePart code=RuleCode)
 	 */
 	protected void sequence_RuleBody(ISerializationContext context, RuleBody semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ParserPackage.Literals.RULE_BODY__PART) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ParserPackage.Literals.RULE_BODY__PART));
+			if (transientValues.isValueTransient(semanticObject, ParserPackage.Literals.RULE_BODY__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ParserPackage.Literals.RULE_BODY__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRuleBodyAccess().getPartRulePartParserRuleCall_0_0(), semanticObject.getPart());
+		feeder.accept(grammarAccess.getRuleBodyAccess().getCodeRuleCodeParserRuleCall_1_0(), semanticObject.getCode());
+		feeder.finish();
 	}
 	
 	

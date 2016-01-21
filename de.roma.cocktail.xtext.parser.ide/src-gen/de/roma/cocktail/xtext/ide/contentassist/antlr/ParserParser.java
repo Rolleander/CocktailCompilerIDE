@@ -41,7 +41,6 @@ public class ParserParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCodeWallAccess().getAlternatives(), "rule__CodeWall__Alternatives");
 					put(grammarAccess.getGrammerRulesAccess().getAlternatives_0(), "rule__GrammerRules__Alternatives_0");
 					put(grammarAccess.getGrammerReferenceAccess().getAlternatives(), "rule__GrammerReference__Alternatives");
-					put(grammarAccess.getRuleCodeAccess().getAlternatives(), "rule__RuleCode__Alternatives");
 					put(grammarAccess.getRulePartAccess().getAlternatives(), "rule__RulePart__Alternatives");
 					put(grammarAccess.getPrecedenceTypeAccess().getAlternatives(), "rule__PrecedenceType__Alternatives");
 					put(grammarAccess.getParserModelAccess().getGroup_0(), "rule__ParserModel__Group_0__0");
@@ -109,6 +108,7 @@ public class ParserParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRulePartAccess().getRegexAssignment_0(), "rule__RulePart__RegexAssignment_0");
 					put(grammarAccess.getRulePartAccess().getRulesAssignment_1(), "rule__RulePart__RulesAssignment_1");
 					put(grammarAccess.getParserModelAccess().getUnorderedGroup(), "rule__ParserModel__UnorderedGroup");
+					put(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), "rule__RuleCode__UnorderedGroup");
 				}
 			};
 		}

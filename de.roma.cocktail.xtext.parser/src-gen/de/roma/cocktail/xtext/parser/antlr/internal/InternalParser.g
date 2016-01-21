@@ -459,7 +459,7 @@ ruleScannerName returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -500,7 +500,7 @@ ruleParserName returns [EObject current=null]
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -1248,6 +1248,12 @@ ruleCodeWall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getCodeWallAccess().getEqualsSignKeyword_22());
 		}
+		    |
+		kw=','
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getCodeWallAccess().getCommaKeyword_23());
+		}
 	)
 ;
 
@@ -1612,7 +1618,7 @@ ruleRuleBody returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
 	)
 ;
 
@@ -1633,50 +1639,79 @@ ruleRuleCode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 }:
 	(
 		(
-			kw='{'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftCurlyBracketKeyword_0_0());
+			{ 
+			  getUnorderedGroupHelper().enter(grammarAccess.getRuleCodeAccess().getUnorderedGroup());
 			}
-			{
-				newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_0_1());
-			}
-			this_CodeBlock_1=ruleCodeBlock
-			{
-				$current.merge(this_CodeBlock_1);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw='}'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightCurlyBracketKeyword_0_2());
-			}
-		)
-		    |
+			(
+				(
 		(
-			kw='['
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftSquareBracketKeyword_1_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_1_1());
-			}
-			this_CodeBlock_4=ruleCodeBlock
-			{
-				$current.merge(this_CodeBlock_4);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw=']'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightSquareBracketKeyword_1_2());
-			}
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 0)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 0);
+				}
+							({true}?=>(kw='{'
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftCurlyBracketKeyword_0_0());
+							}
+							{
+								newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_0_1());
+							}
+							this_CodeBlock_2=ruleCodeBlock
+							{
+								$current.merge(this_CodeBlock_2);
+							}
+							{
+								afterParserOrEnumRuleCall();
+							}
+							kw='}'
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightCurlyBracketKeyword_0_2());
+							}
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getRuleCodeAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 1)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 1);
+				}
+							({true}?=>(kw='['
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftSquareBracketKeyword_1_0());
+							}
+							{
+								newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_1_1());
+							}
+							this_CodeBlock_5=ruleCodeBlock
+							{
+								$current.merge(this_CodeBlock_5);
+							}
+							{
+								afterParserOrEnumRuleCall();
+							}
+							kw=']'
+							{
+								$current.merge(kw);
+								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightSquareBracketKeyword_1_2());
+							}
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getRuleCodeAccess().getUnorderedGroup());
+				}
+			)
 		)
+				)*
+			)
+		)
+			{ 
+			  getUnorderedGroupHelper().leave(grammarAccess.getRuleCodeAccess().getUnorderedGroup());
+			}
 	)
 ;
 

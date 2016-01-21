@@ -14,11 +14,11 @@ ParserModel:
 
 
 ScannerName:
-	'SCANNER' name=ID
+	'SCANNER' (name=ID)?
 ;
 
 ParserName:
-	'PARSER' name=ID
+	'PARSER' (name=ID)?
 ;
 
 Import:
@@ -100,11 +100,11 @@ GrammarRule:
 ;
 
 RuleBody:
-	part=RulePart (code=RuleCode)? 
+	part=RulePart code=RuleCode 
 ;
 
 RuleCode:
-	('{' CodeBlock '}')|('[' CodeBlock ']')	
+	('{' CodeBlock '}')? & ('[' CodeBlock ']')?
 ;
 
 RulePart:
