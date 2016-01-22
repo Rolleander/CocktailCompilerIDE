@@ -22,6 +22,7 @@ import org.xtext.cocktail.scanner.DefineRule;
 import org.xtext.cocktail.scanner.Eof;
 import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.Global;
+import org.xtext.cocktail.scanner.Import;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
@@ -72,6 +73,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ScannerPackage.GLOBAL:
 				sequence_Global(context, (Global) semanticObject); 
+				return; 
+			case ScannerPackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case ScannerPackage.LOCAL:
 				sequence_Local(context, (Local) semanticObject); 
@@ -251,6 +255,24 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Import returns Import
+	 *
+	 * Constraint:
+	 *     content=CodeBlock
+	 */
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.IMPORT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.IMPORT__CONTENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Local returns Local
 	 *
 	 * Constraint:
@@ -273,9 +295,10 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         scanner=Scanner 
 	 *         (
+	 *             scanner=Scanner | 
 	 *             export=Export | 
+	 *             imports=Import | 
 	 *             global=Global | 
 	 *             local=Local | 
 	 *             default=Default | 
@@ -283,9 +306,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             begin=Begin | 
 	 *             close=Close | 
 	 *             define=Define | 
-	 *             states=StartStates | 
-	 *             rules=Rule
-	 *         )*
+	 *             states=StartStates
+	 *         )* 
+	 *         rules=Rule
 	 *     )
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {

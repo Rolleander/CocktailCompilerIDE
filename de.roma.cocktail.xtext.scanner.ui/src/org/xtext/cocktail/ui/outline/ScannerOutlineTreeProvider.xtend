@@ -16,6 +16,7 @@ import org.xtext.cocktail.scanner.Scanner
 import org.xtext.cocktail.scanner.SingleRule
 import org.xtext.cocktail.scanner.DefineRule
 import org.xtext.cocktail.scanner.StartState
+import org.xtext.cocktail.scanner.Import
 
 /**
  * Customization of the default outline structure.
@@ -34,6 +35,7 @@ class ScannerOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		if(o instanceof Export){return true}
 		if(o instanceof Global){return true}
 		if(o instanceof Local){return true}
+		if(o instanceof Import){return true}
 		if(o instanceof Default){return true}
 		if(o instanceof Eof){return true}
 		if(o instanceof Begin){return true}

@@ -46,6 +46,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCodeBlockAccess().getGroup_1(), "rule__CodeBlock__Group_1__0");
 					put(grammarAccess.getScannerAccess().getGroup(), "rule__Scanner__Group__0");
 					put(grammarAccess.getExportAccess().getGroup(), "rule__Export__Group__0");
+					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getGlobalAccess().getGroup(), "rule__Global__Group__0");
 					put(grammarAccess.getLocalAccess().getGroup(), "rule__Local__Group__0");
 					put(grammarAccess.getDefaultAccess().getGroup(), "rule__Default__Group__0");
@@ -63,19 +64,21 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleStartAccess().getGroup(), "rule__RuleStart__Group__0");
 					put(grammarAccess.getRuleStartAccess().getGroup_2_0(), "rule__RuleStart__Group_2_0__0");
 					put(grammarAccess.getRuleStartAccess().getGroup_2_0_1(), "rule__RuleStart__Group_2_0_1__0");
-					put(grammarAccess.getModelAccess().getScannerAssignment_0(), "rule__Model__ScannerAssignment_0");
-					put(grammarAccess.getModelAccess().getExportAssignment_1_0(), "rule__Model__ExportAssignment_1_0");
-					put(grammarAccess.getModelAccess().getGlobalAssignment_1_1(), "rule__Model__GlobalAssignment_1_1");
-					put(grammarAccess.getModelAccess().getLocalAssignment_1_2(), "rule__Model__LocalAssignment_1_2");
-					put(grammarAccess.getModelAccess().getDefaultAssignment_1_3(), "rule__Model__DefaultAssignment_1_3");
-					put(grammarAccess.getModelAccess().getEofAssignment_1_4(), "rule__Model__EofAssignment_1_4");
-					put(grammarAccess.getModelAccess().getBeginAssignment_1_5(), "rule__Model__BeginAssignment_1_5");
-					put(grammarAccess.getModelAccess().getCloseAssignment_1_6(), "rule__Model__CloseAssignment_1_6");
-					put(grammarAccess.getModelAccess().getDefineAssignment_1_7(), "rule__Model__DefineAssignment_1_7");
-					put(grammarAccess.getModelAccess().getStatesAssignment_1_8(), "rule__Model__StatesAssignment_1_8");
-					put(grammarAccess.getModelAccess().getRulesAssignment_1_9(), "rule__Model__RulesAssignment_1_9");
+					put(grammarAccess.getModelAccess().getScannerAssignment_0_0(), "rule__Model__ScannerAssignment_0_0");
+					put(grammarAccess.getModelAccess().getExportAssignment_0_1(), "rule__Model__ExportAssignment_0_1");
+					put(grammarAccess.getModelAccess().getImportsAssignment_0_2(), "rule__Model__ImportsAssignment_0_2");
+					put(grammarAccess.getModelAccess().getGlobalAssignment_0_3(), "rule__Model__GlobalAssignment_0_3");
+					put(grammarAccess.getModelAccess().getLocalAssignment_0_4(), "rule__Model__LocalAssignment_0_4");
+					put(grammarAccess.getModelAccess().getDefaultAssignment_0_5(), "rule__Model__DefaultAssignment_0_5");
+					put(grammarAccess.getModelAccess().getEofAssignment_0_6(), "rule__Model__EofAssignment_0_6");
+					put(grammarAccess.getModelAccess().getBeginAssignment_0_7(), "rule__Model__BeginAssignment_0_7");
+					put(grammarAccess.getModelAccess().getCloseAssignment_0_8(), "rule__Model__CloseAssignment_0_8");
+					put(grammarAccess.getModelAccess().getDefineAssignment_0_9(), "rule__Model__DefineAssignment_0_9");
+					put(grammarAccess.getModelAccess().getStatesAssignment_0_10(), "rule__Model__StatesAssignment_0_10");
+					put(grammarAccess.getModelAccess().getRulesAssignment_1(), "rule__Model__RulesAssignment_1");
 					put(grammarAccess.getScannerAccess().getNameAssignment_1(), "rule__Scanner__NameAssignment_1");
 					put(grammarAccess.getExportAccess().getContentAssignment_2(), "rule__Export__ContentAssignment_2");
+					put(grammarAccess.getImportAccess().getContentAssignment_2(), "rule__Import__ContentAssignment_2");
 					put(grammarAccess.getGlobalAccess().getContentAssignment_2(), "rule__Global__ContentAssignment_2");
 					put(grammarAccess.getLocalAccess().getContentAssignment_2(), "rule__Local__ContentAssignment_2");
 					put(grammarAccess.getDefaultAccess().getContentAssignment_2(), "rule__Default__ContentAssignment_2");
@@ -104,7 +107,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0_1_1(), "rule__RuleStart__RuleStatesAssignment_2_0_1_1");
 					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_1(), "rule__RuleStart__RuleDefaultAssignment_2_1");
 					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_2(), "rule__RuleStart__RuleDefaultAssignment_2_2");
-					put(grammarAccess.getModelAccess().getUnorderedGroup_1(), "rule__Model__UnorderedGroup_1");
+					put(grammarAccess.getModelAccess().getUnorderedGroup_0(), "rule__Model__UnorderedGroup_0");
 				}
 			};
 		}

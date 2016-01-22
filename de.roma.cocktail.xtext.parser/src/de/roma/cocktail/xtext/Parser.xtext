@@ -3,119 +3,92 @@ grammar de.roma.cocktail.xtext.Parser with org.eclipse.xtext.common.Terminals
 generate parser "http://www.roma.de/cocktail/xtext/Parser"
 
 ParserModel:
-	(scanner=ScannerName parser=ParserName)
+	(scanner=ScannerName? & parser=ParserName?
 	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
-	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?	
-	& tokens=Tokens? 
-	& precedenc=Precedence? 
-	& start=StartSymbols?
-	& rules=GrammarRules?
-;
-
+	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
+	& tokens=Tokens?
+	& precedenc=Precedence?
+	& start=StartSymbols?)
+	rules=GrammarRules;
 
 ScannerName:
-	'SCANNER' (name=ID)?
-;
+	'SCANNER' (name=ID)?;
 
 ParserName:
-	'PARSER' (name=ID)?
-;
+	'PARSER' (name=ID)?;
 
 Import:
-	'IMPORT' '{' content=CodeBlock '}'
-;
+	'IMPORT' '{' content=CodeBlock '}';
 
 Export:
-	'EXPORT' '{' content=CodeBlock '}'
-;
+	'EXPORT' '{' content=CodeBlock '}';
 
 Global:
-	'GLOBAL' '{' content=CodeBlock '}'
-;
+	'GLOBAL' '{' content=CodeBlock '}';
 
 Local:
-	'LOCAL' '{' content=CodeBlock '}'
-;
+	'LOCAL' '{' content=CodeBlock '}';
 
 Begin:
-	'BEGIN' '{' content=CodeBlock '}'
-;
+	'BEGIN' '{' content=CodeBlock '}';
 
 Close:
-	'CLOSE' '{' content=CodeBlock '}'
-;
+	'CLOSE' '{' content=CodeBlock '}';
 
 Tokens:
-	'TOKEN' tokens+=DefinedToken*
-;
+	'TOKEN' tokens+=DefinedToken*;
 
-DefinedToken: 
-	name=(ID|STRING) ('=' number=INT (','  extra=TokenExtra)?  )|(extra=TokenExtra)|(WS)
-;
+DefinedToken:
+	name=(ID | STRING) ('=' number=INT (',' extra=TokenExtra)?) | (extra=TokenExtra) | (WS);
 
 TokenExtra:
-	cost=INT "," presentation=STRING
-;
+	cost=INT "," presentation=STRING;
 
 CodeBlock:
-	(CodeWall|'{' CodeBlock '}' )*
-;
-
+	(CodeWall | '{' CodeBlock '}')*;
 
 CodeWall:
-	//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-	ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'!'|'='|','
-;
+//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
+	| ':' | '!' | '=' | ',';
 
 Precedence:
-	'PREC' rows+=PrecedenceRow*
-;
+	'PREC' rows+=PrecedenceRow*;
 
 PrecedenceRow:
-	type=PrecedenceType (tokens+=[DefinedToken])*
-;
+	type=PrecedenceType (tokens+=[DefinedToken])*;
 
 enum PrecedenceType:
-	NONE | LEFT | RIGHT
-;
+	NONE | LEFT | RIGHT;
 
 StartSymbols:
-	'START' (states+=StartState)*
-;
+	'START' (states+=StartState)*;
 
 StartState:
-	name=ID
-;
+	name=ID;
 
 GrammarRules:
-	('RULE'|'RULES') rules+=GrammarRule*
-;
+	('RULE' | 'RULES') rules+=GrammarRule*;
 
 GrammerReference:
-	GrammarRule | DefinedToken
-;
+	GrammarRule | DefinedToken;
 
 GrammarRule:
-	name=ID ':' body+=RuleBody ('|' body+=RuleBody)* '.'
-;
+	name=ID ':' body+=RuleBody ('|' body+=RuleBody)* '.';
 
 RuleBody:
-	part=RulePart code=RuleCode 
-;
+	part=RulePart code=RuleCode;
 
 RuleCode:
-	('{' CodeBlock '}')? & ('[' CodeBlock ']')?
-;
+	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
 
 RuleContent:
-	regex=STRING | ref=[GrammerReference]
-;
+	regex=STRING | ref=[GrammerReference];
 
 RulePart:
-	(content+=RuleContent)*
-;
+	(content+=RuleContent)*;
 
-//terminal Identifier:
+	//terminal Identifier:
 //	('\\')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* 
 //;
 

@@ -24,6 +24,7 @@ import org.xtext.cocktail.scanner.Scanner
 import org.xtext.cocktail.scanner.SingleRule
 import org.xtext.cocktail.scanner.StartStates
 import org.xtext.cocktail.scanner.StartState
+import org.xtext.cocktail.scanner.Import
 
 /**
  * Provides labels for EObjects.
@@ -92,6 +93,14 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 		'cog.png'
 	}
 
+	def text(Import export) {
+		'Import'
+	}
+
+	def image(Import export) {
+		'cog.png'
+	}
+
 	def text(Local local) {
 		'Local'
 	}
@@ -125,7 +134,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	def text(Scanner ele) {
-		"Name: "+ele.getName()
+		"Name: " + ele.getName()
 	}
 
 	def image(Scanner ele) {

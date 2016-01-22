@@ -91,6 +91,11 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createExportAdapter();
       }
       @Override
+      public Adapter caseImport(Import object)
+      {
+        return createImportAdapter();
+      }
+      @Override
       public Adapter caseGlobal(Global object)
       {
         return createGlobalAdapter();
@@ -228,6 +233,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExportAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.Import
+   * @generated
+   */
+  public Adapter createImportAdapter()
   {
     return null;
   }

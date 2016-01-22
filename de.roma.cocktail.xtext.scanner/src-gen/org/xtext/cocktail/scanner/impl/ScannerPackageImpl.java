@@ -18,6 +18,7 @@ import org.xtext.cocktail.scanner.DefineRule;
 import org.xtext.cocktail.scanner.Eof;
 import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.Global;
+import org.xtext.cocktail.scanner.Import;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
@@ -59,6 +60,13 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass exportEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -263,7 +271,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Global()
+  public EReference getModel_Imports()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
@@ -273,7 +281,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Local()
+  public EReference getModel_Global()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(3);
   }
@@ -283,7 +291,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Default()
+  public EReference getModel_Local()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(4);
   }
@@ -293,7 +301,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Eof()
+  public EReference getModel_Default()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(5);
   }
@@ -303,7 +311,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Begin()
+  public EReference getModel_Eof()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(6);
   }
@@ -313,7 +321,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Close()
+  public EReference getModel_Begin()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(7);
   }
@@ -323,7 +331,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Define()
+  public EReference getModel_Close()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(8);
   }
@@ -333,7 +341,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_States()
+  public EReference getModel_Define()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(9);
   }
@@ -343,9 +351,19 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Rules()
+  public EReference getModel_States()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Rules()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -386,6 +404,26 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
   public EAttribute getExport_Content()
   {
     return (EAttribute)exportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getImport()
+  {
+    return importEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getImport_Content()
+  {
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -801,6 +839,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__SCANNER);
     createEReference(modelEClass, MODEL__EXPORT);
+    createEReference(modelEClass, MODEL__IMPORTS);
     createEReference(modelEClass, MODEL__GLOBAL);
     createEReference(modelEClass, MODEL__LOCAL);
     createEReference(modelEClass, MODEL__DEFAULT);
@@ -816,6 +855,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     exportEClass = createEClass(EXPORT);
     createEAttribute(exportEClass, EXPORT__CONTENT);
+
+    importEClass = createEClass(IMPORT);
+    createEAttribute(importEClass, IMPORT__CONTENT);
 
     globalEClass = createEClass(GLOBAL);
     createEAttribute(globalEClass, GLOBAL__CONTENT);
@@ -905,6 +947,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Scanner(), this.getScanner(), null, "scanner", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Export(), this.getExport(), null, "export", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Global(), this.getGlobal(), null, "global", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Local(), this.getLocal(), null, "local", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Default(), this.getDefault(), null, "default", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -920,6 +963,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
 
     initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalEClass, Global.class, "Global", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGlobal_Content(), ecorePackage.getEString(), "content", null, 0, 1, Global.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

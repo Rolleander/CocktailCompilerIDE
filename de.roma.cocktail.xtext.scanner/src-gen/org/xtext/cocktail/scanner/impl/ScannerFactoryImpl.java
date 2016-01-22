@@ -68,6 +68,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.MODEL: return createModel();
       case ScannerPackage.SCANNER: return createScanner();
       case ScannerPackage.EXPORT: return createExport();
+      case ScannerPackage.IMPORT: return createImport();
       case ScannerPackage.GLOBAL: return createGlobal();
       case ScannerPackage.LOCAL: return createLocal();
       case ScannerPackage.DEFAULT: return createDefault();
@@ -119,6 +120,17 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
   {
     ExportImpl export = new ExportImpl();
     return export;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import createImport()
+  {
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**

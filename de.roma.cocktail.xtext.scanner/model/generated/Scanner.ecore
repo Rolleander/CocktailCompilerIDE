@@ -6,6 +6,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="export" eType="#//Export"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="#//Import"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="global" eType="#//Global"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//Local"
@@ -28,6 +30,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Export">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Global">

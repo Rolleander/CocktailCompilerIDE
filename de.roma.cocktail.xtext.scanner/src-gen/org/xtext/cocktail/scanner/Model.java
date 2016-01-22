@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getExport <em>Export</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getGlobal <em>Global</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getLocal <em>Local</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getDefault <em>Default</em>}</li>
@@ -84,6 +85,32 @@ public interface Model extends EObject
    * @generated
    */
   void setExport(Export value);
+
+  /**
+   * Returns the value of the '<em><b>Imports</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Imports</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Imports</em>' containment reference.
+   * @see #setImports(Import)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Imports()
+   * @model containment="true"
+   * @generated
+   */
+  Import getImports();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getImports <em>Imports</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Imports</em>' containment reference.
+   * @see #getImports()
+   * @generated
+   */
+  void setImports(Import value);
 
   /**
    * Returns the value of the '<em><b>Global</b></em>' containment reference.

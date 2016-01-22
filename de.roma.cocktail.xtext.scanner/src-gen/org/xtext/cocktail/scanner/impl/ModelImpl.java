@@ -19,6 +19,7 @@ import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.Eof;
 import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.Global;
+import org.xtext.cocktail.scanner.Import;
 import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
@@ -35,6 +36,7 @@ import org.xtext.cocktail.scanner.StartStates;
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getScanner <em>Scanner</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getExport <em>Export</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getGlobal <em>Global</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getLocal <em>Local</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getDefault <em>Default</em>}</li>
@@ -70,6 +72,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected Export export;
+
+  /**
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImports()
+   * @generated
+   * @ordered
+   */
+  protected Import imports;
 
   /**
    * The cached value of the '{@link #getGlobal() <em>Global</em>}' containment reference.
@@ -276,6 +288,54 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.MODEL__EXPORT, newExport, newExport));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import getImports()
+  {
+    return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetImports(Import newImports, NotificationChain msgs)
+  {
+    Import oldImports = imports;
+    imports = newImports;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.MODEL__IMPORTS, oldImports, newImports);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImports(Import newImports)
+  {
+    if (newImports != imports)
+    {
+      NotificationChain msgs = null;
+      if (imports != null)
+        msgs = ((InternalEObject)imports).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.MODEL__IMPORTS, null, msgs);
+      if (newImports != null)
+        msgs = ((InternalEObject)newImports).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.MODEL__IMPORTS, null, msgs);
+      msgs = basicSetImports(newImports, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.MODEL__IMPORTS, newImports, newImports));
   }
 
   /**
@@ -724,6 +784,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetScanner(null, msgs);
       case ScannerPackage.MODEL__EXPORT:
         return basicSetExport(null, msgs);
+      case ScannerPackage.MODEL__IMPORTS:
+        return basicSetImports(null, msgs);
       case ScannerPackage.MODEL__GLOBAL:
         return basicSetGlobal(null, msgs);
       case ScannerPackage.MODEL__LOCAL:
@@ -760,6 +822,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getScanner();
       case ScannerPackage.MODEL__EXPORT:
         return getExport();
+      case ScannerPackage.MODEL__IMPORTS:
+        return getImports();
       case ScannerPackage.MODEL__GLOBAL:
         return getGlobal();
       case ScannerPackage.MODEL__LOCAL:
@@ -797,6 +861,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case ScannerPackage.MODEL__EXPORT:
         setExport((Export)newValue);
+        return;
+      case ScannerPackage.MODEL__IMPORTS:
+        setImports((Import)newValue);
         return;
       case ScannerPackage.MODEL__GLOBAL:
         setGlobal((Global)newValue);
@@ -845,6 +912,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case ScannerPackage.MODEL__EXPORT:
         setExport((Export)null);
         return;
+      case ScannerPackage.MODEL__IMPORTS:
+        setImports((Import)null);
+        return;
       case ScannerPackage.MODEL__GLOBAL:
         setGlobal((Global)null);
         return;
@@ -890,6 +960,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return scanner != null;
       case ScannerPackage.MODEL__EXPORT:
         return export != null;
+      case ScannerPackage.MODEL__IMPORTS:
+        return imports != null;
       case ScannerPackage.MODEL__GLOBAL:
         return global != null;
       case ScannerPackage.MODEL__LOCAL:

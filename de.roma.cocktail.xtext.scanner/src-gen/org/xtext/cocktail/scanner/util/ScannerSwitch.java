@@ -94,6 +94,13 @@ public class ScannerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ScannerPackage.IMPORT:
+      {
+        Import import_ = (Import)theEObject;
+        T result = caseImport(import_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ScannerPackage.GLOBAL:
       {
         Global global = (Global)theEObject;
@@ -247,6 +254,22 @@ public class ScannerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExport(Export object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImport(Import object)
   {
     return null;
   }

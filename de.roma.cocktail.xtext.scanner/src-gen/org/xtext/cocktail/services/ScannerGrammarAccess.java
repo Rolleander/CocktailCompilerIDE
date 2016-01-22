@@ -27,32 +27,36 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cScannerAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cScannerScannerParserRuleCall_0_0 = (RuleCall)cScannerAssignment_0.eContents().get(0);
-		private final UnorderedGroup cUnorderedGroup_1 = (UnorderedGroup)cGroup.eContents().get(1);
-		private final Assignment cExportAssignment_1_0 = (Assignment)cUnorderedGroup_1.eContents().get(0);
-		private final RuleCall cExportExportParserRuleCall_1_0_0 = (RuleCall)cExportAssignment_1_0.eContents().get(0);
-		private final Assignment cGlobalAssignment_1_1 = (Assignment)cUnorderedGroup_1.eContents().get(1);
-		private final RuleCall cGlobalGlobalParserRuleCall_1_1_0 = (RuleCall)cGlobalAssignment_1_1.eContents().get(0);
-		private final Assignment cLocalAssignment_1_2 = (Assignment)cUnorderedGroup_1.eContents().get(2);
-		private final RuleCall cLocalLocalParserRuleCall_1_2_0 = (RuleCall)cLocalAssignment_1_2.eContents().get(0);
-		private final Assignment cDefaultAssignment_1_3 = (Assignment)cUnorderedGroup_1.eContents().get(3);
-		private final RuleCall cDefaultDefaultParserRuleCall_1_3_0 = (RuleCall)cDefaultAssignment_1_3.eContents().get(0);
-		private final Assignment cEofAssignment_1_4 = (Assignment)cUnorderedGroup_1.eContents().get(4);
-		private final RuleCall cEofEofParserRuleCall_1_4_0 = (RuleCall)cEofAssignment_1_4.eContents().get(0);
-		private final Assignment cBeginAssignment_1_5 = (Assignment)cUnorderedGroup_1.eContents().get(5);
-		private final RuleCall cBeginBeginParserRuleCall_1_5_0 = (RuleCall)cBeginAssignment_1_5.eContents().get(0);
-		private final Assignment cCloseAssignment_1_6 = (Assignment)cUnorderedGroup_1.eContents().get(6);
-		private final RuleCall cCloseCloseParserRuleCall_1_6_0 = (RuleCall)cCloseAssignment_1_6.eContents().get(0);
-		private final Assignment cDefineAssignment_1_7 = (Assignment)cUnorderedGroup_1.eContents().get(7);
-		private final RuleCall cDefineDefineParserRuleCall_1_7_0 = (RuleCall)cDefineAssignment_1_7.eContents().get(0);
-		private final Assignment cStatesAssignment_1_8 = (Assignment)cUnorderedGroup_1.eContents().get(8);
-		private final RuleCall cStatesStartStatesParserRuleCall_1_8_0 = (RuleCall)cStatesAssignment_1_8.eContents().get(0);
-		private final Assignment cRulesAssignment_1_9 = (Assignment)cUnorderedGroup_1.eContents().get(9);
-		private final RuleCall cRulesRuleParserRuleCall_1_9_0 = (RuleCall)cRulesAssignment_1_9.eContents().get(0);
+		private final UnorderedGroup cUnorderedGroup_0 = (UnorderedGroup)cGroup.eContents().get(0);
+		private final Assignment cScannerAssignment_0_0 = (Assignment)cUnorderedGroup_0.eContents().get(0);
+		private final RuleCall cScannerScannerParserRuleCall_0_0_0 = (RuleCall)cScannerAssignment_0_0.eContents().get(0);
+		private final Assignment cExportAssignment_0_1 = (Assignment)cUnorderedGroup_0.eContents().get(1);
+		private final RuleCall cExportExportParserRuleCall_0_1_0 = (RuleCall)cExportAssignment_0_1.eContents().get(0);
+		private final Assignment cImportsAssignment_0_2 = (Assignment)cUnorderedGroup_0.eContents().get(2);
+		private final RuleCall cImportsImportParserRuleCall_0_2_0 = (RuleCall)cImportsAssignment_0_2.eContents().get(0);
+		private final Assignment cGlobalAssignment_0_3 = (Assignment)cUnorderedGroup_0.eContents().get(3);
+		private final RuleCall cGlobalGlobalParserRuleCall_0_3_0 = (RuleCall)cGlobalAssignment_0_3.eContents().get(0);
+		private final Assignment cLocalAssignment_0_4 = (Assignment)cUnorderedGroup_0.eContents().get(4);
+		private final RuleCall cLocalLocalParserRuleCall_0_4_0 = (RuleCall)cLocalAssignment_0_4.eContents().get(0);
+		private final Assignment cDefaultAssignment_0_5 = (Assignment)cUnorderedGroup_0.eContents().get(5);
+		private final RuleCall cDefaultDefaultParserRuleCall_0_5_0 = (RuleCall)cDefaultAssignment_0_5.eContents().get(0);
+		private final Assignment cEofAssignment_0_6 = (Assignment)cUnorderedGroup_0.eContents().get(6);
+		private final RuleCall cEofEofParserRuleCall_0_6_0 = (RuleCall)cEofAssignment_0_6.eContents().get(0);
+		private final Assignment cBeginAssignment_0_7 = (Assignment)cUnorderedGroup_0.eContents().get(7);
+		private final RuleCall cBeginBeginParserRuleCall_0_7_0 = (RuleCall)cBeginAssignment_0_7.eContents().get(0);
+		private final Assignment cCloseAssignment_0_8 = (Assignment)cUnorderedGroup_0.eContents().get(8);
+		private final RuleCall cCloseCloseParserRuleCall_0_8_0 = (RuleCall)cCloseAssignment_0_8.eContents().get(0);
+		private final Assignment cDefineAssignment_0_9 = (Assignment)cUnorderedGroup_0.eContents().get(9);
+		private final RuleCall cDefineDefineParserRuleCall_0_9_0 = (RuleCall)cDefineAssignment_0_9.eContents().get(0);
+		private final Assignment cStatesAssignment_0_10 = (Assignment)cUnorderedGroup_0.eContents().get(10);
+		private final RuleCall cStatesStartStatesParserRuleCall_0_10_0 = (RuleCall)cStatesAssignment_0_10.eContents().get(0);
+		private final Assignment cRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRulesRuleParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	scanner=Scanner (export=Export?
+		//	(scanner=Scanner?
+		//	& export=Export?
+		//	& imports=Import?
 		//	& global=Global?
 		//	& local=Local?
 		//	& default=Default?
@@ -60,83 +64,88 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		//	& begin=Begin?
 		//	& close=Close?
 		//	& define=Define?
-		//	& states=StartStates?
-		//	& rules=Rule);
+		//	& states=StartStates?) rules=Rule;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//scanner=Scanner (export=Export? & global=Global? & local=Local? & default=Default? & eof=Eof? & begin=Begin? &
-		//close=Close? & define=Define? & states=StartStates? & rules=Rule)
+		//(scanner=Scanner? & export=Export? & imports=Import? & global=Global? & local=Local? & default=Default? & eof=Eof? &
+		//begin=Begin? & close=Close? & define=Define? & states=StartStates?) rules=Rule
 		public Group getGroup() { return cGroup; }
 		
-		//scanner=Scanner
-		public Assignment getScannerAssignment_0() { return cScannerAssignment_0; }
+		//(scanner=Scanner? & export=Export? & imports=Import? & global=Global? & local=Local? & default=Default? & eof=Eof? &
+		//begin=Begin? & close=Close? & define=Define? & states=StartStates?)
+		public UnorderedGroup getUnorderedGroup_0() { return cUnorderedGroup_0; }
+		
+		//scanner=Scanner?
+		public Assignment getScannerAssignment_0_0() { return cScannerAssignment_0_0; }
 		
 		//Scanner
-		public RuleCall getScannerScannerParserRuleCall_0_0() { return cScannerScannerParserRuleCall_0_0; }
-		
-		//(export=Export? & global=Global? & local=Local? & default=Default? & eof=Eof? & begin=Begin? & close=Close? &
-		//define=Define? & states=StartStates? & rules=Rule)
-		public UnorderedGroup getUnorderedGroup_1() { return cUnorderedGroup_1; }
+		public RuleCall getScannerScannerParserRuleCall_0_0_0() { return cScannerScannerParserRuleCall_0_0_0; }
 		
 		//export=Export?
-		public Assignment getExportAssignment_1_0() { return cExportAssignment_1_0; }
+		public Assignment getExportAssignment_0_1() { return cExportAssignment_0_1; }
 		
 		//Export
-		public RuleCall getExportExportParserRuleCall_1_0_0() { return cExportExportParserRuleCall_1_0_0; }
+		public RuleCall getExportExportParserRuleCall_0_1_0() { return cExportExportParserRuleCall_0_1_0; }
+		
+		//imports=Import?
+		public Assignment getImportsAssignment_0_2() { return cImportsAssignment_0_2; }
+		
+		//Import
+		public RuleCall getImportsImportParserRuleCall_0_2_0() { return cImportsImportParserRuleCall_0_2_0; }
 		
 		//global=Global?
-		public Assignment getGlobalAssignment_1_1() { return cGlobalAssignment_1_1; }
+		public Assignment getGlobalAssignment_0_3() { return cGlobalAssignment_0_3; }
 		
 		//Global
-		public RuleCall getGlobalGlobalParserRuleCall_1_1_0() { return cGlobalGlobalParserRuleCall_1_1_0; }
+		public RuleCall getGlobalGlobalParserRuleCall_0_3_0() { return cGlobalGlobalParserRuleCall_0_3_0; }
 		
 		//local=Local?
-		public Assignment getLocalAssignment_1_2() { return cLocalAssignment_1_2; }
+		public Assignment getLocalAssignment_0_4() { return cLocalAssignment_0_4; }
 		
 		//Local
-		public RuleCall getLocalLocalParserRuleCall_1_2_0() { return cLocalLocalParserRuleCall_1_2_0; }
+		public RuleCall getLocalLocalParserRuleCall_0_4_0() { return cLocalLocalParserRuleCall_0_4_0; }
 		
 		//default=Default?
-		public Assignment getDefaultAssignment_1_3() { return cDefaultAssignment_1_3; }
+		public Assignment getDefaultAssignment_0_5() { return cDefaultAssignment_0_5; }
 		
 		//Default
-		public RuleCall getDefaultDefaultParserRuleCall_1_3_0() { return cDefaultDefaultParserRuleCall_1_3_0; }
+		public RuleCall getDefaultDefaultParserRuleCall_0_5_0() { return cDefaultDefaultParserRuleCall_0_5_0; }
 		
 		//eof=Eof?
-		public Assignment getEofAssignment_1_4() { return cEofAssignment_1_4; }
+		public Assignment getEofAssignment_0_6() { return cEofAssignment_0_6; }
 		
 		//Eof
-		public RuleCall getEofEofParserRuleCall_1_4_0() { return cEofEofParserRuleCall_1_4_0; }
+		public RuleCall getEofEofParserRuleCall_0_6_0() { return cEofEofParserRuleCall_0_6_0; }
 		
 		//begin=Begin?
-		public Assignment getBeginAssignment_1_5() { return cBeginAssignment_1_5; }
+		public Assignment getBeginAssignment_0_7() { return cBeginAssignment_0_7; }
 		
 		//Begin
-		public RuleCall getBeginBeginParserRuleCall_1_5_0() { return cBeginBeginParserRuleCall_1_5_0; }
+		public RuleCall getBeginBeginParserRuleCall_0_7_0() { return cBeginBeginParserRuleCall_0_7_0; }
 		
 		//close=Close?
-		public Assignment getCloseAssignment_1_6() { return cCloseAssignment_1_6; }
+		public Assignment getCloseAssignment_0_8() { return cCloseAssignment_0_8; }
 		
 		//Close
-		public RuleCall getCloseCloseParserRuleCall_1_6_0() { return cCloseCloseParserRuleCall_1_6_0; }
+		public RuleCall getCloseCloseParserRuleCall_0_8_0() { return cCloseCloseParserRuleCall_0_8_0; }
 		
 		//define=Define?
-		public Assignment getDefineAssignment_1_7() { return cDefineAssignment_1_7; }
+		public Assignment getDefineAssignment_0_9() { return cDefineAssignment_0_9; }
 		
 		//Define
-		public RuleCall getDefineDefineParserRuleCall_1_7_0() { return cDefineDefineParserRuleCall_1_7_0; }
+		public RuleCall getDefineDefineParserRuleCall_0_9_0() { return cDefineDefineParserRuleCall_0_9_0; }
 		
 		//states=StartStates?
-		public Assignment getStatesAssignment_1_8() { return cStatesAssignment_1_8; }
+		public Assignment getStatesAssignment_0_10() { return cStatesAssignment_0_10; }
 		
 		//StartStates
-		public RuleCall getStatesStartStatesParserRuleCall_1_8_0() { return cStatesStartStatesParserRuleCall_1_8_0; }
+		public RuleCall getStatesStartStatesParserRuleCall_0_10_0() { return cStatesStartStatesParserRuleCall_0_10_0; }
 		
 		//rules=Rule
-		public Assignment getRulesAssignment_1_9() { return cRulesAssignment_1_9; }
+		public Assignment getRulesAssignment_1() { return cRulesAssignment_1; }
 		
 		//Rule
-		public RuleCall getRulesRuleParserRuleCall_1_9_0() { return cRulesRuleParserRuleCall_1_9_0; }
+		public RuleCall getRulesRuleParserRuleCall_1_0() { return cRulesRuleParserRuleCall_1_0; }
 	}
 	public class CodeBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.CodeBlock");
@@ -147,6 +156,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCodeBlockParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
+		////TODO Characterset
 		//CodeBlock:
 		//	(CodeWall | '{' CodeBlock '}')*;
 		@Override public ParserRule getRule() { return rule; }
@@ -322,6 +332,37 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'EXPORT'
 		public Keyword getEXPORTKeyword_0() { return cEXPORTKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//content=CodeBlock
+		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
+		
+		//CodeBlock
+		public RuleCall getContentCodeBlockParserRuleCall_2_0() { return cContentCodeBlockParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIMPORTKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cContentAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cContentCodeBlockParserRuleCall_2_0 = (RuleCall)cContentAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Import:
+		//	'IMPORT' '{' content=CodeBlock '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'IMPORT' '{' content=CodeBlock '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'IMPORT'
+		public Keyword getIMPORTKeyword_0() { return cIMPORTKeyword_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
@@ -1005,6 +1046,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	private final CodeWallElements pCodeWall;
 	private final ScannerElements pScanner;
 	private final ExportElements pExport;
+	private final ImportElements pImport;
 	private final GlobalElements pGlobal;
 	private final LocalElements pLocal;
 	private final DefaultElements pDefault;
@@ -1037,6 +1079,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCodeWall = new CodeWallElements();
 		this.pScanner = new ScannerElements();
 		this.pExport = new ExportElements();
+		this.pImport = new ImportElements();
 		this.pGlobal = new GlobalElements();
 		this.pLocal = new LocalElements();
 		this.pDefault = new DefaultElements();
@@ -1084,7 +1127,9 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	scanner=Scanner (export=Export?
+	//	(scanner=Scanner?
+	//	& export=Export?
+	//	& imports=Import?
 	//	& global=Global?
 	//	& local=Local?
 	//	& default=Default?
@@ -1092,8 +1137,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	//	& begin=Begin?
 	//	& close=Close?
 	//	& define=Define?
-	//	& states=StartStates?
-	//	& rules=Rule);
+	//	& states=StartStates?) rules=Rule;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1102,6 +1146,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
+	////TODO Characterset
 	//CodeBlock:
 	//	(CodeWall | '{' CodeBlock '}')*;
 	public CodeBlockElements getCodeBlockAccess() {
@@ -1142,6 +1187,16 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getExportRule() {
 		return getExportAccess().getRule();
+	}
+	
+	//Import:
+	//	'IMPORT' '{' content=CodeBlock '}';
+	public ImportElements getImportAccess() {
+		return pImport;
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
 	}
 	
 	//Global:
