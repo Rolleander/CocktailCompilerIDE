@@ -3,7 +3,9 @@
  */
 package org.xtext.cocktail.ui.outline
 
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import org.xtext.cocktail.scanner.SingleRule
 
 /**
  * Customization of the default outline structure.
@@ -12,6 +14,14 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
  */
 class ScannerOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
-	
+
+
+
+	override protected _isLeaf(EObject o) {
+
+		if(o instanceof SingleRule){return true}
+		
+			
+	}
 	
 }

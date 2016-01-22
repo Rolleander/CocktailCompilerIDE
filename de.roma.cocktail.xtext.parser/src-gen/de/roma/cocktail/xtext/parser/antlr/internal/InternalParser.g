@@ -391,9 +391,9 @@ ruleParserModel returns [EObject current=null]
 				}
 							({true}?=>((
 								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammerRulesParserRuleCall_10_0());
+									newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammarRulesParserRuleCall_10_0());
 								}
-								lv_rules_12_0=ruleGrammerRules
+								lv_rules_12_0=ruleGrammarRules
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getParserModelRule());
@@ -402,7 +402,7 @@ ruleParserModel returns [EObject current=null]
 										$current,
 										"rules",
 										lv_rules_12_0,
-										"de.roma.cocktail.xtext.Parser.GrammerRules");
+										"de.roma.cocktail.xtext.Parser.GrammarRules");
 									afterParserOrEnumRuleCall();
 								}
 							)
@@ -1427,15 +1427,15 @@ ruleStartState returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleGrammerRules
-entryRuleGrammerRules returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGrammerRulesRule()); }
-	iv_ruleGrammerRules=ruleGrammerRules
-	{ $current=$iv_ruleGrammerRules.current; }
+// Entry rule entryRuleGrammarRules
+entryRuleGrammarRules returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGrammarRulesRule()); }
+	iv_ruleGrammarRules=ruleGrammarRules
+	{ $current=$iv_ruleGrammarRules.current; }
 	EOF;
 
-// Rule GrammerRules
-ruleGrammerRules returns [EObject current=null]
+// Rule GrammarRules
+ruleGrammarRules returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1446,23 +1446,23 @@ ruleGrammerRules returns [EObject current=null]
 		(
 			otherlv_0='RULE'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getGrammerRulesAccess().getRULEKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getGrammarRulesAccess().getRULEKeyword_0_0());
 			}
 			    |
 			otherlv_1='RULES'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getGrammerRulesAccess().getRULESKeyword_0_1());
+				newLeafNode(otherlv_1, grammarAccess.getGrammarRulesAccess().getRULESKeyword_0_1());
 			}
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGrammerRulesAccess().getRulesGrammarRuleParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getGrammarRulesAccess().getRulesGrammarRuleParserRuleCall_1_0());
 				}
 				lv_rules_2_0=ruleGrammarRule
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGrammerRulesRule());
+						$current = createModelElementForParent(grammarAccess.getGrammarRulesRule());
 					}
 					add(
 						$current,
@@ -1715,6 +1715,57 @@ ruleRuleCode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 	)
 ;
 
+// Entry rule entryRuleRuleContent
+entryRuleRuleContent returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRuleContentRule()); }
+	iv_ruleRuleContent=ruleRuleContent
+	{ $current=$iv_ruleRuleContent.current; }
+	EOF;
+
+// Rule RuleContent
+ruleRuleContent returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_regex_0_0=RULE_STRING
+				{
+					newLeafNode(lv_regex_0_0, grammarAccess.getRuleContentAccess().getRegexSTRINGTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleContentRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"regex",
+						lv_regex_0_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleContentRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getRuleContentAccess().getRefGrammerReferenceCrossReference_1_0());
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleRulePart
 entryRuleRulePart returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getRulePartRule()); }
@@ -1732,36 +1783,21 @@ ruleRulePart returns [EObject current=null]
 }:
 	(
 		(
-			(
-				lv_regex_0_0=RULE_STRING
-				{
-					newLeafNode(lv_regex_0_0, grammarAccess.getRulePartAccess().getRegexSTRINGTerminalRuleCall_0_0());
+			{
+				newCompositeNode(grammarAccess.getRulePartAccess().getContentRuleContentParserRuleCall_0());
+			}
+			lv_content_0_0=ruleRuleContent
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getRulePartRule());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRulePartRule());
-					}
-					addWithLastConsumed(
-						$current,
-						"regex",
-						lv_regex_0_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		    |
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRulePartRule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getRulePartAccess().getRulesGrammerReferenceCrossReference_1_0());
-				}
-			)
+				add(
+					$current,
+					"content",
+					lv_content_0_0,
+					"de.roma.cocktail.xtext.Parser.RuleContent");
+				afterParserOrEnumRuleCall();
+			}
 		)
 	)*
 ;

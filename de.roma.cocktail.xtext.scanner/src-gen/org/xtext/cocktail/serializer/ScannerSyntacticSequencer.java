@@ -10,7 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,15 +20,11 @@ import org.xtext.cocktail.services.ScannerGrammarAccess;
 public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ScannerGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1;
-	protected AbstractElementAlias match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q;
 	protected AbstractElementAlias match_SingleRule_HyphenMinusKeyword_3_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ScannerGrammarAccess) access;
-		match_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getAsteriskKeyword_2_2()), new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getSTDKeyword_2_1()));
-		match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getHyphenMinusKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getRuleStartAccess().getNOTKeyword_0_0()));
 		match_SingleRule_HyphenMinusKeyword_3_q = new TokenAlias(false, true, grammarAccess.getSingleRuleAccess().getHyphenMinusKeyword_3());
 	}
 	
@@ -45,39 +40,12 @@ public class ScannerSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1.equals(syntax))
-				emit_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q.equals(syntax))
-				emit_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SingleRule_HyphenMinusKeyword_3_q.equals(syntax))
+			if (match_SingleRule_HyphenMinusKeyword_3_q.equals(syntax))
 				emit_SingleRule_HyphenMinusKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     'STD' | '*'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) ('NOT' | '-')? '#' (ambiguity) '#' (rule start)
-	 */
-	protected void emit_RuleStart_AsteriskKeyword_2_2_or_STDKeyword_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('NOT' | '-')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '#' ('STD' | '*') '#' (rule start)
-	 *     (rule start) (ambiguity) '#' state+=[StartState|ID]
-	 */
-	protected void emit_RuleStart___HyphenMinusKeyword_0_1_or_NOTKeyword_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     '-'?

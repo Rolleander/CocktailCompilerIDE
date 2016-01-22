@@ -22,6 +22,7 @@ import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.RuleDefinition;
+import org.xtext.cocktail.scanner.RulePart;
 import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerFactory;
@@ -149,6 +150,13 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass ruleDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rulePartEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -545,7 +553,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSingleRule_Rule()
+  public EReference getSingleRule_Start()
   {
     return (EReference)singleRuleEClass.getEStructuralFeatures().get(0);
   }
@@ -555,9 +563,19 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSingleRule_Rule()
+  {
+    return (EReference)singleRuleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getSingleRule_Content()
   {
-    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -575,9 +593,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRuleDefinition_Reg()
+  public EReference getRuleDefinition_Parts()
   {
-    return (EAttribute)ruleDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)ruleDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -585,9 +603,29 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRuleDefinition_Def()
+  public EClass getRulePart()
   {
-    return (EReference)ruleDefinitionEClass.getEStructuralFeatures().get(1);
+    return rulePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRulePart_Reg()
+  {
+    return (EAttribute)rulePartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRulePart_Ref()
+  {
+    return (EReference)rulePartEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -605,9 +643,29 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRuleStart_State()
+  public EAttribute getRuleStart_RulePrec()
   {
-    return (EReference)ruleStartEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)ruleStartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleStart_RuleStates()
+  {
+    return (EReference)ruleStartEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRuleStart_RuleDefault()
+  {
+    return (EAttribute)ruleStartEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -686,15 +744,21 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEReference(ruleEClass, RULE__RULES);
 
     singleRuleEClass = createEClass(SINGLE_RULE);
+    createEReference(singleRuleEClass, SINGLE_RULE__START);
     createEReference(singleRuleEClass, SINGLE_RULE__RULE);
     createEAttribute(singleRuleEClass, SINGLE_RULE__CONTENT);
 
     ruleDefinitionEClass = createEClass(RULE_DEFINITION);
-    createEAttribute(ruleDefinitionEClass, RULE_DEFINITION__REG);
-    createEReference(ruleDefinitionEClass, RULE_DEFINITION__DEF);
+    createEReference(ruleDefinitionEClass, RULE_DEFINITION__PARTS);
+
+    rulePartEClass = createEClass(RULE_PART);
+    createEAttribute(rulePartEClass, RULE_PART__REG);
+    createEReference(rulePartEClass, RULE_PART__REF);
 
     ruleStartEClass = createEClass(RULE_START);
-    createEReference(ruleStartEClass, RULE_START__STATE);
+    createEAttribute(ruleStartEClass, RULE_START__RULE_PREC);
+    createEReference(ruleStartEClass, RULE_START__RULE_STATES);
+    createEAttribute(ruleStartEClass, RULE_START__RULE_DEFAULT);
   }
 
   /**
@@ -726,7 +790,6 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    ruleStartEClass.getESuperTypes().add(this.getSingleRule());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -775,15 +838,21 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEReference(getRule_Rules(), this.getSingleRule(), null, "rules", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSingleRule_Start(), this.getRuleStart(), null, "start", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSingleRule_Rule(), this.getRuleDefinition(), null, "rule", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSingleRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleDefinitionEClass, RuleDefinition.class, "RuleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRuleDefinition_Reg(), ecorePackage.getEString(), "reg", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRuleDefinition_Def(), this.getDefineRule(), null, "def", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleDefinition_Parts(), this.getRulePart(), null, "parts", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rulePartEClass, RulePart.class, "RulePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRulePart_Reg(), ecorePackage.getEString(), "reg", null, 0, 1, RulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRulePart_Ref(), this.getDefineRule(), null, "ref", null, 0, 1, RulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleStartEClass, RuleStart.class, "RuleStart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRuleStart_State(), this.getStartState(), null, "state", null, 0, -1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRuleStart_RulePrec(), ecorePackage.getEString(), "rulePrec", null, 0, 1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleStart_RuleStates(), this.getStartState(), null, "ruleStates", null, 0, -1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRuleStart_RuleDefault(), ecorePackage.getEString(), "ruleDefault", null, 0, 1, RuleStart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

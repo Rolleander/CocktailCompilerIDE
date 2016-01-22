@@ -3,7 +3,9 @@
  */
 package de.roma.cocktail.xtext.ui.labeling
 
+import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider
+import de.roma.cocktail.xtext.parser.GrammarRule
 
 /**
  * Provides labels for IEObjectDescriptions and IResourceDescriptions.
@@ -14,9 +16,15 @@ class ParserDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
 
 	// Labels and icons can be computed like this:
 	
-//	override text(IEObjectDescription ele) {
-//		ele.name.toString
-//	}
+
+	override text(IEObjectDescription ele) {
+		val o=ele.EObjectOrProxy
+		if(o instanceof GrammarRule){
+		
+		}
+		
+		return 	'Das ist eine tolle GrammarRule!'
+	}
 //	 
 //	override image(IEObjectDescription ele) {
 //		ele.EClass.name + '.gif'

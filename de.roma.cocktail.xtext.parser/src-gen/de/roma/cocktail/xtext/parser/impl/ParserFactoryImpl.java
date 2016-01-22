@@ -82,10 +82,11 @@ public class ParserFactoryImpl extends EFactoryImpl implements ParserFactory
       case ParserPackage.PRECEDENCE_ROW: return createPrecedenceRow();
       case ParserPackage.START_SYMBOLS: return createStartSymbols();
       case ParserPackage.START_STATE: return createStartState();
-      case ParserPackage.GRAMMER_RULES: return createGrammerRules();
+      case ParserPackage.GRAMMAR_RULES: return createGrammarRules();
       case ParserPackage.GRAMMER_REFERENCE: return createGrammerReference();
       case ParserPackage.GRAMMAR_RULE: return createGrammarRule();
       case ParserPackage.RULE_BODY: return createRuleBody();
+      case ParserPackage.RULE_CONTENT: return createRuleContent();
       case ParserPackage.RULE_PART: return createRulePart();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -307,10 +308,10 @@ public class ParserFactoryImpl extends EFactoryImpl implements ParserFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GrammerRules createGrammerRules()
+  public GrammarRules createGrammarRules()
   {
-    GrammerRulesImpl grammerRules = new GrammerRulesImpl();
-    return grammerRules;
+    GrammarRulesImpl grammarRules = new GrammarRulesImpl();
+    return grammarRules;
   }
 
   /**
@@ -344,6 +345,17 @@ public class ParserFactoryImpl extends EFactoryImpl implements ParserFactory
   {
     RuleBodyImpl ruleBody = new RuleBodyImpl();
     return ruleBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleContent createRuleContent()
+  {
+    RuleContentImpl ruleContent = new RuleContentImpl();
+    return ruleContent;
   }
 
   /**

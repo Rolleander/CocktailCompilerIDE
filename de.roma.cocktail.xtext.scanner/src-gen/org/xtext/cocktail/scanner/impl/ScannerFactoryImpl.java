@@ -81,6 +81,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
       case ScannerPackage.RULE: return createRule();
       case ScannerPackage.SINGLE_RULE: return createSingleRule();
       case ScannerPackage.RULE_DEFINITION: return createRuleDefinition();
+      case ScannerPackage.RULE_PART: return createRulePart();
       case ScannerPackage.RULE_START: return createRuleStart();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -261,6 +262,17 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
   {
     RuleDefinitionImpl ruleDefinition = new RuleDefinitionImpl();
     return ruleDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RulePart createRulePart()
+  {
+    RulePartImpl rulePart = new RulePartImpl();
+    return rulePart;
   }
 
   /**

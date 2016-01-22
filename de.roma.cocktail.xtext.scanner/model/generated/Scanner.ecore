@@ -52,18 +52,24 @@
         eType="#//SingleRule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SingleRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//RuleStart"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="#//RuleDefinition"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuleDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reg" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="def" unique="false" upperBound="-1"
-        eType="#//DefineRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
+        eType="#//RulePart" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuleStart" eSuperTypes="#//SingleRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="state" unique="false" upperBound="-1"
-        eType="#//StartState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RulePart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//DefineRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleStart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rulePrec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleStates" unique="false"
+        upperBound="-1" eType="#//StartState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -26,6 +26,7 @@ import org.xtext.cocktail.scanner.Local;
 import org.xtext.cocktail.scanner.Model;
 import org.xtext.cocktail.scanner.Rule;
 import org.xtext.cocktail.scanner.RuleDefinition;
+import org.xtext.cocktail.scanner.RulePart;
 import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.Scanner;
 import org.xtext.cocktail.scanner.ScannerPackage;
@@ -84,16 +85,12 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ScannerPackage.RULE_DEFINITION:
 				sequence_RuleDefinition(context, (RuleDefinition) semanticObject); 
 				return; 
+			case ScannerPackage.RULE_PART:
+				sequence_RulePart(context, (RulePart) semanticObject); 
+				return; 
 			case ScannerPackage.RULE_START:
-				if (rule == grammarAccess.getRuleStartRule()) {
-					sequence_RuleStart(context, (RuleStart) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getSingleRuleRule()) {
-					sequence_RuleStart_SingleRule(context, (RuleStart) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_RuleStart(context, (RuleStart) semanticObject); 
+				return; 
 			case ScannerPackage.SCANNER:
 				sequence_Scanner(context, (Scanner) semanticObject); 
 				return; 
@@ -301,9 +298,21 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RuleDefinition returns RuleDefinition
 	 *
 	 * Constraint:
-	 *     (reg+=Regex | def+=[DefineRule|ID])+
+	 *     parts+=RulePart+
 	 */
 	protected void sequence_RuleDefinition(ISerializationContext context, RuleDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RulePart returns RulePart
+	 *
+	 * Constraint:
+	 *     (reg=Regex | ref=[DefineRule|ID])
+	 */
+	protected void sequence_RulePart(ISerializationContext context, RulePart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -313,21 +322,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RuleStart returns RuleStart
 	 *
 	 * Constraint:
-	 *     (state+=[StartState|ID] state+=[StartState|ID]*)
+	 *     ((rulePrec='NOT' | rulePrec='-')? ((ruleStates+=[StartState|ID] ruleStates+=[StartState|ID]*) | ruleDefault='STD' | ruleDefault='*'))
 	 */
 	protected void sequence_RuleStart(ISerializationContext context, RuleStart semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     SingleRule returns RuleStart
-	 *
-	 * Constraint:
-	 *     (state+=[StartState|ID] state+=[StartState|ID]* rule=RuleDefinition content=CodeBlock)
-	 */
-	protected void sequence_RuleStart_SingleRule(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -367,19 +364,10 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SingleRule returns SingleRule
 	 *
 	 * Constraint:
-	 *     (rule=RuleDefinition content=CodeBlock)
+	 *     (start=RuleStart? rule=RuleDefinition content=CodeBlock)
 	 */
 	protected void sequence_SingleRule(ISerializationContext context, SingleRule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SINGLE_RULE__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SINGLE_RULE__RULE));
-			if (transientValues.isValueTransient(semanticObject, ScannerPackage.Literals.SINGLE_RULE__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ScannerPackage.Literals.SINGLE_RULE__CONTENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSingleRuleAccess().getRuleRuleDefinitionParserRuleCall_1_0(), semanticObject.getRule());
-		feeder.accept(grammarAccess.getSingleRuleAccess().getContentCodeBlockParserRuleCall_5_0(), semanticObject.getContent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

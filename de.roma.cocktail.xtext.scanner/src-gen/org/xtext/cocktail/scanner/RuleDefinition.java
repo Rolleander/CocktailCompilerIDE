@@ -15,8 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.RuleDefinition#getReg <em>Reg</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.RuleDefinition#getDef <em>Def</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.RuleDefinition#getParts <em>Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,35 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface RuleDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Reg</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Parts</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.cocktail.scanner.RulePart}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Reg</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Parts</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Reg</em>' attribute list.
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getRuleDefinition_Reg()
-   * @model unique="false"
+   * @return the value of the '<em>Parts</em>' containment reference list.
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getRuleDefinition_Parts()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getReg();
-
-  /**
-   * Returns the value of the '<em><b>Def</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.cocktail.scanner.DefineRule}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Def</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Def</em>' reference list.
-   * @see org.xtext.cocktail.scanner.ScannerPackage#getRuleDefinition_Def()
-   * @model
-   * @generated
-   */
-  EList<DefineRule> getDef();
+  EList<RulePart> getParts();
 
 } // RuleDefinition

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.cocktail.scanner.RuleDefinition;
+import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.ScannerPackage;
 import org.xtext.cocktail.scanner.SingleRule;
 
@@ -23,6 +24,7 @@ import org.xtext.cocktail.scanner.SingleRule;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getStart <em>Start</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getRule <em>Rule</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getContent <em>Content</em>}</li>
  * </ul>
@@ -32,6 +34,16 @@ import org.xtext.cocktail.scanner.SingleRule;
  */
 public class SingleRuleImpl extends MinimalEObjectImpl.Container implements SingleRule
 {
+  /**
+   * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStart()
+   * @generated
+   * @ordered
+   */
+  protected RuleStart start;
+
   /**
    * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -81,6 +93,54 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   protected EClass eStaticClass()
   {
     return ScannerPackage.Literals.SINGLE_RULE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleStart getStart()
+  {
+    return start;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStart(RuleStart newStart, NotificationChain msgs)
+  {
+    RuleStart oldStart = start;
+    start = newStart;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__START, oldStart, newStart);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStart(RuleStart newStart)
+  {
+    if (newStart != start)
+    {
+      NotificationChain msgs = null;
+      if (start != null)
+        msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.SINGLE_RULE__START, null, msgs);
+      if (newStart != null)
+        msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.SINGLE_RULE__START, null, msgs);
+      msgs = basicSetStart(newStart, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__START, newStart, newStart));
   }
 
   /**
@@ -164,6 +224,8 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
+      case ScannerPackage.SINGLE_RULE__START:
+        return basicSetStart(null, msgs);
       case ScannerPackage.SINGLE_RULE__RULE:
         return basicSetRule(null, msgs);
     }
@@ -180,6 +242,8 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
+      case ScannerPackage.SINGLE_RULE__START:
+        return getStart();
       case ScannerPackage.SINGLE_RULE__RULE:
         return getRule();
       case ScannerPackage.SINGLE_RULE__CONTENT:
@@ -198,6 +262,9 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
+      case ScannerPackage.SINGLE_RULE__START:
+        setStart((RuleStart)newValue);
+        return;
       case ScannerPackage.SINGLE_RULE__RULE:
         setRule((RuleDefinition)newValue);
         return;
@@ -218,6 +285,9 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
+      case ScannerPackage.SINGLE_RULE__START:
+        setStart((RuleStart)null);
+        return;
       case ScannerPackage.SINGLE_RULE__RULE:
         setRule((RuleDefinition)null);
         return;
@@ -238,6 +308,8 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   {
     switch (featureID)
     {
+      case ScannerPackage.SINGLE_RULE__START:
+        return start != null;
       case ScannerPackage.SINGLE_RULE__RULE:
         return rule != null;
       case ScannerPackage.SINGLE_RULE__CONTENT:

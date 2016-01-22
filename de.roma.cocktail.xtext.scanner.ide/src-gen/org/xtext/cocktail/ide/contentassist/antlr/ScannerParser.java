@@ -39,7 +39,7 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCodeWallAccess().getAlternatives(), "rule__CodeWall__Alternatives");
 					put(grammarAccess.getRuleAccess().getInfoAlternatives_0_0(), "rule__Rule__InfoAlternatives_0_0");
 					put(grammarAccess.getRegexAccess().getAlternatives(), "rule__Regex__Alternatives");
-					put(grammarAccess.getRuleDefinitionAccess().getAlternatives(), "rule__RuleDefinition__Alternatives");
+					put(grammarAccess.getRulePartAccess().getAlternatives(), "rule__RulePart__Alternatives");
 					put(grammarAccess.getRuleStartAccess().getAlternatives_0(), "rule__RuleStart__Alternatives_0");
 					put(grammarAccess.getRuleStartAccess().getAlternatives_2(), "rule__RuleStart__Alternatives_2");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
@@ -93,12 +93,18 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartStateAccess().getNameAssignment(), "rule__StartState__NameAssignment");
 					put(grammarAccess.getRuleAccess().getInfoAssignment_0(), "rule__Rule__InfoAssignment_0");
 					put(grammarAccess.getRuleAccess().getRulesAssignment_1(), "rule__Rule__RulesAssignment_1");
+					put(grammarAccess.getSingleRuleAccess().getStartAssignment_0(), "rule__SingleRule__StartAssignment_0");
 					put(grammarAccess.getSingleRuleAccess().getRuleAssignment_1(), "rule__SingleRule__RuleAssignment_1");
 					put(grammarAccess.getSingleRuleAccess().getContentAssignment_5(), "rule__SingleRule__ContentAssignment_5");
-					put(grammarAccess.getRuleDefinitionAccess().getRegAssignment_0(), "rule__RuleDefinition__RegAssignment_0");
-					put(grammarAccess.getRuleDefinitionAccess().getDefAssignment_1(), "rule__RuleDefinition__DefAssignment_1");
-					put(grammarAccess.getRuleStartAccess().getStateAssignment_2_0_0(), "rule__RuleStart__StateAssignment_2_0_0");
-					put(grammarAccess.getRuleStartAccess().getStateAssignment_2_0_1_1(), "rule__RuleStart__StateAssignment_2_0_1_1");
+					put(grammarAccess.getRuleDefinitionAccess().getPartsAssignment(), "rule__RuleDefinition__PartsAssignment");
+					put(grammarAccess.getRulePartAccess().getRegAssignment_0(), "rule__RulePart__RegAssignment_0");
+					put(grammarAccess.getRulePartAccess().getRefAssignment_1(), "rule__RulePart__RefAssignment_1");
+					put(grammarAccess.getRuleStartAccess().getRulePrecAssignment_0_0(), "rule__RuleStart__RulePrecAssignment_0_0");
+					put(grammarAccess.getRuleStartAccess().getRulePrecAssignment_0_1(), "rule__RuleStart__RulePrecAssignment_0_1");
+					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0_0(), "rule__RuleStart__RuleStatesAssignment_2_0_0");
+					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0_1_1(), "rule__RuleStart__RuleStatesAssignment_2_0_1_1");
+					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_1(), "rule__RuleStart__RuleDefaultAssignment_2_1");
+					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_2(), "rule__RuleStart__RuleDefaultAssignment_2_2");
 					put(grammarAccess.getModelAccess().getUnorderedGroup_1(), "rule__Model__UnorderedGroup_1");
 				}
 			};

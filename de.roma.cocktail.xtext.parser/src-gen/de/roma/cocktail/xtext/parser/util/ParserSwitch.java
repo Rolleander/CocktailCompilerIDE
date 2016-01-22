@@ -186,10 +186,10 @@ public class ParserSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ParserPackage.GRAMMER_RULES:
+      case ParserPackage.GRAMMAR_RULES:
       {
-        GrammerRules grammerRules = (GrammerRules)theEObject;
-        T result = caseGrammerRules(grammerRules);
+        GrammarRules grammarRules = (GrammarRules)theEObject;
+        T result = caseGrammarRules(grammarRules);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -212,6 +212,13 @@ public class ParserSwitch<T> extends Switch<T>
       {
         RuleBody ruleBody = (RuleBody)theEObject;
         T result = caseRuleBody(ruleBody);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ParserPackage.RULE_CONTENT:
+      {
+        RuleContent ruleContent = (RuleContent)theEObject;
+        T result = caseRuleContent(ruleContent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -483,17 +490,17 @@ public class ParserSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Grammer Rules</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Grammar Rules</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Grammer Rules</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Grammar Rules</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGrammerRules(GrammerRules object)
+  public T caseGrammarRules(GrammarRules object)
   {
     return null;
   }
@@ -542,6 +549,22 @@ public class ParserSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRuleBody(RuleBody object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule Content</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule Content</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRuleContent(RuleContent object)
   {
     return null;
   }

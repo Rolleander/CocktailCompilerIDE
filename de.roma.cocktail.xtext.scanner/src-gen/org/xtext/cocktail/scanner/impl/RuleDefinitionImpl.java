@@ -5,17 +5,20 @@ package org.xtext.cocktail.scanner.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.cocktail.scanner.DefineRule;
 import org.xtext.cocktail.scanner.RuleDefinition;
+import org.xtext.cocktail.scanner.RulePart;
 import org.xtext.cocktail.scanner.ScannerPackage;
 
 /**
@@ -25,8 +28,7 @@ import org.xtext.cocktail.scanner.ScannerPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl#getReg <em>Reg</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl#getDef <em>Def</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl#getParts <em>Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +37,14 @@ import org.xtext.cocktail.scanner.ScannerPackage;
 public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements RuleDefinition
 {
   /**
-   * The cached value of the '{@link #getReg() <em>Reg</em>}' attribute list.
+   * The cached value of the '{@link #getParts() <em>Parts</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReg()
+   * @see #getParts()
    * @generated
    * @ordered
    */
-  protected EList<String> reg;
-
-  /**
-   * The cached value of the '{@link #getDef() <em>Def</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDef()
-   * @generated
-   * @ordered
-   */
-  protected EList<DefineRule> def;
+  protected EList<RulePart> parts;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,13 +72,13 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getReg()
+  public EList<RulePart> getParts()
   {
-    if (reg == null)
+    if (parts == null)
     {
-      reg = new EDataTypeEList<String>(String.class, this, ScannerPackage.RULE_DEFINITION__REG);
+      parts = new EObjectContainmentEList<RulePart>(RulePart.class, this, ScannerPackage.RULE_DEFINITION__PARTS);
     }
-    return reg;
+    return parts;
   }
 
   /**
@@ -94,13 +86,15 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DefineRule> getDef()
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    if (def == null)
+    switch (featureID)
     {
-      def = new EObjectResolvingEList<DefineRule>(DefineRule.class, this, ScannerPackage.RULE_DEFINITION__DEF);
+      case ScannerPackage.RULE_DEFINITION__PARTS:
+        return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
     }
-    return def;
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -113,10 +107,8 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_DEFINITION__REG:
-        return getReg();
-      case ScannerPackage.RULE_DEFINITION__DEF:
-        return getDef();
+      case ScannerPackage.RULE_DEFINITION__PARTS:
+        return getParts();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,13 +124,9 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_DEFINITION__REG:
-        getReg().clear();
-        getReg().addAll((Collection<? extends String>)newValue);
-        return;
-      case ScannerPackage.RULE_DEFINITION__DEF:
-        getDef().clear();
-        getDef().addAll((Collection<? extends DefineRule>)newValue);
+      case ScannerPackage.RULE_DEFINITION__PARTS:
+        getParts().clear();
+        getParts().addAll((Collection<? extends RulePart>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,11 +142,8 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_DEFINITION__REG:
-        getReg().clear();
-        return;
-      case ScannerPackage.RULE_DEFINITION__DEF:
-        getDef().clear();
+      case ScannerPackage.RULE_DEFINITION__PARTS:
+        getParts().clear();
         return;
     }
     super.eUnset(featureID);
@@ -174,29 +159,10 @@ public class RuleDefinitionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE_DEFINITION__REG:
-        return reg != null && !reg.isEmpty();
-      case ScannerPackage.RULE_DEFINITION__DEF:
-        return def != null && !def.isEmpty();
+      case ScannerPackage.RULE_DEFINITION__PARTS:
+        return parts != null && !parts.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (reg: ");
-    result.append(reg);
-    result.append(')');
-    return result.toString();
   }
 
 } //RuleDefinitionImpl

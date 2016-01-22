@@ -3,20 +3,32 @@
  */
 package de.roma.cocktail.xtext.ui.labeling;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import de.roma.cocktail.xtext.parser.Begin;
 import de.roma.cocktail.xtext.parser.Close;
 import de.roma.cocktail.xtext.parser.DefinedToken;
 import de.roma.cocktail.xtext.parser.Export;
 import de.roma.cocktail.xtext.parser.Global;
+import de.roma.cocktail.xtext.parser.GrammarRule;
+import de.roma.cocktail.xtext.parser.GrammarRules;
+import de.roma.cocktail.xtext.parser.GrammerReference;
 import de.roma.cocktail.xtext.parser.Import;
 import de.roma.cocktail.xtext.parser.Local;
 import de.roma.cocktail.xtext.parser.ParserModel;
+import de.roma.cocktail.xtext.parser.ParserName;
 import de.roma.cocktail.xtext.parser.Precedence;
 import de.roma.cocktail.xtext.parser.PrecedenceRow;
 import de.roma.cocktail.xtext.parser.PrecedenceType;
+import de.roma.cocktail.xtext.parser.RuleBody;
+import de.roma.cocktail.xtext.parser.RuleContent;
+import de.roma.cocktail.xtext.parser.RulePart;
+import de.roma.cocktail.xtext.parser.ScannerName;
 import de.roma.cocktail.xtext.parser.Tokens;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.preference.JFacePreferences;
+import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
 /**
@@ -26,6 +38,8 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
  */
 @SuppressWarnings("all")
 public class ParserLabelProvider extends DefaultEObjectLabelProvider {
+  private final StyledString.Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
+  
   @Inject
   public ParserLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
@@ -136,6 +150,75 @@ public class ParserLabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String text(final PrecedenceRow o) {
-    return "###";
+    final EList<DefinedToken> tokens = o.getTokens();
+    String returnText = "";
+    for (final DefinedToken t : tokens) {
+      String _returnText = returnText;
+      String _name = t.getName();
+      String _plus = (_name + " ");
+      returnText = (_returnText + _plus);
+    }
+    return returnText;
+  }
+  
+  public String image(final ScannerName o) {
+    return "barcode.png";
+  }
+  
+  public String text(final ScannerName o) {
+    String _name = o.getName();
+    return ("Scanner: " + _name);
+  }
+  
+  public String image(final ParserName o) {
+    return "key.png";
+  }
+  
+  public String text(final ParserName o) {
+    String _name = o.getName();
+    return ("Name: " + _name);
+  }
+  
+  public String image(final GrammarRules o) {
+    return "rules.png";
+  }
+  
+  public String text(final GrammarRules o) {
+    return "Grammar Rules";
+  }
+  
+  public String image(final GrammarRule o) {
+    return "text_replace.png";
+  }
+  
+  public String text(final GrammarRule o) {
+    return o.getName();
+  }
+  
+  public String image(final RuleBody o) {
+    return "page.png";
+  }
+  
+  public StyledString text(final RuleBody o) {
+    final RulePart part = o.getPart();
+    final EList<RuleContent> contents = part.getContent();
+    StyledString text = new StyledString();
+    for (final RuleContent c : contents) {
+      {
+        final String reg = c.getRegex();
+        final GrammerReference ref = c.getRef();
+        boolean _notEquals = (!Objects.equal(reg, null));
+        if (_notEquals) {
+          text.append((reg + " "));
+        }
+        boolean _notEquals_1 = (!Objects.equal(ref, null));
+        if (_notEquals_1) {
+          String _name = ref.getName();
+          String _plus = (_name + " ");
+          text.append(_plus, this.styleBlue);
+        }
+      }
+    }
+    return text;
   }
 }

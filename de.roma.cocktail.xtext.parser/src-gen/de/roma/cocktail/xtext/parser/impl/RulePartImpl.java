@@ -3,20 +3,23 @@
  */
 package de.roma.cocktail.xtext.parser.impl;
 
-import de.roma.cocktail.xtext.parser.GrammerReference;
 import de.roma.cocktail.xtext.parser.ParserPackage;
+import de.roma.cocktail.xtext.parser.RuleContent;
 import de.roma.cocktail.xtext.parser.RulePart;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,8 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.parser.impl.RulePartImpl#getRegex <em>Regex</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.parser.impl.RulePartImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.parser.impl.RulePartImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +37,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePart
 {
   /**
-   * The cached value of the '{@link #getRegex() <em>Regex</em>}' attribute list.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRegex()
+   * @see #getContent()
    * @generated
    * @ordered
    */
-  protected EList<String> regex;
-
-  /**
-   * The cached value of the '{@link #getRules() <em>Rules</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRules()
-   * @generated
-   * @ordered
-   */
-  protected EList<GrammerReference> rules;
+  protected EList<RuleContent> content;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,13 +72,13 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getRegex()
+  public EList<RuleContent> getContent()
   {
-    if (regex == null)
+    if (content == null)
     {
-      regex = new EDataTypeEList<String>(String.class, this, ParserPackage.RULE_PART__REGEX);
+      content = new EObjectContainmentEList<RuleContent>(RuleContent.class, this, ParserPackage.RULE_PART__CONTENT);
     }
-    return regex;
+    return content;
   }
 
   /**
@@ -94,13 +86,15 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<GrammerReference> getRules()
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    if (rules == null)
+    switch (featureID)
     {
-      rules = new EObjectResolvingEList<GrammerReference>(GrammerReference.class, this, ParserPackage.RULE_PART__RULES);
+      case ParserPackage.RULE_PART__CONTENT:
+        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
-    return rules;
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -113,10 +107,8 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
   {
     switch (featureID)
     {
-      case ParserPackage.RULE_PART__REGEX:
-        return getRegex();
-      case ParserPackage.RULE_PART__RULES:
-        return getRules();
+      case ParserPackage.RULE_PART__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,13 +124,9 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
   {
     switch (featureID)
     {
-      case ParserPackage.RULE_PART__REGEX:
-        getRegex().clear();
-        getRegex().addAll((Collection<? extends String>)newValue);
-        return;
-      case ParserPackage.RULE_PART__RULES:
-        getRules().clear();
-        getRules().addAll((Collection<? extends GrammerReference>)newValue);
+      case ParserPackage.RULE_PART__CONTENT:
+        getContent().clear();
+        getContent().addAll((Collection<? extends RuleContent>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,11 +142,8 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
   {
     switch (featureID)
     {
-      case ParserPackage.RULE_PART__REGEX:
-        getRegex().clear();
-        return;
-      case ParserPackage.RULE_PART__RULES:
-        getRules().clear();
+      case ParserPackage.RULE_PART__CONTENT:
+        getContent().clear();
         return;
     }
     super.eUnset(featureID);
@@ -174,29 +159,10 @@ public class RulePartImpl extends MinimalEObjectImpl.Container implements RulePa
   {
     switch (featureID)
     {
-      case ParserPackage.RULE_PART__REGEX:
-        return regex != null && !regex.isEmpty();
-      case ParserPackage.RULE_PART__RULES:
-        return rules != null && !rules.isEmpty();
+      case ParserPackage.RULE_PART__CONTENT:
+        return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (regex: ");
-    result.append(regex);
-    result.append(')');
-    return result.toString();
   }
 
 } //RulePartImpl

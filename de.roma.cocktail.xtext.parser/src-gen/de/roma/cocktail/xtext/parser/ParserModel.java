@@ -329,12 +329,12 @@ public interface ParserModel extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rules</em>' containment reference.
-   * @see #setRules(GrammerRules)
+   * @see #setRules(GrammarRules)
    * @see de.roma.cocktail.xtext.parser.ParserPackage#getParserModel_Rules()
    * @model containment="true"
    * @generated
    */
-  GrammerRules getRules();
+  GrammarRules getRules();
 
   /**
    * Sets the value of the '{@link de.roma.cocktail.xtext.parser.ParserModel#getRules <em>Rules</em>}' containment reference.
@@ -344,6 +344,6 @@ public interface ParserModel extends EObject
    * @see #getRules()
    * @generated
    */
-  void setRules(GrammerRules value);
+  void setRules(GrammarRules value);
 
 } // ParserModel

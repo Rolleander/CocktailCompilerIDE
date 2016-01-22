@@ -168,6 +168,15 @@ public interface ScannerFactory extends EFactory
   RuleDefinition createRuleDefinition();
 
   /**
+   * Returns a new object of class '<em>Rule Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Part</em>'.
+   * @generated
+   */
+  RulePart createRulePart();
+
+  /**
    * Returns a new object of class '<em>Rule Start</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

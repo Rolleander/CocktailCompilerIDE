@@ -52,15 +52,21 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Rule/rules"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//SingleRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//SingleRule/start"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//SingleRule/rule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//SingleRule/content"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//RuleDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//RuleDefinition/reg"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleDefinition/def"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleDefinition/parts"/>
+    </genClasses>
+    <genClasses ecoreClass="Scanner.ecore#//RulePart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//RulePart/reg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RulePart/ref"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//RuleStart">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleStart/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//RuleStart/rulePrec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scanner.ecore#//RuleStart/ruleStates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//RuleStart/ruleDefault"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -670,14 +670,14 @@ public interface ParserPackage extends EPackage
   int START_STATE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.roma.cocktail.xtext.parser.impl.GrammerRulesImpl <em>Grammer Rules</em>}' class.
+   * The meta object id for the '{@link de.roma.cocktail.xtext.parser.impl.GrammarRulesImpl <em>Grammar Rules</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.roma.cocktail.xtext.parser.impl.GrammerRulesImpl
-   * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getGrammerRules()
+   * @see de.roma.cocktail.xtext.parser.impl.GrammarRulesImpl
+   * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getGrammarRules()
    * @generated
    */
-  int GRAMMER_RULES = 16;
+  int GRAMMAR_RULES = 16;
 
   /**
    * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -686,16 +686,16 @@ public interface ParserPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GRAMMER_RULES__RULES = 0;
+  int GRAMMAR_RULES__RULES = 0;
 
   /**
-   * The number of structural features of the '<em>Grammer Rules</em>' class.
+   * The number of structural features of the '<em>Grammar Rules</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GRAMMER_RULES_FEATURE_COUNT = 1;
+  int GRAMMAR_RULES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.parser.impl.GrammarRuleImpl <em>Grammar Rule</em>}' class.
@@ -772,6 +772,43 @@ public interface ParserPackage extends EPackage
   int RULE_BODY_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.parser.impl.RuleContentImpl <em>Rule Content</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.parser.impl.RuleContentImpl
+   * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getRuleContent()
+   * @generated
+   */
+  int RULE_CONTENT = 20;
+
+  /**
+   * The feature id for the '<em><b>Regex</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_CONTENT__REGEX = 0;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_CONTENT__REF = 1;
+
+  /**
+   * The number of structural features of the '<em>Rule Content</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_CONTENT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.parser.impl.RulePartImpl <em>Rule Part</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -779,25 +816,16 @@ public interface ParserPackage extends EPackage
    * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getRulePart()
    * @generated
    */
-  int RULE_PART = 20;
+  int RULE_PART = 21;
 
   /**
-   * The feature id for the '<em><b>Regex</b></em>' attribute list.
+   * The feature id for the '<em><b>Content</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE_PART__REGEX = 0;
-
-  /**
-   * The feature id for the '<em><b>Rules</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RULE_PART__RULES = 1;
+  int RULE_PART__CONTENT = 0;
 
   /**
    * The number of structural features of the '<em>Rule Part</em>' class.
@@ -806,7 +834,7 @@ public interface ParserPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_PART_FEATURE_COUNT = 2;
+  int RULE_PART_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.parser.PrecedenceType <em>Precedence Type</em>}' enum.
@@ -816,7 +844,7 @@ public interface ParserPackage extends EPackage
    * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getPrecedenceType()
    * @generated
    */
-  int PRECEDENCE_TYPE = 21;
+  int PRECEDENCE_TYPE = 22;
 
 
   /**
@@ -1310,25 +1338,25 @@ public interface ParserPackage extends EPackage
   EAttribute getStartState_Name();
 
   /**
-   * Returns the meta object for class '{@link de.roma.cocktail.xtext.parser.GrammerRules <em>Grammer Rules</em>}'.
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.parser.GrammarRules <em>Grammar Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Grammer Rules</em>'.
-   * @see de.roma.cocktail.xtext.parser.GrammerRules
+   * @return the meta object for class '<em>Grammar Rules</em>'.
+   * @see de.roma.cocktail.xtext.parser.GrammarRules
    * @generated
    */
-  EClass getGrammerRules();
+  EClass getGrammarRules();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.parser.GrammerRules#getRules <em>Rules</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.parser.GrammarRules#getRules <em>Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Rules</em>'.
-   * @see de.roma.cocktail.xtext.parser.GrammerRules#getRules()
-   * @see #getGrammerRules()
+   * @see de.roma.cocktail.xtext.parser.GrammarRules#getRules()
+   * @see #getGrammarRules()
    * @generated
    */
-  EReference getGrammerRules_Rules();
+  EReference getGrammarRules_Rules();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.parser.GrammerReference <em>Grammer Reference</em>}'.
@@ -1405,6 +1433,38 @@ public interface ParserPackage extends EPackage
   EAttribute getRuleBody_Code();
 
   /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.parser.RuleContent <em>Rule Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Content</em>'.
+   * @see de.roma.cocktail.xtext.parser.RuleContent
+   * @generated
+   */
+  EClass getRuleContent();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.parser.RuleContent#getRegex <em>Regex</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Regex</em>'.
+   * @see de.roma.cocktail.xtext.parser.RuleContent#getRegex()
+   * @see #getRuleContent()
+   * @generated
+   */
+  EAttribute getRuleContent_Regex();
+
+  /**
+   * Returns the meta object for the reference '{@link de.roma.cocktail.xtext.parser.RuleContent#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see de.roma.cocktail.xtext.parser.RuleContent#getRef()
+   * @see #getRuleContent()
+   * @generated
+   */
+  EReference getRuleContent_Ref();
+
+  /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.parser.RulePart <em>Rule Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1415,26 +1475,15 @@ public interface ParserPackage extends EPackage
   EClass getRulePart();
 
   /**
-   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.parser.RulePart#getRegex <em>Regex</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.parser.RulePart#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Regex</em>'.
-   * @see de.roma.cocktail.xtext.parser.RulePart#getRegex()
+   * @return the meta object for the containment reference list '<em>Content</em>'.
+   * @see de.roma.cocktail.xtext.parser.RulePart#getContent()
    * @see #getRulePart()
    * @generated
    */
-  EAttribute getRulePart_Regex();
-
-  /**
-   * Returns the meta object for the reference list '{@link de.roma.cocktail.xtext.parser.RulePart#getRules <em>Rules</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Rules</em>'.
-   * @see de.roma.cocktail.xtext.parser.RulePart#getRules()
-   * @see #getRulePart()
-   * @generated
-   */
-  EReference getRulePart_Rules();
+  EReference getRulePart_Content();
 
   /**
    * Returns the meta object for enum '{@link de.roma.cocktail.xtext.parser.PrecedenceType <em>Precedence Type</em>}'.
@@ -1870,14 +1919,14 @@ public interface ParserPackage extends EPackage
     EAttribute START_STATE__NAME = eINSTANCE.getStartState_Name();
 
     /**
-     * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.impl.GrammerRulesImpl <em>Grammer Rules</em>}' class.
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.impl.GrammarRulesImpl <em>Grammar Rules</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.roma.cocktail.xtext.parser.impl.GrammerRulesImpl
-     * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getGrammerRules()
+     * @see de.roma.cocktail.xtext.parser.impl.GrammarRulesImpl
+     * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getGrammarRules()
      * @generated
      */
-    EClass GRAMMER_RULES = eINSTANCE.getGrammerRules();
+    EClass GRAMMAR_RULES = eINSTANCE.getGrammarRules();
 
     /**
      * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
@@ -1885,7 +1934,7 @@ public interface ParserPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GRAMMER_RULES__RULES = eINSTANCE.getGrammerRules_Rules();
+    EReference GRAMMAR_RULES__RULES = eINSTANCE.getGrammarRules_Rules();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.impl.GrammerReferenceImpl <em>Grammer Reference</em>}' class.
@@ -1950,6 +1999,32 @@ public interface ParserPackage extends EPackage
     EAttribute RULE_BODY__CODE = eINSTANCE.getRuleBody_Code();
 
     /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.impl.RuleContentImpl <em>Rule Content</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.parser.impl.RuleContentImpl
+     * @see de.roma.cocktail.xtext.parser.impl.ParserPackageImpl#getRuleContent()
+     * @generated
+     */
+    EClass RULE_CONTENT = eINSTANCE.getRuleContent();
+
+    /**
+     * The meta object literal for the '<em><b>Regex</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_CONTENT__REGEX = eINSTANCE.getRuleContent_Regex();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_CONTENT__REF = eINSTANCE.getRuleContent_Ref();
+
+    /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.impl.RulePartImpl <em>Rule Part</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1960,20 +2035,12 @@ public interface ParserPackage extends EPackage
     EClass RULE_PART = eINSTANCE.getRulePart();
 
     /**
-     * The meta object literal for the '<em><b>Regex</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RULE_PART__REGEX = eINSTANCE.getRulePart_Regex();
-
-    /**
-     * The meta object literal for the '<em><b>Rules</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RULE_PART__RULES = eINSTANCE.getRulePart_Rules();
+    EReference RULE_PART__CONTENT = eINSTANCE.getRulePart_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.parser.PrecedenceType <em>Precedence Type</em>}' enum.

@@ -710,7 +710,8 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	public class SingleRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.SingleRule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cRuleStartParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cStartAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cStartRuleStartParserRuleCall_0_0 = (RuleCall)cStartAssignment_0.eContents().get(0);
 		private final Assignment cRuleAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cRuleRuleDefinitionParserRuleCall_1_0 = (RuleCall)cRuleAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -721,14 +722,17 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SingleRule:
-		//	RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}';
+		//	start=RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}'
+		//start=RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}'
 		public Group getGroup() { return cGroup; }
 		
-		//RuleStart?
-		public RuleCall getRuleStartParserRuleCall_0() { return cRuleStartParserRuleCall_0; }
+		//start=RuleStart?
+		public Assignment getStartAssignment_0() { return cStartAssignment_0; }
+		
+		//RuleStart
+		public RuleCall getStartRuleStartParserRuleCall_0_0() { return cStartRuleStartParserRuleCall_0_0; }
 		
 		//rule=RuleDefinition
 		public Assignment getRuleAssignment_1() { return cRuleAssignment_1; }
@@ -777,15 +781,13 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
 		private final Keyword cQuotationMarkKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
 		private final Keyword cApostropheKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cNumberSignKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
 		
 		//Regex:
 		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '{' | '}' | '"' |
-		//	'\'' | '#';
+		//	'\'';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '{' | '}' | '"' | '\''
-		//| '#'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ID
@@ -847,117 +849,147 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'\''
 		public Keyword getApostropheKeyword_19() { return cApostropheKeyword_19; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_20() { return cNumberSignKeyword_20; }
 	}
 	public class RuleDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.RuleDefinition");
+		private final Assignment cPartsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cPartsRulePartParserRuleCall_0 = (RuleCall)cPartsAssignment.eContents().get(0);
+		
+		//RuleDefinition:
+		//	parts+=RulePart*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//parts+=RulePart*
+		public Assignment getPartsAssignment() { return cPartsAssignment; }
+		
+		//RulePart
+		public RuleCall getPartsRulePartParserRuleCall_0() { return cPartsRulePartParserRuleCall_0; }
+	}
+	public class RulePartElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.RulePart");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cRegAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cRegRegexParserRuleCall_0_0 = (RuleCall)cRegAssignment_0.eContents().get(0);
-		private final Assignment cDefAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final CrossReference cDefDefineRuleCrossReference_1_0 = (CrossReference)cDefAssignment_1.eContents().get(0);
-		private final RuleCall cDefDefineRuleIDTerminalRuleCall_1_0_1 = (RuleCall)cDefDefineRuleCrossReference_1_0.eContents().get(1);
+		private final Assignment cRefAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final CrossReference cRefDefineRuleCrossReference_1_0 = (CrossReference)cRefAssignment_1.eContents().get(0);
+		private final RuleCall cRefDefineRuleIDTerminalRuleCall_1_0_1 = (RuleCall)cRefDefineRuleCrossReference_1_0.eContents().get(1);
 		
-		//RuleDefinition:
-		//	(=> reg+=Regex | def+=[DefineRule])*;
+		//RulePart:
+		//	reg=Regex | => ref=[DefineRule];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(=> reg+=Regex | def+=[DefineRule])*
+		//reg=Regex | => ref=[DefineRule]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//=> reg+=Regex
+		//reg=Regex
 		public Assignment getRegAssignment_0() { return cRegAssignment_0; }
 		
 		//Regex
 		public RuleCall getRegRegexParserRuleCall_0_0() { return cRegRegexParserRuleCall_0_0; }
 		
-		//def+=[DefineRule]
-		public Assignment getDefAssignment_1() { return cDefAssignment_1; }
+		//=> ref=[DefineRule]
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 		
 		//[DefineRule]
-		public CrossReference getDefDefineRuleCrossReference_1_0() { return cDefDefineRuleCrossReference_1_0; }
+		public CrossReference getRefDefineRuleCrossReference_1_0() { return cRefDefineRuleCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getDefDefineRuleIDTerminalRuleCall_1_0_1() { return cDefDefineRuleIDTerminalRuleCall_1_0_1; }
+		public RuleCall getRefDefineRuleIDTerminalRuleCall_1_0_1() { return cRefDefineRuleIDTerminalRuleCall_1_0_1; }
 	}
 	public class RuleStartElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.RuleStart");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cNOTKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cRulePrecAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final Keyword cRulePrecNOTKeyword_0_0_0 = (Keyword)cRulePrecAssignment_0_0.eContents().get(0);
+		private final Assignment cRulePrecAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final Keyword cRulePrecHyphenMinusKeyword_0_1_0 = (Keyword)cRulePrecAssignment_0_1.eContents().get(0);
 		private final Keyword cNumberSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Assignment cStateAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
-		private final CrossReference cStateStartStateCrossReference_2_0_0_0 = (CrossReference)cStateAssignment_2_0_0.eContents().get(0);
-		private final RuleCall cStateStartStateIDTerminalRuleCall_2_0_0_0_1 = (RuleCall)cStateStartStateCrossReference_2_0_0_0.eContents().get(1);
+		private final Assignment cRuleStatesAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
+		private final CrossReference cRuleStatesStartStateCrossReference_2_0_0_0 = (CrossReference)cRuleStatesAssignment_2_0_0.eContents().get(0);
+		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_2_0_0_0.eContents().get(1);
 		private final Group cGroup_2_0_1 = (Group)cGroup_2_0.eContents().get(1);
 		private final Keyword cCommaKeyword_2_0_1_0 = (Keyword)cGroup_2_0_1.eContents().get(0);
-		private final Assignment cStateAssignment_2_0_1_1 = (Assignment)cGroup_2_0_1.eContents().get(1);
-		private final CrossReference cStateStartStateCrossReference_2_0_1_1_0 = (CrossReference)cStateAssignment_2_0_1_1.eContents().get(0);
-		private final RuleCall cStateStartStateIDTerminalRuleCall_2_0_1_1_0_1 = (RuleCall)cStateStartStateCrossReference_2_0_1_1_0.eContents().get(1);
-		private final Keyword cSTDKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Keyword cAsteriskKeyword_2_2 = (Keyword)cAlternatives_2.eContents().get(2);
+		private final Assignment cRuleStatesAssignment_2_0_1_1 = (Assignment)cGroup_2_0_1.eContents().get(1);
+		private final CrossReference cRuleStatesStartStateCrossReference_2_0_1_1_0 = (CrossReference)cRuleStatesAssignment_2_0_1_1.eContents().get(0);
+		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_2_0_1_1_0.eContents().get(1);
+		private final Assignment cRuleDefaultAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final Keyword cRuleDefaultSTDKeyword_2_1_0 = (Keyword)cRuleDefaultAssignment_2_1.eContents().get(0);
+		private final Assignment cRuleDefaultAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
+		private final Keyword cRuleDefaultAsteriskKeyword_2_2_0 = (Keyword)cRuleDefaultAssignment_2_2.eContents().get(0);
 		private final Keyword cNumberSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		////#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 		//RuleStart:
-		//	('NOT' | '-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#';
+		//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
+		//	ruleDefault='*') '#';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('NOT' | '-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#'
+		//(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
+		//ruleDefault='*') '#'
 		public Group getGroup() { return cGroup; }
 		
-		//('NOT' | '-')?
+		//(rulePrec='NOT' | rulePrec='-')?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
+		//rulePrec='NOT'
+		public Assignment getRulePrecAssignment_0_0() { return cRulePrecAssignment_0_0; }
+		
 		//'NOT'
-		public Keyword getNOTKeyword_0_0() { return cNOTKeyword_0_0; }
+		public Keyword getRulePrecNOTKeyword_0_0_0() { return cRulePrecNOTKeyword_0_0_0; }
+		
+		//rulePrec='-'
+		public Assignment getRulePrecAssignment_0_1() { return cRulePrecAssignment_0_1; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_0_1() { return cHyphenMinusKeyword_0_1; }
+		public Keyword getRulePrecHyphenMinusKeyword_0_1_0() { return cRulePrecHyphenMinusKeyword_0_1_0; }
 		
 		//'#'
 		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
 		
-		//(state+=[StartState] (',' state+=[StartState])* | 'STD' | '*')
+		//(ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' | ruleDefault='*')
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//state+=[StartState] (',' state+=[StartState])*
+		//ruleStates+=[StartState] (',' ruleStates+=[StartState])*
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
-		//state+=[StartState]
-		public Assignment getStateAssignment_2_0_0() { return cStateAssignment_2_0_0; }
+		//ruleStates+=[StartState]
+		public Assignment getRuleStatesAssignment_2_0_0() { return cRuleStatesAssignment_2_0_0; }
 		
 		//[StartState]
-		public CrossReference getStateStartStateCrossReference_2_0_0_0() { return cStateStartStateCrossReference_2_0_0_0; }
+		public CrossReference getRuleStatesStartStateCrossReference_2_0_0_0() { return cRuleStatesStartStateCrossReference_2_0_0_0; }
 		
 		//ID
-		public RuleCall getStateStartStateIDTerminalRuleCall_2_0_0_0_1() { return cStateStartStateIDTerminalRuleCall_2_0_0_0_1; }
+		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1; }
 		
-		//(',' state+=[StartState])*
+		//(',' ruleStates+=[StartState])*
 		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
 		
 		//','
 		public Keyword getCommaKeyword_2_0_1_0() { return cCommaKeyword_2_0_1_0; }
 		
-		//state+=[StartState]
-		public Assignment getStateAssignment_2_0_1_1() { return cStateAssignment_2_0_1_1; }
+		//ruleStates+=[StartState]
+		public Assignment getRuleStatesAssignment_2_0_1_1() { return cRuleStatesAssignment_2_0_1_1; }
 		
 		//[StartState]
-		public CrossReference getStateStartStateCrossReference_2_0_1_1_0() { return cStateStartStateCrossReference_2_0_1_1_0; }
+		public CrossReference getRuleStatesStartStateCrossReference_2_0_1_1_0() { return cRuleStatesStartStateCrossReference_2_0_1_1_0; }
 		
 		//ID
-		public RuleCall getStateStartStateIDTerminalRuleCall_2_0_1_1_0_1() { return cStateStartStateIDTerminalRuleCall_2_0_1_1_0_1; }
+		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1; }
+		
+		//ruleDefault='STD'
+		public Assignment getRuleDefaultAssignment_2_1() { return cRuleDefaultAssignment_2_1; }
 		
 		//'STD'
-		public Keyword getSTDKeyword_2_1() { return cSTDKeyword_2_1; }
+		public Keyword getRuleDefaultSTDKeyword_2_1_0() { return cRuleDefaultSTDKeyword_2_1_0; }
+		
+		//ruleDefault='*'
+		public Assignment getRuleDefaultAssignment_2_2() { return cRuleDefaultAssignment_2_2; }
 		
 		//'*'
-		public Keyword getAsteriskKeyword_2_2() { return cAsteriskKeyword_2_2; }
+		public Keyword getRuleDefaultAsteriskKeyword_2_2_0() { return cRuleDefaultAsteriskKeyword_2_2_0; }
 		
 		//'#'
 		public Keyword getNumberSignKeyword_3() { return cNumberSignKeyword_3; }
@@ -984,6 +1016,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	private final SingleRuleElements pSingleRule;
 	private final RegexElements pRegex;
 	private final RuleDefinitionElements pRuleDefinition;
+	private final RulePartElements pRulePart;
 	private final RuleStartElements pRuleStart;
 	
 	private final Grammar grammar;
@@ -1015,6 +1048,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSingleRule = new SingleRuleElements();
 		this.pRegex = new RegexElements();
 		this.pRuleDefinition = new RuleDefinitionElements();
+		this.pRulePart = new RulePartElements();
 		this.pRuleStart = new RuleStartElements();
 	}
 	
@@ -1219,7 +1253,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleRule:
-	//	RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}';
+	//	start=RuleStart? rule=RuleDefinition ':' '-'? '{' content=CodeBlock '}';
 	public SingleRuleElements getSingleRuleAccess() {
 		return pSingleRule;
 	}
@@ -1230,7 +1264,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Regex:
 	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '{' | '}' | '"' |
-	//	'\'' | '#';
+	//	'\'';
 	public RegexElements getRegexAccess() {
 		return pRegex;
 	}
@@ -1240,7 +1274,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RuleDefinition:
-	//	(=> reg+=Regex | def+=[DefineRule])*;
+	//	parts+=RulePart*;
 	public RuleDefinitionElements getRuleDefinitionAccess() {
 		return pRuleDefinition;
 	}
@@ -1249,9 +1283,20 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 		return getRuleDefinitionAccess().getRule();
 	}
 	
+	//RulePart:
+	//	reg=Regex | => ref=[DefineRule];
+	public RulePartElements getRulePartAccess() {
+		return pRulePart;
+	}
+	
+	public ParserRule getRulePartRule() {
+		return getRulePartAccess().getRule();
+	}
+	
 	////#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 	//RuleStart:
-	//	('NOT' | '-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#';
+	//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
+	//	ruleDefault='*') '#';
 	public RuleStartElements getRuleStartAccess() {
 		return pRuleStart;
 	}

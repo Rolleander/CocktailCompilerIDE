@@ -15,8 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.parser.RulePart#getRegex <em>Regex</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.parser.RulePart#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.parser.RulePart#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,35 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface RulePart extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Regex</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference list.
+   * The list contents are of type {@link de.roma.cocktail.xtext.parser.RuleContent}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Regex</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Regex</em>' attribute list.
-   * @see de.roma.cocktail.xtext.parser.ParserPackage#getRulePart_Regex()
-   * @model unique="false"
+   * @return the value of the '<em>Content</em>' containment reference list.
+   * @see de.roma.cocktail.xtext.parser.ParserPackage#getRulePart_Content()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getRegex();
-
-  /**
-   * Returns the value of the '<em><b>Rules</b></em>' reference list.
-   * The list contents are of type {@link de.roma.cocktail.xtext.parser.GrammerReference}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Rules</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Rules</em>' reference list.
-   * @see de.roma.cocktail.xtext.parser.ParserPackage#getRulePart_Rules()
-   * @model
-   * @generated
-   */
-  EList<GrammerReference> getRules();
+  EList<RuleContent> getContent();
 
 } // RulePart

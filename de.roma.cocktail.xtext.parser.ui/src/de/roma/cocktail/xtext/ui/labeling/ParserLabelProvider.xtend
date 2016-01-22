@@ -4,19 +4,27 @@
 package de.roma.cocktail.xtext.ui.labeling
 
 import com.google.inject.Inject
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
-import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
-import de.roma.cocktail.xtext.parser.ParserModel
-import de.roma.cocktail.xtext.parser.Import
-import de.roma.cocktail.xtext.parser.Export
-import de.roma.cocktail.xtext.parser.Global
-import de.roma.cocktail.xtext.parser.Local
 import de.roma.cocktail.xtext.parser.Begin
 import de.roma.cocktail.xtext.parser.Close
-import de.roma.cocktail.xtext.parser.Tokens
 import de.roma.cocktail.xtext.parser.DefinedToken
+import de.roma.cocktail.xtext.parser.Export
+import de.roma.cocktail.xtext.parser.Global
+import de.roma.cocktail.xtext.parser.GrammarRule
+import de.roma.cocktail.xtext.parser.GrammarRules
+import de.roma.cocktail.xtext.parser.Import
+import de.roma.cocktail.xtext.parser.Local
+import de.roma.cocktail.xtext.parser.ParserModel
+import de.roma.cocktail.xtext.parser.ParserName
 import de.roma.cocktail.xtext.parser.Precedence
 import de.roma.cocktail.xtext.parser.PrecedenceRow
+import de.roma.cocktail.xtext.parser.RuleBody
+import de.roma.cocktail.xtext.parser.ScannerName
+import de.roma.cocktail.xtext.parser.Tokens
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import org.eclipse.jface.viewers.StyledString
+import org.eclipse.jface.preference.JFacePreferences
+import org.eclipse.jface.viewers.StyledString.Styler
 
 /**
  * Provides labels for EObjects.
@@ -24,6 +32,9 @@ import de.roma.cocktail.xtext.parser.PrecedenceRow
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#label-provider
  */
 class ParserLabelProvider extends DefaultEObjectLabelProvider {
+
+
+	val Styler styleBlue=StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR,null);
 
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {
@@ -130,8 +141,85 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 	
 	def text(PrecedenceRow o)
 	{
-		'###'
+		val tokens=o.getTokens()
+	    var returnText=''
+	    for(t: tokens)
+	    {
+	    	returnText+=t.getName()+' '
+	    }
+		return returnText
 	} 
+	
+	 def image(ScannerName o)
+	{
+		'barcode.png'
+	}
+	
+	def text(ScannerName o)
+	{
+		'Scanner: '+o.getName()
+	} 
+	
+	
+		 def image(ParserName o)
+	{
+		'key.png'
+	}
+	
+	def text(ParserName o)
+	{
+		'Name: '+o.getName()
+	}
+	
+		 def image(GrammarRules o)
+	{
+		'rules.png'
+	}
+	
+	def text(GrammarRules o)
+	{
+		'Grammar Rules'
+	} 
+	
+	def image(GrammarRule o)
+	{
+		'text_replace.png'
+	}
+	
+	def text(GrammarRule o)
+	{
+		o.getName()
+	} 
+	
+	 def image(RuleBody o)
+	{
+		'page.png'
+	}
+	
+	
+	
+	def text(RuleBody o)
+	{
+		val part=o.part
+		val contents=part.content
+		var text=new StyledString
+		for(c: contents)
+		{
+			val reg=c.regex
+			val ref=c.ref
+			if(reg!=null){
+				text.append(reg+" ")
+			}
+			if(ref!=null)
+			{
+				text.append(ref.name+" ",styleBlue)
+			}
+		}
+		
+		return text;
+	} 
+	
+	
 	
 	/*	 	 
 	 def image( o)

@@ -10,7 +10,7 @@ import de.roma.cocktail.xtext.parser.DefinedToken;
 import de.roma.cocktail.xtext.parser.Export;
 import de.roma.cocktail.xtext.parser.Global;
 import de.roma.cocktail.xtext.parser.GrammarRule;
-import de.roma.cocktail.xtext.parser.GrammerRules;
+import de.roma.cocktail.xtext.parser.GrammarRules;
 import de.roma.cocktail.xtext.parser.Import;
 import de.roma.cocktail.xtext.parser.Local;
 import de.roma.cocktail.xtext.parser.ParserModel;
@@ -19,6 +19,7 @@ import de.roma.cocktail.xtext.parser.ParserPackage;
 import de.roma.cocktail.xtext.parser.Precedence;
 import de.roma.cocktail.xtext.parser.PrecedenceRow;
 import de.roma.cocktail.xtext.parser.RuleBody;
+import de.roma.cocktail.xtext.parser.RuleContent;
 import de.roma.cocktail.xtext.parser.RulePart;
 import de.roma.cocktail.xtext.parser.ScannerName;
 import de.roma.cocktail.xtext.parser.StartState;
@@ -69,8 +70,8 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case ParserPackage.GRAMMAR_RULE:
 				sequence_GrammarRule(context, (GrammarRule) semanticObject); 
 				return; 
-			case ParserPackage.GRAMMER_RULES:
-				sequence_GrammerRules(context, (GrammerRules) semanticObject); 
+			case ParserPackage.GRAMMAR_RULES:
+				sequence_GrammarRules(context, (GrammarRules) semanticObject); 
 				return; 
 			case ParserPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
@@ -92,6 +93,9 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case ParserPackage.RULE_BODY:
 				sequence_RuleBody(context, (RuleBody) semanticObject); 
+				return; 
+			case ParserPackage.RULE_CONTENT:
+				sequence_RuleContent(context, (RuleContent) semanticObject); 
 				return; 
 			case ParserPackage.RULE_PART:
 				sequence_RulePart(context, (RulePart) semanticObject); 
@@ -216,12 +220,12 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
-	 *     GrammerRules returns GrammerRules
+	 *     GrammarRules returns GrammarRules
 	 *
 	 * Constraint:
 	 *     rules+=GrammarRule+
 	 */
-	protected void sequence_GrammerRules(ISerializationContext context, GrammerRules semanticObject) {
+	protected void sequence_GrammarRules(ISerializationContext context, GrammarRules semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -278,7 +282,7 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         tokens=Tokens | 
 	 *         precedenc=Precedence | 
 	 *         start=StartSymbols | 
-	 *         rules=GrammerRules
+	 *         rules=GrammarRules
 	 *     )+
 	 */
 	protected void sequence_ParserModel(ISerializationContext context, ParserModel semanticObject) {
@@ -351,10 +355,22 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Contexts:
+	 *     RuleContent returns RuleContent
+	 *
+	 * Constraint:
+	 *     (regex=STRING | ref=[GrammerReference|ID])
+	 */
+	protected void sequence_RuleContent(ISerializationContext context, RuleContent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     RulePart returns RulePart
 	 *
 	 * Constraint:
-	 *     (regex+=STRING | rules+=[GrammerReference|ID])+
+	 *     content+=RuleContent+
 	 */
 	protected void sequence_RulePart(ISerializationContext context, RulePart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

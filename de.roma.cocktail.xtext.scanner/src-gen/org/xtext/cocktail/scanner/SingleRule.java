@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getStart <em>Start</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}</li>
  * </ul>
@@ -24,6 +25,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SingleRule extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Start</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Start</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Start</em>' containment reference.
+   * @see #setStart(RuleStart)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Start()
+   * @model containment="true"
+   * @generated
+   */
+  RuleStart getStart();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.SingleRule#getStart <em>Start</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Start</em>' containment reference.
+   * @see #getStart()
+   * @generated
+   */
+  void setStart(RuleStart value);
+
   /**
    * Returns the value of the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -7,7 +7,7 @@ import de.roma.cocktail.xtext.parser.Begin;
 import de.roma.cocktail.xtext.parser.Close;
 import de.roma.cocktail.xtext.parser.Export;
 import de.roma.cocktail.xtext.parser.Global;
-import de.roma.cocktail.xtext.parser.GrammerRules;
+import de.roma.cocktail.xtext.parser.GrammarRules;
 import de.roma.cocktail.xtext.parser.Import;
 import de.roma.cocktail.xtext.parser.Local;
 import de.roma.cocktail.xtext.parser.ParserModel;
@@ -171,7 +171,7 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
    * @generated
    * @ordered
    */
-  protected GrammerRules rules;
+  protected GrammarRules rules;
 
   /**
    * <!-- begin-user-doc -->
@@ -727,7 +727,7 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
    * <!-- end-user-doc -->
    * @generated
    */
-  public GrammerRules getRules()
+  public GrammarRules getRules()
   {
     return rules;
   }
@@ -737,9 +737,9 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRules(GrammerRules newRules, NotificationChain msgs)
+  public NotificationChain basicSetRules(GrammarRules newRules, NotificationChain msgs)
   {
-    GrammerRules oldRules = rules;
+    GrammarRules oldRules = rules;
     rules = newRules;
     if (eNotificationRequired())
     {
@@ -754,7 +754,7 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRules(GrammerRules newRules)
+  public void setRules(GrammarRules newRules)
   {
     if (newRules != rules)
     {
@@ -890,7 +890,7 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
         setStart((StartSymbols)newValue);
         return;
       case ParserPackage.PARSER_MODEL__RULES:
-        setRules((GrammerRules)newValue);
+        setRules((GrammarRules)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -940,7 +940,7 @@ public class ParserModelImpl extends MinimalEObjectImpl.Container implements Par
         setStart((StartSymbols)null);
         return;
       case ParserPackage.PARSER_MODEL__RULES:
-        setRules((GrammerRules)null);
+        setRules((GrammarRules)null);
         return;
     }
     super.eUnset(featureID);

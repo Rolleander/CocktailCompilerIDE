@@ -4,7 +4,7 @@
 package de.roma.cocktail.xtext.parser.impl;
 
 import de.roma.cocktail.xtext.parser.GrammarRule;
-import de.roma.cocktail.xtext.parser.GrammerRules;
+import de.roma.cocktail.xtext.parser.GrammarRules;
 import de.roma.cocktail.xtext.parser.ParserPackage;
 
 import java.util.Collection;
@@ -23,18 +23,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Grammer Rules</b></em>'.
+ * An implementation of the model object '<em><b>Grammar Rules</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.parser.impl.GrammerRulesImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.parser.impl.GrammarRulesImpl#getRules <em>Rules</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements GrammerRules
+public class GrammarRulesImpl extends MinimalEObjectImpl.Container implements GrammarRules
 {
   /**
    * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
@@ -51,7 +51,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GrammerRulesImpl()
+  protected GrammarRulesImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   @Override
   protected EClass eStaticClass()
   {
-    return ParserPackage.Literals.GRAMMER_RULES;
+    return ParserPackage.Literals.GRAMMAR_RULES;
   }
 
   /**
@@ -76,7 +76,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     if (rules == null)
     {
-      rules = new EObjectContainmentEList<GrammarRule>(GrammarRule.class, this, ParserPackage.GRAMMER_RULES__RULES);
+      rules = new EObjectContainmentEList<GrammarRule>(GrammarRule.class, this, ParserPackage.GRAMMAR_RULES__RULES);
     }
     return rules;
   }
@@ -91,7 +91,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     switch (featureID)
     {
-      case ParserPackage.GRAMMER_RULES__RULES:
+      case ParserPackage.GRAMMAR_RULES__RULES:
         return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -107,7 +107,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     switch (featureID)
     {
-      case ParserPackage.GRAMMER_RULES__RULES:
+      case ParserPackage.GRAMMAR_RULES__RULES:
         return getRules();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -124,7 +124,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     switch (featureID)
     {
-      case ParserPackage.GRAMMER_RULES__RULES:
+      case ParserPackage.GRAMMAR_RULES__RULES:
         getRules().clear();
         getRules().addAll((Collection<? extends GrammarRule>)newValue);
         return;
@@ -142,7 +142,7 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     switch (featureID)
     {
-      case ParserPackage.GRAMMER_RULES__RULES:
+      case ParserPackage.GRAMMAR_RULES__RULES:
         getRules().clear();
         return;
     }
@@ -159,10 +159,10 @@ public class GrammerRulesImpl extends MinimalEObjectImpl.Container implements Gr
   {
     switch (featureID)
     {
-      case ParserPackage.GRAMMER_RULES__RULES:
+      case ParserPackage.GRAMMAR_RULES__RULES:
         return rules != null && !rules.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //GrammerRulesImpl
+} //GrammarRulesImpl

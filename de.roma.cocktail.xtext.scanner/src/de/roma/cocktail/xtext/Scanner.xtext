@@ -58,18 +58,22 @@ Rule:
 	info=('RULE' | 'RULES') (rules+=SingleRule)*;
 
 SingleRule:
-	RuleStart? rule=RuleDefinition ':' ('-')? '{' content=CodeBlock '}';
+	start=RuleStart? rule=RuleDefinition ':' ('-')? '{' content=CodeBlock '}';
 
 Regex returns ecore::EString:
 	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '{' | '}' | '"' |
-	'\'' | '#';
+	'\'' ;
 
 RuleDefinition:
-	(=> reg+=Regex | def+=[DefineRule])*;
+	(parts+=RulePart)*;
+
+RulePart:
+	reg=Regex | =>ref=[DefineRule]
+;
 
 	//#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 RuleStart:
-	('NOT' | '-')? '#' (state+=[StartState] (',' state+=[StartState])* | 'STD' | '*') '#';
+	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' | ruleDefault='*') '#';
 
 
 

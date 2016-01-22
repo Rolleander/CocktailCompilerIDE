@@ -156,6 +156,11 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createRuleDefinitionAdapter();
       }
       @Override
+      public Adapter caseRulePart(RulePart object)
+      {
+        return createRulePartAdapter();
+      }
+      @Override
       public Adapter caseRuleStart(RuleStart object)
       {
         return createRuleStartAdapter();
@@ -418,6 +423,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.RulePart <em>Rule Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.RulePart
+   * @generated
+   */
+  public Adapter createRulePartAdapter()
   {
     return null;
   }

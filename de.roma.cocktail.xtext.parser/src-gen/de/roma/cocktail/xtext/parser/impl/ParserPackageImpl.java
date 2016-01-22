@@ -9,8 +9,8 @@ import de.roma.cocktail.xtext.parser.DefinedToken;
 import de.roma.cocktail.xtext.parser.Export;
 import de.roma.cocktail.xtext.parser.Global;
 import de.roma.cocktail.xtext.parser.GrammarRule;
+import de.roma.cocktail.xtext.parser.GrammarRules;
 import de.roma.cocktail.xtext.parser.GrammerReference;
-import de.roma.cocktail.xtext.parser.GrammerRules;
 import de.roma.cocktail.xtext.parser.Import;
 import de.roma.cocktail.xtext.parser.Local;
 import de.roma.cocktail.xtext.parser.ParserFactory;
@@ -21,6 +21,7 @@ import de.roma.cocktail.xtext.parser.Precedence;
 import de.roma.cocktail.xtext.parser.PrecedenceRow;
 import de.roma.cocktail.xtext.parser.PrecedenceType;
 import de.roma.cocktail.xtext.parser.RuleBody;
+import de.roma.cocktail.xtext.parser.RuleContent;
 import de.roma.cocktail.xtext.parser.RulePart;
 import de.roma.cocktail.xtext.parser.ScannerName;
 import de.roma.cocktail.xtext.parser.StartState;
@@ -161,7 +162,7 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass grammerRulesEClass = null;
+  private EClass grammarRulesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -183,6 +184,13 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * @generated
    */
   private EClass ruleBodyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleContentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -726,9 +734,9 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGrammerRules()
+  public EClass getGrammarRules()
   {
-    return grammerRulesEClass;
+    return grammarRulesEClass;
   }
 
   /**
@@ -736,9 +744,9 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGrammerRules_Rules()
+  public EReference getGrammarRules_Rules()
   {
-    return (EReference)grammerRulesEClass.getEStructuralFeatures().get(0);
+    return (EReference)grammarRulesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -816,6 +824,36 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRuleContent()
+  {
+    return ruleContentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRuleContent_Regex()
+  {
+    return (EAttribute)ruleContentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleContent_Ref()
+  {
+    return (EReference)ruleContentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRulePart()
   {
     return rulePartEClass;
@@ -826,19 +864,9 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRulePart_Regex()
+  public EReference getRulePart_Content()
   {
-    return (EAttribute)rulePartEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRulePart_Rules()
-  {
-    return (EReference)rulePartEClass.getEStructuralFeatures().get(1);
+    return (EReference)rulePartEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -943,8 +971,8 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
     startStateEClass = createEClass(START_STATE);
     createEAttribute(startStateEClass, START_STATE__NAME);
 
-    grammerRulesEClass = createEClass(GRAMMER_RULES);
-    createEReference(grammerRulesEClass, GRAMMER_RULES__RULES);
+    grammarRulesEClass = createEClass(GRAMMAR_RULES);
+    createEReference(grammarRulesEClass, GRAMMAR_RULES__RULES);
 
     grammerReferenceEClass = createEClass(GRAMMER_REFERENCE);
     createEAttribute(grammerReferenceEClass, GRAMMER_REFERENCE__NAME);
@@ -956,9 +984,12 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
     createEReference(ruleBodyEClass, RULE_BODY__PART);
     createEAttribute(ruleBodyEClass, RULE_BODY__CODE);
 
+    ruleContentEClass = createEClass(RULE_CONTENT);
+    createEAttribute(ruleContentEClass, RULE_CONTENT__REGEX);
+    createEReference(ruleContentEClass, RULE_CONTENT__REF);
+
     rulePartEClass = createEClass(RULE_PART);
-    createEAttribute(rulePartEClass, RULE_PART__REGEX);
-    createEReference(rulePartEClass, RULE_PART__RULES);
+    createEReference(rulePartEClass, RULE_PART__CONTENT);
 
     // Create enums
     precedenceTypeEEnum = createEEnum(PRECEDENCE_TYPE);
@@ -1009,7 +1040,7 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
     initEReference(getParserModel_Tokens(), this.getTokens(), null, "tokens", null, 0, 1, ParserModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParserModel_Precedenc(), this.getPrecedence(), null, "precedenc", null, 0, 1, ParserModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParserModel_Start(), this.getStartSymbols(), null, "start", null, 0, 1, ParserModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParserModel_Rules(), this.getGrammerRules(), null, "rules", null, 0, 1, ParserModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParserModel_Rules(), this.getGrammarRules(), null, "rules", null, 0, 1, ParserModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scannerNameEClass, ScannerName.class, "ScannerName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScannerName_Name(), ecorePackage.getEString(), "name", null, 0, 1, ScannerName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1059,8 +1090,8 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
     initEClass(startStateEClass, StartState.class, "StartState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStartState_Name(), ecorePackage.getEString(), "name", null, 0, 1, StartState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(grammerRulesEClass, GrammerRules.class, "GrammerRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGrammerRules_Rules(), this.getGrammarRule(), null, "rules", null, 0, -1, GrammerRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(grammarRulesEClass, GrammarRules.class, "GrammarRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGrammarRules_Rules(), this.getGrammarRule(), null, "rules", null, 0, -1, GrammarRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(grammerReferenceEClass, GrammerReference.class, "GrammerReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGrammerReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, GrammerReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1072,9 +1103,12 @@ public class ParserPackageImpl extends EPackageImpl implements ParserPackage
     initEReference(getRuleBody_Part(), this.getRulePart(), null, "part", null, 0, 1, RuleBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRuleBody_Code(), ecorePackage.getEString(), "code", null, 0, 1, RuleBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(ruleContentEClass, RuleContent.class, "RuleContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRuleContent_Regex(), ecorePackage.getEString(), "regex", null, 0, 1, RuleContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleContent_Ref(), this.getGrammerReference(), null, "ref", null, 0, 1, RuleContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(rulePartEClass, RulePart.class, "RulePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRulePart_Regex(), ecorePackage.getEString(), "regex", null, 0, -1, RulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRulePart_Rules(), this.getGrammerReference(), null, "rules", null, 0, -1, RulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRulePart_Content(), this.getRuleContent(), null, "content", null, 0, -1, RulePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(precedenceTypeEEnum, PrecedenceType.class, "PrecedenceType");

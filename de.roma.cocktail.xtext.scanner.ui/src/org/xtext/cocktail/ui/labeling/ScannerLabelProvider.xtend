@@ -5,21 +5,25 @@ package org.xtext.cocktail.ui.labeling
 
 import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.jface.preference.JFacePreferences
+import org.eclipse.jface.viewers.StyledString
+import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import org.xtext.cocktail.scanner.Begin
+import org.xtext.cocktail.scanner.Close
+import org.xtext.cocktail.scanner.Default
 import org.xtext.cocktail.scanner.Define
 import org.xtext.cocktail.scanner.DefineRule
+import org.xtext.cocktail.scanner.Eof
+import org.xtext.cocktail.scanner.Export
+import org.xtext.cocktail.scanner.Global
+import org.xtext.cocktail.scanner.Local
 import org.xtext.cocktail.scanner.Model
 import org.xtext.cocktail.scanner.Rule
 import org.xtext.cocktail.scanner.Scanner
-import org.xtext.cocktail.scanner.Local
-import org.xtext.cocktail.scanner.Export
-import org.xtext.cocktail.scanner.Default
-import org.xtext.cocktail.scanner.Eof
-import org.xtext.cocktail.scanner.Global
-import org.xtext.cocktail.scanner.StartStates
 import org.xtext.cocktail.scanner.SingleRule
-import org.xtext.cocktail.scanner.Begin
-import org.xtext.cocktail.scanner.Close
+import org.xtext.cocktail.scanner.StartStates
+import org.xtext.cocktail.scanner.StartState
 
 /**
  * Provides labels for EObjects.
@@ -28,13 +32,12 @@ import org.xtext.cocktail.scanner.Close
  */
 class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 
+	val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
+	val Styler styleTwo = StyledString.createColorRegistryStyler(JFacePreferences.COUNTER_COLOR, null);
+
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
-	}
-
-	def text(SingleRule rule) {
-		rule.getRule()
 	}
 
 	def image(SingleRule rule) {
@@ -138,7 +141,72 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	def text(DefineRule ele) {
-		ele.getName() + " = " + ele.getRule()
+		val text = new StyledString
+		text.append(ele.getName(), styleBlue)
+		text.append(" = " + ele.getRule())
+		return text;
 	}
 
+	def image(StartState o) {
+		'control_play.png'
+	}
+
+	def image(DefineRule o) {
+		'blank_report.png'
+	}
+
+	def text(SingleRule o) {
+		var text = new StyledString
+		val begin = o.start
+		if (begin != null) {
+			val prec = begin.rulePrec
+			val states = begin.ruleStates
+			val deff = begin.ruleDefault
+
+			if (prec != null) {
+				text.append(prec + " ", styleTwo)
+			}
+			text.append("#")
+			val size = states.size
+			if (states != null && size > 0) {
+				var count = 0;
+				for (s : states) {
+					count++;
+					text.append(s.name, styleBlue)
+					if (count < size) {
+						text.append(",")
+					}
+				}
+			} else {
+				text.append(deff, styleBlue)
+			}
+			text.append("#")
+		}
+
+		text.append(" : ")
+
+		val content = o.rule
+		val parts = content.parts
+		for (p : parts) {
+			if (p.ref != null) {
+				text.append(p.ref.name, styleBlue)
+			} else {
+				text.append(p.reg)
+			}
+		}
+		return text;
+	}
+
+/*	 	 
+ *   	 def image( o)
+ *  	{
+ *   '.png'
+ *   	}
+ *   	
+ *   	def text( o)
+ *   	{
+ *   ''
+ *   	} 
+ *    
+ */
 }

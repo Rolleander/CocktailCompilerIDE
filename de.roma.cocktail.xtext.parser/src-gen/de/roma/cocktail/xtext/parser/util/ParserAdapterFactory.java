@@ -156,9 +156,9 @@ public class ParserAdapterFactory extends AdapterFactoryImpl
         return createStartStateAdapter();
       }
       @Override
-      public Adapter caseGrammerRules(GrammerRules object)
+      public Adapter caseGrammarRules(GrammarRules object)
       {
-        return createGrammerRulesAdapter();
+        return createGrammarRulesAdapter();
       }
       @Override
       public Adapter caseGrammerReference(GrammerReference object)
@@ -174,6 +174,11 @@ public class ParserAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRuleBody(RuleBody object)
       {
         return createRuleBodyAdapter();
+      }
+      @Override
+      public Adapter caseRuleContent(RuleContent object)
+      {
+        return createRuleContentAdapter();
       }
       @Override
       public Adapter caseRulePart(RulePart object)
@@ -443,16 +448,16 @@ public class ParserAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.parser.GrammerRules <em>Grammer Rules</em>}'.
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.parser.GrammarRules <em>Grammar Rules</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.roma.cocktail.xtext.parser.GrammerRules
+   * @see de.roma.cocktail.xtext.parser.GrammarRules
    * @generated
    */
-  public Adapter createGrammerRulesAdapter()
+  public Adapter createGrammarRulesAdapter()
   {
     return null;
   }
@@ -498,6 +503,21 @@ public class ParserAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.parser.RuleContent <em>Rule Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.parser.RuleContent
+   * @generated
+   */
+  public Adapter createRuleContentAdapter()
   {
     return null;
   }

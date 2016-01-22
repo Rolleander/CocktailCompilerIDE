@@ -168,13 +168,13 @@ public interface ParserFactory extends EFactory
   StartState createStartState();
 
   /**
-   * Returns a new object of class '<em>Grammer Rules</em>'.
+   * Returns a new object of class '<em>Grammar Rules</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Grammer Rules</em>'.
+   * @return a new object of class '<em>Grammar Rules</em>'.
    * @generated
    */
-  GrammerRules createGrammerRules();
+  GrammarRules createGrammarRules();
 
   /**
    * Returns a new object of class '<em>Grammer Reference</em>'.
@@ -202,6 +202,15 @@ public interface ParserFactory extends EFactory
    * @generated
    */
   RuleBody createRuleBody();
+
+  /**
+   * Returns a new object of class '<em>Rule Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Content</em>'.
+   * @generated
+   */
+  RuleContent createRuleContent();
 
   /**
    * Returns a new object of class '<em>Rule Part</em>'.

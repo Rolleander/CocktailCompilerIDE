@@ -21,12 +21,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ParserSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ParserGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_GrammerRules_RULEKeyword_0_0_or_RULESKeyword_0_1;
+	protected AbstractElementAlias match_GrammarRules_RULEKeyword_0_0_or_RULESKeyword_0_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ParserGrammarAccess) access;
-		match_GrammerRules_RULEKeyword_0_0_or_RULESKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGrammerRulesAccess().getRULEKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getGrammerRulesAccess().getRULESKeyword_0_1()));
+		match_GrammarRules_RULEKeyword_0_0_or_RULESKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getGrammarRulesAccess().getRULEKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getGrammarRulesAccess().getRULESKeyword_0_1()));
 	}
 	
 	@Override
@@ -51,8 +51,8 @@ public class ParserSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_GrammerRules_RULEKeyword_0_0_or_RULESKeyword_0_1.equals(syntax))
-				emit_GrammerRules_RULEKeyword_0_0_or_RULESKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_GrammarRules_RULEKeyword_0_0_or_RULESKeyword_0_1.equals(syntax))
+				emit_GrammarRules_RULEKeyword_0_0_or_RULESKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,7 +65,7 @@ public class ParserSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) (rule start)
 	 *     (rule start) (ambiguity) rules+=GrammarRule
 	 */
-	protected void emit_GrammerRules_RULEKeyword_0_0_or_RULESKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_GrammarRules_RULEKeyword_0_0_or_RULESKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

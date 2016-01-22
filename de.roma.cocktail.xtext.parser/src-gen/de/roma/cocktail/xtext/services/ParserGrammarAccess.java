@@ -54,7 +54,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStartAssignment_9 = (Assignment)cUnorderedGroup.eContents().get(9);
 		private final RuleCall cStartStartSymbolsParserRuleCall_9_0 = (RuleCall)cStartAssignment_9.eContents().get(0);
 		private final Assignment cRulesAssignment_10 = (Assignment)cUnorderedGroup.eContents().get(10);
-		private final RuleCall cRulesGrammerRulesParserRuleCall_10_0 = (RuleCall)cRulesAssignment_10.eContents().get(0);
+		private final RuleCall cRulesGrammarRulesParserRuleCall_10_0 = (RuleCall)cRulesAssignment_10.eContents().get(0);
 		
 		//ParserModel:
 		//	scanner=ScannerName parser=ParserName & importBlock=Import? & exportBlock=Export? & globalBlock=Global?
@@ -62,12 +62,12 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//	& tokens=Tokens?
 		//	& precedenc=Precedence?
 		//	& start=StartSymbols?
-		//	& rules=GrammerRules?;
+		//	& rules=GrammarRules?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//scanner=ScannerName parser=ParserName & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
 		//localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
-		//start=StartSymbols? & rules=GrammerRules?
+		//start=StartSymbols? & rules=GrammarRules?
 		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
 		
 		//scanner=ScannerName parser=ParserName
@@ -139,11 +139,11 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//StartSymbols
 		public RuleCall getStartStartSymbolsParserRuleCall_9_0() { return cStartStartSymbolsParserRuleCall_9_0; }
 		
-		//rules=GrammerRules?
+		//rules=GrammarRules?
 		public Assignment getRulesAssignment_10() { return cRulesAssignment_10; }
 		
-		//GrammerRules
-		public RuleCall getRulesGrammerRulesParserRuleCall_10_0() { return cRulesGrammerRulesParserRuleCall_10_0; }
+		//GrammarRules
+		public RuleCall getRulesGrammarRulesParserRuleCall_10_0() { return cRulesGrammarRulesParserRuleCall_10_0; }
 	}
 	public class ScannerNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.ScannerName");
@@ -740,8 +740,8 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
-	public class GrammerRulesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.GrammerRules");
+	public class GrammarRulesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.GrammarRules");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cRULEKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
@@ -749,7 +749,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cRulesGrammarRuleParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
 		
-		//GrammerRules:
+		//GrammarRules:
 		//	('RULE' | 'RULES') rules+=GrammarRule*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -911,36 +911,51 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
 	}
-	public class RulePartElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.RulePart");
+	public class RuleContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.RuleContent");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cRegexAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cRegexSTRINGTerminalRuleCall_0_0 = (RuleCall)cRegexAssignment_0.eContents().get(0);
-		private final Assignment cRulesAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final CrossReference cRulesGrammerReferenceCrossReference_1_0 = (CrossReference)cRulesAssignment_1.eContents().get(0);
-		private final RuleCall cRulesGrammerReferenceIDTerminalRuleCall_1_0_1 = (RuleCall)cRulesGrammerReferenceCrossReference_1_0.eContents().get(1);
+		private final Assignment cRefAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final CrossReference cRefGrammerReferenceCrossReference_1_0 = (CrossReference)cRefAssignment_1.eContents().get(0);
+		private final RuleCall cRefGrammerReferenceIDTerminalRuleCall_1_0_1 = (RuleCall)cRefGrammerReferenceCrossReference_1_0.eContents().get(1);
 		
-		//RulePart:
-		//	(regex+=STRING | rules+=[GrammerReference])*;
+		//RuleContent:
+		//	regex=STRING | ref=[GrammerReference];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(regex+=STRING | rules+=[GrammerReference])*
+		//regex=STRING | ref=[GrammerReference]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//regex+=STRING
+		//regex=STRING
 		public Assignment getRegexAssignment_0() { return cRegexAssignment_0; }
 		
 		//STRING
 		public RuleCall getRegexSTRINGTerminalRuleCall_0_0() { return cRegexSTRINGTerminalRuleCall_0_0; }
 		
-		//rules+=[GrammerReference]
-		public Assignment getRulesAssignment_1() { return cRulesAssignment_1; }
+		//ref=[GrammerReference]
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 		
 		//[GrammerReference]
-		public CrossReference getRulesGrammerReferenceCrossReference_1_0() { return cRulesGrammerReferenceCrossReference_1_0; }
+		public CrossReference getRefGrammerReferenceCrossReference_1_0() { return cRefGrammerReferenceCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getRulesGrammerReferenceIDTerminalRuleCall_1_0_1() { return cRulesGrammerReferenceIDTerminalRuleCall_1_0_1; }
+		public RuleCall getRefGrammerReferenceIDTerminalRuleCall_1_0_1() { return cRefGrammerReferenceIDTerminalRuleCall_1_0_1; }
+	}
+	public class RulePartElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.RulePart");
+		private final Assignment cContentAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cContentRuleContentParserRuleCall_0 = (RuleCall)cContentAssignment.eContents().get(0);
+		
+		//RulePart:
+		//	content+=RuleContent*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//content+=RuleContent*
+		public Assignment getContentAssignment() { return cContentAssignment; }
+		
+		//RuleContent
+		public RuleCall getContentRuleContentParserRuleCall_0() { return cContentRuleContentParserRuleCall_0; }
 	}
 	
 	public class PrecedenceTypeElements extends AbstractEnumRuleElementFinder {
@@ -998,11 +1013,12 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	private final PrecedenceTypeElements ePrecedenceType;
 	private final StartSymbolsElements pStartSymbols;
 	private final StartStateElements pStartState;
-	private final GrammerRulesElements pGrammerRules;
+	private final GrammarRulesElements pGrammarRules;
 	private final GrammerReferenceElements pGrammerReference;
 	private final GrammarRuleElements pGrammarRule;
 	private final RuleBodyElements pRuleBody;
 	private final RuleCodeElements pRuleCode;
+	private final RuleContentElements pRuleContent;
 	private final RulePartElements pRulePart;
 	
 	private final Grammar grammar;
@@ -1033,11 +1049,12 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		this.ePrecedenceType = new PrecedenceTypeElements();
 		this.pStartSymbols = new StartSymbolsElements();
 		this.pStartState = new StartStateElements();
-		this.pGrammerRules = new GrammerRulesElements();
+		this.pGrammarRules = new GrammarRulesElements();
 		this.pGrammerReference = new GrammerReferenceElements();
 		this.pGrammarRule = new GrammarRuleElements();
 		this.pRuleBody = new RuleBodyElements();
 		this.pRuleCode = new RuleCodeElements();
+		this.pRuleContent = new RuleContentElements();
 		this.pRulePart = new RulePartElements();
 	}
 	
@@ -1074,7 +1091,7 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	//	& tokens=Tokens?
 	//	& precedenc=Precedence?
 	//	& start=StartSymbols?
-	//	& rules=GrammerRules?;
+	//	& rules=GrammarRules?;
 	public ParserModelElements getParserModelAccess() {
 		return pParserModel;
 	}
@@ -1264,14 +1281,14 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		return getStartStateAccess().getRule();
 	}
 	
-	//GrammerRules:
+	//GrammarRules:
 	//	('RULE' | 'RULES') rules+=GrammarRule*;
-	public GrammerRulesElements getGrammerRulesAccess() {
-		return pGrammerRules;
+	public GrammarRulesElements getGrammarRulesAccess() {
+		return pGrammarRules;
 	}
 	
-	public ParserRule getGrammerRulesRule() {
-		return getGrammerRulesAccess().getRule();
+	public ParserRule getGrammarRulesRule() {
+		return getGrammarRulesAccess().getRule();
 	}
 	
 	//GrammerReference:
@@ -1314,8 +1331,18 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		return getRuleCodeAccess().getRule();
 	}
 	
+	//RuleContent:
+	//	regex=STRING | ref=[GrammerReference];
+	public RuleContentElements getRuleContentAccess() {
+		return pRuleContent;
+	}
+	
+	public ParserRule getRuleContentRule() {
+		return getRuleContentAccess().getRule();
+	}
+	
 	//RulePart:
-	//	(regex+=STRING | rules+=[GrammerReference])*;
+	//	content+=RuleContent*;
 	public RulePartElements getRulePartAccess() {
 		return pRulePart;
 	}

@@ -9,7 +9,7 @@ ParserModel:
 	& tokens=Tokens? 
 	& precedenc=Precedence? 
 	& start=StartSymbols?
-	& rules=GrammerRules?
+	& rules=GrammarRules?
 ;
 
 
@@ -87,7 +87,7 @@ StartState:
 	name=ID
 ;
 
-GrammerRules:
+GrammarRules:
 	('RULE'|'RULES') rules+=GrammarRule*
 ;
 
@@ -107,8 +107,12 @@ RuleCode:
 	('{' CodeBlock '}')? & ('[' CodeBlock ']')?
 ;
 
+RuleContent:
+	regex=STRING | ref=[GrammerReference]
+;
+
 RulePart:
-	(regex+=STRING | rules+=[GrammerReference])*
+	(content+=RuleContent)*
 ;
 
 //terminal Identifier:

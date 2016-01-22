@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Grammer Rules</b></em>'.
+ * A representation of the model object '<em><b>Grammar Rules</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.parser.GrammerRules#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.parser.GrammarRules#getRules <em>Rules</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.roma.cocktail.xtext.parser.ParserPackage#getGrammerRules()
+ * @see de.roma.cocktail.xtext.parser.ParserPackage#getGrammarRules()
  * @model
  * @generated
  */
-public interface GrammerRules extends EObject
+public interface GrammarRules extends EObject
 {
   /**
    * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
@@ -35,10 +35,10 @@ public interface GrammerRules extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rules</em>' containment reference list.
-   * @see de.roma.cocktail.xtext.parser.ParserPackage#getGrammerRules_Rules()
+   * @see de.roma.cocktail.xtext.parser.ParserPackage#getGrammarRules_Rules()
    * @model containment="true"
    * @generated
    */
   EList<GrammarRule> getRules();
 
-} // GrammerRules
+} // GrammarRules

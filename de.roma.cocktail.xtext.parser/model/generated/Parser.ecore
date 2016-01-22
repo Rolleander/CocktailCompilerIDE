@@ -24,7 +24,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//StartSymbols"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" eType="#//GrammerRules"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" eType="#//GrammarRules"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScannerName">
@@ -85,7 +85,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="StartState">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GrammerRules">
+  <eClassifiers xsi:type="ecore:EClass" name="GrammarRules">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//GrammarRule" containment="true"/>
   </eClassifiers>
@@ -101,10 +101,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//GrammerReference"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RulePart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regex" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" unique="false" upperBound="-1"
-        eType="#//GrammerReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//RuleContent" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
