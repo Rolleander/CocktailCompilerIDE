@@ -3,8 +3,6 @@
  */
 package org.xtext.cocktail.scanner;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +14,16 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getExport <em>Export</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getGlobal <em>Global</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getLocal <em>Local</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getDefault <em>Default</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getEof <em>Eof</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getBegin <em>Begin</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getClose <em>Close</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getDefine <em>Define</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getStates <em>States</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.Model#getRules <em>Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,19 +34,289 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Scanner</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * Returns the value of the '<em><b>Scanner</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Scanner</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Scanner</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scanner</em>' containment reference list.
+   * @return the value of the '<em>Scanner</em>' containment reference.
+   * @see #setScanner(Scanner)
    * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Scanner()
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getScanner();
+  Scanner getScanner();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Scanner</em>' containment reference.
+   * @see #getScanner()
+   * @generated
+   */
+  void setScanner(Scanner value);
+
+  /**
+   * Returns the value of the '<em><b>Export</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Export</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Export</em>' containment reference.
+   * @see #setExport(Export)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Export()
+   * @model containment="true"
+   * @generated
+   */
+  Export getExport();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getExport <em>Export</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Export</em>' containment reference.
+   * @see #getExport()
+   * @generated
+   */
+  void setExport(Export value);
+
+  /**
+   * Returns the value of the '<em><b>Global</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Global</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Global</em>' containment reference.
+   * @see #setGlobal(Global)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Global()
+   * @model containment="true"
+   * @generated
+   */
+  Global getGlobal();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getGlobal <em>Global</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Global</em>' containment reference.
+   * @see #getGlobal()
+   * @generated
+   */
+  void setGlobal(Global value);
+
+  /**
+   * Returns the value of the '<em><b>Local</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Local</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Local</em>' containment reference.
+   * @see #setLocal(Local)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Local()
+   * @model containment="true"
+   * @generated
+   */
+  Local getLocal();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getLocal <em>Local</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Local</em>' containment reference.
+   * @see #getLocal()
+   * @generated
+   */
+  void setLocal(Local value);
+
+  /**
+   * Returns the value of the '<em><b>Default</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Default</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Default</em>' containment reference.
+   * @see #setDefault(Default)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Default()
+   * @model containment="true"
+   * @generated
+   */
+  Default getDefault();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getDefault <em>Default</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Default</em>' containment reference.
+   * @see #getDefault()
+   * @generated
+   */
+  void setDefault(Default value);
+
+  /**
+   * Returns the value of the '<em><b>Eof</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Eof</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Eof</em>' containment reference.
+   * @see #setEof(Eof)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Eof()
+   * @model containment="true"
+   * @generated
+   */
+  Eof getEof();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getEof <em>Eof</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Eof</em>' containment reference.
+   * @see #getEof()
+   * @generated
+   */
+  void setEof(Eof value);
+
+  /**
+   * Returns the value of the '<em><b>Begin</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Begin</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Begin</em>' containment reference.
+   * @see #setBegin(Begin)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Begin()
+   * @model containment="true"
+   * @generated
+   */
+  Begin getBegin();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getBegin <em>Begin</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Begin</em>' containment reference.
+   * @see #getBegin()
+   * @generated
+   */
+  void setBegin(Begin value);
+
+  /**
+   * Returns the value of the '<em><b>Close</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Close</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Close</em>' containment reference.
+   * @see #setClose(Close)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Close()
+   * @model containment="true"
+   * @generated
+   */
+  Close getClose();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getClose <em>Close</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Close</em>' containment reference.
+   * @see #getClose()
+   * @generated
+   */
+  void setClose(Close value);
+
+  /**
+   * Returns the value of the '<em><b>Define</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Define</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Define</em>' containment reference.
+   * @see #setDefine(Define)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Define()
+   * @model containment="true"
+   * @generated
+   */
+  Define getDefine();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getDefine <em>Define</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Define</em>' containment reference.
+   * @see #getDefine()
+   * @generated
+   */
+  void setDefine(Define value);
+
+  /**
+   * Returns the value of the '<em><b>States</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>States</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>States</em>' containment reference.
+   * @see #setStates(StartStates)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_States()
+   * @model containment="true"
+   * @generated
+   */
+  StartStates getStates();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getStates <em>States</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>States</em>' containment reference.
+   * @see #getStates()
+   * @generated
+   */
+  void setStates(StartStates value);
+
+  /**
+   * Returns the value of the '<em><b>Rules</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rules</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rules</em>' containment reference.
+   * @see #setRules(Rule)
+   * @see org.xtext.cocktail.scanner.ScannerPackage#getModel_Rules()
+   * @model containment="true"
+   * @generated
+   */
+  Rule getRules();
+
+  /**
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.Model#getRules <em>Rules</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rules</em>' containment reference.
+   * @see #getRules()
+   * @generated
+   */
+  void setRules(Rule value);
 
 } // Model

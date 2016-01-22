@@ -2,8 +2,27 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scanner" nsURI="http://www.xtext.org/cocktail/Scanner" nsPrefix="scanner">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scanner" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scanner" eType="#//Scanner"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="export" eType="#//Export"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="global" eType="#//Global"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="local" eType="#//Local"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="default" eType="#//Default"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eof" eType="#//Eof" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="begin" eType="#//Begin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="close" eType="#//Close"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="define" eType="#//Define"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" eType="#//StartStates"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" eType="#//Rule"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scanner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

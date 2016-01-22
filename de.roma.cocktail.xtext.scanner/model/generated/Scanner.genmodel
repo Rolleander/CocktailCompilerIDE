@@ -8,6 +8,16 @@
       fileExtensions="scan,rex" ecorePackage="Scanner.ecore#/">
     <genClasses ecoreClass="Scanner.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/scanner"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/export"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/global"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/local"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/eof"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/begin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/close"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/define"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scanner.ecore#//Model/rules"/>
     </genClasses>
     <genClasses ecoreClass="Scanner.ecore#//Scanner">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scanner.ecore#//Scanner/name"/>

@@ -86,7 +86,7 @@ ruleModel returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
 					}
-					add(
+					set(
 						$current,
 						"scanner",
 						lv_scanner_0_0,
@@ -109,17 +109,17 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerExportParserRuleCall_1_0_0());
+										newCompositeNode(grammarAccess.getModelAccess().getExportExportParserRuleCall_1_0_0());
 									}
-									lv_scanner_2_0=ruleExport
+									lv_export_2_0=ruleExport
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_2_0,
+											"export",
+											lv_export_2_0,
 											"org.xtext.cocktail.Scanner.Export");
 										afterParserOrEnumRuleCall();
 									}
@@ -137,17 +137,17 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerGlobalParserRuleCall_1_1_0());
+										newCompositeNode(grammarAccess.getModelAccess().getGlobalGlobalParserRuleCall_1_1_0());
 									}
-									lv_scanner_3_0=ruleGlobal
+									lv_global_3_0=ruleGlobal
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_3_0,
+											"global",
+											lv_global_3_0,
 											"org.xtext.cocktail.Scanner.Global");
 										afterParserOrEnumRuleCall();
 									}
@@ -165,17 +165,17 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerLocalParserRuleCall_1_2_0());
+										newCompositeNode(grammarAccess.getModelAccess().getLocalLocalParserRuleCall_1_2_0());
 									}
-									lv_scanner_4_0=ruleLocal
+									lv_local_4_0=ruleLocal
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_4_0,
+											"local",
+											lv_local_4_0,
 											"org.xtext.cocktail.Scanner.Local");
 										afterParserOrEnumRuleCall();
 									}
@@ -193,17 +193,17 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerDefaultParserRuleCall_1_3_0());
+										newCompositeNode(grammarAccess.getModelAccess().getDefaultDefaultParserRuleCall_1_3_0());
 									}
-									lv_scanner_5_0=ruleDefault
+									lv_default_5_0=ruleDefault
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_5_0,
+											"default",
+											lv_default_5_0,
 											"org.xtext.cocktail.Scanner.Default");
 										afterParserOrEnumRuleCall();
 									}
@@ -221,17 +221,17 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerEofParserRuleCall_1_4_0());
+										newCompositeNode(grammarAccess.getModelAccess().getEofEofParserRuleCall_1_4_0());
 									}
-									lv_scanner_6_0=ruleEof
+									lv_eof_6_0=ruleEof
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_6_0,
+											"eof",
+											lv_eof_6_0,
 											"org.xtext.cocktail.Scanner.Eof");
 										afterParserOrEnumRuleCall();
 									}
@@ -249,18 +249,18 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerDefineParserRuleCall_1_5_0());
+										newCompositeNode(grammarAccess.getModelAccess().getBeginBeginParserRuleCall_1_5_0());
 									}
-									lv_scanner_7_0=ruleDefine
+									lv_begin_7_0=ruleBegin
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_7_0,
-											"org.xtext.cocktail.Scanner.Define");
+											"begin",
+											lv_begin_7_0,
+											"org.xtext.cocktail.Scanner.Begin");
 										afterParserOrEnumRuleCall();
 									}
 								)
@@ -277,18 +277,18 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerStartStatesParserRuleCall_1_6_0());
+										newCompositeNode(grammarAccess.getModelAccess().getCloseCloseParserRuleCall_1_6_0());
 									}
-									lv_scanner_8_0=ruleStartStates
+									lv_close_8_0=ruleClose
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_8_0,
-											"org.xtext.cocktail.Scanner.StartStates");
+											"close",
+											lv_close_8_0,
+											"org.xtext.cocktail.Scanner.Close");
 										afterParserOrEnumRuleCall();
 									}
 								)
@@ -305,18 +305,18 @@ ruleModel returns [EObject current=null]
 					}
 								({true}?=>((
 									{
-										newCompositeNode(grammarAccess.getModelAccess().getScannerRuleParserRuleCall_1_7_0());
+										newCompositeNode(grammarAccess.getModelAccess().getDefineDefineParserRuleCall_1_7_0());
 									}
-									lv_scanner_9_0=ruleRule
+									lv_define_9_0=ruleDefine
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										add(
+										set(
 											$current,
-											"scanner",
-											lv_scanner_9_0,
-											"org.xtext.cocktail.Scanner.Rule");
+											"define",
+											lv_define_9_0,
+											"org.xtext.cocktail.Scanner.Define");
 										afterParserOrEnumRuleCall();
 									}
 								)
@@ -332,43 +332,50 @@ ruleModel returns [EObject current=null]
 						getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_1(), 8);
 					}
 								({true}?=>((
-									(
-										{
-											newCompositeNode(grammarAccess.getModelAccess().getScannerBeginParserRuleCall_1_8_0_0());
+									{
+										newCompositeNode(grammarAccess.getModelAccess().getStatesStartStatesParserRuleCall_1_8_0());
+									}
+									lv_states_10_0=ruleStartStates
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-										lv_scanner_10_0=ruleBegin
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getModelRule());
-											}
-											add(
-												$current,
-												"scanner",
-												lv_scanner_10_0,
-												"org.xtext.cocktail.Scanner.Begin");
-											afterParserOrEnumRuleCall();
+										set(
+											$current,
+											"states",
+											lv_states_10_0,
+											"org.xtext.cocktail.Scanner.StartStates");
+										afterParserOrEnumRuleCall();
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_1());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getModelAccess().getUnorderedGroup_1(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getModelAccess().getUnorderedGroup_1(), 9);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getModelAccess().getRulesRuleParserRuleCall_1_9_0());
+									}
+									lv_rules_11_0=ruleRule
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getModelRule());
 										}
-									)
-								)?
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getModelAccess().getScannerCloseParserRuleCall_1_8_1_0());
-										}
-										lv_scanner_11_0=ruleClose
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getModelRule());
-											}
-											add(
-												$current,
-												"scanner",
-												lv_scanner_11_0,
-												"org.xtext.cocktail.Scanner.Close");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)?
+										set(
+											$current,
+											"rules",
+											lv_rules_11_0,
+											"org.xtext.cocktail.Scanner.Rule");
+										afterParserOrEnumRuleCall();
+									}
+								)
 								))
 					{ 
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getModelAccess().getUnorderedGroup_1());
@@ -1664,10 +1671,7 @@ ruleRulePart returns [EObject current=null]
 		)
 		    |
 		(
-			((
-				RULE_ID
-			)
-			)=>
+			(RULE_ID)=>
 			(
 				{
 					if ($current==null) {

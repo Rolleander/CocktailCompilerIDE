@@ -273,18 +273,18 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         scanner+=Scanner 
+	 *         scanner=Scanner 
 	 *         (
-	 *             scanner+=Export | 
-	 *             scanner+=Global | 
-	 *             scanner+=Local | 
-	 *             scanner+=Default | 
-	 *             scanner+=Eof | 
-	 *             scanner+=Define | 
-	 *             scanner+=StartStates | 
-	 *             scanner+=Rule | 
-	 *             scanner+=Begin | 
-	 *             scanner+=Close
+	 *             export=Export | 
+	 *             global=Global | 
+	 *             local=Local | 
+	 *             default=Default | 
+	 *             eof=Eof | 
+	 *             begin=Begin | 
+	 *             close=Close | 
+	 *             define=Define | 
+	 *             states=StartStates | 
+	 *             rules=Rule
 	 *         )*
 	 *     )
 	 */

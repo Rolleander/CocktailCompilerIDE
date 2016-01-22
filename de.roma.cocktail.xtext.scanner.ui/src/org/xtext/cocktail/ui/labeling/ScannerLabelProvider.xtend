@@ -125,7 +125,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	def text(Scanner ele) {
-		ele.getName()
+		"Name: "+ele.getName()
 	}
 
 	def image(Scanner ele) {

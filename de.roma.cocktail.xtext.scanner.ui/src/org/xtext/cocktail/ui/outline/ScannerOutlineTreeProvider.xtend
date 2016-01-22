@@ -5,7 +5,17 @@ package org.xtext.cocktail.ui.outline
 
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import org.xtext.cocktail.scanner.Begin
+import org.xtext.cocktail.scanner.Close
+import org.xtext.cocktail.scanner.Default
+import org.xtext.cocktail.scanner.Eof
+import org.xtext.cocktail.scanner.Export
+import org.xtext.cocktail.scanner.Global
+import org.xtext.cocktail.scanner.Local
+import org.xtext.cocktail.scanner.Scanner
 import org.xtext.cocktail.scanner.SingleRule
+import org.xtext.cocktail.scanner.DefineRule
+import org.xtext.cocktail.scanner.StartState
 
 /**
  * Customization of the default outline structure.
@@ -19,9 +29,17 @@ class ScannerOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
 	override protected _isLeaf(EObject o) {
 
-		if(o instanceof SingleRule){return true}
-		
-			
+		if(o instanceof SingleRule){return true}		
+		if(o instanceof Scanner){return true}
+		if(o instanceof Export){return true}
+		if(o instanceof Global){return true}
+		if(o instanceof Local){return true}
+		if(o instanceof Default){return true}
+		if(o instanceof Eof){return true}
+		if(o instanceof Begin){return true}
+		if(o instanceof Close){return true}
+		if(o instanceof DefineRule){return true}
+		if(o instanceof StartState){return true}
 	}
 	
 }

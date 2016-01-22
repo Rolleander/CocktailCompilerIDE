@@ -68,7 +68,7 @@ public interface ScannerPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Scanner</b></em>' containment reference list.
+   * The feature id for the '<em><b>Scanner</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -77,13 +77,103 @@ public interface ScannerPackage extends EPackage
   int MODEL__SCANNER = 0;
 
   /**
+   * The feature id for the '<em><b>Export</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__EXPORT = 1;
+
+  /**
+   * The feature id for the '<em><b>Global</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__GLOBAL = 2;
+
+  /**
+   * The feature id for the '<em><b>Local</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__LOCAL = 3;
+
+  /**
+   * The feature id for the '<em><b>Default</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__DEFAULT = 4;
+
+  /**
+   * The feature id for the '<em><b>Eof</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__EOF = 5;
+
+  /**
+   * The feature id for the '<em><b>Begin</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__BEGIN = 6;
+
+  /**
+   * The feature id for the '<em><b>Close</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__CLOSE = 7;
+
+  /**
+   * The feature id for the '<em><b>Define</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__DEFINE = 8;
+
+  /**
+   * The feature id for the '<em><b>States</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__STATES = 9;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__RULES = 10;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int MODEL_FEATURE_COUNT = 11;
 
   /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
@@ -645,15 +735,125 @@ public interface ScannerPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scanner</em>'.
+   * @return the meta object for the containment reference '<em>Scanner</em>'.
    * @see org.xtext.cocktail.scanner.Model#getScanner()
    * @see #getModel()
    * @generated
    */
   EReference getModel_Scanner();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getExport <em>Export</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Export</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getExport()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Export();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getGlobal <em>Global</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Global</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getGlobal()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Global();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getLocal <em>Local</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Local</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getLocal()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Local();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getDefault <em>Default</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Default</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getDefault()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Default();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getEof <em>Eof</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Eof</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getEof()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Eof();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getBegin <em>Begin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Begin</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getBegin()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Begin();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getClose <em>Close</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Close</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getClose()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Close();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getDefine <em>Define</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Define</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getDefine()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Define();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getStates <em>States</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>States</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getStates()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_States();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Model#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rules</em>'.
+   * @see org.xtext.cocktail.scanner.Model#getRules()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Rules();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Scanner <em>Scanner</em>}'.
@@ -1134,12 +1334,92 @@ public interface ScannerPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Scanner</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Scanner</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MODEL__SCANNER = eINSTANCE.getModel_Scanner();
+
+    /**
+     * The meta object literal for the '<em><b>Export</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__EXPORT = eINSTANCE.getModel_Export();
+
+    /**
+     * The meta object literal for the '<em><b>Global</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__GLOBAL = eINSTANCE.getModel_Global();
+
+    /**
+     * The meta object literal for the '<em><b>Local</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__LOCAL = eINSTANCE.getModel_Local();
+
+    /**
+     * The meta object literal for the '<em><b>Default</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__DEFAULT = eINSTANCE.getModel_Default();
+
+    /**
+     * The meta object literal for the '<em><b>Eof</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__EOF = eINSTANCE.getModel_Eof();
+
+    /**
+     * The meta object literal for the '<em><b>Begin</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__BEGIN = eINSTANCE.getModel_Begin();
+
+    /**
+     * The meta object literal for the '<em><b>Close</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__CLOSE = eINSTANCE.getModel_Close();
+
+    /**
+     * The meta object literal for the '<em><b>Define</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__DEFINE = eINSTANCE.getModel_Define();
+
+    /**
+     * The meta object literal for the '<em><b>States</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__STATES = eINSTANCE.getModel_States();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__RULES = eINSTANCE.getModel_Rules();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
