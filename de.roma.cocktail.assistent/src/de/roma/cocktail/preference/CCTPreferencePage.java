@@ -1,5 +1,6 @@
 package de.roma.cocktail.preference;
 
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringButtonFieldEditor;
 import org.eclipse.swt.SWT;
@@ -11,8 +12,16 @@ import de.roma.cocktail.assistent.Activator;
 
 public class CCTPreferencePage extends FieldEditorPreferencePage 
 	implements IWorkbenchPreferencePage {
+	
+//	Falls die Felder geordnet werden müssen
+//	public CCTPreferencePage() {
+//		super(GRID);
+//	}
 
+	@Override
 	protected void createFieldEditors() {
+		// Wert lässt sich durch String path = Activator.getDefault().getPreferenceStore().getString("cctPath");
+		// holen
 		addField(new StringButtonFieldEditor("cctPath",
 				"Path of the CCT installation:"
 				,getFieldEditorParent()) {
@@ -26,10 +35,12 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 				return dialog.open();
 			}
 		});
+		// Für Sample-Text oder ähnlichem
+		addField(new BooleanFieldEditor("useTemplates", "Create templates", getFieldEditorParent()));
 	}
 	
+	@Override
 	public void init(IWorkbench workbench) {
-		setPreferenceStore(
-				Activator.getDefault().getPreferenceStore());
+		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 	}
 }
