@@ -3,9 +3,20 @@
  */
 package de.roma.cocktail.xtext
 
+import com.google.inject.Binder
+import org.eclipse.xtext.formatting2.AbstractFormatter2
+import de.roma.cocktail.xtext.formatting2.ParserFormatter
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class ParserRuntimeModule extends AbstractParserRuntimeModule {
+	
+	
+	
+	override configure(Binder binder) {
+		super.configure(binder)
+	 binder.bind(AbstractFormatter2).to(ParserFormatter)
+	}
+	
 }

@@ -272,18 +272,21 @@ public class ParserSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *
 	 * Constraint:
 	 *     (
-	 *         (scanner=ScannerName parser=ParserName) | 
-	 *         importBlock=Import | 
-	 *         exportBlock=Export | 
-	 *         globalBlock=Global | 
-	 *         localBlock=Local | 
-	 *         beginBlock=Begin | 
-	 *         closeBlock=Close | 
-	 *         tokens=Tokens | 
-	 *         precedenc=Precedence | 
-	 *         start=StartSymbols | 
+	 *         (
+	 *             scanner=ScannerName | 
+	 *             parser=ParserName | 
+	 *             importBlock=Import | 
+	 *             exportBlock=Export | 
+	 *             globalBlock=Global | 
+	 *             localBlock=Local | 
+	 *             beginBlock=Begin | 
+	 *             closeBlock=Close | 
+	 *             tokens=Tokens | 
+	 *             precedenc=Precedence | 
+	 *             start=StartSymbols
+	 *         )* 
 	 *         rules=GrammarRules
-	 *     )+
+	 *     )
 	 */
 	protected void sequence_ParserModel(ISerializationContext context, ParserModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

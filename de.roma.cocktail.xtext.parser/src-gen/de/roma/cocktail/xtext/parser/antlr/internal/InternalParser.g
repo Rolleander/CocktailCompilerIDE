@@ -78,18 +78,18 @@ ruleParserModel returns [EObject current=null]
 }:
 	(
 		(
-			{ 
-			  getUnorderedGroupHelper().enter(grammarAccess.getParserModelAccess().getUnorderedGroup());
-			}
 			(
-				(
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0);
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
 				}
-							({true}?=>((
-								(
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0);
+					}
+								({true}?=>((
 									{
 										newCompositeNode(grammarAccess.getParserModelAccess().getScannerScannerNameParserRuleCall_0_0_0());
 									}
@@ -106,9 +106,18 @@ ruleParserModel returns [EObject current=null]
 										afterParserOrEnumRuleCall();
 									}
 								)
-							)
-							(
-								(
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1);
+					}
+								({true}?=>((
 									{
 										newCompositeNode(grammarAccess.getParserModelAccess().getParserParserNameParserRuleCall_0_1_0());
 									}
@@ -125,300 +134,290 @@ ruleParserModel returns [EObject current=null]
 										afterParserOrEnumRuleCall();
 									}
 								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getImportBlockImportParserRuleCall_1_0());
-								}
-								lv_importBlock_3_0=ruleImport
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getImportBlockImportParserRuleCall_0_2_0());
 									}
-									set(
-										$current,
-										"importBlock",
-										lv_importBlock_3_0,
-										"de.roma.cocktail.xtext.Parser.Import");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getExportBlockExportParserRuleCall_2_0());
-								}
-								lv_exportBlock_4_0=ruleExport
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+									lv_importBlock_3_0=ruleImport
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"importBlock",
+											lv_importBlock_3_0,
+											"de.roma.cocktail.xtext.Parser.Import");
+										afterParserOrEnumRuleCall();
 									}
-									set(
-										$current,
-										"exportBlock",
-										lv_exportBlock_4_0,
-										"de.roma.cocktail.xtext.Parser.Export");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getGlobalBlockGlobalParserRuleCall_3_0());
-								}
-								lv_globalBlock_5_0=ruleGlobal
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getExportBlockExportParserRuleCall_0_3_0());
 									}
-									set(
-										$current,
-										"globalBlock",
-										lv_globalBlock_5_0,
-										"de.roma.cocktail.xtext.Parser.Global");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getLocalBlockLocalParserRuleCall_4_0());
-								}
-								lv_localBlock_6_0=ruleLocal
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+									lv_exportBlock_4_0=ruleExport
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"exportBlock",
+											lv_exportBlock_4_0,
+											"de.roma.cocktail.xtext.Parser.Export");
+										afterParserOrEnumRuleCall();
 									}
-									set(
-										$current,
-										"localBlock",
-										lv_localBlock_6_0,
-										"de.roma.cocktail.xtext.Parser.Local");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getBeginBlockBeginParserRuleCall_5_0());
-								}
-								lv_beginBlock_7_0=ruleBegin
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getGlobalBlockGlobalParserRuleCall_0_4_0());
 									}
-									set(
-										$current,
-										"beginBlock",
-										lv_beginBlock_7_0,
-										"de.roma.cocktail.xtext.Parser.Begin");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getCloseBlockCloseParserRuleCall_6_0());
-								}
-								lv_closeBlock_8_0=ruleClose
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+									lv_globalBlock_5_0=ruleGlobal
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"globalBlock",
+											lv_globalBlock_5_0,
+											"de.roma.cocktail.xtext.Parser.Global");
+										afterParserOrEnumRuleCall();
 									}
-									set(
-										$current,
-										"closeBlock",
-										lv_closeBlock_8_0,
-										"de.roma.cocktail.xtext.Parser.Close");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getTokensTokensParserRuleCall_7_0());
-								}
-								lv_tokens_9_0=ruleTokens
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getLocalBlockLocalParserRuleCall_0_5_0());
 									}
-									set(
-										$current,
-										"tokens",
-										lv_tokens_9_0,
-										"de.roma.cocktail.xtext.Parser.Tokens");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getPrecedencPrecedenceParserRuleCall_8_0());
-								}
-								lv_precedenc_10_0=rulePrecedence
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+									lv_localBlock_6_0=ruleLocal
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"localBlock",
+											lv_localBlock_6_0,
+											"de.roma.cocktail.xtext.Parser.Local");
+										afterParserOrEnumRuleCall();
 									}
-									set(
-										$current,
-										"precedenc",
-										lv_precedenc_10_0,
-										"de.roma.cocktail.xtext.Parser.Precedence");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getStartStartSymbolsParserRuleCall_9_0());
-								}
-								lv_start_11_0=ruleStartSymbols
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getBeginBlockBeginParserRuleCall_0_6_0());
 									}
-									set(
-										$current,
-										"start",
-										lv_start_11_0,
-										"de.roma.cocktail.xtext.Parser.StartSymbols");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10);
-				}
-							({true}?=>((
-								{
-									newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammarRulesParserRuleCall_10_0());
-								}
-								lv_rules_12_0=ruleGrammarRules
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getParserModelRule());
+									lv_beginBlock_7_0=ruleBegin
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"beginBlock",
+											lv_beginBlock_7_0,
+											"de.roma.cocktail.xtext.Parser.Begin");
+										afterParserOrEnumRuleCall();
 									}
-									set(
-										$current,
-										"rules",
-										lv_rules_12_0,
-										"de.roma.cocktail.xtext.Parser.GrammarRules");
-									afterParserOrEnumRuleCall();
-								}
-							)
-							))
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getCloseBlockCloseParserRuleCall_0_7_0());
+									}
+									lv_closeBlock_8_0=ruleClose
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"closeBlock",
+											lv_closeBlock_8_0,
+											"de.roma.cocktail.xtext.Parser.Close");
+										afterParserOrEnumRuleCall();
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getTokensTokensParserRuleCall_0_8_0());
+									}
+									lv_tokens_9_0=ruleTokens
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"tokens",
+											lv_tokens_9_0,
+											"de.roma.cocktail.xtext.Parser.Tokens");
+										afterParserOrEnumRuleCall();
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getPrecedencPrecedenceParserRuleCall_0_9_0());
+									}
+									lv_precedenc_10_0=rulePrecedence
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"precedenc",
+											lv_precedenc_10_0,
+											"de.roma.cocktail.xtext.Parser.Precedence");
+										afterParserOrEnumRuleCall();
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10);
+					}
+								({true}?=>((
+									{
+										newCompositeNode(grammarAccess.getParserModelAccess().getStartStartSymbolsParserRuleCall_0_10_0());
+									}
+									lv_start_11_0=ruleStartSymbols
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getParserModelRule());
+										}
+										set(
+											$current,
+											"start",
+											lv_start_11_0,
+											"de.roma.cocktail.xtext.Parser.StartSymbols");
+										afterParserOrEnumRuleCall();
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+					}
+				)
+			)
+					)*
+				)
+			)
 				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
+				  getUnorderedGroupHelper().leave(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+				}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammarRulesParserRuleCall_1_0());
+				}
+				lv_rules_12_0=ruleGrammarRules
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParserModelRule());
+					}
+					set(
+						$current,
+						"rules",
+						lv_rules_12_0,
+						"de.roma.cocktail.xtext.Parser.GrammarRules");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-				)+
-				{getUnorderedGroupHelper().canLeave(grammarAccess.getParserModelAccess().getUnorderedGroup())}?
-			)
-		)
-			{ 
-			  getUnorderedGroupHelper().leave(grammarAccess.getParserModelAccess().getUnorderedGroup());
-			}
 	)
 ;
 

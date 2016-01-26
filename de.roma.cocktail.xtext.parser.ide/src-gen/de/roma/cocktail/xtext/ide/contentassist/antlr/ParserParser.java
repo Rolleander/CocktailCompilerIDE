@@ -43,7 +43,7 @@ public class ParserParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGrammerReferenceAccess().getAlternatives(), "rule__GrammerReference__Alternatives");
 					put(grammarAccess.getRuleContentAccess().getAlternatives(), "rule__RuleContent__Alternatives");
 					put(grammarAccess.getPrecedenceTypeAccess().getAlternatives(), "rule__PrecedenceType__Alternatives");
-					put(grammarAccess.getParserModelAccess().getGroup_0(), "rule__ParserModel__Group_0__0");
+					put(grammarAccess.getParserModelAccess().getGroup(), "rule__ParserModel__Group__0");
 					put(grammarAccess.getScannerNameAccess().getGroup(), "rule__ScannerName__Group__0");
 					put(grammarAccess.getParserNameAccess().getGroup(), "rule__ParserName__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
@@ -69,16 +69,16 @@ public class ParserParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleCodeAccess().getGroup_1(), "rule__RuleCode__Group_1__0");
 					put(grammarAccess.getParserModelAccess().getScannerAssignment_0_0(), "rule__ParserModel__ScannerAssignment_0_0");
 					put(grammarAccess.getParserModelAccess().getParserAssignment_0_1(), "rule__ParserModel__ParserAssignment_0_1");
-					put(grammarAccess.getParserModelAccess().getImportBlockAssignment_1(), "rule__ParserModel__ImportBlockAssignment_1");
-					put(grammarAccess.getParserModelAccess().getExportBlockAssignment_2(), "rule__ParserModel__ExportBlockAssignment_2");
-					put(grammarAccess.getParserModelAccess().getGlobalBlockAssignment_3(), "rule__ParserModel__GlobalBlockAssignment_3");
-					put(grammarAccess.getParserModelAccess().getLocalBlockAssignment_4(), "rule__ParserModel__LocalBlockAssignment_4");
-					put(grammarAccess.getParserModelAccess().getBeginBlockAssignment_5(), "rule__ParserModel__BeginBlockAssignment_5");
-					put(grammarAccess.getParserModelAccess().getCloseBlockAssignment_6(), "rule__ParserModel__CloseBlockAssignment_6");
-					put(grammarAccess.getParserModelAccess().getTokensAssignment_7(), "rule__ParserModel__TokensAssignment_7");
-					put(grammarAccess.getParserModelAccess().getPrecedencAssignment_8(), "rule__ParserModel__PrecedencAssignment_8");
-					put(grammarAccess.getParserModelAccess().getStartAssignment_9(), "rule__ParserModel__StartAssignment_9");
-					put(grammarAccess.getParserModelAccess().getRulesAssignment_10(), "rule__ParserModel__RulesAssignment_10");
+					put(grammarAccess.getParserModelAccess().getImportBlockAssignment_0_2(), "rule__ParserModel__ImportBlockAssignment_0_2");
+					put(grammarAccess.getParserModelAccess().getExportBlockAssignment_0_3(), "rule__ParserModel__ExportBlockAssignment_0_3");
+					put(grammarAccess.getParserModelAccess().getGlobalBlockAssignment_0_4(), "rule__ParserModel__GlobalBlockAssignment_0_4");
+					put(grammarAccess.getParserModelAccess().getLocalBlockAssignment_0_5(), "rule__ParserModel__LocalBlockAssignment_0_5");
+					put(grammarAccess.getParserModelAccess().getBeginBlockAssignment_0_6(), "rule__ParserModel__BeginBlockAssignment_0_6");
+					put(grammarAccess.getParserModelAccess().getCloseBlockAssignment_0_7(), "rule__ParserModel__CloseBlockAssignment_0_7");
+					put(grammarAccess.getParserModelAccess().getTokensAssignment_0_8(), "rule__ParserModel__TokensAssignment_0_8");
+					put(grammarAccess.getParserModelAccess().getPrecedencAssignment_0_9(), "rule__ParserModel__PrecedencAssignment_0_9");
+					put(grammarAccess.getParserModelAccess().getStartAssignment_0_10(), "rule__ParserModel__StartAssignment_0_10");
+					put(grammarAccess.getParserModelAccess().getRulesAssignment_1(), "rule__ParserModel__RulesAssignment_1");
 					put(grammarAccess.getScannerNameAccess().getNameAssignment_1(), "rule__ScannerName__NameAssignment_1");
 					put(grammarAccess.getParserNameAccess().getNameAssignment_1(), "rule__ParserName__NameAssignment_1");
 					put(grammarAccess.getImportAccess().getContentAssignment_2(), "rule__Import__ContentAssignment_2");
@@ -108,7 +108,7 @@ public class ParserParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleContentAccess().getRegexAssignment_0(), "rule__RuleContent__RegexAssignment_0");
 					put(grammarAccess.getRuleContentAccess().getRefAssignment_1(), "rule__RuleContent__RefAssignment_1");
 					put(grammarAccess.getRulePartAccess().getContentAssignment(), "rule__RulePart__ContentAssignment");
-					put(grammarAccess.getParserModelAccess().getUnorderedGroup(), "rule__ParserModel__UnorderedGroup");
+					put(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), "rule__ParserModel__UnorderedGroup_0");
 					put(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), "rule__RuleCode__UnorderedGroup");
 				}
 			};

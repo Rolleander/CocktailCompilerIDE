@@ -29,121 +29,123 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ParserModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.ParserModel");
-		private final UnorderedGroup cUnorderedGroup = (UnorderedGroup)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cUnorderedGroup.eContents().get(0);
-		private final Assignment cScannerAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final UnorderedGroup cUnorderedGroup_0 = (UnorderedGroup)cGroup.eContents().get(0);
+		private final Assignment cScannerAssignment_0_0 = (Assignment)cUnorderedGroup_0.eContents().get(0);
 		private final RuleCall cScannerScannerNameParserRuleCall_0_0_0 = (RuleCall)cScannerAssignment_0_0.eContents().get(0);
-		private final Assignment cParserAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final Assignment cParserAssignment_0_1 = (Assignment)cUnorderedGroup_0.eContents().get(1);
 		private final RuleCall cParserParserNameParserRuleCall_0_1_0 = (RuleCall)cParserAssignment_0_1.eContents().get(0);
-		private final Assignment cImportBlockAssignment_1 = (Assignment)cUnorderedGroup.eContents().get(1);
-		private final RuleCall cImportBlockImportParserRuleCall_1_0 = (RuleCall)cImportBlockAssignment_1.eContents().get(0);
-		private final Assignment cExportBlockAssignment_2 = (Assignment)cUnorderedGroup.eContents().get(2);
-		private final RuleCall cExportBlockExportParserRuleCall_2_0 = (RuleCall)cExportBlockAssignment_2.eContents().get(0);
-		private final Assignment cGlobalBlockAssignment_3 = (Assignment)cUnorderedGroup.eContents().get(3);
-		private final RuleCall cGlobalBlockGlobalParserRuleCall_3_0 = (RuleCall)cGlobalBlockAssignment_3.eContents().get(0);
-		private final Assignment cLocalBlockAssignment_4 = (Assignment)cUnorderedGroup.eContents().get(4);
-		private final RuleCall cLocalBlockLocalParserRuleCall_4_0 = (RuleCall)cLocalBlockAssignment_4.eContents().get(0);
-		private final Assignment cBeginBlockAssignment_5 = (Assignment)cUnorderedGroup.eContents().get(5);
-		private final RuleCall cBeginBlockBeginParserRuleCall_5_0 = (RuleCall)cBeginBlockAssignment_5.eContents().get(0);
-		private final Assignment cCloseBlockAssignment_6 = (Assignment)cUnorderedGroup.eContents().get(6);
-		private final RuleCall cCloseBlockCloseParserRuleCall_6_0 = (RuleCall)cCloseBlockAssignment_6.eContents().get(0);
-		private final Assignment cTokensAssignment_7 = (Assignment)cUnorderedGroup.eContents().get(7);
-		private final RuleCall cTokensTokensParserRuleCall_7_0 = (RuleCall)cTokensAssignment_7.eContents().get(0);
-		private final Assignment cPrecedencAssignment_8 = (Assignment)cUnorderedGroup.eContents().get(8);
-		private final RuleCall cPrecedencPrecedenceParserRuleCall_8_0 = (RuleCall)cPrecedencAssignment_8.eContents().get(0);
-		private final Assignment cStartAssignment_9 = (Assignment)cUnorderedGroup.eContents().get(9);
-		private final RuleCall cStartStartSymbolsParserRuleCall_9_0 = (RuleCall)cStartAssignment_9.eContents().get(0);
-		private final Assignment cRulesAssignment_10 = (Assignment)cUnorderedGroup.eContents().get(10);
-		private final RuleCall cRulesGrammarRulesParserRuleCall_10_0 = (RuleCall)cRulesAssignment_10.eContents().get(0);
+		private final Assignment cImportBlockAssignment_0_2 = (Assignment)cUnorderedGroup_0.eContents().get(2);
+		private final RuleCall cImportBlockImportParserRuleCall_0_2_0 = (RuleCall)cImportBlockAssignment_0_2.eContents().get(0);
+		private final Assignment cExportBlockAssignment_0_3 = (Assignment)cUnorderedGroup_0.eContents().get(3);
+		private final RuleCall cExportBlockExportParserRuleCall_0_3_0 = (RuleCall)cExportBlockAssignment_0_3.eContents().get(0);
+		private final Assignment cGlobalBlockAssignment_0_4 = (Assignment)cUnorderedGroup_0.eContents().get(4);
+		private final RuleCall cGlobalBlockGlobalParserRuleCall_0_4_0 = (RuleCall)cGlobalBlockAssignment_0_4.eContents().get(0);
+		private final Assignment cLocalBlockAssignment_0_5 = (Assignment)cUnorderedGroup_0.eContents().get(5);
+		private final RuleCall cLocalBlockLocalParserRuleCall_0_5_0 = (RuleCall)cLocalBlockAssignment_0_5.eContents().get(0);
+		private final Assignment cBeginBlockAssignment_0_6 = (Assignment)cUnorderedGroup_0.eContents().get(6);
+		private final RuleCall cBeginBlockBeginParserRuleCall_0_6_0 = (RuleCall)cBeginBlockAssignment_0_6.eContents().get(0);
+		private final Assignment cCloseBlockAssignment_0_7 = (Assignment)cUnorderedGroup_0.eContents().get(7);
+		private final RuleCall cCloseBlockCloseParserRuleCall_0_7_0 = (RuleCall)cCloseBlockAssignment_0_7.eContents().get(0);
+		private final Assignment cTokensAssignment_0_8 = (Assignment)cUnorderedGroup_0.eContents().get(8);
+		private final RuleCall cTokensTokensParserRuleCall_0_8_0 = (RuleCall)cTokensAssignment_0_8.eContents().get(0);
+		private final Assignment cPrecedencAssignment_0_9 = (Assignment)cUnorderedGroup_0.eContents().get(9);
+		private final RuleCall cPrecedencPrecedenceParserRuleCall_0_9_0 = (RuleCall)cPrecedencAssignment_0_9.eContents().get(0);
+		private final Assignment cStartAssignment_0_10 = (Assignment)cUnorderedGroup_0.eContents().get(10);
+		private final RuleCall cStartStartSymbolsParserRuleCall_0_10_0 = (RuleCall)cStartAssignment_0_10.eContents().get(0);
+		private final Assignment cRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRulesGrammarRulesParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
 		
 		//ParserModel:
-		//	scanner=ScannerName parser=ParserName & importBlock=Import? & exportBlock=Export? & globalBlock=Global?
+		//	(scanner=ScannerName? & parser=ParserName?
+		//	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
 		//	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
 		//	& tokens=Tokens?
 		//	& precedenc=Precedence?
-		//	& start=StartSymbols?
-		//	& rules=GrammarRules?;
+		//	& start=StartSymbols?) rules=GrammarRules;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//scanner=ScannerName parser=ParserName & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
+		//(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
 		//localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
-		//start=StartSymbols? & rules=GrammarRules?
-		public UnorderedGroup getUnorderedGroup() { return cUnorderedGroup; }
+		//start=StartSymbols?) rules=GrammarRules
+		public Group getGroup() { return cGroup; }
 		
-		//scanner=ScannerName parser=ParserName
-		public Group getGroup_0() { return cGroup_0; }
+		//(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
+		//localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
+		//start=StartSymbols?)
+		public UnorderedGroup getUnorderedGroup_0() { return cUnorderedGroup_0; }
 		
-		//scanner=ScannerName
+		//scanner=ScannerName?
 		public Assignment getScannerAssignment_0_0() { return cScannerAssignment_0_0; }
 		
 		//ScannerName
 		public RuleCall getScannerScannerNameParserRuleCall_0_0_0() { return cScannerScannerNameParserRuleCall_0_0_0; }
 		
-		//parser=ParserName
+		//parser=ParserName?
 		public Assignment getParserAssignment_0_1() { return cParserAssignment_0_1; }
 		
 		//ParserName
 		public RuleCall getParserParserNameParserRuleCall_0_1_0() { return cParserParserNameParserRuleCall_0_1_0; }
 		
 		//importBlock=Import?
-		public Assignment getImportBlockAssignment_1() { return cImportBlockAssignment_1; }
+		public Assignment getImportBlockAssignment_0_2() { return cImportBlockAssignment_0_2; }
 		
 		//Import
-		public RuleCall getImportBlockImportParserRuleCall_1_0() { return cImportBlockImportParserRuleCall_1_0; }
+		public RuleCall getImportBlockImportParserRuleCall_0_2_0() { return cImportBlockImportParserRuleCall_0_2_0; }
 		
 		//exportBlock=Export?
-		public Assignment getExportBlockAssignment_2() { return cExportBlockAssignment_2; }
+		public Assignment getExportBlockAssignment_0_3() { return cExportBlockAssignment_0_3; }
 		
 		//Export
-		public RuleCall getExportBlockExportParserRuleCall_2_0() { return cExportBlockExportParserRuleCall_2_0; }
+		public RuleCall getExportBlockExportParserRuleCall_0_3_0() { return cExportBlockExportParserRuleCall_0_3_0; }
 		
 		//globalBlock=Global?
-		public Assignment getGlobalBlockAssignment_3() { return cGlobalBlockAssignment_3; }
+		public Assignment getGlobalBlockAssignment_0_4() { return cGlobalBlockAssignment_0_4; }
 		
 		//Global
-		public RuleCall getGlobalBlockGlobalParserRuleCall_3_0() { return cGlobalBlockGlobalParserRuleCall_3_0; }
+		public RuleCall getGlobalBlockGlobalParserRuleCall_0_4_0() { return cGlobalBlockGlobalParserRuleCall_0_4_0; }
 		
 		//localBlock=Local?
-		public Assignment getLocalBlockAssignment_4() { return cLocalBlockAssignment_4; }
+		public Assignment getLocalBlockAssignment_0_5() { return cLocalBlockAssignment_0_5; }
 		
 		//Local
-		public RuleCall getLocalBlockLocalParserRuleCall_4_0() { return cLocalBlockLocalParserRuleCall_4_0; }
+		public RuleCall getLocalBlockLocalParserRuleCall_0_5_0() { return cLocalBlockLocalParserRuleCall_0_5_0; }
 		
 		//beginBlock=Begin?
-		public Assignment getBeginBlockAssignment_5() { return cBeginBlockAssignment_5; }
+		public Assignment getBeginBlockAssignment_0_6() { return cBeginBlockAssignment_0_6; }
 		
 		//Begin
-		public RuleCall getBeginBlockBeginParserRuleCall_5_0() { return cBeginBlockBeginParserRuleCall_5_0; }
+		public RuleCall getBeginBlockBeginParserRuleCall_0_6_0() { return cBeginBlockBeginParserRuleCall_0_6_0; }
 		
 		//closeBlock=Close?
-		public Assignment getCloseBlockAssignment_6() { return cCloseBlockAssignment_6; }
+		public Assignment getCloseBlockAssignment_0_7() { return cCloseBlockAssignment_0_7; }
 		
 		//Close
-		public RuleCall getCloseBlockCloseParserRuleCall_6_0() { return cCloseBlockCloseParserRuleCall_6_0; }
+		public RuleCall getCloseBlockCloseParserRuleCall_0_7_0() { return cCloseBlockCloseParserRuleCall_0_7_0; }
 		
 		//tokens=Tokens?
-		public Assignment getTokensAssignment_7() { return cTokensAssignment_7; }
+		public Assignment getTokensAssignment_0_8() { return cTokensAssignment_0_8; }
 		
 		//Tokens
-		public RuleCall getTokensTokensParserRuleCall_7_0() { return cTokensTokensParserRuleCall_7_0; }
+		public RuleCall getTokensTokensParserRuleCall_0_8_0() { return cTokensTokensParserRuleCall_0_8_0; }
 		
 		//precedenc=Precedence?
-		public Assignment getPrecedencAssignment_8() { return cPrecedencAssignment_8; }
+		public Assignment getPrecedencAssignment_0_9() { return cPrecedencAssignment_0_9; }
 		
 		//Precedence
-		public RuleCall getPrecedencPrecedenceParserRuleCall_8_0() { return cPrecedencPrecedenceParserRuleCall_8_0; }
+		public RuleCall getPrecedencPrecedenceParserRuleCall_0_9_0() { return cPrecedencPrecedenceParserRuleCall_0_9_0; }
 		
 		//start=StartSymbols?
-		public Assignment getStartAssignment_9() { return cStartAssignment_9; }
+		public Assignment getStartAssignment_0_10() { return cStartAssignment_0_10; }
 		
 		//StartSymbols
-		public RuleCall getStartStartSymbolsParserRuleCall_9_0() { return cStartStartSymbolsParserRuleCall_9_0; }
+		public RuleCall getStartStartSymbolsParserRuleCall_0_10_0() { return cStartStartSymbolsParserRuleCall_0_10_0; }
 		
-		//rules=GrammarRules?
-		public Assignment getRulesAssignment_10() { return cRulesAssignment_10; }
+		//rules=GrammarRules
+		public Assignment getRulesAssignment_1() { return cRulesAssignment_1; }
 		
 		//GrammarRules
-		public RuleCall getRulesGrammarRulesParserRuleCall_10_0() { return cRulesGrammarRulesParserRuleCall_10_0; }
+		public RuleCall getRulesGrammarRulesParserRuleCall_1_0() { return cRulesGrammarRulesParserRuleCall_1_0; }
 	}
 	public class ScannerNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Parser.ScannerName");
@@ -567,7 +569,8 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CodeWall:
 		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-		//	';' | ':' | '!' | '=' | ',';
+		//	';'
+		//	| ':' | '!' | '=' | ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
@@ -1086,12 +1089,12 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//ParserModel:
-	//	scanner=ScannerName parser=ParserName & importBlock=Import? & exportBlock=Export? & globalBlock=Global?
+	//	(scanner=ScannerName? & parser=ParserName?
+	//	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
 	//	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
 	//	& tokens=Tokens?
 	//	& precedenc=Precedence?
-	//	& start=StartSymbols?
-	//	& rules=GrammarRules?;
+	//	& start=StartSymbols?) rules=GrammarRules;
 	public ParserModelElements getParserModelAccess() {
 		return pParserModel;
 	}
@@ -1222,7 +1225,8 @@ public class ParserGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CodeWall:
 	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-	//	';' | ':' | '!' | '=' | ',';
+	//	';'
+	//	| ':' | '!' | '=' | ',';
 	public CodeWallElements getCodeWallAccess() {
 		return pCodeWall;
 	}

@@ -149,7 +149,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParserModel"
-    // InternalParser.g:72:1: ruleParserModel returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) ) ) ;
+    // InternalParser.g:72:1: ruleParserModel returns [EObject current=null] : ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) ) ( (lv_rules_12_0= ruleGrammarRules ) ) ) ;
     public final EObject ruleParserModel() throws RecognitionException {
         EObject current = null;
 
@@ -182,56 +182,55 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:78:2: ( ( ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalParser.g:79:2: ( ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) ) )
+            // InternalParser.g:78:2: ( ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) ) ( (lv_rules_12_0= ruleGrammarRules ) ) ) )
+            // InternalParser.g:79:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) ) ( (lv_rules_12_0= ruleGrammarRules ) ) )
             {
-            // InternalParser.g:79:2: ( ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) ) )
-            // InternalParser.g:80:3: ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) )
+            // InternalParser.g:79:2: ( ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) ) ( (lv_rules_12_0= ruleGrammarRules ) ) )
+            // InternalParser.g:80:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) ) ( (lv_rules_12_0= ruleGrammarRules ) )
             {
-            // InternalParser.g:80:3: ( ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?) )
-            // InternalParser.g:81:4: ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?)
+            // InternalParser.g:80:3: ( ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) ) )
+            // InternalParser.g:81:4: ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) )
+            {
+            // InternalParser.g:81:4: ( ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* ) )
+            // InternalParser.g:82:5: ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* )
             {
              
-            			  getUnorderedGroupHelper().enter(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            			
-            // InternalParser.g:84:4: ( ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?)
-            // InternalParser.g:85:5: ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+ {...}?
+            				  getUnorderedGroupHelper().enter(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            				
+            // InternalParser.g:85:5: ( ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )* )
+            // InternalParser.g:86:6: ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )*
             {
-            // InternalParser.g:85:5: ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+
-            int cnt1=0;
+            // InternalParser.g:86:6: ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )*
             loop1:
             do {
                 int alt1=12;
                 alt1 = dfa1.predict(input);
                 switch (alt1) {
             	case 1 :
-            	    // InternalParser.g:86:3: ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) )
+            	    // InternalParser.g:87:4: ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) )
             	    {
-            	    // InternalParser.g:86:3: ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) )
-            	    // InternalParser.g:87:4: {...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) )
+            	    // InternalParser.g:87:4: ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) )
+            	    // InternalParser.g:88:5: {...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0)");
             	    }
-            	    // InternalParser.g:87:105: ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) )
-            	    // InternalParser.g:88:5: ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) )
+            	    // InternalParser.g:88:108: ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) )
+            	    // InternalParser.g:89:6: ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0);
-            	    				
-            	    // InternalParser.g:91:8: ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) )
-            	    // InternalParser.g:91:9: {...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0);
+            	    					
+            	    // InternalParser.g:92:9: ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) )
+            	    // InternalParser.g:92:10: {...}? => ( (lv_scanner_1_0= ruleScannerName ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:91:18: ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) )
-            	    // InternalParser.g:91:19: ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) )
+            	    // InternalParser.g:92:19: ( (lv_scanner_1_0= ruleScannerName ) )
+            	    // InternalParser.g:92:20: (lv_scanner_1_0= ruleScannerName )
             	    {
-            	    // InternalParser.g:91:19: ( (lv_scanner_1_0= ruleScannerName ) )
-            	    // InternalParser.g:92:9: (lv_scanner_1_0= ruleScannerName )
-            	    {
-            	    // InternalParser.g:92:9: (lv_scanner_1_0= ruleScannerName )
+            	    // InternalParser.g:92:20: (lv_scanner_1_0= ruleScannerName )
             	    // InternalParser.g:93:10: lv_scanner_1_0= ruleScannerName
             	    {
 
@@ -259,16 +258,52 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalParser.g:110:8: ( (lv_parser_2_0= ruleParserName ) )
-            	    // InternalParser.g:111:9: (lv_parser_2_0= ruleParserName )
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalParser.g:115:4: ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) )
             	    {
-            	    // InternalParser.g:111:9: (lv_parser_2_0= ruleParserName )
-            	    // InternalParser.g:112:10: lv_parser_2_0= ruleParserName
+            	    // InternalParser.g:115:4: ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) )
+            	    // InternalParser.g:116:5: {...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1)");
+            	    }
+            	    // InternalParser.g:116:108: ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) )
+            	    // InternalParser.g:117:6: ({...}? => ( (lv_parser_2_0= ruleParserName ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1);
+            	    					
+            	    // InternalParser.g:120:9: ({...}? => ( (lv_parser_2_0= ruleParserName ) ) )
+            	    // InternalParser.g:120:10: {...}? => ( (lv_parser_2_0= ruleParserName ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "true");
+            	    }
+            	    // InternalParser.g:120:19: ( (lv_parser_2_0= ruleParserName ) )
+            	    // InternalParser.g:120:20: (lv_parser_2_0= ruleParserName )
+            	    {
+            	    // InternalParser.g:120:20: (lv_parser_2_0= ruleParserName )
+            	    // InternalParser.g:121:10: lv_parser_2_0= ruleParserName
             	    {
 
             	    										newCompositeNode(grammarAccess.getParserModelAccess().getParserParserNameParserRuleCall_0_1_0());
             	    									
-            	    pushFollow(FOLLOW_4);
+            	    pushFollow(FOLLOW_3);
             	    lv_parser_2_0=ruleParserName();
 
             	    state._fsp--;
@@ -293,79 +328,9 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    }
 
-
-            	    }
-
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalParser.g:135:3: ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) )
-            	    {
-            	    // InternalParser.g:135:3: ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) )
-            	    // InternalParser.g:136:4: {...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) )
-            	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1)");
-            	    }
-            	    // InternalParser.g:136:105: ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) )
-            	    // InternalParser.g:137:5: ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) )
-            	    {
-
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1);
-            	    				
-            	    // InternalParser.g:140:8: ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) )
-            	    // InternalParser.g:140:9: {...}? => ( (lv_importBlock_3_0= ruleImport ) )
-            	    {
-            	    if ( !((true)) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "true");
-            	    }
-            	    // InternalParser.g:140:18: ( (lv_importBlock_3_0= ruleImport ) )
-            	    // InternalParser.g:140:19: (lv_importBlock_3_0= ruleImport )
-            	    {
-            	    // InternalParser.g:140:19: (lv_importBlock_3_0= ruleImport )
-            	    // InternalParser.g:141:9: lv_importBlock_3_0= ruleImport
-            	    {
-
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getImportBlockImportParserRuleCall_1_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_importBlock_3_0=ruleImport();
-
-            	    state._fsp--;
-
-
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"importBlock",
-            	    										lv_importBlock_3_0,
-            	    										"de.roma.cocktail.xtext.Parser.Import");
-            	    									afterParserOrEnumRuleCall();
-            	    								
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-            	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -376,51 +341,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalParser.g:163:3: ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) )
+            	    // InternalParser.g:143:4: ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) )
             	    {
-            	    // InternalParser.g:163:3: ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) )
-            	    // InternalParser.g:164:4: {...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) )
+            	    // InternalParser.g:143:4: ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) )
+            	    // InternalParser.g:144:5: {...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2)");
             	    }
-            	    // InternalParser.g:164:105: ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) )
-            	    // InternalParser.g:165:5: ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) )
+            	    // InternalParser.g:144:108: ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) )
+            	    // InternalParser.g:145:6: ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2);
-            	    				
-            	    // InternalParser.g:168:8: ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) )
-            	    // InternalParser.g:168:9: {...}? => ( (lv_exportBlock_4_0= ruleExport ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2);
+            	    					
+            	    // InternalParser.g:148:9: ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) )
+            	    // InternalParser.g:148:10: {...}? => ( (lv_importBlock_3_0= ruleImport ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:168:18: ( (lv_exportBlock_4_0= ruleExport ) )
-            	    // InternalParser.g:168:19: (lv_exportBlock_4_0= ruleExport )
+            	    // InternalParser.g:148:19: ( (lv_importBlock_3_0= ruleImport ) )
+            	    // InternalParser.g:148:20: (lv_importBlock_3_0= ruleImport )
             	    {
-            	    // InternalParser.g:168:19: (lv_exportBlock_4_0= ruleExport )
-            	    // InternalParser.g:169:9: lv_exportBlock_4_0= ruleExport
+            	    // InternalParser.g:148:20: (lv_importBlock_3_0= ruleImport )
+            	    // InternalParser.g:149:10: lv_importBlock_3_0= ruleImport
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getExportBlockExportParserRuleCall_2_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_exportBlock_4_0=ruleExport();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getImportBlockImportParserRuleCall_0_2_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_importBlock_3_0=ruleImport();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"exportBlock",
-            	    										lv_exportBlock_4_0,
-            	    										"de.roma.cocktail.xtext.Parser.Export");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"importBlock",
+            	    											lv_importBlock_3_0,
+            	    											"de.roma.cocktail.xtext.Parser.Import");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -431,8 +396,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -443,51 +408,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalParser.g:191:3: ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) )
+            	    // InternalParser.g:171:4: ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) )
             	    {
-            	    // InternalParser.g:191:3: ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) )
-            	    // InternalParser.g:192:4: {...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) )
+            	    // InternalParser.g:171:4: ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) )
+            	    // InternalParser.g:172:5: {...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3)");
             	    }
-            	    // InternalParser.g:192:105: ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) )
-            	    // InternalParser.g:193:5: ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) )
+            	    // InternalParser.g:172:108: ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) )
+            	    // InternalParser.g:173:6: ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3);
-            	    				
-            	    // InternalParser.g:196:8: ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) )
-            	    // InternalParser.g:196:9: {...}? => ( (lv_globalBlock_5_0= ruleGlobal ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3);
+            	    					
+            	    // InternalParser.g:176:9: ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) )
+            	    // InternalParser.g:176:10: {...}? => ( (lv_exportBlock_4_0= ruleExport ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:196:18: ( (lv_globalBlock_5_0= ruleGlobal ) )
-            	    // InternalParser.g:196:19: (lv_globalBlock_5_0= ruleGlobal )
+            	    // InternalParser.g:176:19: ( (lv_exportBlock_4_0= ruleExport ) )
+            	    // InternalParser.g:176:20: (lv_exportBlock_4_0= ruleExport )
             	    {
-            	    // InternalParser.g:196:19: (lv_globalBlock_5_0= ruleGlobal )
-            	    // InternalParser.g:197:9: lv_globalBlock_5_0= ruleGlobal
+            	    // InternalParser.g:176:20: (lv_exportBlock_4_0= ruleExport )
+            	    // InternalParser.g:177:10: lv_exportBlock_4_0= ruleExport
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getGlobalBlockGlobalParserRuleCall_3_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_globalBlock_5_0=ruleGlobal();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getExportBlockExportParserRuleCall_0_3_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_exportBlock_4_0=ruleExport();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"globalBlock",
-            	    										lv_globalBlock_5_0,
-            	    										"de.roma.cocktail.xtext.Parser.Global");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"exportBlock",
+            	    											lv_exportBlock_4_0,
+            	    											"de.roma.cocktail.xtext.Parser.Export");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -498,8 +463,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -510,51 +475,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalParser.g:219:3: ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) )
+            	    // InternalParser.g:199:4: ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) )
             	    {
-            	    // InternalParser.g:219:3: ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) )
-            	    // InternalParser.g:220:4: {...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) )
+            	    // InternalParser.g:199:4: ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) )
+            	    // InternalParser.g:200:5: {...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4)");
             	    }
-            	    // InternalParser.g:220:105: ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) )
-            	    // InternalParser.g:221:5: ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) )
+            	    // InternalParser.g:200:108: ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) )
+            	    // InternalParser.g:201:6: ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4);
-            	    				
-            	    // InternalParser.g:224:8: ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) )
-            	    // InternalParser.g:224:9: {...}? => ( (lv_localBlock_6_0= ruleLocal ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4);
+            	    					
+            	    // InternalParser.g:204:9: ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) )
+            	    // InternalParser.g:204:10: {...}? => ( (lv_globalBlock_5_0= ruleGlobal ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:224:18: ( (lv_localBlock_6_0= ruleLocal ) )
-            	    // InternalParser.g:224:19: (lv_localBlock_6_0= ruleLocal )
+            	    // InternalParser.g:204:19: ( (lv_globalBlock_5_0= ruleGlobal ) )
+            	    // InternalParser.g:204:20: (lv_globalBlock_5_0= ruleGlobal )
             	    {
-            	    // InternalParser.g:224:19: (lv_localBlock_6_0= ruleLocal )
-            	    // InternalParser.g:225:9: lv_localBlock_6_0= ruleLocal
+            	    // InternalParser.g:204:20: (lv_globalBlock_5_0= ruleGlobal )
+            	    // InternalParser.g:205:10: lv_globalBlock_5_0= ruleGlobal
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getLocalBlockLocalParserRuleCall_4_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_localBlock_6_0=ruleLocal();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getGlobalBlockGlobalParserRuleCall_0_4_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_globalBlock_5_0=ruleGlobal();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"localBlock",
-            	    										lv_localBlock_6_0,
-            	    										"de.roma.cocktail.xtext.Parser.Local");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"globalBlock",
+            	    											lv_globalBlock_5_0,
+            	    											"de.roma.cocktail.xtext.Parser.Global");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -565,8 +530,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -577,51 +542,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // InternalParser.g:247:3: ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) )
+            	    // InternalParser.g:227:4: ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) )
             	    {
-            	    // InternalParser.g:247:3: ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) )
-            	    // InternalParser.g:248:4: {...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) )
+            	    // InternalParser.g:227:4: ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) )
+            	    // InternalParser.g:228:5: {...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5)");
             	    }
-            	    // InternalParser.g:248:105: ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) )
-            	    // InternalParser.g:249:5: ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) )
+            	    // InternalParser.g:228:108: ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) )
+            	    // InternalParser.g:229:6: ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5);
-            	    				
-            	    // InternalParser.g:252:8: ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) )
-            	    // InternalParser.g:252:9: {...}? => ( (lv_beginBlock_7_0= ruleBegin ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5);
+            	    					
+            	    // InternalParser.g:232:9: ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) )
+            	    // InternalParser.g:232:10: {...}? => ( (lv_localBlock_6_0= ruleLocal ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:252:18: ( (lv_beginBlock_7_0= ruleBegin ) )
-            	    // InternalParser.g:252:19: (lv_beginBlock_7_0= ruleBegin )
+            	    // InternalParser.g:232:19: ( (lv_localBlock_6_0= ruleLocal ) )
+            	    // InternalParser.g:232:20: (lv_localBlock_6_0= ruleLocal )
             	    {
-            	    // InternalParser.g:252:19: (lv_beginBlock_7_0= ruleBegin )
-            	    // InternalParser.g:253:9: lv_beginBlock_7_0= ruleBegin
+            	    // InternalParser.g:232:20: (lv_localBlock_6_0= ruleLocal )
+            	    // InternalParser.g:233:10: lv_localBlock_6_0= ruleLocal
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getBeginBlockBeginParserRuleCall_5_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_beginBlock_7_0=ruleBegin();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getLocalBlockLocalParserRuleCall_0_5_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_localBlock_6_0=ruleLocal();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"beginBlock",
-            	    										lv_beginBlock_7_0,
-            	    										"de.roma.cocktail.xtext.Parser.Begin");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"localBlock",
+            	    											lv_localBlock_6_0,
+            	    											"de.roma.cocktail.xtext.Parser.Local");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -632,8 +597,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -644,51 +609,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 7 :
-            	    // InternalParser.g:275:3: ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) )
+            	    // InternalParser.g:255:4: ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) )
             	    {
-            	    // InternalParser.g:275:3: ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) )
-            	    // InternalParser.g:276:4: {...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) )
+            	    // InternalParser.g:255:4: ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) )
+            	    // InternalParser.g:256:5: {...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6)");
             	    }
-            	    // InternalParser.g:276:105: ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) )
-            	    // InternalParser.g:277:5: ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) )
+            	    // InternalParser.g:256:108: ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) )
+            	    // InternalParser.g:257:6: ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6);
-            	    				
-            	    // InternalParser.g:280:8: ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) )
-            	    // InternalParser.g:280:9: {...}? => ( (lv_closeBlock_8_0= ruleClose ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6);
+            	    					
+            	    // InternalParser.g:260:9: ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) )
+            	    // InternalParser.g:260:10: {...}? => ( (lv_beginBlock_7_0= ruleBegin ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:280:18: ( (lv_closeBlock_8_0= ruleClose ) )
-            	    // InternalParser.g:280:19: (lv_closeBlock_8_0= ruleClose )
+            	    // InternalParser.g:260:19: ( (lv_beginBlock_7_0= ruleBegin ) )
+            	    // InternalParser.g:260:20: (lv_beginBlock_7_0= ruleBegin )
             	    {
-            	    // InternalParser.g:280:19: (lv_closeBlock_8_0= ruleClose )
-            	    // InternalParser.g:281:9: lv_closeBlock_8_0= ruleClose
+            	    // InternalParser.g:260:20: (lv_beginBlock_7_0= ruleBegin )
+            	    // InternalParser.g:261:10: lv_beginBlock_7_0= ruleBegin
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getCloseBlockCloseParserRuleCall_6_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_closeBlock_8_0=ruleClose();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getBeginBlockBeginParserRuleCall_0_6_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_beginBlock_7_0=ruleBegin();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"closeBlock",
-            	    										lv_closeBlock_8_0,
-            	    										"de.roma.cocktail.xtext.Parser.Close");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"beginBlock",
+            	    											lv_beginBlock_7_0,
+            	    											"de.roma.cocktail.xtext.Parser.Begin");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -699,8 +664,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -711,51 +676,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 8 :
-            	    // InternalParser.g:303:3: ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) )
+            	    // InternalParser.g:283:4: ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) )
             	    {
-            	    // InternalParser.g:303:3: ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) )
-            	    // InternalParser.g:304:4: {...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) )
+            	    // InternalParser.g:283:4: ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) )
+            	    // InternalParser.g:284:5: {...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7)");
             	    }
-            	    // InternalParser.g:304:105: ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) )
-            	    // InternalParser.g:305:5: ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) )
+            	    // InternalParser.g:284:108: ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) )
+            	    // InternalParser.g:285:6: ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7);
-            	    				
-            	    // InternalParser.g:308:8: ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) )
-            	    // InternalParser.g:308:9: {...}? => ( (lv_tokens_9_0= ruleTokens ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7);
+            	    					
+            	    // InternalParser.g:288:9: ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) )
+            	    // InternalParser.g:288:10: {...}? => ( (lv_closeBlock_8_0= ruleClose ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:308:18: ( (lv_tokens_9_0= ruleTokens ) )
-            	    // InternalParser.g:308:19: (lv_tokens_9_0= ruleTokens )
+            	    // InternalParser.g:288:19: ( (lv_closeBlock_8_0= ruleClose ) )
+            	    // InternalParser.g:288:20: (lv_closeBlock_8_0= ruleClose )
             	    {
-            	    // InternalParser.g:308:19: (lv_tokens_9_0= ruleTokens )
-            	    // InternalParser.g:309:9: lv_tokens_9_0= ruleTokens
+            	    // InternalParser.g:288:20: (lv_closeBlock_8_0= ruleClose )
+            	    // InternalParser.g:289:10: lv_closeBlock_8_0= ruleClose
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getTokensTokensParserRuleCall_7_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_tokens_9_0=ruleTokens();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getCloseBlockCloseParserRuleCall_0_7_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_closeBlock_8_0=ruleClose();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"tokens",
-            	    										lv_tokens_9_0,
-            	    										"de.roma.cocktail.xtext.Parser.Tokens");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"closeBlock",
+            	    											lv_closeBlock_8_0,
+            	    											"de.roma.cocktail.xtext.Parser.Close");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -766,8 +731,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -778,51 +743,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 9 :
-            	    // InternalParser.g:331:3: ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) )
+            	    // InternalParser.g:311:4: ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) )
             	    {
-            	    // InternalParser.g:331:3: ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) )
-            	    // InternalParser.g:332:4: {...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) )
+            	    // InternalParser.g:311:4: ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) )
+            	    // InternalParser.g:312:5: {...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8)");
             	    }
-            	    // InternalParser.g:332:105: ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) )
-            	    // InternalParser.g:333:5: ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) )
+            	    // InternalParser.g:312:108: ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) )
+            	    // InternalParser.g:313:6: ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8);
-            	    				
-            	    // InternalParser.g:336:8: ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) )
-            	    // InternalParser.g:336:9: {...}? => ( (lv_precedenc_10_0= rulePrecedence ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8);
+            	    					
+            	    // InternalParser.g:316:9: ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) )
+            	    // InternalParser.g:316:10: {...}? => ( (lv_tokens_9_0= ruleTokens ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:336:18: ( (lv_precedenc_10_0= rulePrecedence ) )
-            	    // InternalParser.g:336:19: (lv_precedenc_10_0= rulePrecedence )
+            	    // InternalParser.g:316:19: ( (lv_tokens_9_0= ruleTokens ) )
+            	    // InternalParser.g:316:20: (lv_tokens_9_0= ruleTokens )
             	    {
-            	    // InternalParser.g:336:19: (lv_precedenc_10_0= rulePrecedence )
-            	    // InternalParser.g:337:9: lv_precedenc_10_0= rulePrecedence
+            	    // InternalParser.g:316:20: (lv_tokens_9_0= ruleTokens )
+            	    // InternalParser.g:317:10: lv_tokens_9_0= ruleTokens
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getPrecedencPrecedenceParserRuleCall_8_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_precedenc_10_0=rulePrecedence();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getTokensTokensParserRuleCall_0_8_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_tokens_9_0=ruleTokens();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"precedenc",
-            	    										lv_precedenc_10_0,
-            	    										"de.roma.cocktail.xtext.Parser.Precedence");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"tokens",
+            	    											lv_tokens_9_0,
+            	    											"de.roma.cocktail.xtext.Parser.Tokens");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -833,8 +798,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -845,51 +810,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 10 :
-            	    // InternalParser.g:359:3: ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) )
+            	    // InternalParser.g:339:4: ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) )
             	    {
-            	    // InternalParser.g:359:3: ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) )
-            	    // InternalParser.g:360:4: {...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) )
+            	    // InternalParser.g:339:4: ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) )
+            	    // InternalParser.g:340:5: {...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9)");
             	    }
-            	    // InternalParser.g:360:105: ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) )
-            	    // InternalParser.g:361:5: ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) )
+            	    // InternalParser.g:340:108: ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) )
+            	    // InternalParser.g:341:6: ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9);
-            	    				
-            	    // InternalParser.g:364:8: ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) )
-            	    // InternalParser.g:364:9: {...}? => ( (lv_start_11_0= ruleStartSymbols ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9);
+            	    					
+            	    // InternalParser.g:344:9: ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) )
+            	    // InternalParser.g:344:10: {...}? => ( (lv_precedenc_10_0= rulePrecedence ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:364:18: ( (lv_start_11_0= ruleStartSymbols ) )
-            	    // InternalParser.g:364:19: (lv_start_11_0= ruleStartSymbols )
+            	    // InternalParser.g:344:19: ( (lv_precedenc_10_0= rulePrecedence ) )
+            	    // InternalParser.g:344:20: (lv_precedenc_10_0= rulePrecedence )
             	    {
-            	    // InternalParser.g:364:19: (lv_start_11_0= ruleStartSymbols )
-            	    // InternalParser.g:365:9: lv_start_11_0= ruleStartSymbols
+            	    // InternalParser.g:344:20: (lv_precedenc_10_0= rulePrecedence )
+            	    // InternalParser.g:345:10: lv_precedenc_10_0= rulePrecedence
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getStartStartSymbolsParserRuleCall_9_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_start_11_0=ruleStartSymbols();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getPrecedencPrecedenceParserRuleCall_0_9_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_precedenc_10_0=rulePrecedence();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"start",
-            	    										lv_start_11_0,
-            	    										"de.roma.cocktail.xtext.Parser.StartSymbols");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"precedenc",
+            	    											lv_precedenc_10_0,
+            	    											"de.roma.cocktail.xtext.Parser.Precedence");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -900,8 +865,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -912,51 +877,51 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 11 :
-            	    // InternalParser.g:387:3: ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) )
+            	    // InternalParser.g:367:4: ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) )
             	    {
-            	    // InternalParser.g:387:3: ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) )
-            	    // InternalParser.g:388:4: {...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) )
+            	    // InternalParser.g:367:4: ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) )
+            	    // InternalParser.g:368:5: {...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) )
             	    {
-            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10) ) {
-            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10)");
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10) ) {
+            	        throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10)");
             	    }
-            	    // InternalParser.g:388:106: ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) )
-            	    // InternalParser.g:389:5: ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) )
+            	    // InternalParser.g:368:109: ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) )
+            	    // InternalParser.g:369:6: ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) )
             	    {
 
-            	    					getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10);
-            	    				
-            	    // InternalParser.g:392:8: ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) )
-            	    // InternalParser.g:392:9: {...}? => ( (lv_rules_12_0= ruleGrammarRules ) )
+            	    						getUnorderedGroupHelper().select(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10);
+            	    					
+            	    // InternalParser.g:372:9: ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) )
+            	    // InternalParser.g:372:10: {...}? => ( (lv_start_11_0= ruleStartSymbols ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParserModel", "true");
             	    }
-            	    // InternalParser.g:392:18: ( (lv_rules_12_0= ruleGrammarRules ) )
-            	    // InternalParser.g:392:19: (lv_rules_12_0= ruleGrammarRules )
+            	    // InternalParser.g:372:19: ( (lv_start_11_0= ruleStartSymbols ) )
+            	    // InternalParser.g:372:20: (lv_start_11_0= ruleStartSymbols )
             	    {
-            	    // InternalParser.g:392:19: (lv_rules_12_0= ruleGrammarRules )
-            	    // InternalParser.g:393:9: lv_rules_12_0= ruleGrammarRules
+            	    // InternalParser.g:372:20: (lv_start_11_0= ruleStartSymbols )
+            	    // InternalParser.g:373:10: lv_start_11_0= ruleStartSymbols
             	    {
 
-            	    									newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammarRulesParserRuleCall_10_0());
-            	    								
-            	    pushFollow(FOLLOW_4);
-            	    lv_rules_12_0=ruleGrammarRules();
+            	    										newCompositeNode(grammarAccess.getParserModelAccess().getStartStartSymbolsParserRuleCall_0_10_0());
+            	    									
+            	    pushFollow(FOLLOW_3);
+            	    lv_start_11_0=ruleStartSymbols();
 
             	    state._fsp--;
 
 
-            	    									if (current==null) {
-            	    										current = createModelElementForParent(grammarAccess.getParserModelRule());
-            	    									}
-            	    									set(
-            	    										current,
-            	    										"rules",
-            	    										lv_rules_12_0,
-            	    										"de.roma.cocktail.xtext.Parser.GrammarRules");
-            	    									afterParserOrEnumRuleCall();
-            	    								
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getParserModelRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"start",
+            	    											lv_start_11_0,
+            	    											"de.roma.cocktail.xtext.Parser.StartSymbols");
+            	    										afterParserOrEnumRuleCall();
+            	    									
 
             	    }
 
@@ -967,8 +932,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
 
             	     
-            	    					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            	    				
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            	    					
 
             	    }
 
@@ -980,17 +945,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
+            	    break loop1;
                 }
-                cnt1++;
             } while (true);
 
-            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getParserModelAccess().getUnorderedGroup()) ) {
-                throw new FailedPredicateException(input, "ruleParserModel", "getUnorderedGroupHelper().canLeave(grammarAccess.getParserModelAccess().getUnorderedGroup())");
-            }
 
             }
 
@@ -998,8 +956,42 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             }
 
              
-            			  getUnorderedGroupHelper().leave(grammarAccess.getParserModelAccess().getUnorderedGroup());
-            			
+            				  getUnorderedGroupHelper().leave(grammarAccess.getParserModelAccess().getUnorderedGroup_0());
+            				
+
+            }
+
+            // InternalParser.g:402:3: ( (lv_rules_12_0= ruleGrammarRules ) )
+            // InternalParser.g:403:4: (lv_rules_12_0= ruleGrammarRules )
+            {
+            // InternalParser.g:403:4: (lv_rules_12_0= ruleGrammarRules )
+            // InternalParser.g:404:5: lv_rules_12_0= ruleGrammarRules
+            {
+
+            					newCompositeNode(grammarAccess.getParserModelAccess().getRulesGrammarRulesParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_rules_12_0=ruleGrammarRules();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getParserModelRule());
+            					}
+            					set(
+            						current,
+            						"rules",
+            						lv_rules_12_0,
+            						"de.roma.cocktail.xtext.Parser.GrammarRules");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
 
             }
 
@@ -1023,7 +1015,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScannerName"
-    // InternalParser.g:426:1: entryRuleScannerName returns [EObject current=null] : iv_ruleScannerName= ruleScannerName EOF ;
+    // InternalParser.g:425:1: entryRuleScannerName returns [EObject current=null] : iv_ruleScannerName= ruleScannerName EOF ;
     public final EObject entryRuleScannerName() throws RecognitionException {
         EObject current = null;
 
@@ -1031,8 +1023,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:426:52: (iv_ruleScannerName= ruleScannerName EOF )
-            // InternalParser.g:427:2: iv_ruleScannerName= ruleScannerName EOF
+            // InternalParser.g:425:52: (iv_ruleScannerName= ruleScannerName EOF )
+            // InternalParser.g:426:2: iv_ruleScannerName= ruleScannerName EOF
             {
              newCompositeNode(grammarAccess.getScannerNameRule()); 
             pushFollow(FOLLOW_1);
@@ -1059,7 +1051,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScannerName"
-    // InternalParser.g:433:1: ruleScannerName returns [EObject current=null] : (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? ) ;
+    // InternalParser.g:432:1: ruleScannerName returns [EObject current=null] : (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? ) ;
     public final EObject ruleScannerName() throws RecognitionException {
         EObject current = null;
 
@@ -1070,17 +1062,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:439:2: ( (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? ) )
-            // InternalParser.g:440:2: (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? )
+            // InternalParser.g:438:2: ( (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? ) )
+            // InternalParser.g:439:2: (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? )
             {
-            // InternalParser.g:440:2: (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? )
-            // InternalParser.g:441:3: otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )?
+            // InternalParser.g:439:2: (otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )? )
+            // InternalParser.g:440:3: otherlv_0= 'SCANNER' ( (lv_name_1_0= RULE_ID ) )?
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_5); 
+            otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScannerNameAccess().getSCANNERKeyword_0());
             		
-            // InternalParser.g:445:3: ( (lv_name_1_0= RULE_ID ) )?
+            // InternalParser.g:444:3: ( (lv_name_1_0= RULE_ID ) )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1089,10 +1081,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalParser.g:446:4: (lv_name_1_0= RULE_ID )
+                    // InternalParser.g:445:4: (lv_name_1_0= RULE_ID )
                     {
-                    // InternalParser.g:446:4: (lv_name_1_0= RULE_ID )
-                    // InternalParser.g:447:5: lv_name_1_0= RULE_ID
+                    // InternalParser.g:445:4: (lv_name_1_0= RULE_ID )
+                    // InternalParser.g:446:5: lv_name_1_0= RULE_ID
                     {
                     lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1140,7 +1132,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleParserName"
-    // InternalParser.g:467:1: entryRuleParserName returns [EObject current=null] : iv_ruleParserName= ruleParserName EOF ;
+    // InternalParser.g:466:1: entryRuleParserName returns [EObject current=null] : iv_ruleParserName= ruleParserName EOF ;
     public final EObject entryRuleParserName() throws RecognitionException {
         EObject current = null;
 
@@ -1148,8 +1140,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:467:51: (iv_ruleParserName= ruleParserName EOF )
-            // InternalParser.g:468:2: iv_ruleParserName= ruleParserName EOF
+            // InternalParser.g:466:51: (iv_ruleParserName= ruleParserName EOF )
+            // InternalParser.g:467:2: iv_ruleParserName= ruleParserName EOF
             {
              newCompositeNode(grammarAccess.getParserNameRule()); 
             pushFollow(FOLLOW_1);
@@ -1176,7 +1168,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParserName"
-    // InternalParser.g:474:1: ruleParserName returns [EObject current=null] : (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? ) ;
+    // InternalParser.g:473:1: ruleParserName returns [EObject current=null] : (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? ) ;
     public final EObject ruleParserName() throws RecognitionException {
         EObject current = null;
 
@@ -1187,17 +1179,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:480:2: ( (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? ) )
-            // InternalParser.g:481:2: (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? )
+            // InternalParser.g:479:2: ( (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? ) )
+            // InternalParser.g:480:2: (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? )
             {
-            // InternalParser.g:481:2: (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? )
-            // InternalParser.g:482:3: otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )?
+            // InternalParser.g:480:2: (otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )? )
+            // InternalParser.g:481:3: otherlv_0= 'PARSER' ( (lv_name_1_0= RULE_ID ) )?
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_5); 
+            otherlv_0=(Token)match(input,12,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getParserNameAccess().getPARSERKeyword_0());
             		
-            // InternalParser.g:486:3: ( (lv_name_1_0= RULE_ID ) )?
+            // InternalParser.g:485:3: ( (lv_name_1_0= RULE_ID ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1206,10 +1198,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalParser.g:487:4: (lv_name_1_0= RULE_ID )
+                    // InternalParser.g:486:4: (lv_name_1_0= RULE_ID )
                     {
-                    // InternalParser.g:487:4: (lv_name_1_0= RULE_ID )
-                    // InternalParser.g:488:5: lv_name_1_0= RULE_ID
+                    // InternalParser.g:486:4: (lv_name_1_0= RULE_ID )
+                    // InternalParser.g:487:5: lv_name_1_0= RULE_ID
                     {
                     lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1257,7 +1249,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImport"
-    // InternalParser.g:508:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
+    // InternalParser.g:507:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
     public final EObject entryRuleImport() throws RecognitionException {
         EObject current = null;
 
@@ -1265,8 +1257,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:508:47: (iv_ruleImport= ruleImport EOF )
-            // InternalParser.g:509:2: iv_ruleImport= ruleImport EOF
+            // InternalParser.g:507:47: (iv_ruleImport= ruleImport EOF )
+            // InternalParser.g:508:2: iv_ruleImport= ruleImport EOF
             {
              newCompositeNode(grammarAccess.getImportRule()); 
             pushFollow(FOLLOW_1);
@@ -1293,7 +1285,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImport"
-    // InternalParser.g:515:1: ruleImport returns [EObject current=null] : (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:514:1: ruleImport returns [EObject current=null] : (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleImport() throws RecognitionException {
         EObject current = null;
 
@@ -1307,30 +1299,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:521:2: ( (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:522:2: (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:520:2: ( (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:521:2: (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:522:2: (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:523:3: otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:521:2: (otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:522:3: otherlv_0= 'IMPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_6); 
+            otherlv_0=(Token)match(input,13,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImportAccess().getIMPORTKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getImportAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:531:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:532:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:530:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:531:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:532:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:533:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:531:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:532:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getImportAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1379,7 +1371,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExport"
-    // InternalParser.g:558:1: entryRuleExport returns [EObject current=null] : iv_ruleExport= ruleExport EOF ;
+    // InternalParser.g:557:1: entryRuleExport returns [EObject current=null] : iv_ruleExport= ruleExport EOF ;
     public final EObject entryRuleExport() throws RecognitionException {
         EObject current = null;
 
@@ -1387,8 +1379,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:558:47: (iv_ruleExport= ruleExport EOF )
-            // InternalParser.g:559:2: iv_ruleExport= ruleExport EOF
+            // InternalParser.g:557:47: (iv_ruleExport= ruleExport EOF )
+            // InternalParser.g:558:2: iv_ruleExport= ruleExport EOF
             {
              newCompositeNode(grammarAccess.getExportRule()); 
             pushFollow(FOLLOW_1);
@@ -1415,7 +1407,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExport"
-    // InternalParser.g:565:1: ruleExport returns [EObject current=null] : (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:564:1: ruleExport returns [EObject current=null] : (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleExport() throws RecognitionException {
         EObject current = null;
 
@@ -1429,30 +1421,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:571:2: ( (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:572:2: (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:570:2: ( (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:571:2: (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:572:2: (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:573:3: otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:571:2: (otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:572:3: otherlv_0= 'EXPORT' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_6); 
+            otherlv_0=(Token)match(input,16,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExportAccess().getEXPORTKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getExportAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:581:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:582:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:580:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:581:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:582:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:583:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:581:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:582:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getExportAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1501,7 +1493,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGlobal"
-    // InternalParser.g:608:1: entryRuleGlobal returns [EObject current=null] : iv_ruleGlobal= ruleGlobal EOF ;
+    // InternalParser.g:607:1: entryRuleGlobal returns [EObject current=null] : iv_ruleGlobal= ruleGlobal EOF ;
     public final EObject entryRuleGlobal() throws RecognitionException {
         EObject current = null;
 
@@ -1509,8 +1501,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:608:47: (iv_ruleGlobal= ruleGlobal EOF )
-            // InternalParser.g:609:2: iv_ruleGlobal= ruleGlobal EOF
+            // InternalParser.g:607:47: (iv_ruleGlobal= ruleGlobal EOF )
+            // InternalParser.g:608:2: iv_ruleGlobal= ruleGlobal EOF
             {
              newCompositeNode(grammarAccess.getGlobalRule()); 
             pushFollow(FOLLOW_1);
@@ -1537,7 +1529,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGlobal"
-    // InternalParser.g:615:1: ruleGlobal returns [EObject current=null] : (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:614:1: ruleGlobal returns [EObject current=null] : (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleGlobal() throws RecognitionException {
         EObject current = null;
 
@@ -1551,30 +1543,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:621:2: ( (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:622:2: (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:620:2: ( (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:621:2: (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:622:2: (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:623:3: otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:621:2: (otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:622:3: otherlv_0= 'GLOBAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_6); 
+            otherlv_0=(Token)match(input,17,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGlobalAccess().getGLOBALKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getGlobalAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:631:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:632:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:630:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:631:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:632:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:633:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:631:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:632:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getGlobalAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1623,7 +1615,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocal"
-    // InternalParser.g:658:1: entryRuleLocal returns [EObject current=null] : iv_ruleLocal= ruleLocal EOF ;
+    // InternalParser.g:657:1: entryRuleLocal returns [EObject current=null] : iv_ruleLocal= ruleLocal EOF ;
     public final EObject entryRuleLocal() throws RecognitionException {
         EObject current = null;
 
@@ -1631,8 +1623,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:658:46: (iv_ruleLocal= ruleLocal EOF )
-            // InternalParser.g:659:2: iv_ruleLocal= ruleLocal EOF
+            // InternalParser.g:657:46: (iv_ruleLocal= ruleLocal EOF )
+            // InternalParser.g:658:2: iv_ruleLocal= ruleLocal EOF
             {
              newCompositeNode(grammarAccess.getLocalRule()); 
             pushFollow(FOLLOW_1);
@@ -1659,7 +1651,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocal"
-    // InternalParser.g:665:1: ruleLocal returns [EObject current=null] : (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:664:1: ruleLocal returns [EObject current=null] : (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleLocal() throws RecognitionException {
         EObject current = null;
 
@@ -1673,30 +1665,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:671:2: ( (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:672:2: (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:670:2: ( (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:671:2: (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:672:2: (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:673:3: otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:671:2: (otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:672:3: otherlv_0= 'LOCAL' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_6); 
+            otherlv_0=(Token)match(input,18,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLocalAccess().getLOCALKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getLocalAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:681:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:682:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:680:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:681:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:682:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:683:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:681:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:682:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getLocalAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1745,7 +1737,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBegin"
-    // InternalParser.g:708:1: entryRuleBegin returns [EObject current=null] : iv_ruleBegin= ruleBegin EOF ;
+    // InternalParser.g:707:1: entryRuleBegin returns [EObject current=null] : iv_ruleBegin= ruleBegin EOF ;
     public final EObject entryRuleBegin() throws RecognitionException {
         EObject current = null;
 
@@ -1753,8 +1745,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:708:46: (iv_ruleBegin= ruleBegin EOF )
-            // InternalParser.g:709:2: iv_ruleBegin= ruleBegin EOF
+            // InternalParser.g:707:46: (iv_ruleBegin= ruleBegin EOF )
+            // InternalParser.g:708:2: iv_ruleBegin= ruleBegin EOF
             {
              newCompositeNode(grammarAccess.getBeginRule()); 
             pushFollow(FOLLOW_1);
@@ -1781,7 +1773,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBegin"
-    // InternalParser.g:715:1: ruleBegin returns [EObject current=null] : (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:714:1: ruleBegin returns [EObject current=null] : (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleBegin() throws RecognitionException {
         EObject current = null;
 
@@ -1795,30 +1787,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:721:2: ( (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:722:2: (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:720:2: ( (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:721:2: (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:722:2: (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:723:3: otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:721:2: (otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:722:3: otherlv_0= 'BEGIN' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_6); 
+            otherlv_0=(Token)match(input,19,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBeginAccess().getBEGINKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBeginAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:731:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:732:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:730:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:731:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:732:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:733:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:731:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:732:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getBeginAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1867,7 +1859,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClose"
-    // InternalParser.g:758:1: entryRuleClose returns [EObject current=null] : iv_ruleClose= ruleClose EOF ;
+    // InternalParser.g:757:1: entryRuleClose returns [EObject current=null] : iv_ruleClose= ruleClose EOF ;
     public final EObject entryRuleClose() throws RecognitionException {
         EObject current = null;
 
@@ -1875,8 +1867,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:758:46: (iv_ruleClose= ruleClose EOF )
-            // InternalParser.g:759:2: iv_ruleClose= ruleClose EOF
+            // InternalParser.g:757:46: (iv_ruleClose= ruleClose EOF )
+            // InternalParser.g:758:2: iv_ruleClose= ruleClose EOF
             {
              newCompositeNode(grammarAccess.getCloseRule()); 
             pushFollow(FOLLOW_1);
@@ -1903,7 +1895,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClose"
-    // InternalParser.g:765:1: ruleClose returns [EObject current=null] : (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
+    // InternalParser.g:764:1: ruleClose returns [EObject current=null] : (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) ;
     public final EObject ruleClose() throws RecognitionException {
         EObject current = null;
 
@@ -1917,30 +1909,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:771:2: ( (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
-            // InternalParser.g:772:2: (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:770:2: ( (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' ) )
+            // InternalParser.g:771:2: (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
             {
-            // InternalParser.g:772:2: (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
-            // InternalParser.g:773:3: otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
+            // InternalParser.g:771:2: (otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}' )
+            // InternalParser.g:772:3: otherlv_0= 'CLOSE' otherlv_1= '{' ( (lv_content_2_0= ruleCodeBlock ) ) otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_6); 
+            otherlv_0=(Token)match(input,20,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCloseAccess().getCLOSEKeyword_0());
             		
-            otherlv_1=(Token)match(input,14,FOLLOW_7); 
+            otherlv_1=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getCloseAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalParser.g:781:3: ( (lv_content_2_0= ruleCodeBlock ) )
-            // InternalParser.g:782:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:780:3: ( (lv_content_2_0= ruleCodeBlock ) )
+            // InternalParser.g:781:4: (lv_content_2_0= ruleCodeBlock )
             {
-            // InternalParser.g:782:4: (lv_content_2_0= ruleCodeBlock )
-            // InternalParser.g:783:5: lv_content_2_0= ruleCodeBlock
+            // InternalParser.g:781:4: (lv_content_2_0= ruleCodeBlock )
+            // InternalParser.g:782:5: lv_content_2_0= ruleCodeBlock
             {
 
             					newCompositeNode(grammarAccess.getCloseAccess().getContentCodeBlockParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_content_2_0=ruleCodeBlock();
 
             state._fsp--;
@@ -1989,7 +1981,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTokens"
-    // InternalParser.g:808:1: entryRuleTokens returns [EObject current=null] : iv_ruleTokens= ruleTokens EOF ;
+    // InternalParser.g:807:1: entryRuleTokens returns [EObject current=null] : iv_ruleTokens= ruleTokens EOF ;
     public final EObject entryRuleTokens() throws RecognitionException {
         EObject current = null;
 
@@ -1997,8 +1989,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:808:47: (iv_ruleTokens= ruleTokens EOF )
-            // InternalParser.g:809:2: iv_ruleTokens= ruleTokens EOF
+            // InternalParser.g:807:47: (iv_ruleTokens= ruleTokens EOF )
+            // InternalParser.g:808:2: iv_ruleTokens= ruleTokens EOF
             {
              newCompositeNode(grammarAccess.getTokensRule()); 
             pushFollow(FOLLOW_1);
@@ -2025,7 +2017,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTokens"
-    // InternalParser.g:815:1: ruleTokens returns [EObject current=null] : (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* ) ;
+    // InternalParser.g:814:1: ruleTokens returns [EObject current=null] : (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* ) ;
     public final EObject ruleTokens() throws RecognitionException {
         EObject current = null;
 
@@ -2037,17 +2029,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:821:2: ( (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* ) )
-            // InternalParser.g:822:2: (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* )
+            // InternalParser.g:820:2: ( (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* ) )
+            // InternalParser.g:821:2: (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* )
             {
-            // InternalParser.g:822:2: (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* )
-            // InternalParser.g:823:3: otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )*
+            // InternalParser.g:821:2: (otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )* )
+            // InternalParser.g:822:3: otherlv_0= 'TOKEN' ( (lv_tokens_1_0= ruleDefinedToken ) )*
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_9); 
+            otherlv_0=(Token)match(input,21,FOLLOW_8); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTokensAccess().getTOKENKeyword_0());
             		
-            // InternalParser.g:827:3: ( (lv_tokens_1_0= ruleDefinedToken ) )*
+            // InternalParser.g:826:3: ( (lv_tokens_1_0= ruleDefinedToken ) )*
             loop4:
             do {
                 int alt4=2;
@@ -2060,15 +2052,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalParser.g:828:4: (lv_tokens_1_0= ruleDefinedToken )
+            	    // InternalParser.g:827:4: (lv_tokens_1_0= ruleDefinedToken )
             	    {
-            	    // InternalParser.g:828:4: (lv_tokens_1_0= ruleDefinedToken )
-            	    // InternalParser.g:829:5: lv_tokens_1_0= ruleDefinedToken
+            	    // InternalParser.g:827:4: (lv_tokens_1_0= ruleDefinedToken )
+            	    // InternalParser.g:828:5: lv_tokens_1_0= ruleDefinedToken
             	    {
 
             	    					newCompositeNode(grammarAccess.getTokensAccess().getTokensDefinedTokenParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_9);
+            	    pushFollow(FOLLOW_8);
             	    lv_tokens_1_0=ruleDefinedToken();
 
             	    state._fsp--;
@@ -2119,7 +2111,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefinedToken"
-    // InternalParser.g:850:1: entryRuleDefinedToken returns [EObject current=null] : iv_ruleDefinedToken= ruleDefinedToken EOF ;
+    // InternalParser.g:849:1: entryRuleDefinedToken returns [EObject current=null] : iv_ruleDefinedToken= ruleDefinedToken EOF ;
     public final EObject entryRuleDefinedToken() throws RecognitionException {
         EObject current = null;
 
@@ -2127,8 +2119,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:850:53: (iv_ruleDefinedToken= ruleDefinedToken EOF )
-            // InternalParser.g:851:2: iv_ruleDefinedToken= ruleDefinedToken EOF
+            // InternalParser.g:849:53: (iv_ruleDefinedToken= ruleDefinedToken EOF )
+            // InternalParser.g:850:2: iv_ruleDefinedToken= ruleDefinedToken EOF
             {
              newCompositeNode(grammarAccess.getDefinedTokenRule()); 
             pushFollow(FOLLOW_1);
@@ -2155,7 +2147,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefinedToken"
-    // InternalParser.g:857:1: ruleDefinedToken returns [EObject current=null] : ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS ) ;
+    // InternalParser.g:856:1: ruleDefinedToken returns [EObject current=null] : ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS ) ;
     public final EObject ruleDefinedToken() throws RecognitionException {
         EObject current = null;
 
@@ -2174,10 +2166,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:863:2: ( ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS ) )
-            // InternalParser.g:864:2: ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS )
+            // InternalParser.g:862:2: ( ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS ) )
+            // InternalParser.g:863:2: ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS )
             {
-            // InternalParser.g:864:2: ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS )
+            // InternalParser.g:863:2: ( ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) ) | ( (lv_extra_5_0= ruleTokenExtra ) ) | this_WS_6= RULE_WS )
             int alt7=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -2205,18 +2197,18 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalParser.g:865:3: ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) )
+                    // InternalParser.g:864:3: ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) )
                     {
-                    // InternalParser.g:865:3: ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) )
-                    // InternalParser.g:866:4: ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? )
+                    // InternalParser.g:864:3: ( ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? ) )
+                    // InternalParser.g:865:4: ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) ) (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? )
                     {
-                    // InternalParser.g:866:4: ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) )
-                    // InternalParser.g:867:5: ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) )
+                    // InternalParser.g:865:4: ( ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) ) )
+                    // InternalParser.g:866:5: ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) )
                     {
-                    // InternalParser.g:867:5: ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) )
-                    // InternalParser.g:868:6: (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING )
+                    // InternalParser.g:866:5: ( (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING ) )
+                    // InternalParser.g:867:6: (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING )
                     {
-                    // InternalParser.g:868:6: (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING )
+                    // InternalParser.g:867:6: (lv_name_0_1= RULE_ID | lv_name_0_2= RULE_STRING )
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -2234,9 +2226,9 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt5) {
                         case 1 :
-                            // InternalParser.g:869:7: lv_name_0_1= RULE_ID
+                            // InternalParser.g:868:7: lv_name_0_1= RULE_ID
                             {
-                            lv_name_0_1=(Token)match(input,RULE_ID,FOLLOW_10); 
+                            lv_name_0_1=(Token)match(input,RULE_ID,FOLLOW_9); 
 
                             							newLeafNode(lv_name_0_1, grammarAccess.getDefinedTokenAccess().getNameIDTerminalRuleCall_0_0_0_0());
                             						
@@ -2254,9 +2246,9 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalParser.g:884:7: lv_name_0_2= RULE_STRING
+                            // InternalParser.g:883:7: lv_name_0_2= RULE_STRING
                             {
-                            lv_name_0_2=(Token)match(input,RULE_STRING,FOLLOW_10); 
+                            lv_name_0_2=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
                             							newLeafNode(lv_name_0_2, grammarAccess.getDefinedTokenAccess().getNameSTRINGTerminalRuleCall_0_0_0_1());
                             						
@@ -2282,20 +2274,20 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalParser.g:901:4: (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? )
-                    // InternalParser.g:902:5: otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )?
+                    // InternalParser.g:900:4: (otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )? )
+                    // InternalParser.g:901:5: otherlv_1= '=' ( (lv_number_2_0= RULE_INT ) ) (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )?
                     {
-                    otherlv_1=(Token)match(input,22,FOLLOW_11); 
+                    otherlv_1=(Token)match(input,22,FOLLOW_10); 
 
                     					newLeafNode(otherlv_1, grammarAccess.getDefinedTokenAccess().getEqualsSignKeyword_0_1_0());
                     				
-                    // InternalParser.g:906:5: ( (lv_number_2_0= RULE_INT ) )
-                    // InternalParser.g:907:6: (lv_number_2_0= RULE_INT )
+                    // InternalParser.g:905:5: ( (lv_number_2_0= RULE_INT ) )
+                    // InternalParser.g:906:6: (lv_number_2_0= RULE_INT )
                     {
-                    // InternalParser.g:907:6: (lv_number_2_0= RULE_INT )
-                    // InternalParser.g:908:7: lv_number_2_0= RULE_INT
+                    // InternalParser.g:906:6: (lv_number_2_0= RULE_INT )
+                    // InternalParser.g:907:7: lv_number_2_0= RULE_INT
                     {
-                    lv_number_2_0=(Token)match(input,RULE_INT,FOLLOW_12); 
+                    lv_number_2_0=(Token)match(input,RULE_INT,FOLLOW_11); 
 
                     							newLeafNode(lv_number_2_0, grammarAccess.getDefinedTokenAccess().getNumberINTTerminalRuleCall_0_1_1_0());
                     						
@@ -2315,7 +2307,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalParser.g:924:5: (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )?
+                    // InternalParser.g:923:5: (otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) ) )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2324,17 +2316,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt6) {
                         case 1 :
-                            // InternalParser.g:925:6: otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) )
+                            // InternalParser.g:924:6: otherlv_3= ',' ( (lv_extra_4_0= ruleTokenExtra ) )
                             {
-                            otherlv_3=(Token)match(input,23,FOLLOW_11); 
+                            otherlv_3=(Token)match(input,23,FOLLOW_10); 
 
                             						newLeafNode(otherlv_3, grammarAccess.getDefinedTokenAccess().getCommaKeyword_0_1_2_0());
                             					
-                            // InternalParser.g:929:6: ( (lv_extra_4_0= ruleTokenExtra ) )
-                            // InternalParser.g:930:7: (lv_extra_4_0= ruleTokenExtra )
+                            // InternalParser.g:928:6: ( (lv_extra_4_0= ruleTokenExtra ) )
+                            // InternalParser.g:929:7: (lv_extra_4_0= ruleTokenExtra )
                             {
-                            // InternalParser.g:930:7: (lv_extra_4_0= ruleTokenExtra )
-                            // InternalParser.g:931:8: lv_extra_4_0= ruleTokenExtra
+                            // InternalParser.g:929:7: (lv_extra_4_0= ruleTokenExtra )
+                            // InternalParser.g:930:8: lv_extra_4_0= ruleTokenExtra
                             {
 
                             								newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_0_1_2_1_0());
@@ -2377,13 +2369,13 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalParser.g:952:3: ( (lv_extra_5_0= ruleTokenExtra ) )
+                    // InternalParser.g:951:3: ( (lv_extra_5_0= ruleTokenExtra ) )
                     {
-                    // InternalParser.g:952:3: ( (lv_extra_5_0= ruleTokenExtra ) )
-                    // InternalParser.g:953:4: (lv_extra_5_0= ruleTokenExtra )
+                    // InternalParser.g:951:3: ( (lv_extra_5_0= ruleTokenExtra ) )
+                    // InternalParser.g:952:4: (lv_extra_5_0= ruleTokenExtra )
                     {
-                    // InternalParser.g:953:4: (lv_extra_5_0= ruleTokenExtra )
-                    // InternalParser.g:954:5: lv_extra_5_0= ruleTokenExtra
+                    // InternalParser.g:952:4: (lv_extra_5_0= ruleTokenExtra )
+                    // InternalParser.g:953:5: lv_extra_5_0= ruleTokenExtra
                     {
 
                     					newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_1_0());
@@ -2414,7 +2406,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalParser.g:972:3: this_WS_6= RULE_WS
+                    // InternalParser.g:971:3: this_WS_6= RULE_WS
                     {
                     this_WS_6=(Token)match(input,RULE_WS,FOLLOW_2); 
 
@@ -2446,7 +2438,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTokenExtra"
-    // InternalParser.g:980:1: entryRuleTokenExtra returns [EObject current=null] : iv_ruleTokenExtra= ruleTokenExtra EOF ;
+    // InternalParser.g:979:1: entryRuleTokenExtra returns [EObject current=null] : iv_ruleTokenExtra= ruleTokenExtra EOF ;
     public final EObject entryRuleTokenExtra() throws RecognitionException {
         EObject current = null;
 
@@ -2454,8 +2446,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:980:51: (iv_ruleTokenExtra= ruleTokenExtra EOF )
-            // InternalParser.g:981:2: iv_ruleTokenExtra= ruleTokenExtra EOF
+            // InternalParser.g:979:51: (iv_ruleTokenExtra= ruleTokenExtra EOF )
+            // InternalParser.g:980:2: iv_ruleTokenExtra= ruleTokenExtra EOF
             {
              newCompositeNode(grammarAccess.getTokenExtraRule()); 
             pushFollow(FOLLOW_1);
@@ -2482,7 +2474,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTokenExtra"
-    // InternalParser.g:987:1: ruleTokenExtra returns [EObject current=null] : ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) ) ;
+    // InternalParser.g:986:1: ruleTokenExtra returns [EObject current=null] : ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleTokenExtra() throws RecognitionException {
         EObject current = null;
 
@@ -2494,19 +2486,19 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:993:2: ( ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) ) )
-            // InternalParser.g:994:2: ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) )
+            // InternalParser.g:992:2: ( ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) ) )
+            // InternalParser.g:993:2: ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) )
             {
-            // InternalParser.g:994:2: ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) )
-            // InternalParser.g:995:3: ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) )
+            // InternalParser.g:993:2: ( ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) ) )
+            // InternalParser.g:994:3: ( (lv_cost_0_0= RULE_INT ) ) otherlv_1= ',' ( (lv_presentation_2_0= RULE_STRING ) )
             {
-            // InternalParser.g:995:3: ( (lv_cost_0_0= RULE_INT ) )
-            // InternalParser.g:996:4: (lv_cost_0_0= RULE_INT )
+            // InternalParser.g:994:3: ( (lv_cost_0_0= RULE_INT ) )
+            // InternalParser.g:995:4: (lv_cost_0_0= RULE_INT )
             {
-            // InternalParser.g:996:4: (lv_cost_0_0= RULE_INT )
-            // InternalParser.g:997:5: lv_cost_0_0= RULE_INT
+            // InternalParser.g:995:4: (lv_cost_0_0= RULE_INT )
+            // InternalParser.g:996:5: lv_cost_0_0= RULE_INT
             {
-            lv_cost_0_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_cost_0_0=(Token)match(input,RULE_INT,FOLLOW_12); 
 
             					newLeafNode(lv_cost_0_0, grammarAccess.getTokenExtraAccess().getCostINTTerminalRuleCall_0_0());
             				
@@ -2526,15 +2518,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_14); 
+            otherlv_1=(Token)match(input,23,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTokenExtraAccess().getCommaKeyword_1());
             		
-            // InternalParser.g:1017:3: ( (lv_presentation_2_0= RULE_STRING ) )
-            // InternalParser.g:1018:4: (lv_presentation_2_0= RULE_STRING )
+            // InternalParser.g:1016:3: ( (lv_presentation_2_0= RULE_STRING ) )
+            // InternalParser.g:1017:4: (lv_presentation_2_0= RULE_STRING )
             {
-            // InternalParser.g:1018:4: (lv_presentation_2_0= RULE_STRING )
-            // InternalParser.g:1019:5: lv_presentation_2_0= RULE_STRING
+            // InternalParser.g:1017:4: (lv_presentation_2_0= RULE_STRING )
+            // InternalParser.g:1018:5: lv_presentation_2_0= RULE_STRING
             {
             lv_presentation_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2579,7 +2571,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCodeBlock"
-    // InternalParser.g:1039:1: entryRuleCodeBlock returns [String current=null] : iv_ruleCodeBlock= ruleCodeBlock EOF ;
+    // InternalParser.g:1038:1: entryRuleCodeBlock returns [String current=null] : iv_ruleCodeBlock= ruleCodeBlock EOF ;
     public final String entryRuleCodeBlock() throws RecognitionException {
         String current = null;
 
@@ -2587,8 +2579,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1039:49: (iv_ruleCodeBlock= ruleCodeBlock EOF )
-            // InternalParser.g:1040:2: iv_ruleCodeBlock= ruleCodeBlock EOF
+            // InternalParser.g:1038:49: (iv_ruleCodeBlock= ruleCodeBlock EOF )
+            // InternalParser.g:1039:2: iv_ruleCodeBlock= ruleCodeBlock EOF
             {
              newCompositeNode(grammarAccess.getCodeBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -2615,7 +2607,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCodeBlock"
-    // InternalParser.g:1046:1: ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )* ;
+    // InternalParser.g:1045:1: ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )* ;
     public final AntlrDatatypeRuleToken ruleCodeBlock() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2629,10 +2621,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1052:2: ( (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )* )
-            // InternalParser.g:1053:2: (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )*
+            // InternalParser.g:1051:2: ( (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )* )
+            // InternalParser.g:1052:2: (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )*
             {
-            // InternalParser.g:1053:2: (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )*
+            // InternalParser.g:1052:2: (this_CodeWall_0= ruleCodeWall | (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )*
             loop8:
             do {
                 int alt8=3;
@@ -2648,12 +2640,12 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalParser.g:1054:3: this_CodeWall_0= ruleCodeWall
+            	    // InternalParser.g:1053:3: this_CodeWall_0= ruleCodeWall
             	    {
 
             	    			newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeWallParserRuleCall_0());
             	    		
-            	    pushFollow(FOLLOW_15);
+            	    pushFollow(FOLLOW_14);
             	    this_CodeWall_0=ruleCodeWall();
 
             	    state._fsp--;
@@ -2668,12 +2660,12 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalParser.g:1065:3: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
+            	    // InternalParser.g:1064:3: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
             	    {
-            	    // InternalParser.g:1065:3: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
-            	    // InternalParser.g:1066:4: kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}'
+            	    // InternalParser.g:1064:3: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
+            	    // InternalParser.g:1065:4: kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}'
             	    {
-            	    kw=(Token)match(input,14,FOLLOW_7); 
+            	    kw=(Token)match(input,14,FOLLOW_6); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getLeftCurlyBracketKeyword_1_0());
@@ -2681,7 +2673,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    				newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeBlockParserRuleCall_1_1());
             	    			
-            	    pushFollow(FOLLOW_8);
+            	    pushFollow(FOLLOW_7);
             	    this_CodeBlock_2=ruleCodeBlock();
 
             	    state._fsp--;
@@ -2692,7 +2684,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    				afterParserOrEnumRuleCall();
             	    			
-            	    kw=(Token)match(input,15,FOLLOW_15); 
+            	    kw=(Token)match(input,15,FOLLOW_14); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getRightCurlyBracketKeyword_1_2());
@@ -2729,7 +2721,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCodeWall"
-    // InternalParser.g:1091:1: entryRuleCodeWall returns [String current=null] : iv_ruleCodeWall= ruleCodeWall EOF ;
+    // InternalParser.g:1090:1: entryRuleCodeWall returns [String current=null] : iv_ruleCodeWall= ruleCodeWall EOF ;
     public final String entryRuleCodeWall() throws RecognitionException {
         String current = null;
 
@@ -2737,8 +2729,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1091:48: (iv_ruleCodeWall= ruleCodeWall EOF )
-            // InternalParser.g:1092:2: iv_ruleCodeWall= ruleCodeWall EOF
+            // InternalParser.g:1090:48: (iv_ruleCodeWall= ruleCodeWall EOF )
+            // InternalParser.g:1091:2: iv_ruleCodeWall= ruleCodeWall EOF
             {
              newCompositeNode(grammarAccess.getCodeWallRule()); 
             pushFollow(FOLLOW_1);
@@ -2765,7 +2757,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCodeWall"
-    // InternalParser.g:1098:1: ruleCodeWall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' ) ;
+    // InternalParser.g:1097:1: ruleCodeWall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' ) ;
     public final AntlrDatatypeRuleToken ruleCodeWall() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2779,10 +2771,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1104:2: ( (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' ) )
-            // InternalParser.g:1105:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' )
+            // InternalParser.g:1103:2: ( (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' ) )
+            // InternalParser.g:1104:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' )
             {
-            // InternalParser.g:1105:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' )
+            // InternalParser.g:1104:2: (this_ID_0= RULE_ID | this_INT_1= RULE_INT | this_STRING_2= RULE_STRING | this_WS_3= RULE_WS | kw= '+' | kw= '-' | kw= '(' | kw= ')' | kw= '*' | kw= '.' | kw= '/' | kw= '\\\\' | kw= '|' | kw= '?' | kw= '>' | kw= '<' | kw= '#' | kw= '$' | kw= '%' | kw= ';' | kw= ':' | kw= '!' | kw= '=' | kw= ',' )
             int alt9=24;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -2914,7 +2906,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             switch (alt9) {
                 case 1 :
-                    // InternalParser.g:1106:3: this_ID_0= RULE_ID
+                    // InternalParser.g:1105:3: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2927,7 +2919,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalParser.g:1114:3: this_INT_1= RULE_INT
+                    // InternalParser.g:1113:3: this_INT_1= RULE_INT
                     {
                     this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2940,7 +2932,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalParser.g:1122:3: this_STRING_2= RULE_STRING
+                    // InternalParser.g:1121:3: this_STRING_2= RULE_STRING
                     {
                     this_STRING_2=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2953,7 +2945,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalParser.g:1130:3: this_WS_3= RULE_WS
+                    // InternalParser.g:1129:3: this_WS_3= RULE_WS
                     {
                     this_WS_3=(Token)match(input,RULE_WS,FOLLOW_2); 
 
@@ -2966,7 +2958,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalParser.g:1138:3: kw= '+'
+                    // InternalParser.g:1137:3: kw= '+'
                     {
                     kw=(Token)match(input,24,FOLLOW_2); 
 
@@ -2977,7 +2969,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalParser.g:1144:3: kw= '-'
+                    // InternalParser.g:1143:3: kw= '-'
                     {
                     kw=(Token)match(input,25,FOLLOW_2); 
 
@@ -2988,7 +2980,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalParser.g:1150:3: kw= '('
+                    // InternalParser.g:1149:3: kw= '('
                     {
                     kw=(Token)match(input,26,FOLLOW_2); 
 
@@ -2999,7 +2991,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalParser.g:1156:3: kw= ')'
+                    // InternalParser.g:1155:3: kw= ')'
                     {
                     kw=(Token)match(input,27,FOLLOW_2); 
 
@@ -3010,7 +3002,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalParser.g:1162:3: kw= '*'
+                    // InternalParser.g:1161:3: kw= '*'
                     {
                     kw=(Token)match(input,28,FOLLOW_2); 
 
@@ -3021,7 +3013,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalParser.g:1168:3: kw= '.'
+                    // InternalParser.g:1167:3: kw= '.'
                     {
                     kw=(Token)match(input,29,FOLLOW_2); 
 
@@ -3032,7 +3024,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalParser.g:1174:3: kw= '/'
+                    // InternalParser.g:1173:3: kw= '/'
                     {
                     kw=(Token)match(input,30,FOLLOW_2); 
 
@@ -3043,7 +3035,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalParser.g:1180:3: kw= '\\\\'
+                    // InternalParser.g:1179:3: kw= '\\\\'
                     {
                     kw=(Token)match(input,31,FOLLOW_2); 
 
@@ -3054,7 +3046,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalParser.g:1186:3: kw= '|'
+                    // InternalParser.g:1185:3: kw= '|'
                     {
                     kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -3065,7 +3057,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalParser.g:1192:3: kw= '?'
+                    // InternalParser.g:1191:3: kw= '?'
                     {
                     kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -3076,7 +3068,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalParser.g:1198:3: kw= '>'
+                    // InternalParser.g:1197:3: kw= '>'
                     {
                     kw=(Token)match(input,34,FOLLOW_2); 
 
@@ -3087,7 +3079,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalParser.g:1204:3: kw= '<'
+                    // InternalParser.g:1203:3: kw= '<'
                     {
                     kw=(Token)match(input,35,FOLLOW_2); 
 
@@ -3098,7 +3090,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalParser.g:1210:3: kw= '#'
+                    // InternalParser.g:1209:3: kw= '#'
                     {
                     kw=(Token)match(input,36,FOLLOW_2); 
 
@@ -3109,7 +3101,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalParser.g:1216:3: kw= '$'
+                    // InternalParser.g:1215:3: kw= '$'
                     {
                     kw=(Token)match(input,37,FOLLOW_2); 
 
@@ -3120,7 +3112,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // InternalParser.g:1222:3: kw= '%'
+                    // InternalParser.g:1221:3: kw= '%'
                     {
                     kw=(Token)match(input,38,FOLLOW_2); 
 
@@ -3131,7 +3123,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // InternalParser.g:1228:3: kw= ';'
+                    // InternalParser.g:1227:3: kw= ';'
                     {
                     kw=(Token)match(input,39,FOLLOW_2); 
 
@@ -3142,7 +3134,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // InternalParser.g:1234:3: kw= ':'
+                    // InternalParser.g:1233:3: kw= ':'
                     {
                     kw=(Token)match(input,40,FOLLOW_2); 
 
@@ -3153,7 +3145,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // InternalParser.g:1240:3: kw= '!'
+                    // InternalParser.g:1239:3: kw= '!'
                     {
                     kw=(Token)match(input,41,FOLLOW_2); 
 
@@ -3164,7 +3156,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // InternalParser.g:1246:3: kw= '='
+                    // InternalParser.g:1245:3: kw= '='
                     {
                     kw=(Token)match(input,22,FOLLOW_2); 
 
@@ -3175,7 +3167,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // InternalParser.g:1252:3: kw= ','
+                    // InternalParser.g:1251:3: kw= ','
                     {
                     kw=(Token)match(input,23,FOLLOW_2); 
 
@@ -3208,7 +3200,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrecedence"
-    // InternalParser.g:1261:1: entryRulePrecedence returns [EObject current=null] : iv_rulePrecedence= rulePrecedence EOF ;
+    // InternalParser.g:1260:1: entryRulePrecedence returns [EObject current=null] : iv_rulePrecedence= rulePrecedence EOF ;
     public final EObject entryRulePrecedence() throws RecognitionException {
         EObject current = null;
 
@@ -3216,8 +3208,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1261:51: (iv_rulePrecedence= rulePrecedence EOF )
-            // InternalParser.g:1262:2: iv_rulePrecedence= rulePrecedence EOF
+            // InternalParser.g:1260:51: (iv_rulePrecedence= rulePrecedence EOF )
+            // InternalParser.g:1261:2: iv_rulePrecedence= rulePrecedence EOF
             {
              newCompositeNode(grammarAccess.getPrecedenceRule()); 
             pushFollow(FOLLOW_1);
@@ -3244,7 +3236,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrecedence"
-    // InternalParser.g:1268:1: rulePrecedence returns [EObject current=null] : (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* ) ;
+    // InternalParser.g:1267:1: rulePrecedence returns [EObject current=null] : (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* ) ;
     public final EObject rulePrecedence() throws RecognitionException {
         EObject current = null;
 
@@ -3256,17 +3248,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1274:2: ( (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* ) )
-            // InternalParser.g:1275:2: (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* )
+            // InternalParser.g:1273:2: ( (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* ) )
+            // InternalParser.g:1274:2: (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* )
             {
-            // InternalParser.g:1275:2: (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* )
-            // InternalParser.g:1276:3: otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )*
+            // InternalParser.g:1274:2: (otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )* )
+            // InternalParser.g:1275:3: otherlv_0= 'PREC' ( (lv_rows_1_0= rulePrecedenceRow ) )*
             {
-            otherlv_0=(Token)match(input,42,FOLLOW_16); 
+            otherlv_0=(Token)match(input,42,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPrecedenceAccess().getPRECKeyword_0());
             		
-            // InternalParser.g:1280:3: ( (lv_rows_1_0= rulePrecedenceRow ) )*
+            // InternalParser.g:1279:3: ( (lv_rows_1_0= rulePrecedenceRow ) )*
             loop10:
             do {
                 int alt10=2;
@@ -3279,15 +3271,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalParser.g:1281:4: (lv_rows_1_0= rulePrecedenceRow )
+            	    // InternalParser.g:1280:4: (lv_rows_1_0= rulePrecedenceRow )
             	    {
-            	    // InternalParser.g:1281:4: (lv_rows_1_0= rulePrecedenceRow )
-            	    // InternalParser.g:1282:5: lv_rows_1_0= rulePrecedenceRow
+            	    // InternalParser.g:1280:4: (lv_rows_1_0= rulePrecedenceRow )
+            	    // InternalParser.g:1281:5: lv_rows_1_0= rulePrecedenceRow
             	    {
 
             	    					newCompositeNode(grammarAccess.getPrecedenceAccess().getRowsPrecedenceRowParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_16);
+            	    pushFollow(FOLLOW_15);
             	    lv_rows_1_0=rulePrecedenceRow();
 
             	    state._fsp--;
@@ -3338,7 +3330,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrecedenceRow"
-    // InternalParser.g:1303:1: entryRulePrecedenceRow returns [EObject current=null] : iv_rulePrecedenceRow= rulePrecedenceRow EOF ;
+    // InternalParser.g:1302:1: entryRulePrecedenceRow returns [EObject current=null] : iv_rulePrecedenceRow= rulePrecedenceRow EOF ;
     public final EObject entryRulePrecedenceRow() throws RecognitionException {
         EObject current = null;
 
@@ -3346,8 +3338,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1303:54: (iv_rulePrecedenceRow= rulePrecedenceRow EOF )
-            // InternalParser.g:1304:2: iv_rulePrecedenceRow= rulePrecedenceRow EOF
+            // InternalParser.g:1302:54: (iv_rulePrecedenceRow= rulePrecedenceRow EOF )
+            // InternalParser.g:1303:2: iv_rulePrecedenceRow= rulePrecedenceRow EOF
             {
              newCompositeNode(grammarAccess.getPrecedenceRowRule()); 
             pushFollow(FOLLOW_1);
@@ -3374,7 +3366,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrecedenceRow"
-    // InternalParser.g:1310:1: rulePrecedenceRow returns [EObject current=null] : ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* ) ;
+    // InternalParser.g:1309:1: rulePrecedenceRow returns [EObject current=null] : ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* ) ;
     public final EObject rulePrecedenceRow() throws RecognitionException {
         EObject current = null;
 
@@ -3386,22 +3378,22 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1316:2: ( ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* ) )
-            // InternalParser.g:1317:2: ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* )
+            // InternalParser.g:1315:2: ( ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* ) )
+            // InternalParser.g:1316:2: ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* )
             {
-            // InternalParser.g:1317:2: ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* )
-            // InternalParser.g:1318:3: ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )*
+            // InternalParser.g:1316:2: ( ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )* )
+            // InternalParser.g:1317:3: ( (lv_type_0_0= rulePrecedenceType ) ) ( (otherlv_1= RULE_ID ) )*
             {
-            // InternalParser.g:1318:3: ( (lv_type_0_0= rulePrecedenceType ) )
-            // InternalParser.g:1319:4: (lv_type_0_0= rulePrecedenceType )
+            // InternalParser.g:1317:3: ( (lv_type_0_0= rulePrecedenceType ) )
+            // InternalParser.g:1318:4: (lv_type_0_0= rulePrecedenceType )
             {
-            // InternalParser.g:1319:4: (lv_type_0_0= rulePrecedenceType )
-            // InternalParser.g:1320:5: lv_type_0_0= rulePrecedenceType
+            // InternalParser.g:1318:4: (lv_type_0_0= rulePrecedenceType )
+            // InternalParser.g:1319:5: lv_type_0_0= rulePrecedenceType
             {
 
             					newCompositeNode(grammarAccess.getPrecedenceRowAccess().getTypePrecedenceTypeEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             lv_type_0_0=rulePrecedenceType();
 
             state._fsp--;
@@ -3423,7 +3415,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalParser.g:1337:3: ( (otherlv_1= RULE_ID ) )*
+            // InternalParser.g:1336:3: ( (otherlv_1= RULE_ID ) )*
             loop11:
             do {
                 int alt11=2;
@@ -3436,17 +3428,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalParser.g:1338:4: (otherlv_1= RULE_ID )
+            	    // InternalParser.g:1337:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalParser.g:1338:4: (otherlv_1= RULE_ID )
-            	    // InternalParser.g:1339:5: otherlv_1= RULE_ID
+            	    // InternalParser.g:1337:4: (otherlv_1= RULE_ID )
+            	    // InternalParser.g:1338:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
             	    						current = createModelElement(grammarAccess.getPrecedenceRowRule());
             	    					}
             	    				
-            	    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_5); 
+            	    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_4); 
 
             	    					newLeafNode(otherlv_1, grammarAccess.getPrecedenceRowAccess().getTokensDefinedTokenCrossReference_1_0());
             	    				
@@ -3485,7 +3477,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStartSymbols"
-    // InternalParser.g:1354:1: entryRuleStartSymbols returns [EObject current=null] : iv_ruleStartSymbols= ruleStartSymbols EOF ;
+    // InternalParser.g:1353:1: entryRuleStartSymbols returns [EObject current=null] : iv_ruleStartSymbols= ruleStartSymbols EOF ;
     public final EObject entryRuleStartSymbols() throws RecognitionException {
         EObject current = null;
 
@@ -3493,8 +3485,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1354:53: (iv_ruleStartSymbols= ruleStartSymbols EOF )
-            // InternalParser.g:1355:2: iv_ruleStartSymbols= ruleStartSymbols EOF
+            // InternalParser.g:1353:53: (iv_ruleStartSymbols= ruleStartSymbols EOF )
+            // InternalParser.g:1354:2: iv_ruleStartSymbols= ruleStartSymbols EOF
             {
              newCompositeNode(grammarAccess.getStartSymbolsRule()); 
             pushFollow(FOLLOW_1);
@@ -3521,7 +3513,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartSymbols"
-    // InternalParser.g:1361:1: ruleStartSymbols returns [EObject current=null] : (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* ) ;
+    // InternalParser.g:1360:1: ruleStartSymbols returns [EObject current=null] : (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* ) ;
     public final EObject ruleStartSymbols() throws RecognitionException {
         EObject current = null;
 
@@ -3533,17 +3525,17 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1367:2: ( (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* ) )
-            // InternalParser.g:1368:2: (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* )
+            // InternalParser.g:1366:2: ( (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* ) )
+            // InternalParser.g:1367:2: (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* )
             {
-            // InternalParser.g:1368:2: (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* )
-            // InternalParser.g:1369:3: otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )*
+            // InternalParser.g:1367:2: (otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )* )
+            // InternalParser.g:1368:3: otherlv_0= 'START' ( (lv_states_1_0= ruleStartState ) )*
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_5); 
+            otherlv_0=(Token)match(input,43,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStartSymbolsAccess().getSTARTKeyword_0());
             		
-            // InternalParser.g:1373:3: ( (lv_states_1_0= ruleStartState ) )*
+            // InternalParser.g:1372:3: ( (lv_states_1_0= ruleStartState ) )*
             loop12:
             do {
                 int alt12=2;
@@ -3556,15 +3548,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalParser.g:1374:4: (lv_states_1_0= ruleStartState )
+            	    // InternalParser.g:1373:4: (lv_states_1_0= ruleStartState )
             	    {
-            	    // InternalParser.g:1374:4: (lv_states_1_0= ruleStartState )
-            	    // InternalParser.g:1375:5: lv_states_1_0= ruleStartState
+            	    // InternalParser.g:1373:4: (lv_states_1_0= ruleStartState )
+            	    // InternalParser.g:1374:5: lv_states_1_0= ruleStartState
             	    {
 
             	    					newCompositeNode(grammarAccess.getStartSymbolsAccess().getStatesStartStateParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_5);
+            	    pushFollow(FOLLOW_4);
             	    lv_states_1_0=ruleStartState();
 
             	    state._fsp--;
@@ -3615,7 +3607,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStartState"
-    // InternalParser.g:1396:1: entryRuleStartState returns [EObject current=null] : iv_ruleStartState= ruleStartState EOF ;
+    // InternalParser.g:1395:1: entryRuleStartState returns [EObject current=null] : iv_ruleStartState= ruleStartState EOF ;
     public final EObject entryRuleStartState() throws RecognitionException {
         EObject current = null;
 
@@ -3623,8 +3615,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1396:51: (iv_ruleStartState= ruleStartState EOF )
-            // InternalParser.g:1397:2: iv_ruleStartState= ruleStartState EOF
+            // InternalParser.g:1395:51: (iv_ruleStartState= ruleStartState EOF )
+            // InternalParser.g:1396:2: iv_ruleStartState= ruleStartState EOF
             {
              newCompositeNode(grammarAccess.getStartStateRule()); 
             pushFollow(FOLLOW_1);
@@ -3651,7 +3643,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartState"
-    // InternalParser.g:1403:1: ruleStartState returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalParser.g:1402:1: ruleStartState returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleStartState() throws RecognitionException {
         EObject current = null;
 
@@ -3661,14 +3653,14 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1409:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalParser.g:1410:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalParser.g:1408:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalParser.g:1409:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalParser.g:1410:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalParser.g:1411:3: (lv_name_0_0= RULE_ID )
+            // InternalParser.g:1409:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalParser.g:1410:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalParser.g:1411:3: (lv_name_0_0= RULE_ID )
-            // InternalParser.g:1412:4: lv_name_0_0= RULE_ID
+            // InternalParser.g:1410:3: (lv_name_0_0= RULE_ID )
+            // InternalParser.g:1411:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3710,7 +3702,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGrammarRules"
-    // InternalParser.g:1431:1: entryRuleGrammarRules returns [EObject current=null] : iv_ruleGrammarRules= ruleGrammarRules EOF ;
+    // InternalParser.g:1430:1: entryRuleGrammarRules returns [EObject current=null] : iv_ruleGrammarRules= ruleGrammarRules EOF ;
     public final EObject entryRuleGrammarRules() throws RecognitionException {
         EObject current = null;
 
@@ -3718,8 +3710,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1431:53: (iv_ruleGrammarRules= ruleGrammarRules EOF )
-            // InternalParser.g:1432:2: iv_ruleGrammarRules= ruleGrammarRules EOF
+            // InternalParser.g:1430:53: (iv_ruleGrammarRules= ruleGrammarRules EOF )
+            // InternalParser.g:1431:2: iv_ruleGrammarRules= ruleGrammarRules EOF
             {
              newCompositeNode(grammarAccess.getGrammarRulesRule()); 
             pushFollow(FOLLOW_1);
@@ -3746,7 +3738,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGrammarRules"
-    // InternalParser.g:1438:1: ruleGrammarRules returns [EObject current=null] : ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* ) ;
+    // InternalParser.g:1437:1: ruleGrammarRules returns [EObject current=null] : ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* ) ;
     public final EObject ruleGrammarRules() throws RecognitionException {
         EObject current = null;
 
@@ -3759,13 +3751,13 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1444:2: ( ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* ) )
-            // InternalParser.g:1445:2: ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* )
+            // InternalParser.g:1443:2: ( ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* ) )
+            // InternalParser.g:1444:2: ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* )
             {
-            // InternalParser.g:1445:2: ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* )
-            // InternalParser.g:1446:3: (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )*
+            // InternalParser.g:1444:2: ( (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )* )
+            // InternalParser.g:1445:3: (otherlv_0= 'RULE' | otherlv_1= 'RULES' ) ( (lv_rules_2_0= ruleGrammarRule ) )*
             {
-            // InternalParser.g:1446:3: (otherlv_0= 'RULE' | otherlv_1= 'RULES' )
+            // InternalParser.g:1445:3: (otherlv_0= 'RULE' | otherlv_1= 'RULES' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -3783,9 +3775,9 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalParser.g:1447:4: otherlv_0= 'RULE'
+                    // InternalParser.g:1446:4: otherlv_0= 'RULE'
                     {
-                    otherlv_0=(Token)match(input,44,FOLLOW_5); 
+                    otherlv_0=(Token)match(input,44,FOLLOW_4); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getGrammarRulesAccess().getRULEKeyword_0_0());
                     			
@@ -3793,9 +3785,9 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalParser.g:1452:4: otherlv_1= 'RULES'
+                    // InternalParser.g:1451:4: otherlv_1= 'RULES'
                     {
-                    otherlv_1=(Token)match(input,45,FOLLOW_5); 
+                    otherlv_1=(Token)match(input,45,FOLLOW_4); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGrammarRulesAccess().getRULESKeyword_0_1());
                     			
@@ -3805,7 +3797,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalParser.g:1457:3: ( (lv_rules_2_0= ruleGrammarRule ) )*
+            // InternalParser.g:1456:3: ( (lv_rules_2_0= ruleGrammarRule ) )*
             loop14:
             do {
                 int alt14=2;
@@ -3818,15 +3810,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalParser.g:1458:4: (lv_rules_2_0= ruleGrammarRule )
+            	    // InternalParser.g:1457:4: (lv_rules_2_0= ruleGrammarRule )
             	    {
-            	    // InternalParser.g:1458:4: (lv_rules_2_0= ruleGrammarRule )
-            	    // InternalParser.g:1459:5: lv_rules_2_0= ruleGrammarRule
+            	    // InternalParser.g:1457:4: (lv_rules_2_0= ruleGrammarRule )
+            	    // InternalParser.g:1458:5: lv_rules_2_0= ruleGrammarRule
             	    {
 
             	    					newCompositeNode(grammarAccess.getGrammarRulesAccess().getRulesGrammarRuleParserRuleCall_1_0());
             	    				
-            	    pushFollow(FOLLOW_5);
+            	    pushFollow(FOLLOW_4);
             	    lv_rules_2_0=ruleGrammarRule();
 
             	    state._fsp--;
@@ -3877,7 +3869,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGrammarRule"
-    // InternalParser.g:1480:1: entryRuleGrammarRule returns [EObject current=null] : iv_ruleGrammarRule= ruleGrammarRule EOF ;
+    // InternalParser.g:1479:1: entryRuleGrammarRule returns [EObject current=null] : iv_ruleGrammarRule= ruleGrammarRule EOF ;
     public final EObject entryRuleGrammarRule() throws RecognitionException {
         EObject current = null;
 
@@ -3885,8 +3877,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1480:52: (iv_ruleGrammarRule= ruleGrammarRule EOF )
-            // InternalParser.g:1481:2: iv_ruleGrammarRule= ruleGrammarRule EOF
+            // InternalParser.g:1479:52: (iv_ruleGrammarRule= ruleGrammarRule EOF )
+            // InternalParser.g:1480:2: iv_ruleGrammarRule= ruleGrammarRule EOF
             {
              newCompositeNode(grammarAccess.getGrammarRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -3913,7 +3905,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGrammarRule"
-    // InternalParser.g:1487:1: ruleGrammarRule returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' ) ;
+    // InternalParser.g:1486:1: ruleGrammarRule returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' ) ;
     public final EObject ruleGrammarRule() throws RecognitionException {
         EObject current = null;
 
@@ -3930,19 +3922,19 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1493:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' ) )
-            // InternalParser.g:1494:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' )
+            // InternalParser.g:1492:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' ) )
+            // InternalParser.g:1493:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' )
             {
-            // InternalParser.g:1494:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' )
-            // InternalParser.g:1495:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.'
+            // InternalParser.g:1493:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.' )
+            // InternalParser.g:1494:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= ':' ( (lv_body_2_0= ruleRuleBody ) ) (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )* otherlv_5= '.'
             {
-            // InternalParser.g:1495:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalParser.g:1496:4: (lv_name_0_0= RULE_ID )
+            // InternalParser.g:1494:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalParser.g:1495:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalParser.g:1496:4: (lv_name_0_0= RULE_ID )
-            // InternalParser.g:1497:5: lv_name_0_0= RULE_ID
+            // InternalParser.g:1495:4: (lv_name_0_0= RULE_ID )
+            // InternalParser.g:1496:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_17); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_16); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getGrammarRuleAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -3962,20 +3954,20 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,40,FOLLOW_18); 
+            otherlv_1=(Token)match(input,40,FOLLOW_17); 
 
             			newLeafNode(otherlv_1, grammarAccess.getGrammarRuleAccess().getColonKeyword_1());
             		
-            // InternalParser.g:1517:3: ( (lv_body_2_0= ruleRuleBody ) )
-            // InternalParser.g:1518:4: (lv_body_2_0= ruleRuleBody )
+            // InternalParser.g:1516:3: ( (lv_body_2_0= ruleRuleBody ) )
+            // InternalParser.g:1517:4: (lv_body_2_0= ruleRuleBody )
             {
-            // InternalParser.g:1518:4: (lv_body_2_0= ruleRuleBody )
-            // InternalParser.g:1519:5: lv_body_2_0= ruleRuleBody
+            // InternalParser.g:1517:4: (lv_body_2_0= ruleRuleBody )
+            // InternalParser.g:1518:5: lv_body_2_0= ruleRuleBody
             {
 
             					newCompositeNode(grammarAccess.getGrammarRuleAccess().getBodyRuleBodyParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             lv_body_2_0=ruleRuleBody();
 
             state._fsp--;
@@ -3997,7 +3989,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalParser.g:1536:3: (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )*
+            // InternalParser.g:1535:3: (otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -4010,22 +4002,22 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalParser.g:1537:4: otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) )
+            	    // InternalParser.g:1536:4: otherlv_3= '|' ( (lv_body_4_0= ruleRuleBody ) )
             	    {
-            	    otherlv_3=(Token)match(input,32,FOLLOW_18); 
+            	    otherlv_3=(Token)match(input,32,FOLLOW_17); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getGrammarRuleAccess().getVerticalLineKeyword_3_0());
             	    			
-            	    // InternalParser.g:1541:4: ( (lv_body_4_0= ruleRuleBody ) )
-            	    // InternalParser.g:1542:5: (lv_body_4_0= ruleRuleBody )
+            	    // InternalParser.g:1540:4: ( (lv_body_4_0= ruleRuleBody ) )
+            	    // InternalParser.g:1541:5: (lv_body_4_0= ruleRuleBody )
             	    {
-            	    // InternalParser.g:1542:5: (lv_body_4_0= ruleRuleBody )
-            	    // InternalParser.g:1543:6: lv_body_4_0= ruleRuleBody
+            	    // InternalParser.g:1541:5: (lv_body_4_0= ruleRuleBody )
+            	    // InternalParser.g:1542:6: lv_body_4_0= ruleRuleBody
             	    {
 
             	    						newCompositeNode(grammarAccess.getGrammarRuleAccess().getBodyRuleBodyParserRuleCall_3_1_0());
             	    					
-            	    pushFollow(FOLLOW_19);
+            	    pushFollow(FOLLOW_18);
             	    lv_body_4_0=ruleRuleBody();
 
             	    state._fsp--;
@@ -4083,7 +4075,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRuleBody"
-    // InternalParser.g:1569:1: entryRuleRuleBody returns [EObject current=null] : iv_ruleRuleBody= ruleRuleBody EOF ;
+    // InternalParser.g:1568:1: entryRuleRuleBody returns [EObject current=null] : iv_ruleRuleBody= ruleRuleBody EOF ;
     public final EObject entryRuleRuleBody() throws RecognitionException {
         EObject current = null;
 
@@ -4091,8 +4083,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1569:49: (iv_ruleRuleBody= ruleRuleBody EOF )
-            // InternalParser.g:1570:2: iv_ruleRuleBody= ruleRuleBody EOF
+            // InternalParser.g:1568:49: (iv_ruleRuleBody= ruleRuleBody EOF )
+            // InternalParser.g:1569:2: iv_ruleRuleBody= ruleRuleBody EOF
             {
              newCompositeNode(grammarAccess.getRuleBodyRule()); 
             pushFollow(FOLLOW_1);
@@ -4119,7 +4111,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRuleBody"
-    // InternalParser.g:1576:1: ruleRuleBody returns [EObject current=null] : ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) ) ;
+    // InternalParser.g:1575:1: ruleRuleBody returns [EObject current=null] : ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) ) ;
     public final EObject ruleRuleBody() throws RecognitionException {
         EObject current = null;
 
@@ -4132,22 +4124,22 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1582:2: ( ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) ) )
-            // InternalParser.g:1583:2: ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) )
+            // InternalParser.g:1581:2: ( ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) ) )
+            // InternalParser.g:1582:2: ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) )
             {
-            // InternalParser.g:1583:2: ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) )
-            // InternalParser.g:1584:3: ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) )
+            // InternalParser.g:1582:2: ( ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) ) )
+            // InternalParser.g:1583:3: ( (lv_part_0_0= ruleRulePart ) ) ( (lv_code_1_0= ruleRuleCode ) )
             {
-            // InternalParser.g:1584:3: ( (lv_part_0_0= ruleRulePart ) )
-            // InternalParser.g:1585:4: (lv_part_0_0= ruleRulePart )
+            // InternalParser.g:1583:3: ( (lv_part_0_0= ruleRulePart ) )
+            // InternalParser.g:1584:4: (lv_part_0_0= ruleRulePart )
             {
-            // InternalParser.g:1585:4: (lv_part_0_0= ruleRulePart )
-            // InternalParser.g:1586:5: lv_part_0_0= ruleRulePart
+            // InternalParser.g:1584:4: (lv_part_0_0= ruleRulePart )
+            // InternalParser.g:1585:5: lv_part_0_0= ruleRulePart
             {
 
             					newCompositeNode(grammarAccess.getRuleBodyAccess().getPartRulePartParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             lv_part_0_0=ruleRulePart();
 
             state._fsp--;
@@ -4169,11 +4161,11 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalParser.g:1603:3: ( (lv_code_1_0= ruleRuleCode ) )
-            // InternalParser.g:1604:4: (lv_code_1_0= ruleRuleCode )
+            // InternalParser.g:1602:3: ( (lv_code_1_0= ruleRuleCode ) )
+            // InternalParser.g:1603:4: (lv_code_1_0= ruleRuleCode )
             {
-            // InternalParser.g:1604:4: (lv_code_1_0= ruleRuleCode )
-            // InternalParser.g:1605:5: lv_code_1_0= ruleRuleCode
+            // InternalParser.g:1603:4: (lv_code_1_0= ruleRuleCode )
+            // InternalParser.g:1604:5: lv_code_1_0= ruleRuleCode
             {
 
             					newCompositeNode(grammarAccess.getRuleBodyAccess().getCodeRuleCodeParserRuleCall_1_0());
@@ -4223,7 +4215,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRuleCode"
-    // InternalParser.g:1626:1: entryRuleRuleCode returns [String current=null] : iv_ruleRuleCode= ruleRuleCode EOF ;
+    // InternalParser.g:1625:1: entryRuleRuleCode returns [String current=null] : iv_ruleRuleCode= ruleRuleCode EOF ;
     public final String entryRuleRuleCode() throws RecognitionException {
         String current = null;
 
@@ -4231,8 +4223,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1626:48: (iv_ruleRuleCode= ruleRuleCode EOF )
-            // InternalParser.g:1627:2: iv_ruleRuleCode= ruleRuleCode EOF
+            // InternalParser.g:1625:48: (iv_ruleRuleCode= ruleRuleCode EOF )
+            // InternalParser.g:1626:2: iv_ruleRuleCode= ruleRuleCode EOF
             {
              newCompositeNode(grammarAccess.getRuleCodeRule()); 
             pushFollow(FOLLOW_1);
@@ -4259,7 +4251,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRuleCode"
-    // InternalParser.g:1633:1: ruleRuleCode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) ) ;
+    // InternalParser.g:1632:1: ruleRuleCode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) ) ;
     public final AntlrDatatypeRuleToken ruleRuleCode() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4273,22 +4265,22 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1639:2: ( ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) ) )
-            // InternalParser.g:1640:2: ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) )
+            // InternalParser.g:1638:2: ( ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) ) )
+            // InternalParser.g:1639:2: ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) )
             {
-            // InternalParser.g:1640:2: ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) )
-            // InternalParser.g:1641:3: ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) )
+            // InternalParser.g:1639:2: ( ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) ) )
+            // InternalParser.g:1640:3: ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) )
             {
-            // InternalParser.g:1641:3: ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) )
-            // InternalParser.g:1642:4: ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* )
+            // InternalParser.g:1640:3: ( ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* ) )
+            // InternalParser.g:1641:4: ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* )
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getRuleCodeAccess().getUnorderedGroup());
             			
-            // InternalParser.g:1645:4: ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* )
-            // InternalParser.g:1646:5: ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )*
+            // InternalParser.g:1644:4: ( ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )* )
+            // InternalParser.g:1645:5: ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )*
             {
-            // InternalParser.g:1646:5: ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )*
+            // InternalParser.g:1645:5: ( ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) ) | ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) ) )*
             loop16:
             do {
                 int alt16=3;
@@ -4304,30 +4296,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalParser.g:1647:3: ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) )
+            	    // InternalParser.g:1646:3: ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) )
             	    {
-            	    // InternalParser.g:1647:3: ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) )
-            	    // InternalParser.g:1648:4: {...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) )
+            	    // InternalParser.g:1646:3: ({...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) ) )
+            	    // InternalParser.g:1647:4: {...}? => ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleRuleCode", "getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 0)");
             	    }
-            	    // InternalParser.g:1648:102: ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) )
-            	    // InternalParser.g:1649:5: ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )
+            	    // InternalParser.g:1647:102: ( ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) ) )
+            	    // InternalParser.g:1648:5: ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 0);
             	    				
-            	    // InternalParser.g:1652:8: ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )
-            	    // InternalParser.g:1652:9: {...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
+            	    // InternalParser.g:1651:8: ({...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' ) )
+            	    // InternalParser.g:1651:9: {...}? => (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleRuleCode", "true");
             	    }
-            	    // InternalParser.g:1652:18: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
-            	    // InternalParser.g:1652:19: kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}'
+            	    // InternalParser.g:1651:18: (kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}' )
+            	    // InternalParser.g:1651:19: kw= '{' this_CodeBlock_2= ruleCodeBlock kw= '}'
             	    {
-            	    kw=(Token)match(input,14,FOLLOW_7); 
+            	    kw=(Token)match(input,14,FOLLOW_6); 
 
             	    								current.merge(kw);
             	    								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftCurlyBracketKeyword_0_0());
@@ -4335,7 +4327,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    								newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_0_1());
             	    							
-            	    pushFollow(FOLLOW_8);
+            	    pushFollow(FOLLOW_7);
             	    this_CodeBlock_2=ruleCodeBlock();
 
             	    state._fsp--;
@@ -4346,7 +4338,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    								afterParserOrEnumRuleCall();
             	    							
-            	    kw=(Token)match(input,15,FOLLOW_21); 
+            	    kw=(Token)match(input,15,FOLLOW_20); 
 
             	    								current.merge(kw);
             	    								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightCurlyBracketKeyword_0_2());
@@ -4370,30 +4362,30 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalParser.g:1678:3: ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) )
+            	    // InternalParser.g:1677:3: ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) )
             	    {
-            	    // InternalParser.g:1678:3: ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) )
-            	    // InternalParser.g:1679:4: {...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) )
+            	    // InternalParser.g:1677:3: ({...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) ) )
+            	    // InternalParser.g:1678:4: {...}? => ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleRuleCode", "getUnorderedGroupHelper().canSelect(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 1)");
             	    }
-            	    // InternalParser.g:1679:102: ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) )
-            	    // InternalParser.g:1680:5: ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) )
+            	    // InternalParser.g:1678:102: ( ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) ) )
+            	    // InternalParser.g:1679:5: ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getRuleCodeAccess().getUnorderedGroup(), 1);
             	    				
-            	    // InternalParser.g:1683:8: ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) )
-            	    // InternalParser.g:1683:9: {...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' )
+            	    // InternalParser.g:1682:8: ({...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' ) )
+            	    // InternalParser.g:1682:9: {...}? => (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleRuleCode", "true");
             	    }
-            	    // InternalParser.g:1683:18: (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' )
-            	    // InternalParser.g:1683:19: kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']'
+            	    // InternalParser.g:1682:18: (kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']' )
+            	    // InternalParser.g:1682:19: kw= '[' this_CodeBlock_5= ruleCodeBlock kw= ']'
             	    {
-            	    kw=(Token)match(input,46,FOLLOW_22); 
+            	    kw=(Token)match(input,46,FOLLOW_21); 
 
             	    								current.merge(kw);
             	    								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getLeftSquareBracketKeyword_1_0());
@@ -4401,7 +4393,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    								newCompositeNode(grammarAccess.getRuleCodeAccess().getCodeBlockParserRuleCall_1_1());
             	    							
-            	    pushFollow(FOLLOW_23);
+            	    pushFollow(FOLLOW_22);
             	    this_CodeBlock_5=ruleCodeBlock();
 
             	    state._fsp--;
@@ -4412,7 +4404,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             	    								afterParserOrEnumRuleCall();
             	    							
-            	    kw=(Token)match(input,47,FOLLOW_21); 
+            	    kw=(Token)match(input,47,FOLLOW_20); 
 
             	    								current.merge(kw);
             	    								newLeafNode(kw, grammarAccess.getRuleCodeAccess().getRightSquareBracketKeyword_1_2());
@@ -4473,7 +4465,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRuleContent"
-    // InternalParser.g:1719:1: entryRuleRuleContent returns [EObject current=null] : iv_ruleRuleContent= ruleRuleContent EOF ;
+    // InternalParser.g:1718:1: entryRuleRuleContent returns [EObject current=null] : iv_ruleRuleContent= ruleRuleContent EOF ;
     public final EObject entryRuleRuleContent() throws RecognitionException {
         EObject current = null;
 
@@ -4481,8 +4473,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1719:52: (iv_ruleRuleContent= ruleRuleContent EOF )
-            // InternalParser.g:1720:2: iv_ruleRuleContent= ruleRuleContent EOF
+            // InternalParser.g:1718:52: (iv_ruleRuleContent= ruleRuleContent EOF )
+            // InternalParser.g:1719:2: iv_ruleRuleContent= ruleRuleContent EOF
             {
              newCompositeNode(grammarAccess.getRuleContentRule()); 
             pushFollow(FOLLOW_1);
@@ -4509,7 +4501,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRuleContent"
-    // InternalParser.g:1726:1: ruleRuleContent returns [EObject current=null] : ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) ) ;
+    // InternalParser.g:1725:1: ruleRuleContent returns [EObject current=null] : ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) ) ;
     public final EObject ruleRuleContent() throws RecognitionException {
         EObject current = null;
 
@@ -4520,10 +4512,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1732:2: ( ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) ) )
-            // InternalParser.g:1733:2: ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) )
+            // InternalParser.g:1731:2: ( ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) ) )
+            // InternalParser.g:1732:2: ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) )
             {
-            // InternalParser.g:1733:2: ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) )
+            // InternalParser.g:1732:2: ( ( (lv_regex_0_0= RULE_STRING ) ) | ( (otherlv_1= RULE_ID ) ) )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -4541,13 +4533,13 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalParser.g:1734:3: ( (lv_regex_0_0= RULE_STRING ) )
+                    // InternalParser.g:1733:3: ( (lv_regex_0_0= RULE_STRING ) )
                     {
-                    // InternalParser.g:1734:3: ( (lv_regex_0_0= RULE_STRING ) )
-                    // InternalParser.g:1735:4: (lv_regex_0_0= RULE_STRING )
+                    // InternalParser.g:1733:3: ( (lv_regex_0_0= RULE_STRING ) )
+                    // InternalParser.g:1734:4: (lv_regex_0_0= RULE_STRING )
                     {
-                    // InternalParser.g:1735:4: (lv_regex_0_0= RULE_STRING )
-                    // InternalParser.g:1736:5: lv_regex_0_0= RULE_STRING
+                    // InternalParser.g:1734:4: (lv_regex_0_0= RULE_STRING )
+                    // InternalParser.g:1735:5: lv_regex_0_0= RULE_STRING
                     {
                     lv_regex_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4573,13 +4565,13 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalParser.g:1753:3: ( (otherlv_1= RULE_ID ) )
+                    // InternalParser.g:1752:3: ( (otherlv_1= RULE_ID ) )
                     {
-                    // InternalParser.g:1753:3: ( (otherlv_1= RULE_ID ) )
-                    // InternalParser.g:1754:4: (otherlv_1= RULE_ID )
+                    // InternalParser.g:1752:3: ( (otherlv_1= RULE_ID ) )
+                    // InternalParser.g:1753:4: (otherlv_1= RULE_ID )
                     {
-                    // InternalParser.g:1754:4: (otherlv_1= RULE_ID )
-                    // InternalParser.g:1755:5: otherlv_1= RULE_ID
+                    // InternalParser.g:1753:4: (otherlv_1= RULE_ID )
+                    // InternalParser.g:1754:5: otherlv_1= RULE_ID
                     {
 
                     					if (current==null) {
@@ -4622,7 +4614,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRulePart"
-    // InternalParser.g:1770:1: entryRuleRulePart returns [EObject current=null] : iv_ruleRulePart= ruleRulePart EOF ;
+    // InternalParser.g:1769:1: entryRuleRulePart returns [EObject current=null] : iv_ruleRulePart= ruleRulePart EOF ;
     public final EObject entryRuleRulePart() throws RecognitionException {
         EObject current = null;
 
@@ -4630,8 +4622,8 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalParser.g:1770:49: (iv_ruleRulePart= ruleRulePart EOF )
-            // InternalParser.g:1771:2: iv_ruleRulePart= ruleRulePart EOF
+            // InternalParser.g:1769:49: (iv_ruleRulePart= ruleRulePart EOF )
+            // InternalParser.g:1770:2: iv_ruleRulePart= ruleRulePart EOF
             {
              newCompositeNode(grammarAccess.getRulePartRule()); 
             pushFollow(FOLLOW_1);
@@ -4658,7 +4650,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRulePart"
-    // InternalParser.g:1777:1: ruleRulePart returns [EObject current=null] : ( (lv_content_0_0= ruleRuleContent ) )* ;
+    // InternalParser.g:1776:1: ruleRulePart returns [EObject current=null] : ( (lv_content_0_0= ruleRuleContent ) )* ;
     public final EObject ruleRulePart() throws RecognitionException {
         EObject current = null;
 
@@ -4669,10 +4661,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1783:2: ( ( (lv_content_0_0= ruleRuleContent ) )* )
-            // InternalParser.g:1784:2: ( (lv_content_0_0= ruleRuleContent ) )*
+            // InternalParser.g:1782:2: ( ( (lv_content_0_0= ruleRuleContent ) )* )
+            // InternalParser.g:1783:2: ( (lv_content_0_0= ruleRuleContent ) )*
             {
-            // InternalParser.g:1784:2: ( (lv_content_0_0= ruleRuleContent ) )*
+            // InternalParser.g:1783:2: ( (lv_content_0_0= ruleRuleContent ) )*
             loop18:
             do {
                 int alt18=2;
@@ -4685,15 +4677,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalParser.g:1785:3: (lv_content_0_0= ruleRuleContent )
+            	    // InternalParser.g:1784:3: (lv_content_0_0= ruleRuleContent )
             	    {
-            	    // InternalParser.g:1785:3: (lv_content_0_0= ruleRuleContent )
-            	    // InternalParser.g:1786:4: lv_content_0_0= ruleRuleContent
+            	    // InternalParser.g:1784:3: (lv_content_0_0= ruleRuleContent )
+            	    // InternalParser.g:1785:4: lv_content_0_0= ruleRuleContent
             	    {
 
             	    				newCompositeNode(grammarAccess.getRulePartAccess().getContentRuleContentParserRuleCall_0());
             	    			
-            	    pushFollow(FOLLOW_24);
+            	    pushFollow(FOLLOW_23);
             	    lv_content_0_0=ruleRuleContent();
 
             	    state._fsp--;
@@ -4741,7 +4733,7 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrecedenceType"
-    // InternalParser.g:1806:1: rulePrecedenceType returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) ) ;
+    // InternalParser.g:1805:1: rulePrecedenceType returns [Enumerator current=null] : ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) ) ;
     public final Enumerator rulePrecedenceType() throws RecognitionException {
         Enumerator current = null;
 
@@ -4753,10 +4745,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalParser.g:1812:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) ) )
-            // InternalParser.g:1813:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) )
+            // InternalParser.g:1811:2: ( ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) ) )
+            // InternalParser.g:1812:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) )
             {
-            // InternalParser.g:1813:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) )
+            // InternalParser.g:1812:2: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'LEFT' ) | (enumLiteral_2= 'RIGHT' ) )
             int alt19=3;
             switch ( input.LA(1) ) {
             case 48:
@@ -4783,10 +4775,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
             switch (alt19) {
                 case 1 :
-                    // InternalParser.g:1814:3: (enumLiteral_0= 'NONE' )
+                    // InternalParser.g:1813:3: (enumLiteral_0= 'NONE' )
                     {
-                    // InternalParser.g:1814:3: (enumLiteral_0= 'NONE' )
-                    // InternalParser.g:1815:4: enumLiteral_0= 'NONE'
+                    // InternalParser.g:1813:3: (enumLiteral_0= 'NONE' )
+                    // InternalParser.g:1814:4: enumLiteral_0= 'NONE'
                     {
                     enumLiteral_0=(Token)match(input,48,FOLLOW_2); 
 
@@ -4800,10 +4792,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalParser.g:1822:3: (enumLiteral_1= 'LEFT' )
+                    // InternalParser.g:1821:3: (enumLiteral_1= 'LEFT' )
                     {
-                    // InternalParser.g:1822:3: (enumLiteral_1= 'LEFT' )
-                    // InternalParser.g:1823:4: enumLiteral_1= 'LEFT'
+                    // InternalParser.g:1821:3: (enumLiteral_1= 'LEFT' )
+                    // InternalParser.g:1822:4: enumLiteral_1= 'LEFT'
                     {
                     enumLiteral_1=(Token)match(input,49,FOLLOW_2); 
 
@@ -4817,10 +4809,10 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalParser.g:1830:3: (enumLiteral_2= 'RIGHT' )
+                    // InternalParser.g:1829:3: (enumLiteral_2= 'RIGHT' )
                     {
-                    // InternalParser.g:1830:3: (enumLiteral_2= 'RIGHT' )
-                    // InternalParser.g:1831:4: enumLiteral_2= 'RIGHT'
+                    // InternalParser.g:1829:3: (enumLiteral_2= 'RIGHT' )
+                    // InternalParser.g:1830:4: enumLiteral_2= 'RIGHT'
                     {
                     enumLiteral_2=(Token)match(input,50,FOLLOW_2); 
 
@@ -4859,13 +4851,12 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
     protected DFA1 dfa1 = new DFA1(this);
     static final String dfa_1s = "\15\uffff";
-    static final String dfa_2s = "\1\1\14\uffff";
-    static final String dfa_3s = "\1\13\14\uffff";
-    static final String dfa_4s = "\1\55\14\uffff";
-    static final String dfa_5s = "\1\uffff\1\14\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13";
-    static final String dfa_6s = "\1\0\14\uffff}>";
-    static final String[] dfa_7s = {
-            "\1\2\1\uffff\1\3\2\uffff\1\4\1\5\1\6\1\7\1\10\1\11\24\uffff\1\12\1\13\2\14",
+    static final String dfa_2s = "\1\13\14\uffff";
+    static final String dfa_3s = "\1\55\14\uffff";
+    static final String dfa_4s = "\1\uffff\1\14\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13";
+    static final String dfa_5s = "\1\0\14\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\2\1\3\1\4\2\uffff\1\5\1\6\1\7\1\10\1\11\1\12\24\uffff\1\13\1\14\2\1",
             "",
             "",
             "",
@@ -4881,12 +4872,11 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
-    static final short[] dfa_2 = DFA.unpackEncodedString(dfa_2s);
+    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
     static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
-    static final char[] dfa_4 = DFA.unpackEncodedStringToUnsignedChars(dfa_4s);
+    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
     static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
-    static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
-    static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
+    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
 
     class DFA1 extends DFA {
 
@@ -4894,15 +4884,15 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
             this.recognizer = recognizer;
             this.decisionNumber = 1;
             this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_6;
-            this.transition = dfa_7;
+            this.eof = dfa_1;
+            this.min = dfa_2;
+            this.max = dfa_3;
+            this.accept = dfa_4;
+            this.special = dfa_5;
+            this.transition = dfa_6;
         }
         public String getDescription() {
-            return "()+ loopback of 85:5: ( ({...}? => ( ({...}? => ( ( (lv_scanner_1_0= ruleScannerName ) ) ( (lv_parser_2_0= ruleParserName ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_rules_12_0= ruleGrammarRules ) ) ) ) ) )+";
+            return "()* loopback of 86:6: ( ({...}? => ( ({...}? => ( (lv_scanner_1_0= ruleScannerName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_parser_2_0= ruleParserName ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_importBlock_3_0= ruleImport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_exportBlock_4_0= ruleExport ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_globalBlock_5_0= ruleGlobal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_localBlock_6_0= ruleLocal ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_beginBlock_7_0= ruleBegin ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_closeBlock_8_0= ruleClose ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_tokens_9_0= ruleTokens ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_precedenc_10_0= rulePrecedence ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_start_11_0= ruleStartSymbols ) ) ) ) ) )*";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -4915,29 +4905,29 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
                         int index1_0 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_0==EOF) ) {s = 1;}
+                        if ( ((LA1_0>=44 && LA1_0<=45)) ) {s = 1;}
 
-                        else if ( LA1_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 0) ) {s = 2;}
+                        else if ( LA1_0 == 11 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 0) ) {s = 2;}
 
-                        else if ( LA1_0 == 13 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 1) ) {s = 3;}
+                        else if ( LA1_0 == 12 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 1) ) {s = 3;}
 
-                        else if ( LA1_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 2) ) {s = 4;}
+                        else if ( LA1_0 == 13 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 2) ) {s = 4;}
 
-                        else if ( LA1_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 3) ) {s = 5;}
+                        else if ( LA1_0 == 16 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 3) ) {s = 5;}
 
-                        else if ( LA1_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 4) ) {s = 6;}
+                        else if ( LA1_0 == 17 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 4) ) {s = 6;}
 
-                        else if ( LA1_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 5) ) {s = 7;}
+                        else if ( LA1_0 == 18 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 5) ) {s = 7;}
 
-                        else if ( LA1_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 6) ) {s = 8;}
+                        else if ( LA1_0 == 19 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 6) ) {s = 8;}
 
-                        else if ( LA1_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 7) ) {s = 9;}
+                        else if ( LA1_0 == 20 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 7) ) {s = 9;}
 
-                        else if ( LA1_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 8) ) {s = 10;}
+                        else if ( LA1_0 == 21 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 8) ) {s = 10;}
 
-                        else if ( LA1_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 9) ) {s = 11;}
+                        else if ( LA1_0 == 42 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 9) ) {s = 11;}
 
-                        else if ( LA1_0 >= 44 && LA1_0 <= 45 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup(), 10) ) {s = 12;}
+                        else if ( LA1_0 == 43 && getUnorderedGroupHelper().canSelect(grammarAccess.getParserModelAccess().getUnorderedGroup_0(), 10) ) {s = 12;}
 
                          
                         input.seek(index1_0);
@@ -4954,27 +4944,26 @@ public class InternalParserParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00003C00003F2802L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000003FFFFC0C0F0L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000000F2L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000003FFFFC040F2L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0007000000000002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000400000004030L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000120000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000400000004000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000400000004002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000083FFFFC040F0L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00003C00003F3800L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000003FFFFC0C0F0L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000000F2L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000003FFFFC040F2L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0007000000000002L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000400000004030L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000120000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000400000004000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000400000004002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000083FFFFC040F0L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000032L});
 
 }

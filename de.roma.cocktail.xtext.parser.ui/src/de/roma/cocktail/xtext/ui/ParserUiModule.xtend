@@ -4,10 +4,17 @@
 package de.roma.cocktail.xtext.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
-
+import de.roma.cocktail.xtext.ui.hover.ParserEObjectHoverProvider
+import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider
+import com.google.inject.Binder
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
 @FinalFieldsConstructor
 class ParserUiModule extends AbstractParserUiModule {
+	
+	override configure(Binder binder) {
+		super.configure(binder)
+		binder.bind(DefaultEObjectHoverProvider).to(ParserEObjectHoverProvider)
+	}
 }
