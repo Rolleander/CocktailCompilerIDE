@@ -24,11 +24,14 @@
       </image>
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
-	 <page name="Cocktail Compiler Tools"
-		class="de.roma.cocktail.preference.CCTPreferencePage"
-		id="de.roma.cocktail.preference.CCTPreferencePage"/>
-		<initializer
-            class="de.roma.cocktail.preference.CCTPreferenceInitializer">
+	  <page name="Cocktail Compiler Tools"
+			class="de.roma.cocktail.preference.CCTPreferencePage"
+			id="de.roma.cocktail.preference.CCTPreferencePage"/>
+   </extension>
+   <extension
+   		 point="org.eclipse.core.runtime.preferences">
+      <initializer
+       		class="de.roma.cocktail.preference.CCTPreferenceInitializer">
       </initializer>
    </extension>
 </plugin>

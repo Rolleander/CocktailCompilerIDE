@@ -25,6 +25,9 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.osgi.framework.Bundle;
 
+import de.roma.cocktail.assistent.Activator;
+import de.roma.cocktail.preference.CCTPreferencePage;
+
 
 /**
  * This is a wizard for new compiler projects. Its role is to create  
@@ -140,7 +143,11 @@ public class NewWizard extends Wizard implements INewWizard
             astFile.setDerived(true, null);
         }
 
-        createMakeFolder(project);
+        boolean createMake = Activator.getDefault().getPreferenceStore()
+        		.getBoolean(CCTPreferencePage.CREATEFILESFLAG);
+        if (createMake) {
+            createMakeFolder(project);
+		}
     }
 
     /**

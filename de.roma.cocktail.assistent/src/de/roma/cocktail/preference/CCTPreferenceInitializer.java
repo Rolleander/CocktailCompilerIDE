@@ -11,12 +11,8 @@ public class CCTPreferenceInitializer extends AbstractPreferenceInitializer {
     public void initializeDefaultPreferences() {
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
-        //TODO Funktioniert noch nicht
-        store.setDefault("cctPath", "einDefaultpfad");
-        store.setDefault("useTemplates", true);
+        store.setDefault(CCTPreferencePage.CCTPATHFIELD, "");
+        store.setDefault(CCTPreferencePage.CREATEFILESFLAG, true);
 
-//        String userHome = System.getProperty("user.home");
-//        String defaultPath = userHome + "\\Local Settings\\Temp\\";
-//        store.setDefault(MyPreferencePage.PREF_USER_FILES_DIR, defaultPath);
     }
 }

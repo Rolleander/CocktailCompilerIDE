@@ -12,6 +12,9 @@ import de.roma.cocktail.assistent.Activator;
 
 public class CCTPreferencePage extends FieldEditorPreferencePage 
 	implements IWorkbenchPreferencePage {
+
+	public static String CCTPATHFIELD = "cctPath";
+	public static String CREATEFILESFLAG = "createMakefile";
 	
 //	Falls die Felder geordnet werden müssen
 //	public CCTPreferencePage() {
@@ -20,9 +23,9 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 
 	@Override
 	protected void createFieldEditors() {
-		// Wert lässt sich durch String path = Activator.getDefault().getPreferenceStore().getString("cctPath");
-		// holen
-		addField(new StringButtonFieldEditor("cctPath",
+		// Wert lässt sich durch String path = Activator.getDefault().getPreferenceStore()
+		//.getString(CCTPreferencePage.CCTPATHFIELD); holen
+		addField(new StringButtonFieldEditor(CCTPATHFIELD,
 				"Path of the CCT installation:"
 				,getFieldEditorParent()) {
 			
@@ -36,7 +39,7 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 			}
 		});
 		// Für Sample-Text oder ähnlichem
-		addField(new BooleanFieldEditor("useTemplates", "Create templates", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(CREATEFILESFLAG, "Create Makefile", getFieldEditorParent()));
 	}
 	
 	@Override
