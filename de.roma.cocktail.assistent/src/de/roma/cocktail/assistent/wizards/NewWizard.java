@@ -1,6 +1,7 @@
 package de.roma.cocktail.assistent.wizards;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 
@@ -11,7 +12,10 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -19,6 +23,10 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
+import org.osgi.framework.Bundle;
+
+import de.roma.cocktail.assistent.Activator;
+import de.roma.cocktail.preference.CCTPreferencePage;
 
 
 /**
@@ -97,39 +105,89 @@ public class NewWizard extends Wizard implements INewWizard
     /**
      * The worker method. It will create the new project with its contents.
      */
-    private void doFinish(String projectName, IProgressMonitor monitor) throws CoreException
+    private void doFinish(String projectName, IProgressMonitor monitor) 
+    		throws CoreException
     {
     	
     	// Create files
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IProject project  = root.getProject(projectName);
-        IFolder folder = project.getFolder("src");
-        IFile file = folder.getFile("scanner.rex");
-        IFile file1 = folder.getFile("parser.pars");
-        IFile file2 = folder.getFile("syntax.ast");
+        IFolder srcFolder = project.getFolder("src");
+        IFile rexFile = srcFolder.getFile("scanner.rex");
+        IFile parsFile = srcFolder.getFile("parser.pars");
+        IFile astFile = srcFolder.getFile("syntax.ast");
         //at this point, no resources have been created
+        
         if (!project.exists()) project.create(null);
         if (!project.isOpen()) project.open(null);        
-        if (!folder.exists()) 
-            folder.create(IResource.NONE, true, null);
-        if (!file.exists()) {
+        if (!srcFolder.exists()) {
+            srcFolder.create(IResource.NONE, true, null);
+        	srcFolder.setDerived(true, null);
+        }
+        if (!rexFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            file.create(source, IResource.NONE, null);
+            rexFile.create(source, IResource.NONE, null);
+            rexFile.setDerived(true, null);
         }
-        if (!file1.exists()) {
+        if (!parsFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            file1.create(source, IResource.NONE, null);
+            parsFile.create(source, IResource.NONE, null);
+            parsFile.setDerived(true, null);
         }
-        if (!file2.exists()) {
+        if (!astFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            file2.create(source, IResource.NONE, null);
+            astFile.create(source, IResource.NONE, null);
+            astFile.setDerived(true, null);
         }
+
+        boolean createMake = Activator.getDefault().getPreferenceStore()
+        		.getBoolean(CCTPreferencePage.CREATEFILESFLAG);
+        if (createMake) {
+            createMakeFolder(project);
+		}
     }
 
     /**
+     * Create a new folder and add the makefile and other related files to it.
+     */
+    private void createMakeFolder(IProject project) throws CoreException {
+    	//Create a folder
+    	IFolder folder = project.getFolder("config");
+    	if (!project.exists()) project.create(null);
+        if (!project.isOpen()) project.open(null);        
+        if (!folder.exists()) {
+        	folder.create(IResource.NONE, true, null);
+        	folder.setDerived(true, null);
+        }
+        
+        createFileFromTemplate(folder, "common.mk", "/res/common.mk");
+        createFileFromTemplate(folder, "config.mk", "/res/config.mk");
+        createFileFromTemplate(folder, "Makefile", "/res/Makefile");
+        createFileFromTemplate(folder, "README", "/res/README");
+        createFileFromTemplate(folder, "util.c", "/res/util.c");
+	}
+    
+    /**
+     * Copy a specified resource from the bundle to the given folder.
+     */
+    private void createFileFromTemplate(IFolder folder, String name, String resource) 
+    		throws CoreException{
+    	IFile file = folder.getFile(name);
+    	
+    	Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
+//    	File f = new File(FileLocator.toFileURL(bundle.getEntry("/templates/README")).toURI()‌​);
+		try {
+			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
+			file.create(stream, IResource.NONE, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+
+	/**
      * Accepts the selection in the workbench to use it in the wizard.
      * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
      */

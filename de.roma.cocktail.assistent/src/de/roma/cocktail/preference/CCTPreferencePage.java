@@ -1,5 +1,6 @@
 package de.roma.cocktail.preference;
 
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringButtonFieldEditor;
 import org.eclipse.swt.SWT;
@@ -12,8 +13,19 @@ import de.roma.cocktail.assistent.Activator;
 public class CCTPreferencePage extends FieldEditorPreferencePage 
 	implements IWorkbenchPreferencePage {
 
+	public static String CCTPATHFIELD = "cctPath";
+	public static String CREATEFILESFLAG = "createMakefile";
+	
+//	Falls die Felder geordnet werden müssen
+//	public CCTPreferencePage() {
+//		super(GRID);
+//	}
+
+	@Override
 	protected void createFieldEditors() {
-		addField(new StringButtonFieldEditor("cctPath",
+		// Wert lässt sich durch String path = Activator.getDefault().getPreferenceStore()
+		//.getString(CCTPreferencePage.CCTPATHFIELD); holen
+		addField(new StringButtonFieldEditor(CCTPATHFIELD,
 				"Path of the CCT installation:"
 				,getFieldEditorParent()) {
 			
@@ -26,10 +38,12 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 				return dialog.open();
 			}
 		});
+		// Für Sample-Text oder ähnlichem
+		addField(new BooleanFieldEditor(CREATEFILESFLAG, "Create Makefile", getFieldEditorParent()));
 	}
 	
+	@Override
 	public void init(IWorkbench workbench) {
-		setPreferenceStore(
-				Activator.getDefault().getPreferenceStore());
+		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 	}
 }
