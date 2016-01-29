@@ -34,4 +34,28 @@
        		class="de.roma.cocktail.preference.CCTPreferenceInitializer">
       </initializer>
    </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="de.roma.cocktail.assistent.launch.LaunchConfiguration"
+            id="de.roma.cocktail.assistent.launchConfigurationType1"
+            modes="run, debug"    
+            name="CompilerLaunch">
+      </launchConfigurationType>
+   </extension>
+   <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+    <launchConfigurationTypeImage
+        icon="icons/compile.png"
+        configTypeID="de.roma.cocktail.assistent.launchConfigurationType1"
+        id="de.roma.cocktail.assistent.launchConfigurationTypeImage.Launcher">
+    </launchConfigurationTypeImage>
+</extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="de.roma.cocktail.assistent.launch.LauncherTabGroup"
+            id="de.roma.cocktail.assistent.launchConfigurationTabGroup1"
+            type="de.roma.cocktail.assistent.launchConfigurationType1">
+      </launchConfigurationTabGroup>
+   </extension>
 </plugin>
