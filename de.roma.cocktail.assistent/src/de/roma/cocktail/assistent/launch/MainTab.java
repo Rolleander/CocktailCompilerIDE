@@ -31,7 +31,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
         
         sourcePath=new Text(composite, SWT.NULL);
         sourcePath.setText("C:\\Program Files (x86)\\Example");     
-        
+
         setControl(composite);
 	}
 	

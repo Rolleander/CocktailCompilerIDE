@@ -58,4 +58,27 @@
             type="de.roma.cocktail.assistent.launchConfigurationType1">
       </launchConfigurationTabGroup>
    </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="de.roma.cocktail.assistent.launch.LauncherShortcut"
+            id="de.roma.cocktail.assistent.shortcut1"
+            label="Cocktail Tools Compile"
+            icon="icons/compile.png"
+            modes="run, debug">
+             <contextualLaunch>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate>
+                 <or>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.scan"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.pars"/>
+                 </or>
+               </iterate>
+             </with>
+           </enablement>
+  		 </contextualLaunch>
+      </shortcut>
+   </extension>
 </plugin>

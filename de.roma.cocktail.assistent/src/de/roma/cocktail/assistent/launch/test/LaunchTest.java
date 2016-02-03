@@ -30,8 +30,9 @@ public class LaunchTest {
 			}
 		});
 		proc.open("cmd.exe");
-		proc.write("dir");
 		
+		proc.write("dir");
+	
 		int exitCode=proc.waitForTermination();
 		System.out.println("EXIT_CODE: "+exitCode);
 	}

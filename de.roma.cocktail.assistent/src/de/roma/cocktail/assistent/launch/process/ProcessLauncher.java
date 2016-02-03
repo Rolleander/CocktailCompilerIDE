@@ -50,7 +50,7 @@ public class ProcessLauncher {
 			writer = new BufferedWriter(new OutputStreamWriter(stdin));
 			stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-
+			
 			Thread stdOutPoll = new Thread(new StdOutputPoll());
 			Thread stdErrorPoll = new Thread(new StdErrorPoll());
 			stdOutPoll.start();
