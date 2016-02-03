@@ -78,9 +78,10 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
+			category="de.roma.cocktail.preference.CCTPreferencePage"
 			class="de.roma.cocktail.xtext.ui.ParserExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="de.roma.cocktail.xtext.Parser"
-			name="Parser">
+			name="Parser Editor">
 			<keywordReference id="de.roma.cocktail.xtext.ui.keyword_Parser"/>
 		</page>
 		<page

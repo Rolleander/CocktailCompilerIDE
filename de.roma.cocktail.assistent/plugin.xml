@@ -81,4 +81,16 @@
   		 </contextualLaunch>
       </shortcut>
    </extension>
+   
+   <extension 
+   id="de.roma.cocktail.parserType"
+   point="org.eclipse.core.contenttype.contentTypes">
+   <content-type 
+   				 base-type="org.eclipse.core.runtime.text"
+                 file-extensions="pars"
+                 id="parserSource"
+                 name="Parser Sourcefile"
+                 priority="normal">
+   </content-type>
+</extension>
 </plugin>

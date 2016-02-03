@@ -78,9 +78,10 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
+			category="de.roma.cocktail.preference.CCTPreferencePage"	
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="org.xtext.cocktail.Scanner"
-			name="Scanner">
+			name="Scanner Editor">
 			<keywordReference id="org.xtext.cocktail.ui.keyword_Scanner"/>
 		</page>
 		<page
