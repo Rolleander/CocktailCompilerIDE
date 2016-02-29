@@ -9,7 +9,9 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
@@ -20,7 +22,8 @@ import org.eclipse.swt.widgets.Text;
  */
 public class NewWizardPage extends WizardPage
 {
-    private Text projectText;
+    private Text projectName;
+    private Button btnMake, btnRex, btnLark, btnAst;
 
     /**
      * Constructor for NewWizardPage.
@@ -50,19 +53,19 @@ public class NewWizardPage extends WizardPage
         
         createProjectField(composite);
 
-//        Label separator = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
-//        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-//        gd = new GridData(GridData.FILL_HORIZONTAL);
-//        gd.horizontalSpan = 3;
-//        separator.setLayoutData(gd);
+        Label separator = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
+        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+        gd.horizontalSpan = 3;
+        separator.setLayoutData(gd);
 
-
+        createCheckboxes(composite);
+        
         initialize();
         dialogChanged();
         setControl(composite);
     }
 
-    /**
+	/**
      * Adds a Label with the given lblText to the given composite.
      * @param composite
      * @param lblText
@@ -74,18 +77,17 @@ public class NewWizardPage extends WizardPage
     }
 
     /**
-     * Adds a the labels, textfields and Browse-Buttons for the Base-Configuration 
-     * to the given composite.
+     * Adds a the name-labels and textfield to the given composite.
      * @param composite
      */
     private void createProjectField(Composite composite)
     {
         createLabel(composite, "Project name:");
 
-        projectText = new Text(composite, SWT.BORDER | SWT.SINGLE);
+        projectName = new Text(composite, SWT.BORDER | SWT.SINGLE);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-        projectText.setLayoutData(gd);
-        projectText.addModifyListener(new ModifyListener()
+        projectName.setLayoutData(gd);
+        projectName.addModifyListener(new ModifyListener()
         {
             @Override
             public void modifyText(ModifyEvent e)
@@ -95,6 +97,39 @@ public class NewWizardPage extends WizardPage
         });
     }
 
+	/**
+     * Adds the checkboxes for the templates to the given composite.
+     * @param composite
+     */
+    private void createCheckboxes(Composite composite) {
+    	GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+        gd.horizontalSpan = 3;
+        
+        btnMake = new Button(composite, SWT.CHECK);
+        btnMake.setText("Generate Make-folder");
+        btnMake.setSelection(true);
+        btnMake.setLayoutData(gd);
+        
+        Group group = new Group(composite, SWT.SHADOW_ETCHED_IN);
+        group.setText("Do you want to generate templates?");
+        group.setLayout(new GridLayout(1, false));
+        gd = new GridData(GridData.FILL_HORIZONTAL);
+        gd.horizontalSpan = 3;
+        group.setLayoutData(gd);
+        
+    	btnRex = new Button(group, SWT.CHECK);
+    	btnRex.setText("rpp-file");
+    	btnRex.setSelection(true);
+        
+    	btnLark = new Button(group, SWT.CHECK);
+    	btnLark.setText("lpp-file");
+    	btnLark.setSelection(true);
+    	
+    	btnAst = new Button(group, SWT.CHECK);
+    	btnAst.setText("ast-file");
+    	btnAst.setSelection(true);
+	}
+    
     /**
      * Initializes the form and handles the given selection.
      */
@@ -123,6 +158,24 @@ public class NewWizardPage extends WizardPage
 
     public String getProjectName()
     {
-        return projectText.getText();
+        return projectName.getText();
     }
+
+	public boolean isBtnMakeSelected() {
+		return btnMake.getSelection();
+	}
+
+	public boolean isBtnRexSelected() {
+		return btnRex.getSelection();
+	}
+
+	public boolean isBtnLarkSelected() {
+		return btnLark.getSelection();
+	}
+
+	public boolean isBtnAstSelected() {
+		return btnAst.getSelection();
+	}
+    
+    
 }

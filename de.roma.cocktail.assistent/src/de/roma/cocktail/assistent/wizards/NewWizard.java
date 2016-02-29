@@ -65,6 +65,10 @@ public class NewWizard extends Wizard implements INewWizard
     public boolean performFinish()
     {
         final String projectName = pageOne.getProjectName();
+        final boolean isBtnMakeSelected  = pageOne.isBtnMakeSelected();
+        final boolean isBtnRexSelected  = pageOne.isBtnRexSelected();
+        final boolean isBtnLarkSelected  = pageOne.isBtnLarkSelected();
+        final boolean isBtnAstSelected  = pageOne.isBtnAstSelected();
 
         IRunnableWithProgress op = new IRunnableWithProgress()
         {
@@ -72,7 +76,8 @@ public class NewWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(projectName, monitor);
+                    doFinish(projectName, isBtnMakeSelected, isBtnRexSelected, 
+                    		isBtnLarkSelected, isBtnAstSelected, monitor);
                 }
                 catch (CoreException e)
                 {
@@ -104,50 +109,61 @@ public class NewWizard extends Wizard implements INewWizard
 
     /**
      * The worker method. It will create the new project with its contents.
+     * @param isBtnAstSelected 
+     * @param isBtnLarkSelected 
+     * @param isBtnRexSelected 
+     * @param isBtnMakeSelected 
      */
-    private void doFinish(String projectName, IProgressMonitor monitor) 
-    		throws CoreException
+    private void doFinish(String projectName, boolean isBtnMakeSelected, 
+    		boolean isBtnRexSelected, boolean isBtnLarkSelected, boolean isBtnAstSelected, 
+    		IProgressMonitor monitor) throws CoreException
     {
     	
     	// Create files
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IProject project  = root.getProject(projectName);
-        IFolder srcFolder = project.getFolder("src");
-        IFile rexFile = srcFolder.getFile("scanner.rex");
-        IFile parsFile = srcFolder.getFile("parser.pars");
-        IFile astFile = srcFolder.getFile("syntax.ast");
-        //at this point, no resources have been created
-        
         if (!project.exists()) project.create(null);
-        if (!project.isOpen()) project.open(null);        
+        if (!project.isOpen()) project.open(null);
+        
+        IFolder srcFolder = project.getFolder("src");
         if (!srcFolder.exists()) {
             srcFolder.create(IResource.NONE, true, null);
         	srcFolder.setDerived(true, null);
         }
-        if (!rexFile.exists()) {
+        
+        IFile rexFile = srcFolder.getFile("scanner.rpp");
+        if (isBtnRexSelected && !rexFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
             rexFile.create(source, IResource.NONE, null);
             rexFile.setDerived(true, null);
         }
-        if (!parsFile.exists()) {
+        
+        IFile parsFile = srcFolder.getFile("parser.lpp");
+        if (isBtnLarkSelected && !parsFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
             parsFile.create(source, IResource.NONE, null);
             parsFile.setDerived(true, null);
         }
-        if (!astFile.exists()) {
+        
+        IFile astFile = srcFolder.getFile("syntax.ast");
+        if (isBtnAstSelected && !astFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
             astFile.create(source, IResource.NONE, null);
             astFile.setDerived(true, null);
         }
 
-        boolean createMake = Activator.getDefault().getPreferenceStore()
-        		.getBoolean(CCTPreferencePage.CREATEFILESFLAG);
-        if (createMake) {
-            createMakeFolder(project);
+        if (isBtnMakeSelected) {
+        	createMakeFolder(project);
 		}
+        
+//        boolean createMake = Activator.getDefault().getPreferenceStore()
+//        		.getBoolean(CCTPreferencePage.CREATEFILESFLAG);
+//        if (createMake) {
+//            createMakeFolder(project);
+//		}
     }
 
     /**
