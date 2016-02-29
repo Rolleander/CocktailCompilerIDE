@@ -18,7 +18,7 @@ Require-Bundle: de.roma.cocktail.xtext.parser,
  org.eclipse.xtend.lib;resolution:=optional,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.roma.cocktail.xtext.parser.ui.internal,
  de.roma.cocktail.xtext.ui.quickfix,
  de.roma.cocktail.xtext.ui.contentassist
