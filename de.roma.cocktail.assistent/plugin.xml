@@ -12,9 +12,38 @@
             class="de.roma.cocktail.assistent.wizards.NewWizard"
             icon="icons/newprj_wiz.gif" 
             id="de.roma.cocktail.assistent.wizards.NewWizard"
-            name="Compiler-Projekt">
+            name="Compiler Projekt">
+      </wizard>
+      <wizard
+            category="Compiler Wizards"
+            class="de.roma.cocktail.assistent.wizards.NewRPPWizard"
+            icon="icons/new_con.gif" 
+            id="de.roma.cocktail.assistent.wizards.NewRPPWizard"
+            name="Rex Spezifikation">
       </wizard>
    </extension>
+   <!-- extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.ressources.IProject"
+            id="de.roma.cocktail.contribution1">
+         <menu
+               label="Compiler"
+               path="additions"
+               id="de.roma.cocktail.menu1">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="New Rex specification"
+               class="de.roma.cocktail.popup.actions.NewRPPAction"
+               menubarPath="de.fiducia.kickstarter.menu1/group1"
+               enablesFor="1"
+               id="de.roma.cocktail.NewRPPAction">
+         </action>
+      </objectContribution>
+   </extension> -->
    <extension
          point="org.eclipse.ui.ide.projectNatureImages">
       <image
@@ -44,12 +73,12 @@
       </launchConfigurationType>
    </extension>
    <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
-    <launchConfigurationTypeImage
-        icon="icons/compile.png"
-        configTypeID="de.roma.cocktail.assistent.launchConfigurationType1"
-        id="de.roma.cocktail.assistent.launchConfigurationTypeImage.Launcher">
-    </launchConfigurationTypeImage>
-</extension>
+      <launchConfigurationTypeImage
+            icon="icons/compile.png"
+            configTypeID="de.roma.cocktail.assistent.launchConfigurationType1"
+            id="de.roma.cocktail.assistent.launchConfigurationTypeImage.Launcher">
+      </launchConfigurationTypeImage>
+   </extension>
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
@@ -85,12 +114,12 @@
    <extension 
    id="de.roma.cocktail.parserType"
    point="org.eclipse.core.contenttype.contentTypes">
-   <content-type 
+      <content-type 
    				 base-type="org.eclipse.core.runtime.text"
                  file-extensions="pars"
                  id="parserSource"
                  name="Parser Sourcefile"
                  priority="normal">
-   </content-type>
-</extension>
+      </content-type>
+   </extension>
 </plugin>
