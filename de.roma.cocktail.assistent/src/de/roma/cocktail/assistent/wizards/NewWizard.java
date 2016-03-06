@@ -122,41 +122,41 @@ public class NewWizard extends Wizard implements INewWizard
     	// Create files
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IProject project  = root.getProject(projectName);
-        if (!project.exists()) project.create(null);
-        if (!project.isOpen()) project.open(null);
+        if (!project.exists()) project.create(monitor);
+        if (!project.isOpen()) project.open(monitor);
         
         IFolder srcFolder = project.getFolder("src");
         if (!srcFolder.exists()) {
-            srcFolder.create(IResource.NONE, true, null);
-        	srcFolder.setDerived(true, null);
+            srcFolder.create(IResource.NONE, true, monitor);
+        	srcFolder.setDerived(true, monitor);
         }
         
         IFile rexFile = srcFolder.getFile("scanner.rpp");
         if (isBtnRexSelected && !rexFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            rexFile.create(source, IResource.NONE, null);
-            rexFile.setDerived(true, null);
+            rexFile.create(source, IResource.NONE, monitor);
+            rexFile.setDerived(true, monitor);
         }
         
         IFile parsFile = srcFolder.getFile("parser.lpp");
         if (isBtnLarkSelected && !parsFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            parsFile.create(source, IResource.NONE, null);
-            parsFile.setDerived(true, null);
+            parsFile.create(source, IResource.NONE, monitor);
+            parsFile.setDerived(true, monitor);
         }
         
         IFile astFile = srcFolder.getFile("syntax.ast");
         if (isBtnAstSelected && !astFile.exists()) {
             byte[] bytes = "".getBytes();
             InputStream source = new ByteArrayInputStream(bytes);
-            astFile.create(source, IResource.NONE, null);
-            astFile.setDerived(true, null);
+            astFile.create(source, IResource.NONE, monitor);
+            astFile.setDerived(true, monitor);
         }
 
         if (isBtnMakeSelected) {
-        	createMakeFolder(project);
+        	createMakeFolder(project, monitor);
 		}
         
 //        boolean createMake = Activator.getDefault().getPreferenceStore()
@@ -169,27 +169,27 @@ public class NewWizard extends Wizard implements INewWizard
     /**
      * Create a new folder and add the makefile and other related files to it.
      */
-    private void createMakeFolder(IProject project) throws CoreException {
+    private void createMakeFolder(IProject project, IProgressMonitor monitor) throws CoreException {
     	//Create a folder
     	IFolder folder = project.getFolder("config");
-    	if (!project.exists()) project.create(null);
-        if (!project.isOpen()) project.open(null);        
+    	if (!project.exists()) project.create(monitor);
+        if (!project.isOpen()) project.open(monitor);        
         if (!folder.exists()) {
-        	folder.create(IResource.NONE, true, null);
-        	folder.setDerived(true, null);
+        	folder.create(IResource.NONE, true, monitor);
+        	folder.setDerived(true, monitor);
         }
         
-        createFileFromTemplate(folder, "common.mk", "/res/common.mk");
-        createFileFromTemplate(folder, "config.mk", "/res/config.mk");
-        createFileFromTemplate(folder, "Makefile", "/res/Makefile");
-        createFileFromTemplate(folder, "README", "/res/README");
-        createFileFromTemplate(folder, "util.c", "/res/util.c");
+        createFileFromTemplate(folder, "common.mk", "/res/common.mk", monitor);
+        createFileFromTemplate(folder, "config.mk", "/res/config.mk", monitor);
+        createFileFromTemplate(folder, "Makefile", "/res/Makefile", monitor);
+        createFileFromTemplate(folder, "README", "/res/README", monitor);
+        createFileFromTemplate(folder, "util.c", "/res/util.c", monitor);
 	}
     
     /**
      * Copy a specified resource from the bundle to the given folder.
      */
-    private void createFileFromTemplate(IFolder folder, String name, String resource) 
+    private void createFileFromTemplate(IFolder folder, String name, String resource, IProgressMonitor monitor) 
     		throws CoreException{
     	IFile file = folder.getFile(name);
     	
@@ -197,7 +197,7 @@ public class NewWizard extends Wizard implements INewWizard
 //    	File f = new File(FileLocator.toFileURL(bundle.getEntry("/templates/README")).toURI()‌​);
 		try {
 			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
-			file.create(stream, IResource.NONE, null);
+			file.create(stream, IResource.NONE, monitor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
