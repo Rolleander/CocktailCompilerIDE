@@ -25,21 +25,21 @@ import org.osgi.framework.Bundle;
 
 
 /**
- * This is a wizard for new scanner specifications in rpp-files. Its role is to create  
+ * This is a wizard for new parser specifications in a lpp-file. Its role is to create  
  * a new file with or without a template.
  */
-public class NewRPPWizard extends Wizard implements INewWizard
+public class NewLPPWizard extends Wizard implements INewWizard
 {
-    private NewRPPPage pageOne;
+    private NewLPPPage pageOne;
     private IStructuredSelection selection;
 
     /**
-     * Constructor for NewRPPWizard.
+     * Constructor for NewLPPWizard.
      */
-    public NewRPPWizard()
+    public NewLPPWizard()
     {
         super();
-        setWindowTitle("New scanner specification");
+        setWindowTitle("New parser specification");
         setNeedsProgressMonitor(true);
     }
     
@@ -48,7 +48,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
      */
     public void addPages()
     {
-        pageOne = new NewRPPPage(selection);
+        pageOne = new NewLPPPage(selection);
         addPage(pageOne);
     }
 
@@ -116,7 +116,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 		    folder.create(IResource.NONE, true, monitor);
 			folder.setDerived(true, monitor);
 		}
-		IFile rexFile = folder.getFile(fileName + ".rpp");
+		IFile rexFile = folder.getFile(fileName + ".lpp");
 		if (!rexFile.exists()) {
 			if (!isBtnTempSelected) {
 		        byte[] bytes = "".getBytes();
@@ -125,7 +125,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 		        rexFile.setDerived(true, null);
 		    }
 			else {
-				createFileFromTemplate(rexFile, "/res/rpptemp.rpp", monitor);
+				createFileFromTemplate(rexFile, "/res/lpptemp.lpp", monitor);
 			}
 		}
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);

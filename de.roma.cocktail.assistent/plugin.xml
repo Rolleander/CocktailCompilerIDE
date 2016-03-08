@@ -19,7 +19,14 @@
             class="de.roma.cocktail.assistent.wizards.NewRPPWizard"
             icon="icons/new_con.gif" 
             id="de.roma.cocktail.assistent.wizards.NewRPPWizard"
-            name="Rex Spezifikation">
+            name="Scanner Spezifikation">
+      </wizard>
+      <wizard
+            category="Compiler Wizards"
+            class="de.roma.cocktail.assistent.wizards.NewLPPWizard"
+            icon="icons/new_con.gif" 
+            id="de.roma.cocktail.assistent.wizards.NewLPPWizard"
+            name="Parser Spezifikation">
       </wizard>
    </extension>
    <!-- extension

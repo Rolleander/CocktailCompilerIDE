@@ -20,9 +20,9 @@ import org.eclipse.swt.widgets.Text;
 
 
 /**
- * This wizard page allows setting the input for a new rpp-file. 
+ * This wizard page allows setting the input for a new lpp-file. 
  */
-public class NewRPPPage extends WizardPage
+public class NewLPPPage extends WizardPage
 {
     private Text folderName, fileName;
     private Button btnTemp;
@@ -32,11 +32,11 @@ public class NewRPPPage extends WizardPage
      * Constructor for NewRPPPage.
      * @param selection
      */
-    public NewRPPPage(IStructuredSelection selection)
+    public NewLPPPage(IStructuredSelection selection)
     {
         super("NewRPPWizardPage");
-        setTitle("Scanner specification");
-        setDescription("Create a new specification for Rex");
+        setTitle("Parser specification");
+        setDescription("Create a new specification for Lark");
         this.selection = selection;
     }
 

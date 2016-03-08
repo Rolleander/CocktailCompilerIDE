@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Text;
 
 
 /**
- * The "New Component" wizard page allows setting the input for the new Component. 
+ * This wizard page allows setting the input for a new compiler project. 
  * The page will only accept valid data.
  */
 public class NewWizardPage extends WizardPage
@@ -33,8 +33,8 @@ public class NewWizardPage extends WizardPage
     public NewWizardPage(IStructuredSelection selection)
     {
         super("NewWizardPage");
-        setTitle("Compiler");
-        setDescription("Create a new Compiler");
+        setTitle("Compiler Project");
+        setDescription("Create a new Compiler project");
     }
 
     /**
@@ -145,7 +145,7 @@ public class NewWizardPage extends WizardPage
     private void dialogChanged()
     { 
     	String msg = null;
-        // Looks for a valid project in the projectText
+        // Looks for a valid name in the projectText
         if (getProjectName().isEmpty())
         {
         	msg = "Project name must be specified";
