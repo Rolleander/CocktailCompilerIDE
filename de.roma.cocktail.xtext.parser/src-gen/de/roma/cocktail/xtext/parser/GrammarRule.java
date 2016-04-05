@@ -12,10 +12,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.GrammarRule#getBody <em>Body</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getGrammarRule()
  * @model

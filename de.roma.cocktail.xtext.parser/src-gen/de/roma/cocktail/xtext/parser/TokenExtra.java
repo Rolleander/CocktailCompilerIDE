@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.TokenExtra#getCost <em>Cost</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.TokenExtra#getPresentation <em>Presentation</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getTokenExtra()
  * @model

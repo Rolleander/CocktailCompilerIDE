@@ -11,11 +11,11 @@ package de.roma.cocktail.xtext.parser;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.DefinedToken#getNumber <em>Number</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.DefinedToken#getExtra <em>Extra</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getDefinedToken()
  * @model

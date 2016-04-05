@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.PrecedenceRowImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.PrecedenceRowImpl#getTokens <em>Tokens</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.RuleContent#getRegex <em>Regex</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.RuleContent#getRef <em>Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getRuleContent()
  * @model

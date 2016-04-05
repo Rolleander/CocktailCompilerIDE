@@ -30,7 +30,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "de.roma.cocktail.xtext.Parser"
-			fileExtensions = "pars"
+			fileExtensions = "lark,lrk"
 
 			serializer = {
 				generateStub = false

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.ParserModel#getScanner <em>Scanner</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.ParserModel#getParser <em>Parser</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.parser.ParserModel#getStart <em>Start</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.ParserModel#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getParserModel()
  * @model
