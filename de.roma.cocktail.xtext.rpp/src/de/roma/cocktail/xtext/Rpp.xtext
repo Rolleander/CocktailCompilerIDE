@@ -1,0 +1,96 @@
+grammar de.roma.cocktail.xtext.Rpp with org.eclipse.xtext.common.Terminals
+
+generate rpp "http://www.roma.de/cocktail/xtext/Rpp"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	
+	(scanner=Scanner?  
+	& export=Export? 
+	& imports=Import? 
+	& global=Global? 
+	& local=Local? 
+	& default=Default? 
+	& eof=Eof? 
+	& begin=Begin? 
+	& close=Close?
+	& define=Define? 
+	& states=StartStates?) 
+	 rules=Rule 
+;
+
+//TODO Characterset
+
+CodeBlock:
+	(CodeWall | '{' CodeBlock '}')*;
+
+CodeWall:
+//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
+	| ':' | '!' | '=' | ',';
+
+Scanner:
+	'SCANNER' name=ID;
+
+Export:
+	'EXPORT' '{' content=CodeBlock '}';
+
+Import:
+	'IMPORT' '{' content=CodeBlock '}';	
+
+Global:
+	'GLOBAL' '{' content=CodeBlock '}';
+
+Local:
+	'LOCAL' '{' content=CodeBlock '}';
+
+Default:
+	'DEFAULT' '{' content=CodeBlock '}';
+
+Eof:
+	'EOF' '{' content=CodeBlock '}';
+
+Begin:
+	'BEGIN' '{' content=CodeBlock '}';
+
+Close:
+	'CLOSE' '{' content=CodeBlock '}';
+
+Define:
+	'DEFINE' (defines+=DefineRule)+;
+
+DefineRule:
+	name=ID '=' rule=DefineRegex '.';
+
+DefineRegex:
+	Regex*;
+
+StartStates:
+	'START' incstates+=StartState (',' incstates+=StartState)* ('-' exstates+=StartState (',' exstates+=StartState)*)?;
+
+StartState:
+	name=ID;
+
+Rule:
+	info=('RULE' | 'RULES') (rules+=SingleRule)*;
+
+SingleRule:
+	start=RuleStart? rule=RuleDefinition ':' ('-')? '{' content=CodeBlock '}';
+
+Regex returns ecore::EString:
+	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '{' | '}' | '"' |
+	'\'' ;
+
+RuleDefinition:
+	(parts+=RulePart)*;
+
+RulePart:
+	reg=Regex | ->ref=[DefineRule]
+;
+
+	//#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
+RuleStart:
+	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' | ruleDefault='*') '#';
+
+

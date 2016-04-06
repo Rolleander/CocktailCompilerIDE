@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.roma.de/cocktail/xtext/Rpp"
+			class = "de.roma.cocktail.xtext.rpp.RppPackage"
+			genModel = "model/generated/Rpp.genmodel" />
+	</extension>
+</plugin>
