@@ -1,4 +1,4 @@
-/* Project:  COCKTAIL Compiler
+/* Project:  COCKTAIL compiler
  * Descr:    A simple generated template (scanner, parser, evaluator)
  * Kind:     Scanner specification
  * Author:   Prof. Dr. Juergen Vollmer <vollmer@dhbw-karlsruhe.de>
