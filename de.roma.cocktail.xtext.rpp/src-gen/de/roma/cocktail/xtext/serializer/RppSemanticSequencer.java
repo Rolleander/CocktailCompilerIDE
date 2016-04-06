@@ -345,7 +345,7 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RuleStart returns RuleStart
 	 *
 	 * Constraint:
-	 *     ((rulePrec='NOT' | rulePrec='-')? ((ruleStates+=[StartState|ID] ruleStates+=[StartState|ID]*) | ruleDefault='STD' | ruleDefault='*'))
+	 *     ((rulePrec='NOT' | rulePrec='-')? (ruleStates+=[StartState|ID] | ruleDefault='STD' | ruleDefault='*') ruleStates+=[StartState|ID]*)
 	 */
 	protected void sequence_RuleStart(ISerializationContext context, RuleStart semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

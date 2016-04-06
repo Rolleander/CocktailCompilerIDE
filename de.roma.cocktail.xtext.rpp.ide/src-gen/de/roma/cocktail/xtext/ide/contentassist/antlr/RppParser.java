@@ -62,8 +62,7 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 					put(grammarAccess.getSingleRuleAccess().getGroup(), "rule__SingleRule__Group__0");
 					put(grammarAccess.getRuleStartAccess().getGroup(), "rule__RuleStart__Group__0");
-					put(grammarAccess.getRuleStartAccess().getGroup_2_0(), "rule__RuleStart__Group_2_0__0");
-					put(grammarAccess.getRuleStartAccess().getGroup_2_0_1(), "rule__RuleStart__Group_2_0_1__0");
+					put(grammarAccess.getRuleStartAccess().getGroup_3(), "rule__RuleStart__Group_3__0");
 					put(grammarAccess.getModelAccess().getScannerAssignment_0_0(), "rule__Model__ScannerAssignment_0_0");
 					put(grammarAccess.getModelAccess().getExportAssignment_0_1(), "rule__Model__ExportAssignment_0_1");
 					put(grammarAccess.getModelAccess().getImportsAssignment_0_2(), "rule__Model__ImportsAssignment_0_2");
@@ -103,10 +102,10 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRulePartAccess().getRefAssignment_1(), "rule__RulePart__RefAssignment_1");
 					put(grammarAccess.getRuleStartAccess().getRulePrecAssignment_0_0(), "rule__RuleStart__RulePrecAssignment_0_0");
 					put(grammarAccess.getRuleStartAccess().getRulePrecAssignment_0_1(), "rule__RuleStart__RulePrecAssignment_0_1");
-					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0_0(), "rule__RuleStart__RuleStatesAssignment_2_0_0");
-					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0_1_1(), "rule__RuleStart__RuleStatesAssignment_2_0_1_1");
+					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_2_0(), "rule__RuleStart__RuleStatesAssignment_2_0");
 					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_1(), "rule__RuleStart__RuleDefaultAssignment_2_1");
 					put(grammarAccess.getRuleStartAccess().getRuleDefaultAssignment_2_2(), "rule__RuleStart__RuleDefaultAssignment_2_2");
+					put(grammarAccess.getRuleStartAccess().getRuleStatesAssignment_3_1(), "rule__RuleStart__RuleStatesAssignment_3_1");
 					put(grammarAccess.getModelAccess().getUnorderedGroup_0(), "rule__Model__UnorderedGroup_0");
 				}
 			};

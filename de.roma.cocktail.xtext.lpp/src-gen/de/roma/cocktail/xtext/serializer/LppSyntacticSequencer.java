@@ -34,19 +34,9 @@ public class LppSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getWSRule())
-			return getWSToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal WS			: (' '|'\t'|'\r'|'\n')+;
-	 */
-	protected String getWSToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return " ";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

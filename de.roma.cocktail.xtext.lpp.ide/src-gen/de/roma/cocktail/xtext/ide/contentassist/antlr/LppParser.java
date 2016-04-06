@@ -35,8 +35,8 @@ public class LppParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getDefinedTokenAccess().getAlternatives(), "rule__DefinedToken__Alternatives");
-					put(grammarAccess.getDefinedTokenAccess().getNameAlternatives_0_0_0(), "rule__DefinedToken__NameAlternatives_0_0_0");
+					put(grammarAccess.getDefinedTokenAccess().getNameAlternatives_0_0(), "rule__DefinedToken__NameAlternatives_0_0");
+					put(grammarAccess.getDefinedTokenAccess().getAlternatives_1(), "rule__DefinedToken__Alternatives_1");
 					put(grammarAccess.getCodeBlockAccess().getAlternatives(), "rule__CodeBlock__Alternatives");
 					put(grammarAccess.getCodeWallAccess().getAlternatives(), "rule__CodeWall__Alternatives");
 					put(grammarAccess.getGrammarRulesAccess().getAlternatives_0(), "rule__GrammarRules__Alternatives_0");
@@ -53,9 +53,9 @@ public class LppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBeginAccess().getGroup(), "rule__Begin__Group__0");
 					put(grammarAccess.getCloseAccess().getGroup(), "rule__Close__Group__0");
 					put(grammarAccess.getTokensAccess().getGroup(), "rule__Tokens__Group__0");
-					put(grammarAccess.getDefinedTokenAccess().getGroup_0(), "rule__DefinedToken__Group_0__0");
-					put(grammarAccess.getDefinedTokenAccess().getGroup_0_1(), "rule__DefinedToken__Group_0_1__0");
-					put(grammarAccess.getDefinedTokenAccess().getGroup_0_1_2(), "rule__DefinedToken__Group_0_1_2__0");
+					put(grammarAccess.getDefinedTokenAccess().getGroup(), "rule__DefinedToken__Group__0");
+					put(grammarAccess.getDefinedTokenAccess().getGroup_1_0(), "rule__DefinedToken__Group_1_0__0");
+					put(grammarAccess.getDefinedTokenAccess().getGroup_1_0_2(), "rule__DefinedToken__Group_1_0_2__0");
 					put(grammarAccess.getTokenExtraAccess().getGroup(), "rule__TokenExtra__Group__0");
 					put(grammarAccess.getCodeBlockAccess().getGroup_1(), "rule__CodeBlock__Group_1__0");
 					put(grammarAccess.getPrecedenceAccess().getGroup(), "rule__Precedence__Group__0");
@@ -89,10 +89,10 @@ public class LppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBeginAccess().getContentAssignment_2(), "rule__Begin__ContentAssignment_2");
 					put(grammarAccess.getCloseAccess().getContentAssignment_2(), "rule__Close__ContentAssignment_2");
 					put(grammarAccess.getTokensAccess().getTokensAssignment_1(), "rule__Tokens__TokensAssignment_1");
-					put(grammarAccess.getDefinedTokenAccess().getNameAssignment_0_0(), "rule__DefinedToken__NameAssignment_0_0");
-					put(grammarAccess.getDefinedTokenAccess().getNumberAssignment_0_1_1(), "rule__DefinedToken__NumberAssignment_0_1_1");
-					put(grammarAccess.getDefinedTokenAccess().getExtraAssignment_0_1_2_1(), "rule__DefinedToken__ExtraAssignment_0_1_2_1");
-					put(grammarAccess.getDefinedTokenAccess().getExtraAssignment_1(), "rule__DefinedToken__ExtraAssignment_1");
+					put(grammarAccess.getDefinedTokenAccess().getNameAssignment_0(), "rule__DefinedToken__NameAssignment_0");
+					put(grammarAccess.getDefinedTokenAccess().getNumberAssignment_1_0_1(), "rule__DefinedToken__NumberAssignment_1_0_1");
+					put(grammarAccess.getDefinedTokenAccess().getExtraAssignment_1_0_2_1(), "rule__DefinedToken__ExtraAssignment_1_0_2_1");
+					put(grammarAccess.getDefinedTokenAccess().getExtraAssignment_1_1(), "rule__DefinedToken__ExtraAssignment_1_1");
 					put(grammarAccess.getTokenExtraAccess().getCostAssignment_0(), "rule__TokenExtra__CostAssignment_0");
 					put(grammarAccess.getTokenExtraAccess().getPresentationAssignment_2(), "rule__TokenExtra__PresentationAssignment_2");
 					put(grammarAccess.getPrecedenceAccess().getRowsAssignment_1(), "rule__Precedence__RowsAssignment_1");
@@ -102,7 +102,7 @@ public class LppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartStateAccess().getNameAssignment(), "rule__StartState__NameAssignment");
 					put(grammarAccess.getGrammarRulesAccess().getRulesAssignment_1(), "rule__GrammarRules__RulesAssignment_1");
 					put(grammarAccess.getGrammarRuleAccess().getNameAssignment_0(), "rule__GrammarRule__NameAssignment_0");
-					put(grammarAccess.getGrammarRuleAccess().getRulesAssignment_2(), "rule__GrammarRule__RulesAssignment_2");
+					put(grammarAccess.getGrammarRuleAccess().getRulesAssignment_3(), "rule__GrammarRule__RulesAssignment_3");
 					put(grammarAccess.getSimpleRuleAccess().getNameAssignment_0(), "rule__SimpleRule__NameAssignment_0");
 					put(grammarAccess.getSimpleRuleAccess().getBodyAssignment_2(), "rule__SimpleRule__BodyAssignment_2");
 					put(grammarAccess.getSimpleRuleAccess().getRulesAssignment_3_1(), "rule__SimpleRule__RulesAssignment_3_1");

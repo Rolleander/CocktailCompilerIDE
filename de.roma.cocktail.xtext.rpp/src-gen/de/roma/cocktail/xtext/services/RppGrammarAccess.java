@@ -182,114 +182,125 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 	public class CodeWallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Rpp.CodeWall");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final Keyword cPlusSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cHyphenMinusKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cLeftParenthesisKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final Keyword cAsteriskKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cFullStopKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cSolidusKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cReverseSolidusKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cVerticalLineKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final Keyword cQuestionMarkKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
-		private final Keyword cGreaterThanSignKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cLessThanSignKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cNumberSignKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cDollarSignKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cPercentSignKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cSemicolonKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cColonKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		private final Keyword cExclamationMarkKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
-		private final Keyword cEqualsSignKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cCommaKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cSTDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cWSTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final Keyword cPlusSignKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cHyphenMinusKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cAsteriskKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cFullStopKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cSolidusKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cReverseSolidusKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cVerticalLineKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cQuestionMarkKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cGreaterThanSignKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cLessThanSignKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cLeftSquareBracketKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cRightSquareBracketKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cNumberSignKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cDollarSignKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cPercentSignKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cSemicolonKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cColonKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cExclamationMarkKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cEqualsSignKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cCommaKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
 		
-		//CodeWall:
-		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-		//	';'
-		//	| ':' | '!' | '=' | ',';
+		//CodeWall: //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+		//	-> 'STD' | ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '[' | ']'
+		//	| '#' | '$' | '%' | ';' | ':' | '!' | '=' | ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-		//ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
-		//| ':' | '!' | '=' | ','
+		//-> 'STD' | ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '[' | ']' |
+		//'#' | '$' | '%' | ';' | ':' | '!' | '=' | ','
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+		//-> 'STD'
+		public Keyword getSTDKeyword_0() { return cSTDKeyword_0; }
+		
 		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 		
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_2() { return cSTRINGTerminalRuleCall_2; }
+		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
 		
 		//WS
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public RuleCall getWSTerminalRuleCall_4() { return cWSTerminalRuleCall_4; }
 		
 		//'+'
-		public Keyword getPlusSignKeyword_4() { return cPlusSignKeyword_4; }
+		public Keyword getPlusSignKeyword_5() { return cPlusSignKeyword_5; }
 		
 		//'-'
-		public Keyword getHyphenMinusKeyword_5() { return cHyphenMinusKeyword_5; }
+		public Keyword getHyphenMinusKeyword_6() { return cHyphenMinusKeyword_6; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_6() { return cLeftParenthesisKeyword_6; }
+		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
 		
 		//'*'
-		public Keyword getAsteriskKeyword_8() { return cAsteriskKeyword_8; }
+		public Keyword getAsteriskKeyword_9() { return cAsteriskKeyword_9; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_9() { return cFullStopKeyword_9; }
+		public Keyword getFullStopKeyword_10() { return cFullStopKeyword_10; }
 		
 		//'/'
-		public Keyword getSolidusKeyword_10() { return cSolidusKeyword_10; }
+		public Keyword getSolidusKeyword_11() { return cSolidusKeyword_11; }
 		
 		//'\\'
-		public Keyword getReverseSolidusKeyword_11() { return cReverseSolidusKeyword_11; }
+		public Keyword getReverseSolidusKeyword_12() { return cReverseSolidusKeyword_12; }
 		
 		//'|'
-		public Keyword getVerticalLineKeyword_12() { return cVerticalLineKeyword_12; }
+		public Keyword getVerticalLineKeyword_13() { return cVerticalLineKeyword_13; }
 		
 		//'?'
-		public Keyword getQuestionMarkKeyword_13() { return cQuestionMarkKeyword_13; }
+		public Keyword getQuestionMarkKeyword_14() { return cQuestionMarkKeyword_14; }
 		
 		//'>'
-		public Keyword getGreaterThanSignKeyword_14() { return cGreaterThanSignKeyword_14; }
+		public Keyword getGreaterThanSignKeyword_15() { return cGreaterThanSignKeyword_15; }
 		
 		//'<'
-		public Keyword getLessThanSignKeyword_15() { return cLessThanSignKeyword_15; }
+		public Keyword getLessThanSignKeyword_16() { return cLessThanSignKeyword_16; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_17() { return cLeftSquareBracketKeyword_17; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_18() { return cRightSquareBracketKeyword_18; }
 		
 		//'#'
-		public Keyword getNumberSignKeyword_16() { return cNumberSignKeyword_16; }
+		public Keyword getNumberSignKeyword_19() { return cNumberSignKeyword_19; }
 		
 		//'$'
-		public Keyword getDollarSignKeyword_17() { return cDollarSignKeyword_17; }
+		public Keyword getDollarSignKeyword_20() { return cDollarSignKeyword_20; }
 		
 		//'%'
-		public Keyword getPercentSignKeyword_18() { return cPercentSignKeyword_18; }
+		public Keyword getPercentSignKeyword_21() { return cPercentSignKeyword_21; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_19() { return cSemicolonKeyword_19; }
+		public Keyword getSemicolonKeyword_22() { return cSemicolonKeyword_22; }
 		
 		//':'
-		public Keyword getColonKeyword_20() { return cColonKeyword_20; }
+		public Keyword getColonKeyword_23() { return cColonKeyword_23; }
 		
 		//'!'
-		public Keyword getExclamationMarkKeyword_21() { return cExclamationMarkKeyword_21; }
+		public Keyword getExclamationMarkKeyword_24() { return cExclamationMarkKeyword_24; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_22() { return cEqualsSignKeyword_22; }
+		public Keyword getEqualsSignKeyword_25() { return cEqualsSignKeyword_25; }
 		
 		//','
-		public Keyword getCommaKeyword_23() { return cCommaKeyword_23; }
+		public Keyword getCommaKeyword_26() { return cCommaKeyword_26; }
 	}
 	public class ScannerElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Rpp.Scanner");
@@ -951,29 +962,28 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRulePrecHyphenMinusKeyword_0_1_0 = (Keyword)cRulePrecAssignment_0_1.eContents().get(0);
 		private final Keyword cNumberSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Assignment cRuleStatesAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
-		private final CrossReference cRuleStatesStartStateCrossReference_2_0_0_0 = (CrossReference)cRuleStatesAssignment_2_0_0.eContents().get(0);
-		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_2_0_0_0.eContents().get(1);
-		private final Group cGroup_2_0_1 = (Group)cGroup_2_0.eContents().get(1);
-		private final Keyword cCommaKeyword_2_0_1_0 = (Keyword)cGroup_2_0_1.eContents().get(0);
-		private final Assignment cRuleStatesAssignment_2_0_1_1 = (Assignment)cGroup_2_0_1.eContents().get(1);
-		private final CrossReference cRuleStatesStartStateCrossReference_2_0_1_1_0 = (CrossReference)cRuleStatesAssignment_2_0_1_1.eContents().get(0);
-		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_2_0_1_1_0.eContents().get(1);
+		private final Assignment cRuleStatesAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final CrossReference cRuleStatesStartStateCrossReference_2_0_0 = (CrossReference)cRuleStatesAssignment_2_0.eContents().get(0);
+		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_2_0_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_2_0_0.eContents().get(1);
 		private final Assignment cRuleDefaultAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
 		private final Keyword cRuleDefaultSTDKeyword_2_1_0 = (Keyword)cRuleDefaultAssignment_2_1.eContents().get(0);
 		private final Assignment cRuleDefaultAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
 		private final Keyword cRuleDefaultAsteriskKeyword_2_2_0 = (Keyword)cRuleDefaultAssignment_2_2.eContents().get(0);
-		private final Keyword cNumberSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cRuleStatesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cRuleStatesStartStateCrossReference_3_1_0 = (CrossReference)cRuleStatesAssignment_3_1.eContents().get(0);
+		private final RuleCall cRuleStatesStartStateIDTerminalRuleCall_3_1_0_1 = (RuleCall)cRuleStatesStartStateCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cNumberSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		////#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 		//RuleStart:
-		//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
-		//	ruleDefault='*') '#';
+		//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] | ruleDefault='STD' | ruleDefault='*') (','
+		//	ruleStates+=[StartState])* '#';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
-		//ruleDefault='*') '#'
+		//(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] | ruleDefault='STD' | ruleDefault='*') (','
+		//ruleStates+=[StartState])* '#'
 		public Group getGroup() { return cGroup; }
 		
 		//(rulePrec='NOT' | rulePrec='-')?
@@ -994,35 +1004,17 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		//'#'
 		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
 		
-		//(ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' | ruleDefault='*')
+		//(ruleStates+=[StartState] | ruleDefault='STD' | ruleDefault='*')
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//ruleStates+=[StartState] (',' ruleStates+=[StartState])*
-		public Group getGroup_2_0() { return cGroup_2_0; }
-		
 		//ruleStates+=[StartState]
-		public Assignment getRuleStatesAssignment_2_0_0() { return cRuleStatesAssignment_2_0_0; }
+		public Assignment getRuleStatesAssignment_2_0() { return cRuleStatesAssignment_2_0; }
 		
 		//[StartState]
-		public CrossReference getRuleStatesStartStateCrossReference_2_0_0_0() { return cRuleStatesStartStateCrossReference_2_0_0_0; }
+		public CrossReference getRuleStatesStartStateCrossReference_2_0_0() { return cRuleStatesStartStateCrossReference_2_0_0; }
 		
 		//ID
-		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_2_0_0_0_1; }
-		
-		//(',' ruleStates+=[StartState])*
-		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
-		
-		//','
-		public Keyword getCommaKeyword_2_0_1_0() { return cCommaKeyword_2_0_1_0; }
-		
-		//ruleStates+=[StartState]
-		public Assignment getRuleStatesAssignment_2_0_1_1() { return cRuleStatesAssignment_2_0_1_1; }
-		
-		//[StartState]
-		public CrossReference getRuleStatesStartStateCrossReference_2_0_1_1_0() { return cRuleStatesStartStateCrossReference_2_0_1_1_0; }
-		
-		//ID
-		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_2_0_1_1_0_1; }
+		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_2_0_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_2_0_0_1; }
 		
 		//ruleDefault='STD'
 		public Assignment getRuleDefaultAssignment_2_1() { return cRuleDefaultAssignment_2_1; }
@@ -1036,8 +1028,23 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		//'*'
 		public Keyword getRuleDefaultAsteriskKeyword_2_2_0() { return cRuleDefaultAsteriskKeyword_2_2_0; }
 		
+		//(',' ruleStates+=[StartState])*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//ruleStates+=[StartState]
+		public Assignment getRuleStatesAssignment_3_1() { return cRuleStatesAssignment_3_1; }
+		
+		//[StartState]
+		public CrossReference getRuleStatesStartStateCrossReference_3_1_0() { return cRuleStatesStartStateCrossReference_3_1_0; }
+		
+		//ID
+		public RuleCall getRuleStatesStartStateIDTerminalRuleCall_3_1_0_1() { return cRuleStatesStartStateIDTerminalRuleCall_3_1_0_1; }
+		
 		//'#'
-		public Keyword getNumberSignKeyword_3() { return cNumberSignKeyword_3; }
+		public Keyword getNumberSignKeyword_4() { return cNumberSignKeyword_4; }
 	}
 	
 	
@@ -1157,10 +1164,9 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		return getCodeBlockAccess().getRule();
 	}
 	
-	//CodeWall:
-	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-	//	';'
-	//	| ':' | '!' | '=' | ',';
+	//CodeWall: //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	//	-> 'STD' | ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '[' | ']'
+	//	| '#' | '$' | '%' | ';' | ':' | '!' | '=' | ',';
 	public CodeWallElements getCodeWallAccess() {
 		return pCodeWall;
 	}
@@ -1362,8 +1368,8 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////#STD# oder #STARTSTATE# oder #State1,State2,State3# oder #*# oder Not / - #STD#
 	//RuleStart:
-	//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] (',' ruleStates+=[StartState])* | ruleDefault='STD' |
-	//	ruleDefault='*') '#';
+	//	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState] | ruleDefault='STD' | ruleDefault='*') (','
+	//	ruleStates+=[StartState])* '#';
 	public RuleStartElements getRuleStartAccess() {
 		return pRuleStart;
 	}

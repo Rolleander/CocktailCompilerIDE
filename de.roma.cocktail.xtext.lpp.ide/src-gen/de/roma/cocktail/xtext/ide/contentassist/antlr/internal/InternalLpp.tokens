@@ -13,10 +13,9 @@
 ':'=27
 ';'=26
 '<'=22
-'= <'=49
 '='=29
 '>'=21
-'>.'=50
+'>.'=49
 '?'=20
 'BEGIN'=44
 'CLOSE'=45
@@ -34,19 +33,19 @@
 'SCANNER'=36
 'START'=48
 'TOKEN'=46
-'['=51
+'['=50
 '\\'=18
-']'=52
+']'=51
 '{'=39
 '|'=19
 '}'=40
 RULE_ANY_OTHER=10
-RULE_ID=5
-RULE_INT=7
+RULE_ID=4
+RULE_INT=6
 RULE_ML_COMMENT=8
 RULE_SL_COMMENT=9
-RULE_STRING=6
-RULE_WS=4
+RULE_STRING=5
+RULE_WS=7
 T__11=11
 T__12=12
 T__13=13
@@ -88,4 +87,3 @@ T__48=48
 T__49=49
 T__50=50
 T__51=51
-T__52=52

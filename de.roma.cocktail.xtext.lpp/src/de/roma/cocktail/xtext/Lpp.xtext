@@ -39,7 +39,7 @@ Tokens:
 	'TOKEN' tokens+=DefinedToken*;
 
 DefinedToken:
-	name=(ID | STRING) ('=' number=INT (',' extra=TokenExtra)?) | (extra=TokenExtra) | (WS);
+	name=(ID | STRING) (('=' number=INT (',' extra=TokenExtra)?) | (extra=TokenExtra) )?;
 
 TokenExtra:
 	cost=INT "," presentation=STRING;
@@ -74,7 +74,7 @@ GrammerReference:
 	GrammarRule | DefinedToken;
 
 GrammarRule:
-	 name=ID '= <'  rules+=SimpleRule*  '>.';
+	 name=ID '=' '<'  rules+=SimpleRule*  '>.';
 	 
 SimpleRule:
 	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')?;	 

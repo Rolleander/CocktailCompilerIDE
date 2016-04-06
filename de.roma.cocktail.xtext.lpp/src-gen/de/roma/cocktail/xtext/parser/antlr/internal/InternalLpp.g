@@ -864,49 +864,49 @@ ruleDefinedToken returns [EObject current=null]
 		(
 			(
 				(
-					(
-						lv_name_0_1=RULE_ID
-						{
-							newLeafNode(lv_name_0_1, grammarAccess.getDefinedTokenAccess().getNameIDTerminalRuleCall_0_0_0_0());
+					lv_name_0_1=RULE_ID
+					{
+						newLeafNode(lv_name_0_1, grammarAccess.getDefinedTokenAccess().getNameIDTerminalRuleCall_0_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefinedTokenRule());
 						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getDefinedTokenRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"name",
-								lv_name_0_1,
-								"org.eclipse.xtext.common.Terminals.ID");
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_1,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+					    |
+					lv_name_0_2=RULE_STRING
+					{
+						newLeafNode(lv_name_0_2, grammarAccess.getDefinedTokenAccess().getNameSTRINGTerminalRuleCall_0_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefinedTokenRule());
 						}
-						    |
-						lv_name_0_2=RULE_STRING
-						{
-							newLeafNode(lv_name_0_2, grammarAccess.getDefinedTokenAccess().getNameSTRINGTerminalRuleCall_0_0_0_1());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getDefinedTokenRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"name",
-								lv_name_0_2,
-								"org.eclipse.xtext.common.Terminals.STRING");
-						}
-					)
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_2,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
 				)
 			)
+		)
+		(
 			(
 				otherlv_1='='
 				{
-					newLeafNode(otherlv_1, grammarAccess.getDefinedTokenAccess().getEqualsSignKeyword_0_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getDefinedTokenAccess().getEqualsSignKeyword_1_0_0());
 				}
 				(
 					(
 						lv_number_2_0=RULE_INT
 						{
-							newLeafNode(lv_number_2_0, grammarAccess.getDefinedTokenAccess().getNumberINTTerminalRuleCall_0_1_1_0());
+							newLeafNode(lv_number_2_0, grammarAccess.getDefinedTokenAccess().getNumberINTTerminalRuleCall_1_0_1_0());
 						}
 						{
 							if ($current==null) {
@@ -923,12 +923,12 @@ ruleDefinedToken returns [EObject current=null]
 				(
 					otherlv_3=','
 					{
-						newLeafNode(otherlv_3, grammarAccess.getDefinedTokenAccess().getCommaKeyword_0_1_2_0());
+						newLeafNode(otherlv_3, grammarAccess.getDefinedTokenAccess().getCommaKeyword_1_0_2_0());
 					}
 					(
 						(
 							{
-								newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_0_1_2_1_0());
+								newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_1_0_2_1_0());
 							}
 							lv_extra_4_0=ruleTokenExtra
 							{
@@ -946,32 +946,27 @@ ruleDefinedToken returns [EObject current=null]
 					)
 				)?
 			)
-		)
-		    |
-		(
+			    |
 			(
-				{
-					newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_1_0());
-				}
-				lv_extra_5_0=ruleTokenExtra
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDefinedTokenRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getDefinedTokenAccess().getExtraTokenExtraParserRuleCall_1_1_0());
 					}
-					set(
-						$current,
-						"extra",
-						lv_extra_5_0,
-						"de.roma.cocktail.xtext.Lpp.TokenExtra");
-					afterParserOrEnumRuleCall();
-				}
+					lv_extra_5_0=ruleTokenExtra
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefinedTokenRule());
+						}
+						set(
+							$current,
+							"extra",
+							lv_extra_5_0,
+							"de.roma.cocktail.xtext.Lpp.TokenExtra");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
-		    |
-		this_WS_6=RULE_WS
-		{
-			newLeafNode(this_WS_6, grammarAccess.getDefinedTokenAccess().getWSTerminalRuleCall_2());
-		}
+		)?
 	)
 ;
 
@@ -1509,16 +1504,20 @@ ruleGrammarRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='= <'
+		otherlv_1='='
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGrammarRuleAccess().getEqualsSignSpaceLessThanSignKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGrammarRuleAccess().getEqualsSignKeyword_1());
+		}
+		otherlv_2='<'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getGrammarRuleAccess().getLessThanSignKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGrammarRuleAccess().getRulesSimpleRuleParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getGrammarRuleAccess().getRulesSimpleRuleParserRuleCall_3_0());
 				}
-				lv_rules_2_0=ruleSimpleRule
+				lv_rules_3_0=ruleSimpleRule
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGrammarRuleRule());
@@ -1526,15 +1525,15 @@ ruleGrammarRule returns [EObject current=null]
 					add(
 						$current,
 						"rules",
-						lv_rules_2_0,
+						lv_rules_3_0,
 						"de.roma.cocktail.xtext.Lpp.SimpleRule");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_3='>.'
+		otherlv_4='>.'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getGrammarRuleAccess().getGreaterThanSignFullStopKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getGrammarRuleAccess().getGreaterThanSignFullStopKeyword_4());
 		}
 	)
 ;

@@ -166,7 +166,7 @@ public class LppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     GrammerReference returns DefinedToken
 	 *
 	 * Constraint:
-	 *     (((name=ID | name=STRING) number=INT extra=TokenExtra?) | extra=TokenExtra)
+	 *     ((name=ID | name=STRING) ((number=INT extra=TokenExtra?) | extra=TokenExtra)?)
 	 */
 	protected void sequence_DefinedToken(ISerializationContext context, DefinedToken semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
