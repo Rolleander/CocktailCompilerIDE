@@ -105,29 +105,31 @@ public class NewWizardPage extends WizardPage
     	GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
         
+        Group group = new Group(composite, SWT.SHADOW_ETCHED_IN);
+        group.setText("Do you want to generate templates?");
+        group.setLayout(new GridLayout(1, false));
+        group.setLayoutData(gd);
+        
+    	btnRex = new Button(group, SWT.CHECK);
+    	btnRex.setText("scn-file for rpp");
+    	btnRex.setSelection(true);
+        
+    	btnLark = new Button(group, SWT.CHECK);
+    	btnLark.setText("prs-file for lpp");
+    	btnLark.setSelection(true);
+    	
+    	btnAst = new Button(group, SWT.CHECK);
+    	btnAst.setText("ast-file for ast");
+    	btnAst.setSelection(true);
+
+    	gd = new GridData(GridData.FILL_HORIZONTAL);
+        gd.horizontalSpan = 3;
+    	gd.horizontalAlignment = gd.HORIZONTAL_ALIGN_BEGINNING;
+    	
         btnMake = new Button(composite, SWT.CHECK);
         btnMake.setText("Generate Make-folder");
         btnMake.setSelection(true);
         btnMake.setLayoutData(gd);
-        
-        Group group = new Group(composite, SWT.SHADOW_ETCHED_IN);
-        group.setText("Do you want to generate templates?");
-        group.setLayout(new GridLayout(1, false));
-        gd = new GridData(GridData.FILL_HORIZONTAL);
-        gd.horizontalSpan = 3;
-        group.setLayoutData(gd);
-        
-    	btnRex = new Button(group, SWT.CHECK);
-    	btnRex.setText("rpp-file");
-    	btnRex.setSelection(true);
-        
-    	btnLark = new Button(group, SWT.CHECK);
-    	btnLark.setText("lpp-file");
-    	btnLark.setSelection(true);
-    	
-    	btnAst = new Button(group, SWT.CHECK);
-    	btnAst.setText("ast-file");
-    	btnAst.setSelection(true);
 	}
     
     /**

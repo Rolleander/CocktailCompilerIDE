@@ -1,6 +1,5 @@
 package de.roma.cocktail.assistent.wizards;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -129,28 +128,16 @@ public class NewWizard extends Wizard implements INewWizard
         	srcFolder.setDerived(true, monitor);
         }
         
-        IFile rexFile = srcFolder.getFile("scanner.rpp");
-        if (isBtnRexSelected && !rexFile.exists()) {
-            byte[] bytes = "".getBytes();
-            InputStream source = new ByteArrayInputStream(bytes);
-            rexFile.create(source, IResource.NONE, monitor);
-            rexFile.setDerived(true, monitor);
+        if (isBtnRexSelected) {
+        	createFileFromTemplate(srcFolder, "scanner.scn", "/res/rpptemp.scn", monitor);
         }
         
-        IFile parsFile = srcFolder.getFile("parser.lpp");
-        if (isBtnLarkSelected && !parsFile.exists()) {
-            byte[] bytes = "".getBytes();
-            InputStream source = new ByteArrayInputStream(bytes);
-            parsFile.create(source, IResource.NONE, monitor);
-            parsFile.setDerived(true, monitor);
+        if (isBtnLarkSelected) {
+        	createFileFromTemplate(srcFolder, "parser.prs", "/res/lpptemp.prs", monitor);
         }
         
-        IFile astFile = srcFolder.getFile("syntax.ast");
-        if (isBtnAstSelected && !astFile.exists()) {
-            byte[] bytes = "".getBytes();
-            InputStream source = new ByteArrayInputStream(bytes);
-            astFile.create(source, IResource.NONE, monitor);
-            astFile.setDerived(true, monitor);
+        if (isBtnAstSelected) {
+        	createFileFromTemplate(srcFolder, "syntax.ast", "/res/syntaxtemp.ast", monitor);
         }
 
         if (isBtnMakeSelected) {
@@ -190,15 +177,16 @@ public class NewWizard extends Wizard implements INewWizard
     private void createFileFromTemplate(IFolder folder, String name, String resource, IProgressMonitor monitor) 
     		throws CoreException{
     	IFile file = folder.getFile(name);
-    	
-    	Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
-//    	File f = new File(FileLocator.toFileURL(bundle.getEntry("/templates/README")).toURI()‌​);
-		try {
-			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
-			file.create(stream, IResource.NONE, monitor);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    	if (!file.exists()) {
+	    	Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
+			try {
+				InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
+				file.create(stream, IResource.NONE, monitor);
+				file.setDerived(true, monitor);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+    	}
     }
 
 	/**

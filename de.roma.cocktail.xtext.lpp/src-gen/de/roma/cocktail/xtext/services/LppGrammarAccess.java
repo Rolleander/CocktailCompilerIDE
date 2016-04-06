@@ -57,12 +57,9 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRulesGrammarRulesParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
 		
 		//ParserModel:
-		//	(scanner=ScannerName? & parser=ParserName?
-		//	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
-		//	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
-		//	& tokens=Tokens?
-		//	& precedenc=Precedence?
-		//	& start=StartSymbols?) rules=GrammarRules;
+		//	(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
+		//	localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
+		//	start=StartSymbols?) rules=GrammarRules;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
@@ -70,9 +67,9 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 		//start=StartSymbols?) rules=GrammarRules
 		public Group getGroup() { return cGroup; }
 		
-		//(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
+		//scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
 		//localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
-		//start=StartSymbols?)
+		//start=StartSymbols?
 		public UnorderedGroup getUnorderedGroup_0() { return cUnorderedGroup_0; }
 		
 		//scanner=ScannerName?
@@ -444,7 +441,7 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_0_0_0_1() { return cNameSTRINGTerminalRuleCall_0_0_0_1; }
 		
-		//('=' number=INT (',' extra=TokenExtra)?)
+		//'=' number=INT (',' extra=TokenExtra)?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
 		//'='
@@ -569,17 +566,17 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CodeWall:
 		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-		//	';'
-		//	| ':' | '!' | '=' | ',';
+		//	';' | ':' | '!' | '=' | ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-		//ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
-		//| ':' | '!' | '=' | ','
+		// ID | INT | STRING
+		//| WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';' | ':' | '!' |
+		//'=' | ','
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-		//ID
+		// ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
 		//INT
@@ -759,7 +756,7 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 		//('RULE' | 'RULES') rules+=GrammarRule*
 		public Group getGroup() { return cGroup; }
 		
-		//('RULE' | 'RULES')
+		//'RULE' | 'RULES'
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//'RULE'
@@ -1126,12 +1123,9 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//ParserModel:
-	//	(scanner=ScannerName? & parser=ParserName?
-	//	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
-	//	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
-	//	& tokens=Tokens?
-	//	& precedenc=Precedence?
-	//	& start=StartSymbols?) rules=GrammarRules;
+	//	(scanner=ScannerName? & parser=ParserName? & importBlock=Import? & exportBlock=Export? & globalBlock=Global? &
+	//	localBlock=Local? & beginBlock=Begin? & closeBlock=Close? & tokens=Tokens? & precedenc=Precedence? &
+	//	start=StartSymbols?) rules=GrammarRules;
 	public ParserModelElements getParserModelAccess() {
 		return pParserModel;
 	}
@@ -1262,8 +1256,7 @@ public class LppGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CodeWall:
 	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-	//	';'
-	//	| ':' | '!' | '=' | ',';
+	//	';' | ':' | '!' | '=' | ',';
 	public CodeWallElements getCodeWallAccess() {
 		return pCodeWall;
 	}

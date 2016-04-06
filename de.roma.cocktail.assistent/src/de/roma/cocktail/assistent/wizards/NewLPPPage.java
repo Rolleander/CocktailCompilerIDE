@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Text;
 public class NewLPPPage extends WizardPage
 {
     private Text folderName, fileName;
-    private Button btnTemp;
+    private Button btnPre, btnTemp;
     private IStructuredSelection selection;
 
     /**
@@ -122,6 +122,11 @@ public class NewLPPPage extends WizardPage
     	GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
         
+        btnPre = new Button(composite, SWT.CHECK);
+        btnPre.setText("Use preprocessor");
+        btnPre.setSelection(true);
+        btnPre.setLayoutData(gd);
+        
         btnTemp = new Button(composite, SWT.CHECK);
         btnTemp.setText("Generate with template");
         btnTemp.setSelection(true);
@@ -195,6 +200,10 @@ public class NewLPPPage extends WizardPage
         return project.getFolder(folderText.substring(folderText.indexOf("/"))); 
     }
 
+	public boolean isBtnPreSelected() {
+		return btnPre.getSelection();
+	}
+    
 	public boolean isBtnTempSelected() {
 		return btnTemp.getSelection();
 	}

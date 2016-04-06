@@ -77,8 +77,7 @@ GrammarRule:
 	 name=ID '= <'  rules+=SimpleRule*  '>.';
 	 
 SimpleRule:
-	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')? 
-;	 
+	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')?;	 
 
 RuleBody:
 	part=RulePart code=RuleCode;

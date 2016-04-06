@@ -62,6 +62,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
     	final IFolder folder = pageOne.getFolder();
         final String fileName = pageOne.getFileName();
         final boolean isBtnTempSelected  = pageOne.isBtnTempSelected();
+        final boolean isBtnPreSelected  = pageOne.isBtnPreSelected();
 
         IRunnableWithProgress op = new IRunnableWithProgress()
         {
@@ -69,7 +70,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(folder, fileName, isBtnTempSelected, monitor);
+                    doFinish(folder, fileName, isBtnPreSelected, isBtnTempSelected, monitor);
                 }
                 catch (CoreException e)
                 {
@@ -103,11 +104,12 @@ public class NewRPPWizard extends Wizard implements INewWizard
      * The worker method. It will create a new file.
      * @param folder 
      * @param fileName
+     * @param isBtnPreSelected
      * @param isBtnTempSelected 
      * @param monitor
      */
-    private void doFinish(IFolder folder, String fileName, boolean isBtnTempSelected, 
-    		IProgressMonitor monitor) throws CoreException
+    private void doFinish(IFolder folder, String fileName, boolean isBtnPreSelected, 
+    		boolean isBtnTempSelected, IProgressMonitor monitor) throws CoreException
     {
         IProject project = folder.getProject();
         if (!project.isOpen()) project.open(monitor);
@@ -116,18 +118,36 @@ public class NewRPPWizard extends Wizard implements INewWizard
 		    folder.create(IResource.NONE, true, monitor);
 			folder.setDerived(true, monitor);
 		}
-		IFile rexFile = folder.getFile(fileName + ".rpp");
-		if (!rexFile.exists()) {
-			if (!isBtnTempSelected) {
-		        byte[] bytes = "".getBytes();
-		        InputStream source = new ByteArrayInputStream(bytes);
-		        rexFile.create(source, IResource.NONE, monitor);
-		        rexFile.setDerived(true, null);
-		    }
-			else {
-				createFileFromTemplate(rexFile, "/res/rpptemp.rpp", monitor);
+		
+		if (isBtnPreSelected) {
+			IFile rexFile = folder.getFile(fileName + ".scn");
+			if (!rexFile.exists()) {
+				if (!isBtnTempSelected) {
+			        byte[] bytes = "".getBytes();
+			        InputStream source = new ByteArrayInputStream(bytes);
+			        rexFile.create(source, IResource.NONE, monitor);
+			        rexFile.setDerived(true, monitor);
+			    }
+				else {
+					createFileFromTemplate(rexFile, "/res/rpptemp.scn", monitor);
+				}
 			}
 		}
+		else {
+			IFile rexFile = folder.getFile(fileName + ".rex");
+			if (!rexFile.exists()) {
+				if (!isBtnTempSelected) {
+			        byte[] bytes = "".getBytes();
+			        InputStream source = new ByteArrayInputStream(bytes);
+			        rexFile.create(source, IResource.NONE, monitor);
+			        rexFile.setDerived(true, monitor);
+			    }
+				else {
+					createFileFromTemplate(rexFile, "/res/rextemp.rex", monitor);
+				}
+			}
+		}
+		
 		project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
     }
     
@@ -141,6 +161,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 		try {
 			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
 			file.create(stream, IResource.NONE, monitor);
+			file.setDerived(true, monitor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
