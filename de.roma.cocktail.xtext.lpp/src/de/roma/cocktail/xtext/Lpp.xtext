@@ -1,0 +1,98 @@
+grammar de.roma.cocktail.xtext.Lpp with org.eclipse.xtext.common.Terminals
+
+generate lpp "http://www.roma.de/cocktail/xtext/Lpp"
+
+ParserModel:
+	(scanner=ScannerName? & parser=ParserName?
+	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
+	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
+	& tokens=Tokens?
+	& precedenc=Precedence?
+	& start=StartSymbols?)
+	rules=GrammarRules;
+
+ScannerName:
+	'SCANNER' (name=ID)?;
+
+ParserName:
+	'PARSER' (name=ID)?;
+
+Import:
+	'IMPORT' '{' content=CodeBlock '}';
+
+Export:
+	'EXPORT' '{' content=CodeBlock '}';
+
+Global:
+	'GLOBAL' '{' content=CodeBlock '}';
+
+Local:
+	'LOCAL' '{' content=CodeBlock '}';
+
+Begin:
+	'BEGIN' '{' content=CodeBlock '}';
+
+Close:
+	'CLOSE' '{' content=CodeBlock '}';
+
+Tokens:
+	'TOKEN' tokens+=DefinedToken*;
+
+DefinedToken:
+	name=(ID | STRING) ('=' number=INT (',' extra=TokenExtra)?) | (extra=TokenExtra) | (WS);
+
+TokenExtra:
+	cost=INT "," presentation=STRING;
+
+CodeBlock:
+	(CodeWall | '{' CodeBlock '}')*;
+
+CodeWall:
+//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
+	| ':' | '!' | '=' | ',';
+
+Precedence:
+	'PREC' rows+=PrecedenceRow*;
+
+PrecedenceRow:
+	type=PrecedenceType (tokens+=[DefinedToken])*;
+
+enum PrecedenceType:
+	NONE | LEFT | RIGHT;
+
+StartSymbols:
+	'START' (states+=StartState)*;
+
+StartState:
+	name=ID;
+
+GrammarRules:
+	('RULE' | 'RULES') rules+=GrammarRule*;
+
+GrammerReference:
+	GrammarRule | DefinedToken;
+
+GrammarRule:
+	 name=ID '= <'  rules+=SimpleRule*  '>.';
+	 
+SimpleRule:
+	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')? 
+;	 
+
+RuleBody:
+	part=RulePart code=RuleCode;
+
+RuleCode:
+	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
+
+RuleContent:
+	regex=STRING | ref=[GrammerReference];
+
+RulePart:
+	(content+=RuleContent)*;
+
+	//terminal Identifier:
+//	('\\')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* 
+//;
+

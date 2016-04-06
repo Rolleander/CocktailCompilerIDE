@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.roma.cocktail.xtext.lpp
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: de.roma.cocktail.xtext.lpp; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.roma.cocktail.xtext.generator,
+ de.roma.cocktail.xtext.validation,
+ de.roma.cocktail.xtext.lpp,
+ de.roma.cocktail.xtext.lpp.util,
+ de.roma.cocktail.xtext.serializer,
+ de.roma.cocktail.xtext,
+ de.roma.cocktail.xtext.lpp.impl,
+ de.roma.cocktail.xtext.services,
+ de.roma.cocktail.xtext.scoping,
+ de.roma.cocktail.xtext.parser.antlr.internal,
+ de.roma.cocktail.xtext.parser.antlr
+Import-Package: org.apache.log4j

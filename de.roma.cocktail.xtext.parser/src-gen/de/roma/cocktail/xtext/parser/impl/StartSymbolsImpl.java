@@ -27,10 +27,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.StartSymbolsImpl#getStates <em>States</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

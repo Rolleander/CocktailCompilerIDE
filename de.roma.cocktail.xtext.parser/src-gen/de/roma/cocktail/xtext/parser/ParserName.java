@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.ParserName#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.parser.ParserPackage#getParserName()
  * @model

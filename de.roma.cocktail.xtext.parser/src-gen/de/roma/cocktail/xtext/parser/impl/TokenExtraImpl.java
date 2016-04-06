@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.TokenExtraImpl#getCost <em>Cost</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.TokenExtraImpl#getPresentation <em>Presentation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

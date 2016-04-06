@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.ParserModelImpl#getScanner <em>Scanner</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.ParserModelImpl#getParser <em>Parser</em>}</li>
@@ -47,7 +48,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.ParserModelImpl#getStart <em>Start</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.parser.impl.ParserModelImpl#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

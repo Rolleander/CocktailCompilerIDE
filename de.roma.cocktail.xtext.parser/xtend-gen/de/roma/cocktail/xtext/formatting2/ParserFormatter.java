@@ -20,9 +20,12 @@ public class ParserFormatter extends AbstractFormatter2 {
   }
   
   protected void _format(final ScannerName name, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.setNewLines(0, 1, 1);
-      it.noSpace();
+    final Procedure1<IHiddenRegionFormatter> _function = new Procedure1<IHiddenRegionFormatter>() {
+      @Override
+      public void apply(final IHiddenRegionFormatter it) {
+        it.setNewLines(0, 1, 1);
+        it.noSpace();
+      }
     };
     document.<ScannerName>prepend(name, _function);
   }
