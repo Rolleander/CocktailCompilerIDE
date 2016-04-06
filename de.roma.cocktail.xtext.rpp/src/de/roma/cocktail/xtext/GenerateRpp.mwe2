@@ -1,4 +1,4 @@
-module de.roma.cocktail.xtext.GenerateScanner
+module de.roma.cocktail.xtext.GenerateRpp
 
 import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
@@ -10,7 +10,7 @@ Workflow {
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
-				baseName = "de.roma.cocktail.xtext.scanner"
+				baseName = "de.roma.cocktail.xtext.rpp"
 				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
@@ -29,8 +29,8 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
-			name = "de.roma.cocktail.xtext.Scanner"
-			fileExtensions = "rex"
+			name = "de.roma.cocktail.xtext.Rpp"
+			fileExtensions = "scan,scn"
 
 			serializer = {
 				generateStub = false
