@@ -20,23 +20,23 @@ import org.eclipse.swt.widgets.Text;
 
 
 /**
- * This wizard page allows setting the input for a new lpp-file. 
+ * This wizard page allows setting the input for a new ast-file. 
  */
-public class NewLPPPage extends WizardPage
+public class NewAstPage extends WizardPage
 {
     private Text folderName, fileName;
-    private Button btnPre, btnTemp;
+    private Button btnTemp;
     private IStructuredSelection selection;
 
     /**
-     * Constructor for NewLPPPage.
+     * Constructor for NewAstPage.
      * @param selection
      */
-    public NewLPPPage(IStructuredSelection selection)
+    public NewAstPage(IStructuredSelection selection)
     {
-        super("NewRPPWizardPage");
-        setTitle("Parser specification");
-        setDescription("Create a new specification for Lark");
+        super("NewAstWizardPage");
+        setTitle("Ast specification");
+        setDescription("Create a new specification for Ast");
         this.selection = selection;
     }
 
@@ -122,11 +122,6 @@ public class NewLPPPage extends WizardPage
     	GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
         
-        btnPre = new Button(composite, SWT.CHECK);
-        btnPre.setText("Use preprocessor");
-        btnPre.setSelection(true);
-        btnPre.setLayoutData(gd);
-        
         btnTemp = new Button(composite, SWT.CHECK);
         btnTemp.setText("Generate with template");
         btnTemp.setSelection(true);
@@ -199,10 +194,6 @@ public class NewLPPPage extends WizardPage
         IProject project  = root.getProject(projectName);
         return project.getFolder(folderText.substring(folderText.indexOf("/"))); 
     }
-
-	public boolean isBtnPreSelected() {
-		return btnPre.getSelection();
-	}
     
 	public boolean isBtnTempSelected() {
 		return btnTemp.getSelection();

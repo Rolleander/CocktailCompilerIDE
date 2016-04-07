@@ -4,29 +4,36 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <category
-            name="Compiler"
-            id="Compiler Wizards">
+            name="Cocktail"
+            id="Cocktail Wizards">
       </category>
       <wizard
-            category="Compiler Wizards"
+            category="Cocktail Wizards"
             class="de.roma.cocktail.assistent.wizards.NewWizard"
             icon="icons/newprj_wiz.gif" 
             id="de.roma.cocktail.assistent.wizards.NewWizard"
-            name="Compiler Projekt">
+            name="Cocktail Project">
       </wizard>
       <wizard
-            category="Compiler Wizards"
+            category="Cocktail Wizards"
             class="de.roma.cocktail.assistent.wizards.NewRPPWizard"
-            icon="icons/new_con.gif" 
+            icon="icons/scanner.png" 
             id="de.roma.cocktail.assistent.wizards.NewRPPWizard"
-            name="Scanner Spezifikation">
+            name="Scanner Spezification">
       </wizard>
       <wizard
-            category="Compiler Wizards"
+            category="Cocktail Wizards"
             class="de.roma.cocktail.assistent.wizards.NewLPPWizard"
-            icon="icons/new_con.gif" 
+            icon="icons/parser.png" 
             id="de.roma.cocktail.assistent.wizards.NewLPPWizard"
-            name="Parser Spezifikation">
+            name="Parser Spezification">
+      </wizard>
+      <wizard
+            category="Cocktail Wizards"
+            class="de.roma.cocktail.assistent.wizards.NewAstWizard"
+            icon="icons/new_con.gif" 
+            id="de.roma.cocktail.assistent.wizards.NewAstWizard"
+            name="Ast Spezification">
       </wizard>
    </extension>
    <!-- extension
