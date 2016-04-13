@@ -51,7 +51,7 @@ public class ScannerSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @parameter ePackage the package in question.
+   * @param ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */
@@ -77,6 +77,13 @@ public class ScannerSwitch<T> extends Switch<T>
       {
         Model model = (Model)theEObject;
         T result = caseModel(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ScannerPackage.CODE_BLOCK:
+      {
+        CodeBlock codeBlock = (CodeBlock)theEObject;
+        T result = caseCodeBlock(codeBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -222,6 +229,22 @@ public class ScannerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Code Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Code Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCodeBlock(CodeBlock object)
   {
     return null;
   }

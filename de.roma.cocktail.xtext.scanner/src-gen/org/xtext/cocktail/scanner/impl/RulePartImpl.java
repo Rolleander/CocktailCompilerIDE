@@ -21,11 +21,11 @@ import org.xtext.cocktail.scanner.ScannerPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.RulePartImpl#getReg <em>Reg</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.RulePartImpl#getRef <em>Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

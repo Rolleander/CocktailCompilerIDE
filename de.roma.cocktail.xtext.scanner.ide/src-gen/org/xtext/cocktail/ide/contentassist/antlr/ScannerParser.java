@@ -76,6 +76,8 @@ public class ScannerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getDefineAssignment_0_9(), "rule__Model__DefineAssignment_0_9");
 					put(grammarAccess.getModelAccess().getStatesAssignment_0_10(), "rule__Model__StatesAssignment_0_10");
 					put(grammarAccess.getModelAccess().getRulesAssignment_1(), "rule__Model__RulesAssignment_1");
+					put(grammarAccess.getCodeBlockAccess().getWallAssignment_0(), "rule__CodeBlock__WallAssignment_0");
+					put(grammarAccess.getCodeBlockAccess().getBlockAssignment_1_1(), "rule__CodeBlock__BlockAssignment_1_1");
 					put(grammarAccess.getScannerAccess().getNameAssignment_1(), "rule__Scanner__NameAssignment_1");
 					put(grammarAccess.getExportAccess().getContentAssignment_2(), "rule__Export__ContentAssignment_2");
 					put(grammarAccess.getImportAccess().getContentAssignment_2(), "rule__Import__ContentAssignment_2");

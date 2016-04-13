@@ -7,7 +7,7 @@
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="scan,rex"
+			extensions="rex"
 			id="org.xtext.cocktail.Scanner"
 			name="Scanner Editor">
 		</editor>
@@ -209,19 +209,6 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="scan">
-		</parser>
-	</extension>
-	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
-	    <resourceServiceProvider
-	        class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-	        uriExtension="scan">
-	    </resourceServiceProvider>
-	</extension>
-	<extension
-		point="org.eclipse.emf.ecore.extension_parser">
-		<parser
-			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="rex">
 		</parser>
 	</extension>
@@ -256,7 +243,7 @@
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="scan,rex"/>
+			fileExtensions="rex"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
@@ -399,26 +386,22 @@
 	<extension point="org.eclipse.compare.contentViewers">
 		<viewer id="org.xtext.cocktail.Scanner.compare.contentViewers"
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="scan,rex">
+			extensions="rex">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.xtext.cocktail.Scanner.compare.contentMergeViewers"
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="scan,rex" label="Scanner Compare">
+			extensions="rex" label="Scanner Compare">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.xtext.cocktail.Scanner.editors.documentProviders"
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="scan,rex">
+			extensions="rex">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
-		<fileTypes
-			extension="scan"
-			type="text">
-		</fileTypes>
 		<fileTypes
 			extension="rex"
 			type="text">

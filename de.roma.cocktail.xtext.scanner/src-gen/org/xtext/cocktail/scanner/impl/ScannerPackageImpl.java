@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.cocktail.scanner.Begin;
 import org.xtext.cocktail.scanner.Close;
+import org.xtext.cocktail.scanner.CodeBlock;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -46,6 +47,13 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -371,6 +379,36 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCodeBlock()
+  {
+    return codeBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCodeBlock_Wall()
+  {
+    return (EAttribute)codeBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCodeBlock_Block()
+  {
+    return (EReference)codeBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getScanner()
   {
     return scannerEClass;
@@ -401,9 +439,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExport_Content()
+  public EReference getExport_Content()
   {
-    return (EAttribute)exportEClass.getEStructuralFeatures().get(0);
+    return (EReference)exportEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -421,9 +459,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImport_Content()
+  public EReference getImport_Content()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return (EReference)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -441,9 +479,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGlobal_Content()
+  public EReference getGlobal_Content()
   {
-    return (EAttribute)globalEClass.getEStructuralFeatures().get(0);
+    return (EReference)globalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -461,9 +499,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLocal_Content()
+  public EReference getLocal_Content()
   {
-    return (EAttribute)localEClass.getEStructuralFeatures().get(0);
+    return (EReference)localEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -481,9 +519,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefault_Content()
+  public EReference getDefault_Content()
   {
-    return (EAttribute)defaultEClass.getEStructuralFeatures().get(0);
+    return (EReference)defaultEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -501,9 +539,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEof_Content()
+  public EReference getEof_Content()
   {
-    return (EAttribute)eofEClass.getEStructuralFeatures().get(0);
+    return (EReference)eofEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -521,9 +559,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBegin_Content()
+  public EReference getBegin_Content()
   {
-    return (EAttribute)beginEClass.getEStructuralFeatures().get(0);
+    return (EReference)beginEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -541,9 +579,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClose_Content()
+  public EReference getClose_Content()
   {
-    return (EAttribute)closeEClass.getEStructuralFeatures().get(0);
+    return (EReference)closeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -711,9 +749,9 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSingleRule_Content()
+  public EReference getSingleRule_Content()
   {
-    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(2);
+    return (EReference)singleRuleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -850,32 +888,36 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     createEReference(modelEClass, MODEL__STATES);
     createEReference(modelEClass, MODEL__RULES);
 
+    codeBlockEClass = createEClass(CODE_BLOCK);
+    createEAttribute(codeBlockEClass, CODE_BLOCK__WALL);
+    createEReference(codeBlockEClass, CODE_BLOCK__BLOCK);
+
     scannerEClass = createEClass(SCANNER);
     createEAttribute(scannerEClass, SCANNER__NAME);
 
     exportEClass = createEClass(EXPORT);
-    createEAttribute(exportEClass, EXPORT__CONTENT);
+    createEReference(exportEClass, EXPORT__CONTENT);
 
     importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__CONTENT);
+    createEReference(importEClass, IMPORT__CONTENT);
 
     globalEClass = createEClass(GLOBAL);
-    createEAttribute(globalEClass, GLOBAL__CONTENT);
+    createEReference(globalEClass, GLOBAL__CONTENT);
 
     localEClass = createEClass(LOCAL);
-    createEAttribute(localEClass, LOCAL__CONTENT);
+    createEReference(localEClass, LOCAL__CONTENT);
 
     defaultEClass = createEClass(DEFAULT);
-    createEAttribute(defaultEClass, DEFAULT__CONTENT);
+    createEReference(defaultEClass, DEFAULT__CONTENT);
 
     eofEClass = createEClass(EOF);
-    createEAttribute(eofEClass, EOF__CONTENT);
+    createEReference(eofEClass, EOF__CONTENT);
 
     beginEClass = createEClass(BEGIN);
-    createEAttribute(beginEClass, BEGIN__CONTENT);
+    createEReference(beginEClass, BEGIN__CONTENT);
 
     closeEClass = createEClass(CLOSE);
-    createEAttribute(closeEClass, CLOSE__CONTENT);
+    createEReference(closeEClass, CLOSE__CONTENT);
 
     defineEClass = createEClass(DEFINE);
     createEReference(defineEClass, DEFINE__DEFINES);
@@ -898,7 +940,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     singleRuleEClass = createEClass(SINGLE_RULE);
     createEReference(singleRuleEClass, SINGLE_RULE__START);
     createEReference(singleRuleEClass, SINGLE_RULE__RULE);
-    createEAttribute(singleRuleEClass, SINGLE_RULE__CONTENT);
+    createEReference(singleRuleEClass, SINGLE_RULE__CONTENT);
 
     ruleDefinitionEClass = createEClass(RULE_DEFINITION);
     createEReference(ruleDefinitionEClass, RULE_DEFINITION__PARTS);
@@ -958,32 +1000,36 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEReference(getModel_States(), this.getStartStates(), null, "states", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Rules(), this.getRule(), null, "rules", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(codeBlockEClass, CodeBlock.class, "CodeBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCodeBlock_Wall(), ecorePackage.getEString(), "wall", null, 0, -1, CodeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCodeBlock_Block(), this.getCodeBlock(), null, "block", null, 0, 1, CodeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(scannerEClass, Scanner.class, "Scanner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScanner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scanner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExport_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImport_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalEClass, Global.class, "Global", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGlobal_Content(), ecorePackage.getEString(), "content", null, 0, 1, Global.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGlobal_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Global.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localEClass, Local.class, "Local", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLocal_Content(), ecorePackage.getEString(), "content", null, 0, 1, Local.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocal_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Local.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefault_Content(), ecorePackage.getEString(), "content", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefault_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eofEClass, Eof.class, "Eof", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEof_Content(), ecorePackage.getEString(), "content", null, 0, 1, Eof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEof_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Eof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBegin_Content(), ecorePackage.getEString(), "content", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBegin_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(closeEClass, Close.class, "Close", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClose_Content(), ecorePackage.getEString(), "content", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClose_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDefine_Defines(), this.getDefineRule(), null, "defines", null, 0, -1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1006,7 +1052,7 @@ public class ScannerPackageImpl extends EPackageImpl implements ScannerPackage
     initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSingleRule_Start(), this.getRuleStart(), null, "start", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSingleRule_Rule(), this.getRuleDefinition(), null, "rule", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSingleRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleRule_Content(), this.getCodeBlock(), null, "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleDefinitionEClass, RuleDefinition.class, "RuleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleDefinition_Parts(), this.getRulePart(), null, "parts", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

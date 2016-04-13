@@ -185,6 +185,43 @@ public interface ScannerPackage extends EPackage
   int MODEL_FEATURE_COUNT = 12;
 
   /**
+   * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.CodeBlockImpl <em>Code Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.cocktail.scanner.impl.CodeBlockImpl
+   * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getCodeBlock()
+   * @generated
+   */
+  int CODE_BLOCK = 1;
+
+  /**
+   * The feature id for the '<em><b>Wall</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__WALL = 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__BLOCK = 1;
+
+  /**
+   * The number of structural features of the '<em>Code Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,7 +229,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getScanner()
    * @generated
    */
-  int SCANNER = 1;
+  int SCANNER = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -220,10 +257,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getExport()
    * @generated
    */
-  int EXPORT = 2;
+  int EXPORT = 3;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -248,10 +285,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 3;
+  int IMPORT = 4;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -276,10 +313,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getGlobal()
    * @generated
    */
-  int GLOBAL = 4;
+  int GLOBAL = 5;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -304,10 +341,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getLocal()
    * @generated
    */
-  int LOCAL = 5;
+  int LOCAL = 6;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -332,10 +369,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getDefault()
    * @generated
    */
-  int DEFAULT = 6;
+  int DEFAULT = 7;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -360,10 +397,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getEof()
    * @generated
    */
-  int EOF = 7;
+  int EOF = 8;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -388,10 +425,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getBegin()
    * @generated
    */
-  int BEGIN = 8;
+  int BEGIN = 9;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -416,10 +453,10 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getClose()
    * @generated
    */
-  int CLOSE = 9;
+  int CLOSE = 10;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -444,7 +481,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getDefine()
    * @generated
    */
-  int DEFINE = 10;
+  int DEFINE = 11;
 
   /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
@@ -472,7 +509,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getDefineRule()
    * @generated
    */
-  int DEFINE_RULE = 11;
+  int DEFINE_RULE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -509,7 +546,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartStates()
    * @generated
    */
-  int START_STATES = 12;
+  int START_STATES = 13;
 
   /**
    * The feature id for the '<em><b>Incstates</b></em>' containment reference list.
@@ -546,7 +583,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getStartState()
    * @generated
    */
-  int START_STATE = 13;
+  int START_STATE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -574,7 +611,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRule()
    * @generated
    */
-  int RULE = 14;
+  int RULE = 15;
 
   /**
    * The feature id for the '<em><b>Info</b></em>' attribute.
@@ -611,7 +648,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getSingleRule()
    * @generated
    */
-  int SINGLE_RULE = 15;
+  int SINGLE_RULE = 16;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -632,7 +669,7 @@ public interface ScannerPackage extends EPackage
   int SINGLE_RULE__RULE = 1;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -657,7 +694,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleDefinition()
    * @generated
    */
-  int RULE_DEFINITION = 16;
+  int RULE_DEFINITION = 17;
 
   /**
    * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -685,7 +722,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRulePart()
    * @generated
    */
-  int RULE_PART = 17;
+  int RULE_PART = 18;
 
   /**
    * The feature id for the '<em><b>Reg</b></em>' attribute.
@@ -722,7 +759,7 @@ public interface ScannerPackage extends EPackage
    * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getRuleStart()
    * @generated
    */
-  int RULE_START = 18;
+  int RULE_START = 19;
 
   /**
    * The feature id for the '<em><b>Rule Prec</b></em>' attribute.
@@ -904,6 +941,38 @@ public interface ScannerPackage extends EPackage
   EReference getModel_Rules();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.cocktail.scanner.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Block</em>'.
+   * @see org.xtext.cocktail.scanner.CodeBlock
+   * @generated
+   */
+  EClass getCodeBlock();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.cocktail.scanner.CodeBlock#getWall <em>Wall</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Wall</em>'.
+   * @see org.xtext.cocktail.scanner.CodeBlock#getWall()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EAttribute getCodeBlock_Wall();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.CodeBlock#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.xtext.cocktail.scanner.CodeBlock#getBlock()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EReference getCodeBlock_Block();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Scanner <em>Scanner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -935,15 +1004,15 @@ public interface ScannerPackage extends EPackage
   EClass getExport();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Export#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Export#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Export#getContent()
    * @see #getExport()
    * @generated
    */
-  EAttribute getExport_Content();
+  EReference getExport_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Import <em>Import</em>}'.
@@ -956,15 +1025,15 @@ public interface ScannerPackage extends EPackage
   EClass getImport();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Import#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Import#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Import#getContent()
    * @see #getImport()
    * @generated
    */
-  EAttribute getImport_Content();
+  EReference getImport_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Global <em>Global</em>}'.
@@ -977,15 +1046,15 @@ public interface ScannerPackage extends EPackage
   EClass getGlobal();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Global#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Global#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Global#getContent()
    * @see #getGlobal()
    * @generated
    */
-  EAttribute getGlobal_Content();
+  EReference getGlobal_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Local <em>Local</em>}'.
@@ -998,15 +1067,15 @@ public interface ScannerPackage extends EPackage
   EClass getLocal();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Local#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Local#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Local#getContent()
    * @see #getLocal()
    * @generated
    */
-  EAttribute getLocal_Content();
+  EReference getLocal_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Default <em>Default</em>}'.
@@ -1019,15 +1088,15 @@ public interface ScannerPackage extends EPackage
   EClass getDefault();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Default#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Default#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Default#getContent()
    * @see #getDefault()
    * @generated
    */
-  EAttribute getDefault_Content();
+  EReference getDefault_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Eof <em>Eof</em>}'.
@@ -1040,15 +1109,15 @@ public interface ScannerPackage extends EPackage
   EClass getEof();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Eof#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Eof#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Eof#getContent()
    * @see #getEof()
    * @generated
    */
-  EAttribute getEof_Content();
+  EReference getEof_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Begin <em>Begin</em>}'.
@@ -1061,15 +1130,15 @@ public interface ScannerPackage extends EPackage
   EClass getBegin();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Begin#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Begin#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Begin#getContent()
    * @see #getBegin()
    * @generated
    */
-  EAttribute getBegin_Content();
+  EReference getBegin_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Close <em>Close</em>}'.
@@ -1082,15 +1151,15 @@ public interface ScannerPackage extends EPackage
   EClass getClose();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.Close#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.Close#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.Close#getContent()
    * @see #getClose()
    * @generated
    */
-  EAttribute getClose_Content();
+  EReference getClose_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.Define <em>Define</em>}'.
@@ -1263,15 +1332,15 @@ public interface ScannerPackage extends EPackage
   EReference getSingleRule_Rule();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see org.xtext.cocktail.scanner.SingleRule#getContent()
    * @see #getSingleRule()
    * @generated
    */
-  EAttribute getSingleRule_Content();
+  EReference getSingleRule_Content();
 
   /**
    * Returns the meta object for class '{@link org.xtext.cocktail.scanner.RuleDefinition <em>Rule Definition</em>}'.
@@ -1499,6 +1568,32 @@ public interface ScannerPackage extends EPackage
     EReference MODEL__RULES = eINSTANCE.getModel_Rules();
 
     /**
+     * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.CodeBlockImpl <em>Code Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.cocktail.scanner.impl.CodeBlockImpl
+     * @see org.xtext.cocktail.scanner.impl.ScannerPackageImpl#getCodeBlock()
+     * @generated
+     */
+    EClass CODE_BLOCK = eINSTANCE.getCodeBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Wall</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE_BLOCK__WALL = eINSTANCE.getCodeBlock_Wall();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODE_BLOCK__BLOCK = eINSTANCE.getCodeBlock_Block();
+
+    /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ScannerImpl <em>Scanner</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1527,12 +1622,12 @@ public interface ScannerPackage extends EPackage
     EClass EXPORT = eINSTANCE.getExport();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPORT__CONTENT = eINSTANCE.getExport_Content();
+    EReference EXPORT__CONTENT = eINSTANCE.getExport_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.ImportImpl <em>Import</em>}' class.
@@ -1545,12 +1640,12 @@ public interface ScannerPackage extends EPackage
     EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT__CONTENT = eINSTANCE.getImport_Content();
+    EReference IMPORT__CONTENT = eINSTANCE.getImport_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.GlobalImpl <em>Global</em>}' class.
@@ -1563,12 +1658,12 @@ public interface ScannerPackage extends EPackage
     EClass GLOBAL = eINSTANCE.getGlobal();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GLOBAL__CONTENT = eINSTANCE.getGlobal_Content();
+    EReference GLOBAL__CONTENT = eINSTANCE.getGlobal_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.LocalImpl <em>Local</em>}' class.
@@ -1581,12 +1676,12 @@ public interface ScannerPackage extends EPackage
     EClass LOCAL = eINSTANCE.getLocal();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOCAL__CONTENT = eINSTANCE.getLocal_Content();
+    EReference LOCAL__CONTENT = eINSTANCE.getLocal_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.DefaultImpl <em>Default</em>}' class.
@@ -1599,12 +1694,12 @@ public interface ScannerPackage extends EPackage
     EClass DEFAULT = eINSTANCE.getDefault();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFAULT__CONTENT = eINSTANCE.getDefault_Content();
+    EReference DEFAULT__CONTENT = eINSTANCE.getDefault_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.EofImpl <em>Eof</em>}' class.
@@ -1617,12 +1712,12 @@ public interface ScannerPackage extends EPackage
     EClass EOF = eINSTANCE.getEof();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EOF__CONTENT = eINSTANCE.getEof_Content();
+    EReference EOF__CONTENT = eINSTANCE.getEof_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.BeginImpl <em>Begin</em>}' class.
@@ -1635,12 +1730,12 @@ public interface ScannerPackage extends EPackage
     EClass BEGIN = eINSTANCE.getBegin();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BEGIN__CONTENT = eINSTANCE.getBegin_Content();
+    EReference BEGIN__CONTENT = eINSTANCE.getBegin_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.CloseImpl <em>Close</em>}' class.
@@ -1653,12 +1748,12 @@ public interface ScannerPackage extends EPackage
     EClass CLOSE = eINSTANCE.getClose();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLOSE__CONTENT = eINSTANCE.getClose_Content();
+    EReference CLOSE__CONTENT = eINSTANCE.getClose_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.DefineImpl <em>Define</em>}' class.
@@ -1801,12 +1896,12 @@ public interface ScannerPackage extends EPackage
     EReference SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
+    EReference SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
 
     /**
      * The meta object literal for the '{@link org.xtext.cocktail.scanner.impl.RuleDefinitionImpl <em>Rule Definition</em>}' class.

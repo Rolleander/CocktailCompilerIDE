@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.cocktail.scanner.CodeBlock;
 import org.xtext.cocktail.scanner.RuleDefinition;
 import org.xtext.cocktail.scanner.RuleStart;
 import org.xtext.cocktail.scanner.ScannerPackage;
@@ -23,12 +24,12 @@ import org.xtext.cocktail.scanner.SingleRule;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getStart <em>Start</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getRule <em>Rule</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.SingleRuleImpl#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -55,24 +56,14 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
   protected RuleDefinition rule;
 
   /**
-   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContent()
    * @generated
    * @ordered
    */
-  protected static final String CONTENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected String content = CONTENT_EDEFAULT;
+  protected CodeBlock content;
 
   /**
    * <!-- begin-user-doc -->
@@ -196,7 +187,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getContent()
+  public CodeBlock getContent()
   {
     return content;
   }
@@ -206,12 +197,37 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(String newContent)
+  public NotificationChain basicSetContent(CodeBlock newContent, NotificationChain msgs)
   {
-    String oldContent = content;
+    CodeBlock oldContent = content;
     content = newContent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__CONTENT, oldContent, content));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__CONTENT, oldContent, newContent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContent(CodeBlock newContent)
+  {
+    if (newContent != content)
+    {
+      NotificationChain msgs = null;
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.SINGLE_RULE__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.SINGLE_RULE__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.SINGLE_RULE__CONTENT, newContent, newContent));
   }
 
   /**
@@ -228,6 +244,8 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
         return basicSetStart(null, msgs);
       case ScannerPackage.SINGLE_RULE__RULE:
         return basicSetRule(null, msgs);
+      case ScannerPackage.SINGLE_RULE__CONTENT:
+        return basicSetContent(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -269,7 +287,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
         setRule((RuleDefinition)newValue);
         return;
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        setContent((String)newValue);
+        setContent((CodeBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -292,7 +310,7 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
         setRule((RuleDefinition)null);
         return;
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        setContent(CONTENT_EDEFAULT);
+        setContent((CodeBlock)null);
         return;
     }
     super.eUnset(featureID);
@@ -313,26 +331,9 @@ public class SingleRuleImpl extends MinimalEObjectImpl.Container implements Sing
       case ScannerPackage.SINGLE_RULE__RULE:
         return rule != null;
       case ScannerPackage.SINGLE_RULE__CONTENT:
-        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+        return content != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (content: ");
-    result.append(content);
-    result.append(')');
-    return result.toString();
   }
 
 } //SingleRuleImpl

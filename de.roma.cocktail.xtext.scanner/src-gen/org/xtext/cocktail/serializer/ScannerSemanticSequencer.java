@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.cocktail.scanner.Begin;
 import org.xtext.cocktail.scanner.Close;
+import org.xtext.cocktail.scanner.CodeBlock;
 import org.xtext.cocktail.scanner.Default;
 import org.xtext.cocktail.scanner.Define;
 import org.xtext.cocktail.scanner.DefineRule;
@@ -55,6 +56,9 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ScannerPackage.CLOSE:
 				sequence_Close(context, (Close) semanticObject); 
+				return; 
+			case ScannerPackage.CODE_BLOCK:
+				sequence_CodeBlock(context, (CodeBlock) semanticObject); 
 				return; 
 			case ScannerPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
@@ -145,6 +149,18 @@ public class ScannerSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCloseAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CodeBlock returns CodeBlock
+	 *
+	 * Constraint:
+	 *     (wall+=CodeWall | block=CodeBlock)+
+	 */
+	protected void sequence_CodeBlock(ISerializationContext context, CodeBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

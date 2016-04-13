@@ -3,13 +3,40 @@
  */
 package org.xtext.cocktail.ui.contentassist
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import org.xtext.cocktail.scanner.Model
+import org.xtext.cocktail.scanner.Scanner
+
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class ScannerProposalProvider extends AbstractScannerProposalProvider {
 	
+	val generics= #['return']
+	val commands = #['tScanAttribute','ErrorAttribute']
 	
+	
+	override complete_CodeWall(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.complete_CodeWall(model, ruleCall, context, acceptor)
+		
+		val root=context.rootModel as Model
+		val scanner=root.scanner as Scanner
+		var scannerName="Scanner"
+		if(scanner!=null)
+		{
+			scannerName=scanner.name
+		}
+		
+		val s=scannerName
+		commands.forEach[command | 
+  			acceptor.accept(createCompletionProposal(s+"_"+command, context));			
+  
+		]
+	}
 	
 	
 	

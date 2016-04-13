@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getStart <em>Start</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getRule <em>Rule</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule()
  * @model
@@ -78,29 +78,29 @@ public interface SingleRule extends EObject
   void setRule(RuleDefinition value);
 
   /**
-   * Returns the value of the '<em><b>Content</b></em>' attribute.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' attribute isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' attribute.
-   * @see #setContent(String)
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(CodeBlock)
    * @see org.xtext.cocktail.scanner.ScannerPackage#getSingleRule_Content()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getContent();
+  CodeBlock getContent();
 
   /**
-   * Sets the value of the '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.cocktail.scanner.SingleRule#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' attribute.
+   * @param value the new value of the '<em>Content</em>' containment reference.
    * @see #getContent()
    * @generated
    */
-  void setContent(String value);
+  void setContent(CodeBlock value);
 
 } // SingleRule

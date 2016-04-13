@@ -421,14 +421,14 @@ ruleModel returns [EObject current=null]
 ;
 
 // Entry rule entryRuleCodeBlock
-entryRuleCodeBlock returns [String current=null]:
+entryRuleCodeBlock returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCodeBlockRule()); }
 	iv_ruleCodeBlock=ruleCodeBlock
-	{ $current=$iv_ruleCodeBlock.current.getText(); }
+	{ $current=$iv_ruleCodeBlock.current; }
 	EOF;
 
 // Rule CodeBlock
-ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleCodeBlock returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -436,37 +436,53 @@ ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeWallParserRuleCall_0());
-		}
-		this_CodeWall_0=ruleCodeWall
-		{
-			$current.merge(this_CodeWall_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCodeBlockAccess().getWallCodeWallParserRuleCall_0_0());
+				}
+				lv_wall_0_0=ruleCodeWall
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCodeBlockRule());
+					}
+					add(
+						$current,
+						"wall",
+						lv_wall_0_0,
+						"org.xtext.cocktail.Scanner.CodeWall");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
 		(
-			kw='{'
+			otherlv_1='{'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getLeftCurlyBracketKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getCodeBlockAccess().getLeftCurlyBracketKeyword_1_0());
 			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCodeBlockAccess().getBlockCodeBlockParserRuleCall_1_1_0());
+					}
+					lv_block_2_0=ruleCodeBlock
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCodeBlockRule());
+						}
+						set(
+							$current,
+							"block",
+							lv_block_2_0,
+							"org.xtext.cocktail.Scanner.CodeBlock");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='}'
 			{
-				newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeBlockParserRuleCall_1_1());
-			}
-			this_CodeBlock_2=ruleCodeBlock
-			{
-				$current.merge(this_CodeBlock_2);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw='}'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getRightCurlyBracketKeyword_1_2());
+				newLeafNode(otherlv_3, grammarAccess.getCodeBlockAccess().getRightCurlyBracketKeyword_1_2());
 			}
 		)
 	)*

@@ -16,65 +16,53 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
-import org.xtext.cocktail.scanner.Rule;
+import org.xtext.cocktail.scanner.CodeBlock;
 import org.xtext.cocktail.scanner.ScannerPackage;
-import org.xtext.cocktail.scanner.SingleRule;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rule</b></em>'.
+ * An implementation of the model object '<em><b>Code Block</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.cocktail.scanner.impl.RuleImpl#getInfo <em>Info</em>}</li>
- *   <li>{@link org.xtext.cocktail.scanner.impl.RuleImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.CodeBlockImpl#getWall <em>Wall</em>}</li>
+ *   <li>{@link org.xtext.cocktail.scanner.impl.CodeBlockImpl#getBlock <em>Block</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
+public class CodeBlockImpl extends MinimalEObjectImpl.Container implements CodeBlock
 {
   /**
-   * The default value of the '{@link #getInfo() <em>Info</em>}' attribute.
+   * The cached value of the '{@link #getWall() <em>Wall</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInfo()
+   * @see #getWall()
    * @generated
    * @ordered
    */
-  protected static final String INFO_EDEFAULT = null;
+  protected EList<String> wall;
 
   /**
-   * The cached value of the '{@link #getInfo() <em>Info</em>}' attribute.
+   * The cached value of the '{@link #getBlock() <em>Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInfo()
+   * @see #getBlock()
    * @generated
    * @ordered
    */
-  protected String info = INFO_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRules()
-   * @generated
-   * @ordered
-   */
-  protected EList<SingleRule> rules;
+  protected CodeBlock block;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RuleImpl()
+  protected CodeBlockImpl()
   {
     super();
   }
@@ -87,7 +75,7 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   @Override
   protected EClass eStaticClass()
   {
-    return ScannerPackage.Literals.RULE;
+    return ScannerPackage.Literals.CODE_BLOCK;
   }
 
   /**
@@ -95,36 +83,61 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getInfo()
+  public EList<String> getWall()
   {
-    return info;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInfo(String newInfo)
-  {
-    String oldInfo = info;
-    info = newInfo;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.RULE__INFO, oldInfo, info));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<SingleRule> getRules()
-  {
-    if (rules == null)
+    if (wall == null)
     {
-      rules = new EObjectContainmentEList<SingleRule>(SingleRule.class, this, ScannerPackage.RULE__RULES);
+      wall = new EDataTypeEList<String>(String.class, this, ScannerPackage.CODE_BLOCK__WALL);
     }
-    return rules;
+    return wall;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CodeBlock getBlock()
+  {
+    return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBlock(CodeBlock newBlock, NotificationChain msgs)
+  {
+    CodeBlock oldBlock = block;
+    block = newBlock;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.CODE_BLOCK__BLOCK, oldBlock, newBlock);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBlock(CodeBlock newBlock)
+  {
+    if (newBlock != block)
+    {
+      NotificationChain msgs = null;
+      if (block != null)
+        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.CODE_BLOCK__BLOCK, null, msgs);
+      if (newBlock != null)
+        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.CODE_BLOCK__BLOCK, null, msgs);
+      msgs = basicSetBlock(newBlock, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.CODE_BLOCK__BLOCK, newBlock, newBlock));
   }
 
   /**
@@ -137,8 +150,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE__RULES:
-        return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+      case ScannerPackage.CODE_BLOCK__BLOCK:
+        return basicSetBlock(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -153,10 +166,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE__INFO:
-        return getInfo();
-      case ScannerPackage.RULE__RULES:
-        return getRules();
+      case ScannerPackage.CODE_BLOCK__WALL:
+        return getWall();
+      case ScannerPackage.CODE_BLOCK__BLOCK:
+        return getBlock();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,12 +185,12 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE__INFO:
-        setInfo((String)newValue);
+      case ScannerPackage.CODE_BLOCK__WALL:
+        getWall().clear();
+        getWall().addAll((Collection<? extends String>)newValue);
         return;
-      case ScannerPackage.RULE__RULES:
-        getRules().clear();
-        getRules().addAll((Collection<? extends SingleRule>)newValue);
+      case ScannerPackage.CODE_BLOCK__BLOCK:
+        setBlock((CodeBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -193,11 +206,11 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE__INFO:
-        setInfo(INFO_EDEFAULT);
+      case ScannerPackage.CODE_BLOCK__WALL:
+        getWall().clear();
         return;
-      case ScannerPackage.RULE__RULES:
-        getRules().clear();
+      case ScannerPackage.CODE_BLOCK__BLOCK:
+        setBlock((CodeBlock)null);
         return;
     }
     super.eUnset(featureID);
@@ -213,10 +226,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case ScannerPackage.RULE__INFO:
-        return INFO_EDEFAULT == null ? info != null : !INFO_EDEFAULT.equals(info);
-      case ScannerPackage.RULE__RULES:
-        return rules != null && !rules.isEmpty();
+      case ScannerPackage.CODE_BLOCK__WALL:
+        return wall != null && !wall.isEmpty();
+      case ScannerPackage.CODE_BLOCK__BLOCK:
+        return block != null;
     }
     return super.eIsSet(featureID);
   }
@@ -232,10 +245,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (info: ");
-    result.append(info);
+    result.append(" (wall: ");
+    result.append(wall);
     result.append(')');
     return result.toString();
   }
 
-} //RuleImpl
+} //CodeBlockImpl

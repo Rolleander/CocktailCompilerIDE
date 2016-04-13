@@ -4,12 +4,15 @@
 package org.xtext.cocktail.scanner.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.cocktail.scanner.CodeBlock;
 import org.xtext.cocktail.scanner.Export;
 import org.xtext.cocktail.scanner.ScannerPackage;
 
@@ -19,34 +22,24 @@ import org.xtext.cocktail.scanner.ScannerPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ExportImpl#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ExportImpl extends MinimalEObjectImpl.Container implements Export
 {
   /**
-   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContent()
    * @generated
    * @ordered
    */
-  protected static final String CONTENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected String content = CONTENT_EDEFAULT;
+  protected CodeBlock content;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +67,7 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getContent()
+  public CodeBlock getContent()
   {
     return content;
   }
@@ -84,12 +77,53 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(String newContent)
+  public NotificationChain basicSetContent(CodeBlock newContent, NotificationChain msgs)
   {
-    String oldContent = content;
+    CodeBlock oldContent = content;
     content = newContent;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.EXPORT__CONTENT, oldContent, content));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScannerPackage.EXPORT__CONTENT, oldContent, newContent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContent(CodeBlock newContent)
+  {
+    if (newContent != content)
+    {
+      NotificationChain msgs = null;
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.EXPORT__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScannerPackage.EXPORT__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ScannerPackage.EXPORT__CONTENT, newContent, newContent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ScannerPackage.EXPORT__CONTENT:
+        return basicSetContent(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -119,7 +153,7 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export
     switch (featureID)
     {
       case ScannerPackage.EXPORT__CONTENT:
-        setContent((String)newValue);
+        setContent((CodeBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,7 +170,7 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export
     switch (featureID)
     {
       case ScannerPackage.EXPORT__CONTENT:
-        setContent(CONTENT_EDEFAULT);
+        setContent((CodeBlock)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,26 +187,9 @@ public class ExportImpl extends MinimalEObjectImpl.Container implements Export
     switch (featureID)
     {
       case ScannerPackage.EXPORT__CONTENT:
-        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+        return content != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (content: ");
-    result.append(content);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExportImpl

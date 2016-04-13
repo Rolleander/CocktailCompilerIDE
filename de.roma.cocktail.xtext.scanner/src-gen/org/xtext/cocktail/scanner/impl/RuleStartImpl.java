@@ -26,12 +26,12 @@ import org.xtext.cocktail.scanner.StartState;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.RuleStartImpl#getRulePrec <em>Rule Prec</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.RuleStartImpl#getRuleStates <em>Rule States</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.RuleStartImpl#getRuleDefault <em>Rule Default</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

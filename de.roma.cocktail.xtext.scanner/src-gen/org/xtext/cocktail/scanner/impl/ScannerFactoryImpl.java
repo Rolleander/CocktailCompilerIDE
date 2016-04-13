@@ -66,6 +66,7 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
     switch (eClass.getClassifierID())
     {
       case ScannerPackage.MODEL: return createModel();
+      case ScannerPackage.CODE_BLOCK: return createCodeBlock();
       case ScannerPackage.SCANNER: return createScanner();
       case ScannerPackage.EXPORT: return createExport();
       case ScannerPackage.IMPORT: return createImport();
@@ -98,6 +99,17 @@ public class ScannerFactoryImpl extends EFactoryImpl implements ScannerFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CodeBlock createCodeBlock()
+  {
+    CodeBlockImpl codeBlock = new CodeBlockImpl();
+    return codeBlock;
   }
 
   /**

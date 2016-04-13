@@ -22,7 +22,7 @@ Model:
 //TODO Characterset
 
 CodeBlock:
-	(CodeWall | '{' CodeBlock '}')*;
+	(wall+=CodeWall | '{' block=CodeBlock '}')*;
 
 CodeWall:
 //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')

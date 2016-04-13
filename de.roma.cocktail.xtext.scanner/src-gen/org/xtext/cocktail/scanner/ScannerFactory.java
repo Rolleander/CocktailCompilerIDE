@@ -33,6 +33,15 @@ public interface ScannerFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Code Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Block</em>'.
+   * @generated
+   */
+  CodeBlock createCodeBlock();
+
+  /**
    * Returns a new object of class '<em>Scanner</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

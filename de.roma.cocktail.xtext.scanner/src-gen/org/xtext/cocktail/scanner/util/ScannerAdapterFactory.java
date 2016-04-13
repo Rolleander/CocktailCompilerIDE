@@ -81,6 +81,11 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseCodeBlock(CodeBlock object)
+      {
+        return createCodeBlockAdapter();
+      }
+      @Override
       public Adapter caseScanner(Scanner object)
       {
         return createScannerAdapter();
@@ -203,6 +208,21 @@ public class ScannerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.cocktail.scanner.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.cocktail.scanner.CodeBlock
+   * @generated
+   */
+  public Adapter createCodeBlockAdapter()
   {
     return null;
   }

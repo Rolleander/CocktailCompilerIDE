@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getScanner <em>Scanner</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getExport <em>Export</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.cocktail.scanner.Model#getStates <em>States</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.Model#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getModel()
  * @model

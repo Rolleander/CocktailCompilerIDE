@@ -150,31 +150,39 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	public class CodeBlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.cocktail.Scanner.CodeBlock");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCodeWallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Assignment cWallAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cWallCodeWallParserRuleCall_0_0 = (RuleCall)cWallAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cCodeBlockParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cBlockAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cBlockCodeBlockParserRuleCall_1_1_0 = (RuleCall)cBlockAssignment_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		////TODO Characterset
 		//CodeBlock:
-		//	(CodeWall | '{' CodeBlock '}')*;
+		//	(wall+=CodeWall | '{' block=CodeBlock '}')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(CodeWall | '{' CodeBlock '}')*
+		//(wall+=CodeWall | '{' block=CodeBlock '}')*
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//CodeWall
-		public RuleCall getCodeWallParserRuleCall_0() { return cCodeWallParserRuleCall_0; }
+		//wall+=CodeWall
+		public Assignment getWallAssignment_0() { return cWallAssignment_0; }
 		
-		//'{' CodeBlock '}'
+		//CodeWall
+		public RuleCall getWallCodeWallParserRuleCall_0_0() { return cWallCodeWallParserRuleCall_0_0; }
+		
+		//'{' block=CodeBlock '}'
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
+		//block=CodeBlock
+		public Assignment getBlockAssignment_1_1() { return cBlockAssignment_1_1; }
+		
 		//CodeBlock
-		public RuleCall getCodeBlockParserRuleCall_1_1() { return cCodeBlockParserRuleCall_1_1; }
+		public RuleCall getBlockCodeBlockParserRuleCall_1_1_0() { return cBlockCodeBlockParserRuleCall_1_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
@@ -1148,7 +1156,7 @@ public class ScannerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////TODO Characterset
 	//CodeBlock:
-	//	(CodeWall | '{' CodeBlock '}')*;
+	//	(wall+=CodeWall | '{' block=CodeBlock '}')*;
 	public CodeBlockElements getCodeBlockAccess() {
 		return pCodeBlock;
 	}

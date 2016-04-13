@@ -33,6 +33,7 @@ import org.xtext.cocktail.scanner.StartStates;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getScanner <em>Scanner</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getExport <em>Export</em>}</li>
@@ -47,7 +48,6 @@ import org.xtext.cocktail.scanner.StartStates;
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getStates <em>States</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.impl.ModelImpl#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.cocktail.scanner.RuleStart#getRulePrec <em>Rule Prec</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.RuleStart#getRuleStates <em>Rule States</em>}</li>
  *   <li>{@link org.xtext.cocktail.scanner.RuleStart#getRuleDefault <em>Rule Default</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.cocktail.scanner.ScannerPackage#getRuleStart()
  * @model
