@@ -524,7 +524,7 @@ static void yyTab1	ARGS ((int yya));
 # define yyTab		yyTab1 (0)
 # define yyTab2(a,b)	yyTab1 (a)
 
-/* line 55 "..\src\test.rex" */
+/* line 55 "test.rex" */
 
   # include <stdlib.h>
   # include "rString.h"
@@ -692,7 +692,7 @@ int l_scan_GetToken ARGS ((void))
    register	yyStateRange *	yyStatePtr;
    register	yytusChar *	yyChBufferIndexReg;
    register	yyCombType * *	yyBasePtrReg = yyBasePtr;
-/* line 60 "..\src\test.rex" */
+/* line 60 "test.rex" */
 
  /* user-defined local variables of the generated GetToken routine */
 # define MAX_STRING_LEN 2048
@@ -731,7 +731,7 @@ yyContinue:		/* continue after sentinel or skipping blanks */
 switch (* -- yyStatePtr) {
 case 12:;
 yySetPosition
-/* line 114 "..\src\test.rex" */
+/* line 114 "test.rex" */
 {l_scan_Attribute.int_const.Value = malloc (l_scan_TokenLength+1);
 	 l_scan_GetWord (l_scan_Attribute.int_const.Value);
 	 return tok_int_const;
@@ -741,7 +741,7 @@ yySetPosition
 case 20:;
 case 33:;
 yySetPosition
-/* line 122 "..\src\test.rex" */
+/* line 122 "test.rex" */
 {l_scan_Attribute.float_const.Value = malloc (l_scan_TokenLength+1);
 	 l_scan_GetWord (l_scan_Attribute.float_const.Value);
 	 return tok_float_const;
@@ -750,25 +750,25 @@ yySetPosition
 } goto yyBegin;
 case 17:;
 yySetPosition
-/* line 128 "..\src\test.rex" */
+/* line 128 "test.rex" */
 {return tok_BEGIN;
 /* line 756 "l_scan.c" */
 } goto yyBegin;
 case 15:;
 yySetPosition
-/* line 129 "..\src\test.rex" */
+/* line 129 "test.rex" */
 {return tok_END;
 /* line 762 "l_scan.c" */
 } goto yyBegin;
 case 18:;
 yySetPosition
-/* line 130 "..\src\test.rex" */
+/* line 130 "test.rex" */
 {return tok_PROCEDURE;
 /* line 768 "l_scan.c" */
 } goto yyBegin;
 case 19:;
 yySetPosition
-/* line 131 "..\src\test.rex" */
+/* line 131 "test.rex" */
 {return tok_CASE;
 /* line 774 "l_scan.c" */
 } goto yyBegin;
@@ -791,7 +791,7 @@ case 41:;
 case 42:;
 case 43:;
 yySetPosition
-/* line 135 "..\src\test.rex" */
+/* line 135 "test.rex" */
 {l_scan_Attribute.identifier.Value = malloc (l_scan_TokenLength+1);
 	 l_scan_GetWord (l_scan_Attribute.identifier.Value);
 	 return tok_identifier;
@@ -802,7 +802,7 @@ case 16:;
 yyChBufferIndex -= 1;
 l_scan_TokenLength -= 1;
 yySetPosition
-/* line 142 "..\src\test.rex" */
+/* line 142 "test.rex" */
 { /* comment up to end of line, nothing to do */
 	  WritePosition (stdout, l_scan_Attribute.Position);
 	  printf (" -- comment\n");
@@ -811,7 +811,7 @@ yySetPosition
 } goto yyBegin;
 case 67:;
 yySetPosition
-/* line 149 "..\src\test.rex" */
+/* line 149 "test.rex" */
 { /**/
 	  yyStart (COMMENT);
 	  WritePosition (stdout, l_scan_Attribute.Position);
@@ -823,13 +823,13 @@ case 10:;
 case 22:;
 case 52:;
 yySetPosition
-/* line 156 "..\src\test.rex" */
+/* line 156 "test.rex" */
 {
 /* line 829 "l_scan.c" */
 } goto yyBegin;
 case 65:;
 yySetPosition
-/* line 159 "..\src\test.rex" */
+/* line 159 "test.rex" */
 {yyStart (STD);
 	 WritePosition (stdout, l_scan_Attribute.Position);
 	 printf (" Ende   des C-Kommentars\n");
@@ -838,7 +838,7 @@ yySetPosition
 } goto yyBegin;
 case 63:;
 yySetPosition
-/* line 166 "..\src\test.rex" */
+/* line 166 "test.rex" */
 { yyStart (COMMENT2);
 	  NestingLevel ++;
 	  WritePosition (stdout, l_scan_Attribute.Position);
@@ -852,13 +852,13 @@ case 53:;
 case 60:;
 case 64:;
 yySetPosition
-/* line 173 "..\src\test.rex" */
+/* line 173 "test.rex" */
 {
 /* line 858 "l_scan.c" */
 } goto yyBegin;
 case 61:;
 yySetPosition
-/* line 176 "..\src\test.rex" */
+/* line 176 "test.rex" */
 { WritePosition (stdout, l_scan_Attribute.Position);
 	  printf (" end   of a Modula-2 comment, nesting level = %d\n", NestingLevel);
 	  NestingLevel --;
@@ -870,7 +870,7 @@ yySetPosition
 } goto yyBegin;
 case 59:;
 yySetPosition
-/* line 186 "..\src\test.rex" */
+/* line 186 "test.rex" */
 { /* start of string */
           yyStart (STRING);
 	  len = 0;
@@ -881,7 +881,7 @@ case 11:;
 case 49:;
 case 51:;
 yySetPosition
-/* line 191 "..\src\test.rex" */
+/* line 191 "test.rex" */
 { /* we're inside the string */
           if (len + l_scan_TokenLength+1 >= MAX_STRING_LEN) {
 	    WritePosition (stderr, l_scan_Attribute.Position);
@@ -894,7 +894,7 @@ yySetPosition
 } goto yyBegin;
 case 58:;
 yySetPosition
-/* line 200 "..\src\test.rex" */
+/* line 200 "test.rex" */
 { /* end of string */
           yyStart(STD);
 	  string[len] = '\0';
@@ -906,7 +906,7 @@ yySetPosition
 } goto yyBegin;
 case 57:;
 yySetPosition
-/* line 208 "..\src\test.rex" */
+/* line 208 "test.rex" */
 { /* transform the " characters to a single " */
           if (len + 1 >= MAX_STRING_LEN) {
 	    WritePosition (stderr, l_scan_Attribute.Position);
@@ -918,7 +918,7 @@ yySetPosition
 } goto yyBegin;
 case 56:;
 yySetPosition
-/* line 216 "..\src\test.rex" */
+/* line 216 "test.rex" */
 { /* transform the n characters to a single " */
           if (len + 1 >= MAX_STRING_LEN) {
 	    WritePosition (stderr, l_scan_Attribute.Position);
@@ -930,7 +930,7 @@ yySetPosition
 } goto yyBegin;
 case 55:;
 yySetPosition
-/* line 224 "..\src\test.rex" */
+/* line 224 "test.rex" */
 { /* special treatment of the -character */
           if (len + 1 >= MAX_STRING_LEN) {
 	    WritePosition (stderr, l_scan_Attribute.Position);
@@ -942,7 +942,7 @@ yySetPosition
 } goto yyBegin;
 case 54:;
 yySetPosition
-/* line 232 "..\src\test.rex" */
+/* line 232 "test.rex" */
 { /* error handling of typical errors:
 	   *  a string not closed at the end of a line
            */
@@ -998,7 +998,7 @@ case 46:
       l_scan_TokenLength   = 1;
 	 yyChBufferIndex = ++ yyChBufferIndexReg;
 	 {
-/* line 67 "..\src\test.rex" */
+/* line 67 "test.rex" */
 
   /* What happens if no scanner rule matches the input */
   WritePosition (stderr, l_scan_Attribute.Position);
@@ -1096,7 +1096,7 @@ case 45:
 	    l_scan_CloseFile ();
 # if yyInitFileStackSize != 0
 	    if (yyFileStackPtr == yyFileStack) {
-/* line 73 "..\src\test.rex" */
+/* line 73 "test.rex" */
 
   /* What should be done if the end-of-input-file has been reached? */
 
@@ -1133,7 +1133,7 @@ case 45:
 	    }
 	    goto yyBegin;
 # else
-/* line 73 "..\src\test.rex" */
+/* line 73 "test.rex" */
 
   /* What should be done if the end-of-input-file has been reached? */
 

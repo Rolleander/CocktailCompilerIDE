@@ -9,7 +9,7 @@
 # endif
 # include "ratc.h"
 
-/* line 10 "..\src\test.rex" */
+/* line 10 "test.rex" */
 
 /* code to be put into Scanner.h */
 
