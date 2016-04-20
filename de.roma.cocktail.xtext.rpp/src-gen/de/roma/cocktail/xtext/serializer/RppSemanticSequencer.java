@@ -6,6 +6,7 @@ package de.roma.cocktail.xtext.serializer;
 import com.google.inject.Inject;
 import de.roma.cocktail.xtext.rpp.Begin;
 import de.roma.cocktail.xtext.rpp.Close;
+import de.roma.cocktail.xtext.rpp.CodeBlock;
 import de.roma.cocktail.xtext.rpp.Default;
 import de.roma.cocktail.xtext.rpp.Define;
 import de.roma.cocktail.xtext.rpp.DefineRule;
@@ -18,6 +19,7 @@ import de.roma.cocktail.xtext.rpp.Model;
 import de.roma.cocktail.xtext.rpp.RppPackage;
 import de.roma.cocktail.xtext.rpp.Rule;
 import de.roma.cocktail.xtext.rpp.RuleDefinition;
+import de.roma.cocktail.xtext.rpp.RuleInsert;
 import de.roma.cocktail.xtext.rpp.RulePart;
 import de.roma.cocktail.xtext.rpp.RuleStart;
 import de.roma.cocktail.xtext.rpp.Scanner;
@@ -56,6 +58,9 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case RppPackage.CLOSE:
 				sequence_Close(context, (Close) semanticObject); 
 				return; 
+			case RppPackage.CODE_BLOCK:
+				sequence_CodeBlock(context, (CodeBlock) semanticObject); 
+				return; 
 			case RppPackage.DEFAULT:
 				sequence_Default(context, (Default) semanticObject); 
 				return; 
@@ -88,6 +93,9 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case RppPackage.RULE_DEFINITION:
 				sequence_RuleDefinition(context, (RuleDefinition) semanticObject); 
+				return; 
+			case RppPackage.RULE_INSERT:
+				sequence_RuleInsert(context, (RuleInsert) semanticObject); 
 				return; 
 			case RppPackage.RULE_PART:
 				sequence_RulePart(context, (RulePart) semanticObject); 
@@ -145,6 +153,18 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCloseAccess().getContentCodeBlockParserRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CodeBlock returns CodeBlock
+	 *
+	 * Constraint:
+	 *     (wall+=CodeWall | block+=CodeBlock)+
+	 */
+	protected void sequence_CodeBlock(ISerializationContext context, CodeBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -308,7 +328,8 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             define=Define | 
 	 *             states=StartStates
 	 *         )* 
-	 *         rules=Rule
+	 *         rules=Rule 
+	 *         insert=RuleInsert?
 	 *     )
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -324,6 +345,18 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     parts+=RulePart+
 	 */
 	protected void sequence_RuleDefinition(ISerializationContext context, RuleDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RuleInsert returns RuleInsert
+	 *
+	 * Constraint:
+	 *     (info='INSERT' case='CASE-INSENSITIVE'? start=RuleStart? content=CodeBlock rules+=SingleRule*)
+	 */
+	protected void sequence_RuleInsert(ISerializationContext context, RuleInsert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -19,33 +19,38 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Model/define"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Model/states"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Model/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Model/insert"/>
+    </genClasses>
+    <genClasses ecoreClass="Rpp.ecore#//CodeBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//CodeBlock/wall"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//CodeBlock/block"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Scanner">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Scanner/name"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Export">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Export/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Export/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Import/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Import/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Global">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Global/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Global/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Local">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Local/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Local/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Default">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Default/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Default/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Eof">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Eof/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Eof/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Begin">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Begin/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Begin/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Close">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Close/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Close/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//Define">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Define/defines"/>
@@ -65,10 +70,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//Rule/info"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//Rule/rules"/>
     </genClasses>
+    <genClasses ecoreClass="Rpp.ecore#//RuleInsert">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//RuleInsert/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//RuleInsert/case"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//RuleInsert/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//RuleInsert/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//RuleInsert/rules"/>
+    </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//SingleRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//SingleRule/start"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//SingleRule/rule"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpp.ecore#//SingleRule/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//SingleRule/content"/>
     </genClasses>
     <genClasses ecoreClass="Rpp.ecore#//RuleDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpp.ecore#//RuleDefinition/parts"/>

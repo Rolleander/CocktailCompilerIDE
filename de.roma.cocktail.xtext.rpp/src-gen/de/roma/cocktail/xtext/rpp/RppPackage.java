@@ -176,13 +176,59 @@ public interface RppPackage extends EPackage
   int MODEL__RULES = 11;
 
   /**
+   * The feature id for the '<em><b>Insert</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__INSERT = 12;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 12;
+  int MODEL_FEATURE_COUNT = 13;
+
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.rpp.impl.CodeBlockImpl <em>Code Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.rpp.impl.CodeBlockImpl
+   * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getCodeBlock()
+   * @generated
+   */
+  int CODE_BLOCK = 1;
+
+  /**
+   * The feature id for the '<em><b>Wall</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__WALL = 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__BLOCK = 1;
+
+  /**
+   * The number of structural features of the '<em>Code Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.rpp.impl.ScannerImpl <em>Scanner</em>}' class.
@@ -192,7 +238,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getScanner()
    * @generated
    */
-  int SCANNER = 1;
+  int SCANNER = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -220,10 +266,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getExport()
    * @generated
    */
-  int EXPORT = 2;
+  int EXPORT = 3;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -248,10 +294,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 3;
+  int IMPORT = 4;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -276,10 +322,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getGlobal()
    * @generated
    */
-  int GLOBAL = 4;
+  int GLOBAL = 5;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -304,10 +350,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getLocal()
    * @generated
    */
-  int LOCAL = 5;
+  int LOCAL = 6;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -332,10 +378,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getDefault()
    * @generated
    */
-  int DEFAULT = 6;
+  int DEFAULT = 7;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -360,10 +406,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getEof()
    * @generated
    */
-  int EOF = 7;
+  int EOF = 8;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -388,10 +434,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getBegin()
    * @generated
    */
-  int BEGIN = 8;
+  int BEGIN = 9;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -416,10 +462,10 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getClose()
    * @generated
    */
-  int CLOSE = 9;
+  int CLOSE = 10;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -444,7 +490,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getDefine()
    * @generated
    */
-  int DEFINE = 10;
+  int DEFINE = 11;
 
   /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
@@ -472,7 +518,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getDefineRule()
    * @generated
    */
-  int DEFINE_RULE = 11;
+  int DEFINE_RULE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -509,7 +555,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getStartStates()
    * @generated
    */
-  int START_STATES = 12;
+  int START_STATES = 13;
 
   /**
    * The feature id for the '<em><b>Incstates</b></em>' containment reference list.
@@ -546,7 +592,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getStartState()
    * @generated
    */
-  int START_STATE = 13;
+  int START_STATE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -574,7 +620,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRule()
    * @generated
    */
-  int RULE = 14;
+  int RULE = 15;
 
   /**
    * The feature id for the '<em><b>Info</b></em>' attribute.
@@ -604,6 +650,70 @@ public interface RppPackage extends EPackage
   int RULE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.rpp.impl.RuleInsertImpl <em>Rule Insert</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.rpp.impl.RuleInsertImpl
+   * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRuleInsert()
+   * @generated
+   */
+  int RULE_INSERT = 16;
+
+  /**
+   * The feature id for the '<em><b>Info</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT__INFO = 0;
+
+  /**
+   * The feature id for the '<em><b>Case</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT__CASE = 1;
+
+  /**
+   * The feature id for the '<em><b>Start</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT__START = 2;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT__CONTENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT__RULES = 4;
+
+  /**
+   * The number of structural features of the '<em>Rule Insert</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_INSERT_FEATURE_COUNT = 5;
+
+  /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.rpp.impl.SingleRuleImpl <em>Single Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -611,7 +721,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getSingleRule()
    * @generated
    */
-  int SINGLE_RULE = 15;
+  int SINGLE_RULE = 17;
 
   /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
@@ -632,7 +742,7 @@ public interface RppPackage extends EPackage
   int SINGLE_RULE__RULE = 1;
 
   /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -657,7 +767,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRuleDefinition()
    * @generated
    */
-  int RULE_DEFINITION = 16;
+  int RULE_DEFINITION = 18;
 
   /**
    * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -685,7 +795,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRulePart()
    * @generated
    */
-  int RULE_PART = 17;
+  int RULE_PART = 19;
 
   /**
    * The feature id for the '<em><b>Reg</b></em>' attribute.
@@ -722,7 +832,7 @@ public interface RppPackage extends EPackage
    * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRuleStart()
    * @generated
    */
-  int RULE_START = 18;
+  int RULE_START = 20;
 
   /**
    * The feature id for the '<em><b>Rule Prec</b></em>' attribute.
@@ -904,6 +1014,49 @@ public interface RppPackage extends EPackage
   EReference getModel_Rules();
 
   /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Model#getInsert <em>Insert</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Insert</em>'.
+   * @see de.roma.cocktail.xtext.rpp.Model#getInsert()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Insert();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Block</em>'.
+   * @see de.roma.cocktail.xtext.rpp.CodeBlock
+   * @generated
+   */
+  EClass getCodeBlock();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.rpp.CodeBlock#getWall <em>Wall</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Wall</em>'.
+   * @see de.roma.cocktail.xtext.rpp.CodeBlock#getWall()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EAttribute getCodeBlock_Wall();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.rpp.CodeBlock#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Block</em>'.
+   * @see de.roma.cocktail.xtext.rpp.CodeBlock#getBlock()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EReference getCodeBlock_Block();
+
+  /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Scanner <em>Scanner</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -935,15 +1088,15 @@ public interface RppPackage extends EPackage
   EClass getExport();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Export#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Export#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Export#getContent()
    * @see #getExport()
    * @generated
    */
-  EAttribute getExport_Content();
+  EReference getExport_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Import <em>Import</em>}'.
@@ -956,15 +1109,15 @@ public interface RppPackage extends EPackage
   EClass getImport();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Import#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Import#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Import#getContent()
    * @see #getImport()
    * @generated
    */
-  EAttribute getImport_Content();
+  EReference getImport_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Global <em>Global</em>}'.
@@ -977,15 +1130,15 @@ public interface RppPackage extends EPackage
   EClass getGlobal();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Global#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Global#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Global#getContent()
    * @see #getGlobal()
    * @generated
    */
-  EAttribute getGlobal_Content();
+  EReference getGlobal_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Local <em>Local</em>}'.
@@ -998,15 +1151,15 @@ public interface RppPackage extends EPackage
   EClass getLocal();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Local#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Local#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Local#getContent()
    * @see #getLocal()
    * @generated
    */
-  EAttribute getLocal_Content();
+  EReference getLocal_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Default <em>Default</em>}'.
@@ -1019,15 +1172,15 @@ public interface RppPackage extends EPackage
   EClass getDefault();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Default#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Default#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Default#getContent()
    * @see #getDefault()
    * @generated
    */
-  EAttribute getDefault_Content();
+  EReference getDefault_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Eof <em>Eof</em>}'.
@@ -1040,15 +1193,15 @@ public interface RppPackage extends EPackage
   EClass getEof();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Eof#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Eof#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Eof#getContent()
    * @see #getEof()
    * @generated
    */
-  EAttribute getEof_Content();
+  EReference getEof_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Begin <em>Begin</em>}'.
@@ -1061,15 +1214,15 @@ public interface RppPackage extends EPackage
   EClass getBegin();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Begin#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Begin#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Begin#getContent()
    * @see #getBegin()
    * @generated
    */
-  EAttribute getBegin_Content();
+  EReference getBegin_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Close <em>Close</em>}'.
@@ -1082,15 +1235,15 @@ public interface RppPackage extends EPackage
   EClass getClose();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.Close#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.Close#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.Close#getContent()
    * @see #getClose()
    * @generated
    */
-  EAttribute getClose_Content();
+  EReference getClose_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.Define <em>Define</em>}'.
@@ -1231,6 +1384,71 @@ public interface RppPackage extends EPackage
   EReference getRule_Rules();
 
   /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.RuleInsert <em>Rule Insert</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Insert</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert
+   * @generated
+   */
+  EClass getRuleInsert();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.RuleInsert#getInfo <em>Info</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Info</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert#getInfo()
+   * @see #getRuleInsert()
+   * @generated
+   */
+  EAttribute getRuleInsert_Info();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.RuleInsert#getCase <em>Case</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Case</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert#getCase()
+   * @see #getRuleInsert()
+   * @generated
+   */
+  EAttribute getRuleInsert_Case();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.RuleInsert#getStart <em>Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Start</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert#getStart()
+   * @see #getRuleInsert()
+   * @generated
+   */
+  EReference getRuleInsert_Start();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.RuleInsert#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Content</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert#getContent()
+   * @see #getRuleInsert()
+   * @generated
+   */
+  EReference getRuleInsert_Content();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.rpp.RuleInsert#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert#getRules()
+   * @see #getRuleInsert()
+   * @generated
+   */
+  EReference getRuleInsert_Rules();
+
+  /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.SingleRule <em>Single Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1263,15 +1481,15 @@ public interface RppPackage extends EPackage
   EReference getSingleRule_Rule();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.rpp.SingleRule#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.rpp.SingleRule#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
+   * @return the meta object for the containment reference '<em>Content</em>'.
    * @see de.roma.cocktail.xtext.rpp.SingleRule#getContent()
    * @see #getSingleRule()
    * @generated
    */
-  EAttribute getSingleRule_Content();
+  EReference getSingleRule_Content();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.rpp.RuleDefinition <em>Rule Definition</em>}'.
@@ -1499,6 +1717,40 @@ public interface RppPackage extends EPackage
     EReference MODEL__RULES = eINSTANCE.getModel_Rules();
 
     /**
+     * The meta object literal for the '<em><b>Insert</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__INSERT = eINSTANCE.getModel_Insert();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.CodeBlockImpl <em>Code Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.rpp.impl.CodeBlockImpl
+     * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getCodeBlock()
+     * @generated
+     */
+    EClass CODE_BLOCK = eINSTANCE.getCodeBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Wall</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE_BLOCK__WALL = eINSTANCE.getCodeBlock_Wall();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODE_BLOCK__BLOCK = eINSTANCE.getCodeBlock_Block();
+
+    /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.ScannerImpl <em>Scanner</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1527,12 +1779,12 @@ public interface RppPackage extends EPackage
     EClass EXPORT = eINSTANCE.getExport();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPORT__CONTENT = eINSTANCE.getExport_Content();
+    EReference EXPORT__CONTENT = eINSTANCE.getExport_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.ImportImpl <em>Import</em>}' class.
@@ -1545,12 +1797,12 @@ public interface RppPackage extends EPackage
     EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT__CONTENT = eINSTANCE.getImport_Content();
+    EReference IMPORT__CONTENT = eINSTANCE.getImport_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.GlobalImpl <em>Global</em>}' class.
@@ -1563,12 +1815,12 @@ public interface RppPackage extends EPackage
     EClass GLOBAL = eINSTANCE.getGlobal();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GLOBAL__CONTENT = eINSTANCE.getGlobal_Content();
+    EReference GLOBAL__CONTENT = eINSTANCE.getGlobal_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.LocalImpl <em>Local</em>}' class.
@@ -1581,12 +1833,12 @@ public interface RppPackage extends EPackage
     EClass LOCAL = eINSTANCE.getLocal();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOCAL__CONTENT = eINSTANCE.getLocal_Content();
+    EReference LOCAL__CONTENT = eINSTANCE.getLocal_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.DefaultImpl <em>Default</em>}' class.
@@ -1599,12 +1851,12 @@ public interface RppPackage extends EPackage
     EClass DEFAULT = eINSTANCE.getDefault();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFAULT__CONTENT = eINSTANCE.getDefault_Content();
+    EReference DEFAULT__CONTENT = eINSTANCE.getDefault_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.EofImpl <em>Eof</em>}' class.
@@ -1617,12 +1869,12 @@ public interface RppPackage extends EPackage
     EClass EOF = eINSTANCE.getEof();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EOF__CONTENT = eINSTANCE.getEof_Content();
+    EReference EOF__CONTENT = eINSTANCE.getEof_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.BeginImpl <em>Begin</em>}' class.
@@ -1635,12 +1887,12 @@ public interface RppPackage extends EPackage
     EClass BEGIN = eINSTANCE.getBegin();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BEGIN__CONTENT = eINSTANCE.getBegin_Content();
+    EReference BEGIN__CONTENT = eINSTANCE.getBegin_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.CloseImpl <em>Close</em>}' class.
@@ -1653,12 +1905,12 @@ public interface RppPackage extends EPackage
     EClass CLOSE = eINSTANCE.getClose();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLOSE__CONTENT = eINSTANCE.getClose_Content();
+    EReference CLOSE__CONTENT = eINSTANCE.getClose_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.DefineImpl <em>Define</em>}' class.
@@ -1775,6 +2027,56 @@ public interface RppPackage extends EPackage
     EReference RULE__RULES = eINSTANCE.getRule_Rules();
 
     /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.RuleInsertImpl <em>Rule Insert</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.rpp.impl.RuleInsertImpl
+     * @see de.roma.cocktail.xtext.rpp.impl.RppPackageImpl#getRuleInsert()
+     * @generated
+     */
+    EClass RULE_INSERT = eINSTANCE.getRuleInsert();
+
+    /**
+     * The meta object literal for the '<em><b>Info</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_INSERT__INFO = eINSTANCE.getRuleInsert_Info();
+
+    /**
+     * The meta object literal for the '<em><b>Case</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_INSERT__CASE = eINSTANCE.getRuleInsert_Case();
+
+    /**
+     * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_INSERT__START = eINSTANCE.getRuleInsert_Start();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_INSERT__CONTENT = eINSTANCE.getRuleInsert_Content();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_INSERT__RULES = eINSTANCE.getRuleInsert_Rules();
+
+    /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.SingleRuleImpl <em>Single Rule</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1801,12 +2103,12 @@ public interface RppPackage extends EPackage
     EReference SINGLE_RULE__RULE = eINSTANCE.getSingleRule_Rule();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
+    EReference SINGLE_RULE__CONTENT = eINSTANCE.getSingleRule_Content();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.rpp.impl.RuleDefinitionImpl <em>Rule Definition</em>}' class.

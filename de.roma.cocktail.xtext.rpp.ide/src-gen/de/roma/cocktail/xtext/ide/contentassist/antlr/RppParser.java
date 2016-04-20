@@ -37,6 +37,7 @@ public class RppParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getCodeBlockAccess().getAlternatives(), "rule__CodeBlock__Alternatives");
 					put(grammarAccess.getCodeWallAccess().getAlternatives(), "rule__CodeWall__Alternatives");
+					put(grammarAccess.getCodeWallAccess().getAlternatives_0_0(), "rule__CodeWall__Alternatives_0_0");
 					put(grammarAccess.getRuleAccess().getInfoAlternatives_0_0(), "rule__Rule__InfoAlternatives_0_0");
 					put(grammarAccess.getRegexAccess().getAlternatives(), "rule__Regex__Alternatives");
 					put(grammarAccess.getRulePartAccess().getAlternatives(), "rule__RulePart__Alternatives");
@@ -44,6 +45,7 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleStartAccess().getAlternatives_2(), "rule__RuleStart__Alternatives_2");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getCodeBlockAccess().getGroup_1(), "rule__CodeBlock__Group_1__0");
+					put(grammarAccess.getCodeWallAccess().getGroup_0(), "rule__CodeWall__Group_0__0");
 					put(grammarAccess.getScannerAccess().getGroup(), "rule__Scanner__Group__0");
 					put(grammarAccess.getExportAccess().getGroup(), "rule__Export__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
@@ -60,6 +62,8 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartStatesAccess().getGroup_3(), "rule__StartStates__Group_3__0");
 					put(grammarAccess.getStartStatesAccess().getGroup_3_2(), "rule__StartStates__Group_3_2__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
+					put(grammarAccess.getRuleInsertAccess().getGroup(), "rule__RuleInsert__Group__0");
+					put(grammarAccess.getRuleInsertAccess().getGroup_4(), "rule__RuleInsert__Group_4__0");
 					put(grammarAccess.getSingleRuleAccess().getGroup(), "rule__SingleRule__Group__0");
 					put(grammarAccess.getRuleStartAccess().getGroup(), "rule__RuleStart__Group__0");
 					put(grammarAccess.getRuleStartAccess().getGroup_3(), "rule__RuleStart__Group_3__0");
@@ -75,6 +79,9 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getDefineAssignment_0_9(), "rule__Model__DefineAssignment_0_9");
 					put(grammarAccess.getModelAccess().getStatesAssignment_0_10(), "rule__Model__StatesAssignment_0_10");
 					put(grammarAccess.getModelAccess().getRulesAssignment_1(), "rule__Model__RulesAssignment_1");
+					put(grammarAccess.getModelAccess().getInsertAssignment_2(), "rule__Model__InsertAssignment_2");
+					put(grammarAccess.getCodeBlockAccess().getWallAssignment_0(), "rule__CodeBlock__WallAssignment_0");
+					put(grammarAccess.getCodeBlockAccess().getBlockAssignment_1_1(), "rule__CodeBlock__BlockAssignment_1_1");
 					put(grammarAccess.getScannerAccess().getNameAssignment_1(), "rule__Scanner__NameAssignment_1");
 					put(grammarAccess.getExportAccess().getContentAssignment_2(), "rule__Export__ContentAssignment_2");
 					put(grammarAccess.getImportAccess().getContentAssignment_2(), "rule__Import__ContentAssignment_2");
@@ -94,6 +101,11 @@ public class RppParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStartStateAccess().getNameAssignment(), "rule__StartState__NameAssignment");
 					put(grammarAccess.getRuleAccess().getInfoAssignment_0(), "rule__Rule__InfoAssignment_0");
 					put(grammarAccess.getRuleAccess().getRulesAssignment_1(), "rule__Rule__RulesAssignment_1");
+					put(grammarAccess.getRuleInsertAccess().getInfoAssignment_0(), "rule__RuleInsert__InfoAssignment_0");
+					put(grammarAccess.getRuleInsertAccess().getCaseAssignment_2(), "rule__RuleInsert__CaseAssignment_2");
+					put(grammarAccess.getRuleInsertAccess().getStartAssignment_3(), "rule__RuleInsert__StartAssignment_3");
+					put(grammarAccess.getRuleInsertAccess().getContentAssignment_4_1(), "rule__RuleInsert__ContentAssignment_4_1");
+					put(grammarAccess.getRuleInsertAccess().getRulesAssignment_5(), "rule__RuleInsert__RulesAssignment_5");
 					put(grammarAccess.getSingleRuleAccess().getStartAssignment_0(), "rule__SingleRule__StartAssignment_0");
 					put(grammarAccess.getSingleRuleAccess().getRuleAssignment_1(), "rule__SingleRule__RuleAssignment_1");
 					put(grammarAccess.getSingleRuleAccess().getContentAssignment_5(), "rule__SingleRule__ContentAssignment_5");

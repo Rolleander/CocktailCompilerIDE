@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.rpp.Model#getDefine <em>Define</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.rpp.Model#getStates <em>States</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.rpp.Model#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.rpp.Model#getInsert <em>Insert</em>}</li>
  * </ul>
  *
  * @see de.roma.cocktail.xtext.rpp.RppPackage#getModel()
@@ -345,5 +346,31 @@ public interface Model extends EObject
    * @generated
    */
   void setRules(Rule value);
+
+  /**
+   * Returns the value of the '<em><b>Insert</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Insert</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Insert</em>' containment reference.
+   * @see #setInsert(RuleInsert)
+   * @see de.roma.cocktail.xtext.rpp.RppPackage#getModel_Insert()
+   * @model containment="true"
+   * @generated
+   */
+  RuleInsert getInsert();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.rpp.Model#getInsert <em>Insert</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Insert</em>' containment reference.
+   * @see #getInsert()
+   * @generated
+   */
+  void setInsert(RuleInsert value);
 
 } // Model

@@ -15,15 +15,15 @@ Model:
 	& close=Close?
 	& define=Define?
 	& states=StartStates?)
-	rules=Rule;
+	rules=Rule
+	insert=RuleInsert?;
 
-	//TODO Characterset
 CodeBlock:
-	(CodeWall | '{' CodeBlock '}')*;
+	(wall+=CodeWall | '{' block+=CodeBlock '}')*;
 
 CodeWall:
 //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-	->'STD'|ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '[' | ']' | '#' | '$'
+	->('INSERT'|'STD')|ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '[' | ']' | '#' | '$'
 	| '%' | ';' | ':' | '!' | '=' | ',';
 
 Scanner:
@@ -69,7 +69,11 @@ StartState:
 	name=ID;
 
 Rule:
-	info=('RULE' | 'RULES') (rules+=SingleRule)*;
+	info=('RULE' | 'RULES') (rules+=SingleRule)* ;
+	
+RuleInsert:
+	info='INSERT' 'RULES' (case='CASE-INSENSITIVE')? (start=RuleStart)? ('{' content=CodeBlock '}')   rules+=SingleRule*
+;	
 
 SingleRule:
 	start=RuleStart? rule=RuleDefinition ':' ('-')? '{' content=CodeBlock '}';
@@ -88,5 +92,3 @@ RulePart:
 RuleStart:
 	(rulePrec='NOT' | rulePrec='-')? '#' (ruleStates+=[StartState]| ruleDefault='STD' |
 	ruleDefault='*') (',' ruleStates+=[StartState] )* '#';
-
-

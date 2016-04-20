@@ -16,13 +16,12 @@ import org.xtext.cocktail.scanner.Scanner
  */
 class ScannerProposalProvider extends AbstractScannerProposalProvider {
 	
-	// Muss noch in LPP übernommen werden!
 	val generics= #['return']
 	val commands = #['GetToken','BeginFile','BeginFileW','BeginMemory','BeginMemoryN',
 			'BeginGeneric','CloseFile','BeginScanner','CloseScanner','xxMaxCharacter',
 			'xxtChar','GetWord','GetLower','GetUpper','TokenPtr','TokenLength','TokenPtr',
 			'TokenLength','Attribute','tScanAttribute','ErrorAttribute','Exit']
-	val statements = #['yyEcho,yyLess (n)','yyStart (s)','yyPush (s)','yyPop ()',
+	val statements = #['yyEcho','yyLess (n)','yyStart (s)','yyPush (s)','yyPop ()',
 			'yyPrevious','yyStartState','yyTab','yyTab1 (a)','yyEol (n)','input ()','unput (c)']
 	
 	override complete_CodeWall(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -43,6 +42,9 @@ class ScannerProposalProvider extends AbstractScannerProposalProvider {
 		]
 		statements.forEach[statement | 
 			acceptor.accept(createCompletionProposal(statement, context));
+		]
+		generics.forEach[generic | 
+			acceptor.accept(createCompletionProposal(generic, context));
 		]
 	}
 	

@@ -417,18 +417,37 @@ ruleModel returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getInsertRuleInsertParserRuleCall_2_0());
+				}
+				lv_insert_13_0=ruleRuleInsert
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					set(
+						$current,
+						"insert",
+						lv_insert_13_0,
+						"de.roma.cocktail.xtext.Rpp.RuleInsert");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 
 // Entry rule entryRuleCodeBlock
-entryRuleCodeBlock returns [String current=null]:
+entryRuleCodeBlock returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getCodeBlockRule()); }
 	iv_ruleCodeBlock=ruleCodeBlock
-	{ $current=$iv_ruleCodeBlock.current.getText(); }
+	{ $current=$iv_ruleCodeBlock.current; }
 	EOF;
 
 // Rule CodeBlock
-ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleCodeBlock returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -436,37 +455,53 @@ ruleCodeBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeWallParserRuleCall_0());
-		}
-		this_CodeWall_0=ruleCodeWall
-		{
-			$current.merge(this_CodeWall_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCodeBlockAccess().getWallCodeWallParserRuleCall_0_0());
+				}
+				lv_wall_0_0=ruleCodeWall
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCodeBlockRule());
+					}
+					add(
+						$current,
+						"wall",
+						lv_wall_0_0,
+						"de.roma.cocktail.xtext.Rpp.CodeWall");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 		    |
 		(
-			kw='{'
+			otherlv_1='{'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getLeftCurlyBracketKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getCodeBlockAccess().getLeftCurlyBracketKeyword_1_0());
 			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCodeBlockAccess().getBlockCodeBlockParserRuleCall_1_1_0());
+					}
+					lv_block_2_0=ruleCodeBlock
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCodeBlockRule());
+						}
+						add(
+							$current,
+							"block",
+							lv_block_2_0,
+							"de.roma.cocktail.xtext.Rpp.CodeBlock");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='}'
 			{
-				newCompositeNode(grammarAccess.getCodeBlockAccess().getCodeBlockParserRuleCall_1_1());
-			}
-			this_CodeBlock_2=ruleCodeBlock
-			{
-				$current.merge(this_CodeBlock_2);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-			kw='}'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getCodeBlockAccess().getRightCurlyBracketKeyword_1_2());
+				newLeafNode(otherlv_3, grammarAccess.getCodeBlockAccess().getRightCurlyBracketKeyword_1_2());
 			}
 		)
 	)*
@@ -489,44 +524,52 @@ ruleCodeWall returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 }:
 	(
 		(
-			('STD')=>
-			kw='STD'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getCodeWallAccess().getSTDKeyword_0());
-			}
+			('INSERT' | 'STD')=>
+			(
+				kw='INSERT'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getCodeWallAccess().getINSERTKeyword_0_0_0());
+				}
+				    |
+				kw='STD'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getCodeWallAccess().getSTDKeyword_0_0_1());
+				}
+			)
 		)
 		    |
-		this_ID_1=RULE_ID
+		this_ID_2=RULE_ID
 		{
-			$current.merge(this_ID_1);
+			$current.merge(this_ID_2);
 		}
 		{
-			newLeafNode(this_ID_1, grammarAccess.getCodeWallAccess().getIDTerminalRuleCall_1());
-		}
-		    |
-		this_INT_2=RULE_INT
-		{
-			$current.merge(this_INT_2);
-		}
-		{
-			newLeafNode(this_INT_2, grammarAccess.getCodeWallAccess().getINTTerminalRuleCall_2());
+			newLeafNode(this_ID_2, grammarAccess.getCodeWallAccess().getIDTerminalRuleCall_1());
 		}
 		    |
-		this_STRING_3=RULE_STRING
+		this_INT_3=RULE_INT
 		{
-			$current.merge(this_STRING_3);
+			$current.merge(this_INT_3);
 		}
 		{
-			newLeafNode(this_STRING_3, grammarAccess.getCodeWallAccess().getSTRINGTerminalRuleCall_3());
+			newLeafNode(this_INT_3, grammarAccess.getCodeWallAccess().getINTTerminalRuleCall_2());
 		}
 		    |
-		this_WS_4=RULE_WS
+		this_STRING_4=RULE_STRING
 		{
-			$current.merge(this_WS_4);
+			$current.merge(this_STRING_4);
 		}
 		{
-			newLeafNode(this_WS_4, grammarAccess.getCodeWallAccess().getWSTerminalRuleCall_4());
+			newLeafNode(this_STRING_4, grammarAccess.getCodeWallAccess().getSTRINGTerminalRuleCall_3());
+		}
+		    |
+		this_WS_5=RULE_WS
+		{
+			$current.merge(this_WS_5);
+		}
+		{
+			newLeafNode(this_WS_5, grammarAccess.getCodeWallAccess().getWSTerminalRuleCall_4());
 		}
 		    |
 		kw='+'
@@ -1448,6 +1491,124 @@ ruleRule returns [EObject current=null]
 						$current,
 						"rules",
 						lv_rules_1_0,
+						"de.roma.cocktail.xtext.Rpp.SingleRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleRuleInsert
+entryRuleRuleInsert returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRuleInsertRule()); }
+	iv_ruleRuleInsert=ruleRuleInsert
+	{ $current=$iv_ruleRuleInsert.current; }
+	EOF;
+
+// Rule RuleInsert
+ruleRuleInsert returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_info_0_0='INSERT'
+				{
+					newLeafNode(lv_info_0_0, grammarAccess.getRuleInsertAccess().getInfoINSERTKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleInsertRule());
+					}
+					setWithLastConsumed($current, "info", lv_info_0_0, "INSERT");
+				}
+			)
+		)
+		otherlv_1='RULES'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRuleInsertAccess().getRULESKeyword_1());
+		}
+		(
+			(
+				lv_case_2_0='CASE-INSENSITIVE'
+				{
+					newLeafNode(lv_case_2_0, grammarAccess.getRuleInsertAccess().getCaseCASEINSENSITIVEKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleInsertRule());
+					}
+					setWithLastConsumed($current, "case", lv_case_2_0, "CASE-INSENSITIVE");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleInsertAccess().getStartRuleStartParserRuleCall_3_0());
+				}
+				lv_start_3_0=ruleRuleStart
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleInsertRule());
+					}
+					set(
+						$current,
+						"start",
+						lv_start_3_0,
+						"de.roma.cocktail.xtext.Rpp.RuleStart");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			otherlv_4='{'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getRuleInsertAccess().getLeftCurlyBracketKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRuleInsertAccess().getContentCodeBlockParserRuleCall_4_1_0());
+					}
+					lv_content_5_0=ruleCodeBlock
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRuleInsertRule());
+						}
+						set(
+							$current,
+							"content",
+							lv_content_5_0,
+							"de.roma.cocktail.xtext.Rpp.CodeBlock");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getRuleInsertAccess().getRightCurlyBracketKeyword_4_2());
+			}
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleInsertAccess().getRulesSingleRuleParserRuleCall_5_0());
+				}
+				lv_rules_7_0=ruleSingleRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleInsertRule());
+					}
+					add(
+						$current,
+						"rules",
+						lv_rules_7_0,
 						"de.roma.cocktail.xtext.Rpp.SingleRule");
 					afterParserOrEnumRuleCall();
 				}

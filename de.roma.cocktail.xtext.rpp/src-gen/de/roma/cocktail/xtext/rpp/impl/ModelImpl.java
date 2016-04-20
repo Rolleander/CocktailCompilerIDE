@@ -15,6 +15,7 @@ import de.roma.cocktail.xtext.rpp.Local;
 import de.roma.cocktail.xtext.rpp.Model;
 import de.roma.cocktail.xtext.rpp.RppPackage;
 import de.roma.cocktail.xtext.rpp.Rule;
+import de.roma.cocktail.xtext.rpp.RuleInsert;
 import de.roma.cocktail.xtext.rpp.Scanner;
 import de.roma.cocktail.xtext.rpp.StartStates;
 
@@ -47,6 +48,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.roma.cocktail.xtext.rpp.impl.ModelImpl#getDefine <em>Define</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.rpp.impl.ModelImpl#getStates <em>States</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.rpp.impl.ModelImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.rpp.impl.ModelImpl#getInsert <em>Insert</em>}</li>
  * </ul>
  *
  * @generated
@@ -172,6 +174,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected Rule rules;
+
+  /**
+   * The cached value of the '{@link #getInsert() <em>Insert</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInsert()
+   * @generated
+   * @ordered
+   */
+  protected RuleInsert insert;
 
   /**
    * <!-- begin-user-doc -->
@@ -775,6 +787,54 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public RuleInsert getInsert()
+  {
+    return insert;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetInsert(RuleInsert newInsert, NotificationChain msgs)
+  {
+    RuleInsert oldInsert = insert;
+    insert = newInsert;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RppPackage.MODEL__INSERT, oldInsert, newInsert);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInsert(RuleInsert newInsert)
+  {
+    if (newInsert != insert)
+    {
+      NotificationChain msgs = null;
+      if (insert != null)
+        msgs = ((InternalEObject)insert).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RppPackage.MODEL__INSERT, null, msgs);
+      if (newInsert != null)
+        msgs = ((InternalEObject)newInsert).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RppPackage.MODEL__INSERT, null, msgs);
+      msgs = basicSetInsert(newInsert, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RppPackage.MODEL__INSERT, newInsert, newInsert));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -804,6 +864,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetStates(null, msgs);
       case RppPackage.MODEL__RULES:
         return basicSetRules(null, msgs);
+      case RppPackage.MODEL__INSERT:
+        return basicSetInsert(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -842,6 +904,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getStates();
       case RppPackage.MODEL__RULES:
         return getRules();
+      case RppPackage.MODEL__INSERT:
+        return getInsert();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -891,6 +955,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case RppPackage.MODEL__RULES:
         setRules((Rule)newValue);
+        return;
+      case RppPackage.MODEL__INSERT:
+        setInsert((RuleInsert)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -942,6 +1009,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case RppPackage.MODEL__RULES:
         setRules((Rule)null);
         return;
+      case RppPackage.MODEL__INSERT:
+        setInsert((RuleInsert)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -980,6 +1050,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return states != null;
       case RppPackage.MODEL__RULES:
         return rules != null;
+      case RppPackage.MODEL__INSERT:
+        return insert != null;
     }
     return super.eIsSet(featureID);
   }

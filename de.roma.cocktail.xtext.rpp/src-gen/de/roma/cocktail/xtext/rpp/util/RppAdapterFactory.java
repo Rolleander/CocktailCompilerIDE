@@ -81,6 +81,11 @@ public class RppAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseCodeBlock(CodeBlock object)
+      {
+        return createCodeBlockAdapter();
+      }
+      @Override
       public Adapter caseScanner(Scanner object)
       {
         return createScannerAdapter();
@@ -151,6 +156,11 @@ public class RppAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
+      public Adapter caseRuleInsert(RuleInsert object)
+      {
+        return createRuleInsertAdapter();
+      }
+      @Override
       public Adapter caseSingleRule(SingleRule object)
       {
         return createSingleRuleAdapter();
@@ -203,6 +213,21 @@ public class RppAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.rpp.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.rpp.CodeBlock
+   * @generated
+   */
+  public Adapter createCodeBlockAdapter()
   {
     return null;
   }
@@ -413,6 +438,21 @@ public class RppAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.rpp.RuleInsert <em>Rule Insert</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.rpp.RuleInsert
+   * @generated
+   */
+  public Adapter createRuleInsertAdapter()
   {
     return null;
   }

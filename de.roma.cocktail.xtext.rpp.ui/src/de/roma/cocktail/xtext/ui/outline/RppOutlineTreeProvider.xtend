@@ -17,6 +17,8 @@ import de.roma.cocktail.xtext.rpp.SingleRule
 import de.roma.cocktail.xtext.rpp.StartState
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import de.roma.cocktail.xtext.rpp.RuleStart
+import de.roma.cocktail.xtext.rpp.CodeBlock
 
 /**
  * Customization of the default outline structure.
@@ -25,7 +27,7 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
  */
 class RppOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
-
+ 
 
 	override protected _isLeaf(EObject o) {
 
@@ -41,6 +43,11 @@ class RppOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		if(o instanceof Close){return true}
 		if(o instanceof DefineRule){return true}
 		if(o instanceof StartState){return true}
+		if(o instanceof CodeBlock){return true}
+		if(o instanceof RuleStart){return true}
+		
+		
+		
 	}
 
 }

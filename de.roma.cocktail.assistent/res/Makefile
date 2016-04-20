@@ -1,107 +1,28 @@
-###############################################################################
-# Project:  COCKTAIL training
-# Descr:    Directory with all programming excercies
-# Kind:     Makefile
-# Author:   Prof. Dr. Juergen Vollmer <vollmer@dhbw-karlsruhe.de>
-# $Id: Makefile,v 1.34 2013/06/20 07:21:15 vollmer Exp vollmer $
-###############################################################################
 
-dirs	=  rPrepro				        \
-	   hello dea scanner recursive-decent lr-parser \
-	   recursive-decent-2				\
-	   ast-c ast-java				\
-	   expr expr-calc expr-ast expr-eval expr-trip	\
-	   expr-stmt expr-ag 				\
-	   code-stack				        \
-	   expr-stmt-testat				\
-	   minilax					\
-	   oberon-loesung
+###################################################################
+#SETTINGS
+CC		 = gcc
+COCKTAIL = $REPLACE$
+X_DEBUG	 = -g -Wall -ansi -pedantic
+C_FLAGS	 = -I.. -DYYDEBUG -L$(COCKTAIL)\lib -I$(COCKTAIL)\lib\include $(X_DEBUG)
+LD_FLAGS =  
 
-ALL:
-	@echo "Makefile für die Beispielprogramme"
-	@echo "bitte ein Ziel angeben:"
-	@echo "  all"
-	@echo "  clean"
-	@echo "  tar"
-	@echo "  tar-solutions"
+##################################################################
+#executable
+BIN     = prog
 
-all depend test solution:
-	@for d in $(dirs); 				\
-	 do 						\
-	   echo;echo "***** visiting $$d"; echo;	\
-	   $(MAKE) -C $$d $@;				\
-	 done || true
+# Source files
+REX     = test.rex
 
-mk-sources::
-	$(MAKE) -C rPrepro
+SRC_C	= main.c
+SRC_H	=
+SRC		= $(REX)
 
+# Generated files
+GEN_C	= l_scan.c l_scanSource.c
+GEN_H	= l_scan.h l_scanSource.h
+GEN		=
 
-clean real-clean delete-sources mk-sources::
-	@for d in $(dirs); 				\
-	 do 						\
-	   echo "***** visit $$d and make $@";		\
-	   $(MAKE) -s -C $$d $@;			\
-	 done || true
-	@find . -name "*~" -o -name "core*" -o -name "#*" | xargs rm -f
+##################################################################
+include default_rules.mk
 
-###############################################################################
-
-TAR_FILE = programme-`date "+%Y-%m-%d"`.tgz
-TAR_EX   = --exclude "RCS" --exclude src --exclude "*.tgz" \
-	   --exclude "minilax"        				\
-	   --exclude "oberon-loesung" 				\
-	   --exclude "*-testat"	      				\
-	   --exclude "recursive-decent-2/parser-solution.c" 	\
-	   --exclude "recursive-decent-2/test.*.0[345]"
-
-tar: mk-sources real-clean
-	@rm -f $(TAR_FILE);		       				\
-	 cd ..; 						       	\
-	 echo "***** tar sources";					\
-	 tar $(TAR_EX) -czvf $(TAR_FILE) programme
-
-###############################################################################
-
-diff:
-	@ echo "check for diff's to RCS";			\
-	for d in `find . -type d -not -wholename "*RCS"`;	\
-	do							\
-         (							\
-	   if [ -d $$d ] && [ -d $$d/RCS ]; 			\
-	   then							\
-	    echo "  check directory $$d";			\
-	    cd $$d;						\
-	    if [ -d RCS ];					\
-	    then 						\
-	     if [ `rlog  -L  -R  RCS/* | wc -l` -ne 0 ] ;	\
-	     then 						\
-	        echo "       - files which have locks set: "; 	\
-	        for f in `rlog  -L  -R  RCS/*`;			\
-	        do						\
-		   echo "        " `basename $$f ,v`;		\
-		done;						\
-	     fi;						\
-	     for f in RCS/* ; 					\
-	     do							\
-	        if [ -f `basename $$f ,v` ] ;			\
-		then						\
-		   x=`rcsdiff -q $$f | 			        \
-		      sed -e'/Id: [^,]*,v/d' 			\
-		          -e'/Date: .*\/.*\/.* .*:.*:.* \\$$/d'	\
-		          -e'/Revision: [0-9\.]* \\$$/d'	\
-		          -e'/Log: [^,]*,v/d'			\
-			  -e'/^---$$/d'      			\
-			  -e'/^[0-9,]*c[0-9,]*/d' | 		\
-		      wc -l`;					\
-		   if [ $$x -ne 0 ];				\
-		   then 					\
-		     ff="$$d/"`basename $$f ,v`;		\
-		     echo "  ** $$ff has diffs to RCS";		\
-		   fi;						\
-	        fi;						\
-	     done;						\
-	    fi;							\
-	   fi;							\
-	  );							\
-	done
-##############################################################################

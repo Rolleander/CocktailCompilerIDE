@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Import extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Content</b></em>' attribute.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' attribute isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' attribute.
-   * @see #setContent(String)
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(CodeBlock)
    * @see de.roma.cocktail.xtext.rpp.RppPackage#getImport_Content()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getContent();
+  CodeBlock getContent();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.rpp.Import#getContent <em>Content</em>}' attribute.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.rpp.Import#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' attribute.
+   * @param value the new value of the '<em>Content</em>' containment reference.
    * @see #getContent()
    * @generated
    */
-  void setContent(String value);
+  void setContent(CodeBlock value);
 
 } // Import

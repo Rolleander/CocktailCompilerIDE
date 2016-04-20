@@ -25,6 +25,9 @@ import org.eclipse.jface.preference.JFacePreferences
 import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import de.roma.cocktail.xtext.rpp.RuleInsert
+import de.roma.cocktail.xtext.rpp.RuleStart
+import de.roma.cocktail.xtext.rpp.CodeBlock
 
 /**
  * Provides labels for EObjects.
@@ -33,7 +36,7 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
  */
 class RppLabelProvider extends DefaultEObjectLabelProvider {
 
-val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
+	val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
 	val Styler styleTwo = StyledString.createColorRegistryStyler(JFacePreferences.COUNTER_COLOR, null);
 
 	@Inject
@@ -125,6 +128,14 @@ val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.A
 		'barcode.png'
 	}
 
+	def text(RuleInsert ele) {
+		'Inserted Rules'
+	}
+
+	def image(RuleInsert ele) {
+		'rules.png'
+	}
+
 	def text(Rule ele) {
 		'Rules'
 	}
@@ -164,32 +175,53 @@ val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.A
 		'blank_report.png'
 	}
 
+	def createRuleStartText(StyledString text, RuleStart begin) {
+		val prec = begin.rulePrec
+		val states = begin.ruleStates
+		val deff = begin.ruleDefault
+		if (prec != null) {
+			text.append(prec + " ", styleTwo)
+		}
+		text.append("#")
+		val size = states.size
+		if (states != null && size > 0) {
+			var count = 0;
+			for (s : states) {
+				count++;
+				text.append(s.name, styleBlue)
+				if (count < size) {
+					text.append(",")
+				}
+			}
+		} else {
+			text.append(deff, styleBlue)
+		}
+		text.append("#")
+	}
+
+	def text(RuleStart o) {
+		var text = new StyledString
+		createRuleStartText(text, o)
+	}
+
+	def image(RuleStart o) {
+		'control_play.png'
+	}
+
+	def text(CodeBlock o) {
+		'Target Code'
+	}
+	
+	
+	def image(CodeBlock o) {
+		'cog.png'
+	}
+
 	def text(SingleRule o) {
 		var text = new StyledString
 		val begin = o.start
 		if (begin != null) {
-			val prec = begin.rulePrec
-			val states = begin.ruleStates
-			val deff = begin.ruleDefault
-
-			if (prec != null) {
-				text.append(prec + " ", styleTwo)
-			}
-			text.append("#")
-			val size = states.size
-			if (states != null && size > 0) {
-				var count = 0;
-				for (s : states) {
-					count++;
-					text.append(s.name, styleBlue)
-					if (count < size) {
-						text.append(",")
-					}
-				}
-			} else {
-				text.append(deff, styleBlue)
-			}
-			text.append("#")
+			createRuleStartText(text, begin)
 		}
 
 		text.append(" : ")

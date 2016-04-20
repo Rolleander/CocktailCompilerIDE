@@ -66,6 +66,7 @@ public class RppFactoryImpl extends EFactoryImpl implements RppFactory
     switch (eClass.getClassifierID())
     {
       case RppPackage.MODEL: return createModel();
+      case RppPackage.CODE_BLOCK: return createCodeBlock();
       case RppPackage.SCANNER: return createScanner();
       case RppPackage.EXPORT: return createExport();
       case RppPackage.IMPORT: return createImport();
@@ -80,6 +81,7 @@ public class RppFactoryImpl extends EFactoryImpl implements RppFactory
       case RppPackage.START_STATES: return createStartStates();
       case RppPackage.START_STATE: return createStartState();
       case RppPackage.RULE: return createRule();
+      case RppPackage.RULE_INSERT: return createRuleInsert();
       case RppPackage.SINGLE_RULE: return createSingleRule();
       case RppPackage.RULE_DEFINITION: return createRuleDefinition();
       case RppPackage.RULE_PART: return createRulePart();
@@ -98,6 +100,17 @@ public class RppFactoryImpl extends EFactoryImpl implements RppFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CodeBlock createCodeBlock()
+  {
+    CodeBlockImpl codeBlock = new CodeBlockImpl();
+    return codeBlock;
   }
 
   /**
@@ -252,6 +265,17 @@ public class RppFactoryImpl extends EFactoryImpl implements RppFactory
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleInsert createRuleInsert()
+  {
+    RuleInsertImpl ruleInsert = new RuleInsertImpl();
+    return ruleInsert;
   }
 
   /**

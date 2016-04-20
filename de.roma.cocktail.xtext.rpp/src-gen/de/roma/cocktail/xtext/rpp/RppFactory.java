@@ -33,6 +33,15 @@ public interface RppFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Code Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Block</em>'.
+   * @generated
+   */
+  CodeBlock createCodeBlock();
+
+  /**
    * Returns a new object of class '<em>Scanner</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -157,6 +166,15 @@ public interface RppFactory extends EFactory
    * @generated
    */
   Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>Rule Insert</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Insert</em>'.
+   * @generated
+   */
+  RuleInsert createRuleInsert();
 
   /**
    * Returns a new object of class '<em>Single Rule</em>'.

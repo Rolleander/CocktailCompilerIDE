@@ -5,6 +5,7 @@ package de.roma.cocktail.xtext.rpp.impl;
 
 import de.roma.cocktail.xtext.rpp.Begin;
 import de.roma.cocktail.xtext.rpp.Close;
+import de.roma.cocktail.xtext.rpp.CodeBlock;
 import de.roma.cocktail.xtext.rpp.Default;
 import de.roma.cocktail.xtext.rpp.Define;
 import de.roma.cocktail.xtext.rpp.DefineRule;
@@ -18,6 +19,7 @@ import de.roma.cocktail.xtext.rpp.RppFactory;
 import de.roma.cocktail.xtext.rpp.RppPackage;
 import de.roma.cocktail.xtext.rpp.Rule;
 import de.roma.cocktail.xtext.rpp.RuleDefinition;
+import de.roma.cocktail.xtext.rpp.RuleInsert;
 import de.roma.cocktail.xtext.rpp.RulePart;
 import de.roma.cocktail.xtext.rpp.RuleStart;
 import de.roma.cocktail.xtext.rpp.Scanner;
@@ -46,6 +48,13 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeBlockEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -144,6 +153,13 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * @generated
    */
   private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleInsertEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -371,6 +387,46 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getModel_Insert()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCodeBlock()
+  {
+    return codeBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCodeBlock_Wall()
+  {
+    return (EAttribute)codeBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCodeBlock_Block()
+  {
+    return (EReference)codeBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getScanner()
   {
     return scannerEClass;
@@ -401,9 +457,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExport_Content()
+  public EReference getExport_Content()
   {
-    return (EAttribute)exportEClass.getEStructuralFeatures().get(0);
+    return (EReference)exportEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -421,9 +477,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImport_Content()
+  public EReference getImport_Content()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+    return (EReference)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -441,9 +497,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGlobal_Content()
+  public EReference getGlobal_Content()
   {
-    return (EAttribute)globalEClass.getEStructuralFeatures().get(0);
+    return (EReference)globalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -461,9 +517,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLocal_Content()
+  public EReference getLocal_Content()
   {
-    return (EAttribute)localEClass.getEStructuralFeatures().get(0);
+    return (EReference)localEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -481,9 +537,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefault_Content()
+  public EReference getDefault_Content()
   {
-    return (EAttribute)defaultEClass.getEStructuralFeatures().get(0);
+    return (EReference)defaultEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -501,9 +557,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEof_Content()
+  public EReference getEof_Content()
   {
-    return (EAttribute)eofEClass.getEStructuralFeatures().get(0);
+    return (EReference)eofEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -521,9 +577,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBegin_Content()
+  public EReference getBegin_Content()
   {
-    return (EAttribute)beginEClass.getEStructuralFeatures().get(0);
+    return (EReference)beginEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -541,9 +597,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getClose_Content()
+  public EReference getClose_Content()
   {
-    return (EAttribute)closeEClass.getEStructuralFeatures().get(0);
+    return (EReference)closeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -681,6 +737,66 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRuleInsert()
+  {
+    return ruleInsertEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRuleInsert_Info()
+  {
+    return (EAttribute)ruleInsertEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRuleInsert_Case()
+  {
+    return (EAttribute)ruleInsertEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleInsert_Start()
+  {
+    return (EReference)ruleInsertEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleInsert_Content()
+  {
+    return (EReference)ruleInsertEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleInsert_Rules()
+  {
+    return (EReference)ruleInsertEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSingleRule()
   {
     return singleRuleEClass;
@@ -711,9 +827,9 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSingleRule_Content()
+  public EReference getSingleRule_Content()
   {
-    return (EAttribute)singleRuleEClass.getEStructuralFeatures().get(2);
+    return (EReference)singleRuleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -849,33 +965,38 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
     createEReference(modelEClass, MODEL__DEFINE);
     createEReference(modelEClass, MODEL__STATES);
     createEReference(modelEClass, MODEL__RULES);
+    createEReference(modelEClass, MODEL__INSERT);
+
+    codeBlockEClass = createEClass(CODE_BLOCK);
+    createEAttribute(codeBlockEClass, CODE_BLOCK__WALL);
+    createEReference(codeBlockEClass, CODE_BLOCK__BLOCK);
 
     scannerEClass = createEClass(SCANNER);
     createEAttribute(scannerEClass, SCANNER__NAME);
 
     exportEClass = createEClass(EXPORT);
-    createEAttribute(exportEClass, EXPORT__CONTENT);
+    createEReference(exportEClass, EXPORT__CONTENT);
 
     importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__CONTENT);
+    createEReference(importEClass, IMPORT__CONTENT);
 
     globalEClass = createEClass(GLOBAL);
-    createEAttribute(globalEClass, GLOBAL__CONTENT);
+    createEReference(globalEClass, GLOBAL__CONTENT);
 
     localEClass = createEClass(LOCAL);
-    createEAttribute(localEClass, LOCAL__CONTENT);
+    createEReference(localEClass, LOCAL__CONTENT);
 
     defaultEClass = createEClass(DEFAULT);
-    createEAttribute(defaultEClass, DEFAULT__CONTENT);
+    createEReference(defaultEClass, DEFAULT__CONTENT);
 
     eofEClass = createEClass(EOF);
-    createEAttribute(eofEClass, EOF__CONTENT);
+    createEReference(eofEClass, EOF__CONTENT);
 
     beginEClass = createEClass(BEGIN);
-    createEAttribute(beginEClass, BEGIN__CONTENT);
+    createEReference(beginEClass, BEGIN__CONTENT);
 
     closeEClass = createEClass(CLOSE);
-    createEAttribute(closeEClass, CLOSE__CONTENT);
+    createEReference(closeEClass, CLOSE__CONTENT);
 
     defineEClass = createEClass(DEFINE);
     createEReference(defineEClass, DEFINE__DEFINES);
@@ -895,10 +1016,17 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
     createEAttribute(ruleEClass, RULE__INFO);
     createEReference(ruleEClass, RULE__RULES);
 
+    ruleInsertEClass = createEClass(RULE_INSERT);
+    createEAttribute(ruleInsertEClass, RULE_INSERT__INFO);
+    createEAttribute(ruleInsertEClass, RULE_INSERT__CASE);
+    createEReference(ruleInsertEClass, RULE_INSERT__START);
+    createEReference(ruleInsertEClass, RULE_INSERT__CONTENT);
+    createEReference(ruleInsertEClass, RULE_INSERT__RULES);
+
     singleRuleEClass = createEClass(SINGLE_RULE);
     createEReference(singleRuleEClass, SINGLE_RULE__START);
     createEReference(singleRuleEClass, SINGLE_RULE__RULE);
-    createEAttribute(singleRuleEClass, SINGLE_RULE__CONTENT);
+    createEReference(singleRuleEClass, SINGLE_RULE__CONTENT);
 
     ruleDefinitionEClass = createEClass(RULE_DEFINITION);
     createEReference(ruleDefinitionEClass, RULE_DEFINITION__PARTS);
@@ -957,33 +1085,38 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
     initEReference(getModel_Define(), this.getDefine(), null, "define", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_States(), this.getStartStates(), null, "states", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Rules(), this.getRule(), null, "rules", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Insert(), this.getRuleInsert(), null, "insert", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(codeBlockEClass, CodeBlock.class, "CodeBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCodeBlock_Wall(), ecorePackage.getEString(), "wall", null, 0, -1, CodeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCodeBlock_Block(), this.getCodeBlock(), null, "block", null, 0, -1, CodeBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scannerEClass, Scanner.class, "Scanner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScanner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scanner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exportEClass, Export.class, "Export", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExport_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Export.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_Content(), ecorePackage.getEString(), "content", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImport_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalEClass, Global.class, "Global", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGlobal_Content(), ecorePackage.getEString(), "content", null, 0, 1, Global.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGlobal_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Global.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localEClass, Local.class, "Local", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLocal_Content(), ecorePackage.getEString(), "content", null, 0, 1, Local.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocal_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Local.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defaultEClass, Default.class, "Default", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefault_Content(), ecorePackage.getEString(), "content", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefault_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Default.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eofEClass, Eof.class, "Eof", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEof_Content(), ecorePackage.getEString(), "content", null, 0, 1, Eof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEof_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Eof.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBegin_Content(), ecorePackage.getEString(), "content", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBegin_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(closeEClass, Close.class, "Close", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClose_Content(), ecorePackage.getEString(), "content", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClose_Content(), this.getCodeBlock(), null, "content", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDefine_Defines(), this.getDefineRule(), null, "defines", null, 0, -1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1003,10 +1136,17 @@ public class RppPackageImpl extends EPackageImpl implements RppPackage
     initEAttribute(getRule_Info(), ecorePackage.getEString(), "info", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Rules(), this.getSingleRule(), null, "rules", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(ruleInsertEClass, RuleInsert.class, "RuleInsert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRuleInsert_Info(), ecorePackage.getEString(), "info", null, 0, 1, RuleInsert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRuleInsert_Case(), ecorePackage.getEString(), "case", null, 0, 1, RuleInsert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleInsert_Start(), this.getRuleStart(), null, "start", null, 0, 1, RuleInsert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleInsert_Content(), this.getCodeBlock(), null, "content", null, 0, 1, RuleInsert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleInsert_Rules(), this.getSingleRule(), null, "rules", null, 0, -1, RuleInsert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(singleRuleEClass, SingleRule.class, "SingleRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSingleRule_Start(), this.getRuleStart(), null, "start", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSingleRule_Rule(), this.getRuleDefinition(), null, "rule", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSingleRule_Content(), ecorePackage.getEString(), "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleRule_Content(), this.getCodeBlock(), null, "content", null, 0, 1, SingleRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleDefinitionEClass, RuleDefinition.class, "RuleDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRuleDefinition_Parts(), this.getRulePart(), null, "parts", null, 0, -1, RuleDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
