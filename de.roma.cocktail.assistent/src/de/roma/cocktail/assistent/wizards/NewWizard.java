@@ -164,10 +164,8 @@ public class NewWizard extends Wizard implements INewWizard
         	folder.setDerived(true, monitor);
         }
         
-        createFileFromTemplate(folder, "common.mk", "/res/common.mk", monitor);
-        createFileFromTemplate(folder, "config.mk", "/res/config.mk", monitor);
+        createFileFromTemplate(folder, "default_rules.mk", "/res/config.mk", monitor);
         createFileFromTemplate(folder, "Makefile", "/res/Makefile", monitor);
-        createFileFromTemplate(folder, "README", "/res/README", monitor);
         createFileFromTemplate(folder, "util.c", "/res/util.c", monitor);
 	}
     
