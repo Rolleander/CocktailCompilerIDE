@@ -5,6 +5,7 @@ import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringButtonFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -33,7 +34,7 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 			
 			@Override
 			protected String changePressed() {
-				FileDialog dialog = new FileDialog(getShell(), SWT.OPEN);
+				DirectoryDialog dialog = new DirectoryDialog(getShell(), SWT.OPEN);
 //				dialog.setFilterExtensions(extensions); 
 //				Eventuell alles später hinzufügen
 //				dialog.setFileName(string);

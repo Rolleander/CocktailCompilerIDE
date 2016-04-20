@@ -1,8 +1,16 @@
 package de.roma.cocktail.assistent.wizards;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -61,6 +69,7 @@ public class NewWizard extends Wizard implements INewWizard
     public boolean performFinish()
     {
         final String projectName = pageOne.getProjectName();
+        final String cctFolderPath = pageOne.getCCTPath();
         final boolean isBtnMakeSelected  = pageOne.isBtnMakeSelected();
         final boolean isBtnRexSelected  = pageOne.isBtnRexSelected();
         final boolean isBtnLarkSelected  = pageOne.isBtnLarkSelected();
@@ -72,7 +81,7 @@ public class NewWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(projectName, isBtnMakeSelected, isBtnRexSelected, 
+                    doFinish(projectName, cctFolderPath, isBtnMakeSelected, isBtnRexSelected, 
                     		isBtnLarkSelected, isBtnAstSelected, monitor);
                 }
                 catch (CoreException e)
@@ -111,7 +120,7 @@ public class NewWizard extends Wizard implements INewWizard
      * @param isBtnRexSelected 
      * @param isBtnMakeSelected 
      */
-    private void doFinish(String projectName, boolean isBtnMakeSelected, 
+    private void doFinish(String projectName, String cctPath, boolean isBtnMakeSelected, 
     		boolean isBtnRexSelected, boolean isBtnLarkSelected, boolean isBtnAstSelected, 
     		IProgressMonitor monitor) throws CoreException
     {
@@ -141,7 +150,7 @@ public class NewWizard extends Wizard implements INewWizard
         }
 
         if (isBtnMakeSelected) {
-        	createMakeFolder(project, monitor);
+        	createMakeFolder(project, cctPath, monitor);
 		}
         
 //        boolean createMake = Activator.getDefault().getPreferenceStore()
@@ -154,7 +163,7 @@ public class NewWizard extends Wizard implements INewWizard
     /**
      * Create a new folder and add the makefile and other related files to it.
      */
-    private void createMakeFolder(IProject project, IProgressMonitor monitor) throws CoreException {
+    private void createMakeFolder(IProject project, String cctPath, IProgressMonitor monitor) throws CoreException {
     	//Create a folder
     	IFolder folder = project.getFolder("config");
     	if (!project.exists()) project.create(monitor);
@@ -164,8 +173,26 @@ public class NewWizard extends Wizard implements INewWizard
         	folder.setDerived(true, monitor);
         }
         
-        createFileFromTemplate(folder, "default_rules.mk", "/res/config.mk", monitor);
-        createFileFromTemplate(folder, "Makefile", "/res/Makefile", monitor);
+        IFile file = folder.getFile("Makefile");
+    	if (!file.exists()) {
+	    	Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
+			try {
+				InputStream stream = FileLocator.openStream(bundle, new Path("/res/Makefile"), false);
+				String path = cctPath.replaceAll("/", Matcher.quoteReplacement("\\"));
+				
+				Scanner s = new Scanner(stream).useDelimiter("\\A");
+			    String make = (s.hasNext() ? s.next() : "");
+			    String replacedMake = make.replace("$REPLACE$", path);
+			    InputStream replacedStream = new ByteArrayInputStream(replacedMake.getBytes(StandardCharsets.UTF_8));
+			    
+				file.create(replacedStream, IResource.NONE, monitor);
+				file.setDerived(true, monitor);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+    	}
+    	
+        createFileFromTemplate(folder, "default_rules.mk", "/res/default_rules.mk", monitor);
         createFileFromTemplate(folder, "util.c", "/res/util.c", monitor);
 	}
     

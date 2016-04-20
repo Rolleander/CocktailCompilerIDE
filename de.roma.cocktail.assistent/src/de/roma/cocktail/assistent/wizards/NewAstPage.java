@@ -47,9 +47,9 @@ public class NewAstPage extends WizardPage
     {
         Composite composite = new Composite(parent, SWT.NULL);
         GridLayout layout = new GridLayout();
-        layout.marginLeft = 5;
-        layout.marginRight = 5;
-        layout.marginTop = 5;
+        layout.marginLeft = 7;
+        layout.marginRight = 7;
+        layout.marginTop = 7;
         layout.numColumns = 3;
         layout.verticalSpacing = 9;
         composite.setLayout(layout);

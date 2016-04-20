@@ -7,13 +7,19 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
+import de.roma.cocktail.assistent.Activator;
+import de.roma.cocktail.preference.CCTPreferencePage;
 
 
 /**
@@ -22,7 +28,7 @@ import org.eclipse.swt.widgets.Text;
  */
 public class NewWizardPage extends WizardPage
 {
-    private Text projectName;
+    private Text projectName, cocktailFolder;
     private Button btnMake, btnRex, btnLark, btnAst;
 
     /**
@@ -44,19 +50,22 @@ public class NewWizardPage extends WizardPage
     {
         Composite composite = new Composite(parent, SWT.NULL);
         GridLayout layout = new GridLayout();
-        layout.marginLeft = 5;
-        layout.marginRight = 5;
-        layout.marginTop = 5;
+        layout.marginLeft = 7;
+        layout.marginRight = 7;
+        layout.marginTop = 7;
         layout.numColumns = 3;
         layout.verticalSpacing = 9;
         composite.setLayout(layout);
         
-        createProjectField(composite);
-
-        Label separator = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
         GridData gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
-        separator.setLayoutData(gd);
+        createProjectField(composite);
+        Label separator1 = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
+        separator1.setLayoutData(gd);
+        createCocktailField(composite);
+        
+        Label separator2 = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
+        separator2.setLayoutData(gd);
 
         createCheckboxes(composite);
         
@@ -96,6 +105,53 @@ public class NewWizardPage extends WizardPage
             }
         });
     }
+    
+    /**
+     * Adds a the name-labels and textfield to the given composite.
+     * @param composite
+     */
+    private void createCocktailField(Composite composite)
+    {
+        createLabel(composite, "Path of CCT installation:");
+
+        cocktailFolder = new Text(composite, SWT.BORDER | SWT.SINGLE);
+        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+        cocktailFolder.setLayoutData(gd);
+        cocktailFolder.addModifyListener(new ModifyListener()
+        {
+            @Override
+            public void modifyText(ModifyEvent e)
+            {
+                dialogChanged();
+            }
+        });
+        GridData btnGD = new GridData();
+        btnGD.widthHint = 90;
+        Button btnFolder = new Button(composite, SWT.PUSH);
+        btnFolder.setText("Browse...");
+        btnFolder.addSelectionListener(new SelectionAdapter()
+        {
+            @Override
+            public void widgetSelected(SelectionEvent e)
+            {
+                handleBrowseCCT();
+            }
+        });
+        btnFolder.setLayoutData(btnGD);
+
+    }
+    
+    /**
+     * Opens a FileDialog and sets the Text of the Cocktail folder
+     */
+	private void handleBrowseCCT() {
+		DirectoryDialog dialog = new DirectoryDialog(getShell(), SWT.OPEN);
+		String folder = dialog.open();
+		if (!folder.isEmpty()) {
+			cocktailFolder.setText(folder);
+			Activator.getDefault().getPreferenceStore().setValue(CCTPreferencePage.CCTPATHFIELD, folder);
+		}
+	}
 
 	/**
      * Adds the checkboxes for the templates to the given composite.
@@ -124,7 +180,7 @@ public class NewWizardPage extends WizardPage
 
     	gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
-    	gd.horizontalAlignment = gd.HORIZONTAL_ALIGN_BEGINNING;
+    	gd.horizontalAlignment = GridData.HORIZONTAL_ALIGN_BEGINNING;
     	
         btnMake = new Button(composite, SWT.CHECK);
         btnMake.setText("Generate Make-folder");
@@ -137,8 +193,9 @@ public class NewWizardPage extends WizardPage
      */
     private void initialize()
     {
-        //Initialize project or other things in the future
-//        String projectName = "";
+    	String path = 
+    			Activator.getDefault().getPreferenceStore().getString(CCTPreferencePage.CCTPATHFIELD);
+    	cocktailFolder.setText(path);
     }
 
     /**
@@ -161,6 +218,11 @@ public class NewWizardPage extends WizardPage
     public String getProjectName()
     {
         return projectName.getText();
+    }
+    
+    public String getCCTPath()
+    {
+        return cocktailFolder.getText();
     }
 
 	public boolean isBtnMakeSelected() {
