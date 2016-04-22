@@ -3,10 +3,8 @@ package de.roma.cocktail.preference;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringButtonFieldEditor;
-import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.DirectoryDialog;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
@@ -17,7 +15,7 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 
 	public static String CCTPATHFIELD = "cctPath";
 	public static String CREATEFILESFLAG = "createMakefile";
-	public static String MAKECOMMAND = "makeCommand";
+	public static String CREATEMAKEFLAG = "makeCommand";
 	
 //	Falls die Felder geordnet werden müssen
 //	public CCTPreferencePage() {
@@ -42,10 +40,8 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 			}
 		});
 		
-		addField(new StringFieldEditor(MAKECOMMAND, "Make command", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(CREATEMAKEFLAG, "Create Make folder for new Projects", getFieldEditorParent()));
 		
-		// Für Sample-Text oder ähnlichem
-//		addField(new BooleanFieldEditor(CREATEFILESFLAG, "Create Makefile", getFieldEditorParent()));
 	}
 	
 	@Override

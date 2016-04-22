@@ -29,7 +29,7 @@ import de.roma.cocktail.preference.CCTPreferencePage;
 public class NewWizardPage extends WizardPage
 {
     private Text projectName, cocktailFolder;
-    private Button btnMake, btnRex, btnLark, btnAst;
+    private Button btnRex, btnLark, btnAst;
 
     /**
      * Constructor for NewWizardPage.
@@ -181,11 +181,6 @@ public class NewWizardPage extends WizardPage
     	gd = new GridData(GridData.FILL_HORIZONTAL);
         gd.horizontalSpan = 3;
     	gd.horizontalAlignment = GridData.HORIZONTAL_ALIGN_BEGINNING;
-    	
-        btnMake = new Button(composite, SWT.CHECK);
-        btnMake.setText("Generate Make-folder");
-        btnMake.setSelection(true);
-        btnMake.setLayoutData(gd);
 	}
     
     /**
@@ -208,10 +203,20 @@ public class NewWizardPage extends WizardPage
         if (getProjectName().isEmpty())
         {
         	msg = "Project name must be specified";
+        	setMessage(msg);
         }
-
+        else if (getCCTPath().isEmpty()) {
+        	msg = "Path of CCT installation must be specified";
+        	setMessage(msg);
+		}
+        else if (getCCTPath().trim().contains(" ")) {
+        	// This is acceptable
+        	setMessage("CCT Path with whitespace may not function for MinGW");
+		}
+        else {
+        	setMessage(msg);
+		}
 //        setErrorMessage(msg);
-        setMessage(msg);
         setPageComplete(msg == null);
     }
 
@@ -224,10 +229,6 @@ public class NewWizardPage extends WizardPage
     {
         return cocktailFolder.getText();
     }
-
-	public boolean isBtnMakeSelected() {
-		return btnMake.getSelection();
-	}
 
 	public boolean isBtnRexSelected() {
 		return btnRex.getSelection();

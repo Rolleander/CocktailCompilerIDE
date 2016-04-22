@@ -1,14 +1,10 @@
 package de.roma.cocktail.assistent.wizards;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 
@@ -31,6 +27,9 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
 import org.osgi.framework.Bundle;
+
+import de.roma.cocktail.assistent.Activator;
+import de.roma.cocktail.preference.CCTPreferencePage;
 
 
 /**
@@ -70,7 +69,6 @@ public class NewWizard extends Wizard implements INewWizard
     {
         final String projectName = pageOne.getProjectName();
         final String cctFolderPath = pageOne.getCCTPath();
-        final boolean isBtnMakeSelected  = pageOne.isBtnMakeSelected();
         final boolean isBtnRexSelected  = pageOne.isBtnRexSelected();
         final boolean isBtnLarkSelected  = pageOne.isBtnLarkSelected();
         final boolean isBtnAstSelected  = pageOne.isBtnAstSelected();
@@ -81,7 +79,7 @@ public class NewWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(projectName, cctFolderPath, isBtnMakeSelected, isBtnRexSelected, 
+                    doFinish(projectName, cctFolderPath, isBtnRexSelected, 
                     		isBtnLarkSelected, isBtnAstSelected, monitor);
                 }
                 catch (CoreException e)
@@ -120,8 +118,8 @@ public class NewWizard extends Wizard implements INewWizard
      * @param isBtnRexSelected 
      * @param isBtnMakeSelected 
      */
-    private void doFinish(String projectName, String cctPath, boolean isBtnMakeSelected, 
-    		boolean isBtnRexSelected, boolean isBtnLarkSelected, boolean isBtnAstSelected, 
+    private void doFinish(String projectName, String cctPath, boolean isBtnRexSelected, 
+    		boolean isBtnLarkSelected, boolean isBtnAstSelected, 
     		IProgressMonitor monitor) throws CoreException
     {
     	
@@ -149,7 +147,7 @@ public class NewWizard extends Wizard implements INewWizard
         	createFileFromTemplate(srcFolder, "syntax.ast", "/res/syntaxtemp.ast", monitor);
         }
 
-        if (isBtnMakeSelected) {
+        if (Activator.getDefault().getPreferenceStore().getBoolean(CCTPreferencePage.CREATEMAKEFLAG)) {
         	createMakeFolder(project, cctPath, monitor);
 		}
         

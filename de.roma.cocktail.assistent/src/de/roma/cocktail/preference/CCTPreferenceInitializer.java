@@ -12,7 +12,7 @@ public class CCTPreferenceInitializer extends AbstractPreferenceInitializer {
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
         store.setDefault(CCTPreferencePage.CCTPATHFIELD, "");
-        store.setDefault(CCTPreferencePage.MAKECOMMAND, "make");
+        store.setDefault(CCTPreferencePage.CREATEMAKEFLAG, true);
 
     }
 }
