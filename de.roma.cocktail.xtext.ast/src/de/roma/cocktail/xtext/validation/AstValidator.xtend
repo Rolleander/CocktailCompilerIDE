@@ -3,23 +3,44 @@
  */
 package de.roma.cocktail.xtext.validation
 
+import de.roma.cocktail.xtext.ast.BaseTypes
+import de.roma.cocktail.xtext.ast.Rule
+import java.util.ArrayList
+import org.eclipse.xtext.validation.Check
+import de.roma.cocktail.xtext.ast.AstPackage
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class AstValidator extends AbstractAstValidator {
-	
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
+
+	public static val INVALID_NAME = 'invalidName'
+
+	@Check
+	def checkBaseTypeNamesValid(BaseTypes types) {
+
+		val allowedNames = new ArrayList()
+		val rules = types.eContainer.eContainer as Rule
+		val ruleRootNodes = rules.nodes
+		for (rootNode : ruleRootNodes) {
+			if (rootNode.type == ":=") {
+				allowedNames.add(rootNode.name)
+			}
+		}
+		val names = types.names
+		for (name : names) {
+			if(!allowedNames.contains(name)){
+				error(name.name+" is not valid!",AstPackage.Literals.BASE_TYPES__NAMES)
+			}
+		}
+
 //		if (!Character.isUpperCase(greeting.name.charAt(0))) {
 //			warning('Name should start with a capital', 
 //					AstPackage.Literals.GREETING__NAME,
 //					INVALID_NAME)
 //		}
-//	}
-	
+	}
+
 }

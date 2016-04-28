@@ -126,6 +126,61 @@ public class AstAdapterFactory extends AdapterFactoryImpl
         return createPropertiesAdapter();
       }
       @Override
+      public Adapter casePropertyList(PropertyList object)
+      {
+        return createPropertyListAdapter();
+      }
+      @Override
+      public Adapter caseDeclare(Declare object)
+      {
+        return createDeclareAdapter();
+      }
+      @Override
+      public Adapter caseDeclareNode(DeclareNode object)
+      {
+        return createDeclareNodeAdapter();
+      }
+      @Override
+      public Adapter caseRule(Rule object)
+      {
+        return createRuleAdapter();
+      }
+      @Override
+      public Adapter caseRootNode(RootNode object)
+      {
+        return createRootNodeAdapter();
+      }
+      @Override
+      public Adapter caseBaseTypes(BaseTypes object)
+      {
+        return createBaseTypesAdapter();
+      }
+      @Override
+      public Adapter caseExtensions(Extensions object)
+      {
+        return createExtensionsAdapter();
+      }
+      @Override
+      public Adapter caseNodePart(NodePart object)
+      {
+        return createNodePartAdapter();
+      }
+      @Override
+      public Adapter caseChildNode(ChildNode object)
+      {
+        return createChildNodeAdapter();
+      }
+      @Override
+      public Adapter caseNodeAttribute(NodeAttribute object)
+      {
+        return createNodeAttributeAdapter();
+      }
+      @Override
+      public Adapter caseNodeName(NodeName object)
+      {
+        return createNodeNameAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -293,6 +348,171 @@ public class AstAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPropertiesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.PropertyList <em>Property List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.PropertyList
+   * @generated
+   */
+  public Adapter createPropertyListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Declare <em>Declare</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Declare
+   * @generated
+   */
+  public Adapter createDeclareAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.DeclareNode <em>Declare Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.DeclareNode
+   * @generated
+   */
+  public Adapter createDeclareNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Rule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Rule
+   * @generated
+   */
+  public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.RootNode <em>Root Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.RootNode
+   * @generated
+   */
+  public Adapter createRootNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.BaseTypes <em>Base Types</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.BaseTypes
+   * @generated
+   */
+  public Adapter createBaseTypesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Extensions <em>Extensions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Extensions
+   * @generated
+   */
+  public Adapter createExtensionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.NodePart <em>Node Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.NodePart
+   * @generated
+   */
+  public Adapter createNodePartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.ChildNode <em>Child Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.ChildNode
+   * @generated
+   */
+  public Adapter createChildNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.NodeAttribute <em>Node Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.NodeAttribute
+   * @generated
+   */
+  public Adapter createNodeAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.NodeName <em>Node Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.NodeName
+   * @generated
+   */
+  public Adapter createNodeNameAdapter()
   {
     return null;
   }

@@ -6,6 +6,7 @@ package de.roma.cocktail.xtext.ast.impl;
 import de.roma.cocktail.xtext.ast.AstPackage;
 import de.roma.cocktail.xtext.ast.Begin;
 import de.roma.cocktail.xtext.ast.Close;
+import de.roma.cocktail.xtext.ast.Declare;
 import de.roma.cocktail.xtext.ast.Export;
 import de.roma.cocktail.xtext.ast.Global;
 import de.roma.cocktail.xtext.ast.Import;
@@ -13,6 +14,7 @@ import de.roma.cocktail.xtext.ast.Local;
 import de.roma.cocktail.xtext.ast.Model;
 import de.roma.cocktail.xtext.ast.Module;
 import de.roma.cocktail.xtext.ast.Properties;
+import de.roma.cocktail.xtext.ast.Rule;
 import de.roma.cocktail.xtext.ast.Tree;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,6 +43,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getBeg <em>Beg</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getClo <em>Clo</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getPro <em>Pro</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getRul <em>Rul</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getDec <em>Dec</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,6 +140,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected Properties pro;
+
+  /**
+   * The cached value of the '{@link #getRul() <em>Rul</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRul()
+   * @generated
+   * @ordered
+   */
+  protected Rule rul;
+
+  /**
+   * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDec()
+   * @generated
+   * @ordered
+   */
+  protected Declare dec;
 
   /**
    * <!-- begin-user-doc -->
@@ -595,6 +619,102 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public Rule getRul()
+  {
+    return rul;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRul(Rule newRul, NotificationChain msgs)
+  {
+    Rule oldRul = rul;
+    rul = newRul;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__RUL, oldRul, newRul);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRul(Rule newRul)
+  {
+    if (newRul != rul)
+    {
+      NotificationChain msgs = null;
+      if (rul != null)
+        msgs = ((InternalEObject)rul).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__RUL, null, msgs);
+      if (newRul != null)
+        msgs = ((InternalEObject)newRul).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__RUL, null, msgs);
+      msgs = basicSetRul(newRul, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__RUL, newRul, newRul));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declare getDec()
+  {
+    return dec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDec(Declare newDec, NotificationChain msgs)
+  {
+    Declare oldDec = dec;
+    dec = newDec;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__DEC, oldDec, newDec);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDec(Declare newDec)
+  {
+    if (newDec != dec)
+    {
+      NotificationChain msgs = null;
+      if (dec != null)
+        msgs = ((InternalEObject)dec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__DEC, null, msgs);
+      if (newDec != null)
+        msgs = ((InternalEObject)newDec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__DEC, null, msgs);
+      msgs = basicSetDec(newDec, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__DEC, newDec, newDec));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -618,6 +738,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetClo(null, msgs);
       case AstPackage.MODEL__PRO:
         return basicSetPro(null, msgs);
+      case AstPackage.MODEL__RUL:
+        return basicSetRul(null, msgs);
+      case AstPackage.MODEL__DEC:
+        return basicSetDec(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -650,6 +774,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getClo();
       case AstPackage.MODEL__PRO:
         return getPro();
+      case AstPackage.MODEL__RUL:
+        return getRul();
+      case AstPackage.MODEL__DEC:
+        return getDec();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -690,6 +818,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case AstPackage.MODEL__PRO:
         setPro((Properties)newValue);
+        return;
+      case AstPackage.MODEL__RUL:
+        setRul((Rule)newValue);
+        return;
+      case AstPackage.MODEL__DEC:
+        setDec((Declare)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -732,6 +866,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case AstPackage.MODEL__PRO:
         setPro((Properties)null);
         return;
+      case AstPackage.MODEL__RUL:
+        setRul((Rule)null);
+        return;
+      case AstPackage.MODEL__DEC:
+        setDec((Declare)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -764,6 +904,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return clo != null;
       case AstPackage.MODEL__PRO:
         return pro != null;
+      case AstPackage.MODEL__RUL:
+        return rul != null;
+      case AstPackage.MODEL__DEC:
+        return dec != null;
     }
     return super.eIsSet(featureID);
   }

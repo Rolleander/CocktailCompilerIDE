@@ -16,6 +16,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Model/beg"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Model/clo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Model/pro"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Model/rul"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Model/dec"/>
     </genClasses>
     <genClasses ecoreClass="Ast.ecore#//Module">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//Module/name"/>
@@ -42,7 +44,50 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//Close/code"/>
     </genClasses>
     <genClasses ecoreClass="Ast.ecore#//Properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//Properties/props"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Properties/property"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//PropertyList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//PropertyList/props"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//Declare">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Declare/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//DeclareNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//DeclareNode/names"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//DeclareNode/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//DeclareNode/part"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Rule/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//RootNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//RootNode/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//RootNode/baseTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//RootNode/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//RootNode/part"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//RootNode/extension"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//BaseTypes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ast.ecore#//BaseTypes/names"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//Extensions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//Extensions/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//NodePart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//NodePart/child"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//NodePart/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//ChildNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//ChildNode/selector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//ChildNode/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//NodeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//NodeAttribute/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//NodeAttribute/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ast.ecore#//NodeAttribute/property"/>
+    </genClasses>
+    <genClasses ecoreClass="Ast.ecore#//NodeName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ast.ecore#//NodeName/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

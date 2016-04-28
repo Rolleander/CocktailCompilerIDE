@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.ast.Model#getBeg <em>Beg</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Model#getClo <em>Clo</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Model#getPro <em>Pro</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Model#getRul <em>Rul</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Model#getDec <em>Dec</em>}</li>
  * </ul>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getModel()
@@ -264,5 +266,57 @@ public interface Model extends EObject
    * @generated
    */
   void setPro(Properties value);
+
+  /**
+   * Returns the value of the '<em><b>Rul</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rul</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rul</em>' containment reference.
+   * @see #setRul(Rule)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getModel_Rul()
+   * @model containment="true"
+   * @generated
+   */
+  Rule getRul();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Model#getRul <em>Rul</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rul</em>' containment reference.
+   * @see #getRul()
+   * @generated
+   */
+  void setRul(Rule value);
+
+  /**
+   * Returns the value of the '<em><b>Dec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Dec</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Dec</em>' containment reference.
+   * @see #setDec(Declare)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getModel_Dec()
+   * @model containment="true"
+   * @generated
+   */
+  Declare getDec();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Model#getDec <em>Dec</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Dec</em>' containment reference.
+   * @see #getDec()
+   * @generated
+   */
+  void setDec(Declare value);
 
 } // Model

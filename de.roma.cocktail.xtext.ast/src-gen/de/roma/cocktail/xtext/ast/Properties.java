@@ -3,8 +3,6 @@
  */
 package de.roma.cocktail.xtext.ast;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.ast.Properties#getProps <em>Props</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Properties#getProperty <em>Property</em>}</li>
  * </ul>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getProperties()
@@ -26,19 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Properties extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Props</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Property</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Props</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Property</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Props</em>' attribute list.
-   * @see de.roma.cocktail.xtext.ast.AstPackage#getProperties_Props()
-   * @model unique="false"
+   * @return the value of the '<em>Property</em>' containment reference.
+   * @see #setProperty(PropertyList)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getProperties_Property()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getProps();
+  PropertyList getProperty();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Properties#getProperty <em>Property</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Property</em>' containment reference.
+   * @see #getProperty()
+   * @generated
+   */
+  void setProperty(PropertyList value);
 
 } // Properties

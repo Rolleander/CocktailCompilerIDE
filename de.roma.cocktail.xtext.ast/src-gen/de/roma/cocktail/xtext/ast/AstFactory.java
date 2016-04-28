@@ -114,6 +114,105 @@ public interface AstFactory extends EFactory
   Properties createProperties();
 
   /**
+   * Returns a new object of class '<em>Property List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Property List</em>'.
+   * @generated
+   */
+  PropertyList createPropertyList();
+
+  /**
+   * Returns a new object of class '<em>Declare</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declare</em>'.
+   * @generated
+   */
+  Declare createDeclare();
+
+  /**
+   * Returns a new object of class '<em>Declare Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Declare Node</em>'.
+   * @generated
+   */
+  DeclareNode createDeclareNode();
+
+  /**
+   * Returns a new object of class '<em>Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule</em>'.
+   * @generated
+   */
+  Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>Root Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root Node</em>'.
+   * @generated
+   */
+  RootNode createRootNode();
+
+  /**
+   * Returns a new object of class '<em>Base Types</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Types</em>'.
+   * @generated
+   */
+  BaseTypes createBaseTypes();
+
+  /**
+   * Returns a new object of class '<em>Extensions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extensions</em>'.
+   * @generated
+   */
+  Extensions createExtensions();
+
+  /**
+   * Returns a new object of class '<em>Node Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Part</em>'.
+   * @generated
+   */
+  NodePart createNodePart();
+
+  /**
+   * Returns a new object of class '<em>Child Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Child Node</em>'.
+   * @generated
+   */
+  ChildNode createChildNode();
+
+  /**
+   * Returns a new object of class '<em>Node Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Attribute</em>'.
+   * @generated
+   */
+  NodeAttribute createNodeAttribute();
+
+  /**
+   * Returns a new object of class '<em>Node Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Name</em>'.
+   * @generated
+   */
+  NodeName createNodeName();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

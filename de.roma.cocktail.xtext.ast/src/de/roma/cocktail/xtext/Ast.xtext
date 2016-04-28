@@ -15,6 +15,8 @@ Model:
 	& clo=Close?
 	& pro=Properties?	
 	& rul=Rule
+	& dec=Declare?
+	
 ;
 
 Module:
@@ -56,12 +58,28 @@ PropertyList:
 props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? & props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'?
 ;
 
+Declare:
+	'DECLARE'  nodes+=DeclareNode*
+;
+
+DeclareNode:
+	names+=NodeName+ type=("="|":") part+=NodePart*  "." 
+;
+
 Rule:
 	'RULE'  nodes+=RootNode*
 ;
 
 RootNode:
-	name=NodeName type=NodeType part+=NodePart*   '.'
+	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart*  extension=Extensions? '.'
+;
+
+BaseTypes:
+	"<-" names+=[NodeName]*
+;
+
+Extensions:
+	"<" nodes=RootNode* ">"
 ;
 
 NodePart:
@@ -76,8 +94,8 @@ NodeAttribute:
 	'[' attribute=ID  ( ':' type=ID )? property=PropertyList']'
 ;
 
-NodeName returns  ecore::EString:
-	ID|STRING
+NodeName:
+	name=(ID|STRING)
 ;
 
  NodeType:

@@ -5,15 +5,26 @@ package de.roma.cocktail.xtext.ast.impl;
 
 import de.roma.cocktail.xtext.ast.AstFactory;
 import de.roma.cocktail.xtext.ast.AstPackage;
+import de.roma.cocktail.xtext.ast.BaseTypes;
 import de.roma.cocktail.xtext.ast.Begin;
+import de.roma.cocktail.xtext.ast.ChildNode;
 import de.roma.cocktail.xtext.ast.Close;
+import de.roma.cocktail.xtext.ast.Declare;
+import de.roma.cocktail.xtext.ast.DeclareNode;
 import de.roma.cocktail.xtext.ast.Export;
+import de.roma.cocktail.xtext.ast.Extensions;
 import de.roma.cocktail.xtext.ast.Global;
 import de.roma.cocktail.xtext.ast.Import;
 import de.roma.cocktail.xtext.ast.Local;
 import de.roma.cocktail.xtext.ast.Model;
 import de.roma.cocktail.xtext.ast.Module;
+import de.roma.cocktail.xtext.ast.NodeAttribute;
+import de.roma.cocktail.xtext.ast.NodeName;
+import de.roma.cocktail.xtext.ast.NodePart;
 import de.roma.cocktail.xtext.ast.Properties;
+import de.roma.cocktail.xtext.ast.PropertyList;
+import de.roma.cocktail.xtext.ast.RootNode;
+import de.roma.cocktail.xtext.ast.Rule;
 import de.roma.cocktail.xtext.ast.Tree;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -100,6 +111,83 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
    * @generated
    */
   private EClass propertiesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass propertyListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declareEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass declareNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rootNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass baseTypesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass extensionsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nodePartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass childNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nodeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nodeNameEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -262,6 +350,26 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
   public EReference getModel_Pro()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Rul()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Dec()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -439,9 +547,329 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProperties_Props()
+  public EReference getProperties_Property()
   {
-    return (EAttribute)propertiesEClass.getEStructuralFeatures().get(0);
+    return (EReference)propertiesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPropertyList()
+  {
+    return propertyListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPropertyList_Props()
+  {
+    return (EAttribute)propertyListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclare()
+  {
+    return declareEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclare_Nodes()
+  {
+    return (EReference)declareEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDeclareNode()
+  {
+    return declareNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclareNode_Names()
+  {
+    return (EReference)declareNodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDeclareNode_Type()
+  {
+    return (EAttribute)declareNodeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeclareNode_Part()
+  {
+    return (EReference)declareNodeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRule()
+  {
+    return ruleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRule_Nodes()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRootNode()
+  {
+    return rootNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRootNode_Name()
+  {
+    return (EReference)rootNodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRootNode_BaseTypes()
+  {
+    return (EReference)rootNodeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRootNode_Type()
+  {
+    return (EAttribute)rootNodeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRootNode_Part()
+  {
+    return (EReference)rootNodeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRootNode_Extension()
+  {
+    return (EReference)rootNodeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBaseTypes()
+  {
+    return baseTypesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBaseTypes_Names()
+  {
+    return (EReference)baseTypesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExtensions()
+  {
+    return extensionsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExtensions_Nodes()
+  {
+    return (EReference)extensionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNodePart()
+  {
+    return nodePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNodePart_Child()
+  {
+    return (EReference)nodePartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNodePart_Attribute()
+  {
+    return (EReference)nodePartEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getChildNode()
+  {
+    return childNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getChildNode_Selector()
+  {
+    return (EAttribute)childNodeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getChildNode_Type()
+  {
+    return (EAttribute)childNodeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNodeAttribute()
+  {
+    return nodeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNodeAttribute_Attribute()
+  {
+    return (EAttribute)nodeAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNodeAttribute_Type()
+  {
+    return (EAttribute)nodeAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNodeAttribute_Property()
+  {
+    return (EReference)nodeAttributeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNodeName()
+  {
+    return nodeNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNodeName_Name()
+  {
+    return (EAttribute)nodeNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -484,6 +912,8 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     createEReference(modelEClass, MODEL__BEG);
     createEReference(modelEClass, MODEL__CLO);
     createEReference(modelEClass, MODEL__PRO);
+    createEReference(modelEClass, MODEL__RUL);
+    createEReference(modelEClass, MODEL__DEC);
 
     moduleEClass = createEClass(MODULE);
     createEAttribute(moduleEClass, MODULE__NAME);
@@ -510,7 +940,50 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     createEAttribute(closeEClass, CLOSE__CODE);
 
     propertiesEClass = createEClass(PROPERTIES);
-    createEAttribute(propertiesEClass, PROPERTIES__PROPS);
+    createEReference(propertiesEClass, PROPERTIES__PROPERTY);
+
+    propertyListEClass = createEClass(PROPERTY_LIST);
+    createEAttribute(propertyListEClass, PROPERTY_LIST__PROPS);
+
+    declareEClass = createEClass(DECLARE);
+    createEReference(declareEClass, DECLARE__NODES);
+
+    declareNodeEClass = createEClass(DECLARE_NODE);
+    createEReference(declareNodeEClass, DECLARE_NODE__NAMES);
+    createEAttribute(declareNodeEClass, DECLARE_NODE__TYPE);
+    createEReference(declareNodeEClass, DECLARE_NODE__PART);
+
+    ruleEClass = createEClass(RULE);
+    createEReference(ruleEClass, RULE__NODES);
+
+    rootNodeEClass = createEClass(ROOT_NODE);
+    createEReference(rootNodeEClass, ROOT_NODE__NAME);
+    createEReference(rootNodeEClass, ROOT_NODE__BASE_TYPES);
+    createEAttribute(rootNodeEClass, ROOT_NODE__TYPE);
+    createEReference(rootNodeEClass, ROOT_NODE__PART);
+    createEReference(rootNodeEClass, ROOT_NODE__EXTENSION);
+
+    baseTypesEClass = createEClass(BASE_TYPES);
+    createEReference(baseTypesEClass, BASE_TYPES__NAMES);
+
+    extensionsEClass = createEClass(EXTENSIONS);
+    createEReference(extensionsEClass, EXTENSIONS__NODES);
+
+    nodePartEClass = createEClass(NODE_PART);
+    createEReference(nodePartEClass, NODE_PART__CHILD);
+    createEReference(nodePartEClass, NODE_PART__ATTRIBUTE);
+
+    childNodeEClass = createEClass(CHILD_NODE);
+    createEAttribute(childNodeEClass, CHILD_NODE__SELECTOR);
+    createEAttribute(childNodeEClass, CHILD_NODE__TYPE);
+
+    nodeAttributeEClass = createEClass(NODE_ATTRIBUTE);
+    createEAttribute(nodeAttributeEClass, NODE_ATTRIBUTE__ATTRIBUTE);
+    createEAttribute(nodeAttributeEClass, NODE_ATTRIBUTE__TYPE);
+    createEReference(nodeAttributeEClass, NODE_ATTRIBUTE__PROPERTY);
+
+    nodeNameEClass = createEClass(NODE_NAME);
+    createEAttribute(nodeNameEClass, NODE_NAME__NAME);
   }
 
   /**
@@ -554,6 +1027,8 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     initEReference(getModel_Beg(), this.getBegin(), null, "beg", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Clo(), this.getClose(), null, "clo", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Pro(), this.getProperties(), null, "pro", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Rul(), this.getRule(), null, "rul", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Dec(), this.getDeclare(), null, "dec", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -580,7 +1055,50 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     initEAttribute(getClose_Code(), ecorePackage.getEString(), "code", null, 0, 1, Close.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProperties_Props(), ecorePackage.getEString(), "props", null, 0, -1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProperties_Property(), this.getPropertyList(), null, "property", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(propertyListEClass, PropertyList.class, "PropertyList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPropertyList_Props(), ecorePackage.getEString(), "props", null, 0, -1, PropertyList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declareEClass, Declare.class, "Declare", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclare_Nodes(), this.getDeclareNode(), null, "nodes", null, 0, -1, Declare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(declareNodeEClass, DeclareNode.class, "DeclareNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclareNode_Names(), this.getNodeName(), null, "names", null, 0, -1, DeclareNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDeclareNode_Type(), ecorePackage.getEString(), "type", null, 0, 1, DeclareNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclareNode_Part(), this.getNodePart(), null, "part", null, 0, -1, DeclareNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRule_Nodes(), this.getRootNode(), null, "nodes", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rootNodeEClass, RootNode.class, "RootNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRootNode_Name(), this.getNodeName(), null, "name", null, 0, 1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRootNode_BaseTypes(), this.getBaseTypes(), null, "baseTypes", null, 0, 1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRootNode_Type(), ecorePackage.getEString(), "type", null, 0, 1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRootNode_Part(), this.getNodePart(), null, "part", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRootNode_Extension(), this.getExtensions(), null, "extension", null, 0, 1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(baseTypesEClass, BaseTypes.class, "BaseTypes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBaseTypes_Names(), this.getNodeName(), null, "names", null, 0, -1, BaseTypes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(extensionsEClass, Extensions.class, "Extensions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExtensions_Nodes(), this.getRootNode(), null, "nodes", null, 0, 1, Extensions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nodePartEClass, NodePart.class, "NodePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNodePart_Child(), this.getChildNode(), null, "child", null, 0, 1, NodePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNodePart_Attribute(), this.getNodeAttribute(), null, "attribute", null, 0, 1, NodePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(childNodeEClass, ChildNode.class, "ChildNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChildNode_Selector(), ecorePackage.getEString(), "selector", null, 0, 1, ChildNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getChildNode_Type(), ecorePackage.getEString(), "type", null, 0, 1, ChildNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nodeAttributeEClass, NodeAttribute.class, "NodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNodeAttribute_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, NodeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNodeAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, NodeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNodeAttribute_Property(), this.getPropertyList(), null, "property", null, 0, 1, NodeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nodeNameEClass, NodeName.class, "NodeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNodeName_Name(), ecorePackage.getEString(), "name", null, 0, 1, NodeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

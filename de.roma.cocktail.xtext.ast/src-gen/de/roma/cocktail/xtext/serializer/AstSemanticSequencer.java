@@ -5,15 +5,26 @@ package de.roma.cocktail.xtext.serializer;
 
 import com.google.inject.Inject;
 import de.roma.cocktail.xtext.ast.AstPackage;
+import de.roma.cocktail.xtext.ast.BaseTypes;
 import de.roma.cocktail.xtext.ast.Begin;
+import de.roma.cocktail.xtext.ast.ChildNode;
 import de.roma.cocktail.xtext.ast.Close;
+import de.roma.cocktail.xtext.ast.Declare;
+import de.roma.cocktail.xtext.ast.DeclareNode;
 import de.roma.cocktail.xtext.ast.Export;
+import de.roma.cocktail.xtext.ast.Extensions;
 import de.roma.cocktail.xtext.ast.Global;
 import de.roma.cocktail.xtext.ast.Import;
 import de.roma.cocktail.xtext.ast.Local;
 import de.roma.cocktail.xtext.ast.Model;
 import de.roma.cocktail.xtext.ast.Module;
+import de.roma.cocktail.xtext.ast.NodeAttribute;
+import de.roma.cocktail.xtext.ast.NodeName;
+import de.roma.cocktail.xtext.ast.NodePart;
 import de.roma.cocktail.xtext.ast.Properties;
+import de.roma.cocktail.xtext.ast.PropertyList;
+import de.roma.cocktail.xtext.ast.RootNode;
+import de.roma.cocktail.xtext.ast.Rule;
 import de.roma.cocktail.xtext.ast.Tree;
 import de.roma.cocktail.xtext.services.AstGrammarAccess;
 import java.util.Set;
@@ -41,14 +52,29 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AstPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case AstPackage.BASE_TYPES:
+				sequence_BaseTypes(context, (BaseTypes) semanticObject); 
+				return; 
 			case AstPackage.BEGIN:
 				sequence_Begin(context, (Begin) semanticObject); 
+				return; 
+			case AstPackage.CHILD_NODE:
+				sequence_ChildNode(context, (ChildNode) semanticObject); 
 				return; 
 			case AstPackage.CLOSE:
 				sequence_Close(context, (Close) semanticObject); 
 				return; 
+			case AstPackage.DECLARE:
+				sequence_Declare(context, (Declare) semanticObject); 
+				return; 
+			case AstPackage.DECLARE_NODE:
+				sequence_DeclareNode(context, (DeclareNode) semanticObject); 
+				return; 
 			case AstPackage.EXPORT:
 				sequence_Export(context, (Export) semanticObject); 
+				return; 
+			case AstPackage.EXTENSIONS:
+				sequence_Extensions(context, (Extensions) semanticObject); 
 				return; 
 			case AstPackage.GLOBAL:
 				sequence_Global(context, (Global) semanticObject); 
@@ -65,8 +91,26 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case AstPackage.MODULE:
 				sequence_Module(context, (Module) semanticObject); 
 				return; 
+			case AstPackage.NODE_ATTRIBUTE:
+				sequence_NodeAttribute(context, (NodeAttribute) semanticObject); 
+				return; 
+			case AstPackage.NODE_NAME:
+				sequence_NodeName(context, (NodeName) semanticObject); 
+				return; 
+			case AstPackage.NODE_PART:
+				sequence_NodePart(context, (NodePart) semanticObject); 
+				return; 
 			case AstPackage.PROPERTIES:
 				sequence_Properties(context, (Properties) semanticObject); 
+				return; 
+			case AstPackage.PROPERTY_LIST:
+				sequence_PropertyList(context, (PropertyList) semanticObject); 
+				return; 
+			case AstPackage.ROOT_NODE:
+				sequence_RootNode(context, (RootNode) semanticObject); 
+				return; 
+			case AstPackage.RULE:
+				sequence_Rule(context, (Rule) semanticObject); 
 				return; 
 			case AstPackage.TREE:
 				sequence_Tree(context, (Tree) semanticObject); 
@@ -75,6 +119,18 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     BaseTypes returns BaseTypes
+	 *
+	 * Constraint:
+	 *     names+=[NodeName|ID]+
+	 */
+	protected void sequence_BaseTypes(ISerializationContext context, BaseTypes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -91,6 +147,18 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBeginAccess().getCodeCodeBlockParserRuleCall_2_0(), semanticObject.getCode());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChildNode returns ChildNode
+	 *
+	 * Constraint:
+	 *     (selector=ID? type=ID)
+	 */
+	protected void sequence_ChildNode(ISerializationContext context, ChildNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -114,6 +182,30 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     DeclareNode returns DeclareNode
+	 *
+	 * Constraint:
+	 *     (names+=NodeName+ (type='=' | type=':') part+=NodePart*)
+	 */
+	protected void sequence_DeclareNode(ISerializationContext context, DeclareNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Declare returns Declare
+	 *
+	 * Constraint:
+	 *     nodes+=DeclareNode+
+	 */
+	protected void sequence_Declare(ISerializationContext context, Declare semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Export returns Export
 	 *
 	 * Constraint:
@@ -127,6 +219,18 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExportAccess().getCodeCodeBlockParserRuleCall_2_0(), semanticObject.getCode());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Extensions returns Extensions
+	 *
+	 * Constraint:
+	 *     nodes=RootNode+
+	 */
+	protected void sequence_Extensions(ISerializationContext context, Extensions semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -198,7 +302,9 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         loc=Local | 
 	 *         beg=Begin | 
 	 *         clo=Close | 
-	 *         pro=Properties
+	 *         pro=Properties | 
+	 *         rul=Rule | 
+	 *         dec=Declare
 	 *     )+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -226,7 +332,61 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     NodeAttribute returns NodeAttribute
+	 *
+	 * Constraint:
+	 *     (attribute=ID type=ID? property=PropertyList)
+	 */
+	protected void sequence_NodeAttribute(ISerializationContext context, NodeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NodeName returns NodeName
+	 *
+	 * Constraint:
+	 *     (name=ID | name=STRING)
+	 */
+	protected void sequence_NodeName(ISerializationContext context, NodeName semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NodePart returns NodePart
+	 *
+	 * Constraint:
+	 *     (child=ChildNode | attribute=NodeAttribute)
+	 */
+	protected void sequence_NodePart(ISerializationContext context, NodePart semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Properties returns Properties
+	 *
+	 * Constraint:
+	 *     property=PropertyList
+	 */
+	protected void sequence_Properties(ISerializationContext context, Properties semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.PROPERTIES__PROPERTY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.PROPERTIES__PROPERTY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPropertiesAccess().getPropertyPropertyListParserRuleCall_1_0(), semanticObject.getProperty());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PropertyList returns PropertyList
 	 *
 	 * Constraint:
 	 *     (
@@ -238,9 +398,33 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         props+='REVERSE' | 
 	 *         props+='IGNORE' | 
 	 *         props+='VIRTUAL'
-	 *     )*
+	 *     )+
 	 */
-	protected void sequence_Properties(ISerializationContext context, Properties semanticObject) {
+	protected void sequence_PropertyList(ISerializationContext context, PropertyList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RootNode returns RootNode
+	 *
+	 * Constraint:
+	 *     (name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* extension=Extensions?)
+	 */
+	protected void sequence_RootNode(ISerializationContext context, RootNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Rule returns Rule
+	 *
+	 * Constraint:
+	 *     nodes+=RootNode+
+	 */
+	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

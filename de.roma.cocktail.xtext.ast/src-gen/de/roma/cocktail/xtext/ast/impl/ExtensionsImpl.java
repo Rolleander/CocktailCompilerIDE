@@ -4,8 +4,8 @@
 package de.roma.cocktail.xtext.ast.impl;
 
 import de.roma.cocktail.xtext.ast.AstPackage;
-import de.roma.cocktail.xtext.ast.Properties;
-import de.roma.cocktail.xtext.ast.PropertyList;
+import de.roma.cocktail.xtext.ast.Extensions;
+import de.roma.cocktail.xtext.ast.RootNode;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -18,35 +18,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Properties</b></em>'.
+ * An implementation of the model object '<em><b>Extensions</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.PropertiesImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.ExtensionsImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropertiesImpl extends MinimalEObjectImpl.Container implements Properties
+public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Extensions
 {
   /**
-   * The cached value of the '{@link #getProperty() <em>Property</em>}' containment reference.
+   * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProperty()
+   * @see #getNodes()
    * @generated
    * @ordered
    */
-  protected PropertyList property;
+  protected RootNode nodes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PropertiesImpl()
+  protected ExtensionsImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   @Override
   protected EClass eStaticClass()
   {
-    return AstPackage.Literals.PROPERTIES;
+    return AstPackage.Literals.EXTENSIONS;
   }
 
   /**
@@ -67,9 +67,9 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropertyList getProperty()
+  public RootNode getNodes()
   {
-    return property;
+    return nodes;
   }
 
   /**
@@ -77,13 +77,13 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetProperty(PropertyList newProperty, NotificationChain msgs)
+  public NotificationChain basicSetNodes(RootNode newNodes, NotificationChain msgs)
   {
-    PropertyList oldProperty = property;
-    property = newProperty;
+    RootNode oldNodes = nodes;
+    nodes = newNodes;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.PROPERTIES__PROPERTY, oldProperty, newProperty);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.EXTENSIONS__NODES, oldNodes, newNodes);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -94,20 +94,20 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProperty(PropertyList newProperty)
+  public void setNodes(RootNode newNodes)
   {
-    if (newProperty != property)
+    if (newNodes != nodes)
     {
       NotificationChain msgs = null;
-      if (property != null)
-        msgs = ((InternalEObject)property).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.PROPERTIES__PROPERTY, null, msgs);
-      if (newProperty != null)
-        msgs = ((InternalEObject)newProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.PROPERTIES__PROPERTY, null, msgs);
-      msgs = basicSetProperty(newProperty, msgs);
+      if (nodes != null)
+        msgs = ((InternalEObject)nodes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.EXTENSIONS__NODES, null, msgs);
+      if (newNodes != null)
+        msgs = ((InternalEObject)newNodes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.EXTENSIONS__NODES, null, msgs);
+      msgs = basicSetNodes(newNodes, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.PROPERTIES__PROPERTY, newProperty, newProperty));
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.EXTENSIONS__NODES, newNodes, newNodes));
   }
 
   /**
@@ -120,8 +120,8 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   {
     switch (featureID)
     {
-      case AstPackage.PROPERTIES__PROPERTY:
-        return basicSetProperty(null, msgs);
+      case AstPackage.EXTENSIONS__NODES:
+        return basicSetNodes(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -136,8 +136,8 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   {
     switch (featureID)
     {
-      case AstPackage.PROPERTIES__PROPERTY:
-        return getProperty();
+      case AstPackage.EXTENSIONS__NODES:
+        return getNodes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,8 +152,8 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   {
     switch (featureID)
     {
-      case AstPackage.PROPERTIES__PROPERTY:
-        setProperty((PropertyList)newValue);
+      case AstPackage.EXTENSIONS__NODES:
+        setNodes((RootNode)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,8 +169,8 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   {
     switch (featureID)
     {
-      case AstPackage.PROPERTIES__PROPERTY:
-        setProperty((PropertyList)null);
+      case AstPackage.EXTENSIONS__NODES:
+        setNodes((RootNode)null);
         return;
     }
     super.eUnset(featureID);
@@ -186,10 +186,10 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
   {
     switch (featureID)
     {
-      case AstPackage.PROPERTIES__PROPERTY:
-        return property != null;
+      case AstPackage.EXTENSIONS__NODES:
+        return nodes != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //PropertiesImpl
+} //ExtensionsImpl

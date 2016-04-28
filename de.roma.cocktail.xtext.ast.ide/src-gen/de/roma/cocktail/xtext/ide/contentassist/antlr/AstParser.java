@@ -35,6 +35,10 @@ public class AstParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getDeclareNodeAccess().getTypeAlternatives_1_0(), "rule__DeclareNode__TypeAlternatives_1_0");
+					put(grammarAccess.getNodePartAccess().getAlternatives(), "rule__NodePart__Alternatives");
+					put(grammarAccess.getNodeNameAccess().getNameAlternatives_0(), "rule__NodeName__NameAlternatives_0");
+					put(grammarAccess.getNodeTypeAccess().getAlternatives(), "rule__NodeType__Alternatives");
 					put(grammarAccess.getCodeBlockAccess().getAlternatives(), "rule__CodeBlock__Alternatives");
 					put(grammarAccess.getCodeWallAccess().getAlternatives(), "rule__CodeWall__Alternatives");
 					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
@@ -45,7 +49,17 @@ public class AstParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLocalAccess().getGroup(), "rule__Local__Group__0");
 					put(grammarAccess.getBeginAccess().getGroup(), "rule__Begin__Group__0");
 					put(grammarAccess.getCloseAccess().getGroup(), "rule__Close__Group__0");
-					put(grammarAccess.getPropertiesAccess().getGroup_0(), "rule__Properties__Group_0__0");
+					put(grammarAccess.getPropertiesAccess().getGroup(), "rule__Properties__Group__0");
+					put(grammarAccess.getDeclareAccess().getGroup(), "rule__Declare__Group__0");
+					put(grammarAccess.getDeclareNodeAccess().getGroup(), "rule__DeclareNode__Group__0");
+					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
+					put(grammarAccess.getRootNodeAccess().getGroup(), "rule__RootNode__Group__0");
+					put(grammarAccess.getBaseTypesAccess().getGroup(), "rule__BaseTypes__Group__0");
+					put(grammarAccess.getExtensionsAccess().getGroup(), "rule__Extensions__Group__0");
+					put(grammarAccess.getChildNodeAccess().getGroup(), "rule__ChildNode__Group__0");
+					put(grammarAccess.getChildNodeAccess().getGroup_0(), "rule__ChildNode__Group_0__0");
+					put(grammarAccess.getNodeAttributeAccess().getGroup(), "rule__NodeAttribute__Group__0");
+					put(grammarAccess.getNodeAttributeAccess().getGroup_2(), "rule__NodeAttribute__Group_2__0");
 					put(grammarAccess.getCodeBlockAccess().getGroup_1(), "rule__CodeBlock__Group_1__0");
 					put(grammarAccess.getModelAccess().getModuleAssignment_0(), "rule__Model__ModuleAssignment_0");
 					put(grammarAccess.getModelAccess().getTreeAssignment_1(), "rule__Model__TreeAssignment_1");
@@ -56,6 +70,8 @@ public class AstParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getBegAssignment_6(), "rule__Model__BegAssignment_6");
 					put(grammarAccess.getModelAccess().getCloAssignment_7(), "rule__Model__CloAssignment_7");
 					put(grammarAccess.getModelAccess().getProAssignment_8(), "rule__Model__ProAssignment_8");
+					put(grammarAccess.getModelAccess().getRulAssignment_9(), "rule__Model__RulAssignment_9");
+					put(grammarAccess.getModelAccess().getDecAssignment_10(), "rule__Model__DecAssignment_10");
 					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
 					put(grammarAccess.getTreeAccess().getNameAssignment_1(), "rule__Tree__NameAssignment_1");
 					put(grammarAccess.getImportAccess().getCodeAssignment_2(), "rule__Import__CodeAssignment_2");
@@ -64,16 +80,37 @@ public class AstParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLocalAccess().getCodeAssignment_2(), "rule__Local__CodeAssignment_2");
 					put(grammarAccess.getBeginAccess().getCodeAssignment_2(), "rule__Begin__CodeAssignment_2");
 					put(grammarAccess.getCloseAccess().getCodeAssignment_2(), "rule__Close__CodeAssignment_2");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_0_1(), "rule__Properties__PropsAssignment_0_1");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_1(), "rule__Properties__PropsAssignment_1");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_2(), "rule__Properties__PropsAssignment_2");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_3(), "rule__Properties__PropsAssignment_3");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_4(), "rule__Properties__PropsAssignment_4");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_5(), "rule__Properties__PropsAssignment_5");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_6(), "rule__Properties__PropsAssignment_6");
-					put(grammarAccess.getPropertiesAccess().getPropsAssignment_7(), "rule__Properties__PropsAssignment_7");
+					put(grammarAccess.getPropertiesAccess().getPropertyAssignment_1(), "rule__Properties__PropertyAssignment_1");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_0(), "rule__PropertyList__PropsAssignment_0");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_1(), "rule__PropertyList__PropsAssignment_1");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_2(), "rule__PropertyList__PropsAssignment_2");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_3(), "rule__PropertyList__PropsAssignment_3");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_4(), "rule__PropertyList__PropsAssignment_4");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_5(), "rule__PropertyList__PropsAssignment_5");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_6(), "rule__PropertyList__PropsAssignment_6");
+					put(grammarAccess.getPropertyListAccess().getPropsAssignment_7(), "rule__PropertyList__PropsAssignment_7");
+					put(grammarAccess.getDeclareAccess().getNodesAssignment_1(), "rule__Declare__NodesAssignment_1");
+					put(grammarAccess.getDeclareNodeAccess().getNamesAssignment_0(), "rule__DeclareNode__NamesAssignment_0");
+					put(grammarAccess.getDeclareNodeAccess().getTypeAssignment_1(), "rule__DeclareNode__TypeAssignment_1");
+					put(grammarAccess.getDeclareNodeAccess().getPartAssignment_2(), "rule__DeclareNode__PartAssignment_2");
+					put(grammarAccess.getRuleAccess().getNodesAssignment_1(), "rule__Rule__NodesAssignment_1");
+					put(grammarAccess.getRootNodeAccess().getNameAssignment_0(), "rule__RootNode__NameAssignment_0");
+					put(grammarAccess.getRootNodeAccess().getBaseTypesAssignment_1(), "rule__RootNode__BaseTypesAssignment_1");
+					put(grammarAccess.getRootNodeAccess().getTypeAssignment_2(), "rule__RootNode__TypeAssignment_2");
+					put(grammarAccess.getRootNodeAccess().getPartAssignment_3(), "rule__RootNode__PartAssignment_3");
+					put(grammarAccess.getRootNodeAccess().getExtensionAssignment_4(), "rule__RootNode__ExtensionAssignment_4");
+					put(grammarAccess.getBaseTypesAccess().getNamesAssignment_1(), "rule__BaseTypes__NamesAssignment_1");
+					put(grammarAccess.getExtensionsAccess().getNodesAssignment_1(), "rule__Extensions__NodesAssignment_1");
+					put(grammarAccess.getNodePartAccess().getChildAssignment_0(), "rule__NodePart__ChildAssignment_0");
+					put(grammarAccess.getNodePartAccess().getAttributeAssignment_1(), "rule__NodePart__AttributeAssignment_1");
+					put(grammarAccess.getChildNodeAccess().getSelectorAssignment_0_0(), "rule__ChildNode__SelectorAssignment_0_0");
+					put(grammarAccess.getChildNodeAccess().getTypeAssignment_1(), "rule__ChildNode__TypeAssignment_1");
+					put(grammarAccess.getNodeAttributeAccess().getAttributeAssignment_1(), "rule__NodeAttribute__AttributeAssignment_1");
+					put(grammarAccess.getNodeAttributeAccess().getTypeAssignment_2_1(), "rule__NodeAttribute__TypeAssignment_2_1");
+					put(grammarAccess.getNodeAttributeAccess().getPropertyAssignment_3(), "rule__NodeAttribute__PropertyAssignment_3");
+					put(grammarAccess.getNodeNameAccess().getNameAssignment(), "rule__NodeName__NameAssignment");
 					put(grammarAccess.getModelAccess().getUnorderedGroup(), "rule__Model__UnorderedGroup");
-					put(grammarAccess.getPropertiesAccess().getUnorderedGroup(), "rule__Properties__UnorderedGroup");
+					put(grammarAccess.getPropertyListAccess().getUnorderedGroup(), "rule__PropertyList__UnorderedGroup");
 				}
 			};
 		}

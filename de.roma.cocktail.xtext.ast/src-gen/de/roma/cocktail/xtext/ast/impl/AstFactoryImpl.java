@@ -75,6 +75,17 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
       case AstPackage.BEGIN: return createBegin();
       case AstPackage.CLOSE: return createClose();
       case AstPackage.PROPERTIES: return createProperties();
+      case AstPackage.PROPERTY_LIST: return createPropertyList();
+      case AstPackage.DECLARE: return createDeclare();
+      case AstPackage.DECLARE_NODE: return createDeclareNode();
+      case AstPackage.RULE: return createRule();
+      case AstPackage.ROOT_NODE: return createRootNode();
+      case AstPackage.BASE_TYPES: return createBaseTypes();
+      case AstPackage.EXTENSIONS: return createExtensions();
+      case AstPackage.NODE_PART: return createNodePart();
+      case AstPackage.CHILD_NODE: return createChildNode();
+      case AstPackage.NODE_ATTRIBUTE: return createNodeAttribute();
+      case AstPackage.NODE_NAME: return createNodeName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -188,6 +199,127 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
   {
     PropertiesImpl properties = new PropertiesImpl();
     return properties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PropertyList createPropertyList()
+  {
+    PropertyListImpl propertyList = new PropertyListImpl();
+    return propertyList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Declare createDeclare()
+  {
+    DeclareImpl declare = new DeclareImpl();
+    return declare;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DeclareNode createDeclareNode()
+  {
+    DeclareNodeImpl declareNode = new DeclareNodeImpl();
+    return declareNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Rule createRule()
+  {
+    RuleImpl rule = new RuleImpl();
+    return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RootNode createRootNode()
+  {
+    RootNodeImpl rootNode = new RootNodeImpl();
+    return rootNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BaseTypes createBaseTypes()
+  {
+    BaseTypesImpl baseTypes = new BaseTypesImpl();
+    return baseTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Extensions createExtensions()
+  {
+    ExtensionsImpl extensions = new ExtensionsImpl();
+    return extensions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodePart createNodePart()
+  {
+    NodePartImpl nodePart = new NodePartImpl();
+    return nodePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ChildNode createChildNode()
+  {
+    ChildNodeImpl childNode = new ChildNodeImpl();
+    return childNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeAttribute createNodeAttribute()
+  {
+    NodeAttributeImpl nodeAttribute = new NodeAttributeImpl();
+    return nodeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodeName createNodeName()
+  {
+    NodeNameImpl nodeName = new NodeNameImpl();
+    return nodeName;
   }
 
   /**
