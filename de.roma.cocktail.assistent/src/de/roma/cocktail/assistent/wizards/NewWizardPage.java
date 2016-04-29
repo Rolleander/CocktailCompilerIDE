@@ -23,7 +23,7 @@ import de.roma.cocktail.preference.CCTPreferencePage;
 
 
 /**
- * This wizard page allows setting the input for a new compiler project. 
+ * This wizard page allows setting the input for a new cocktail project. 
  * The page will only accept valid data.
  */
 public class NewWizardPage extends WizardPage
@@ -39,8 +39,8 @@ public class NewWizardPage extends WizardPage
     public NewWizardPage(IStructuredSelection selection)
     {
         super("NewWizardPage");
-        setTitle("Compiler Project");
-        setDescription("Create a new Compiler project");
+        setTitle("Cocktail Project");
+        setDescription("Create a new cocktail project");
     }
 
     /**
