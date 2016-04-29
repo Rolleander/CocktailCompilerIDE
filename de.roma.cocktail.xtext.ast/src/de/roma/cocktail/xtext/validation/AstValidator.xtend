@@ -32,7 +32,7 @@ class AstValidator extends AbstractAstValidator {
 		val names = types.names
 		for (name : names) {
 			if(!allowedNames.contains(name)){
-				error(name.name+" is not valid!",AstPackage.Literals.BASE_TYPES__NAMES)
+				error(name.name+" is not an abstract node type!",AstPackage.Literals.BASE_TYPES__NAMES, INVALID_NAME)
 			}
 		}
 
