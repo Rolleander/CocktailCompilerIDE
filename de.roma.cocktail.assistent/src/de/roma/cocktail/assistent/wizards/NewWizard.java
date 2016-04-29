@@ -33,8 +33,8 @@ import de.roma.cocktail.preference.CCTPreferencePage;
 
 
 /**
- * This is a wizard for new compiler projects. Its role is to create  
- * a new project with important compiler-files.
+ * This is a wizard for new cocktail projects. Its role is to create  
+ * a new project with important cocktail spezifications and make files.
  */
 public class NewWizard extends Wizard implements INewWizard
 {
@@ -42,12 +42,12 @@ public class NewWizard extends Wizard implements INewWizard
     private IStructuredSelection selection;
 
     /**
-     * Constructor for ComponentWizard.
+     * Constructor for NewWizard.
      */
     public NewWizard()
     {
         super();
-        setWindowTitle("New compiler project");
+        setWindowTitle("New cocktail project");
         setNeedsProgressMonitor(true);
     }
     
