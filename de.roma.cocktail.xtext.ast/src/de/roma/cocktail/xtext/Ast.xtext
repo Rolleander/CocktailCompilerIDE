@@ -3,114 +3,98 @@ grammar de.roma.cocktail.xtext.Ast with org.eclipse.xtext.common.Terminals
 generate ast "http://www.roma.de/cocktail/xtext/Ast"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-
 Model:
-	module=Module 
-	& tree=Tree? 
-	& imp=Import? 
+	module=Module
+	& tree=Tree?
+	& imp=Import?
 	& exp=Export?
 	& glo=Global?
 	& loc=Local?
 	& beg=Begin?
 	& clo=Close?
-	& pro=Properties?	
+	& pro=Properties?
 	& rul=Rule
-	& dec=Declare?
-	
-;
+	& dec=Declare?;
 
 Module:
-	'MODULE' name=ID
-;
+	'MODULE' name=ID;
 
 Tree:
-	'TREE' name=ID
-;
+	'TREE' name=ID;
 
 Import:
-	'IMPORT'  '{' code=CodeBlock '}'
-;
+	'IMPORT' '{' code=CodeBlock '}';
 
 Export:
-	'EXPORT'  '{' code=CodeBlock '}'
-;
+	'EXPORT' '{' code=CodeBlock '}';
 
 Global:
-	'GLOBAL' '{' code=CodeBlock '}'
-;
+	'GLOBAL' '{' code=CodeBlock '}';
 
 Local:
-	'LOCAL'  '{' code=CodeBlock '}'
-;
+	'LOCAL' '{' code=CodeBlock '}';
 
 Begin:
-	'BEGIN'  '{' code=CodeBlock '}'
-;
+	'BEGIN' '{' code=CodeBlock '}';
 
 Close:
-	'CLOSE'  '{' code=CodeBlock '}'
-;
+	'CLOSE' '{' code=CodeBlock '}';
 
 Properties:
-	'PROPERTY'	property=PropertyList;
+	'PROPERTY' property=PropertyList;
 
 PropertyList:
-props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? & props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'?
-;
+	props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? &
+	props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'?;
+
+NodePropertyList:
+	props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? &
+	props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'?
+	& props+='IN'? & props+='OUT'? & props+='SYN'? & props+='INH'? & props+='REV'?;
 
 Declare:
-	'DECLARE'  nodes+=DeclareNode*
-;
+	'DECLARE' nodes+=DeclareNode*;
 
 DeclareNode:
-	names+=NodeName+ type=("="|":") part+=NodePart*  "." 
-;
+	names+=NodeName+ type=("=" | ":") part+=NodePart* ".";
 
 Rule:
-	'RULE'  nodes+=RootNode*
-;
+	'RULE' nodes+=RootNode*;
 
 RootNode:
-	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart*  extension=Extensions? '.'
-;
+	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* extension=Extensions? '.';
 
 BaseTypes:
-	"<-" names+=[NodeName]*
-;
+	"<-" names+=[NodeName]*;
 
 Extensions:
-	"<" nodes=RootNode* ">"
-;
+	"<" nodes=RootNode* ">";
 
 NodePart:
-	child=ChildNode | attribute=NodeAttribute
-;
+	child=ChildNode properties=NodePropertyList? | attribute=NodeAttribute;
 
 ChildNode:
-	(selector=ID ':')? type=ID 
-;
+	(selector=ID ':')? type=ID;
 
 NodeAttribute:
-	'[' attribute=ID  ( ':' type=ID )? property=PropertyList']'
-;
+	'[' attribute=ID (':' type=ID)? (properties=NodePropertyList | ":=" expression=TargetCodeExpression)? ']';
 
 NodeName:
-	name=(ID|STRING)
-;
+	name=(ID | STRING);
 
- NodeType:
-  "=" | ":" | ":="
-;
+NodeType:
+	"=" | ":" | ":=";
 
 CodeBlock:
-	(CodeWall | '{' CodeBlock '}')*;
+	(wall+=(CodeWall|"["|"]") | '{' block+=CodeBlock '}')*;
 
 CodeWall:
 //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
 	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
 	| ':' | '!' | '=' | ',';
 
-
+TargetCodeExpression:
+	code+=CodeWall*;	
 
 	
 	
