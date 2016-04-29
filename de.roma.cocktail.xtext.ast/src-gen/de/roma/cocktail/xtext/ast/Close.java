@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Close#getCode <em>Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getClose()
  * @model
@@ -24,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Close extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Code</b></em>' attribute.
+   * Returns the value of the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Code</em>' attribute isn't clear,
+   * If the meaning of the '<em>Code</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Code</em>' attribute.
-   * @see #setCode(String)
+   * @return the value of the '<em>Code</em>' containment reference.
+   * @see #setCode(CodeBlock)
    * @see de.roma.cocktail.xtext.ast.AstPackage#getClose_Code()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getCode();
+  CodeBlock getCode();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Close#getCode <em>Code</em>}' attribute.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Close#getCode <em>Code</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Code</em>' attribute.
+   * @param value the new value of the '<em>Code</em>' containment reference.
    * @see #getCode()
    * @generated
    */
-  void setCode(String value);
+  void setCode(CodeBlock value);
 
 } // Close

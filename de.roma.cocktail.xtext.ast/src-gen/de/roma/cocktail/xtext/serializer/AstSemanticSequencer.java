@@ -9,6 +9,8 @@ import de.roma.cocktail.xtext.ast.BaseTypes;
 import de.roma.cocktail.xtext.ast.Begin;
 import de.roma.cocktail.xtext.ast.ChildNode;
 import de.roma.cocktail.xtext.ast.Close;
+import de.roma.cocktail.xtext.ast.CodeBlock;
+import de.roma.cocktail.xtext.ast.Codes;
 import de.roma.cocktail.xtext.ast.Declare;
 import de.roma.cocktail.xtext.ast.DeclareNode;
 import de.roma.cocktail.xtext.ast.Export;
@@ -17,14 +19,18 @@ import de.roma.cocktail.xtext.ast.Global;
 import de.roma.cocktail.xtext.ast.Import;
 import de.roma.cocktail.xtext.ast.Local;
 import de.roma.cocktail.xtext.ast.Model;
-import de.roma.cocktail.xtext.ast.Module;
+import de.roma.cocktail.xtext.ast.ModuleName;
+import de.roma.cocktail.xtext.ast.Modules;
 import de.roma.cocktail.xtext.ast.NodeAttribute;
 import de.roma.cocktail.xtext.ast.NodeName;
 import de.roma.cocktail.xtext.ast.NodePart;
+import de.roma.cocktail.xtext.ast.NodePropertyList;
 import de.roma.cocktail.xtext.ast.Properties;
 import de.roma.cocktail.xtext.ast.PropertyList;
 import de.roma.cocktail.xtext.ast.RootNode;
 import de.roma.cocktail.xtext.ast.Rule;
+import de.roma.cocktail.xtext.ast.Specification;
+import de.roma.cocktail.xtext.ast.TargetCodeExpression;
 import de.roma.cocktail.xtext.ast.Tree;
 import de.roma.cocktail.xtext.services.AstGrammarAccess;
 import java.util.Set;
@@ -64,6 +70,12 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case AstPackage.CLOSE:
 				sequence_Close(context, (Close) semanticObject); 
 				return; 
+			case AstPackage.CODE_BLOCK:
+				sequence_CodeBlock(context, (CodeBlock) semanticObject); 
+				return; 
+			case AstPackage.CODES:
+				sequence_Codes(context, (Codes) semanticObject); 
+				return; 
 			case AstPackage.DECLARE:
 				sequence_Declare(context, (Declare) semanticObject); 
 				return; 
@@ -88,8 +100,11 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case AstPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case AstPackage.MODULE:
-				sequence_Module(context, (Module) semanticObject); 
+			case AstPackage.MODULE_NAME:
+				sequence_ModuleName(context, (ModuleName) semanticObject); 
+				return; 
+			case AstPackage.MODULES:
+				sequence_Modules(context, (Modules) semanticObject); 
 				return; 
 			case AstPackage.NODE_ATTRIBUTE:
 				sequence_NodeAttribute(context, (NodeAttribute) semanticObject); 
@@ -99,6 +114,9 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AstPackage.NODE_PART:
 				sequence_NodePart(context, (NodePart) semanticObject); 
+				return; 
+			case AstPackage.NODE_PROPERTY_LIST:
+				sequence_NodePropertyList(context, (NodePropertyList) semanticObject); 
 				return; 
 			case AstPackage.PROPERTIES:
 				sequence_Properties(context, (Properties) semanticObject); 
@@ -111,6 +129,12 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AstPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
+			case AstPackage.SPECIFICATION:
+				sequence_Specification(context, (Specification) semanticObject); 
+				return; 
+			case AstPackage.TARGET_CODE_EXPRESSION:
+				sequence_TargetCodeExpression(context, (TargetCodeExpression) semanticObject); 
 				return; 
 			case AstPackage.TREE:
 				sequence_Tree(context, (Tree) semanticObject); 
@@ -182,6 +206,37 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     CodeBlock returns CodeBlock
+	 *
+	 * Constraint:
+	 *     (wall+=CodeWall | wall+='[' | wall+=']' | block+=CodeBlock)+
+	 */
+	protected void sequence_CodeBlock(ISerializationContext context, CodeBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Codes returns Codes
+	 *
+	 * Constraint:
+	 *     (
+	 *         imp=Import | 
+	 *         exp=Export | 
+	 *         glo=Global | 
+	 *         loc=Local | 
+	 *         beg=Begin | 
+	 *         clo=Close
+	 *     )+
+	 */
+	protected void sequence_Codes(ISerializationContext context, Codes semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DeclareNode returns DeclareNode
 	 *
 	 * Constraint:
@@ -227,7 +282,7 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Extensions returns Extensions
 	 *
 	 * Constraint:
-	 *     nodes=RootNode+
+	 *     nodes+=RootNode+
 	 */
 	protected void sequence_Extensions(ISerializationContext context, Extensions semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -293,19 +348,7 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (
-	 *         module=Module | 
-	 *         tree=Tree | 
-	 *         imp=Import | 
-	 *         exp=Export | 
-	 *         glo=Global | 
-	 *         loc=Local | 
-	 *         beg=Begin | 
-	 *         clo=Close | 
-	 *         pro=Properties | 
-	 *         rul=Rule | 
-	 *         dec=Declare
-	 *     )+
+	 *     ((sepcification=Specification modules+=Modules+) | modules+=Modules+)?
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -314,18 +357,42 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Module returns Module
+	 *     ModuleName returns ModuleName
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_Module(ISerializationContext context, Module semanticObject) {
+	protected void sequence_ModuleName(ISerializationContext context, ModuleName semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.MODULE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.MODULE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.MODULE_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.MODULE_NAME__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModuleAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getModuleNameAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Modules returns Modules
+	 *
+	 * Constraint:
+	 *     (moduleName=ModuleName specification=Specification moduleNameEnd=[ModuleName|ID])
+	 */
+	protected void sequence_Modules(ISerializationContext context, Modules semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.MODULES__MODULE_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.MODULES__MODULE_NAME));
+			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.MODULES__SPECIFICATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.MODULES__SPECIFICATION));
+			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.MODULES__MODULE_NAME_END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.MODULES__MODULE_NAME_END));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModulesAccess().getModuleNameModuleNameParserRuleCall_1_0(), semanticObject.getModuleName());
+		feeder.accept(grammarAccess.getModulesAccess().getSpecificationSpecificationParserRuleCall_2_0(), semanticObject.getSpecification());
+		feeder.accept(grammarAccess.getModulesAccess().getModuleNameEndModuleNameIDTerminalRuleCall_4_0_1(), semanticObject.getModuleNameEnd());
 		feeder.finish();
 	}
 	
@@ -335,7 +402,7 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NodeAttribute returns NodeAttribute
 	 *
 	 * Constraint:
-	 *     (attribute=ID type=ID? property=PropertyList)
+	 *     (attribute=ID type=ID? (properties=NodePropertyList | expression=TargetCodeExpression)?)
 	 */
 	protected void sequence_NodeAttribute(ISerializationContext context, NodeAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -359,9 +426,35 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NodePart returns NodePart
 	 *
 	 * Constraint:
-	 *     (child=ChildNode | attribute=NodeAttribute)
+	 *     ((child=ChildNode properties=NodePropertyList) | attribute=NodeAttribute)
 	 */
 	protected void sequence_NodePart(ISerializationContext context, NodePart semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NodePropertyList returns NodePropertyList
+	 *
+	 * Constraint:
+	 *     (
+	 *         props+='INPUT' | 
+	 *         props+='OUTPUT' | 
+	 *         props+='SYNTHESIZED' | 
+	 *         props+='INHERITED' | 
+	 *         props+='THREAD' | 
+	 *         props+='REVERSE' | 
+	 *         props+='IGNORE' | 
+	 *         props+='VIRTUAL' | 
+	 *         props+='IN' | 
+	 *         props+='OUT' | 
+	 *         props+='SYN' | 
+	 *         props+='INH' | 
+	 *         props+='REV'
+	 *     )+
+	 */
+	protected void sequence_NodePropertyList(ISerializationContext context, NodePropertyList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -431,19 +524,37 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Specification returns Specification
+	 *
+	 * Constraint:
+	 *     (tree=Tree code=Codes properties=Properties? declare=Declare? rules=Rule?)
+	 */
+	protected void sequence_Specification(ISerializationContext context, Specification semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TargetCodeExpression returns TargetCodeExpression
+	 *
+	 * Constraint:
+	 *     code+=CodeWall+
+	 */
+	protected void sequence_TargetCodeExpression(ISerializationContext context, TargetCodeExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Tree returns Tree
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID prefix=ID? subUnits+=ID*)
 	 */
 	protected void sequence_Tree(ISerializationContext context, Tree semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AstPackage.Literals.TREE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AstPackage.Literals.TREE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTreeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

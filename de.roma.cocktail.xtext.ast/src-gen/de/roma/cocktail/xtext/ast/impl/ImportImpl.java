@@ -4,11 +4,14 @@
 package de.roma.cocktail.xtext.ast.impl;
 
 import de.roma.cocktail.xtext.ast.AstPackage;
+import de.roma.cocktail.xtext.ast.CodeBlock;
 import de.roma.cocktail.xtext.ast.Import;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -19,34 +22,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ImportImpl#getCode <em>Code</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 {
   /**
-   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * The cached value of the '{@link #getCode() <em>Code</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCode()
    * @generated
    * @ordered
    */
-  protected static final String CODE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCode()
-   * @generated
-   * @ordered
-   */
-  protected String code = CODE_EDEFAULT;
+  protected CodeBlock code;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +67,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCode()
+  public CodeBlock getCode()
   {
     return code;
   }
@@ -84,12 +77,53 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCode(String newCode)
+  public NotificationChain basicSetCode(CodeBlock newCode, NotificationChain msgs)
   {
-    String oldCode = code;
+    CodeBlock oldCode = code;
     code = newCode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.IMPORT__CODE, oldCode, code));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.IMPORT__CODE, oldCode, newCode);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCode(CodeBlock newCode)
+  {
+    if (newCode != code)
+    {
+      NotificationChain msgs = null;
+      if (code != null)
+        msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.IMPORT__CODE, null, msgs);
+      if (newCode != null)
+        msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.IMPORT__CODE, null, msgs);
+      msgs = basicSetCode(newCode, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.IMPORT__CODE, newCode, newCode));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AstPackage.IMPORT__CODE:
+        return basicSetCode(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -119,7 +153,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     switch (featureID)
     {
       case AstPackage.IMPORT__CODE:
-        setCode((String)newValue);
+        setCode((CodeBlock)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,7 +170,7 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     switch (featureID)
     {
       case AstPackage.IMPORT__CODE:
-        setCode(CODE_EDEFAULT);
+        setCode((CodeBlock)null);
         return;
     }
     super.eUnset(featureID);
@@ -153,26 +187,9 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     switch (featureID)
     {
       case AstPackage.IMPORT__CODE:
-        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+        return code != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (code: ");
-    result.append(code);
-    result.append(')');
-    return result.toString();
   }
 
 } //ImportImpl

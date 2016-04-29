@@ -12,11 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getChild <em>Child</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getAttribute <em>Attribute</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getNodePart()
  * @model
@@ -49,6 +50,32 @@ public interface NodePart extends EObject
    * @generated
    */
   void setChild(ChildNode value);
+
+  /**
+   * Returns the value of the '<em><b>Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Properties</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Properties</em>' containment reference.
+   * @see #setProperties(NodePropertyList)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getNodePart_Properties()
+   * @model containment="true"
+   * @generated
+   */
+  NodePropertyList getProperties();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.NodePart#getProperties <em>Properties</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Properties</em>' containment reference.
+   * @see #getProperties()
+   * @generated
+   */
+  void setProperties(NodePropertyList value);
 
   /**
    * Returns the value of the '<em><b>Attribute</b></em>' containment reference.

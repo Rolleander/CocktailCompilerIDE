@@ -81,9 +81,24 @@ public class AstAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseModule(Module object)
+      public Adapter caseModuleName(ModuleName object)
       {
-        return createModuleAdapter();
+        return createModuleNameAdapter();
+      }
+      @Override
+      public Adapter caseModules(Modules object)
+      {
+        return createModulesAdapter();
+      }
+      @Override
+      public Adapter caseSpecification(Specification object)
+      {
+        return createSpecificationAdapter();
+      }
+      @Override
+      public Adapter caseCodes(Codes object)
+      {
+        return createCodesAdapter();
       }
       @Override
       public Adapter caseTree(Tree object)
@@ -129,6 +144,11 @@ public class AstAdapterFactory extends AdapterFactoryImpl
       public Adapter casePropertyList(PropertyList object)
       {
         return createPropertyListAdapter();
+      }
+      @Override
+      public Adapter caseNodePropertyList(NodePropertyList object)
+      {
+        return createNodePropertyListAdapter();
       }
       @Override
       public Adapter caseDeclare(Declare object)
@@ -181,6 +201,16 @@ public class AstAdapterFactory extends AdapterFactoryImpl
         return createNodeNameAdapter();
       }
       @Override
+      public Adapter caseCodeBlock(CodeBlock object)
+      {
+        return createCodeBlockAdapter();
+      }
+      @Override
+      public Adapter caseTargetCodeExpression(TargetCodeExpression object)
+      {
+        return createTargetCodeExpressionAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -218,16 +248,61 @@ public class AstAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Module <em>Module</em>}'.
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.ModuleName <em>Module Name</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.roma.cocktail.xtext.ast.Module
+   * @see de.roma.cocktail.xtext.ast.ModuleName
    * @generated
    */
-  public Adapter createModuleAdapter()
+  public Adapter createModuleNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Modules <em>Modules</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Modules
+   * @generated
+   */
+  public Adapter createModulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Specification <em>Specification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Specification
+   * @generated
+   */
+  public Adapter createSpecificationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.Codes <em>Codes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.Codes
+   * @generated
+   */
+  public Adapter createCodesAdapter()
   {
     return null;
   }
@@ -363,6 +438,21 @@ public class AstAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPropertyListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.NodePropertyList <em>Node Property List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.NodePropertyList
+   * @generated
+   */
+  public Adapter createNodePropertyListAdapter()
   {
     return null;
   }
@@ -513,6 +603,36 @@ public class AstAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNodeNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.CodeBlock
+   * @generated
+   */
+  public Adapter createCodeBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.roma.cocktail.xtext.ast.TargetCodeExpression <em>Target Code Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.roma.cocktail.xtext.ast.TargetCodeExpression
+   * @generated
+   */
+  public Adapter createTargetCodeExpressionAdapter()
   {
     return null;
   }

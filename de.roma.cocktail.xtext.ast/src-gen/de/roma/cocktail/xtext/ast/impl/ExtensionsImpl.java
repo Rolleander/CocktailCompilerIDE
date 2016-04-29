@@ -7,14 +7,19 @@ import de.roma.cocktail.xtext.ast.AstPackage;
 import de.roma.cocktail.xtext.ast.Extensions;
 import de.roma.cocktail.xtext.ast.RootNode;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,24 +27,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ExtensionsImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Extensions
 {
   /**
-   * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference.
+   * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNodes()
    * @generated
    * @ordered
    */
-  protected RootNode nodes;
+  protected EList<RootNode> nodes;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,47 +72,13 @@ public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Exte
    * <!-- end-user-doc -->
    * @generated
    */
-  public RootNode getNodes()
+  public EList<RootNode> getNodes()
   {
+    if (nodes == null)
+    {
+      nodes = new EObjectContainmentEList<RootNode>(RootNode.class, this, AstPackage.EXTENSIONS__NODES);
+    }
     return nodes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNodes(RootNode newNodes, NotificationChain msgs)
-  {
-    RootNode oldNodes = nodes;
-    nodes = newNodes;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.EXTENSIONS__NODES, oldNodes, newNodes);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNodes(RootNode newNodes)
-  {
-    if (newNodes != nodes)
-    {
-      NotificationChain msgs = null;
-      if (nodes != null)
-        msgs = ((InternalEObject)nodes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.EXTENSIONS__NODES, null, msgs);
-      if (newNodes != null)
-        msgs = ((InternalEObject)newNodes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.EXTENSIONS__NODES, null, msgs);
-      msgs = basicSetNodes(newNodes, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.EXTENSIONS__NODES, newNodes, newNodes));
   }
 
   /**
@@ -121,7 +92,7 @@ public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Exte
     switch (featureID)
     {
       case AstPackage.EXTENSIONS__NODES:
-        return basicSetNodes(null, msgs);
+        return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -147,13 +118,15 @@ public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Exte
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case AstPackage.EXTENSIONS__NODES:
-        setNodes((RootNode)newValue);
+        getNodes().clear();
+        getNodes().addAll((Collection<? extends RootNode>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,7 +143,7 @@ public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Exte
     switch (featureID)
     {
       case AstPackage.EXTENSIONS__NODES:
-        setNodes((RootNode)null);
+        getNodes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -187,7 +160,7 @@ public class ExtensionsImpl extends MinimalEObjectImpl.Container implements Exte
     switch (featureID)
     {
       case AstPackage.EXTENSIONS__NODES:
-        return nodes != null;
+        return nodes != null && !nodes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

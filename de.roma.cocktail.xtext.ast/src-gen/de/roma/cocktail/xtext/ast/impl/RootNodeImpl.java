@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.RootNodeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.RootNodeImpl#getBaseTypes <em>Base Types</em>}</li>
@@ -40,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.RootNodeImpl#getPart <em>Part</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.RootNodeImpl#getExtension <em>Extension</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

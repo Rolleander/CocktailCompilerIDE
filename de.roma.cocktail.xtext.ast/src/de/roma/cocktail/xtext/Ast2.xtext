@@ -1,0 +1,113 @@
+grammar de.roma.cocktail.xtext.Ast with org.eclipse.xtext.common.Terminals
+
+generate ast "http://www.roma.de/cocktail/xtext/Ast"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	sepcification=Specification? 
+	//modules+=Modules* 
+	;
+	
+ModuleName:
+	name=ID|STRING;
+	
+Modules:
+	'MODULE' moduleName=ModuleName specification=Specification 'END' moduleNameEnd=[ModuleName]
+;
+
+Specification:
+	tree=Tree
+	properties=Properties
+	declare=Declare
+	rules=Rule;
+
+Codes:
+	imp=Import?
+	& exp=Export?
+	& glo=Global?
+	& loc=Local?
+	& beg=Begin?
+	& clo=Close?;
+
+Tree:
+	'TREE' name=ID ('PREFIX' prefix=ID)? ('SUBUNIT' | 'VIEW' subUnits+=ID)*;
+
+Import:
+	'IMPORT' '{' code=CodeBlock '}';
+
+Export:
+	'EXPORT' '{' code=CodeBlock '}';
+
+Global:
+	'GLOBAL' '{' code=CodeBlock '}';
+
+Local:
+	'LOCAL' '{' code=CodeBlock '}';
+
+Begin:
+	'BEGIN' '{' code=CodeBlock '}';
+
+Close:
+	'CLOSE' '{' code=CodeBlock '}';
+
+Properties:
+	'PROPERTY' property=PropertyList;
+
+PropertyList:
+	props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? &
+	props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'?;
+
+NodePropertyList:
+	props+='INPUT'? & props+='OUTPUT'? & props+='SYNTHESIZED'? & props+='INHERITED'? & props+='THREAD'? &
+	props+='REVERSE'? & props+='IGNORE'? & props+='VIRTUAL'? & props+='IN'? & props+='OUT'? & props+='SYN'? &
+	props+='INH'? & props+='REV'?;
+
+Declare:
+	'DECLARE' nodes+=DeclareNode*;
+
+DeclareNode:
+	names+=NodeName+ type=("=" | ":") part+=NodePart* ".";
+
+Rule:
+	'RULE' nodes+=RootNode*;
+
+RootNode:
+	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* 
+	extension=Extensions? 
+	'.';
+
+BaseTypes:
+	"<-" names+=[NodeName]*;
+
+Extensions:
+	"<" nodes=RootNode* ">";
+
+NodePart:
+	(child=ChildNode properties=NodePropertyList?) | attribute=NodeAttribute;
+
+ChildNode:
+	(selector=ID ':')? type=ID;
+
+NodeAttribute:
+	'[' attribute=ID (':' type=ID)? (properties=NodePropertyList| ":=" expression=TargetCodeExpression )? ']';
+
+NodeName:
+	name=(ID | STRING);
+
+NodeType:
+	"=" | ":" | ":=";
+
+CodeBlock:
+	(wall+=CodeWall  | '{' block+=CodeBlock '}')*;
+
+CodeWall:
+//(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
+//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
+//	| ':' | '!' | '=' | ',';
+ "Hallo";
+
+TargetCodeExpression:
+	code+=CodeWall*;	
+
+	
+	

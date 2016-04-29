@@ -3,6 +3,8 @@
  */
 package de.roma.cocktail.xtext.ast;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,10 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getName <em>Name</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getSubUnits <em>Sub Units</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getTree()
  * @model
@@ -48,5 +52,47 @@ public interface Tree extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Prefix</em>' attribute.
+   * @see #setPrefix(String)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getTree_Prefix()
+   * @model
+   * @generated
+   */
+  String getPrefix();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Tree#getPrefix <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Prefix</em>' attribute.
+   * @see #getPrefix()
+   * @generated
+   */
+  void setPrefix(String value);
+
+  /**
+   * Returns the value of the '<em><b>Sub Units</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sub Units</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sub Units</em>' attribute list.
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getTree_SubUnits()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getSubUnits();
 
 } // Tree

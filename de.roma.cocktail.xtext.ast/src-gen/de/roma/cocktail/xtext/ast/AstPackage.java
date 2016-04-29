@@ -68,103 +68,22 @@ public interface AstPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Module</b></em>' containment reference.
+   * The feature id for the '<em><b>Sepcification</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__MODULE = 0;
+  int MODEL__SEPCIFICATION = 0;
 
   /**
-   * The feature id for the '<em><b>Tree</b></em>' containment reference.
+   * The feature id for the '<em><b>Modules</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__TREE = 1;
-
-  /**
-   * The feature id for the '<em><b>Imp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__IMP = 2;
-
-  /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__EXP = 3;
-
-  /**
-   * The feature id for the '<em><b>Glo</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__GLO = 4;
-
-  /**
-   * The feature id for the '<em><b>Loc</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__LOC = 5;
-
-  /**
-   * The feature id for the '<em><b>Beg</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__BEG = 6;
-
-  /**
-   * The feature id for the '<em><b>Clo</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__CLO = 7;
-
-  /**
-   * The feature id for the '<em><b>Pro</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PRO = 8;
-
-  /**
-   * The feature id for the '<em><b>Rul</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__RUL = 9;
-
-  /**
-   * The feature id for the '<em><b>Dec</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__DEC = 10;
+  int MODEL__MODULES = 1;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -173,17 +92,17 @@ public interface AstPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 11;
+  int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ModuleImpl <em>Module</em>}' class.
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ModuleNameImpl <em>Module Name</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.roma.cocktail.xtext.ast.impl.ModuleImpl
-   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModule()
+   * @see de.roma.cocktail.xtext.ast.impl.ModuleNameImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModuleName()
    * @generated
    */
-  int MODULE = 1;
+  int MODULE_NAME = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -192,16 +111,199 @@ public interface AstPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__NAME = 0;
+  int MODULE_NAME__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Module</em>' class.
+   * The number of structural features of the '<em>Module Name</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = 1;
+  int MODULE_NAME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ModulesImpl <em>Modules</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.ModulesImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModules()
+   * @generated
+   */
+  int MODULES = 2;
+
+  /**
+   * The feature id for the '<em><b>Module Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES__MODULE_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Specification</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES__SPECIFICATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Module Name End</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES__MODULE_NAME_END = 2;
+
+  /**
+   * The number of structural features of the '<em>Modules</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULES_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl <em>Specification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.SpecificationImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getSpecification()
+   * @generated
+   */
+  int SPECIFICATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Tree</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION__TREE = 0;
+
+  /**
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION__CODE = 1;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION__PROPERTIES = 2;
+
+  /**
+   * The feature id for the '<em><b>Declare</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION__DECLARE = 3;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION__RULES = 4;
+
+  /**
+   * The number of structural features of the '<em>Specification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFICATION_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.CodesImpl <em>Codes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.CodesImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getCodes()
+   * @generated
+   */
+  int CODES = 4;
+
+  /**
+   * The feature id for the '<em><b>Imp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__IMP = 0;
+
+  /**
+   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__EXP = 1;
+
+  /**
+   * The feature id for the '<em><b>Glo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__GLO = 2;
+
+  /**
+   * The feature id for the '<em><b>Loc</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__LOC = 3;
+
+  /**
+   * The feature id for the '<em><b>Beg</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__BEG = 4;
+
+  /**
+   * The feature id for the '<em><b>Clo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES__CLO = 5;
+
+  /**
+   * The number of structural features of the '<em>Codes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODES_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.TreeImpl <em>Tree</em>}' class.
@@ -211,7 +313,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getTree()
    * @generated
    */
-  int TREE = 2;
+  int TREE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -223,13 +325,31 @@ public interface AstPackage extends EPackage
   int TREE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREE__PREFIX = 1;
+
+  /**
+   * The feature id for the '<em><b>Sub Units</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREE__SUB_UNITS = 2;
+
+  /**
    * The number of structural features of the '<em>Tree</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TREE_FEATURE_COUNT = 1;
+  int TREE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ImportImpl <em>Import</em>}' class.
@@ -239,10 +359,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 3;
+  int IMPORT = 6;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -267,10 +387,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getExport()
    * @generated
    */
-  int EXPORT = 4;
+  int EXPORT = 7;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -295,10 +415,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getGlobal()
    * @generated
    */
-  int GLOBAL = 5;
+  int GLOBAL = 8;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -323,10 +443,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getLocal()
    * @generated
    */
-  int LOCAL = 6;
+  int LOCAL = 9;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -351,10 +471,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getBegin()
    * @generated
    */
-  int BEGIN = 7;
+  int BEGIN = 10;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -379,10 +499,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getClose()
    * @generated
    */
-  int CLOSE = 8;
+  int CLOSE = 11;
 
   /**
-   * The feature id for the '<em><b>Code</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -407,7 +527,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getProperties()
    * @generated
    */
-  int PROPERTIES = 9;
+  int PROPERTIES = 12;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' containment reference.
@@ -435,7 +555,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getPropertyList()
    * @generated
    */
-  int PROPERTY_LIST = 10;
+  int PROPERTY_LIST = 13;
 
   /**
    * The feature id for the '<em><b>Props</b></em>' attribute list.
@@ -456,6 +576,34 @@ public interface AstPackage extends EPackage
   int PROPERTY_LIST_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.NodePropertyListImpl <em>Node Property List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.NodePropertyListImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getNodePropertyList()
+   * @generated
+   */
+  int NODE_PROPERTY_LIST = 14;
+
+  /**
+   * The feature id for the '<em><b>Props</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_PROPERTY_LIST__PROPS = 0;
+
+  /**
+   * The number of structural features of the '<em>Node Property List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_PROPERTY_LIST_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.DeclareImpl <em>Declare</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -463,7 +611,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getDeclare()
    * @generated
    */
-  int DECLARE = 11;
+  int DECLARE = 15;
 
   /**
    * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -491,7 +639,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getDeclareNode()
    * @generated
    */
-  int DECLARE_NODE = 12;
+  int DECLARE_NODE = 16;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' containment reference list.
@@ -537,7 +685,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getRule()
    * @generated
    */
-  int RULE = 13;
+  int RULE = 17;
 
   /**
    * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -565,7 +713,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getRootNode()
    * @generated
    */
-  int ROOT_NODE = 14;
+  int ROOT_NODE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -629,7 +777,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getBaseTypes()
    * @generated
    */
-  int BASE_TYPES = 15;
+  int BASE_TYPES = 19;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' reference list.
@@ -657,10 +805,10 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getExtensions()
    * @generated
    */
-  int EXTENSIONS = 16;
+  int EXTENSIONS = 20;
 
   /**
-   * The feature id for the '<em><b>Nodes</b></em>' containment reference.
+   * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -685,7 +833,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getNodePart()
    * @generated
    */
-  int NODE_PART = 17;
+  int NODE_PART = 21;
 
   /**
    * The feature id for the '<em><b>Child</b></em>' containment reference.
@@ -697,13 +845,22 @@ public interface AstPackage extends EPackage
   int NODE_PART__CHILD = 0;
 
   /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_PART__PROPERTIES = 1;
+
+  /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_PART__ATTRIBUTE = 1;
+  int NODE_PART__ATTRIBUTE = 2;
 
   /**
    * The number of structural features of the '<em>Node Part</em>' class.
@@ -712,7 +869,7 @@ public interface AstPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_PART_FEATURE_COUNT = 2;
+  int NODE_PART_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ChildNodeImpl <em>Child Node</em>}' class.
@@ -722,7 +879,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getChildNode()
    * @generated
    */
-  int CHILD_NODE = 18;
+  int CHILD_NODE = 22;
 
   /**
    * The feature id for the '<em><b>Selector</b></em>' attribute.
@@ -759,7 +916,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getNodeAttribute()
    * @generated
    */
-  int NODE_ATTRIBUTE = 19;
+  int NODE_ATTRIBUTE = 23;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' attribute.
@@ -780,13 +937,22 @@ public interface AstPackage extends EPackage
   int NODE_ATTRIBUTE__TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Property</b></em>' containment reference.
+   * The feature id for the '<em><b>Properties</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NODE_ATTRIBUTE__PROPERTY = 2;
+  int NODE_ATTRIBUTE__PROPERTIES = 2;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NODE_ATTRIBUTE__EXPRESSION = 3;
 
   /**
    * The number of structural features of the '<em>Node Attribute</em>' class.
@@ -795,7 +961,7 @@ public interface AstPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NODE_ATTRIBUTE_FEATURE_COUNT = 3;
+  int NODE_ATTRIBUTE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.NodeNameImpl <em>Node Name</em>}' class.
@@ -805,7 +971,7 @@ public interface AstPackage extends EPackage
    * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getNodeName()
    * @generated
    */
-  int NODE_NAME = 20;
+  int NODE_NAME = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -825,6 +991,71 @@ public interface AstPackage extends EPackage
    */
   int NODE_NAME_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.CodeBlockImpl <em>Code Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.CodeBlockImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getCodeBlock()
+   * @generated
+   */
+  int CODE_BLOCK = 25;
+
+  /**
+   * The feature id for the '<em><b>Wall</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__WALL = 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK__BLOCK = 1;
+
+  /**
+   * The number of structural features of the '<em>Code Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.TargetCodeExpressionImpl <em>Target Code Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.roma.cocktail.xtext.ast.impl.TargetCodeExpressionImpl
+   * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getTargetCodeExpression()
+   * @generated
+   */
+  int TARGET_CODE_EXPRESSION = 26;
+
+  /**
+   * The feature id for the '<em><b>Code</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_CODE_EXPRESSION__CODE = 0;
+
+  /**
+   * The number of structural features of the '<em>Target Code Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_CODE_EXPRESSION_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Model <em>Model</em>}'.
@@ -837,146 +1068,231 @@ public interface AstPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getModule <em>Module</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getSepcification <em>Sepcification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Module</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getModule()
+   * @return the meta object for the containment reference '<em>Sepcification</em>'.
+   * @see de.roma.cocktail.xtext.ast.Model#getSepcification()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Module();
+  EReference getModel_Sepcification();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getTree <em>Tree</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.ast.Model#getModules <em>Modules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Tree</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getTree()
+   * @return the meta object for the containment reference list '<em>Modules</em>'.
+   * @see de.roma.cocktail.xtext.ast.Model#getModules()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Tree();
+  EReference getModel_Modules();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getImp <em>Imp</em>}'.
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.ModuleName <em>Module Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Imp</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getImp()
-   * @see #getModel()
+   * @return the meta object for class '<em>Module Name</em>'.
+   * @see de.roma.cocktail.xtext.ast.ModuleName
    * @generated
    */
-  EReference getModel_Imp();
+  EClass getModuleName();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getExp <em>Exp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getExp()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Exp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getGlo <em>Glo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Glo</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getGlo()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Glo();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getLoc <em>Loc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Loc</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getLoc()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Loc();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getBeg <em>Beg</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Beg</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getBeg()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Beg();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getClo <em>Clo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Clo</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getClo()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Clo();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getPro <em>Pro</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pro</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getPro()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Pro();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getRul <em>Rul</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rul</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getRul()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Rul();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Model#getDec <em>Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Dec</em>'.
-   * @see de.roma.cocktail.xtext.ast.Model#getDec()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Dec();
-
-  /**
-   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Module <em>Module</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Module</em>'.
-   * @see de.roma.cocktail.xtext.ast.Module
-   * @generated
-   */
-  EClass getModule();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Module#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.ModuleName#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.roma.cocktail.xtext.ast.Module#getName()
-   * @see #getModule()
+   * @see de.roma.cocktail.xtext.ast.ModuleName#getName()
+   * @see #getModuleName()
    * @generated
    */
-  EAttribute getModule_Name();
+  EAttribute getModuleName_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Modules <em>Modules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Modules</em>'.
+   * @see de.roma.cocktail.xtext.ast.Modules
+   * @generated
+   */
+  EClass getModules();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Modules#getModuleName <em>Module Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Module Name</em>'.
+   * @see de.roma.cocktail.xtext.ast.Modules#getModuleName()
+   * @see #getModules()
+   * @generated
+   */
+  EReference getModules_ModuleName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Modules#getSpecification <em>Specification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Specification</em>'.
+   * @see de.roma.cocktail.xtext.ast.Modules#getSpecification()
+   * @see #getModules()
+   * @generated
+   */
+  EReference getModules_Specification();
+
+  /**
+   * Returns the meta object for the reference '{@link de.roma.cocktail.xtext.ast.Modules#getModuleNameEnd <em>Module Name End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Module Name End</em>'.
+   * @see de.roma.cocktail.xtext.ast.Modules#getModuleNameEnd()
+   * @see #getModules()
+   * @generated
+   */
+  EReference getModules_ModuleNameEnd();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Specification <em>Specification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Specification</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification
+   * @generated
+   */
+  EClass getSpecification();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Specification#getTree <em>Tree</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tree</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification#getTree()
+   * @see #getSpecification()
+   * @generated
+   */
+  EReference getSpecification_Tree();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Specification#getCode <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Code</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification#getCode()
+   * @see #getSpecification()
+   * @generated
+   */
+  EReference getSpecification_Code();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Specification#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Properties</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification#getProperties()
+   * @see #getSpecification()
+   * @generated
+   */
+  EReference getSpecification_Properties();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Specification#getDeclare <em>Declare</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Declare</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification#getDeclare()
+   * @see #getSpecification()
+   * @generated
+   */
+  EReference getSpecification_Declare();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Specification#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rules</em>'.
+   * @see de.roma.cocktail.xtext.ast.Specification#getRules()
+   * @see #getSpecification()
+   * @generated
+   */
+  EReference getSpecification_Rules();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Codes <em>Codes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Codes</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes
+   * @generated
+   */
+  EClass getCodes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getImp <em>Imp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Imp</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getImp()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Imp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getExp <em>Exp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Exp</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getExp()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Exp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getGlo <em>Glo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Glo</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getGlo()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Glo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getLoc <em>Loc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Loc</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getLoc()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Loc();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getBeg <em>Beg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Beg</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getBeg()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Beg();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Codes#getClo <em>Clo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Clo</em>'.
+   * @see de.roma.cocktail.xtext.ast.Codes#getClo()
+   * @see #getCodes()
+   * @generated
+   */
+  EReference getCodes_Clo();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Tree <em>Tree</em>}'.
@@ -1000,6 +1316,28 @@ public interface AstPackage extends EPackage
   EAttribute getTree_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Tree#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see de.roma.cocktail.xtext.ast.Tree#getPrefix()
+   * @see #getTree()
+   * @generated
+   */
+  EAttribute getTree_Prefix();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.ast.Tree#getSubUnits <em>Sub Units</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Sub Units</em>'.
+   * @see de.roma.cocktail.xtext.ast.Tree#getSubUnits()
+   * @see #getTree()
+   * @generated
+   */
+  EAttribute getTree_SubUnits();
+
+  /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1010,15 +1348,15 @@ public interface AstPackage extends EPackage
   EClass getImport();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Import#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Import#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Import#getCode()
    * @see #getImport()
    * @generated
    */
-  EAttribute getImport_Code();
+  EReference getImport_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Export <em>Export</em>}'.
@@ -1031,15 +1369,15 @@ public interface AstPackage extends EPackage
   EClass getExport();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Export#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Export#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Export#getCode()
    * @see #getExport()
    * @generated
    */
-  EAttribute getExport_Code();
+  EReference getExport_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Global <em>Global</em>}'.
@@ -1052,15 +1390,15 @@ public interface AstPackage extends EPackage
   EClass getGlobal();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Global#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Global#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Global#getCode()
    * @see #getGlobal()
    * @generated
    */
-  EAttribute getGlobal_Code();
+  EReference getGlobal_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Local <em>Local</em>}'.
@@ -1073,15 +1411,15 @@ public interface AstPackage extends EPackage
   EClass getLocal();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Local#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Local#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Local#getCode()
    * @see #getLocal()
    * @generated
    */
-  EAttribute getLocal_Code();
+  EReference getLocal_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Begin <em>Begin</em>}'.
@@ -1094,15 +1432,15 @@ public interface AstPackage extends EPackage
   EClass getBegin();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Begin#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Begin#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Begin#getCode()
    * @see #getBegin()
    * @generated
    */
-  EAttribute getBegin_Code();
+  EReference getBegin_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Close <em>Close</em>}'.
@@ -1115,15 +1453,15 @@ public interface AstPackage extends EPackage
   EClass getClose();
 
   /**
-   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Close#getCode <em>Code</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Close#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Code</em>'.
+   * @return the meta object for the containment reference '<em>Code</em>'.
    * @see de.roma.cocktail.xtext.ast.Close#getCode()
    * @see #getClose()
    * @generated
    */
-  EAttribute getClose_Code();
+  EReference getClose_Code();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Properties <em>Properties</em>}'.
@@ -1166,6 +1504,27 @@ public interface AstPackage extends EPackage
    * @generated
    */
   EAttribute getPropertyList_Props();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.NodePropertyList <em>Node Property List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Node Property List</em>'.
+   * @see de.roma.cocktail.xtext.ast.NodePropertyList
+   * @generated
+   */
+  EClass getNodePropertyList();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.ast.NodePropertyList#getProps <em>Props</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Props</em>'.
+   * @see de.roma.cocktail.xtext.ast.NodePropertyList#getProps()
+   * @see #getNodePropertyList()
+   * @generated
+   */
+  EAttribute getNodePropertyList_Props();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.Declare <em>Declare</em>}'.
@@ -1349,10 +1708,10 @@ public interface AstPackage extends EPackage
   EClass getExtensions();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.Extensions#getNodes <em>Nodes</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.ast.Extensions#getNodes <em>Nodes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Nodes</em>'.
+   * @return the meta object for the containment reference list '<em>Nodes</em>'.
    * @see de.roma.cocktail.xtext.ast.Extensions#getNodes()
    * @see #getExtensions()
    * @generated
@@ -1379,6 +1738,17 @@ public interface AstPackage extends EPackage
    * @generated
    */
   EReference getNodePart_Child();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.NodePart#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Properties</em>'.
+   * @see de.roma.cocktail.xtext.ast.NodePart#getProperties()
+   * @see #getNodePart()
+   * @generated
+   */
+  EReference getNodePart_Properties();
 
   /**
    * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.NodePart#getAttribute <em>Attribute</em>}'.
@@ -1456,15 +1826,26 @@ public interface AstPackage extends EPackage
   EAttribute getNodeAttribute_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperty <em>Property</em>}'.
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Property</em>'.
-   * @see de.roma.cocktail.xtext.ast.NodeAttribute#getProperty()
+   * @return the meta object for the containment reference '<em>Properties</em>'.
+   * @see de.roma.cocktail.xtext.ast.NodeAttribute#getProperties()
    * @see #getNodeAttribute()
    * @generated
    */
-  EReference getNodeAttribute_Property();
+  EReference getNodeAttribute_Properties();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see de.roma.cocktail.xtext.ast.NodeAttribute#getExpression()
+   * @see #getNodeAttribute()
+   * @generated
+   */
+  EReference getNodeAttribute_Expression();
 
   /**
    * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.NodeName <em>Node Name</em>}'.
@@ -1486,6 +1867,59 @@ public interface AstPackage extends EPackage
    * @generated
    */
   EAttribute getNodeName_Name();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.CodeBlock <em>Code Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Block</em>'.
+   * @see de.roma.cocktail.xtext.ast.CodeBlock
+   * @generated
+   */
+  EClass getCodeBlock();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.ast.CodeBlock#getWall <em>Wall</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Wall</em>'.
+   * @see de.roma.cocktail.xtext.ast.CodeBlock#getWall()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EAttribute getCodeBlock_Wall();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.roma.cocktail.xtext.ast.CodeBlock#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Block</em>'.
+   * @see de.roma.cocktail.xtext.ast.CodeBlock#getBlock()
+   * @see #getCodeBlock()
+   * @generated
+   */
+  EReference getCodeBlock_Block();
+
+  /**
+   * Returns the meta object for class '{@link de.roma.cocktail.xtext.ast.TargetCodeExpression <em>Target Code Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Target Code Expression</em>'.
+   * @see de.roma.cocktail.xtext.ast.TargetCodeExpression
+   * @generated
+   */
+  EClass getTargetCodeExpression();
+
+  /**
+   * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.ast.TargetCodeExpression#getCode <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Code</em>'.
+   * @see de.roma.cocktail.xtext.ast.TargetCodeExpression#getCode()
+   * @see #getTargetCodeExpression()
+   * @generated
+   */
+  EAttribute getTargetCodeExpression_Code();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1521,102 +1955,30 @@ public interface AstPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Module</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Sepcification</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__MODULE = eINSTANCE.getModel_Module();
+    EReference MODEL__SEPCIFICATION = eINSTANCE.getModel_Sepcification();
 
     /**
-     * The meta object literal for the '<em><b>Tree</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Modules</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__TREE = eINSTANCE.getModel_Tree();
+    EReference MODEL__MODULES = eINSTANCE.getModel_Modules();
 
     /**
-     * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.ModuleNameImpl <em>Module Name</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.ModuleNameImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModuleName()
      * @generated
      */
-    EReference MODEL__IMP = eINSTANCE.getModel_Imp();
-
-    /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__EXP = eINSTANCE.getModel_Exp();
-
-    /**
-     * The meta object literal for the '<em><b>Glo</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__GLO = eINSTANCE.getModel_Glo();
-
-    /**
-     * The meta object literal for the '<em><b>Loc</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__LOC = eINSTANCE.getModel_Loc();
-
-    /**
-     * The meta object literal for the '<em><b>Beg</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__BEG = eINSTANCE.getModel_Beg();
-
-    /**
-     * The meta object literal for the '<em><b>Clo</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__CLO = eINSTANCE.getModel_Clo();
-
-    /**
-     * The meta object literal for the '<em><b>Pro</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__PRO = eINSTANCE.getModel_Pro();
-
-    /**
-     * The meta object literal for the '<em><b>Rul</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__RUL = eINSTANCE.getModel_Rul();
-
-    /**
-     * The meta object literal for the '<em><b>Dec</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__DEC = eINSTANCE.getModel_Dec();
-
-    /**
-     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.ModuleImpl <em>Module</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.roma.cocktail.xtext.ast.impl.ModuleImpl
-     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModule()
-     * @generated
-     */
-    EClass MODULE = eINSTANCE.getModule();
+    EClass MODULE_NAME = eINSTANCE.getModuleName();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1624,7 +1986,149 @@ public interface AstPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
+    EAttribute MODULE_NAME__NAME = eINSTANCE.getModuleName_Name();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.ModulesImpl <em>Modules</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.ModulesImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getModules()
+     * @generated
+     */
+    EClass MODULES = eINSTANCE.getModules();
+
+    /**
+     * The meta object literal for the '<em><b>Module Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULES__MODULE_NAME = eINSTANCE.getModules_ModuleName();
+
+    /**
+     * The meta object literal for the '<em><b>Specification</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULES__SPECIFICATION = eINSTANCE.getModules_Specification();
+
+    /**
+     * The meta object literal for the '<em><b>Module Name End</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULES__MODULE_NAME_END = eINSTANCE.getModules_ModuleNameEnd();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl <em>Specification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.SpecificationImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getSpecification()
+     * @generated
+     */
+    EClass SPECIFICATION = eINSTANCE.getSpecification();
+
+    /**
+     * The meta object literal for the '<em><b>Tree</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFICATION__TREE = eINSTANCE.getSpecification_Tree();
+
+    /**
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFICATION__CODE = eINSTANCE.getSpecification_Code();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFICATION__PROPERTIES = eINSTANCE.getSpecification_Properties();
+
+    /**
+     * The meta object literal for the '<em><b>Declare</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFICATION__DECLARE = eINSTANCE.getSpecification_Declare();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFICATION__RULES = eINSTANCE.getSpecification_Rules();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.CodesImpl <em>Codes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.CodesImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getCodes()
+     * @generated
+     */
+    EClass CODES = eINSTANCE.getCodes();
+
+    /**
+     * The meta object literal for the '<em><b>Imp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__IMP = eINSTANCE.getCodes_Imp();
+
+    /**
+     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__EXP = eINSTANCE.getCodes_Exp();
+
+    /**
+     * The meta object literal for the '<em><b>Glo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__GLO = eINSTANCE.getCodes_Glo();
+
+    /**
+     * The meta object literal for the '<em><b>Loc</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__LOC = eINSTANCE.getCodes_Loc();
+
+    /**
+     * The meta object literal for the '<em><b>Beg</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__BEG = eINSTANCE.getCodes_Beg();
+
+    /**
+     * The meta object literal for the '<em><b>Clo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODES__CLO = eINSTANCE.getCodes_Clo();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.TreeImpl <em>Tree</em>}' class.
@@ -1645,6 +2149,22 @@ public interface AstPackage extends EPackage
     EAttribute TREE__NAME = eINSTANCE.getTree_Name();
 
     /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TREE__PREFIX = eINSTANCE.getTree_Prefix();
+
+    /**
+     * The meta object literal for the '<em><b>Sub Units</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TREE__SUB_UNITS = eINSTANCE.getTree_SubUnits();
+
+    /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.ImportImpl <em>Import</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1655,12 +2175,12 @@ public interface AstPackage extends EPackage
     EClass IMPORT = eINSTANCE.getImport();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute IMPORT__CODE = eINSTANCE.getImport_Code();
+    EReference IMPORT__CODE = eINSTANCE.getImport_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.ExportImpl <em>Export</em>}' class.
@@ -1673,12 +2193,12 @@ public interface AstPackage extends EPackage
     EClass EXPORT = eINSTANCE.getExport();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPORT__CODE = eINSTANCE.getExport_Code();
+    EReference EXPORT__CODE = eINSTANCE.getExport_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.GlobalImpl <em>Global</em>}' class.
@@ -1691,12 +2211,12 @@ public interface AstPackage extends EPackage
     EClass GLOBAL = eINSTANCE.getGlobal();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GLOBAL__CODE = eINSTANCE.getGlobal_Code();
+    EReference GLOBAL__CODE = eINSTANCE.getGlobal_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.LocalImpl <em>Local</em>}' class.
@@ -1709,12 +2229,12 @@ public interface AstPackage extends EPackage
     EClass LOCAL = eINSTANCE.getLocal();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOCAL__CODE = eINSTANCE.getLocal_Code();
+    EReference LOCAL__CODE = eINSTANCE.getLocal_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.BeginImpl <em>Begin</em>}' class.
@@ -1727,12 +2247,12 @@ public interface AstPackage extends EPackage
     EClass BEGIN = eINSTANCE.getBegin();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BEGIN__CODE = eINSTANCE.getBegin_Code();
+    EReference BEGIN__CODE = eINSTANCE.getBegin_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.CloseImpl <em>Close</em>}' class.
@@ -1745,12 +2265,12 @@ public interface AstPackage extends EPackage
     EClass CLOSE = eINSTANCE.getClose();
 
     /**
-     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLOSE__CODE = eINSTANCE.getClose_Code();
+    EReference CLOSE__CODE = eINSTANCE.getClose_Code();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.PropertiesImpl <em>Properties</em>}' class.
@@ -1787,6 +2307,24 @@ public interface AstPackage extends EPackage
      * @generated
      */
     EAttribute PROPERTY_LIST__PROPS = eINSTANCE.getPropertyList_Props();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.NodePropertyListImpl <em>Node Property List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.NodePropertyListImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getNodePropertyList()
+     * @generated
+     */
+    EClass NODE_PROPERTY_LIST = eINSTANCE.getNodePropertyList();
+
+    /**
+     * The meta object literal for the '<em><b>Props</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NODE_PROPERTY_LIST__PROPS = eINSTANCE.getNodePropertyList_Props();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.DeclareImpl <em>Declare</em>}' class.
@@ -1937,7 +2475,7 @@ public interface AstPackage extends EPackage
     EClass EXTENSIONS = eINSTANCE.getExtensions();
 
     /**
-     * The meta object literal for the '<em><b>Nodes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Nodes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1961,6 +2499,14 @@ public interface AstPackage extends EPackage
      * @generated
      */
     EReference NODE_PART__CHILD = eINSTANCE.getNodePart_Child();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE_PART__PROPERTIES = eINSTANCE.getNodePart_Properties();
 
     /**
      * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
@@ -2023,12 +2569,20 @@ public interface AstPackage extends EPackage
     EAttribute NODE_ATTRIBUTE__TYPE = eINSTANCE.getNodeAttribute_Type();
 
     /**
-     * The meta object literal for the '<em><b>Property</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference NODE_ATTRIBUTE__PROPERTY = eINSTANCE.getNodeAttribute_Property();
+    EReference NODE_ATTRIBUTE__PROPERTIES = eINSTANCE.getNodeAttribute_Properties();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NODE_ATTRIBUTE__EXPRESSION = eINSTANCE.getNodeAttribute_Expression();
 
     /**
      * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.NodeNameImpl <em>Node Name</em>}' class.
@@ -2047,6 +2601,50 @@ public interface AstPackage extends EPackage
      * @generated
      */
     EAttribute NODE_NAME__NAME = eINSTANCE.getNodeName_Name();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.CodeBlockImpl <em>Code Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.CodeBlockImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getCodeBlock()
+     * @generated
+     */
+    EClass CODE_BLOCK = eINSTANCE.getCodeBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Wall</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE_BLOCK__WALL = eINSTANCE.getCodeBlock_Wall();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CODE_BLOCK__BLOCK = eINSTANCE.getCodeBlock_Block();
+
+    /**
+     * The meta object literal for the '{@link de.roma.cocktail.xtext.ast.impl.TargetCodeExpressionImpl <em>Target Code Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.roma.cocktail.xtext.ast.impl.TargetCodeExpressionImpl
+     * @see de.roma.cocktail.xtext.ast.impl.AstPackageImpl#getTargetCodeExpression()
+     * @generated
+     */
+    EClass TARGET_CODE_EXPRESSION = eINSTANCE.getTargetCodeExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Code</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TARGET_CODE_EXPRESSION__CODE = eINSTANCE.getTargetCodeExpression_Code();
 
   }
 

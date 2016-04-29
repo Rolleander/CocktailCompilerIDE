@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ChildNodeImpl#getSelector <em>Selector</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ChildNodeImpl#getType <em>Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -3,6 +3,8 @@
  */
 package de.roma.cocktail.xtext.ast;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Extensions#getNodes <em>Nodes</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getExtensions()
  * @model
@@ -24,29 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Extensions extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Nodes</b></em>' containment reference.
+   * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
+   * The list contents are of type {@link de.roma.cocktail.xtext.ast.RootNode}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Nodes</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Nodes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Nodes</em>' containment reference.
-   * @see #setNodes(RootNode)
+   * @return the value of the '<em>Nodes</em>' containment reference list.
    * @see de.roma.cocktail.xtext.ast.AstPackage#getExtensions_Nodes()
    * @model containment="true"
    * @generated
    */
-  RootNode getNodes();
-
-  /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Extensions#getNodes <em>Nodes</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Nodes</em>' containment reference.
-   * @see #getNodes()
-   * @generated
-   */
-  void setNodes(RootNode value);
+  EList<RootNode> getNodes();
 
 } // Extensions

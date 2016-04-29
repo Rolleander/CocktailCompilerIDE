@@ -11,6 +11,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,17 +20,32 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AstSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AstGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Tree_SUBUNITKeyword_3_0_a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AstGrammarAccess) access;
+		match_Tree_SUBUNITKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getTreeAccess().getSUBUNITKeyword_3_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal STRING	: 
+	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -36,8 +53,26 @@ public class AstSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Tree_SUBUNITKeyword_3_0_a.equals(syntax))
+				emit_Tree_SUBUNITKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'SUBUNIT'*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) 'VIEW' subUnits+=ID
+	 *     name=ID (ambiguity) (rule end)
+	 *     prefix=ID (ambiguity) 'VIEW' subUnits+=ID
+	 *     prefix=ID (ambiguity) (rule end)
+	 *     subUnits+=ID (ambiguity) 'VIEW' subUnits+=ID
+	 *     subUnits+=ID (ambiguity) (rule end)
+	 */
+	protected void emit_Tree_SUBUNITKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

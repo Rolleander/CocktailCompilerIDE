@@ -51,7 +51,7 @@ public class AstSwitch<T> extends Switch<T>
    * Checks whether this is a switch for the given package.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param ePackage the package in question.
+   * @parameter ePackage the package in question.
    * @return whether this is a switch for the given package.
    * @generated
    */
@@ -80,10 +80,31 @@ public class AstSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AstPackage.MODULE:
+      case AstPackage.MODULE_NAME:
       {
-        Module module = (Module)theEObject;
-        T result = caseModule(module);
+        ModuleName moduleName = (ModuleName)theEObject;
+        T result = caseModuleName(moduleName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AstPackage.MODULES:
+      {
+        Modules modules = (Modules)theEObject;
+        T result = caseModules(modules);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AstPackage.SPECIFICATION:
+      {
+        Specification specification = (Specification)theEObject;
+        T result = caseSpecification(specification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AstPackage.CODES:
+      {
+        Codes codes = (Codes)theEObject;
+        T result = caseCodes(codes);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,6 +168,13 @@ public class AstSwitch<T> extends Switch<T>
       {
         PropertyList propertyList = (PropertyList)theEObject;
         T result = casePropertyList(propertyList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AstPackage.NODE_PROPERTY_LIST:
+      {
+        NodePropertyList nodePropertyList = (NodePropertyList)theEObject;
+        T result = caseNodePropertyList(nodePropertyList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -220,6 +248,20 @@ public class AstSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AstPackage.CODE_BLOCK:
+      {
+        CodeBlock codeBlock = (CodeBlock)theEObject;
+        T result = caseCodeBlock(codeBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AstPackage.TARGET_CODE_EXPRESSION:
+      {
+        TargetCodeExpression targetCodeExpression = (TargetCodeExpression)theEObject;
+        T result = caseTargetCodeExpression(targetCodeExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -241,17 +283,65 @@ public class AstSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Module Name</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Module Name</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModule(Module object)
+  public T caseModuleName(ModuleName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Modules</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Modules</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModules(Modules object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Specification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Specification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecification(Specification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Codes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Codes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCodes(Codes object)
   {
     return null;
   }
@@ -396,6 +486,22 @@ public class AstSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePropertyList(PropertyList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Node Property List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Node Property List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNodePropertyList(NodePropertyList object)
   {
     return null;
   }
@@ -556,6 +662,38 @@ public class AstSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNodeName(NodeName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Code Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Code Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCodeBlock(CodeBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Target Code Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Target Code Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTargetCodeExpression(TargetCodeExpression object)
   {
     return null;
   }

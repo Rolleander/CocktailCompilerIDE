@@ -6,12 +6,18 @@ package de.roma.cocktail.xtext.ast.impl;
 import de.roma.cocktail.xtext.ast.AstPackage;
 import de.roma.cocktail.xtext.ast.Tree;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,10 +25,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getSubUnits <em>Sub Units</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -47,6 +55,36 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected String prefix = PREFIX_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSubUnits() <em>Sub Units</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubUnits()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subUnits;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +135,43 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPrefix()
+  {
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrefix(String newPrefix)
+  {
+    String oldPrefix = prefix;
+    prefix = newPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.TREE__PREFIX, oldPrefix, prefix));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getSubUnits()
+  {
+    if (subUnits == null)
+    {
+      subUnits = new EDataTypeEList<String>(String.class, this, AstPackage.TREE__SUB_UNITS);
+    }
+    return subUnits;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +179,10 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
     {
       case AstPackage.TREE__NAME:
         return getName();
+      case AstPackage.TREE__PREFIX:
+        return getPrefix();
+      case AstPackage.TREE__SUB_UNITS:
+        return getSubUnits();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -113,6 +192,7 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -120,6 +200,13 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
     {
       case AstPackage.TREE__NAME:
         setName((String)newValue);
+        return;
+      case AstPackage.TREE__PREFIX:
+        setPrefix((String)newValue);
+        return;
+      case AstPackage.TREE__SUB_UNITS:
+        getSubUnits().clear();
+        getSubUnits().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +225,12 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
       case AstPackage.TREE__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case AstPackage.TREE__PREFIX:
+        setPrefix(PREFIX_EDEFAULT);
+        return;
+      case AstPackage.TREE__SUB_UNITS:
+        getSubUnits().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +247,10 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
     {
       case AstPackage.TREE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AstPackage.TREE__PREFIX:
+        return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+      case AstPackage.TREE__SUB_UNITS:
+        return subUnits != null && !subUnits.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +268,10 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", prefix: ");
+    result.append(prefix);
+    result.append(", subUnits: ");
+    result.append(subUnits);
     result.append(')');
     return result.toString();
   }

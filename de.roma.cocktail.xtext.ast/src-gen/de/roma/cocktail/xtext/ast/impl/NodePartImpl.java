@@ -7,6 +7,7 @@ import de.roma.cocktail.xtext.ast.AstPackage;
 import de.roma.cocktail.xtext.ast.ChildNode;
 import de.roma.cocktail.xtext.ast.NodeAttribute;
 import de.roma.cocktail.xtext.ast.NodePart;
+import de.roma.cocktail.xtext.ast.NodePropertyList;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -23,11 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getChild <em>Child</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -42,6 +44,16 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
    * @ordered
    */
   protected ChildNode child;
+
+  /**
+   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperties()
+   * @generated
+   * @ordered
+   */
+  protected NodePropertyList properties;
 
   /**
    * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference.
@@ -127,6 +139,54 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
    * <!-- end-user-doc -->
    * @generated
    */
+  public NodePropertyList getProperties()
+  {
+    return properties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetProperties(NodePropertyList newProperties, NotificationChain msgs)
+  {
+    NodePropertyList oldProperties = properties;
+    properties = newProperties;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.NODE_PART__PROPERTIES, oldProperties, newProperties);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProperties(NodePropertyList newProperties)
+  {
+    if (newProperties != properties)
+    {
+      NotificationChain msgs = null;
+      if (properties != null)
+        msgs = ((InternalEObject)properties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_PART__PROPERTIES, null, msgs);
+      if (newProperties != null)
+        msgs = ((InternalEObject)newProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_PART__PROPERTIES, null, msgs);
+      msgs = basicSetProperties(newProperties, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.NODE_PART__PROPERTIES, newProperties, newProperties));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NodeAttribute getAttribute()
   {
     return attribute;
@@ -182,6 +242,8 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
     {
       case AstPackage.NODE_PART__CHILD:
         return basicSetChild(null, msgs);
+      case AstPackage.NODE_PART__PROPERTIES:
+        return basicSetProperties(null, msgs);
       case AstPackage.NODE_PART__ATTRIBUTE:
         return basicSetAttribute(null, msgs);
     }
@@ -200,6 +262,8 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
     {
       case AstPackage.NODE_PART__CHILD:
         return getChild();
+      case AstPackage.NODE_PART__PROPERTIES:
+        return getProperties();
       case AstPackage.NODE_PART__ATTRIBUTE:
         return getAttribute();
     }
@@ -218,6 +282,9 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
     {
       case AstPackage.NODE_PART__CHILD:
         setChild((ChildNode)newValue);
+        return;
+      case AstPackage.NODE_PART__PROPERTIES:
+        setProperties((NodePropertyList)newValue);
         return;
       case AstPackage.NODE_PART__ATTRIBUTE:
         setAttribute((NodeAttribute)newValue);
@@ -239,6 +306,9 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
       case AstPackage.NODE_PART__CHILD:
         setChild((ChildNode)null);
         return;
+      case AstPackage.NODE_PART__PROPERTIES:
+        setProperties((NodePropertyList)null);
+        return;
       case AstPackage.NODE_PART__ATTRIBUTE:
         setAttribute((NodeAttribute)null);
         return;
@@ -258,6 +328,8 @@ public class NodePartImpl extends MinimalEObjectImpl.Container implements NodePa
     {
       case AstPackage.NODE_PART__CHILD:
         return child != null;
+      case AstPackage.NODE_PART__PROPERTIES:
+        return properties != null;
       case AstPackage.NODE_PART__ATTRIBUTE:
         return attribute != null;
     }

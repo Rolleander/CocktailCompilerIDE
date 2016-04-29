@@ -5,7 +5,8 @@ package de.roma.cocktail.xtext.ast.impl;
 
 import de.roma.cocktail.xtext.ast.AstPackage;
 import de.roma.cocktail.xtext.ast.NodeAttribute;
-import de.roma.cocktail.xtext.ast.PropertyList;
+import de.roma.cocktail.xtext.ast.NodePropertyList;
+import de.roma.cocktail.xtext.ast.TargetCodeExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,12 +23,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
@@ -74,14 +76,24 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getProperty() <em>Property</em>}' containment reference.
+   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProperty()
+   * @see #getProperties()
    * @generated
    * @ordered
    */
-  protected PropertyList property;
+  protected NodePropertyList properties;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected TargetCodeExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -155,9 +167,9 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropertyList getProperty()
+  public NodePropertyList getProperties()
   {
-    return property;
+    return properties;
   }
 
   /**
@@ -165,13 +177,13 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetProperty(PropertyList newProperty, NotificationChain msgs)
+  public NotificationChain basicSetProperties(NodePropertyList newProperties, NotificationChain msgs)
   {
-    PropertyList oldProperty = property;
-    property = newProperty;
+    NodePropertyList oldProperties = properties;
+    properties = newProperties;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__PROPERTY, oldProperty, newProperty);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__PROPERTIES, oldProperties, newProperties);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -182,20 +194,68 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProperty(PropertyList newProperty)
+  public void setProperties(NodePropertyList newProperties)
   {
-    if (newProperty != property)
+    if (newProperties != properties)
     {
       NotificationChain msgs = null;
-      if (property != null)
-        msgs = ((InternalEObject)property).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__PROPERTY, null, msgs);
-      if (newProperty != null)
-        msgs = ((InternalEObject)newProperty).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__PROPERTY, null, msgs);
-      msgs = basicSetProperty(newProperty, msgs);
+      if (properties != null)
+        msgs = ((InternalEObject)properties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__PROPERTIES, null, msgs);
+      if (newProperties != null)
+        msgs = ((InternalEObject)newProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__PROPERTIES, null, msgs);
+      msgs = basicSetProperties(newProperties, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__PROPERTY, newProperty, newProperty));
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__PROPERTIES, newProperties, newProperties));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TargetCodeExpression getExpression()
+  {
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(TargetCodeExpression newExpression, NotificationChain msgs)
+  {
+    TargetCodeExpression oldExpression = expression;
+    expression = newExpression;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(TargetCodeExpression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.NODE_ATTRIBUTE__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.NODE_ATTRIBUTE__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -208,8 +268,10 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
   {
     switch (featureID)
     {
-      case AstPackage.NODE_ATTRIBUTE__PROPERTY:
-        return basicSetProperty(null, msgs);
+      case AstPackage.NODE_ATTRIBUTE__PROPERTIES:
+        return basicSetProperties(null, msgs);
+      case AstPackage.NODE_ATTRIBUTE__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -228,8 +290,10 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
         return getAttribute();
       case AstPackage.NODE_ATTRIBUTE__TYPE:
         return getType();
-      case AstPackage.NODE_ATTRIBUTE__PROPERTY:
-        return getProperty();
+      case AstPackage.NODE_ATTRIBUTE__PROPERTIES:
+        return getProperties();
+      case AstPackage.NODE_ATTRIBUTE__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -250,8 +314,11 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
       case AstPackage.NODE_ATTRIBUTE__TYPE:
         setType((String)newValue);
         return;
-      case AstPackage.NODE_ATTRIBUTE__PROPERTY:
-        setProperty((PropertyList)newValue);
+      case AstPackage.NODE_ATTRIBUTE__PROPERTIES:
+        setProperties((NodePropertyList)newValue);
+        return;
+      case AstPackage.NODE_ATTRIBUTE__EXPRESSION:
+        setExpression((TargetCodeExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -273,8 +340,11 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
       case AstPackage.NODE_ATTRIBUTE__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case AstPackage.NODE_ATTRIBUTE__PROPERTY:
-        setProperty((PropertyList)null);
+      case AstPackage.NODE_ATTRIBUTE__PROPERTIES:
+        setProperties((NodePropertyList)null);
+        return;
+      case AstPackage.NODE_ATTRIBUTE__EXPRESSION:
+        setExpression((TargetCodeExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -294,8 +364,10 @@ public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements N
         return ATTRIBUTE_EDEFAULT == null ? attribute != null : !ATTRIBUTE_EDEFAULT.equals(attribute);
       case AstPackage.NODE_ATTRIBUTE__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case AstPackage.NODE_ATTRIBUTE__PROPERTY:
-        return property != null;
+      case AstPackage.NODE_ATTRIBUTE__PROPERTIES:
+        return properties != null;
+      case AstPackage.NODE_ATTRIBUTE__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }

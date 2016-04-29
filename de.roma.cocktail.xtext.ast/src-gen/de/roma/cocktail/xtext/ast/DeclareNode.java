@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.DeclareNode#getNames <em>Names</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.DeclareNode#getType <em>Type</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.DeclareNode#getPart <em>Part</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getDeclareNode()
  * @model

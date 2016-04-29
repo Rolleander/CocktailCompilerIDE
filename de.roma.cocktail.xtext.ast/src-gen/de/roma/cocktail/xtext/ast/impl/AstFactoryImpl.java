@@ -66,7 +66,10 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
     switch (eClass.getClassifierID())
     {
       case AstPackage.MODEL: return createModel();
-      case AstPackage.MODULE: return createModule();
+      case AstPackage.MODULE_NAME: return createModuleName();
+      case AstPackage.MODULES: return createModules();
+      case AstPackage.SPECIFICATION: return createSpecification();
+      case AstPackage.CODES: return createCodes();
       case AstPackage.TREE: return createTree();
       case AstPackage.IMPORT: return createImport();
       case AstPackage.EXPORT: return createExport();
@@ -76,6 +79,7 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
       case AstPackage.CLOSE: return createClose();
       case AstPackage.PROPERTIES: return createProperties();
       case AstPackage.PROPERTY_LIST: return createPropertyList();
+      case AstPackage.NODE_PROPERTY_LIST: return createNodePropertyList();
       case AstPackage.DECLARE: return createDeclare();
       case AstPackage.DECLARE_NODE: return createDeclareNode();
       case AstPackage.RULE: return createRule();
@@ -86,6 +90,8 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
       case AstPackage.CHILD_NODE: return createChildNode();
       case AstPackage.NODE_ATTRIBUTE: return createNodeAttribute();
       case AstPackage.NODE_NAME: return createNodeName();
+      case AstPackage.CODE_BLOCK: return createCodeBlock();
+      case AstPackage.TARGET_CODE_EXPRESSION: return createTargetCodeExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,10 +113,43 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module createModule()
+  public ModuleName createModuleName()
   {
-    ModuleImpl module = new ModuleImpl();
-    return module;
+    ModuleNameImpl moduleName = new ModuleNameImpl();
+    return moduleName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Modules createModules()
+  {
+    ModulesImpl modules = new ModulesImpl();
+    return modules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Specification createSpecification()
+  {
+    SpecificationImpl specification = new SpecificationImpl();
+    return specification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Codes createCodes()
+  {
+    CodesImpl codes = new CodesImpl();
+    return codes;
   }
 
   /**
@@ -210,6 +249,17 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
   {
     PropertyListImpl propertyList = new PropertyListImpl();
     return propertyList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NodePropertyList createNodePropertyList()
+  {
+    NodePropertyListImpl nodePropertyList = new NodePropertyListImpl();
+    return nodePropertyList;
   }
 
   /**
@@ -320,6 +370,28 @@ public class AstFactoryImpl extends EFactoryImpl implements AstFactory
   {
     NodeNameImpl nodeName = new NodeNameImpl();
     return nodeName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CodeBlock createCodeBlock()
+  {
+    CodeBlockImpl codeBlock = new CodeBlockImpl();
+    return codeBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TargetCodeExpression createTargetCodeExpression()
+  {
+    TargetCodeExpressionImpl targetCodeExpression = new TargetCodeExpressionImpl();
+    return targetCodeExpression;
   }
 
   /**

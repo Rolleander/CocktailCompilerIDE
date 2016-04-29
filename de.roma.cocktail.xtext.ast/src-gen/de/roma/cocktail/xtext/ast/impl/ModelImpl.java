@@ -4,21 +4,16 @@
 package de.roma.cocktail.xtext.ast.impl;
 
 import de.roma.cocktail.xtext.ast.AstPackage;
-import de.roma.cocktail.xtext.ast.Begin;
-import de.roma.cocktail.xtext.ast.Close;
-import de.roma.cocktail.xtext.ast.Declare;
-import de.roma.cocktail.xtext.ast.Export;
-import de.roma.cocktail.xtext.ast.Global;
-import de.roma.cocktail.xtext.ast.Import;
-import de.roma.cocktail.xtext.ast.Local;
 import de.roma.cocktail.xtext.ast.Model;
-import de.roma.cocktail.xtext.ast.Module;
-import de.roma.cocktail.xtext.ast.Properties;
-import de.roma.cocktail.xtext.ast.Rule;
-import de.roma.cocktail.xtext.ast.Tree;
+import de.roma.cocktail.xtext.ast.Modules;
+import de.roma.cocktail.xtext.ast.Specification;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,140 +21,44 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getModule <em>Module</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getTree <em>Tree</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getImp <em>Imp</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getGlo <em>Glo</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getLoc <em>Loc</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getBeg <em>Beg</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getClo <em>Clo</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getPro <em>Pro</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getRul <em>Rul</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getDec <em>Dec</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getSepcification <em>Sepcification</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModelImpl#getModules <em>Modules</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getModule() <em>Module</em>}' containment reference.
+   * The cached value of the '{@link #getSepcification() <em>Sepcification</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModule()
+   * @see #getSepcification()
    * @generated
    * @ordered
    */
-  protected Module module;
+  protected Specification sepcification;
 
   /**
-   * The cached value of the '{@link #getTree() <em>Tree</em>}' containment reference.
+   * The cached value of the '{@link #getModules() <em>Modules</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTree()
+   * @see #getModules()
    * @generated
    * @ordered
    */
-  protected Tree tree;
-
-  /**
-   * The cached value of the '{@link #getImp() <em>Imp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImp()
-   * @generated
-   * @ordered
-   */
-  protected Import imp;
-
-  /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExp()
-   * @generated
-   * @ordered
-   */
-  protected Export exp;
-
-  /**
-   * The cached value of the '{@link #getGlo() <em>Glo</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGlo()
-   * @generated
-   * @ordered
-   */
-  protected Global glo;
-
-  /**
-   * The cached value of the '{@link #getLoc() <em>Loc</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLoc()
-   * @generated
-   * @ordered
-   */
-  protected Local loc;
-
-  /**
-   * The cached value of the '{@link #getBeg() <em>Beg</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBeg()
-   * @generated
-   * @ordered
-   */
-  protected Begin beg;
-
-  /**
-   * The cached value of the '{@link #getClo() <em>Clo</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClo()
-   * @generated
-   * @ordered
-   */
-  protected Close clo;
-
-  /**
-   * The cached value of the '{@link #getPro() <em>Pro</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPro()
-   * @generated
-   * @ordered
-   */
-  protected Properties pro;
-
-  /**
-   * The cached value of the '{@link #getRul() <em>Rul</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRul()
-   * @generated
-   * @ordered
-   */
-  protected Rule rul;
-
-  /**
-   * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDec()
-   * @generated
-   * @ordered
-   */
-  protected Declare dec;
+  protected EList<Modules> modules;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,9 +86,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module getModule()
+  public Specification getSepcification()
   {
-    return module;
+    return sepcification;
   }
 
   /**
@@ -197,13 +96,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetModule(Module newModule, NotificationChain msgs)
+  public NotificationChain basicSetSepcification(Specification newSepcification, NotificationChain msgs)
   {
-    Module oldModule = module;
-    module = newModule;
+    Specification oldSepcification = sepcification;
+    sepcification = newSepcification;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__MODULE, oldModule, newModule);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__SEPCIFICATION, oldSepcification, newSepcification);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -214,20 +113,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setModule(Module newModule)
+  public void setSepcification(Specification newSepcification)
   {
-    if (newModule != module)
+    if (newSepcification != sepcification)
     {
       NotificationChain msgs = null;
-      if (module != null)
-        msgs = ((InternalEObject)module).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__MODULE, null, msgs);
-      if (newModule != null)
-        msgs = ((InternalEObject)newModule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__MODULE, null, msgs);
-      msgs = basicSetModule(newModule, msgs);
+      if (sepcification != null)
+        msgs = ((InternalEObject)sepcification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__SEPCIFICATION, null, msgs);
+      if (newSepcification != null)
+        msgs = ((InternalEObject)newSepcification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__SEPCIFICATION, null, msgs);
+      msgs = basicSetSepcification(newSepcification, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__MODULE, newModule, newModule));
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__SEPCIFICATION, newSepcification, newSepcification));
   }
 
   /**
@@ -235,479 +134,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Tree getTree()
+  public EList<Modules> getModules()
   {
-    return tree;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTree(Tree newTree, NotificationChain msgs)
-  {
-    Tree oldTree = tree;
-    tree = newTree;
-    if (eNotificationRequired())
+    if (modules == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__TREE, oldTree, newTree);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      modules = new EObjectContainmentEList<Modules>(Modules.class, this, AstPackage.MODEL__MODULES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTree(Tree newTree)
-  {
-    if (newTree != tree)
-    {
-      NotificationChain msgs = null;
-      if (tree != null)
-        msgs = ((InternalEObject)tree).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__TREE, null, msgs);
-      if (newTree != null)
-        msgs = ((InternalEObject)newTree).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__TREE, null, msgs);
-      msgs = basicSetTree(newTree, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__TREE, newTree, newTree));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Import getImp()
-  {
-    return imp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetImp(Import newImp, NotificationChain msgs)
-  {
-    Import oldImp = imp;
-    imp = newImp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__IMP, oldImp, newImp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setImp(Import newImp)
-  {
-    if (newImp != imp)
-    {
-      NotificationChain msgs = null;
-      if (imp != null)
-        msgs = ((InternalEObject)imp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__IMP, null, msgs);
-      if (newImp != null)
-        msgs = ((InternalEObject)newImp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__IMP, null, msgs);
-      msgs = basicSetImp(newImp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__IMP, newImp, newImp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Export getExp()
-  {
-    return exp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExp(Export newExp, NotificationChain msgs)
-  {
-    Export oldExp = exp;
-    exp = newExp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExp(Export newExp)
-  {
-    if (newExp != exp)
-    {
-      NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__EXP, newExp, newExp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Global getGlo()
-  {
-    return glo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetGlo(Global newGlo, NotificationChain msgs)
-  {
-    Global oldGlo = glo;
-    glo = newGlo;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__GLO, oldGlo, newGlo);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGlo(Global newGlo)
-  {
-    if (newGlo != glo)
-    {
-      NotificationChain msgs = null;
-      if (glo != null)
-        msgs = ((InternalEObject)glo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__GLO, null, msgs);
-      if (newGlo != null)
-        msgs = ((InternalEObject)newGlo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__GLO, null, msgs);
-      msgs = basicSetGlo(newGlo, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__GLO, newGlo, newGlo));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Local getLoc()
-  {
-    return loc;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetLoc(Local newLoc, NotificationChain msgs)
-  {
-    Local oldLoc = loc;
-    loc = newLoc;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__LOC, oldLoc, newLoc);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLoc(Local newLoc)
-  {
-    if (newLoc != loc)
-    {
-      NotificationChain msgs = null;
-      if (loc != null)
-        msgs = ((InternalEObject)loc).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__LOC, null, msgs);
-      if (newLoc != null)
-        msgs = ((InternalEObject)newLoc).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__LOC, null, msgs);
-      msgs = basicSetLoc(newLoc, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__LOC, newLoc, newLoc));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Begin getBeg()
-  {
-    return beg;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBeg(Begin newBeg, NotificationChain msgs)
-  {
-    Begin oldBeg = beg;
-    beg = newBeg;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__BEG, oldBeg, newBeg);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBeg(Begin newBeg)
-  {
-    if (newBeg != beg)
-    {
-      NotificationChain msgs = null;
-      if (beg != null)
-        msgs = ((InternalEObject)beg).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__BEG, null, msgs);
-      if (newBeg != null)
-        msgs = ((InternalEObject)newBeg).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__BEG, null, msgs);
-      msgs = basicSetBeg(newBeg, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__BEG, newBeg, newBeg));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Close getClo()
-  {
-    return clo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetClo(Close newClo, NotificationChain msgs)
-  {
-    Close oldClo = clo;
-    clo = newClo;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__CLO, oldClo, newClo);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClo(Close newClo)
-  {
-    if (newClo != clo)
-    {
-      NotificationChain msgs = null;
-      if (clo != null)
-        msgs = ((InternalEObject)clo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__CLO, null, msgs);
-      if (newClo != null)
-        msgs = ((InternalEObject)newClo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__CLO, null, msgs);
-      msgs = basicSetClo(newClo, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__CLO, newClo, newClo));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Properties getPro()
-  {
-    return pro;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPro(Properties newPro, NotificationChain msgs)
-  {
-    Properties oldPro = pro;
-    pro = newPro;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__PRO, oldPro, newPro);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPro(Properties newPro)
-  {
-    if (newPro != pro)
-    {
-      NotificationChain msgs = null;
-      if (pro != null)
-        msgs = ((InternalEObject)pro).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__PRO, null, msgs);
-      if (newPro != null)
-        msgs = ((InternalEObject)newPro).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__PRO, null, msgs);
-      msgs = basicSetPro(newPro, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__PRO, newPro, newPro));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Rule getRul()
-  {
-    return rul;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRul(Rule newRul, NotificationChain msgs)
-  {
-    Rule oldRul = rul;
-    rul = newRul;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__RUL, oldRul, newRul);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRul(Rule newRul)
-  {
-    if (newRul != rul)
-    {
-      NotificationChain msgs = null;
-      if (rul != null)
-        msgs = ((InternalEObject)rul).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__RUL, null, msgs);
-      if (newRul != null)
-        msgs = ((InternalEObject)newRul).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__RUL, null, msgs);
-      msgs = basicSetRul(newRul, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__RUL, newRul, newRul));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Declare getDec()
-  {
-    return dec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetDec(Declare newDec, NotificationChain msgs)
-  {
-    Declare oldDec = dec;
-    dec = newDec;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__DEC, oldDec, newDec);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDec(Declare newDec)
-  {
-    if (newDec != dec)
-    {
-      NotificationChain msgs = null;
-      if (dec != null)
-        msgs = ((InternalEObject)dec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__DEC, null, msgs);
-      if (newDec != null)
-        msgs = ((InternalEObject)newDec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AstPackage.MODEL__DEC, null, msgs);
-      msgs = basicSetDec(newDec, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.MODEL__DEC, newDec, newDec));
+    return modules;
   }
 
   /**
@@ -720,28 +153,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AstPackage.MODEL__MODULE:
-        return basicSetModule(null, msgs);
-      case AstPackage.MODEL__TREE:
-        return basicSetTree(null, msgs);
-      case AstPackage.MODEL__IMP:
-        return basicSetImp(null, msgs);
-      case AstPackage.MODEL__EXP:
-        return basicSetExp(null, msgs);
-      case AstPackage.MODEL__GLO:
-        return basicSetGlo(null, msgs);
-      case AstPackage.MODEL__LOC:
-        return basicSetLoc(null, msgs);
-      case AstPackage.MODEL__BEG:
-        return basicSetBeg(null, msgs);
-      case AstPackage.MODEL__CLO:
-        return basicSetClo(null, msgs);
-      case AstPackage.MODEL__PRO:
-        return basicSetPro(null, msgs);
-      case AstPackage.MODEL__RUL:
-        return basicSetRul(null, msgs);
-      case AstPackage.MODEL__DEC:
-        return basicSetDec(null, msgs);
+      case AstPackage.MODEL__SEPCIFICATION:
+        return basicSetSepcification(null, msgs);
+      case AstPackage.MODEL__MODULES:
+        return ((InternalEList<?>)getModules()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -756,28 +171,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AstPackage.MODEL__MODULE:
-        return getModule();
-      case AstPackage.MODEL__TREE:
-        return getTree();
-      case AstPackage.MODEL__IMP:
-        return getImp();
-      case AstPackage.MODEL__EXP:
-        return getExp();
-      case AstPackage.MODEL__GLO:
-        return getGlo();
-      case AstPackage.MODEL__LOC:
-        return getLoc();
-      case AstPackage.MODEL__BEG:
-        return getBeg();
-      case AstPackage.MODEL__CLO:
-        return getClo();
-      case AstPackage.MODEL__PRO:
-        return getPro();
-      case AstPackage.MODEL__RUL:
-        return getRul();
-      case AstPackage.MODEL__DEC:
-        return getDec();
+      case AstPackage.MODEL__SEPCIFICATION:
+        return getSepcification();
+      case AstPackage.MODEL__MODULES:
+        return getModules();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -787,43 +184,18 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AstPackage.MODEL__MODULE:
-        setModule((Module)newValue);
+      case AstPackage.MODEL__SEPCIFICATION:
+        setSepcification((Specification)newValue);
         return;
-      case AstPackage.MODEL__TREE:
-        setTree((Tree)newValue);
-        return;
-      case AstPackage.MODEL__IMP:
-        setImp((Import)newValue);
-        return;
-      case AstPackage.MODEL__EXP:
-        setExp((Export)newValue);
-        return;
-      case AstPackage.MODEL__GLO:
-        setGlo((Global)newValue);
-        return;
-      case AstPackage.MODEL__LOC:
-        setLoc((Local)newValue);
-        return;
-      case AstPackage.MODEL__BEG:
-        setBeg((Begin)newValue);
-        return;
-      case AstPackage.MODEL__CLO:
-        setClo((Close)newValue);
-        return;
-      case AstPackage.MODEL__PRO:
-        setPro((Properties)newValue);
-        return;
-      case AstPackage.MODEL__RUL:
-        setRul((Rule)newValue);
-        return;
-      case AstPackage.MODEL__DEC:
-        setDec((Declare)newValue);
+      case AstPackage.MODEL__MODULES:
+        getModules().clear();
+        getModules().addAll((Collection<? extends Modules>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -839,38 +211,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AstPackage.MODEL__MODULE:
-        setModule((Module)null);
+      case AstPackage.MODEL__SEPCIFICATION:
+        setSepcification((Specification)null);
         return;
-      case AstPackage.MODEL__TREE:
-        setTree((Tree)null);
-        return;
-      case AstPackage.MODEL__IMP:
-        setImp((Import)null);
-        return;
-      case AstPackage.MODEL__EXP:
-        setExp((Export)null);
-        return;
-      case AstPackage.MODEL__GLO:
-        setGlo((Global)null);
-        return;
-      case AstPackage.MODEL__LOC:
-        setLoc((Local)null);
-        return;
-      case AstPackage.MODEL__BEG:
-        setBeg((Begin)null);
-        return;
-      case AstPackage.MODEL__CLO:
-        setClo((Close)null);
-        return;
-      case AstPackage.MODEL__PRO:
-        setPro((Properties)null);
-        return;
-      case AstPackage.MODEL__RUL:
-        setRul((Rule)null);
-        return;
-      case AstPackage.MODEL__DEC:
-        setDec((Declare)null);
+      case AstPackage.MODEL__MODULES:
+        getModules().clear();
         return;
     }
     super.eUnset(featureID);
@@ -886,28 +231,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case AstPackage.MODEL__MODULE:
-        return module != null;
-      case AstPackage.MODEL__TREE:
-        return tree != null;
-      case AstPackage.MODEL__IMP:
-        return imp != null;
-      case AstPackage.MODEL__EXP:
-        return exp != null;
-      case AstPackage.MODEL__GLO:
-        return glo != null;
-      case AstPackage.MODEL__LOC:
-        return loc != null;
-      case AstPackage.MODEL__BEG:
-        return beg != null;
-      case AstPackage.MODEL__CLO:
-        return clo != null;
-      case AstPackage.MODEL__PRO:
-        return pro != null;
-      case AstPackage.MODEL__RUL:
-        return rul != null;
-      case AstPackage.MODEL__DEC:
-        return dec != null;
+      case AstPackage.MODEL__SEPCIFICATION:
+        return sepcification != null;
+      case AstPackage.MODEL__MODULES:
+        return modules != null && !modules.isEmpty();
     }
     return super.eIsSet(featureID);
   }

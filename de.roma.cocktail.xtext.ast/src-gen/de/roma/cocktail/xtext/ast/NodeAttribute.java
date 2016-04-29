@@ -12,12 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodeAttribute#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodeAttribute#getType <em>Type</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperty <em>Property</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.NodeAttribute#getExpression <em>Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getNodeAttribute()
  * @model
@@ -78,29 +79,55 @@ public interface NodeAttribute extends EObject
   void setType(String value);
 
   /**
-   * Returns the value of the '<em><b>Property</b></em>' containment reference.
+   * Returns the value of the '<em><b>Properties</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Property</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Properties</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Property</em>' containment reference.
-   * @see #setProperty(PropertyList)
-   * @see de.roma.cocktail.xtext.ast.AstPackage#getNodeAttribute_Property()
+   * @return the value of the '<em>Properties</em>' containment reference.
+   * @see #setProperties(NodePropertyList)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getNodeAttribute_Properties()
    * @model containment="true"
    * @generated
    */
-  PropertyList getProperty();
+  NodePropertyList getProperties();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperty <em>Property</em>}' containment reference.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getProperties <em>Properties</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Property</em>' containment reference.
-   * @see #getProperty()
+   * @param value the new value of the '<em>Properties</em>' containment reference.
+   * @see #getProperties()
    * @generated
    */
-  void setProperty(PropertyList value);
+  void setProperties(NodePropertyList value);
+
+  /**
+   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expression</em>' containment reference.
+   * @see #setExpression(TargetCodeExpression)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getNodeAttribute_Expression()
+   * @model containment="true"
+   * @generated
+   */
+  TargetCodeExpression getExpression();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.NodeAttribute#getExpression <em>Expression</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @see #getExpression()
+   * @generated
+   */
+  void setExpression(TargetCodeExpression value);
 
 } // NodeAttribute

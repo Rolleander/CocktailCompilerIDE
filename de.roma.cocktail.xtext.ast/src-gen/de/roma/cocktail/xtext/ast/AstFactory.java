@@ -33,13 +33,40 @@ public interface AstFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Module</em>'.
+   * Returns a new object of class '<em>Module Name</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module</em>'.
+   * @return a new object of class '<em>Module Name</em>'.
    * @generated
    */
-  Module createModule();
+  ModuleName createModuleName();
+
+  /**
+   * Returns a new object of class '<em>Modules</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modules</em>'.
+   * @generated
+   */
+  Modules createModules();
+
+  /**
+   * Returns a new object of class '<em>Specification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Specification</em>'.
+   * @generated
+   */
+  Specification createSpecification();
+
+  /**
+   * Returns a new object of class '<em>Codes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Codes</em>'.
+   * @generated
+   */
+  Codes createCodes();
 
   /**
    * Returns a new object of class '<em>Tree</em>'.
@@ -121,6 +148,15 @@ public interface AstFactory extends EFactory
    * @generated
    */
   PropertyList createPropertyList();
+
+  /**
+   * Returns a new object of class '<em>Node Property List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Node Property List</em>'.
+   * @generated
+   */
+  NodePropertyList createNodePropertyList();
 
   /**
    * Returns a new object of class '<em>Declare</em>'.
@@ -211,6 +247,24 @@ public interface AstFactory extends EFactory
    * @generated
    */
   NodeName createNodeName();
+
+  /**
+   * Returns a new object of class '<em>Code Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Block</em>'.
+   * @generated
+   */
+  CodeBlock createCodeBlock();
+
+  /**
+   * Returns a new object of class '<em>Target Code Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Code Expression</em>'.
+   * @generated
+   */
+  TargetCodeExpression createTargetCodeExpression();
 
   /**
    * Returns the package supported by this factory.
