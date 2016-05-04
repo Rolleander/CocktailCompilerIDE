@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Begin#getCode <em>Code</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getBegin()
  * @model

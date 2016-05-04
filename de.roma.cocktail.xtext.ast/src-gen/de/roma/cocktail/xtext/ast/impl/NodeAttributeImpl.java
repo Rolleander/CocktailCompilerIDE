@@ -23,13 +23,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodeAttributeImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

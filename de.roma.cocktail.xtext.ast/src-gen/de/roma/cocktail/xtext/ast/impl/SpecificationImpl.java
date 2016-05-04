@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl#getTree <em>Tree</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl#getCode <em>Code</em>}</li>
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl#getDeclare <em>Declare</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.SpecificationImpl#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

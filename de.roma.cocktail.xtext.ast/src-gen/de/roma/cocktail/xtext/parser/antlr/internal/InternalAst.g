@@ -613,36 +613,52 @@ ruleTree returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_4='SUBUNIT'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getTreeAccess().getSUBUNITKeyword_3_0());
-			}
-			    |
 			(
-				otherlv_5='VIEW'
-				{
-					newLeafNode(otherlv_5, grammarAccess.getTreeAccess().getVIEWKeyword_3_1_0());
-				}
 				(
 					(
-						lv_subUnits_6_0=RULE_ID
+						lv_subUnitName_4_1='SUBUNIT'
 						{
-							newLeafNode(lv_subUnits_6_0, grammarAccess.getTreeAccess().getSubUnitsIDTerminalRuleCall_3_1_1_0());
+							newLeafNode(lv_subUnitName_4_1, grammarAccess.getTreeAccess().getSubUnitNameSUBUNITKeyword_3_0_0_0());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getTreeRule());
 							}
-							addWithLastConsumed(
-								$current,
-								"subUnits",
-								lv_subUnits_6_0,
-								"org.eclipse.xtext.common.Terminals.ID");
+							setWithLastConsumed($current, "subUnitName", lv_subUnitName_4_1, null);
+						}
+						    |
+						lv_subUnitName_4_2='VIEW'
+						{
+							newLeafNode(lv_subUnitName_4_2, grammarAccess.getTreeAccess().getSubUnitNameVIEWKeyword_3_0_0_1());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTreeRule());
+							}
+							setWithLastConsumed($current, "subUnitName", lv_subUnitName_4_2, null);
 						}
 					)
 				)
 			)
-		)*
+			(
+				(
+					lv_subUnits_5_0=RULE_ID
+					{
+						newLeafNode(lv_subUnits_5_0, grammarAccess.getTreeAccess().getSubUnitsIDTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTreeRule());
+						}
+						addWithLastConsumed(
+							$current,
+							"subUnits",
+							lv_subUnits_5_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)+
+		)?
 	)
 ;
 

@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.CodeBlockImpl#getWall <em>Wall</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.CodeBlockImpl#getBlock <em>Block</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

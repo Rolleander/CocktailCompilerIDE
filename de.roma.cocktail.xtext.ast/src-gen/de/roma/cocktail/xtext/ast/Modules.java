@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Modules#getModuleName <em>Module Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Modules#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Modules#getModuleNameEnd <em>Module Name End</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getModules()
  * @model

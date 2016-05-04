@@ -3,6 +3,20 @@
  */
 package de.roma.cocktail.xtext.ui.outline
 
+import de.roma.cocktail.xtext.ast.BaseTypes
+import de.roma.cocktail.xtext.ast.Begin
+import de.roma.cocktail.xtext.ast.Close
+import de.roma.cocktail.xtext.ast.DeclareNode
+import de.roma.cocktail.xtext.ast.Export
+import de.roma.cocktail.xtext.ast.Global
+import de.roma.cocktail.xtext.ast.Import
+import de.roma.cocktail.xtext.ast.Local
+import de.roma.cocktail.xtext.ast.ModuleName
+import de.roma.cocktail.xtext.ast.NodeName
+import de.roma.cocktail.xtext.ast.NodePart
+import de.roma.cocktail.xtext.ast.Properties
+import de.roma.cocktail.xtext.ast.Tree
+import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
 
 /**
@@ -11,5 +25,25 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#outline
  */
 class AstOutlineTreeProvider extends DefaultOutlineTreeProvider {
+
+	override protected _isLeaf(EObject o) {
+		if(o instanceof Properties){return true}		
+		if(o instanceof DeclareNode){return true}		
+	    if(o instanceof NodePart){return true}
+	    if(o instanceof BaseTypes){return true}
+	    if(o instanceof NodeName){return true}
+	    if(o instanceof ModuleName){return true}
+	    if(o instanceof Tree){return true}
+	    if(o instanceof Import){return true}
+	    if(o instanceof Export){return true}
+	    if(o instanceof Close){return true}
+	    if(o instanceof Begin){return true}
+	    if(o instanceof Global){return true}
+	    if(o instanceof Local){return true}
+	    
+	    
+	   	    
+	}
+
 
 }

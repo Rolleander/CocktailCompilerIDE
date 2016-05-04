@@ -31,7 +31,7 @@ Codes:
 	& clo=Close?;
 
 Tree:
-	'TREE' name=ID ('PREFIX' prefix=ID)? ('SUBUNIT' | 'VIEW' subUnits+=ID)*;
+	'TREE' name=ID ('PREFIX' prefix=ID)? (  subUnitName=('SUBUNIT' | 'VIEW') subUnits+=ID+)?;
 
 Import:
 	'IMPORT' '{' code=CodeBlock '}';

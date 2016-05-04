@@ -36,7 +36,7 @@ public class AstParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getModuleNameAccess().getAlternatives(), "rule__ModuleName__Alternatives");
-					put(grammarAccess.getTreeAccess().getAlternatives_3(), "rule__Tree__Alternatives_3");
+					put(grammarAccess.getTreeAccess().getSubUnitNameAlternatives_3_0_0(), "rule__Tree__SubUnitNameAlternatives_3_0_0");
 					put(grammarAccess.getDeclareNodeAccess().getTypeAlternatives_1_0(), "rule__DeclareNode__TypeAlternatives_1_0");
 					put(grammarAccess.getNodePartAccess().getAlternatives(), "rule__NodePart__Alternatives");
 					put(grammarAccess.getNodeAttributeAccess().getAlternatives_3(), "rule__NodeAttribute__Alternatives_3");
@@ -50,7 +50,7 @@ public class AstParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpecificationAccess().getGroup(), "rule__Specification__Group__0");
 					put(grammarAccess.getTreeAccess().getGroup(), "rule__Tree__Group__0");
 					put(grammarAccess.getTreeAccess().getGroup_2(), "rule__Tree__Group_2__0");
-					put(grammarAccess.getTreeAccess().getGroup_3_1(), "rule__Tree__Group_3_1__0");
+					put(grammarAccess.getTreeAccess().getGroup_3(), "rule__Tree__Group_3__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getExportAccess().getGroup(), "rule__Export__Group__0");
 					put(grammarAccess.getGlobalAccess().getGroup(), "rule__Global__Group__0");
@@ -90,7 +90,8 @@ public class AstParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCodesAccess().getCloAssignment_5(), "rule__Codes__CloAssignment_5");
 					put(grammarAccess.getTreeAccess().getNameAssignment_1(), "rule__Tree__NameAssignment_1");
 					put(grammarAccess.getTreeAccess().getPrefixAssignment_2_1(), "rule__Tree__PrefixAssignment_2_1");
-					put(grammarAccess.getTreeAccess().getSubUnitsAssignment_3_1_1(), "rule__Tree__SubUnitsAssignment_3_1_1");
+					put(grammarAccess.getTreeAccess().getSubUnitNameAssignment_3_0(), "rule__Tree__SubUnitNameAssignment_3_0");
+					put(grammarAccess.getTreeAccess().getSubUnitsAssignment_3_1(), "rule__Tree__SubUnitsAssignment_3_1");
 					put(grammarAccess.getImportAccess().getCodeAssignment_2(), "rule__Import__CodeAssignment_2");
 					put(grammarAccess.getExportAccess().getCodeAssignment_2(), "rule__Export__CodeAssignment_2");
 					put(grammarAccess.getGlobalAccess().getCodeAssignment_2(), "rule__Global__CodeAssignment_2");

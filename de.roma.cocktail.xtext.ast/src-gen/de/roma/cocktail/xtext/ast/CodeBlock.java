@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.CodeBlock#getWall <em>Wall</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.CodeBlock#getBlock <em>Block</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getCodeBlock()
  * @model

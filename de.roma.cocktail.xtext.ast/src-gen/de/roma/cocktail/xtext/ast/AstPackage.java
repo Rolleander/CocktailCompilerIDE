@@ -334,13 +334,22 @@ public interface AstPackage extends EPackage
   int TREE__PREFIX = 1;
 
   /**
+   * The feature id for the '<em><b>Sub Unit Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TREE__SUB_UNIT_NAME = 2;
+
+  /**
    * The feature id for the '<em><b>Sub Units</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TREE__SUB_UNITS = 2;
+  int TREE__SUB_UNITS = 3;
 
   /**
    * The number of structural features of the '<em>Tree</em>' class.
@@ -349,7 +358,7 @@ public interface AstPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TREE_FEATURE_COUNT = 3;
+  int TREE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link de.roma.cocktail.xtext.ast.impl.ImportImpl <em>Import</em>}' class.
@@ -1327,6 +1336,17 @@ public interface AstPackage extends EPackage
   EAttribute getTree_Prefix();
 
   /**
+   * Returns the meta object for the attribute '{@link de.roma.cocktail.xtext.ast.Tree#getSubUnitName <em>Sub Unit Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sub Unit Name</em>'.
+   * @see de.roma.cocktail.xtext.ast.Tree#getSubUnitName()
+   * @see #getTree()
+   * @generated
+   */
+  EAttribute getTree_SubUnitName();
+
+  /**
    * Returns the meta object for the attribute list '{@link de.roma.cocktail.xtext.ast.Tree#getSubUnits <em>Sub Units</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2155,6 +2175,14 @@ public interface AstPackage extends EPackage
      * @generated
      */
     EAttribute TREE__PREFIX = eINSTANCE.getTree_Prefix();
+
+    /**
+     * The meta object literal for the '<em><b>Sub Unit Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TREE__SUB_UNIT_NAME = eINSTANCE.getTree_SubUnitName();
 
     /**
      * The meta object literal for the '<em><b>Sub Units</b></em>' attribute list feature.

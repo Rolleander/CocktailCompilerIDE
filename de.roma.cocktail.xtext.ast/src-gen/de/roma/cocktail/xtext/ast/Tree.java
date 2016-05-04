@@ -14,12 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getName <em>Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getSubUnitName <em>Sub Unit Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Tree#getSubUnits <em>Sub Units</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getTree()
  * @model
@@ -78,6 +79,32 @@ public interface Tree extends EObject
    * @generated
    */
   void setPrefix(String value);
+
+  /**
+   * Returns the value of the '<em><b>Sub Unit Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sub Unit Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sub Unit Name</em>' attribute.
+   * @see #setSubUnitName(String)
+   * @see de.roma.cocktail.xtext.ast.AstPackage#getTree_SubUnitName()
+   * @model
+   * @generated
+   */
+  String getSubUnitName();
+
+  /**
+   * Sets the value of the '{@link de.roma.cocktail.xtext.ast.Tree#getSubUnitName <em>Sub Unit Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sub Unit Name</em>' attribute.
+   * @see #getSubUnitName()
+   * @generated
+   */
+  void setSubUnitName(String value);
 
   /**
    * Returns the value of the '<em><b>Sub Units</b></em>' attribute list.

@@ -551,7 +551,7 @@ public class AstSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Tree returns Tree
 	 *
 	 * Constraint:
-	 *     (name=ID prefix=ID? subUnits+=ID*)
+	 *     (name=ID prefix=ID? ((subUnitName='SUBUNIT' | subUnitName='VIEW') subUnits+=ID+)?)
 	 */
 	protected void sequence_Tree(ISerializationContext context, Tree semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -25,12 +25,13 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getSubUnitName <em>Sub Unit Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.TreeImpl#getSubUnits <em>Sub Units</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -75,6 +76,26 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
    * @ordered
    */
   protected String prefix = PREFIX_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSubUnitName() <em>Sub Unit Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubUnitName()
+   * @generated
+   * @ordered
+   */
+  protected static final String SUB_UNIT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubUnitName() <em>Sub Unit Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubUnitName()
+   * @generated
+   * @ordered
+   */
+  protected String subUnitName = SUB_UNIT_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSubUnits() <em>Sub Units</em>}' attribute list.
@@ -158,6 +179,29 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getSubUnitName()
+  {
+    return subUnitName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSubUnitName(String newSubUnitName)
+  {
+    String oldSubUnitName = subUnitName;
+    subUnitName = newSubUnitName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AstPackage.TREE__SUB_UNIT_NAME, oldSubUnitName, subUnitName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getSubUnits()
   {
     if (subUnits == null)
@@ -181,6 +225,8 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
         return getName();
       case AstPackage.TREE__PREFIX:
         return getPrefix();
+      case AstPackage.TREE__SUB_UNIT_NAME:
+        return getSubUnitName();
       case AstPackage.TREE__SUB_UNITS:
         return getSubUnits();
     }
@@ -203,6 +249,9 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
         return;
       case AstPackage.TREE__PREFIX:
         setPrefix((String)newValue);
+        return;
+      case AstPackage.TREE__SUB_UNIT_NAME:
+        setSubUnitName((String)newValue);
         return;
       case AstPackage.TREE__SUB_UNITS:
         getSubUnits().clear();
@@ -228,6 +277,9 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
       case AstPackage.TREE__PREFIX:
         setPrefix(PREFIX_EDEFAULT);
         return;
+      case AstPackage.TREE__SUB_UNIT_NAME:
+        setSubUnitName(SUB_UNIT_NAME_EDEFAULT);
+        return;
       case AstPackage.TREE__SUB_UNITS:
         getSubUnits().clear();
         return;
@@ -249,6 +301,8 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AstPackage.TREE__PREFIX:
         return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
+      case AstPackage.TREE__SUB_UNIT_NAME:
+        return SUB_UNIT_NAME_EDEFAULT == null ? subUnitName != null : !SUB_UNIT_NAME_EDEFAULT.equals(subUnitName);
       case AstPackage.TREE__SUB_UNITS:
         return subUnits != null && !subUnits.isEmpty();
     }
@@ -270,6 +324,8 @@ public class TreeImpl extends MinimalEObjectImpl.Container implements Tree
     result.append(name);
     result.append(", prefix: ");
     result.append(prefix);
+    result.append(", subUnitName: ");
+    result.append(subUnitName);
     result.append(", subUnits: ");
     result.append(subUnits);
     result.append(')');

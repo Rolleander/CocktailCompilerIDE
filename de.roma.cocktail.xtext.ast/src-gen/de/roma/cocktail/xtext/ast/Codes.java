@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Codes#getImp <em>Imp</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Codes#getExp <em>Exp</em>}</li>
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.ast.Codes#getBeg <em>Beg</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Codes#getClo <em>Clo</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getCodes()
  * @model

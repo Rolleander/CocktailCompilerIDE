@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.RootNode#getName <em>Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.RootNode#getBaseTypes <em>Base Types</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.ast.RootNode#getPart <em>Part</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.RootNode#getExtension <em>Extension</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getRootNode()
  * @model

@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModulesImpl#getModuleName <em>Module Name</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModulesImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.ModulesImpl#getModuleNameEnd <em>Module Name End</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

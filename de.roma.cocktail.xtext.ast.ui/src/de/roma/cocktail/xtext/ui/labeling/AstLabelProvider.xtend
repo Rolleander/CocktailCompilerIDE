@@ -4,8 +4,33 @@
 package de.roma.cocktail.xtext.ui.labeling
 
 import com.google.inject.Inject
+import de.roma.cocktail.xtext.ast.Begin
+import de.roma.cocktail.xtext.ast.Close
+import de.roma.cocktail.xtext.ast.Codes
+import de.roma.cocktail.xtext.ast.Export
+import de.roma.cocktail.xtext.ast.Global
+import de.roma.cocktail.xtext.ast.Import
+import de.roma.cocktail.xtext.ast.Local
+import de.roma.cocktail.xtext.ast.Model
+import de.roma.cocktail.xtext.ast.ModuleName
+import de.roma.cocktail.xtext.ast.Modules
+import de.roma.cocktail.xtext.ast.Specification
+import de.roma.cocktail.xtext.ast.Tree
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.jface.preference.JFacePreferences
+import org.eclipse.jface.viewers.StyledString
+import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import de.roma.cocktail.xtext.ast.Properties
+import de.roma.cocktail.xtext.ast.Declare
+import de.roma.cocktail.xtext.ast.DeclareNode
+import de.roma.cocktail.xtext.ast.NodePart
+import de.roma.cocktail.xtext.ast.NodePropertyList
+import de.roma.cocktail.xtext.ast.Rule
+import de.roma.cocktail.xtext.ast.RootNode
+import de.roma.cocktail.xtext.ast.BaseTypes
+import de.roma.cocktail.xtext.ast.NodeName
+import de.roma.cocktail.xtext.ast.Extensions
 
 /**
  * Provides labels for EObjects.
@@ -14,18 +39,264 @@ import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
  */
 class AstLabelProvider extends DefaultEObjectLabelProvider {
 
+	val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
+	val Styler styleTwo = StyledString.createColorRegistryStyler(JFacePreferences.COUNTER_COLOR, null);
+
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def image(Model o) {
+		'ast.png'
+	}
+
+	def text(Model o) {
+		'Ast'
+	}
+
+	def image(Modules o) {
+		'report.png'
+	}
+
+	def text(Modules o) {
+		val text = new StyledString
+		text.append("Modul ")
+		text.append(o.moduleName.name, styleBlue)
+		return text
+	}
+
+	def image(ModuleName o) {
+		'key.png'
+	}
+
+	def text(ModuleName o) {
+		val text = new StyledString
+		text.append("Modulname ")
+		text.append(o.name, styleBlue)
+		return text
+	}
+
+	def image(Specification o) {
+		'node.png'
+	}
+
+	def text(Specification o) {
+		'Spezifikation'
+	}
+
+	def image(Tree o) {
+		'tree.png'
+	}
+
+	def text(Tree o) {
+		val text = new StyledString
+		text.append("Tree ")
+		text.append(o.name, styleBlue)
+		if (o.prefix != null) {
+			text.append(" Prefix ")
+			text.append(o.prefix, styleBlue)
+		}
+		if (o.subUnitName != null) {
+			text.append(" " + o.subUnitName + " ")
+			for (subUnit : o.subUnits) {
+				text.append(subUnit + " ", styleBlue)
+			}
+		}
+		return text;
+	}
+
+	def image(Codes o) {
+		'cog_go.png'
+	}
+
+	def text(Codes o) {
+		'Target Code Area'
+	}
+
+	def image(Properties o) {
+		'service_status.png'
+	}
+
+	def text(Properties o) {
+		val text = new StyledString
+		text.append("Properties ")
+		for (property : o.property.props) {
+			text.append(property + " ", styleBlue)
+		}
+		return text
+	}
+
+	def image(Declare o) {
+		'document_quote.png'
+	}
+
+	def text(Declare o) {
+		'Declare'
+	}
+
+	def image(DeclareNode o) {
+		'page.png'
+	}
+
+	def text(DeclareNode o) {
+		val text = new StyledString
+		for (name : o.names) {
+			text.append(name.name + " ", styleBlue)
+		}
+		text.append(o.type + " ")
+		for (part : o.part) {
+			styleNodePart(text, part)
+		}
+		return text
+	}
+
+	def image(Rule o) {
+		'document_copies.png'
+	}
+
+	def text(Rule o) {
+		'Rules'
+	}
+
+	def image(RootNode o) {
+		'page.png'
+	}
+
+	def text(RootNode o) {
+		val text = new StyledString
+		text.append(o.name.name + " ", styleBlue)
+		if (o.baseTypes != null) {
+			styleBaseTypes(text, o.baseTypes)
+		}
+		text.append(o.type + " ")
+		for (part : o.part) {
+			styleNodePart(text, part)
+		}
+		return text
+	}
+
+	def image(NodeName o) {
+		'key.png'
+	}
+
+	def text(NodeName o) {
+		val text = new StyledString
+		text.append("NodeName ")
+		text.append(o.name, styleBlue)
+		return text
+	}
+
+	def image(Extensions o) {
+		'page_white_stack.png'
+	}
+
+	def text(Extensions o) {
+		"Extensions"
+	}
+
+	def image(BaseTypes o) {
+		'page_white_horizontal.png'
+	}
+
+	def text(BaseTypes o) {
+		val text = new StyledString
+		styleBaseTypes(text, o)
+		return text
+	}
+
+	def styleBaseTypes(StyledString text, BaseTypes o) {
+		text.append("<-")
+		for (name : o.names) {
+			text.append(name.name + " ", styleBlue)
+		}
+		return text
+	}
+
+	def styleNodePart(StyledString text, NodePart part) {
+		if (part.attribute != null) {
+			// is attribute
+			var att = part.attribute
+			text.append("[ ")
+			text.append(att.attribute + " ", styleBlue)
+			if (att.type != null) {
+				text.append(": ")
+				text.append(att.type + " ", styleBlue)
+			}
+			if (att.properties != null) {
+				styleNodeProperyList(text, att.properties)
+			} else if (att.expression != null) {
+				text.append(":= ")
+			}
+			text.append("] ")
+		} else {
+			// is child node
+			var child = part.child
+			if (child.selector != null) {
+				text.append(child.selector + " ", styleBlue)
+				text.append(": ")
+			}
+			text.append(child.type + " ", styleBlue)
+			if (part.properties != null) {
+				styleNodeProperyList(text, part.properties)
+			}
+		}
+		return text
+	}
+
+	def styleNodeProperyList(StyledString text, NodePropertyList properties) {
+		for (property : properties.props) {
+			text.append(property + " ", styleBlue)
+		}
+		return text
+	}
+
+	def image(Import o) {
+		'cog.png'
+	}
+
+	def text(Import o) {
+		'Import'
+	}
+
+	def image(Export o) {
+		'cog.png'
+	}
+
+	def text(Export o) {
+		'Export'
+	}
+
+	def image(Global o) {
+		'cog.png'
+	}
+
+	def text(Global o) {
+		'Global'
+	}
+
+	def image(Local o) {
+		'cog.png'
+	}
+
+	def text(Local o) {
+		'Local'
+	}
+
+	def image(Begin o) {
+		'cog.png'
+	}
+
+	def text(Begin o) {
+		'Begin'
+	}
+
+	def image(Close o) {
+		'cog.png'
+	}
+
+	def text(Close o) {
+		'Close'
+	}
+
 }

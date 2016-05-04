@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.Specification#getTree <em>Tree</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Specification#getCode <em>Code</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.roma.cocktail.xtext.ast.Specification#getDeclare <em>Declare</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.Specification#getRules <em>Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getSpecification()
  * @model

@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.BaseTypesImpl#getNames <em>Names</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.PropertyListImpl#getProps <em>Props</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

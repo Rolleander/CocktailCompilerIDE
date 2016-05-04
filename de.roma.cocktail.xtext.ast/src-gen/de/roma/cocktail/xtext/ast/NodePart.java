@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getChild <em>Child</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.NodePart#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.roma.cocktail.xtext.ast.AstPackage#getNodePart()
  * @model

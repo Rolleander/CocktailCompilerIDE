@@ -555,9 +555,19 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTree_SubUnits()
+  public EAttribute getTree_SubUnitName()
   {
     return (EAttribute)treeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTree_SubUnits()
+  {
+    return (EAttribute)treeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1170,6 +1180,7 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     treeEClass = createEClass(TREE);
     createEAttribute(treeEClass, TREE__NAME);
     createEAttribute(treeEClass, TREE__PREFIX);
+    createEAttribute(treeEClass, TREE__SUB_UNIT_NAME);
     createEAttribute(treeEClass, TREE__SUB_UNITS);
 
     importEClass = createEClass(IMPORT);
@@ -1310,6 +1321,7 @@ public class AstPackageImpl extends EPackageImpl implements AstPackage
     initEClass(treeEClass, Tree.class, "Tree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTree_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTree_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, Tree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTree_SubUnitName(), ecorePackage.getEString(), "subUnitName", null, 0, 1, Tree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTree_SubUnits(), ecorePackage.getEString(), "subUnits", null, 0, -1, Tree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

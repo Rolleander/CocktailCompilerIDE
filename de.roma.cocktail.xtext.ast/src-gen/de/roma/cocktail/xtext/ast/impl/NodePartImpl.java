@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getChild <em>Child</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.roma.cocktail.xtext.ast.impl.NodePartImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

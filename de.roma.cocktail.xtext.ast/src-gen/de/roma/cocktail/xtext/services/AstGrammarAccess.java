@@ -33,7 +33,8 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cModulesModulesParserRuleCall_1_0 = (RuleCall)cModulesAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	sepcification=Specification? modules+=Modules*;
+		//	sepcification=Specification?
+		//	modules+=Modules*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//sepcification=Specification? modules+=Modules*
@@ -136,7 +137,11 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRulesRuleParserRuleCall_4_0 = (RuleCall)cRulesAssignment_4.eContents().get(0);
 		
 		//Specification:
-		//	tree=Tree code=Codes properties=Properties? declare=Declare? rules=Rule?;
+		//	tree=Tree
+		//	code=Codes
+		//	properties=Properties?
+		//	declare=Declare?
+		//	rules=Rule?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//tree=Tree code=Codes properties=Properties? declare=Declare? rules=Rule?
@@ -189,7 +194,12 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCloCloseParserRuleCall_5_0 = (RuleCall)cCloAssignment_5.eContents().get(0);
 		
 		//Codes:
-		//	imp=Import? & exp=Export? & glo=Global? & loc=Local? & beg=Begin? & clo=Close?;
+		//	imp=Import?
+		//	& exp=Export?
+		//	& glo=Global?
+		//	& loc=Local?
+		//	& beg=Begin?
+		//	& clo=Close?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//imp=Import? & exp=Export? & glo=Global? & loc=Local? & beg=Begin? & clo=Close?
@@ -241,18 +251,19 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPREFIXKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cPrefixAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cPrefixIDTerminalRuleCall_2_1_0 = (RuleCall)cPrefixAssignment_2_1.eContents().get(0);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Keyword cSUBUNITKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
-		private final Keyword cVIEWKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cSubUnitsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cSubUnitsIDTerminalRuleCall_3_1_1_0 = (RuleCall)cSubUnitsAssignment_3_1_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cSubUnitNameAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final Alternatives cSubUnitNameAlternatives_3_0_0 = (Alternatives)cSubUnitNameAssignment_3_0.eContents().get(0);
+		private final Keyword cSubUnitNameSUBUNITKeyword_3_0_0_0 = (Keyword)cSubUnitNameAlternatives_3_0_0.eContents().get(0);
+		private final Keyword cSubUnitNameVIEWKeyword_3_0_0_1 = (Keyword)cSubUnitNameAlternatives_3_0_0.eContents().get(1);
+		private final Assignment cSubUnitsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cSubUnitsIDTerminalRuleCall_3_1_0 = (RuleCall)cSubUnitsAssignment_3_1.eContents().get(0);
 		
 		//Tree:
-		//	'TREE' name=ID ('PREFIX' prefix=ID)? ('SUBUNIT' | 'VIEW' subUnits+=ID)*;
+		//	'TREE' name=ID ('PREFIX' prefix=ID)? (subUnitName=('SUBUNIT' | 'VIEW') subUnits+=ID+)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TREE' name=ID ('PREFIX' prefix=ID)? ('SUBUNIT' | 'VIEW' subUnits+=ID)*
+		//'TREE' name=ID ('PREFIX' prefix=ID)? (subUnitName=('SUBUNIT' | 'VIEW') subUnits+=ID+)?
 		public Group getGroup() { return cGroup; }
 		
 		//'TREE'
@@ -276,23 +287,26 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getPrefixIDTerminalRuleCall_2_1_0() { return cPrefixIDTerminalRuleCall_2_1_0; }
 		
-		//('SUBUNIT' | 'VIEW' subUnits+=ID)*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		//(subUnitName=('SUBUNIT' | 'VIEW') subUnits+=ID+)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//subUnitName=('SUBUNIT' | 'VIEW')
+		public Assignment getSubUnitNameAssignment_3_0() { return cSubUnitNameAssignment_3_0; }
+		
+		//('SUBUNIT' | 'VIEW')
+		public Alternatives getSubUnitNameAlternatives_3_0_0() { return cSubUnitNameAlternatives_3_0_0; }
 		
 		//'SUBUNIT'
-		public Keyword getSUBUNITKeyword_3_0() { return cSUBUNITKeyword_3_0; }
-		
-		//'VIEW' subUnits+=ID
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Keyword getSubUnitNameSUBUNITKeyword_3_0_0_0() { return cSubUnitNameSUBUNITKeyword_3_0_0_0; }
 		
 		//'VIEW'
-		public Keyword getVIEWKeyword_3_1_0() { return cVIEWKeyword_3_1_0; }
+		public Keyword getSubUnitNameVIEWKeyword_3_0_0_1() { return cSubUnitNameVIEWKeyword_3_0_0_1; }
 		
-		//subUnits+=ID
-		public Assignment getSubUnitsAssignment_3_1_1() { return cSubUnitsAssignment_3_1_1; }
+		//subUnits+=ID+
+		public Assignment getSubUnitsAssignment_3_1() { return cSubUnitsAssignment_3_1; }
 		
 		//ID
-		public RuleCall getSubUnitsIDTerminalRuleCall_3_1_1_0() { return cSubUnitsIDTerminalRuleCall_3_1_1_0; }
+		public RuleCall getSubUnitsIDTerminalRuleCall_3_1_0() { return cSubUnitsIDTerminalRuleCall_3_1_0; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.roma.cocktail.xtext.Ast.Import");
@@ -807,7 +821,9 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//RootNode:
-		//	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* extension=Extensions? '.';
+		//	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart*
+		//	extension=Extensions?
+		//	'.';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* extension=Extensions? '.'
@@ -1172,17 +1188,17 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CodeWall:
 		//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-		//	';' | ':' | '!' | '=' | ',';
+		//	';'
+		//	| ':' | '!' | '=' | ',';
 		@Override public ParserRule getRule() { return rule; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-		// ID | INT | STRING
-		//| WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';' | ':' | '!' |
-		//'=' | ','
+		//ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
+		//| ':' | '!' | '=' | ','
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		////(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
-		// ID
+		//ID
 		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
 		//INT
@@ -1369,7 +1385,8 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	sepcification=Specification? modules+=Modules*;
+	//	sepcification=Specification?
+	//	modules+=Modules*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1399,7 +1416,11 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Specification:
-	//	tree=Tree code=Codes properties=Properties? declare=Declare? rules=Rule?;
+	//	tree=Tree
+	//	code=Codes
+	//	properties=Properties?
+	//	declare=Declare?
+	//	rules=Rule?;
 	public SpecificationElements getSpecificationAccess() {
 		return pSpecification;
 	}
@@ -1409,7 +1430,12 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Codes:
-	//	imp=Import? & exp=Export? & glo=Global? & loc=Local? & beg=Begin? & clo=Close?;
+	//	imp=Import?
+	//	& exp=Export?
+	//	& glo=Global?
+	//	& loc=Local?
+	//	& beg=Begin?
+	//	& clo=Close?;
 	public CodesElements getCodesAccess() {
 		return pCodes;
 	}
@@ -1419,7 +1445,7 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Tree:
-	//	'TREE' name=ID ('PREFIX' prefix=ID)? ('SUBUNIT' | 'VIEW' subUnits+=ID)*;
+	//	'TREE' name=ID ('PREFIX' prefix=ID)? (subUnitName=('SUBUNIT' | 'VIEW') subUnits+=ID+)?;
 	public TreeElements getTreeAccess() {
 		return pTree;
 	}
@@ -1552,7 +1578,9 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RootNode:
-	//	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart* extension=Extensions? '.';
+	//	name=NodeName baseTypes=BaseTypes? type=NodeType? part+=NodePart*
+	//	extension=Extensions?
+	//	'.';
 	public RootNodeElements getRootNodeAccess() {
 		return pRootNode;
 	}
@@ -1643,7 +1671,8 @@ public class AstGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CodeWall:
 	//	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' |
-	//	';' | ':' | '!' | '=' | ',';
+	//	';'
+	//	| ':' | '!' | '=' | ',';
 	public CodeWallElements getCodeWallAccess() {
 		return pCodeWall;
 	}
