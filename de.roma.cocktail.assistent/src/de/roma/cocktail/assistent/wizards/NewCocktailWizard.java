@@ -36,15 +36,15 @@ import de.roma.cocktail.preference.CCTPreferencePage;
  * This is a wizard for new cocktail projects. Its role is to create  
  * a new project with important cocktail spezifications and make files.
  */
-public class NewWizard extends Wizard implements INewWizard
+public class NewCocktailWizard extends Wizard implements INewWizard
 {
-    private NewWizardPage pageOne;
+    private NewCocktailWizardPage pageOne;
     private IStructuredSelection selection;
 
     /**
-     * Constructor for NewWizard.
+     * Constructor for NewCocktailWizard.
      */
-    public NewWizard()
+    public NewCocktailWizard()
     {
         super();
         setWindowTitle("New cocktail project");
@@ -56,7 +56,7 @@ public class NewWizard extends Wizard implements INewWizard
      */
     public void addPages()
     {
-        pageOne = new NewWizardPage(selection);
+        pageOne = new NewCocktailWizardPage(selection);
         addPage(pageOne);
     }
 

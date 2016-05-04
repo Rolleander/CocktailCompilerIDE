@@ -26,19 +26,19 @@ import de.roma.cocktail.preference.CCTPreferencePage;
  * This wizard page allows setting the input for a new cocktail project. 
  * The page will only accept valid data.
  */
-public class NewWizardPage extends WizardPage
+public class NewCocktailWizardPage extends WizardPage
 {
     private Text projectName, cocktailFolder;
     private Button btnRex, btnLark, btnAst;
 
     /**
-     * Constructor for NewWizardPage.
+     * Constructor for NewCocktailWizardPage.
      * 
      * @param pageName
      */
-    public NewWizardPage(IStructuredSelection selection)
+    public NewCocktailWizardPage(IStructuredSelection selection)
     {
-        super("NewWizardPage");
+        super("NewCocktailWizardPage");
         setTitle("Cocktail Project");
         setDescription("Create a new cocktail project");
     }

@@ -72,7 +72,7 @@ Rule:
 	info=('RULE' | 'RULES') (rules+=SingleRule)* ;
 	
 RuleInsert:
-	info='INSERT' 'RULES' (case='CASE-INSENSITIVE')? (start=RuleStart)? ('{' content=CodeBlock '}')   rules+=SingleRule*
+	info='INSERT' 'RULES' (case='CASE-INSENSITIVE')? (start=RuleStart)? ('{' content=CodeBlock '}')?   rules+=SingleRule*
 ;	
 
 SingleRule:
