@@ -4,8 +4,8 @@
 package de.roma.cocktail.xtext.lpp.impl;
 
 import de.roma.cocktail.xtext.lpp.CodeBlock;
+import de.roma.cocktail.xtext.lpp.ExtensionRule;
 import de.roma.cocktail.xtext.lpp.Extensions;
-import de.roma.cocktail.xtext.lpp.GrammarRule;
 import de.roma.cocktail.xtext.lpp.LppPackage;
 import de.roma.cocktail.xtext.lpp.NodePart;
 import de.roma.cocktail.xtext.lpp.PrecedenceRow;
@@ -29,23 +29,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Grammar Rule</b></em>'.
+ * An implementation of the model object '<em><b>Extension Rule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getNodetype <em>Nodetype</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getPart <em>Part</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getToken <em>Token</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getBlock <em>Block</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.GrammarRuleImpl#getExtension <em>Extension</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getNodetype <em>Nodetype</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getPart <em>Part</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getToken <em>Token</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getBlock <em>Block</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.ExtensionRuleImpl#getExtension <em>Extension</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements GrammarRule
+public class ExtensionRuleImpl extends MinimalEObjectImpl.Container implements ExtensionRule
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
@@ -122,7 +122,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GrammarRuleImpl()
+  protected ExtensionRuleImpl()
   {
     super();
   }
@@ -135,7 +135,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   @Override
   protected EClass eStaticClass()
   {
-    return LppPackage.Literals.GRAMMAR_RULE;
+    return LppPackage.Literals.EXTENSION_RULE;
   }
 
   /**
@@ -159,7 +159,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     name = newName;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__NAME, oldName, newName);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -176,14 +176,14 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     {
       NotificationChain msgs = null;
       if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__NAME, null, msgs);
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__NAME, null, msgs);
       if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__NAME, null, msgs);
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__NAME, null, msgs);
       msgs = basicSetName(newName, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__NAME, newName, newName));
   }
 
   /**
@@ -206,7 +206,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     String oldNodetype = nodetype;
     nodetype = newNodetype;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__NODETYPE, oldNodetype, nodetype));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__NODETYPE, oldNodetype, nodetype));
   }
 
   /**
@@ -218,7 +218,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     if (part == null)
     {
-      part = new EObjectContainmentEList<NodePart>(NodePart.class, this, LppPackage.GRAMMAR_RULE__PART);
+      part = new EObjectContainmentEList<NodePart>(NodePart.class, this, LppPackage.EXTENSION_RULE__PART);
     }
     return part;
   }
@@ -237,7 +237,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
       if (token != oldToken)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LppPackage.GRAMMAR_RULE__TOKEN, oldToken, token));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LppPackage.EXTENSION_RULE__TOKEN, oldToken, token));
       }
     }
     return token;
@@ -263,7 +263,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     PrecedenceRow oldToken = token;
     token = newToken;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__TOKEN, oldToken, token));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__TOKEN, oldToken, token));
   }
 
   /**
@@ -287,7 +287,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     block = newBlock;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__BLOCK, oldBlock, newBlock);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__BLOCK, oldBlock, newBlock);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -304,14 +304,14 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     {
       NotificationChain msgs = null;
       if (block != null)
-        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__BLOCK, null, msgs);
+        msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__BLOCK, null, msgs);
       if (newBlock != null)
-        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__BLOCK, null, msgs);
+        msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__BLOCK, null, msgs);
       msgs = basicSetBlock(newBlock, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__BLOCK, newBlock, newBlock));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__BLOCK, newBlock, newBlock));
   }
 
   /**
@@ -335,7 +335,7 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     extension = newExtension;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__EXTENSION, oldExtension, newExtension);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__EXTENSION, oldExtension, newExtension);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -352,14 +352,14 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     {
       NotificationChain msgs = null;
       if (extension != null)
-        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__EXTENSION, null, msgs);
       if (newExtension != null)
-        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.GRAMMAR_RULE__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LppPackage.EXTENSION_RULE__EXTENSION, null, msgs);
       msgs = basicSetExtension(newExtension, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.GRAMMAR_RULE__EXTENSION, newExtension, newExtension));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.EXTENSION_RULE__EXTENSION, newExtension, newExtension));
   }
 
   /**
@@ -372,13 +372,13 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     switch (featureID)
     {
-      case LppPackage.GRAMMAR_RULE__NAME:
+      case LppPackage.EXTENSION_RULE__NAME:
         return basicSetName(null, msgs);
-      case LppPackage.GRAMMAR_RULE__PART:
+      case LppPackage.EXTENSION_RULE__PART:
         return ((InternalEList<?>)getPart()).basicRemove(otherEnd, msgs);
-      case LppPackage.GRAMMAR_RULE__BLOCK:
+      case LppPackage.EXTENSION_RULE__BLOCK:
         return basicSetBlock(null, msgs);
-      case LppPackage.GRAMMAR_RULE__EXTENSION:
+      case LppPackage.EXTENSION_RULE__EXTENSION:
         return basicSetExtension(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -394,18 +394,18 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     switch (featureID)
     {
-      case LppPackage.GRAMMAR_RULE__NAME:
+      case LppPackage.EXTENSION_RULE__NAME:
         return getName();
-      case LppPackage.GRAMMAR_RULE__NODETYPE:
+      case LppPackage.EXTENSION_RULE__NODETYPE:
         return getNodetype();
-      case LppPackage.GRAMMAR_RULE__PART:
+      case LppPackage.EXTENSION_RULE__PART:
         return getPart();
-      case LppPackage.GRAMMAR_RULE__TOKEN:
+      case LppPackage.EXTENSION_RULE__TOKEN:
         if (resolve) return getToken();
         return basicGetToken();
-      case LppPackage.GRAMMAR_RULE__BLOCK:
+      case LppPackage.EXTENSION_RULE__BLOCK:
         return getBlock();
-      case LppPackage.GRAMMAR_RULE__EXTENSION:
+      case LppPackage.EXTENSION_RULE__EXTENSION:
         return getExtension();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -422,23 +422,23 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     switch (featureID)
     {
-      case LppPackage.GRAMMAR_RULE__NAME:
+      case LppPackage.EXTENSION_RULE__NAME:
         setName((RuleName)newValue);
         return;
-      case LppPackage.GRAMMAR_RULE__NODETYPE:
+      case LppPackage.EXTENSION_RULE__NODETYPE:
         setNodetype((String)newValue);
         return;
-      case LppPackage.GRAMMAR_RULE__PART:
+      case LppPackage.EXTENSION_RULE__PART:
         getPart().clear();
         getPart().addAll((Collection<? extends NodePart>)newValue);
         return;
-      case LppPackage.GRAMMAR_RULE__TOKEN:
+      case LppPackage.EXTENSION_RULE__TOKEN:
         setToken((PrecedenceRow)newValue);
         return;
-      case LppPackage.GRAMMAR_RULE__BLOCK:
+      case LppPackage.EXTENSION_RULE__BLOCK:
         setBlock((CodeBlock)newValue);
         return;
-      case LppPackage.GRAMMAR_RULE__EXTENSION:
+      case LppPackage.EXTENSION_RULE__EXTENSION:
         setExtension((Extensions)newValue);
         return;
     }
@@ -455,22 +455,22 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     switch (featureID)
     {
-      case LppPackage.GRAMMAR_RULE__NAME:
+      case LppPackage.EXTENSION_RULE__NAME:
         setName((RuleName)null);
         return;
-      case LppPackage.GRAMMAR_RULE__NODETYPE:
+      case LppPackage.EXTENSION_RULE__NODETYPE:
         setNodetype(NODETYPE_EDEFAULT);
         return;
-      case LppPackage.GRAMMAR_RULE__PART:
+      case LppPackage.EXTENSION_RULE__PART:
         getPart().clear();
         return;
-      case LppPackage.GRAMMAR_RULE__TOKEN:
+      case LppPackage.EXTENSION_RULE__TOKEN:
         setToken((PrecedenceRow)null);
         return;
-      case LppPackage.GRAMMAR_RULE__BLOCK:
+      case LppPackage.EXTENSION_RULE__BLOCK:
         setBlock((CodeBlock)null);
         return;
-      case LppPackage.GRAMMAR_RULE__EXTENSION:
+      case LppPackage.EXTENSION_RULE__EXTENSION:
         setExtension((Extensions)null);
         return;
     }
@@ -487,17 +487,17 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
   {
     switch (featureID)
     {
-      case LppPackage.GRAMMAR_RULE__NAME:
+      case LppPackage.EXTENSION_RULE__NAME:
         return name != null;
-      case LppPackage.GRAMMAR_RULE__NODETYPE:
+      case LppPackage.EXTENSION_RULE__NODETYPE:
         return NODETYPE_EDEFAULT == null ? nodetype != null : !NODETYPE_EDEFAULT.equals(nodetype);
-      case LppPackage.GRAMMAR_RULE__PART:
+      case LppPackage.EXTENSION_RULE__PART:
         return part != null && !part.isEmpty();
-      case LppPackage.GRAMMAR_RULE__TOKEN:
+      case LppPackage.EXTENSION_RULE__TOKEN:
         return token != null;
-      case LppPackage.GRAMMAR_RULE__BLOCK:
+      case LppPackage.EXTENSION_RULE__BLOCK:
         return block != null;
-      case LppPackage.GRAMMAR_RULE__EXTENSION:
+      case LppPackage.EXTENSION_RULE__EXTENSION:
         return extension != null;
     }
     return super.eIsSet(featureID);
@@ -520,4 +520,4 @@ public class GrammarRuleImpl extends MinimalEObjectImpl.Container implements Gra
     return result.toString();
   }
 
-} //GrammarRuleImpl
+} //ExtensionRuleImpl

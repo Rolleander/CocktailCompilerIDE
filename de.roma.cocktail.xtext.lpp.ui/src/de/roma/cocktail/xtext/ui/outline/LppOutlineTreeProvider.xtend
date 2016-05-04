@@ -5,14 +5,12 @@ package de.roma.cocktail.xtext.ui.outline
 
 import de.roma.cocktail.xtext.lpp.Begin
 import de.roma.cocktail.xtext.lpp.Close
-import de.roma.cocktail.xtext.lpp.DefinedToken
 import de.roma.cocktail.xtext.lpp.Export
 import de.roma.cocktail.xtext.lpp.Global
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
-import de.roma.cocktail.xtext.lpp.RuleBody
 import de.roma.cocktail.xtext.lpp.ScannerName
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
@@ -26,10 +24,10 @@ class LppOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
 	override protected _isLeaf(EObject o) {
 
-		if(o instanceof RuleBody){return true}
+		//if(o instanceof RuleBody){return true}
 		if(o instanceof ParserName){return true}
 		if(o instanceof ScannerName){return true}
-		if(o instanceof DefinedToken){return true}
+//		if(o instanceof DefinedToken){return true}
 		if(o instanceof Local){return true}
 		if(o instanceof Export){return true}
 		if(o instanceof Import){return true}

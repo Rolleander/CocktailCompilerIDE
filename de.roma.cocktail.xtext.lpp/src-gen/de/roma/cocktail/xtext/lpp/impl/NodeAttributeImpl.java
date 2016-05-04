@@ -4,7 +4,7 @@
 package de.roma.cocktail.xtext.lpp.impl;
 
 import de.roma.cocktail.xtext.lpp.LppPackage;
-import de.roma.cocktail.xtext.lpp.TokenExtra;
+import de.roma.cocktail.xtext.lpp.NodeAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,66 +15,66 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Token Extra</b></em>'.
+ * An implementation of the model object '<em><b>Node Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.TokenExtraImpl#getCost <em>Cost</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.impl.TokenExtraImpl#getPresentation <em>Presentation</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.NodeAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.impl.NodeAttributeImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TokenExtraImpl extends MinimalEObjectImpl.Container implements TokenExtra
+public class NodeAttributeImpl extends MinimalEObjectImpl.Container implements NodeAttribute
 {
   /**
-   * The default value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * The default value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCost()
+   * @see #getAttribute()
    * @generated
    * @ordered
    */
-  protected static final int COST_EDEFAULT = 0;
+  protected static final String ATTRIBUTE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCost()
+   * @see #getAttribute()
    * @generated
    * @ordered
    */
-  protected int cost = COST_EDEFAULT;
+  protected String attribute = ATTRIBUTE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPresentation() <em>Presentation</em>}' attribute.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPresentation()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String PRESENTATION_EDEFAULT = null;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPresentation()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected String presentation = PRESENTATION_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TokenExtraImpl()
+  protected NodeAttributeImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
   @Override
   protected EClass eStaticClass()
   {
-    return LppPackage.Literals.TOKEN_EXTRA;
+    return LppPackage.Literals.NODE_ATTRIBUTE;
   }
 
   /**
@@ -95,9 +95,9 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getCost()
+  public String getAttribute()
   {
-    return cost;
+    return attribute;
   }
 
   /**
@@ -105,12 +105,12 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCost(int newCost)
+  public void setAttribute(String newAttribute)
   {
-    int oldCost = cost;
-    cost = newCost;
+    String oldAttribute = attribute;
+    attribute = newAttribute;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.TOKEN_EXTRA__COST, oldCost, cost));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.NODE_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
   }
 
   /**
@@ -118,9 +118,9 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPresentation()
+  public String getType()
   {
-    return presentation;
+    return type;
   }
 
   /**
@@ -128,12 +128,12 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPresentation(String newPresentation)
+  public void setType(String newType)
   {
-    String oldPresentation = presentation;
-    presentation = newPresentation;
+    String oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.TOKEN_EXTRA__PRESENTATION, oldPresentation, presentation));
+      eNotify(new ENotificationImpl(this, Notification.SET, LppPackage.NODE_ATTRIBUTE__TYPE, oldType, type));
   }
 
   /**
@@ -146,10 +146,10 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
   {
     switch (featureID)
     {
-      case LppPackage.TOKEN_EXTRA__COST:
-        return getCost();
-      case LppPackage.TOKEN_EXTRA__PRESENTATION:
-        return getPresentation();
+      case LppPackage.NODE_ATTRIBUTE__ATTRIBUTE:
+        return getAttribute();
+      case LppPackage.NODE_ATTRIBUTE__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,11 +164,11 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
   {
     switch (featureID)
     {
-      case LppPackage.TOKEN_EXTRA__COST:
-        setCost((Integer)newValue);
+      case LppPackage.NODE_ATTRIBUTE__ATTRIBUTE:
+        setAttribute((String)newValue);
         return;
-      case LppPackage.TOKEN_EXTRA__PRESENTATION:
-        setPresentation((String)newValue);
+      case LppPackage.NODE_ATTRIBUTE__TYPE:
+        setType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,11 +184,11 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
   {
     switch (featureID)
     {
-      case LppPackage.TOKEN_EXTRA__COST:
-        setCost(COST_EDEFAULT);
+      case LppPackage.NODE_ATTRIBUTE__ATTRIBUTE:
+        setAttribute(ATTRIBUTE_EDEFAULT);
         return;
-      case LppPackage.TOKEN_EXTRA__PRESENTATION:
-        setPresentation(PRESENTATION_EDEFAULT);
+      case LppPackage.NODE_ATTRIBUTE__TYPE:
+        setType(TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -204,10 +204,10 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
   {
     switch (featureID)
     {
-      case LppPackage.TOKEN_EXTRA__COST:
-        return cost != COST_EDEFAULT;
-      case LppPackage.TOKEN_EXTRA__PRESENTATION:
-        return PRESENTATION_EDEFAULT == null ? presentation != null : !PRESENTATION_EDEFAULT.equals(presentation);
+      case LppPackage.NODE_ATTRIBUTE__ATTRIBUTE:
+        return ATTRIBUTE_EDEFAULT == null ? attribute != null : !ATTRIBUTE_EDEFAULT.equals(attribute);
+      case LppPackage.NODE_ATTRIBUTE__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
     }
     return super.eIsSet(featureID);
   }
@@ -223,12 +223,12 @@ public class TokenExtraImpl extends MinimalEObjectImpl.Container implements Toke
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (cost: ");
-    result.append(cost);
-    result.append(", presentation: ");
-    result.append(presentation);
+    result.append(" (attribute: ");
+    result.append(attribute);
+    result.append(", type: ");
+    result.append(type);
     result.append(')');
     return result.toString();
   }
 
-} //TokenExtraImpl
+} //NodeAttributeImpl

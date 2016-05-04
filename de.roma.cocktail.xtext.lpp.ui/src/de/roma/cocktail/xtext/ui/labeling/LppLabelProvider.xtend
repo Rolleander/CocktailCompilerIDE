@@ -6,10 +6,8 @@ package de.roma.cocktail.xtext.ui.labeling
 import com.google.inject.Inject
 import de.roma.cocktail.xtext.lpp.Begin
 import de.roma.cocktail.xtext.lpp.Close
-import de.roma.cocktail.xtext.lpp.DefinedToken
 import de.roma.cocktail.xtext.lpp.Export
 import de.roma.cocktail.xtext.lpp.Global
-import de.roma.cocktail.xtext.lpp.GrammarRule
 import de.roma.cocktail.xtext.lpp.GrammarRules
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
@@ -17,9 +15,7 @@ import de.roma.cocktail.xtext.lpp.ParserModel
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.Precedence
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
-import de.roma.cocktail.xtext.lpp.RuleBody
 import de.roma.cocktail.xtext.lpp.ScannerName
-import de.roma.cocktail.xtext.lpp.Tokens
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.jface.preference.JFacePreferences
 import org.eclipse.jface.viewers.StyledString
@@ -97,26 +93,26 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Close'
 	}
 	
-		def image(Tokens o)
-	{
-		'tokens.png'
-	}
-	
-	def text(Tokens o)
-	{
-		'Tokens'
-	}
-	
-	def image(DefinedToken o)
-	{
-		'token.png'
-	}
-	
-	def text(DefinedToken o)
-	{
-	 o.getName()+': '+o.getNumber()	
-	}
-	
+//		def image(Tokens o)
+//	{
+//		'tokens.png'
+//	}
+//	
+//	def text(Tokens o)
+//	{
+//		'Tokens'
+//	}
+//	
+//	def image(DefinedToken o)
+//	{
+//		'token.png'
+//	}
+//	
+//	def text(DefinedToken o)
+//	{
+//	 o.getName()+': '+o.getNumber()	
+//	}
+//	
 	def image(Precedence o)
 	{
 		'star.png'
@@ -138,16 +134,16 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		}
 	}
 	
-	def text(PrecedenceRow o)
-	{
-		val tokens=o.getTokens()
-	    var returnText=''
-	    for(t: tokens)
-	    {
-	    	returnText+=t.getName()+' '
-	    }
-		return returnText
-	} 
+//	def text(PrecedenceRow o)
+//	{
+//		val tokens=o.getTokens()
+//	    var returnText=''
+//	    for(t: tokens)
+//	    {
+//	    	returnText+=t.getName()+' '
+//	    }
+//		return returnText
+//	} 
 	
 	 def image(ScannerName o)
 	{
@@ -180,43 +176,43 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Grammar Rules'
 	} 
 	
-	def image(GrammarRule o)
-	{
-		'text_replace.png'
-	}
-	
-	def text(GrammarRule o)
-	{
-		o.getName()
-	} 
-	
-	 def image(RuleBody o)
-	{
-		'page.png'
-	}
-	
-	
-	
-	def text(RuleBody o)
-	{
-		val part=o.part
-		val contents=part.content
-		var text=new StyledString
-		for(c: contents)
-		{
-			val reg=c.regex
-			val ref=c.ref
-			if(reg!=null){
-				text.append(reg+" ")
-			}
-			if(ref!=null)
-			{
-				text.append(ref.name+" ",styleBlue)
-			}
-		}
-		
-		return text;
-	} 
+//	def image(GrammarRule o)
+//	{
+//		'text_replace.png'
+//	}
+//	
+//	def text(GrammarRule o)
+//	{
+//		o.getName()
+//	} 
+//	
+//	 def image(RuleBody o)
+//	{
+//		'page.png'
+//	}
+//	
+//	
+//	
+//	def text(RuleBody o)
+//	{
+//		val part=o.part
+//		val contents=part.content
+//		var text=new StyledString
+//		for(c: contents)
+//		{
+//			val reg=c.regex
+//			val ref=c.ref
+//			if(reg!=null){
+//				text.append(reg+" ")
+//			}
+//			if(ref!=null)
+//			{
+//				text.append(ref.name+" ",styleBlue)
+//			}
+//		}
+//		
+//		return text;
+//	} 
 	
 	
 	

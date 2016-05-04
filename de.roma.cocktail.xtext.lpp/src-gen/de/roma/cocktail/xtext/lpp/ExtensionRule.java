@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Grammar Rule</b></em>'.
+ * A representation of the model object '<em><b>Extension Rule</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getName <em>Name</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getNodetype <em>Nodetype</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getPart <em>Part</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getToken <em>Token</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getBlock <em>Block</em>}</li>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRule#getExtension <em>Extension</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getName <em>Name</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getNodetype <em>Nodetype</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getPart <em>Part</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getToken <em>Token</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getBlock <em>Block</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getExtension <em>Extension</em>}</li>
  * </ul>
  *
- * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule()
+ * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule()
  * @model
  * @generated
  */
-public interface GrammarRule extends EObject
+public interface ExtensionRule extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' containment reference.
@@ -40,14 +40,14 @@ public interface GrammarRule extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' containment reference.
    * @see #setName(RuleName)
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Name()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Name()
    * @model containment="true"
    * @generated
    */
   RuleName getName();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.GrammarRule#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getName <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' containment reference.
@@ -66,14 +66,14 @@ public interface GrammarRule extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Nodetype</em>' attribute.
    * @see #setNodetype(String)
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Nodetype()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Nodetype()
    * @model
    * @generated
    */
   String getNodetype();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.GrammarRule#getNodetype <em>Nodetype</em>}' attribute.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getNodetype <em>Nodetype</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Nodetype</em>' attribute.
@@ -92,7 +92,7 @@ public interface GrammarRule extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Part</em>' containment reference list.
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Part()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Part()
    * @model containment="true"
    * @generated
    */
@@ -108,14 +108,14 @@ public interface GrammarRule extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Token</em>' reference.
    * @see #setToken(PrecedenceRow)
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Token()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Token()
    * @model
    * @generated
    */
   PrecedenceRow getToken();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.GrammarRule#getToken <em>Token</em>}' reference.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getToken <em>Token</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Token</em>' reference.
@@ -134,14 +134,14 @@ public interface GrammarRule extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Block</em>' containment reference.
    * @see #setBlock(CodeBlock)
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Block()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Block()
    * @model containment="true"
    * @generated
    */
   CodeBlock getBlock();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.GrammarRule#getBlock <em>Block</em>}' containment reference.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getBlock <em>Block</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Block</em>' containment reference.
@@ -160,14 +160,14 @@ public interface GrammarRule extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Extension</em>' containment reference.
    * @see #setExtension(Extensions)
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRule_Extension()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensionRule_Extension()
    * @model containment="true"
    * @generated
    */
   Extensions getExtension();
 
   /**
-   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.GrammarRule#getExtension <em>Extension</em>}' containment reference.
+   * Sets the value of the '{@link de.roma.cocktail.xtext.lpp.ExtensionRule#getExtension <em>Extension</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Extension</em>' containment reference.
@@ -176,4 +176,4 @@ public interface GrammarRule extends EObject
    */
   void setExtension(Extensions value);
 
-} // GrammarRule
+} // ExtensionRule

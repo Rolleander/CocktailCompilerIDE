@@ -9,25 +9,25 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Grammar Rules</b></em>'.
+ * A representation of the model object '<em><b>Extensions</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.roma.cocktail.xtext.lpp.GrammarRules#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link de.roma.cocktail.xtext.lpp.Extensions#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
- * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRules()
+ * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensions()
  * @model
  * @generated
  */
-public interface GrammarRules extends EObject
+public interface Extensions extends EObject
 {
   /**
    * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
-   * The list contents are of type {@link de.roma.cocktail.xtext.lpp.GrammarRule}.
+   * The list contents are of type {@link de.roma.cocktail.xtext.lpp.ExtensionRule}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Nodes</em>' containment reference list isn't clear,
@@ -35,10 +35,10 @@ public interface GrammarRules extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Nodes</em>' containment reference list.
-   * @see de.roma.cocktail.xtext.lpp.LppPackage#getGrammarRules_Nodes()
+   * @see de.roma.cocktail.xtext.lpp.LppPackage#getExtensions_Nodes()
    * @model containment="true"
    * @generated
    */
-  EList<GrammarRule> getNodes();
+  EList<ExtensionRule> getNodes();
 
-} // GrammarRules
+} // Extensions

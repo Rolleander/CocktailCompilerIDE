@@ -2,12 +2,11 @@ grammar de.roma.cocktail.xtext.Lpp with org.eclipse.xtext.common.Terminals
 
 generate lpp "http://www.roma.de/cocktail/xtext/Lpp"
 
-ParserModel:
+Parser:
 	(scanner=ScannerName? & parser=ParserName?
 	& importBlock=Import? & exportBlock=Export? & globalBlock=Global?
 	& localBlock=Local? & beginBlock=Begin? & closeBlock=Close?
-	& tokens=Tokens?
-	& precedenc=Precedence?
+	& precedence=Precedence?
 	& start=StartSymbols?)
 	rules=GrammarRules;
 
@@ -35,28 +34,22 @@ Begin:
 Close:
 	'CLOSE' '{' content=CodeBlock '}';
 
-Tokens:
-	'TOKEN' tokens+=DefinedToken*;
-
-DefinedToken:
-	name=(ID | STRING) (('=' number=INT (',' extra=TokenExtra)?) | (extra=TokenExtra) )?;
-
 TokenExtra:
 	cost=INT "," presentation=STRING;
 
 CodeBlock:
-	(CodeWall | '{' CodeBlock '}')*;
+	(wall=CodeWall | '{' block=CodeBlock '}')*;
 
 CodeWall:
 //(ID|INT|STRING|WS|'+'|'-'|'('|')'|'*'|'.'|'/'|'\\'|'|'|'?'|'>'|'<'|'#'|'$'|'%'|';'|':'|'['|']'|'=')
 	ID | INT | STRING | WS | '+' | '-' | '(' | ')' | '*' | '.' | '/' | '\\' | '|' | '?' | '>' | '<' | '#' | '$' | '%' | ';'
-	| ':' | '!' | '=' | ',';
+	| ':' | '!' | '=' | ',' | ':=';
 
 Precedence:
 	'PREC' rows+=PrecedenceRow*;
 
 PrecedenceRow:
-	type=PrecedenceType (tokens+=[DefinedToken])*;
+	type=PrecedenceType strings+=STRING* name=ID?;
 
 enum PrecedenceType:
 	NONE | LEFT | RIGHT;
@@ -68,28 +61,60 @@ StartState:
 	name=ID;
 
 GrammarRules:
-	('RULE' | 'RULES') rules+=GrammarRule*;
-
-GrammerReference:
-	GrammarRule | DefinedToken;
+	('RULE' | 'RULES') nodes+=GrammarRule*;
 
 GrammarRule:
-	 name=ID '=' '<'  rules+=SimpleRule*  '>.';
-	 
-SimpleRule:
-	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')?;	 
+	name=RuleName nodetype=NodeType? part+=NodePart* ('PREC' token=[PrecedenceRow])?
+	('{' block=CodeBlock '}')? extension=Extensions? 
+	'.';
+	
+ExtensionRule:
+	name=RuleName? nodetype=NodeType? part+=NodePart* ('PREC' token=[PrecedenceRow])?
+	('{' block=CodeBlock '}')? extension=Extensions? 
+	'.';
 
-RuleBody:
-	part=RulePart code=RuleCode;
+Extensions:
+	"<" nodes+=ExtensionRule* ">";
 
-RuleCode:
-	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
+NodePart:
+	(child=Node | attribute=NodeAttribute);
 
-RuleContent:
-	regex=STRING | ref=[GrammerReference];
+Node:
+	(selector=ID ':')? name=(ID | STRING);
 
-RulePart:
-	(content+=RuleContent)*;
+NodeAttribute:
+	'[' attribute=ID (':' type=ID)? ']';
+
+RuleName:
+	name=(ID | STRING);
+
+NodeType:
+	"=" | ":" | ":=";
+
+
+//GrammarRules:
+//	('RULE' | 'RULES') rules+=GrammarRule*;
+//
+//GrammerReference:
+//	GrammarRule | DefinedToken;
+//
+//GrammarRule:
+//	 name=ID '=' '<'  rules+=SimpleRule*  '>.';
+//	 
+//SimpleRule:
+//	(name=ID)? '=' body=RuleBody ('<'  rules+=SimpleRule*   '>.')?;	 
+//
+//RuleBody:
+//	part=RulePart code=RuleCode;
+//
+//RuleCode:
+//	('{' CodeBlock '}')? & ('[' CodeBlock ']')?;
+//
+//RuleContent:
+//	regex=STRING | ref=[GrammerReference];
+//
+//RulePart:
+//	(content+=RuleContent)*;
 
 	//terminal Identifier:
 //	('\\')?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')* 
