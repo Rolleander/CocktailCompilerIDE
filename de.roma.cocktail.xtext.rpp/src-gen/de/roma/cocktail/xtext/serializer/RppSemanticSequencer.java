@@ -354,7 +354,7 @@ public class RppSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     RuleInsert returns RuleInsert
 	 *
 	 * Constraint:
-	 *     (info='INSERT' case='CASE-INSENSITIVE'? start=RuleStart? content=CodeBlock? rules+=SingleRule*)
+	 *     (info='INSERT' case='CASE-INSENSITIVE'? start=RuleStart? content=CodeBlock rules+=SingleRule*)
 	 */
 	protected void sequence_RuleInsert(ISerializationContext context, RuleInsert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

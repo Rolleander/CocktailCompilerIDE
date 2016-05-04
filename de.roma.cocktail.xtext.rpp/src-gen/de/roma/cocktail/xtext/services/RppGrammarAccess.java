@@ -803,10 +803,10 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRulesSingleRuleParserRuleCall_5_0 = (RuleCall)cRulesAssignment_5.eContents().get(0);
 		
 		//RuleInsert:
-		//	info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}')? rules+=SingleRule*;
+		//	info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}') rules+=SingleRule*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}')? rules+=SingleRule*
+		//info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}') rules+=SingleRule*
 		public Group getGroup() { return cGroup; }
 		
 		//info='INSERT'
@@ -830,7 +830,7 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 		//RuleStart
 		public RuleCall getStartRuleStartParserRuleCall_3_0() { return cStartRuleStartParserRuleCall_3_0; }
 		
-		//('{' content=CodeBlock '}')?
+		//('{' content=CodeBlock '}')
 		public Group getGroup_4() { return cGroup_4; }
 		
 		//'{'
@@ -1407,7 +1407,7 @@ public class RppGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RuleInsert:
-	//	info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}')? rules+=SingleRule*;
+	//	info='INSERT' 'RULES' case='CASE-INSENSITIVE'? start=RuleStart? ('{' content=CodeBlock '}') rules+=SingleRule*;
 	public RuleInsertElements getRuleInsertAccess() {
 		return pRuleInsert;
 	}

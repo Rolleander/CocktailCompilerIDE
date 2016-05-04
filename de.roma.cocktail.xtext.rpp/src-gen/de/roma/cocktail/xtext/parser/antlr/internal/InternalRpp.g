@@ -1594,7 +1594,7 @@ ruleRuleInsert returns [EObject current=null]
 			{
 				newLeafNode(otherlv_6, grammarAccess.getRuleInsertAccess().getRightCurlyBracketKeyword_4_2());
 			}
-		)?
+		)
 		(
 			(
 				{
