@@ -9,9 +9,9 @@
       </category>
       <wizard
             category="Cocktail Wizards"
-            class="de.roma.cocktail.assistent.wizards.NewWizard"
+            class="de.roma.cocktail.assistent.wizards.NewCocktailWizard"
             icon="icons/newprj_wiz.gif" 
-            id="de.roma.cocktail.assistent.wizards.NewWizard"
+            id="de.roma.cocktail.assistent.wizards.NewCocktailWizard"
             name="Cocktail Project">
       </wizard>
       <wizard
