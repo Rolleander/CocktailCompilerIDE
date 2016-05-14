@@ -21,6 +21,12 @@ import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 import de.roma.cocktail.xtext.lpp.Parser
+import de.roma.cocktail.xtext.lpp.GrammarRule
+import de.roma.cocktail.xtext.lpp.ExtensionRule
+import de.roma.cocktail.xtext.lpp.Extensions
+import de.roma.cocktail.xtext.lpp.NodePart
+import de.roma.cocktail.xtext.lpp.Node
+import de.roma.cocktail.xtext.lpp.NodeAttribute
 
 /**
  * Provides labels for EObjects.
@@ -29,7 +35,7 @@ import de.roma.cocktail.xtext.lpp.Parser
  */
 class LppLabelProvider extends DefaultEObjectLabelProvider {
 
-		val Styler styleBlue=StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR,null);
+	val Styler styleBlue=StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR,null);
 
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {
@@ -123,8 +129,7 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Precedences'
 	}
 	
-	
-	 def image(PrecedenceRow o)
+	def image(PrecedenceRow o)
 	{
 		switch(o.type)
 		{
@@ -134,8 +139,8 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		}
 	}
 	
-//	def text(PrecedenceRow o)
-//	{
+	def text(PrecedenceRow o)
+	{
 //		val tokens=o.getTokens()
 //	    var returnText=''
 //	    for(t: tokens)
@@ -143,9 +148,9 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 //	    	returnText+=t.getName()+' '
 //	    }
 //		return returnText
-//	} 
+	} 
 	
-	 def image(ScannerName o)
+	def image(ScannerName o)
 	{
 		'barcode.png'
 	}
@@ -155,8 +160,7 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Scanner: '+o.getName()
 	} 
 	
-	
-		 def image(ParserName o)
+	def image(ParserName o)
 	{
 		'key.png'
 	}
@@ -166,7 +170,7 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Name: '+o.getName()
 	}
 	
-		 def image(GrammarRules o)
+	def image(GrammarRules o)
 	{
 		'rules.png'
 	}
@@ -176,22 +180,69 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Grammar Rules'
 	} 
 	
-//	def image(GrammarRule o)
-//	{
-//		'text_replace.png'
-//	}
-//	
-//	def text(GrammarRule o)
-//	{
-//		o.getName()
-//	} 
-//	
-//	 def image(RuleBody o)
+	def image(GrammarRule o)
+	{
+		'text_replace.png'
+	}
+	
+	def text(GrammarRule o)
+	{
+		o.getName()
+	}
+	
+	def image(ExtensionRule o)
+	{
+		'text_replace.png'
+	}
+	
+	def text(ExtensionRule o)
+	{
+		o.getName()
+	} 
+	
+	def image(Extensions o) 
+	{
+		'page_white_stack.png'
+	}
+
+	def text(Extensions o) 
+	{
+		"Extensions"
+	}
+	
+	def image(NodePart o) 
+	{
+		//TODO 
+	}
+	
+	def text(NodePart o) 
+	{
+		//TODO 
+	}
+	
+	def image(Node o) 
+	{
+		//TODO 
+	}
+	
+	def text(Node o) {
+		//TODO 
+	}
+	
+	def image(NodeAttribute o) 
+	{
+		//TODO 
+	}
+	
+	def text(NodeAttribute o) 
+	{
+		//TODO 
+	}
+	
+//	def image(RuleBody o)
 //	{
 //		'page.png'
 //	}
-//	
-//	
 //	
 //	def text(RuleBody o)
 //	{
