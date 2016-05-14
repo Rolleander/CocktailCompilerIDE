@@ -11,7 +11,6 @@ import de.roma.cocktail.xtext.lpp.Global
 import de.roma.cocktail.xtext.lpp.GrammarRules
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
-import de.roma.cocktail.xtext.lpp.ParserModel
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.Precedence
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
@@ -37,13 +36,13 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	// Labels and icons can be computed like this:
-	def image(ParserModel p) {
-		'parser.png'
-	}
-
-	def text(ParserModel p) {
-		'Parser'
-	}
+//	def image(ParserModel p) {
+//		'parser.png'
+//	}
+//
+//	def text(ParserModel p) {
+//		'Parser'
+//	}
 
 	def image(Import o) {
 		'cog.png'
