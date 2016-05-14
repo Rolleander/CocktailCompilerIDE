@@ -11,6 +11,12 @@ import org.eclipse.ui.PlatformUI;
 
 import de.roma.cocktail.assistent.wizards.NewRPPWizard;
 
+/**
+ * Klasse für den Aufruf des Wizards über Kontextmenü.
+ * Noch nicht fertig
+ * @author MP
+ *
+ */
 public class NewRPPAction implements IObjectActionDelegate {
 
     private IWorkbenchPart wPart;

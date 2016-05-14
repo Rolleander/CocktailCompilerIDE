@@ -20,6 +20,7 @@ import org.eclipse.jface.preference.JFacePreferences
 import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import de.roma.cocktail.xtext.lpp.Parser
 
 /**
  * Provides labels for EObjects.
@@ -36,13 +37,13 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 	}
 
 	// Labels and icons can be computed like this:
-//	def image(ParserModel p) {
-//		'parser.png'
-//	}
-//
-//	def text(ParserModel p) {
-//		'Parser'
-//	}
+	def image(Parser p) {
+		'parser.png'
+	}
+
+	def text(Parser p) {
+		'Parser'
+	}
 
 	def image(Import o) {
 		'cog.png'

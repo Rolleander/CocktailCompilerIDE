@@ -1,9 +1,13 @@
 package de.roma.cocktail.assistent.launch;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
@@ -11,6 +15,7 @@ import org.eclipse.swt.widgets.Text;
 
 public class MainTab extends AbstractLaunchConfigurationTab {
 
+	public static final String CONFIG = "configFolder";
 	
 	private Text sourcePath;
 	
@@ -27,10 +32,18 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		composite.setLayout(layout);
 		
 	    Label label = new Label(composite, SWT.NULL);
-        label.setText("Resource Folder:");
+        label.setText("Config Folder:");
         
-        sourcePath=new Text(composite, SWT.NULL);
-        sourcePath.setText("C:\\Program Files (x86)\\Example");     
+        sourcePath = new Text(composite, SWT.NULL);
+        sourcePath.addModifyListener(new ModifyListener() {
+			
+			@Override
+			public void modifyText(ModifyEvent arg0) {
+				updateLaunchConfigurationDialog();
+			}
+		});
+        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
+        sourcePath.setLayoutData(gd);
 
         setControl(composite);
 	}
@@ -38,22 +51,33 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-
 	}
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-
+		try {
+			sourcePath.setText(configuration.getAttribute(MainTab.CONFIG, "/CocktailProject/config"));
+		} catch (CoreException e) {
+			sourcePath.setText("/CocktailProject/config");
+		}
 	}
 
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-
+		configuration.setAttribute(MainTab.CONFIG, sourcePath.getText());
 	}
 
 	@Override
 	public String getName() {
 		return "Main";
 	}
-
+	
+	@Override
+	public boolean isValid(ILaunchConfiguration launchConfig) {
+		setErrorMessage(null);
+		if (sourcePath.getText().equals("")) {
+			setErrorMessage("A config folder must be specified");
+		}
+		return true;
+	}
 }

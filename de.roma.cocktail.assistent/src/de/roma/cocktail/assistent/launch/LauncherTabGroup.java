@@ -14,12 +14,10 @@ public class LauncherTabGroup implements ILaunchConfigurationTabGroup {
 	private ILaunchConfigurationTab[] tabs;
 	@Override
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
-	   tabs = new ILaunchConfigurationTab[] {
+		tabs = new ILaunchConfigurationTab[] {
 			    new MainTab(),
-			    new ScannerTab(),
 				new CommonTab()
 		};
-		
 	}
 
 	@Override

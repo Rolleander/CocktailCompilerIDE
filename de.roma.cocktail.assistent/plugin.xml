@@ -83,7 +83,7 @@
             delegate="de.roma.cocktail.assistent.launch.LaunchConfiguration"
             id="de.roma.cocktail.assistent.launchConfigurationType1"
             modes="run, debug"    
-            name="CompilerLaunch">
+            name="Cocktail Launch">
       </launchConfigurationType>
    </extension>
    <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
@@ -106,7 +106,7 @@
       <shortcut
             class="de.roma.cocktail.assistent.launch.LauncherShortcut"
             id="de.roma.cocktail.assistent.shortcut1"
-            label="Cocktail Tools Compile"
+            label="Cocktail Tools Make"
             icon="icons/compile.png"
             modes="run, debug">
              <contextualLaunch>
@@ -115,8 +115,9 @@
                <count value="1"/>
                <iterate>
                  <or>
-                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.scan"/>
-                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.pars"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.scn"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.prs"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.ast"/>
                  </or>
                </iterate>
              </with>
