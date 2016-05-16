@@ -116,7 +116,11 @@
                <iterate>
                  <or>
                    <test property="org.eclipse.debug.ui.matchesPattern" value="*.scn"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.scan"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.rex"/>
                    <test property="org.eclipse.debug.ui.matchesPattern" value="*.prs"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.pars"/>
+                   <test property="org.eclipse.debug.ui.matchesPattern" value="*.lark"/>
                    <test property="org.eclipse.debug.ui.matchesPattern" value="*.ast"/>
                  </or>
                </iterate>

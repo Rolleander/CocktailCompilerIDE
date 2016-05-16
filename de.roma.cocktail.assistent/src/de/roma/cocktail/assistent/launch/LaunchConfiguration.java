@@ -12,7 +12,7 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor)
 			throws CoreException {
-		System.out.println(configuration.getWorkingCopy().getAttribute(MainTab.CONFIG, "/CocktailProject/config"));
+		System.out.println(configuration.getAttribute(MainTab.CONFIG, "/CocktailProject/config"));
 //		ProcessLauncher.launchMake(configuration.getName(), configuration.getWorkingCopy().getAttribute("configFolder", "/CocktailProject/config"));
 	}
 }

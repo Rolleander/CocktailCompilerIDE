@@ -3,10 +3,66 @@
  */
 package de.roma.cocktail.xtext.ui.contentassist
 
+import java.io.FileInputStream
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.Path
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.ArrayList
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class LppProposalProvider extends AbstractLppProposalProvider {
+
+	override complete_CodeWall(EObject model, RuleCall ruleCall, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+
+		val resource = context.resource
+		val platformString = resource.getURI().toPlatformString(true);
+		val myFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
+		val proj = myFile.getProject();
+		val folder = proj.getFolder("config")
+		val tree = folder.getFile("Tree.h");
+		
+		println("Test")
+		
+		val commands = new ArrayList<String>()
+		
+		if (tree != null && tree.exists()){
+			val uri = tree.locationURI.toString.replaceAll("file:", "")
+			val fis = new FileInputStream(uri)
+			val inputReader = new BufferedReader(new InputStreamReader(fis))
+			var line = "";
+			var lastLine = "";
+			while ((line = inputReader.readLine) != null){
+   				if (line.matches("extern.*ARGS.*")){ //(\\s\\d)* (\\s\\d)* ARGS
+   					if (line.endsWith(",")){
+   						commands.add(line + inputReader.readLine)
+   					}
+   					else {
+   						commands.add(line)
+   					}
+   				}
+   				else if (line.trim().startsWith("ARGS")){
+   					commands.add(lastLine + line)
+   				}
+   				lastLine = line
+  			}
+  			inputReader.close()
+		}
+		
+		println(commands.size)
+		commands.forEach [ command |
+			val proposal = command.replaceAll("extern\\s+[a-zA-Z_0-9]*\\s+","").replaceAll("ARGS\\s+","")
+//			println(proposal)
+			acceptor.accept(createCompletionProposal(proposal, context));
+		]
+
+	}
 }

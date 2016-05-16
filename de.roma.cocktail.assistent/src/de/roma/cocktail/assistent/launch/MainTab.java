@@ -34,7 +34,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	    Label label = new Label(composite, SWT.NULL);
         label.setText("Config Folder:");
         
-        sourcePath = new Text(composite, SWT.NULL);
+        sourcePath = new Text(composite, SWT.SINGLE | SWT.BORDER);
         sourcePath.addModifyListener(new ModifyListener() {
 			
 			@Override
@@ -55,6 +55,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
+		System.out.println("initializeFrom");
 		try {
 			sourcePath.setText(configuration.getAttribute(MainTab.CONFIG, "/CocktailProject/config"));
 		} catch (CoreException e) {
@@ -65,6 +66,12 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(MainTab.CONFIG, sourcePath.getText());
+		System.out.println("performApply");
+		try {
+			configuration.doSave();
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -75,8 +82,10 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	@Override
 	public boolean isValid(ILaunchConfiguration launchConfig) {
 		setErrorMessage(null);
+		setMessage(null);
 		if (sourcePath.getText().equals("")) {
 			setErrorMessage("A config folder must be specified");
+			return false;
 		}
 		return true;
 	}
