@@ -29,17 +29,15 @@ class LppProposalProvider extends AbstractLppProposalProvider {
 		val proj = myFile.getProject();
 		val folder = proj.getFolder("config")
 		val tree = folder.getFile("Tree.h");
-		
-		println("Test")
-		
+
 		val commands = new ArrayList<String>()
 		
 		if (tree != null && tree.exists()){
 			val uri = tree.locationURI.toString.replaceAll("file:", "")
 			val fis = new FileInputStream(uri)
 			val inputReader = new BufferedReader(new InputStreamReader(fis))
-			var line = "";
-			var lastLine = "";
+			var line = ""
+			var lastLine = ""
 			while ((line = inputReader.readLine) != null){
    				if (line.matches("extern.*ARGS.*")){ //(\\s\\d)* (\\s\\d)* ARGS
    					if (line.endsWith(",")){
@@ -57,10 +55,8 @@ class LppProposalProvider extends AbstractLppProposalProvider {
   			inputReader.close()
 		}
 		
-		println(commands.size)
 		commands.forEach [ command |
 			val proposal = command.replaceAll("extern\\s+[a-zA-Z_0-9]*\\s+","").replaceAll("ARGS\\s+","")
-//			println(proposal)
 			acceptor.accept(createCompletionProposal(proposal, context));
 		]
 
