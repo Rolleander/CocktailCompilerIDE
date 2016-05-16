@@ -162,7 +162,7 @@ public class ParserLabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String image(final ScannerName o) {
-    return "barcode.png";
+    return "scanner.png";
   }
   
   public String text(final ScannerName o) {

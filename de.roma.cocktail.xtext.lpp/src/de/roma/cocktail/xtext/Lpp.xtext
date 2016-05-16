@@ -64,12 +64,13 @@ GrammarRules:
 	('RULE' | 'RULES') nodes+=GrammarRule*;
 
 GrammarRule:
-	name=RuleName nodetype=NodeType? part+=NodePart* ('PREC' token=[PrecedenceRow])?
-	('{' block=CodeBlock '}')? extension=Extensions? 
-	'.';
+	name=RuleName body=RuleBody;
 	
 ExtensionRule:
-	name=RuleName? nodetype=NodeType? part+=NodePart* ('PREC' token=[PrecedenceRow])?
+	name=RuleName? body=RuleBody;
+
+RuleBody:
+	nodetype=NodeType? part+=NodePart* ('PREC' token=[PrecedenceRow])?
 	('{' block=CodeBlock '}')? extension=Extensions? 
 	'.';
 

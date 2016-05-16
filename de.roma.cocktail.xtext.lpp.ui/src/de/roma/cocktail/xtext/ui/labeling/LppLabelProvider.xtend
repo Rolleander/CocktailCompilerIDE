@@ -6,27 +6,27 @@ package de.roma.cocktail.xtext.ui.labeling
 import com.google.inject.Inject
 import de.roma.cocktail.xtext.lpp.Begin
 import de.roma.cocktail.xtext.lpp.Close
+import de.roma.cocktail.xtext.lpp.CodeBlock
 import de.roma.cocktail.xtext.lpp.Export
+import de.roma.cocktail.xtext.lpp.ExtensionRule
+import de.roma.cocktail.xtext.lpp.Extensions
 import de.roma.cocktail.xtext.lpp.Global
+import de.roma.cocktail.xtext.lpp.GrammarRule
 import de.roma.cocktail.xtext.lpp.GrammarRules
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
+import de.roma.cocktail.xtext.lpp.NodePart
+import de.roma.cocktail.xtext.lpp.Parser
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.Precedence
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
+import de.roma.cocktail.xtext.lpp.RuleBody
 import de.roma.cocktail.xtext.lpp.ScannerName
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.jface.preference.JFacePreferences
 import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.viewers.StyledString.Styler
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
-import de.roma.cocktail.xtext.lpp.Parser
-import de.roma.cocktail.xtext.lpp.GrammarRule
-import de.roma.cocktail.xtext.lpp.ExtensionRule
-import de.roma.cocktail.xtext.lpp.Extensions
-import de.roma.cocktail.xtext.lpp.NodePart
-import de.roma.cocktail.xtext.lpp.Node
-import de.roma.cocktail.xtext.lpp.NodeAttribute
 
 /**
  * Provides labels for EObjects.
@@ -35,7 +35,7 @@ import de.roma.cocktail.xtext.lpp.NodeAttribute
  */
 class LppLabelProvider extends DefaultEObjectLabelProvider {
 
-	val Styler styleBlue=StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR,null);
+	val Styler styleBlue = StyledString.createColorRegistryStyler(JFacePreferences.ACTIVE_HYPERLINK_COLOR, null);
 
 	@Inject
 	new(AdapterFactoryLabelProvider delegate) {
@@ -98,185 +98,131 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 	def text(Close o) {
 		'Close'
 	}
-	
-//		def image(Tokens o)
-//	{
-//		'tokens.png'
-//	}
-//	
-//	def text(Tokens o)
-//	{
-//		'Tokens'
-//	}
-//	
-//	def image(DefinedToken o)
-//	{
-//		'token.png'
-//	}
-//	
-//	def text(DefinedToken o)
-//	{
-//	 o.getName()+': '+o.getNumber()	
-//	}
-//	
-	def image(Precedence o)
-	{
+
+	def image(Precedence o) {
 		'star.png'
 	}
-	
-	def text(Precedence o)
-	{
+
+	def text(Precedence o) {
 		'Precedences'
 	}
-	
-	def image(PrecedenceRow o)
-	{
-		switch(o.type)
-		{
+
+	def image(PrecedenceRow o) {
+		switch (o.type) {
 			case LEFT: 'arrow_left.png'
 			case NONE: 'stop.png'
 			case RIGHT: 'arrow_right.png'
 		}
 	}
-	
-	def text(PrecedenceRow o)
-	{
-//		val tokens=o.getTokens()
-//	    var returnText=''
-//	    for(t: tokens)
-//	    {
-//	    	returnText+=t.getName()+' '
-//	    }
-//		return returnText
-	} 
-	
-	def image(ScannerName o)
-	{
-		'barcode.png'
+
+	def text(PrecedenceRow o) {
+		val strings = o.strings
+		val name = o.name
+		val text = new StyledString
+		for (string : strings) {
+			text.append(string + " ")
+		}
+		if (name != null) {
+			text.append(name, styleBlue)
+		}
+		return text
 	}
-	
-	def text(ScannerName o)
-	{
-		'Scanner: '+o.getName()
-	} 
-	
-	def image(ParserName o)
-	{
+
+	def image(ScannerName o) {
+		'scanner.png'
+	}
+
+	def text(ScannerName o) {
+		val text = new StyledString
+		text.append("Scanner ")
+		text.append(o.name, styleBlue)
+		return text
+	}
+
+	def image(ParserName o) {
 		'key.png'
 	}
-	
-	def text(ParserName o)
-	{
-		'Name: '+o.getName()
+
+	def text(ParserName o) {
+		val text = new StyledString
+		text.append("Name ")
+		text.append(o.name, styleBlue)
+		return text
 	}
-	
-	def image(GrammarRules o)
-	{
+
+	def image(GrammarRules o) {
 		'rules.png'
 	}
-	
-	def text(GrammarRules o)
-	{
+
+	def text(GrammarRules o) {
 		'Grammar Rules'
-	} 
-	
-	def image(GrammarRule o)
-	{
+	}
+
+	def image(GrammarRule o) {
 		'text_replace.png'
 	}
-	
-	def text(GrammarRule o)
-	{
-		o.getName()
+
+	def text(GrammarRule o) {
+		val text = new StyledString
+		text.append(o.name.name + " ", styleBlue)
+		decorateRuleBody(text, o.body)
+		return text
 	}
-	
-	def image(ExtensionRule o)
-	{
+
+	def decorateRuleBody(StyledString text, RuleBody o) {
+		text.append(o.nodetype + " ")
+		for (part : o.part) {
+			if (part.child != null) {
+				val node = part.child
+				if (node.selector != null) {
+					text.append(node.selector + " ", styleBlue)
+					text.append(": ")
+				}
+				text.append(node.name+" ", styleBlue)
+			} else if (part.attribute != null) {
+				val att = part.attribute
+				text.append("[ ")
+				text.append(att.attribute + " ", styleBlue)
+				if (att.type != null) {
+					text.append(": ")
+					text.append(att.type + " ", styleBlue)
+				}
+				text.append("] ")
+			}
+		}
+		if (o.token != null) {
+			text.append("PREC ")
+			text.append(o.token.name + " ", styleBlue)
+		}
+	}
+
+	def image(ExtensionRule o) {
 		'text_replace.png'
 	}
-	
-	def text(ExtensionRule o)
-	{
-		o.getName()
-	} 
-	
-	def image(Extensions o) 
-	{
+
+	def text(ExtensionRule o) {
+		val text = new StyledString
+		if (o.name != null) {
+			text.append(o.name.name + " ", styleBlue)
+		}
+		decorateRuleBody(text, o.body)
+		return text
+	}
+
+	def image(Extensions o) {
 		'page_white_stack.png'
 	}
 
-	def text(Extensions o) 
-	{
+	def text(Extensions o) {
 		"Extensions"
 	}
-	
-	def image(NodePart o) 
-	{
-		//TODO 
+
+	def text(CodeBlock o) {
+		"Code Block"
 	}
-	
-	def text(NodePart o) 
-	{
-		//TODO 
+
+	def image(CodeBlock o) {
+		"cog.png"
 	}
-	
-	def image(Node o) 
-	{
-		//TODO 
-	}
-	
-	def text(Node o) {
-		//TODO 
-	}
-	
-	def image(NodeAttribute o) 
-	{
-		//TODO 
-	}
-	
-	def text(NodeAttribute o) 
-	{
-		//TODO 
-	}
-	
-//	def image(RuleBody o)
-//	{
-//		'page.png'
-//	}
-//	
-//	def text(RuleBody o)
-//	{
-//		val part=o.part
-//		val contents=part.content
-//		var text=new StyledString
-//		for(c: contents)
-//		{
-//			val reg=c.regex
-//			val ref=c.ref
-//			if(reg!=null){
-//				text.append(reg+" ")
-//			}
-//			if(ref!=null)
-//			{
-//				text.append(ref.name+" ",styleBlue)
-//			}
-//		}
-//		
-//		return text;
-//	} 
-	
-	
-	
-	/*	 	 
-	 def image( o)
-	{
-		'.png'
-	}
-	
-	def text( o)
-	{
-		''
-	} 
- 
-	 */
+
 }

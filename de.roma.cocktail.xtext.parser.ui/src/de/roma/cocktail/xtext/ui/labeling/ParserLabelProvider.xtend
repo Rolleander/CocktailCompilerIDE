@@ -152,7 +152,7 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 	
 	 def image(ScannerName o)
 	{
-		'barcode.png'
+		'scanner.png'
 	}
 	
 	def text(ScannerName o)

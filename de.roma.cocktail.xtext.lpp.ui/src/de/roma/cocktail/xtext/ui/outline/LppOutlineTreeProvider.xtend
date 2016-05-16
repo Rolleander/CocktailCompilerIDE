@@ -5,39 +5,97 @@ package de.roma.cocktail.xtext.ui.outline
 
 import de.roma.cocktail.xtext.lpp.Begin
 import de.roma.cocktail.xtext.lpp.Close
+import de.roma.cocktail.xtext.lpp.CodeBlock
 import de.roma.cocktail.xtext.lpp.Export
 import de.roma.cocktail.xtext.lpp.Global
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
+import de.roma.cocktail.xtext.lpp.NodePart
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
+import de.roma.cocktail.xtext.lpp.RuleBody
+import de.roma.cocktail.xtext.lpp.RuleName
 import de.roma.cocktail.xtext.lpp.ScannerName
 import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.ui.editor.outline.IOutlineNode
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
+import de.roma.cocktail.xtext.lpp.GrammarRule
+import de.roma.cocktail.xtext.lpp.ExtensionRule
 
 /**
  * Customization of the default outline structure.
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#outline
  */
 class LppOutlineTreeProvider extends DefaultOutlineTreeProvider {
 
+	override createChildren(IOutlineNode parent, EObject o) {
+		if (o instanceof GrammarRule) {
+			val rule = o as GrammarRule
+			if (rule.body.block != null) {
+				createNode(parent, rule.body.block)
+			}
+			if (rule.body.extension != null) {
+				createNode(parent, rule.body.extension)
+			}
+
+		}
+		if (o instanceof ExtensionRule) {
+			val rule = o as ExtensionRule
+			if (rule.body.block != null) {
+				createNode(parent, rule.body.block)
+			}
+			if (rule.body.extension != null) {
+				createNode(parent, rule.body.extension)
+			}
+		}
+		super.createChildren(parent, o)
+	}
+
+		override protected createNode(IOutlineNode parent, EObject o) {
+			if(o instanceof NodePart) return;
+			if(o instanceof RuleBody) return;
+			if(o instanceof RuleName) return;
+			
+			super.createNode(parent, o)
+		}
 	override protected _isLeaf(EObject o) {
 
-		//if(o instanceof RuleBody){return true}
-		if(o instanceof ParserName){return true}
-		if(o instanceof ScannerName){return true}
-//		if(o instanceof DefinedToken){return true}
-		if(o instanceof Local){return true}
-		if(o instanceof Export){return true}
-		if(o instanceof Import){return true}
-		if(o instanceof Global){return true}
-		if(o instanceof Begin){return true}
-		if(o instanceof Close){return true}
-		if(o instanceof PrecedenceRow){return true}
-		
-	//  if(o instanceof ){return true}
-			
+		if (o instanceof NodePart) {
+			return true
+		}
+		if (o instanceof CodeBlock) {
+			return true
+		}
+		if (o instanceof ParserName) {
+			return true
+		}
+		if (o instanceof ScannerName) {
+			return true
+		}
+		if (o instanceof Local) {
+			return true
+		}
+		if (o instanceof Export) {
+			return true
+		}
+		if (o instanceof Import) {
+			return true
+		}
+		if (o instanceof Global) {
+			return true
+		}
+		if (o instanceof Begin) {
+			return true
+		}
+		if (o instanceof Close) {
+			return true
+		}
+		if (o instanceof PrecedenceRow) {
+			return true
+		}
+
+	// if(o instanceof ){return true}
 	}
 
 }
