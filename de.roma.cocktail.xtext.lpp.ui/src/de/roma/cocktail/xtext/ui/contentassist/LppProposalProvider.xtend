@@ -23,6 +23,16 @@ class LppProposalProvider extends AbstractLppProposalProvider {
 	override complete_CodeWall(EObject model, RuleCall ruleCall, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
 
+//		val resource = context.resource
+//		val platformString = resource.getURI().toPlatformString(true);
+//		val myFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
+//		val proj = myFile.getProject();
+//		val name = myFile.name;
+//		val folder = proj.getFolder("src")
+//		val ast = folder.getFile(name +".ast");
+//		
+//		println(ast.exists)
+
 		val resource = context.resource
 		val platformString = resource.getURI().toPlatformString(true);
 		val myFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
