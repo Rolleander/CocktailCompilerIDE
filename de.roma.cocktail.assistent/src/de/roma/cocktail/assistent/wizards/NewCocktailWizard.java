@@ -69,6 +69,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
     {
         final String projectName = pageOne.getProjectName();
         final String cctFolderPath = pageOne.getCCTPath();
+        final String fileName = pageOne.getFileName();
         final boolean isBtnRexSelected  = pageOne.isBtnRexSelected();
         final boolean isBtnLarkSelected  = pageOne.isBtnLarkSelected();
         final boolean isBtnAstSelected  = pageOne.isBtnAstSelected();
@@ -79,7 +80,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(projectName, cctFolderPath, isBtnRexSelected, 
+                    doFinish(projectName, cctFolderPath, fileName, isBtnRexSelected, 
                     		isBtnLarkSelected, isBtnAstSelected, monitor);
                 }
                 catch (CoreException e)
@@ -113,12 +114,13 @@ public class NewCocktailWizard extends Wizard implements INewWizard
     /**
      * The worker method. It will create the new project with its contents.
      * @param projectName 
+     * @param fileName 
      * @param isBtnAstSelected 
      * @param isBtnLarkSelected 
      * @param isBtnRexSelected 
      * @param isBtnMakeSelected 
      */
-    private void doFinish(String projectName, String cctPath, boolean isBtnRexSelected, 
+    private void doFinish(String projectName, String cctPath, String fileName, boolean isBtnRexSelected, 
     		boolean isBtnLarkSelected, boolean isBtnAstSelected, 
     		IProgressMonitor monitor) throws CoreException
     {
@@ -136,15 +138,15 @@ public class NewCocktailWizard extends Wizard implements INewWizard
         }
         
         if (isBtnRexSelected) {
-        	createFileFromTemplate(srcFolder, "scanner.scn", "/res/rpptemp.scn", monitor);
+        	createFileFromTemplate(srcFolder, fileName + ".scn", "/res/rpptemp.scn", monitor);
         }
         
         if (isBtnLarkSelected) {
-        	createFileFromTemplate(srcFolder, "parser.prs", "/res/lpptemp.prs", monitor);
+        	createFileFromTemplate(srcFolder, fileName + ".prs", "/res/lpptemp.prs", monitor);
         }
         
         if (isBtnAstSelected) {
-        	createFileFromTemplate(srcFolder, "syntax.ast", "/res/syntaxtemp.ast", monitor);
+        	createFileFromTemplate(srcFolder, fileName + ".ast", "/res/syntaxtemp.ast", monitor);
         }
 
         if (Activator.getDefault().getPreferenceStore().getBoolean(CCTPreferencePage.CREATEMAKEFLAG)) {

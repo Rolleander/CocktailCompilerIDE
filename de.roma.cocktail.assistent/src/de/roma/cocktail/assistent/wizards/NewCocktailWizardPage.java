@@ -28,7 +28,7 @@ import de.roma.cocktail.preference.CCTPreferencePage;
  */
 public class NewCocktailWizardPage extends WizardPage
 {
-    private Text projectName, cocktailFolder;
+    private Text projectName, cocktailFolder, fileName;
     private Button btnRex, btnLark, btnAst;
 
     /**
@@ -159,35 +159,50 @@ public class NewCocktailWizardPage extends WizardPage
      */
     private void createCheckboxes(Composite composite) {
     	GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-        gd.horizontalSpan = 3;
+        gd.horizontalSpan = 2;
         
         Group group = new Group(composite, SWT.SHADOW_ETCHED_IN);
         group.setText("Do you want to generate templates?");
-        group.setLayout(new GridLayout(1, false));
+        group.setLayout(new GridLayout(2, true));
         group.setLayoutData(gd);
+        
+        createLabel(group, "File name:");
+
+        fileName = new Text(group, SWT.BORDER | SWT.SINGLE);
+//        GridData gd2 = new GridData(GridData.FILL_HORIZONTAL);
+//        fileName.setLayoutData(gd2);
+        fileName.addModifyListener(new ModifyListener()
+        {
+            @Override
+            public void modifyText(ModifyEvent e)
+            {
+                dialogChanged();
+            }
+        });
+        
+    	gd = new GridData(GridData.FILL_HORIZONTAL);
+        gd.horizontalSpan = 2;
         
     	btnRex = new Button(group, SWT.CHECK);
     	btnRex.setText("scn-file for rpp");
     	btnRex.setSelection(true);
+    	btnRex.setLayoutData(gd);
         
     	btnLark = new Button(group, SWT.CHECK);
     	btnLark.setText("prs-file for lpp");
     	btnLark.setSelection(true);
+    	btnLark.setLayoutData(gd);
     	
     	btnAst = new Button(group, SWT.CHECK);
     	btnAst.setText("ast-file for ast");
     	btnAst.setSelection(true);
-
-    	gd = new GridData(GridData.FILL_HORIZONTAL);
-        gd.horizontalSpan = 3;
-    	gd.horizontalAlignment = GridData.HORIZONTAL_ALIGN_BEGINNING;
+    	btnAst.setLayoutData(gd);
 	}
     
     /**
      * Initializes the form and handles the given selection.
      */
-    private void initialize()
-    {
+    private void initialize() {
     	String path = 
     			Activator.getDefault().getPreferenceStore().getString(CCTPreferencePage.CCTPATHFIELD);
     	cocktailFolder.setText(path);
@@ -196,12 +211,10 @@ public class NewCocktailWizardPage extends WizardPage
     /**
      * Ensures that all inputs are valid.
      */
-    private void dialogChanged()
-    { 
+    private void dialogChanged() { 
     	String msg = null;
         // Looks for a valid name in the projectText
-        if (getProjectName().isEmpty())
-        {
+        if (getProjectName().isEmpty()) {
         	msg = "Project name must be specified";
         	setMessage(msg);
         }
@@ -209,9 +222,13 @@ public class NewCocktailWizardPage extends WizardPage
         	msg = "Path of CCT installation must be specified";
         	setMessage(msg);
 		}
-        else if (getCCTPath().trim().contains(" ")) {
+        else if (getCCTPath().trim().contains("")) {
         	// This is acceptable
         	setMessage("CCT Path with whitespace may not function for MinGW");
+		}
+        else if (getFileName().isEmpty() || getFileName().trim().isEmpty()) {
+        	msg = "File name must be specified";
+        	setMessage(msg);
 		}
         else {
         	setMessage(msg);
@@ -220,16 +237,18 @@ public class NewCocktailWizardPage extends WizardPage
         setPageComplete(msg == null);
     }
 
-    public String getProjectName()
-    {
+    public String getProjectName() {
         return projectName.getText();
     }
     
-    public String getCCTPath()
-    {
+    public String getCCTPath() {
         return cocktailFolder.getText();
     }
 
+    public String getFileName() {
+        return fileName.getText();
+    }
+    
 	public boolean isBtnRexSelected() {
 		return btnRex.getSelection();
 	}
