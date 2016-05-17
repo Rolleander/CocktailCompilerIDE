@@ -1,0 +1,44 @@
+###################################################################
+#SETTINGS
+CC		  = gcc
+COCKTAIL  = $COCKTAIL_PATH$
+PATH     := $(PATH):$(COCKTAIL)\bin:..\rPrepro:..\..\rPrepro:\etc\alternatives\
+X_DEBUG	  = -g -Wall -ansi -pedantic
+C_FLAGS	  = -I.. -DYYDEBUG -L$(COCKTAIL)\lib -I$(COCKTAIL)\lib\include $(X_DEBUG)
+LD_FLAGS  = -L$(COCKTAIL)\lib -lreuse  
+LARK_OPTS = -cdi -Dw  
+REX_OPTS  = -cdis -y
+AST_OPTS  = -cdi -4wemRk 
+
+##################################################################
+
+MAIN     = $EXECUTABLE$
+SRC_C    = $MAINCLASS$.c
+SRC 	 = $SCANNER$.scan \
+		  $PARSER$.pars  \
+		  $AST$.ast      \
+AST_TREE = Tree 
+GEN_C	 = $SCANNER$_scan.c $SCANNER$_scanSource.c $PARSER$_pars.c $(AST_TREE).c
+GEN_H	 = $SCANNER$_scan.h $SCANNER$_scanSource.h $PARSER$_pars.h $(AST_TREE).h yy$(AST_TREE).h
+GEN		 = $SCANNER$.rex $SCANNER$_scan.rpp $PARSER$_pars.lrk      $(AST_TREE).TS
+
+##################################################################
+include default_rules.mk
+
+# Create the Parser
+$PARSER$_pars.lrk $SCANNER$_scan.rpp: $PARSER$.pars
+	lpp -cxzj  $PARSER$.pars
+$PARSER$_pars.c $PARSER$_pars.h: $PARSER$_pars.lrk
+	lark $(LARK_OPTS) $PARSER$_pars.lrk
+
+# Create the Scanner
+$SCANNER$.rex: $SCANNER$.scan $SCANNER$_scan.rpp
+	rpp < $SCANNER$.scan $SCANNER$_scan.rpp > $SCANNER$.rex
+
+$SCANNER$_scan.c $SCANNER$_scan.h $SCANNER$_scanSource.c $SCANNER$_scanSource.h: $SCANNER$.rex
+	rex $(REX_OPTS) $SCANNER$.rex
+	rm -f $SCANNER$_scanDrv.c
+
+# Create the Abstract Syntax Tree module
+$(AST_TREE).TS $(AST_TREE).c $(AST_TREE).h yy$(AST_TREE).h: $AST$.ast
+	ast $(AST_OPTS) $AST$.ast

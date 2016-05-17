@@ -40,6 +40,9 @@ public class NewCocktailWizard extends Wizard implements INewWizard
 {
     private NewCocktailWizardPage pageOne;
     private IStructuredSelection selection;
+    private final static String SRC_FOLDER_NAME="src";
+    private final static String BUILD_FOLDER_NAME="build";
+    
 
     /**
      * Constructor for NewCocktailWizard.
@@ -70,6 +73,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
         final String projectName = pageOne.getProjectName();
         final String cctFolderPath = pageOne.getCCTPath();
         final String fileName = pageOne.getFileName();
+        final String executableName = pageOne.getExecutableName();
         final boolean isBtnRexSelected  = pageOne.isBtnRexSelected();
         final boolean isBtnLarkSelected  = pageOne.isBtnLarkSelected();
         final boolean isBtnAstSelected  = pageOne.isBtnAstSelected();
@@ -80,7 +84,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
             {
                 try
                 {
-                    doFinish(projectName, cctFolderPath, fileName, isBtnRexSelected, 
+                    doFinish(projectName, cctFolderPath, fileName,executableName, isBtnRexSelected, 
                     		isBtnLarkSelected, isBtnAstSelected, monitor);
                 }
                 catch (CoreException e)
@@ -120,7 +124,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
      * @param isBtnRexSelected 
      * @param isBtnMakeSelected 
      */
-    private void doFinish(String projectName, String cctPath, String fileName, boolean isBtnRexSelected, 
+    private void doFinish(String projectName, String cctPath, String fileName,String executableName, boolean isBtnRexSelected, 
     		boolean isBtnLarkSelected, boolean isBtnAstSelected, 
     		IProgressMonitor monitor) throws CoreException
     {
@@ -131,10 +135,12 @@ public class NewCocktailWizard extends Wizard implements INewWizard
         if (!project.exists()) project.create(monitor);
         if (!project.isOpen()) project.open(monitor);
         
-        IFolder srcFolder = project.getFolder("src");
+        IFolder srcFolder = project.getFolder(SRC_FOLDER_NAME);
         if (!srcFolder.exists()) {
             srcFolder.create(IResource.NONE, true, monitor);
         	srcFolder.setDerived(true, monitor);
+        	//create main file
+            createFileFromTemplate(srcFolder, "main.c", "/res/main.c", monitor);
         }
         
         if (isBtnRexSelected) {
@@ -150,7 +156,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
         }
 
         if (Activator.getDefault().getPreferenceStore().getBoolean(CCTPreferencePage.CREATEMAKEFLAG)) {
-        	createMakeFolder(project, cctPath, monitor);
+        	createMakeFolder(project, cctPath,fileName,executableName, monitor);
 		}
         
 //        boolean createMake = Activator.getDefault().getPreferenceStore()
@@ -163,9 +169,9 @@ public class NewCocktailWizard extends Wizard implements INewWizard
     /**
      * Create a new folder and add the makefile and other related files to it.
      */
-    private void createMakeFolder(IProject project, String cctPath, IProgressMonitor monitor) throws CoreException {
+    private void createMakeFolder(IProject project, String cctPath,String fileName,String executableName, IProgressMonitor monitor) throws CoreException {
     	//Create a folder
-    	IFolder folder = project.getFolder("config");
+    	IFolder folder = project.getFolder(BUILD_FOLDER_NAME);
     	if (!project.exists()) project.create(monitor);
         if (!project.isOpen()) project.open(monitor);        
         if (!folder.exists()) {
@@ -177,13 +183,19 @@ public class NewCocktailWizard extends Wizard implements INewWizard
     	if (!file.exists()) {
 	    	Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
 			try {
-				InputStream stream = FileLocator.openStream(bundle, new Path("/res/Makefile"), false);
+				InputStream stream = FileLocator.openStream(bundle, new Path("/res/Makefile_Template"), false);
 				String path = cctPath.replaceAll("/", Matcher.quoteReplacement("\\"));
 				
 				Scanner s = new Scanner(stream).useDelimiter("\\A");
 			    String make = (s.hasNext() ? s.next() : "");
-			    String replacedMake = make.replace("$REPLACE$", path);
-			    InputStream replacedStream = new ByteArrayInputStream(replacedMake.getBytes(StandardCharsets.UTF_8));
+			    make = make.replace("$COCKTAIL_PATH$", path);
+			    make = make.replace("$EXECUTABLE$", executableName);
+			    make = make.replace("$SCANNER$", fileName);
+			    make = make.replace("$PARSER$", fileName);
+			    make = make.replace("$AST$", fileName);
+			    make = make.replace("$MAINCLASS$", "main");
+			    
+			    InputStream replacedStream = new ByteArrayInputStream(make.getBytes(StandardCharsets.UTF_8));
 			    
 				file.create(replacedStream, IResource.NONE, monitor);
 				file.setDerived(true, monitor);
@@ -193,7 +205,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard
     	}
     	
         createFileFromTemplate(folder, "default_rules.mk", "/res/default_rules.mk", monitor);
-        createFileFromTemplate(folder, "util.c", "/res/util.c", monitor);
+    
 	}
     
     /**

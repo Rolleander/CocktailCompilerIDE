@@ -18,10 +18,9 @@ gen: $(GEN) $(GEN_C)
 .SUFFIXES:	.java .class
 .java.class:
 	$(JAVAC)  $<
-	
-# Generate the scanner
-l_scan.c: $(REX_SRC)
-	rex -cdis -y  $(REX_SRC)	
-	
+		
+clean:
+	rm -f *.o $(GEN_C) $(GEN_H) $(GEN) $(MAIN)
+	rm -f l_scanDrv.c
 ###############################################################################
 
