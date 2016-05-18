@@ -29,9 +29,23 @@ class LppProposalProvider extends AbstractLppProposalProvider {
 //		val proj = myFile.getProject();
 //		val name = myFile.name;
 //		val folder = proj.getFolder("src")
-//		val ast = folder.getFile(name +".ast");
+//		val ast = folder.getFile(name +".ast")
 //		
 //		println(ast.exists)
+//		var treeName = "Tree"
+//		
+//		if (ast != null && ast.exists()){
+//			val uri = ast.locationURI.toString.replaceAll("file:", "")
+//			val fis = new FileInputStream(uri)
+//			val inputReader = new BufferedReader(new InputStreamReader(fis))
+//			var line = ""
+//			while ((line = inputReader.readLine) != null){
+//   				if (line.trim().matches("TREE.*")){ //(\\s\\d)* (\\s\\d)* ARGS
+//   					treeName = line.split("\\w").get(1)
+//				}	
+//  			}
+//  			inputReader.close()
+//		}
 
 		val resource = context.resource
 		val platformString = resource.getURI().toPlatformString(true);
@@ -49,7 +63,7 @@ class LppProposalProvider extends AbstractLppProposalProvider {
 			var line = ""
 			var lastLine = ""
 			while ((line = inputReader.readLine) != null){
-   				if (line.matches("extern.*ARGS.*")){ //(\\s\\d)* (\\s\\d)* ARGS
+   				if (line.matches("extern.*ARGS.*")){
    					if (line.endsWith(",")){
    						commands.add(line + inputReader.readLine)
    					}

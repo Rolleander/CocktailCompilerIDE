@@ -158,12 +158,6 @@ public class NewCocktailWizard extends Wizard implements INewWizard
         if (Activator.getDefault().getPreferenceStore().getBoolean(CCTPreferencePage.CREATEMAKEFLAG)) {
         	createMakeFolder(project, cctPath,fileName,executableName, monitor);
 		}
-        
-//        boolean createMake = Activator.getDefault().getPreferenceStore()
-//        		.getBoolean(CCTPreferencePage.CREATEFILESFLAG);
-//        if (createMake) {
-//            createMakeFolder(project);
-//		}
     }
 
     /**
