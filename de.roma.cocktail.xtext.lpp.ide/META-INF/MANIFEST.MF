@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.roma.cocktail.xtext.lpp.ide
-Bundle-Vendor: My Company
+Bundle-Name: Cocktail LPP IDE
+Bundle-Vendor: Roma
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.roma.cocktail.xtext.lpp.ide; singleton:=true
 Bundle-ActivationPolicy: lazy

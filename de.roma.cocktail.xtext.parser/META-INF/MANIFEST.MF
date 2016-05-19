@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: de.roma.cocktail.xtext.parser
-Bundle-Vendor: My Company
+Bundle-Name: Cocktail Parser
+Bundle-Vendor: Roma
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.roma.cocktail.xtext.parser; singleton:=true
 Bundle-ActivationPolicy: lazy

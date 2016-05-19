@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Assistent
+Bundle-Name: Cocktail Wizards
 Bundle-SymbolicName: de.roma.cocktail.assistent;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.roma.cocktail.assistent.Activator
@@ -17,3 +17,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.debug.core.model,
  org.eclipse.debug.ui
+Bundle-Vendor: Roma
