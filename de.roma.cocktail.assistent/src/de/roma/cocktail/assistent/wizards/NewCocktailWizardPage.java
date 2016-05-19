@@ -54,7 +54,7 @@ public class NewCocktailWizardPage extends WizardPage {
 
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		gd.horizontalSpan = 3;
-		createProjectField(composite);
+		createNameField(composite);
 		Label separator1 = new Label(composite, SWT.HORIZONTAL | SWT.SEPARATOR);
 		separator1.setLayoutData(gd);
 		createCocktailField(composite);
@@ -85,7 +85,7 @@ public class NewCocktailWizardPage extends WizardPage {
 	 * 
 	 * @param composite
 	 */
-	private void createProjectField(Composite composite) {
+	private void createNameField(Composite composite) {
 		createLabel(composite, "Project name:");
 
 		projectName = new Text(composite, SWT.BORDER | SWT.SINGLE);
@@ -94,6 +94,10 @@ public class NewCocktailWizardPage extends WizardPage {
 		projectName.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
+				fileName.setMessage(projectName.getText().toLowerCase()
+						.replaceAll("\\s+",""));
+				exeName.setMessage(projectName.getText().toLowerCase()
+						.replaceAll("\\s+",""));
 				dialogChanged();
 			}
 		});
@@ -153,14 +157,14 @@ public class NewCocktailWizardPage extends WizardPage {
 
 		Group group = new Group(composite, SWT.SHADOW_ETCHED_IN);
 		group.setText("Do you want to generate templates?");
-		group.setLayout(new GridLayout(2, true));
+		group.setLayout(new GridLayout(2, false));
 		group.setLayoutData(gd);
 
 		createLabel(group, "File name:");
 
 		fileName = new Text(group, SWT.BORDER | SWT.SINGLE);
-		// GridData gd2 = new GridData(GridData.FILL_HORIZONTAL);
-		// fileName.setLayoutData(gd2);
+		GridData gd2 = new GridData(GridData.FILL_HORIZONTAL);
+		fileName.setLayoutData(gd2);
 		fileName.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
@@ -168,9 +172,10 @@ public class NewCocktailWizardPage extends WizardPage {
 			}
 		});
 
-		createLabel(group, "Executable name:");
+		createLabel(group, "Executable name:      ");
 
 		exeName = new Text(group, SWT.BORDER | SWT.SINGLE);
+		exeName.setLayoutData(gd2);
 		exeName.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
@@ -242,10 +247,16 @@ public class NewCocktailWizardPage extends WizardPage {
 	}
 
 	public String getFileName() {
+		if (fileName.getText().isEmpty()) {
+			return fileName.getMessage();
+		}
 		return fileName.getText();
 	}
 
 	public String getExecutableName() {
+		if (exeName.getText().isEmpty()) {
+			return exeName.getMessage();
+		}
 		return exeName.getText();
 	}
 
