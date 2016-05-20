@@ -1,5 +1,7 @@
 package de.roma.cocktail.assistent.wizards;
 
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.dialogs.IDialogPage;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
@@ -94,11 +96,17 @@ public class NewCocktailWizardPage extends WizardPage {
 		projectName.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
-				fileName.setMessage(projectName.getText().toLowerCase()
-						.replaceAll("\\s+",""));
-				exeName.setMessage(projectName.getText().toLowerCase()
-						.replaceAll("\\s+",""));
+				changeTextMessages();
 				dialogChanged();
+			}
+
+			private void changeTextMessages() {
+				String pName = projectName.getText().replaceAll("\\s+","");
+				if (!pName.isEmpty()) {
+					pName = pName.toLowerCase().charAt(0) + pName.substring(1);
+				}
+				fileName.setMessage(pName);
+				exeName.setMessage(pName);
 			}
 		});
 	}
@@ -206,7 +214,8 @@ public class NewCocktailWizardPage extends WizardPage {
 	 * Initializes the form and handles the given selection.
 	 */
 	private void initialize() {
-		String path = Activator.getDefault().getPreferenceStore().getString(CCTPreferencePage.CCTPATHFIELD);
+		String path = Activator.getDefault().getPreferenceStore()
+				.getString(CCTPreferencePage.CCTPATHFIELD);
 		cocktailFolder.setText(path);
 	}
 
@@ -215,31 +224,30 @@ public class NewCocktailWizardPage extends WizardPage {
 	 */
 	private void dialogChanged() {
 		String msg = null;
-		// Looks for a valid name in the projectText
-		if (getProjectName().isEmpty()) {
+		setErrorMessage(null);
+		if (getProjectName().isEmpty() || getProjectName().trim().isEmpty()) {
 			msg = "Project name must be specified";
-			setMessage(msg);
-		} else if (getCCTPath().isEmpty()) {
-			msg = "Path of CCT installation must be specified";
-			setMessage(msg);
-		} else if (getCCTPath().trim().contains("")) {
-			// This is acceptable
-			setMessage("CCT Path with whitespace may not function for MinGW");
-		} else if (getFileName().isEmpty() || getFileName().trim().isEmpty()) {
-			msg = "File name must be specified";
-			setMessage(msg);
-		} else if (getExecutableName().isEmpty() || getExecutableName().trim().isEmpty()) {
-			msg = "Executable name must be specified";
-			setMessage(msg);
 		} else {
-			setMessage(msg);
+			IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+			if (root.getProject(getProjectName()).exists()) {
+				msg = "A project with that name already exists in the workspace";
+				setErrorMessage(msg);
+			} else if (getCCTPath().isEmpty() || getCCTPath().trim().isEmpty()) {
+				msg = "Path of CCT installation must be specified";
+			} else if (getFileName().isEmpty() || getFileName().trim().isEmpty()) {
+				msg = "File name must be specified";
+			} else if (getExecutableName().isEmpty() || 
+					getExecutableName().trim().isEmpty()) {
+				msg = "Executable name must be specified";
+			}
 		}
-		// setErrorMessage(msg);
+		
+		setMessage(msg);
 		setPageComplete(msg == null);
 	}
 
 	public String getProjectName() {
-		return projectName.getText();
+		return projectName.getText().trim();
 	}
 
 	public String getCCTPath() {
@@ -250,14 +258,14 @@ public class NewCocktailWizardPage extends WizardPage {
 		if (fileName.getText().isEmpty()) {
 			return fileName.getMessage();
 		}
-		return fileName.getText();
+		return fileName.getText().trim();
 	}
 
 	public String getExecutableName() {
 		if (exeName.getText().isEmpty()) {
 			return exeName.getMessage();
 		}
-		return exeName.getText();
+		return exeName.getText().trim();
 	}
 
 	public boolean isBtnRexSelected() {
