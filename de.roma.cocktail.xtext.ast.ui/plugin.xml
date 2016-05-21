@@ -78,9 +78,10 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
+			category="de.roma.cocktail.preference.CCTPreferencePage"
 			class="de.roma.cocktail.xtext.ui.AstExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="de.roma.cocktail.xtext.Ast"
-			name="Ast">
+			name="Ast Editor">
 			<keywordReference id="de.roma.cocktail.xtext.ui.keyword_Ast"/>
 		</page>
 		<page

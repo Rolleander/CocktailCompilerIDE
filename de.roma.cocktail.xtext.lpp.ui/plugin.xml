@@ -78,9 +78,10 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
+			category="de.roma.cocktail.preference.CCTPreferencePage"
 			class="de.roma.cocktail.xtext.ui.LppExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
 			id="de.roma.cocktail.xtext.Lpp"
-			name="Lpp">
+			name="Lpp Editor">
 			<keywordReference id="de.roma.cocktail.xtext.ui.keyword_Lpp"/>
 		</page>
 		<page

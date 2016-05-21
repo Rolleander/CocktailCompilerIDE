@@ -7,7 +7,7 @@
 			class="de.roma.cocktail.xtext.ui.ParserExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="pars"
+			extensions="lark,lrk"
 			id="de.roma.cocktail.xtext.Parser"
 			name="Parser Editor">
 		</editor>

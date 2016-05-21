@@ -7,7 +7,7 @@
 			class="org.xtext.cocktail.ui.ScannerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="scan,rex"
+			extensions="rex"
 			id="org.xtext.cocktail.Scanner"
 			name="Scanner Editor">
 		</editor>
