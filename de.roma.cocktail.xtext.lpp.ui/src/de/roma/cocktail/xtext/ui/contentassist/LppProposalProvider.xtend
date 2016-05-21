@@ -13,7 +13,6 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.ArrayList
-import org.eclipse.core.resources.IProject
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
@@ -48,7 +47,7 @@ class LppProposalProvider extends AbstractLppProposalProvider {
   			inputReader.close()
 		}
 
-		val configFolder = proj.getFolder("config")
+		val configFolder = proj.getFolder("build")
 		val treeFile = configFolder.getFile(treeName + ".h");
 
 		val commands = new ArrayList<String>()
