@@ -38,8 +38,8 @@ import de.roma.cocktail.preference.CCTPreferencePage;
 public class NewCocktailWizard extends Wizard implements INewWizard {
 	private NewCocktailWizardPage pageOne;
 	private IStructuredSelection selection;
-	private final static String SRC_FOLDER_NAME = "src";
-	private final static String BUILD_FOLDER_NAME = "build";
+	public final static String SRC_FOLDER_NAME = "src";
+	public final static String BUILD_FOLDER_NAME = "build";
 
 	/**
 	 * Constructor for NewCocktailWizard.
@@ -128,12 +128,12 @@ public class NewCocktailWizard extends Wizard implements INewWizard {
 		}
 
 		if (isBtnRexSelected) {
-			createFileFromTemplate(srcFolder, fileName + ".scn", "/res/rpptemp.scn", monitor,
+			createFileFromTemplate(srcFolder, fileName + ".scan", "/res/rpptemp.scn", monitor,
 					new ReplaceStreamOperation("$NAME$", fileName));
 		}
 
 		if (isBtnLarkSelected) {
-			createFileFromTemplate(srcFolder, fileName + ".prs", "/res/lpptemp.prs", monitor,
+			createFileFromTemplate(srcFolder, fileName + ".pars", "/res/lpptemp.prs", monitor,
 					new ReplaceStreamOperation("$NAME$", fileName));
 		}
 
@@ -167,8 +167,8 @@ public class NewCocktailWizard extends Wizard implements INewWizard {
 			@Override
 			public InputStream operate(InputStream stream) {
 
-				String path = cctPath.replaceAll("/", Matcher.quoteReplacement("\\"));
-
+			//	String path = cctPath.replaceAll("/", Matcher.quoteReplacement("\\"));
+				String path = cctPath;
 				Scanner s = new Scanner(stream).useDelimiter("\\A");
 				String make = (s.hasNext() ? s.next() : "");
 				make = make.replace("$COCKTAIL_PATH$", path);
@@ -198,7 +198,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard {
 			Bundle bundle = Platform.getBundle("de.roma.cocktail.assistent");
 			try {
 				InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
-				file.create(streamOperation.operate(stream), IResource.NONE, monitor);
+				file.create(streamOperation.operate(stream), IResource.NONE, monitor);				
 				file.setDerived(false, monitor);
 			} catch (IOException e) {
 				e.printStackTrace();

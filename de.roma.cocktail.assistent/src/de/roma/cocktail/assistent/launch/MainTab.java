@@ -1,28 +1,87 @@
 package de.roma.cocktail.assistent.launch;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 public class MainTab extends AbstractLaunchConfigurationTab {
 
-	public static final String CONFIG = "configFolder";
-	
-	private Text sourcePath;
-	
+	// Project UI widgets
+	private Text fProjText, fCmdText;
+	private Button fProjButton;
+	private WidgetListener fListener = new WidgetListener();
+
+	private class WidgetListener implements ModifyListener, SelectionListener {
+		public void modifyText(ModifyEvent e) {
+			updateLaunchConfigurationDialog();
+		}
+
+		public void widgetSelected(SelectionEvent e) {
+			Object source = e.getSource();
+			if (source == fProjButton) {
+				IProject project = chooseProject();
+				if (project != null) {
+					fProjText.setText(project.getName());
+				}
+			}
+		}
+
+		public void widgetDefaultSelected(SelectionEvent e) {
+		}
+	}
+
+	private IProject getCurrentProject() {
+		String project = fProjText.getText().trim();
+		if (project.length() < 1) {
+			return null;
+		}
+		return ProjectUtils.getProject(project);
+	}
+
+	protected IProject chooseProject() {
+		IProject[] projects = ProjectUtils.getProjectList();
+
+		ElementListSelectionDialog dialog = new ElementListSelectionDialog(getShell(), new LabelProvider() {
+			@Override
+			public String getText(Object element) {
+				return ((IProject) element).getName();
+			}
+		});
+		dialog.setTitle("Projects");
+		dialog.setMessage("Select a Project");
+		dialog.setElements(projects);
+
+		IProject project = getCurrentProject();
+		if (project != null) {
+			dialog.setInitialSelections(new Object[] { project });
+		}
+		if (dialog.open() == Window.OK) {
+			return (IProject) dialog.getFirstResult();
+		}
+		return null;
+	}
+
 	@Override
 	public void createControl(Composite parent) {
-
-		Composite composite = new Composite(parent, SWT.NULL);		  
+		Font font = parent.getFont();
+		Composite composite = new Composite(parent, SWT.NULL);
 		GridLayout layout = new GridLayout();
 		layout.marginLeft = 5;
 		layout.marginRight = 5;
@@ -30,43 +89,60 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		layout.numColumns = 3;
 		layout.verticalSpacing = 9;
 		composite.setLayout(layout);
-		
-	    Label label = new Label(composite, SWT.NULL);
-        label.setText("Config Folder:");
-        
-        sourcePath = new Text(composite, SWT.SINGLE | SWT.BORDER);
-        sourcePath.addModifyListener(new ModifyListener() {
-			
-			@Override
-			public void modifyText(ModifyEvent arg0) {
-				updateLaunchConfigurationDialog();
-			}
-		});
-        GridData gd = new GridData(GridData.FILL_HORIZONTAL);
-        sourcePath.setLayoutData(gd);
 
-        setControl(composite);
+		Label projLabel = new Label(composite, SWT.NONE);
+		projLabel.setText("Project");
+		GridData gd = new GridData();
+		gd.horizontalSpan = 3;
+		projLabel.setLayoutData(gd);
+		projLabel.setFont(font);
+		fProjText = new Text(composite, SWT.SINGLE | SWT.BORDER);
+		gd = new GridData(GridData.FILL_HORIZONTAL);
+		fProjText.setLayoutData(gd);
+		fProjText.setFont(font);
+		fProjText.addModifyListener(fListener);
+
+		fProjButton = createPushButton(composite, "Browse", null);
+		fProjButton.addSelectionListener(fListener);
+
+		Label cmdLabel = new Label(composite, SWT.NONE);
+		cmdLabel.setText("Shell Command");
+		gd = new GridData();
+		gd.horizontalSpan = 3;
+		cmdLabel.setLayoutData(gd);
+		cmdLabel.setFont(font);
+		fCmdText = new Text(parent, SWT.SINGLE);
+		gd = new GridData(GridData.FILL_HORIZONTAL);
+		fCmdText.addModifyListener(fListener);
+		fCmdText.setFont(font);
+		fCmdText.setLayoutData(gd);
+		setControl(composite);
 	}
-	
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
+		try {
+			configuration.doSave();
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-		System.out.println("initializeFrom");
 		try {
-			sourcePath.setText(configuration.getAttribute(MainTab.CONFIG, "/CocktailProject/config"));
+			fProjText.setText(configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, ""));
+			fCmdText.setText(configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, ""));
 		} catch (CoreException e) {
-			sourcePath.setText("/CocktailProject/config");
+			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-		configuration.setAttribute(MainTab.CONFIG, sourcePath.getText());
-		System.out.println("performApply");
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, fProjText.getText());
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, fCmdText.getText());
 		try {
 			configuration.doSave();
 		} catch (CoreException e) {
@@ -78,13 +154,13 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	public String getName() {
 		return "Main";
 	}
-	
+
 	@Override
 	public boolean isValid(ILaunchConfiguration launchConfig) {
 		setErrorMessage(null);
 		setMessage(null);
-		if (sourcePath.getText().equals("")) {
-			setErrorMessage("A config folder must be specified");
+		if (getCurrentProject() == null) {
+			setErrorMessage("A project folder must be specified");
 			return false;
 		}
 		return true;

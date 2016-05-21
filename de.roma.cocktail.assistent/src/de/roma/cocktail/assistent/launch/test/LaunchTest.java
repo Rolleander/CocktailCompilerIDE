@@ -29,9 +29,9 @@ public class LaunchTest {
 				System.err.println(message);
 			}
 		});
-		proc.open("cmd.exe");
+		proc.open("bash");
 		
-		proc.write("dir");
+		proc.write("ls");
 	
 		int exitCode=proc.waitForTermination();
 		System.out.println("EXIT_CODE: "+exitCode);
