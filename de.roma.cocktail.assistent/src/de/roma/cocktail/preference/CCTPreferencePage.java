@@ -40,7 +40,7 @@ public class CCTPreferencePage extends FieldEditorPreferencePage
 			}
 		});
 		
-		addField(new BooleanFieldEditor(CREATEMAKEFLAG, "Create Make folder for new Projects", getFieldEditorParent()));
+		addField(new BooleanFieldEditor(CREATEMAKEFLAG, "Create build folder for new projects", getFieldEditorParent()));
 		
 	}
 	
