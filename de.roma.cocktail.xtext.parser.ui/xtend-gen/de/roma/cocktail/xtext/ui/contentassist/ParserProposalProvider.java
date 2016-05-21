@@ -3,12 +3,28 @@
  */
 package de.roma.cocktail.xtext.ui.contentassist;
 
+import com.google.common.base.Objects;
 import de.roma.cocktail.xtext.ui.contentassist.AbstractParserProposalProvider;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.function.Consumer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
@@ -17,16 +33,106 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 @SuppressWarnings("all")
 public class ParserProposalProvider extends AbstractParserProposalProvider {
   @Override
-  public void complete_CodeBlock(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
-    final String proposal = "[Scanner]\'_GetWord(v);";
-    ICompletionProposal _createCompletionProposal = this.createCompletionProposal(proposal, context);
-    acceptor.accept(_createCompletionProposal);
-  }
-  
-  @Override
   public void complete_CodeWall(final EObject model, final RuleCall ruleCall, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
-    final String proposal = "[Scanner]\'_GetWord(v);";
-    ICompletionProposal _createCompletionProposal = this.createCompletionProposal(proposal, context);
-    acceptor.accept(_createCompletionProposal);
+    try {
+      final XtextResource resource = context.getResource();
+      URI _uRI = resource.getURI();
+      final String platformString = _uRI.toPlatformString(true);
+      IWorkspace _workspace = ResourcesPlugin.getWorkspace();
+      IWorkspaceRoot _root = _workspace.getRoot();
+      Path _path = new Path(platformString);
+      final IFile myFile = _root.getFile(_path);
+      final IProject proj = myFile.getProject();
+      String name = myFile.getName();
+      int _indexOf = name.indexOf(".");
+      String _substring = name.substring(0, _indexOf);
+      name = _substring;
+      final IFolder srcFolder = proj.getFolder("src");
+      final IFile ast = srcFolder.getFile((name + ".ast"));
+      String treeName = "Tree";
+      boolean _and = false;
+      boolean _notEquals = (!Objects.equal(ast, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        boolean _exists = ast.exists();
+        _and = _exists;
+      }
+      if (_and) {
+        java.net.URI _locationURI = ast.getLocationURI();
+        String _string = _locationURI.toString();
+        final String uri = _string.replaceAll("file:", "");
+        final FileInputStream fis = new FileInputStream(uri);
+        InputStreamReader _inputStreamReader = new InputStreamReader(fis);
+        final BufferedReader inputReader = new BufferedReader(_inputStreamReader);
+        String line = "";
+        while ((!Objects.equal((line = inputReader.readLine()), null))) {
+          String _trim = line.trim();
+          boolean _matches = _trim.matches("TREE.*");
+          if (_matches) {
+            String[] _split = line.split("\\s+");
+            String _get = _split[1];
+            treeName = _get;
+          }
+        }
+        inputReader.close();
+      }
+      final IFolder configFolder = proj.getFolder("build");
+      final IFile treeFile = configFolder.getFile((treeName + ".h"));
+      final ArrayList<String> commands = new ArrayList<String>();
+      boolean _and_1 = false;
+      boolean _notEquals_1 = (!Objects.equal(treeFile, null));
+      if (!_notEquals_1) {
+        _and_1 = false;
+      } else {
+        boolean _exists_1 = treeFile.exists();
+        _and_1 = _exists_1;
+      }
+      if (_and_1) {
+        java.net.URI _locationURI_1 = treeFile.getLocationURI();
+        String _string_1 = _locationURI_1.toString();
+        final String uri_1 = _string_1.replaceAll("file:", "");
+        final FileInputStream fis_1 = new FileInputStream(uri_1);
+        InputStreamReader _inputStreamReader_1 = new InputStreamReader(fis_1);
+        final BufferedReader inputReader_1 = new BufferedReader(_inputStreamReader_1);
+        String line_1 = "";
+        String lastLine = "";
+        while ((!Objects.equal((line_1 = inputReader_1.readLine()), null))) {
+          {
+            boolean _matches = line_1.matches("extern.*ARGS.*");
+            if (_matches) {
+              boolean _endsWith = line_1.endsWith(",");
+              if (_endsWith) {
+                String _readLine = inputReader_1.readLine();
+                String _plus = (line_1 + _readLine);
+                commands.add(_plus);
+              } else {
+                commands.add(line_1);
+              }
+            } else {
+              String _trim = line_1.trim();
+              boolean _startsWith = _trim.startsWith("ARGS");
+              if (_startsWith) {
+                commands.add((lastLine + line_1));
+              }
+            }
+            lastLine = line_1;
+          }
+        }
+        inputReader_1.close();
+      }
+      final Consumer<String> _function = new Consumer<String>() {
+        @Override
+        public void accept(final String command) {
+          String _replaceAll = command.replaceAll("extern\\s+[a-zA-Z_0-9]*\\s+", "");
+          final String proposal = _replaceAll.replaceAll("ARGS\\s+", "");
+          ICompletionProposal _createCompletionProposal = ParserProposalProvider.this.createCompletionProposal(proposal, context);
+          acceptor.accept(_createCompletionProposal);
+        }
+      };
+      commands.forEach(_function);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

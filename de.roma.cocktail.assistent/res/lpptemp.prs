@@ -4,9 +4,9 @@
  * Author:   Prof. Dr. Juergen Vollmer <vollmer@dhbw-karlsruhe.de>
  */
 
-SCANNER expr_scan
+SCANNER $NAME$_scan
 
-PARSER  expr_pars
+PARSER  $NAME$_pars
 
 GLOBAL {
  # include <stdio.h>
@@ -121,11 +121,3 @@ expr = <
 /* Tokens */
 int_const:    [Value: long]   {Value := 0;  } .
 float_const:  [Value: double] {Value := 0.0;} .
-
-/* non-terminal attributes */
-MODULE attributes
-PROPERTY SYN
-DECLARE
- expr
- expr_l = [tree: tTree].
-END attributes

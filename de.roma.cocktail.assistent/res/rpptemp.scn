@@ -4,7 +4,7 @@
  * Author:   Prof. Dr. Juergen Vollmer <vollmer@dhbw-karlsruhe.de>
  */
 
-SCANNER expr_scan
+SCANNER $NAME$_scan
 
 EXPORT {
 /* code to be put intp Scanner.h */
@@ -40,8 +40,8 @@ int nesting = 0;
 DEFAULT {
   /* What happens if no scanner rule matches the input */
   MessageI ("Illegal character",
-	    xxError, expr_scan_Attribute.Position,
-	    xxCharacter, expr_scan_TokenPtr);
+	    xxError, $NAME$_scan_Attribute.Position,
+	    xxCharacter, $NAME$_scan_TokenPtr);
 }
 
 EOF {
@@ -54,15 +54,15 @@ EOF {
     break;
   case COMMENT:
     Message ("unclosed C-comment",
-	     xxError, expr_scan_Attribute.Position);
+	     xxError, $NAME$_scan_Attribute.Position);
     break;
   case COMMENT2:
     Message ("unclosed Modula-comment",
-	     xxError, expr_scan_Attribute.Position);
+	     xxError, $NAME$_scan_Attribute.Position);
     break;
   default:
     Message ("OOPS: that should not happen!!",
-	     xxFatal, expr_scan_Attribute.Position);
+	     xxFatal, $NAME$_scan_Attribute.Position);
     break;
   }
 
@@ -79,15 +79,15 @@ RULES
 
 /* Integers */
 #STD# {0-9}+ :
-	{expr_scan_GetWord (string);
-	 expr_scan_Attribute.int_const.Value = atol (string);
+	{$NAME$_scan_GetWord (string);
+	 $NAME$_scan_Attribute.int_const.Value = atol (string);
 	 return int_const;
 	}
 
 /* Float numbers */
 #STD# digit + "." digit * (("E"|"e") ("+"|"-") ? digit +) ? :
-	{expr_scan_GetWord (string);
-	 expr_scan_Attribute.float_const.Value = atof (string);
+	{$NAME$_scan_GetWord (string);
+	 $NAME$_scan_Attribute.float_const.Value = atof (string);
 	 return float_const;
 	}
 

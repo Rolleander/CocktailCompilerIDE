@@ -10,8 +10,8 @@
 # include <string.h>
 # include "Position.h"
 # include "Errors.h"
-# include "expr_scan.h"
-# include "expr_pars.h"
+# include "$NAME$_scan.h"
+# include "$NAME$_pars.h"
 # include "Tree.h"
 
 int main (int argc, char *argv[])
@@ -21,21 +21,21 @@ int main (int argc, char *argv[])
      if (strcmp (argv[1], "-h") == 0) {
        fprintf (stderr,
 		"usage: %s [-h] [file]\n"
-		"  expression LR based parser, reads `file' or stdin\n"
+		"  $NAME$ LR based parser, reads `file' or stdin\n"
 		"  -h: Help\n", argv[0]);
        exit (0);
      }
 
-     expr_scan_Attribute.Position.FileName = MakeIdent1 (argv[1]);
-     expr_scan_BeginFile (argv[1]);
+     $NAME$_scan_Attribute.Position.FileName = MakeIdent1 (argv[1]);
+     $NAME$_scan_BeginFile (argv[1]);
      /* Read from file argv[1].
       * If this routine is not called, stdin is read.
       */
    }
 
-   BeginTree (); /* see expr.ast */
+   BeginTree (); /* see $NAME$.ast */
 
-   errors = expr_pars ();  /* the parser */
+   errors = $NAME$_pars ();  /* the parser */
    printf ("parser returned: %d number of errors: %d\n",
 	   errors,GetCount (xxError));
 

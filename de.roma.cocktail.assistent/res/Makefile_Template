@@ -2,10 +2,10 @@
 #SETTINGS
 CC		  = gcc
 COCKTAIL  = $COCKTAIL_PATH$
-PATH     := $(PATH):$(COCKTAIL)\bin:..\rPrepro:..\..\rPrepro:\etc\alternatives\
+PATH     := $(PATH):$(COCKTAIL)/bin:../rPrepro:../../rPrepro:/etc/alternatives/
 X_DEBUG	  = -g -Wall -ansi -pedantic
-C_FLAGS	  = -I.. -DYYDEBUG -L$(COCKTAIL)\lib -I$(COCKTAIL)\lib\include $(X_DEBUG)
-LD_FLAGS  = -L$(COCKTAIL)\lib -lreuse  
+C_FLAGS	  = -I.. -DYYDEBUG -L$(COCKTAIL)/lib -I$(COCKTAIL)/lib/include $(X_DEBUG)
+LD_FLAGS  = -L$(COCKTAIL)/lib -lreuse  
 LARK_OPTS = -cdi -Dw  
 REX_OPTS  = -cdis -y
 AST_OPTS  = -cdi -4wemRk 
