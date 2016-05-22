@@ -95,11 +95,11 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		composite.setLayout(layout);
 
 		Label projLabel = new Label(composite, SWT.NONE);
-		projLabel.setText("Project");
+		projLabel.setText("Project:");
 		GridData gd = new GridData();
-		gd.horizontalSpan = 3;
-		projLabel.setLayoutData(gd);
-		projLabel.setFont(font);
+//		gd.horizontalSpan = 3;
+//		projLabel.setLayoutData(gd);
+//		projLabel.setFont(font);
 		fProjText = new Text(composite, SWT.SINGLE | SWT.BORDER);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
 		fProjText.setLayoutData(gd);
@@ -110,33 +110,35 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		fProjButton.addSelectionListener(fListener);
 
 		Label cmdLabel = new Label(composite, SWT.NONE);
-		cmdLabel.setText("Shell Command");
-		gd = new GridData();
-		gd.horizontalSpan = 3;
-		cmdLabel.setLayoutData(gd);
+		cmdLabel.setText("Shell command:");
+//		gd = new GridData();
+//		gd.horizontalSpan = 3;
+//		cmdLabel.setLayoutData(gd);
 		cmdLabel.setFont(font);
 		fCmdText = new Text(composite, SWT.SINGLE| SWT.BORDER);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
 		fCmdText.addModifyListener(fListener);
 		fCmdText.setFont(font);
 		fCmdText.setLayoutData(gd);
+		Label plcLabel = new Label(composite, SWT.NONE);
 		
 		Label makeLabel = new Label(composite, SWT.NONE);
-		makeLabel.setText("Make Command");
-		gd = new GridData();
-		gd.horizontalSpan = 3;
-		makeLabel.setLayoutData(gd);
+		makeLabel.setText("Make command:");
+//		gd = new GridData();
+//		gd.horizontalSpan = 3;
+//		makeLabel.setLayoutData(gd);
 		makeLabel.setFont(font);
 		fMakeText = new Text(composite, SWT.SINGLE| SWT.BORDER);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
 		fMakeText.addModifyListener(fListener);
 		fMakeText.setFont(font);
 		fMakeText.setLayoutData(gd);
+		Label plcLabel2 = new Label(composite, SWT.NONE);
 		
 		fCopyResourcesCheckbox = new Button(composite, SWT.CHECK);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
-		fCopyResourcesCheckbox.setText("Copy Source-Files into Build Folder while Building");
-		fCopyResourcesCheckbox.setSelection(true);
+		gd.horizontalSpan = 3;
+		fCopyResourcesCheckbox.setText("Copy source-files into build folder while building");
 		fCopyResourcesCheckbox.setLayoutData(gd);		
 		fCopyResourcesCheckbox.addSelectionListener(fListener);
 		setControl(composite);
@@ -156,7 +158,6 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-		System.out.println("initform");
 		try {
 			String project=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, "");
 			String cmd=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
@@ -192,7 +193,6 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 			setErrorMessage("A project folder must be specified");
 			return false;
 		}
-		System.out.println("Isvalid");
 		return true;
 	}
 }
