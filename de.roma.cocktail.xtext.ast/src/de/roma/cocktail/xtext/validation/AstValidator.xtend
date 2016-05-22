@@ -20,11 +20,11 @@ class AstValidator extends AbstractAstValidator {
 
 	@Check
 	def checkBaseTypeNamesValid(BaseTypes types) {
-
 		val allowedNames = new ArrayList()
 		val rules = types.eContainer.eContainer as Rule
 		val ruleRootNodes = rules.nodes
 		for (rootNode : ruleRootNodes) {
+			//Is Nodetype a abstract node?
 			if (rootNode.type == ":=") {
 				allowedNames.add(rootNode.name)
 			}
@@ -35,12 +35,6 @@ class AstValidator extends AbstractAstValidator {
 				error(name.name+" is not an abstract node type!",AstPackage.Literals.BASE_TYPES__NAMES, INVALID_NAME)
 			}
 		}
-
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					AstPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
 	}
 
 }

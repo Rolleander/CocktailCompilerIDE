@@ -77,14 +77,14 @@ RootNode:
 	extension=Extensions? 
 	'.';
 
-BaseTypes:
-	"<-" names+=[NodeName]*;
-
 Extensions:
 	"<" nodes+=RootNode* ">";
 
 NodePart:
 	(child=ChildNode properties=NodePropertyList) | attribute=NodeAttribute;
+	
+BaseTypes:
+	"<-" names+=[NodeName]*;
 
 ChildNode:
 	(selector=ID ':')? type=ID;
