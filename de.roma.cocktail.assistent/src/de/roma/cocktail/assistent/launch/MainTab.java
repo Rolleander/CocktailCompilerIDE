@@ -166,7 +166,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 			fProjText.setText(project);
 			fCmdText.setText(cmd);
 			fMakeText.setText(make);			
-			fCopyResourcesCheckbox.setEnabled(copy);
+			fCopyResourcesCheckbox.setSelection(copy);
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
