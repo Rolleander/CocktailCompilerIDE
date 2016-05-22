@@ -223,9 +223,7 @@ class RppLabelProvider extends DefaultEObjectLabelProvider {
 		if (begin != null) {
 			createRuleStartText(text, begin)
 		}
-
 		text.append(" : ")
-
 		val content = o.rule
 		val parts = content.parts
 		for (p : parts) {

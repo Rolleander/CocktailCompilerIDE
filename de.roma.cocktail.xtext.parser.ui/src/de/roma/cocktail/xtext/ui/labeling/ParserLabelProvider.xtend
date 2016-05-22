@@ -19,12 +19,14 @@ import de.roma.cocktail.xtext.parser.Precedence
 import de.roma.cocktail.xtext.parser.PrecedenceRow
 import de.roma.cocktail.xtext.parser.RuleBody
 import de.roma.cocktail.xtext.parser.ScannerName
+import de.roma.cocktail.xtext.parser.StartState
+import de.roma.cocktail.xtext.parser.StartSymbols
 import de.roma.cocktail.xtext.parser.Tokens
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
-import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
-import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.preference.JFacePreferences
+import org.eclipse.jface.viewers.StyledString
 import org.eclipse.jface.viewers.StyledString.Styler
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 
 /**
  * Provides labels for EObjects.
@@ -135,7 +137,7 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 		{
 			case LEFT: 'arrow_left.png'
 			case NONE: 'stop.png'
-			case RIGHT: 'arrow_right.png'
+			case RIGHT:'arrow_right.png'
 		}
 	}
 	
@@ -195,7 +197,19 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 	{
 		'page.png'
 	}
+
+	def text(StartSymbols o)
+	{
+		'Start Symbols'
+	}
 	
+	def image(StartSymbols o) {
+		'control_play.png'
+	}
+	
+	def image(StartState o) {
+		'control_play.png'
+	}
 	
 	
 	def text(RuleBody o)
@@ -214,8 +228,7 @@ class ParserLabelProvider extends DefaultEObjectLabelProvider {
 			{
 				text.append(ref.name+" ",styleBlue)
 			}
-		}
-		
+		}		
 		return text;
 	} 
 	

@@ -15,13 +15,14 @@ import de.roma.cocktail.xtext.lpp.GrammarRule
 import de.roma.cocktail.xtext.lpp.GrammarRules
 import de.roma.cocktail.xtext.lpp.Import
 import de.roma.cocktail.xtext.lpp.Local
-import de.roma.cocktail.xtext.lpp.NodePart
 import de.roma.cocktail.xtext.lpp.Parser
 import de.roma.cocktail.xtext.lpp.ParserName
 import de.roma.cocktail.xtext.lpp.Precedence
 import de.roma.cocktail.xtext.lpp.PrecedenceRow
 import de.roma.cocktail.xtext.lpp.RuleBody
 import de.roma.cocktail.xtext.lpp.ScannerName
+import de.roma.cocktail.xtext.lpp.StartState
+import de.roma.cocktail.xtext.lpp.StartSymbols
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.jface.preference.JFacePreferences
 import org.eclipse.jface.viewers.StyledString
@@ -107,6 +108,18 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 		'Precedences'
 	}
 
+	def text(StartSymbols o) {
+		'Start Symbols'
+	}
+
+	def image(StartSymbols o) {
+		'control_play.png'
+	}
+
+	def image(StartState o) {
+		'control_play.png'
+	}
+
 	def image(PrecedenceRow o) {
 		switch (o.type) {
 			case LEFT: 'arrow_left.png'
@@ -178,7 +191,7 @@ class LppLabelProvider extends DefaultEObjectLabelProvider {
 					text.append(node.selector + " ", styleBlue)
 					text.append(": ")
 				}
-				text.append(node.name+" ", styleBlue)
+				text.append(node.name + " ", styleBlue)
 			} else if (part.attribute != null) {
 				val att = part.attribute
 				text.append("[ ")

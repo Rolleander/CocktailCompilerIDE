@@ -14,6 +14,7 @@ import de.roma.cocktail.xtext.parser.ParserName;
 import de.roma.cocktail.xtext.parser.PrecedenceRow;
 import de.roma.cocktail.xtext.parser.RuleBody;
 import de.roma.cocktail.xtext.parser.ScannerName;
+import de.roma.cocktail.xtext.parser.StartState;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
 
@@ -57,6 +58,9 @@ public class ParserOutlineTreeProvider extends DefaultOutlineTreeProvider {
       return true;
     }
     if ((o instanceof PrecedenceRow)) {
+      return true;
+    }
+    if ((o instanceof StartState)) {
       return true;
     }
     return false;

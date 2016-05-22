@@ -24,6 +24,8 @@ import de.roma.cocktail.xtext.parser.RuleBody;
 import de.roma.cocktail.xtext.parser.RuleContent;
 import de.roma.cocktail.xtext.parser.RulePart;
 import de.roma.cocktail.xtext.parser.ScannerName;
+import de.roma.cocktail.xtext.parser.StartState;
+import de.roma.cocktail.xtext.parser.StartSymbols;
 import de.roma.cocktail.xtext.parser.Tokens;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -197,6 +199,18 @@ public class ParserLabelProvider extends DefaultEObjectLabelProvider {
   
   public String image(final RuleBody o) {
     return "page.png";
+  }
+  
+  public String text(final StartSymbols o) {
+    return "Start Symbols";
+  }
+  
+  public String image(final StartSymbols o) {
+    return "control_play.png";
+  }
+  
+  public String image(final StartState o) {
+    return "control_play.png";
   }
   
   public StyledString text(final RuleBody o) {

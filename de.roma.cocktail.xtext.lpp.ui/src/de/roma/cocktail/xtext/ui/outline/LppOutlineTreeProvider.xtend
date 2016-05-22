@@ -21,6 +21,7 @@ import org.eclipse.xtext.ui.editor.outline.IOutlineNode
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider
 import de.roma.cocktail.xtext.lpp.GrammarRule
 import de.roma.cocktail.xtext.lpp.ExtensionRule
+import de.roma.cocktail.xtext.lpp.StartState
 
 /**
  * Customization of the default outline structure.
@@ -94,6 +95,10 @@ class LppOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		if (o instanceof PrecedenceRow) {
 			return true
 		}
+		if (o instanceof StartState) {
+			return true
+		}
+		
 
 	// if(o instanceof ){return true}
 	}

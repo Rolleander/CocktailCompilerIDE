@@ -25,20 +25,18 @@ class RppProposalProvider extends AbstractRppProposalProvider {
 			'yyPrevious','yyStartState','yyTab','yyTab1 (a)','yyEol (n)','input ()','unput (c)']
 	
 	override complete_CodeWall(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		super.complete_CodeWall(model, ruleCall, context, acceptor)
-		
+		super.complete_CodeWall(model, ruleCall, context, acceptor)	
 		val root=context.rootModel as Model
 		val scanner=root.scanner as Scanner
 		var scannerName="Scanner"
 		if(scanner!=null)
 		{
 			scannerName=scanner.name
-		}
-		
-		val s=scannerName
-		acceptor.accept(createCompletionProposal(s, context));
+		}		
+		val name=scannerName
+		acceptor.accept(createCompletionProposal(name, context));
 		commands.forEach[command | 
-  			acceptor.accept(createCompletionProposal(s+"_"+command, context));		
+  			acceptor.accept(createCompletionProposal(name+"_"+command, context));		
 		]
 		statements.forEach[statement | 
 			acceptor.accept(createCompletionProposal(statement, context));

@@ -171,7 +171,6 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 			val prec = begin.rulePrec
 			val states = begin.ruleStates
 			val deff = begin.ruleDefault
-
 			if (prec != null) {
 				text.append(prec + " ", styleTwo)
 			}
@@ -191,9 +190,7 @@ class ScannerLabelProvider extends DefaultEObjectLabelProvider {
 			}
 			text.append("#")
 		}
-
 		text.append(" : ")
-
 		val content = o.rule
 		val parts = content.parts
 		for (p : parts) {
