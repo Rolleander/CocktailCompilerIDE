@@ -21,7 +21,9 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 	public final static String COCKTAIL_LAUNCHCONFIG_TYPE = "de.roma.cocktail.assistent.launchConfigurationType1";
 	public final static String COCKTAIL_LAUNCHCONFIG_CMD = "bash";
 	public final static String COCKTAIL_LAUNCHCONFIG_MAKE = "make";
+	public final static String COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES = "copyresources";	
 	public final static String COCKTAIL_LAUNCHCONFIG_PROJECT = "project";
+	
 
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor)
@@ -32,10 +34,13 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 		}
 		String shellCmd = configuration.getAttribute(COCKTAIL_LAUNCHCONFIG_CMD, "bash");
 		String makeCmd = configuration.getAttribute(COCKTAIL_LAUNCHCONFIG_MAKE, "make");
-			
+		boolean copyResources= configuration.getAttribute(COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES, true);	
 		precheckConditions(project);
 		// 1. Copy all files from source folder into build folder
+		if(copyResources)
+		{
 		copySourceToBuildFolder(project, monitor);
+		}
 		// 2. Start Build job with make
 		try {
 			MakeLauncher.launchMake(shellCmd,makeCmd, project);
@@ -43,7 +48,10 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 			throw new CoreException(new Status(Status.ERROR, PLUGIN_ID, "Exception in build process occured: "+e.getMessage()));
 		}
 		// 3. Delete the copied source files from the build folder
+		if(copyResources)
+		{
 		deleteDispensableFiles(project, monitor);
+		}
 	}
 
 	private void precheckConditions(IProject project) throws CoreException {

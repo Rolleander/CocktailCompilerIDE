@@ -24,10 +24,9 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 public class MainTab extends AbstractLaunchConfigurationTab {
 
 	// Project UI widgets
-	private Text fProjText, fCmdText, fMakeText;
-	private Button fProjButton;
+	private Text fProjText, fCmdText, fMakeText;	
+	private Button fProjButton,fCopyResourcesCheckbox;
 	private WidgetListener fListener = new WidgetListener();
-
 	
 	private class WidgetListener implements ModifyListener, SelectionListener {
 		public void modifyText(ModifyEvent e) {
@@ -41,6 +40,10 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 				if (project != null) {
 					fProjText.setText(project.getName());
 				}
+			}
+			else
+			{
+				updateLaunchConfigurationDialog();
 			}
 		}
 
@@ -130,6 +133,12 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		fMakeText.setFont(font);
 		fMakeText.setLayoutData(gd);
 		
+		fCopyResourcesCheckbox = new Button(composite, SWT.CHECK);
+		gd = new GridData(GridData.FILL_HORIZONTAL);
+		fCopyResourcesCheckbox.setText("Copy Source-Files into Build Folder while Building");
+		fCopyResourcesCheckbox.setSelection(true);
+		fCopyResourcesCheckbox.setLayoutData(gd);		
+		fCopyResourcesCheckbox.addSelectionListener(fListener);
 		setControl(composite);
 	}
 
@@ -137,6 +146,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES, true);
 		try {
 			configuration.doSave();
 		} catch (CoreException e) {
@@ -150,10 +160,12 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		try {
 			String project=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, "");
 			String cmd=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
-			String make=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");			
+			String make=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");		
+			boolean copy=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES, true);
 			fProjText.setText(project);
 			fCmdText.setText(cmd);
 			fMakeText.setText(make);			
+			fCopyResourcesCheckbox.setEnabled(copy);
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
@@ -163,7 +175,8 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, fProjText.getText());
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, fCmdText.getText());
-		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, fMakeText.getText());		
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, fMakeText.getText());	
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES, fCopyResourcesCheckbox.getSelection());
 	}
 
 	@Override

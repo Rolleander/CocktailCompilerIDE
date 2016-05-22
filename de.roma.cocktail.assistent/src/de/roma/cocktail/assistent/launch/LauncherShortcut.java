@@ -71,6 +71,7 @@ public class LauncherShortcut implements ILaunchShortcut {
 		ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, project.getName());
 		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
 		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");
+		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_COPY_RESOURCES, true);		
 		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, project.getName());
 		ILaunchConfiguration configuration = workingCopy.doSave();
 		return configuration;
