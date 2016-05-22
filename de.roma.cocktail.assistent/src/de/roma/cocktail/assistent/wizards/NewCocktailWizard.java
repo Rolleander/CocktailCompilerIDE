@@ -121,7 +121,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard {
 		IFolder srcFolder = project.getFolder(SRC_FOLDER_NAME);
 		if (!srcFolder.exists()) {
 			srcFolder.create(IResource.NONE, true, monitor);
-			srcFolder.setDerived(true, monitor);
+			srcFolder.setDerived(false, monitor);
 			// create main file
 			createFileFromTemplate(srcFolder, "main.c", "/res/main.c", monitor,
 					new ReplaceStreamOperation("$NAME$", fileName));
@@ -160,7 +160,7 @@ public class NewCocktailWizard extends Wizard implements INewWizard {
 			project.open(monitor);
 		if (!folder.exists()) {
 			folder.create(IResource.NONE, true, monitor);
-			folder.setDerived(true, monitor);
+			folder.setDerived(false, monitor);
 		}
 
 		createFileFromTemplate(folder, "Makefile", "/res/Makefile_Template", monitor, new StreamOperation() {

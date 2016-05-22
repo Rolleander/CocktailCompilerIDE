@@ -20,6 +20,7 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 	private final static String PLUGIN_ID = "de.roma.cocktail.assistent";
 	public final static String COCKTAIL_LAUNCHCONFIG_TYPE = "de.roma.cocktail.assistent.launchConfigurationType1";
 	public final static String COCKTAIL_LAUNCHCONFIG_CMD = "bash";
+	public final static String COCKTAIL_LAUNCHCONFIG_MAKE = "make";
 	public final static String COCKTAIL_LAUNCHCONFIG_PROJECT = "project";
 
 	@Override
@@ -30,14 +31,14 @@ public class LaunchConfiguration implements ILaunchConfigurationDelegate {
 			throw new CoreException(new Status(Status.ERROR, PLUGIN_ID, "Failed to find project"));
 		}
 		String shellCmd = configuration.getAttribute(COCKTAIL_LAUNCHCONFIG_CMD, "bash");
-		System.out.println("Launch with Configuration: " + mode + " cmd: "+shellCmd+" project: "+project.getName());
+		String makeCmd = configuration.getAttribute(COCKTAIL_LAUNCHCONFIG_MAKE, "make");
 			
 		precheckConditions(project);
 		// 1. Copy all files from source folder into build folder
 		copySourceToBuildFolder(project, monitor);
 		// 2. Start Build job with make
 		try {
-			MakeLauncher.launchMake(shellCmd, project);
+			MakeLauncher.launchMake(shellCmd,makeCmd, project);
 		} catch (ProcessException e) {
 			throw new CoreException(new Status(Status.ERROR, PLUGIN_ID, "Exception in build process occured: "+e.getMessage()));
 		}

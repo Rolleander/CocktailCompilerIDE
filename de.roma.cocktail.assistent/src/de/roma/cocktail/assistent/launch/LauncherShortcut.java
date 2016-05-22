@@ -3,7 +3,6 @@ package de.roma.cocktail.assistent.launch;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -71,6 +70,7 @@ public class LauncherShortcut implements ILaunchShortcut {
 			throws CoreException {
 		ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null, project.getName());
 		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
+		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");
 		workingCopy.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, project.getName());
 		ILaunchConfiguration configuration = workingCopy.doSave();
 		return configuration;

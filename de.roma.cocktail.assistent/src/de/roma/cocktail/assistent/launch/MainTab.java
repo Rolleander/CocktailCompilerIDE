@@ -24,10 +24,11 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 public class MainTab extends AbstractLaunchConfigurationTab {
 
 	// Project UI widgets
-	private Text fProjText, fCmdText;
+	private Text fProjText, fCmdText, fMakeText;
 	private Button fProjButton;
 	private WidgetListener fListener = new WidgetListener();
 
+	
 	private class WidgetListener implements ModifyListener, SelectionListener {
 		public void modifyText(ModifyEvent e) {
 			updateLaunchConfigurationDialog();
@@ -111,17 +112,31 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 		gd.horizontalSpan = 3;
 		cmdLabel.setLayoutData(gd);
 		cmdLabel.setFont(font);
-		fCmdText = new Text(parent, SWT.SINGLE);
+		fCmdText = new Text(composite, SWT.SINGLE| SWT.BORDER);
 		gd = new GridData(GridData.FILL_HORIZONTAL);
 		fCmdText.addModifyListener(fListener);
 		fCmdText.setFont(font);
 		fCmdText.setLayoutData(gd);
+		
+		Label makeLabel = new Label(composite, SWT.NONE);
+		makeLabel.setText("Make Command");
+		gd = new GridData();
+		gd.horizontalSpan = 3;
+		makeLabel.setLayoutData(gd);
+		makeLabel.setFont(font);
+		fMakeText = new Text(composite, SWT.SINGLE| SWT.BORDER);
+		gd = new GridData(GridData.FILL_HORIZONTAL);
+		fMakeText.addModifyListener(fListener);
+		fMakeText.setFont(font);
+		fMakeText.setLayoutData(gd);
+		
 		setControl(composite);
 	}
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");
 		try {
 			configuration.doSave();
 		} catch (CoreException e) {
@@ -131,9 +146,14 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
+		System.out.println("initform");
 		try {
-			fProjText.setText(configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, ""));
-			fCmdText.setText(configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, ""));
+			String project=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, "");
+			String cmd=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, "bash");
+			String make=configuration.getAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, "make");			
+			fProjText.setText(project);
+			fCmdText.setText(cmd);
+			fMakeText.setText(make);			
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
@@ -143,11 +163,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_PROJECT, fProjText.getText());
 		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_CMD, fCmdText.getText());
-		try {
-			configuration.doSave();
-		} catch (CoreException e) {
-			e.printStackTrace();
-		}
+		configuration.setAttribute(LaunchConfiguration.COCKTAIL_LAUNCHCONFIG_MAKE, fMakeText.getText());		
 	}
 
 	@Override
@@ -163,6 +179,7 @@ public class MainTab extends AbstractLaunchConfigurationTab {
 			setErrorMessage("A project folder must be specified");
 			return false;
 		}
+		System.out.println("Isvalid");
 		return true;
 	}
 }

@@ -33,20 +33,23 @@ public class LauncherTabGroup implements ILaunchConfigurationTabGroup {
 
 	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
-		// TODO Auto-generated method stub
-		
+		for(ILaunchConfigurationTab tab: tabs)
+		{
+			tab.setDefaults(configuration);
+		}
 	}
 
 	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
-		// TODO Auto-generated method stub
-		
+    	for(ILaunchConfigurationTab tab: tabs)
+		{
+			tab.initializeFrom(configuration);
+		}
 	}
 
 	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

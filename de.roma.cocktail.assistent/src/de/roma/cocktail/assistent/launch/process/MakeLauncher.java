@@ -21,17 +21,19 @@ import de.roma.cocktail.assistent.wizards.NewCocktailWizard;
 
 public abstract class MakeLauncher {
 
-	public static void launchMake(String shellCmd, IProject project) throws ProcessException {
+	public static void launchMake(String shellCmd, String makeCmd, IProject project) throws ProcessException {
 
 		ProcessOutput flow = new MakeOutput(project.getName());
 		ProcessLauncher processLauncher = new ProcessLauncher(flow);
-		
-			processLauncher.open(shellCmd);
-			String cdLocation=project.getLocation().toString()+File.separator+NewCocktailWizard.BUILD_FOLDER_NAME;
-			System.out.println("Build Folder: "+cdLocation);
-			processLauncher.write("cd " + cdLocation);
-			processLauncher.write("make");
-			int exitCode = processLauncher.waitForTermination();
+
+		processLauncher.open(shellCmd);
+		String cdLocation = project.getLocation().toOSString() + File.separator + NewCocktailWizard.BUILD_FOLDER_NAME;
+		System.out.println("Build Folder: " + cdLocation);
+		String partition=cdLocation.split(":")[0]+":";
+    	processLauncher.write(partition);	
+		processLauncher.write("cd " + cdLocation);
+		processLauncher.write(makeCmd);
+		int exitCode = processLauncher.waitForTermination();
 
 	}
 
