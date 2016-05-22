@@ -29,8 +29,11 @@ public abstract class MakeLauncher {
 		processLauncher.open(shellCmd);
 		String cdLocation = project.getLocation().toOSString() + File.separator + NewCocktailWizard.BUILD_FOLDER_NAME;
 		System.out.println("Build Folder: " + cdLocation);
+		if(cdLocation.contains(":"))
+		{
 		String partition=cdLocation.split(":")[0]+":";
     	processLauncher.write(partition);	
+		}
 		processLauncher.write("cd " + cdLocation);
 		processLauncher.write(makeCmd);
 		int exitCode = processLauncher.waitForTermination();
