@@ -161,7 +161,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 		try {
 			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
 			file.create(stream, IResource.NONE, monitor);
-			file.setDerived(true, monitor);
+			file.setDerived(false, monitor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

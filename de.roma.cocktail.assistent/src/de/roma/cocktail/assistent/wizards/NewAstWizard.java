@@ -123,7 +123,7 @@ public class NewAstWizard extends Wizard implements INewWizard
 				byte[] bytes = "".getBytes();
 			    InputStream source = new ByteArrayInputStream(bytes);
 			    larkFile.create(source, IResource.NONE, monitor);
-			    larkFile.setDerived(true, monitor);
+			    larkFile.setDerived(false, monitor);
 			}
 			else {
 				createFileFromTemplate(larkFile, "/res/syntaxtemp.ast", monitor);
