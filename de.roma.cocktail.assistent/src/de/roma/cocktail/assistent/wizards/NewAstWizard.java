@@ -114,7 +114,7 @@ public class NewAstWizard extends Wizard implements INewWizard
 
 		if (!folder.exists()) {
 		    folder.create(IResource.NONE, true, monitor);
-			folder.setDerived(true, monitor);
+			folder.setDerived(false, monitor);
 		}
 		
 		IFile larkFile = folder.getFile(fileName + ".ast");
@@ -142,7 +142,7 @@ public class NewAstWizard extends Wizard implements INewWizard
 		try {
 			InputStream stream = FileLocator.openStream(bundle, new Path(resource), false);
 			file.create(stream, IResource.NONE, monitor);
-			file.setDerived(true, monitor);
+			file.setDerived(false, monitor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

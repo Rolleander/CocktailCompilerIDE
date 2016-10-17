@@ -116,7 +116,7 @@ public class NewLPPWizard extends Wizard implements INewWizard
 
 		if (!folder.exists()) {
 		    folder.create(IResource.NONE, true, monitor);
-			folder.setDerived(true, monitor);
+			folder.setDerived(false, monitor);
 		}
 		
 		if (isBtnPreSelected) {
@@ -126,7 +126,7 @@ public class NewLPPWizard extends Wizard implements INewWizard
 			        byte[] bytes = "".getBytes();
 			        InputStream source = new ByteArrayInputStream(bytes);
 			        larkFile.create(source, IResource.NONE, monitor);
-			        larkFile.setDerived(true, monitor);
+			        larkFile.setDerived(false, monitor);
 			    }
 				else {
 					createFileFromTemplate(larkFile, "/res/lpptemp.prs", monitor);
@@ -140,7 +140,7 @@ public class NewLPPWizard extends Wizard implements INewWizard
 			        byte[] bytes = "".getBytes();
 			        InputStream source = new ByteArrayInputStream(bytes);
 			        rexFile.create(source, IResource.NONE, monitor);
-			        rexFile.setDerived(true, monitor);
+			        rexFile.setDerived(false, monitor);
 			    }
 				else {
 					createFileFromTemplate(rexFile, "/res/larktemp.lrk", monitor);

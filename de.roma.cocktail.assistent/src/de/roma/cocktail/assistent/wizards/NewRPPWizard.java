@@ -126,7 +126,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 			        byte[] bytes = "".getBytes();
 			        InputStream source = new ByteArrayInputStream(bytes);
 			        rexFile.create(source, IResource.NONE, monitor);
-			        rexFile.setDerived(true, monitor);
+			        rexFile.setDerived(false, monitor);
 			    }
 				else {
 					createFileFromTemplate(rexFile, "/res/rpptemp.scn", monitor);
@@ -140,7 +140,7 @@ public class NewRPPWizard extends Wizard implements INewWizard
 			        byte[] bytes = "".getBytes();
 			        InputStream source = new ByteArrayInputStream(bytes);
 			        rexFile.create(source, IResource.NONE, monitor);
-			        rexFile.setDerived(true, monitor);
+			        rexFile.setDerived(false, monitor);
 			    }
 				else {
 					createFileFromTemplate(rexFile, "/res/rextemp.rex", monitor);
